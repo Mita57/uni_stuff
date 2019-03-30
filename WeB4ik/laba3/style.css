@@ -1,0 +1,43 @@
+body{
+    background-color: lightblue;
+    text-align:center;
+    background-image: url("background.jpg");
+}
+h1{
+    color:white;
+    font-weight: bold;
+    text-align:center;
+    font-size: 24pt;
+}
+.form{
+ width:200px;
+ margin-left:20px;
+ text-align:left;   
+}
+.papers{
+    width:200px;
+    text-align:left;
+    margin-left:270px;
+    margin-top:-145px;
+}
+article{
+    width:600px;
+    height:400px;
+    margin:auto;
+    border: blue 2px solid;
+    border-radius: 25px;
+    background:linear-gradient(135deg, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); 
+}
+.am{
+    margin-left:-320px;
+    margin-top:-20px;
+}
+.lal{
+    margin-left:-200px
+}
+.but{
+    margin-top:40px;
+    margin-left:200px;
+    height:50px;
+    width:150px;
+}

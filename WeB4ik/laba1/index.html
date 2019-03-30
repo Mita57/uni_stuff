@@ -1,0 +1,47 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Документ HTML</title>
+</head>
+<body>
+<script src="script.js">
+</script>
+<form name="anketa">
+<h1>Анкета покупателя</h1> <P>
+1. Фамилия: <input type="text" name="surname" ><br> <p>
+2. Имя: <input type="text" name="name"><br><P>
+3. Ваш пол:<br> 
+    <input type="radio" name="gender" value="male">мужской<br>
+    <input type="radio" name="gender" value="female">женский<p>
+4. Возраст: 
+    <select name="age">
+                <option value="до 18">До 18</option>
+                <option value="18-30">18-30</option>
+                <option value="31-50">31-50</option>
+                <option value="больше 50">Больше 50</option>
+    </select> <P>
+5. Я: <br>
+    <input type="radio" name="regged" value="registered">Зарегестрированный покупатель<br>
+    <input type="radio" name="regged" value="unregistered">Впервые пользуюсь услугами магазина<p>
+6. Специальность: <input type=checkbox name="spech"> <br> <P>
+7. Город:
+<select name="town">
+    <option value="Москва">Москва</option>
+    <option value="Санкт-Петербург">Санкт-Петербург</option>
+    <option value="Тюмень">Тюмень</option>
+    <option value="Другой">Другой</option>
+</select> <P>
+8. Меня интересуют:<p>
+    <input type=checkbox  name="books">Книги <br> 
+    <input type=checkbox  name="cd">Музыка на CD <br> 
+    <input type=checkbox  name="soft">Программное обеспечение <br> 
+    <input type=checkbox  name="canc">Канцелярские товары <br>     
+    <input type=checkbox  name="souvs">Сувениры <br> 
+    Другое: <textarea cols="20" rows="1" name="others"></textarea>    <P>
+9. Мои пожелания и рекомендации: <P>
+    <textarea cols="50" rows="5" name="offers"> </textarea> <P>
+<input type=button onClick="vyvod()" value="Обработка формы">
+<input type="reset" value="Обновить анкету">
+</form>
+</body>
+</html>

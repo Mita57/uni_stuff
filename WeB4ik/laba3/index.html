@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Top stranitsa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="script.js"></script>  
+    <article>
+    <H1> Печать фотографий </H1>
+    <form name="print">
+    <fieldset class="form"> 
+        <legend> Формат </legend>
+        <input type="radio" name="format" value="ninex12"> 9x12 <p>
+        <input type="radio" name="format" value="tenx15"> 10x15 <P>
+        <input type="radio" name="format" value="eighteenx24"> 18x24 <P>
+    </fieldset>
+
+    <fieldset class="papers">
+        <legend> Бумага </legend>
+        <input type="radio" name="paper" value="matt"> Матовая <P>
+        <input type="radio" name="paper" value="gloss"> Глянцевая <P>
+    </fieldset>
+    <input type="button" onclick="count()"  value="Вычислить" name="knopk" class="but">
+    <div class="am"> Количество: <input type="text" name="amount" onblur="chck_amount()"> <P> </div>
+    <textarea cols="50" rows="4" readonly class="lal" name="final" id="kek"> </textarea>
+    </form>
+    </article>
+</body>
+</html>

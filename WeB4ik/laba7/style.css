@@ -1,0 +1,33 @@
+body{
+    font-family: arial;
+    background-image: url("bg.jpg")
+}
+.everything{
+    margin:auto;
+    width:1000px;
+    background-color:grey;
+    padding:50px;
+    border-radius:50px;
+}
+#det{
+    width:400px;
+    padding:20px;
+    border-radius:20px;
+    background-color:wheat;
+}
+#res{
+    width:50px;
+}
+.right{
+    margin-left:550px;
+    margin-top:-250px;
+    border-radius:20px;
+    border:1px black solid;
+    width:400px;
+    height:190px;
+    padding:20px;
+    background-color:wheat
+}
+h1{
+    text-align: center;
+}

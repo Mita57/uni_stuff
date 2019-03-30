@@ -1,0 +1,42 @@
+body{
+    text-align: center;
+    background-image: url("bg.jpg");
+    font-family:arial;
+}
+
+form{
+    background-color: lightgreen;
+    border-radius: 20px;
+    width:800px;
+    height:400px;
+    padding:20px;
+    margin:auto;
+}
+.left{
+    text-align:left;
+    width:300px;
+    height:200px;
+    margin-top:60px;
+    margin-left:40px;
+}
+.left_right{
+    text-align:left;
+    width:300px;
+    height:200px;
+    margin-top:-69px;
+    margin-left:40px;
+}
+.right{  
+    text-align:left;
+    height:200px;
+    width:400px;
+    margin-left:400px;
+    margin-top:-200px;
+}
+.right_right{
+    margin-left:180px;
+    margin-top:-75px;
+}
+.bot{
+    margin-top:-100px;
+}
