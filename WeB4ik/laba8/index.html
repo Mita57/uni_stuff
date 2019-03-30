@@ -2,20 +2,36 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Page Title</title>
+    <title>NIINJAAAA V PIJAAAAAMAH OOOOUOOOO!!!</title>
     <link rel="stylesheet"  href="style.css">
     <script src="script.js"></script>
 </head>
 <body>
-    <form name="reg">
-        Фамилия: <input type="text" id="surname" onblur="sur()"> <p></p>
-        Логин: <input type="text" id="login" onblur="log()"> <p></p>
-        Пароль: <input type="text" id="pass" onblur="pass()"> <p></p>
-        Подтфердите пароль: <input type="text" id="chck" onblur="chck()"> <p></p>
-        Дата рождения <input type="datetime" id="bday" onblur="bd()"> <p></p>
-        Телефон: <input type="tel" id="tel" onblur="tel()"> <p></p>
-        ИНН: <input type="text" id="INN" onblur="inn()"> <p> </p>
-        <input type="button" id="reg"  disabled value="Зарегестрироваться">
+    <h1> Регистрация </h1>
+    <form name="reg" id="cock">
+        <div class="left">
+                Фамилия: <span id="famerr">*</span><p></p>
+                Логин: <span id="logerr">*</span><p></p>
+                Пароль: <span id="paserr">*</span><p></p>
+                Подтфердите пароль: <span id="chckerr">*</span><p></p>
+                Дата рождения: <span id="bderr">*</span><p></p>
+                Телефон: <span id="telerr">*</span><p></p>
+                ИНН: <span id="INNerr">*</span><p></p>
+                Пол: <span id="gendererr">*</span><p></p>
+        </div>
+        <div class="right">
+                <input type="text" id="surname" onblur="sur()"> <p></p>
+                <input type="text" id="login" onblur="log()"> <p></p>
+                <input type="text" id="pass" onblur="password()"> <p></p>
+                <input type="text" id="chck" onblur="chckc()"> <p></p>
+                <input type="text" id="bday" onblur="bd()"> <p></p>
+                <input type="text" id="tel" onblur="tele()"> <p></p>
+                <input type="text" id="INN" onblur="inn()"> <p> </p>
+                <input type="radio" name="gender" id="male"  onchange="gendera()"> Мужской
+                <input type="radio" name="gender" id="female" onchange="gendera()"> Женский <p></p>
+        </div>
+            <input type="button" id="rega"  disabled value="Зарегестрироваться">
+            <input type="reset" value="Очистить">
     </form>
 </body>
 </html>

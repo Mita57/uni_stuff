@@ -1,0 +1,63 @@
+body{
+    background:-moz-linear-gradient(top, #d4e4ef 0%, #86aecc 100%);
+}
+h1{
+    text-align: center;
+    font-family: arial;
+    font-size: 32pt;
+}
+#cock{
+    background-color: lightblue;
+    font-family: arial;
+    border-radius: 30px;
+    text-align: center;
+    padding: 30px;
+    font-size:12pt;
+    width: 500px;
+    margin: auto;
+}
+.left{
+    text-align:left;
+}
+.right{
+    margin-left:200px;
+    margin-top:-280px;
+}
+.right input{
+    padding:0;
+}
+#famerr{
+    color:red;
+    visibility: visible;  
+}
+#logerr{
+    color:red;
+    visibility: visible;  
+}
+
+#paserr{
+    color:red;
+    visibility: visible;  
+}
+
+#chckerr{
+    color:red;
+    visibility: visible;  
+}
+
+#bderr{
+    color:red;
+    visibility: visible;  
+}
+
+#telerr{
+    color:red;
+    visibility: visible;  
+}
+
+#INNerr{
+    color:red;
+    visibility: visible;  
+}
+
+
