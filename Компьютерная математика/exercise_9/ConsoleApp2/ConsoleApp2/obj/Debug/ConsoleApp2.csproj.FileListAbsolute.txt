@@ -1,0 +1,14 @@
+C:\Users\57thr\source\repos\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+C:\Users\57thr\source\repos\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+C:\Users\57thr\source\repos\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+C:\Users\57thr\source\repos\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.csprojAssemblyReference.cache
+C:\Users\57thr\source\repos\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+C:\Users\57thr\source\repos\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+C:\Users\57thr\source\repos\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
+E:\Компьютерная математика\exercise_9\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+E:\Компьютерная математика\exercise_9\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+E:\Компьютерная математика\exercise_9\ConsoleApp2\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+E:\Компьютерная математика\exercise_9\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.csprojAssemblyReference.cache
+E:\Компьютерная математика\exercise_9\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.csproj.CoreCompileInputs.cache
+E:\Компьютерная математика\exercise_9\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+E:\Компьютерная математика\exercise_9\ConsoleApp2\ConsoleApp2\obj\Debug\ConsoleApp2.pdb
