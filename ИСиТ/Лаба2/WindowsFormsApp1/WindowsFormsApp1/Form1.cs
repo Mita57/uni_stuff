@@ -123,5 +123,15 @@ namespace WindowsFormsApp1
                 textBox1.Text = Math.Round(ent, 3).ToString();
             }
         }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            grid1.RowCount = Convert.ToInt32(numericUpDown1.Value);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            grid1.RowCount = Convert.ToInt32(numericUpDown1.Value);
+        }
     }
 }
