@@ -133,3 +133,6 @@ function unlock(){
     if (chck_sur&&chck_login&&chck_pass&&chck_tel&&chck_inn&&chck_chck&&chck_bd&&chck_gender) document.getElementById('rega').disabled = false;
     else document.getElementById('rega').disabled = true;
 }
+function regged(){
+    alert ("Hooray,u r regged!!");
+}
