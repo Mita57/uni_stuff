@@ -1,0 +1,10 @@
+C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Laba4\Laba4\obj\Debug\Laba4.csprojAssemblyReference.cache
+C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Laba4\Laba4\obj\Debug\Laba4.Form1.resources
+C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Laba4\Laba4\obj\Debug\Laba4.Properties.Resources.resources
+C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Laba4\Laba4\obj\Debug\Laba4.csproj.GenerateResource.cache
+C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Laba4\Laba4\obj\Debug\Laba4.csproj.CoreCompileInputs.cache
+C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Laba4\Laba4\bin\Debug\Laba4.exe.config
+C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Laba4\Laba4\bin\Debug\Laba4.exe
+C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Laba4\Laba4\bin\Debug\Laba4.pdb
+C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Laba4\Laba4\obj\Debug\Laba4.exe
+C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Laba4\Laba4\obj\Debug\Laba4.pdb
