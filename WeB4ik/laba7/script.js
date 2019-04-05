@@ -44,7 +44,7 @@ function monthz(){
     var end = new Date(document.getElementById('end').value);
     var diff =(begin.getTime() - end.getTime()) / 1000;
     diff /= (60 * 60 * 24 * 7 * 4);
-    document.cock.res.value = Math.Floor(Math.abs(diff));
+    document.cock.res.value = Math.floor(Math.abs(diff));
 }
 function duhast(){
     if (document.getElementById('days').checked) days();
