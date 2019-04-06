@@ -89,14 +89,15 @@ namespace Laba4
 
         }
 
+        static string[] vals; //possible variants
         private void button1_Click(object sender, EventArgs e)
         {
             //check if the sum of probs isn't 1
             double sum = 0;
             for (int i = 0; i < grid1.RowCount; i++)
             {
-                double S;
-                if (Double.TryParse(grid1.Rows[i].Cells[1].Value.ToString(), out S) == false)
+                double S=0;
+                if (grid1.Rows[i].Cells[1].Value!=null && Double.TryParse(grid1.Rows[i].Cells[1].Value.ToString(), out S) == false)
                 {
                     break;
                 }
@@ -106,7 +107,7 @@ namespace Laba4
                 }
             }
 
-            if (sum != 1)
+            if (Math.Round(sum) != 1)
             {
                 MessageBox.Show("Сумма вероятностей должна быть равна единице");
             }
@@ -120,9 +121,9 @@ namespace Laba4
                 int k = Convert.ToInt32(power.Value.ToString()); 
                 double rows2 = Math.Pow(elems.Length, k); //amout of possible variants
                 grid2.RowCount = Convert.ToInt32(rows2);
-                string[] vals = new string[Convert.ToInt32(rows2)];
-                printAllKLength(elems, k, vals); //getting all varitants
-                double [] probs = new double[Convert.ToInt32(rows2)];
+                Array.Resize(ref vals ,Convert.ToInt32(rows2));
+                printAllKLength(elems, k); //getting all varitants
+                double [] probs = new double[Convert.ToInt32(grid1.RowCount)];
                 for(int i = 0; i < probs.Length; i++)
                 {
                     probs[i] = Convert.ToDouble(grid1.Rows[i].Cells[1].Value.ToString());
@@ -138,13 +139,19 @@ namespace Laba4
                         {
                             if (ar[j] == Convert.ToChar(grid1.Rows[z].Cells[0].Value.ToString()))
                             {
-                                prob *= Convert.ToDouble(grid1.Rows[z].Cells[1].Value.ToString());
+                                prob *= probs[z];
                             }
                         }
                     }
                     grid2.Rows[i].Cells[1].Value = prob.ToString();
                 }
-
+                double entropy = 0;
+                for (int i = 0; i<probs.Length; i++)
+                {
+                    entropy += probs[i] * Math.Log(2, probs[i]);
+                }
+                entropy = -entropy;
+                textBox1.Text = entropy.ToString();
             }
 
         }
@@ -152,26 +159,25 @@ namespace Laba4
 
 
 
-        static void printAllKLength(char[] set, int k, string[] vals)
+        static void printAllKLength(char[] set, int k)
         {
             int n = set.Length;
-            printAllKLengthRec(set, "", n, k, 0, vals);
+            printAllKLengthRec(set, "", n, k);
         }
+        static int row = 0;
 
-
-        static void printAllKLengthRec(char[] set, String prefix, int n, int k, int row, string[] vals)
+        static void printAllKLengthRec(char[] set, String prefix, int n, int k)
         {
             if (k == 0)
             {
                 vals[row] = prefix;
                 row++;
                 return;
-
             }
             for (int i = 0; i < n; ++i)
             {
                 String newPrefix = prefix + set[i];
-                printAllKLengthRec(set, newPrefix, n, k - 1, row, vals);
+                printAllKLengthRec(set, newPrefix, n, k - 1);
             }
         }
 

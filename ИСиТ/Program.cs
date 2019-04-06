@@ -14,12 +14,6 @@ namespace ConsoleApp1
             char[] set1 = {'a', 'b', 'c', 'd' };
             int k = 6;
             printAllKLength(set1, k);
-
-            Console.WriteLine("\nSecond Test");
-            char[] set2 = { 'a', 'b', 'c', 'd' };
-            k = 1;
-            printAllKLength(set2, k);
-            Console.ReadLine();
         }
 
         static void printAllKLength(char[] set, int k)
