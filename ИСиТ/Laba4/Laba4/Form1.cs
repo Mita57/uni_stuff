@@ -107,12 +107,13 @@ namespace Laba4
                 }
             }
 
-            if (Math.Round(sum) != 1)
+            if (Math.Round(sum,2) != 1)
             {
                 MessageBox.Show("Сумма вероятностей должна быть равна единице");
             }
             else
             {
+                row = 0;
                 char[] elems = new char[grid1.RowCount];
                 for (int j = 0; j < grid1.RowCount; j++)
                 {
@@ -120,9 +121,11 @@ namespace Laba4
                 }
                 int k = Convert.ToInt32(power.Value.ToString()); 
                 double rows2 = Math.Pow(elems.Length, k); //amout of possible variants
+                progressBar1.Maximum = Convert.ToInt32(rows2);
                 grid2.RowCount = Convert.ToInt32(rows2);
                 Array.Resize(ref vals ,Convert.ToInt32(rows2));
                 printAllKLength(elems, k); //getting all varitants
+                progressBar1.Value = row;
                 double [] probs = new double[Convert.ToInt32(grid1.RowCount)];
                 for(int i = 0; i < probs.Length; i++)
                 {
@@ -159,29 +162,30 @@ namespace Laba4
 
 
 
-        static void printAllKLength(char[] set, int k)
+        static int printAllKLength(char[] set, int k)
         {
             int n = set.Length;
             printAllKLengthRec(set, "", n, k);
+            return row;
         }
+
         static int row = 0;
 
-        static void printAllKLengthRec(char[] set, String prefix, int n, int k)
+        static int printAllKLengthRec(char[] set, String prefix, int n, int k)
         {
             if (k == 0)
             {
                 vals[row] = prefix;
                 row++;
-                return;
+                return (row);
             }
             for (int i = 0; i < n; ++i)
             {
                 String newPrefix = prefix + set[i];
                 printAllKLengthRec(set, newPrefix, n, k - 1);
             }
+            return 0;
         }
-
-
     }
 }
 

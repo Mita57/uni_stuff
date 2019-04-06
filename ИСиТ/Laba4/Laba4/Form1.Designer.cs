@@ -32,14 +32,16 @@
             this.X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grid2 = new System.Windows.Forms.DataGridView();
+            this.comb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prob = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.power = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prob = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amval = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.power)).BeginInit();
@@ -84,6 +86,20 @@
             this.grid2.ReadOnly = true;
             this.grid2.Size = new System.Drawing.Size(303, 438);
             this.grid2.TabIndex = 1;
+            // 
+            // comb
+            // 
+            this.comb.HeaderText = "Комбинация";
+            this.comb.Name = "comb";
+            this.comb.ReadOnly = true;
+            this.comb.Width = 130;
+            // 
+            // prob
+            // 
+            this.prob.HeaderText = "Вероятность";
+            this.prob.Name = "prob";
+            this.prob.ReadOnly = true;
+            this.prob.Width = 130;
             // 
             // label1
             // 
@@ -130,20 +146,6 @@
             this.textBox1.Size = new System.Drawing.Size(307, 20);
             this.textBox1.TabIndex = 5;
             // 
-            // comb
-            // 
-            this.comb.HeaderText = "Комбинация";
-            this.comb.Name = "comb";
-            this.comb.ReadOnly = true;
-            this.comb.Width = 130;
-            // 
-            // prob
-            // 
-            this.prob.HeaderText = "Вероятность";
-            this.prob.Name = "prob";
-            this.prob.ReadOnly = true;
-            this.prob.Width = 130;
-            // 
             // amval
             // 
             this.amval.Location = new System.Drawing.Point(176, 468);
@@ -171,11 +173,29 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Количество символов";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(22, 555);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(684, 27);
+            this.progressBar1.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(288, 539);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "The greatest progress bar evar";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 556);
+            this.ClientSize = new System.Drawing.Size(738, 594);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.amval);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
@@ -185,7 +205,7 @@
             this.Controls.Add(this.grid2);
             this.Controls.Add(this.grid1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Расчет энтропии";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid2)).EndInit();
@@ -210,6 +230,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn prob;
         private System.Windows.Forms.NumericUpDown amval;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label3;
     }
 }
 
