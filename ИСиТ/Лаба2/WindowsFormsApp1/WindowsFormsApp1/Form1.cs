@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        bool flag1 = true; bool flag2 = true; bool flag3 = false; bool flag4 = false;
+        bool flag1 = false; bool flag2 = true; bool flag3 = false; bool flag4 = false;
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -32,8 +32,14 @@ namespace WindowsFormsApp1
                         Array.Resize(ref values, values.Length + 1);
                         values[count] = grid1.Rows[i].Cells[0].Value.ToString();
                         count++;
+                        flag1 = true;
                     }
-                    else { MessageBox.Show("Повтор символа " + grid1.Rows[i].Cells[0].Value.ToString()); flag1 = false; }
+                    else
+                    {
+                        MessageBox.Show("Повтор символа " + grid1.Rows[i].Cells[0].Value.ToString());
+                        flag1 = false;
+                        break;
+                    }
                 }
             }
 
@@ -49,8 +55,10 @@ namespace WindowsFormsApp1
                     else
                     {
                         grid1.Rows[i].Cells[0].Style.BackColor = Color.White;
+                        flag2 = true;
                     }
                 }
+                else flag2 = false;
             }
 
             // cool check if the prob is double and if it's greater than 1
@@ -82,7 +90,7 @@ namespace WindowsFormsApp1
                 try
                 {
                     double sum = 0;
-                    for (int i=0; i<grid1.Rows.Count; i++)
+                    for (int i = 0; i < grid1.Rows.Count; i++)
                     {
                         sum += double.Parse(grid1.Rows[i].Cells[1].Value.ToString());
                         if (sum > 1)
@@ -90,10 +98,13 @@ namespace WindowsFormsApp1
                             MessageBox.Show("Сумма вероятностей не может быть больше единицы");
                             flag4 = false;
                         }
-                        else flag4 = true; 
+                        else flag4 = true;
                     }
                 }
-                catch { };
+                catch
+                {
+                    flag4 = false;
+                }
             }
             if (grid1.Rows.Count > 1 && flag1 && flag2 && flag3 && flag4)
             {
@@ -106,20 +117,20 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             double sum=0;
-            double ent = 0;
-            for (int i = 0; i < grid1.RowCount-1; i++)
+
+            for (int i = 0; i < grid1.RowCount; i++)
             {
                 sum += double.Parse(grid1.Rows[i].Cells[1].Value.ToString());
             }
-            if (sum != 1) MessageBox.Show("Сумма вероятностей должна быть равна 1");
+            if (sum!= 1) MessageBox.Show("Сумма вероятностей должна быть равна 1");
+            else
             {
-                
-                for (int i = 0; i < grid1.RowCount-1; i++)
+                double ent = 0;
+                for (int i = 0; i < grid1.RowCount; i++)
                 {
-                    double prob = double.Parse(grid1.Rows[i].Cells[1].Value.ToString());
-                    ent += prob * Math.Log(prob, 2);
+                    double prob = Convert.ToDouble(grid1.Rows[i].Cells[1].Value.ToString());
+                    ent+=-prob*Math.Log(prob, 2);
                 }
-                ent = -ent;
                 textBox1.Text = Math.Round(ent, 3).ToString();
             }
         }

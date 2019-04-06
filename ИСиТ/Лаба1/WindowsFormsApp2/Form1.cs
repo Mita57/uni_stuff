@@ -84,7 +84,6 @@ namespace WindowsFormsApp2
                 {
                     grid1.Rows[1].Cells[1].Style.BackColor = Color.Tomato;
                     flag4 = false;
-                    MessageBox.Show("asd");
                 }
             }
             if (flag3 && flag4)
