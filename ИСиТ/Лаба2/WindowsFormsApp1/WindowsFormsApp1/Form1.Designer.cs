@@ -123,6 +123,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grid1);
             this.Name = "Form1";
+            this.Text = "Расчет энтропии для N случайных величин ";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

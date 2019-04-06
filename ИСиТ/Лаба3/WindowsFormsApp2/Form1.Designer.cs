@@ -143,7 +143,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grid1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Расчет энтропии и вероятности событий";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid2)).EndInit();

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.grid1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.symbol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +49,19 @@
             this.grid1.Size = new System.Drawing.Size(445, 121);
             this.grid1.TabIndex = 0;
             this.grid1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid1_CellEndEdit);
+            // 
+            // symbol
+            // 
+            this.symbol.HeaderText = "X";
+            this.symbol.MaxInputLength = 1;
+            this.symbol.Name = "symbol";
+            this.symbol.Width = 200;
+            // 
+            // prob
+            // 
+            this.prob.HeaderText = "P";
+            this.prob.Name = "prob";
+            this.prob.Width = 200;
             // 
             // button1
             // 
@@ -69,19 +82,6 @@
             this.textBox1.Size = new System.Drawing.Size(326, 20);
             this.textBox1.TabIndex = 2;
             // 
-            // symbol
-            // 
-            this.symbol.HeaderText = "X";
-            this.symbol.MaxInputLength = 1;
-            this.symbol.Name = "symbol";
-            this.symbol.Width = 200;
-            // 
-            // prob
-            // 
-            this.prob.HeaderText = "P";
-            this.prob.Name = "prob";
-            this.prob.Width = 200;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -91,7 +91,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grid1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Расчет энтропии для 2 ДСВ";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid1)).EndInit();
             this.ResumeLayout(false);
