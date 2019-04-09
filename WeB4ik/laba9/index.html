@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <title>Check mother</title>
+    <title>PACHIMU CHVANSTVO</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
+
 <body>
     <h1> Страничка по заказу </h1>
+    <P></P>
+    <form name="meme">
+        <fieldset>
+            <legend>Параметры страницы</legend>
+            Заголовок <input type="text" id="hdr">
+            <p>
+                Картинка: <br>
+                <input type="checkbox" id="dog"> Собака <input type="checkbox" id="cat"> Кошка <input type="checkbox"
+                    id="fish"> Рыбки <input type="checkbox" id="flower"> Цветок <P></P>
+                Подпись <input type="text" id="sign">
+                <p></p>
+                Цвет фона:
+                <select name="body" id="body">
+                    <option value="white">Белый</option>
+                    <option value="black">Черный</option>
+                    <option value="blue">Синий</option>
+                    <option value="yellow">Желтый</option>
+                    <option value="red">Красный</option>
+                    <option value="green">Зеленый</option>
+                    <option value="purple">Фиолетовый</option>
+                </select>
+                <P>
+                    Цвет текста: <br>
+                    <input type="radio" name="txt_color" value="black"> Черный <br>
+                    <input type="radio" name="txt_color" value="blue"> Синий <br>
+                    <input type="radio" name="txt_color" value="green"> Зеленый <br>
+                    <input type="radio" name="txt_color" value="white"> Белый <br>
+                    <input type="radio" name="txt_color" value="red"> Красный <br>
+                    <input type="radio" name="txt_color" value="yellow"> Желтый <br>
+                    <div id="buttons">
+                        <input type="reset" value="Сбросить"> <input type="button" onclick="checkMother()"
+                            value="Показать">
+                    </div>
+    </form>
 </body>
+
 </html>

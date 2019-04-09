@@ -151,9 +151,8 @@ namespace Laba4
                 double entropy = 0;
                 for (int i = 0; i<probs.Length; i++)
                 {
-                    entropy += probs[i] * Math.Log(2, probs[i]);
+                    entropy += -probs[i]*Math.Log(probs[i], 2);
                 }
-                entropy = -entropy;
                 textBox1.Text = entropy.ToString();
             }
 

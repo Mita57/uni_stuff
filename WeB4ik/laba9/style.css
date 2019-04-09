@@ -1,0 +1,38 @@
+body{
+    background-image: url('gopnik.gif');
+    font-family: Calibri;
+}
+h1{
+    background-color:#009688;
+    color:white;
+    width:400px;
+    margin:auto;
+    padding:10px;
+    text-align:center;
+}
+form{
+    padding:30px;
+    background-color:white;
+    border-radius:20px;
+    width:500px;
+    margin:auto;
+}
+#buttons{
+    width:160px;
+    margin:auto;
+}
+#buttons input{
+    padding:5px;
+    background-color:#009688;
+    color:white;
+    border-radius:5px;
+}
+#buttons input:hover{
+    background-color:#00BCD4;
+}
+#final_meme{
+    font-family: Impact;
+    text-align: center;
+    color:white;
+    -webkit-text-stroke: 3px black;
+}
