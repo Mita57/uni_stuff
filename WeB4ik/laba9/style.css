@@ -1,4 +1,4 @@
-body{
+#kostyl{
     background-image: url('gopnik.gif');
     font-family: Calibri;
 }
@@ -33,6 +33,12 @@ form{
 #final_meme{
     font-family: Impact;
     text-align: center;
-    color:white;
+    color:none;
     -webkit-text-stroke: 3px black;
+    background-image:none;
+    height: 400px;
+    font-size: 40pt;
+}
+#final_meme img{
+    height: 400px;
 }
