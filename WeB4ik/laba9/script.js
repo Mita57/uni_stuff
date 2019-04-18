@@ -16,14 +16,11 @@ function checkMother(){
             break;
         }
     }
-    var result = window.open("", "", "width=500pt,height=450pt");
-    console.log(color);
-    console.log(txt_ar);
-    console.log(txt_color);
-    result.document.writeln('<link rel="stylesheet" href="style.css">');
-    result.document.writeln('<body id="final_meme" style="text-align:center; color:'+ txt_color+"; background-color:"+ color+'">');
-    result.document.writeln(document.getElementById('hdr').value +"<br>");
-    result.document.write('<img src="'+picture+'.jpg"> <br>');
-    result.document.write(document.getElementById('sign').value +"<br>");
-    result.document.writeln("</body>");
+    var result = "";
+    result+=('<div id="final_meme" style="text-align:center; color:'+ txt_color+"; background-color:"+ color+'">');
+    result+=(document.getElementById('hdr').value +"<br>");
+    result+=('<img src="'+picture+'.jpg"> <br>');
+    result+=(document.getElementById('sign').value +"<br>");
+    result+=("</div>");
+    document.getElementById('cheb').innerHTML = result;
 }

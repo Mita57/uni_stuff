@@ -35,7 +35,7 @@ namespace Exercise_5
             place = 0;
             for (int i = 0; i < a_init.Length; i++)
             {
-                if (a.Contains(a_init[i]) == false||U.Contains(a_init[i]))
+                if (a.Contains(a_init[i]) == false&&U.Contains(a_init[i]))
                 {
                     Array.Resize(ref a, a.Length + 1);
                     a[place] = a_init[i];
@@ -49,7 +49,7 @@ namespace Exercise_5
             place = 0;
             for (int i = 0; i < b_init.Length; i++)
             {
-                if (b.Contains(b_init[i]) == false|| U.Contains(b_init[i]))
+                if (b.Contains(b_init[i]) == false&&U.Contains(b_init[i]))
                 {
                     Array.Resize(ref b, b_init.Length + 1);
                     b[place] = b_init[i];
@@ -65,7 +65,7 @@ namespace Exercise_5
                 place = 0;
                 for (int i = 0; i < c_init.Length; i++)
                 {
-                    if (c.Contains(c_init[i]) == false|| U.Contains(c[i]))
+                    if (c.Contains(c_init[i]) == false&& U.Contains(c[i]))
                     {
                         Array.Resize(ref c, c_init.Length + 1);
                         c[place] = c_init[i];

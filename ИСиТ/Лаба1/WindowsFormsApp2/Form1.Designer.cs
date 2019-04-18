@@ -39,7 +39,7 @@
             // grid1
             // 
             this.grid1.AllowUserToAddRows = false;
-            this.grid1.BackgroundColor = System.Drawing.Color.Khaki;
+            this.grid1.BackgroundColor = System.Drawing.Color.White;
             this.grid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.symbol,
@@ -66,11 +66,11 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(82, 155);
+            this.button1.Location = new System.Drawing.Point(165, 156);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(327, 34);
+            this.button1.Size = new System.Drawing.Size(130, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Рассчииать энтропию";
+            this.button1.Text = "Расчитать энтропию";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

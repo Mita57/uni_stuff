@@ -90,12 +90,10 @@ namespace WindowsFormsApp2
             {
                 if (prob1 + prob2 > 1)
                 {
-                    MessageBox.Show("Сумма вероятностей не может быть больше единицы");
                     flag5 = false;
                 }
                 else if (prob1 + prob2 != 1)
                 {
-                    MessageBox.Show("Сумма вероятностей должна быть равна единице");
                     flag5 = false;
                 }
                 else flag5 = true;
@@ -110,20 +108,26 @@ namespace WindowsFormsApp2
                 }
                 else flag6 = true;
             }
-            if (flag1 && flag2 && flag3 && flag4 && flag5 && flag6)
+            if (flag1 && flag2 && flag3 && flag4 && flag6)
             {
                 button1.Enabled = true;
             }
             else button1.Enabled = false;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double entropy = 0;
-            entropy += prob1*(Math.Log(prob1, 2));
-            entropy += prob2*(Math.Log(prob2, 2));
-            entropy = -entropy;
-            textBox1.Text = Math.Round(entropy, 4).ToString();
+            if (!flag5) MessageBox.Show("Сумма вероятностей должна быть равна 1");
+            else
+            {
+                double entropy = 0;
+                entropy += prob1 * (Math.Log(prob1, 2));
+                entropy += prob2 * (Math.Log(prob2, 2));
+                entropy = -entropy;
+                textBox1.Text = Math.Round(entropy, 4).ToString();
+            }
         }
+
     }
 }

@@ -5,3 +5,10 @@ C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная матема�
 C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_8\Exercise_8\Exercise_8\obj\Debug\Exercise_8.csproj.CoreCompileInputs.cache
 C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_8\Exercise_8\Exercise_8\obj\Debug\Exercise_8.exe
 C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_8\Exercise_8\Exercise_8\obj\Debug\Exercise_8.pdb
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_8\Exercise_8\bin\Debug\Exercise_8.exe.config
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_8\Exercise_8\bin\Debug\Exercise_8.exe
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_8\Exercise_8\bin\Debug\Exercise_8.pdb
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_8\Exercise_8\obj\Debug\Exercise_8.csprojAssemblyReference.cache
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_8\Exercise_8\obj\Debug\Exercise_8.csproj.CoreCompileInputs.cache
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_8\Exercise_8\obj\Debug\Exercise_8.exe
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_8\Exercise_8\obj\Debug\Exercise_8.pdb

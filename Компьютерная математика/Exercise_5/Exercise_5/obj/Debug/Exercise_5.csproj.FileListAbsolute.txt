@@ -19,3 +19,10 @@ D:\Компьютерная математика\Exercise_5\Exercise_5\obj\Debug
 D:\Компьютерная математика\Exercise_5\Exercise_5\obj\Debug\Exercise_5.exe
 D:\Компьютерная математика\Exercise_5\Exercise_5\obj\Debug\Exercise_5.pdb
 D:\Компьютерная математика\Exercise_5\Exercise_5\obj\Debug\Exercise_5.csprojAssemblyReference.cache
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_5\Exercise_5\bin\Debug\Exercise_5.exe.config
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_5\Exercise_5\bin\Debug\Exercise_5.exe
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_5\Exercise_5\bin\Debug\Exercise_5.pdb
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_5\Exercise_5\obj\Debug\Exercise_5.csprojAssemblyReference.cache
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_5\Exercise_5\obj\Debug\Exercise_5.csproj.CoreCompileInputs.cache
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_5\Exercise_5\obj\Debug\Exercise_5.exe
+C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise_5\Exercise_5\obj\Debug\Exercise_5.pdb

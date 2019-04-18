@@ -11,7 +11,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.WriteLine("Введите первое множество");
-            char[] splitter = {' '};
+            char[] splitter = { ' ', ',',')', '(' };
             var setA = Console.ReadLine().Split(splitter, StringSplitOptions.RemoveEmptyEntries);
             Console.WriteLine("Введите второе множество");
             var setB = Console.ReadLine().Split(splitter, StringSplitOptions.RemoveEmptyEntries);
@@ -22,6 +22,7 @@ namespace ConsoleApp1
                     Console.WriteLine(setA[i].ToString()+ "; "+ setB[j].ToString());
                 }
             }
+            Console.ReadLine();
         }
     }
 }

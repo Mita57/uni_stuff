@@ -95,7 +95,6 @@ namespace WindowsFormsApp1
                         sum += double.Parse(grid1.Rows[i].Cells[1].Value.ToString());
                         if (sum > 1)
                         {
-                            MessageBox.Show("Сумма вероятностей не может быть больше единицы");
                             flag4 = false;
                         }
                         else flag4 = true;
@@ -106,7 +105,7 @@ namespace WindowsFormsApp1
                     flag4 = false;
                 }
             }
-            if (grid1.Rows.Count > 1 && flag1 && flag2 && flag3 && flag4)
+            if (grid1.Rows.Count > 1 && flag1 && flag2 && flag3)
             {
                 button1.Enabled = true;
             }
@@ -116,22 +115,40 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double sum=0;
-
-            for (int i = 0; i < grid1.RowCount; i++)
+            bool flag5 = false;
+            for (int i = 0; i < grid1.Rows.Count; i++)
             {
-                sum += double.Parse(grid1.Rows[i].Cells[1].Value.ToString());
+                if (grid1.Rows[i].Cells[1].Value == null)
+                {
+                    grid1.Rows[i].Cells[1].Style.BackColor = Color.Tomato;
+                    flag5 = false;
+                }
+                else
+                {
+                    grid1.Rows[i].Cells[1].Style.BackColor = Color.White;
+                    flag5 = true;
+                }
             }
-            if (sum!= 1) MessageBox.Show("Сумма вероятностей должна быть равна 1");
+            if (!flag4) MessageBox.Show("Сумма вероятностей должна быть равна 1");
             else
             {
-                double ent = 0;
+                double sum = 0;
+
                 for (int i = 0; i < grid1.RowCount; i++)
                 {
-                    double prob = Convert.ToDouble(grid1.Rows[i].Cells[1].Value.ToString());
-                    ent+=-prob*Math.Log(prob, 2);
+                    sum += double.Parse(grid1.Rows[i].Cells[1].Value.ToString());
                 }
-                textBox1.Text = Math.Round(ent, 3).ToString();
+                if (sum != 1) MessageBox.Show("Сумма вероятностей должна быть равна 1");
+                else
+                {
+                    double ent = 0;
+                    for (int i = 0; i < grid1.RowCount; i++)
+                    {
+                        double prob = Convert.ToDouble(grid1.Rows[i].Cells[1].Value.ToString());
+                        ent += -prob * Math.Log(prob, 2);
+                    }
+                    textBox1.Text = Math.Round(ent, 3).ToString();
+                }
             }
         }
 

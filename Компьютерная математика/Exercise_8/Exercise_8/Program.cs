@@ -35,7 +35,7 @@ namespace Exercise_8
             place = 0;
             for (int i = 0; i < a_init.Length; i++)
             {
-                if (a.Contains(a_init[i]) == false || U.Contains(a_init[i]))
+                if (a.Contains(a_init[i]) == false && U.Contains(a_init[i]))
                 {
                     Array.Resize(ref a, a.Length + 1);
                     a[place] = a_init[i];
@@ -49,7 +49,7 @@ namespace Exercise_8
             place = 0;
             for (int i = 0; i < b_init.Length; i++)
             {
-                if (b.Contains(b_init[i]) == false || U.Contains(b_init[i]))
+                if (b.Contains(b_init[i]) == false && U.Contains(b_init[i]))
                 {
                     Array.Resize(ref b, b_init.Length + 1);
                     b[place] = b_init[i];
@@ -65,7 +65,7 @@ namespace Exercise_8
                 place = 0;
                 for (int i = 0; i < c_init.Length; i++)
                 {
-                    if (c.Contains(c_init[i]) == false || U.Contains(c[i]))
+                    if (c.Contains(c_init[i]) == false && U.Contains(c[i]))
                     {
                         Array.Resize(ref c, c_init.Length + 1);
                         c[place] = c_init[i];
@@ -106,8 +106,11 @@ namespace Exercise_8
             Console.ReadLine();
             Console.WriteLine("________________________________________________________________________");
             check1();
+            Console.WriteLine();
             check2();
+            Console.WriteLine();
             check3();
+            Console.WriteLine();
             Console.ReadLine();
         }
 
@@ -359,8 +362,10 @@ namespace Exercise_8
             string[] mAnB = cross(mA, B, B).Split(diver);
             string full = union(mAnB, Anmb, AnB);
             Console.WriteLine(full);
+            Console.WriteLine();
             crtarr(U, full);
             Console.WriteLine(union(A, B, B));
+            Console.WriteLine();
             crtarr(U, union(A, B, B));
         }
         //part2
@@ -378,6 +383,7 @@ namespace Exercise_8
             Console.WriteLine(final);
             crtarr(U, final);
             string[] mB = complete(B, U).Split(diver);
+            Console.WriteLine();
             Console.WriteLine(cross(mB, mC, mC));
             crtarr(U, cross(mB, mC, mC));
         }
@@ -397,6 +403,7 @@ namespace Exercise_8
             string final = complete(lul, U);
             Console.WriteLine(final);
             crtarr(U, final);
+            Console.WriteLine();
             Console.WriteLine(cross(C, mB, mB));
             crtarr(U, cross(C,mB,mB));
         }
