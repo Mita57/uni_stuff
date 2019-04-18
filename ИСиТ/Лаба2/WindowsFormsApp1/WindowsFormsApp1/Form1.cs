@@ -122,6 +122,7 @@ namespace WindowsFormsApp1
                 {
                     grid1.Rows[i].Cells[1].Style.BackColor = Color.Tomato;
                     flag5 = false;
+                    break;
                 }
                 else
                 {
@@ -129,26 +130,23 @@ namespace WindowsFormsApp1
                     flag5 = true;
                 }
             }
-            if (!flag4) MessageBox.Show("Сумма вероятностей должна быть равна 1");
-            else
+            if (!flag4)
             {
-                double sum = 0;
-
+                MessageBox.Show("Сумма вероятностей должна быть равна 1");
+            }
+            else if (flag5)
+            {
+                double ent = 0;
                 for (int i = 0; i < grid1.RowCount; i++)
                 {
-                    sum += double.Parse(grid1.Rows[i].Cells[1].Value.ToString());
+                    double prob = Convert.ToDouble(grid1.Rows[i].Cells[1].Value.ToString());
+                    ent += -prob * Math.Log(prob, 2);
                 }
-                if (sum != 1) MessageBox.Show("Сумма вероятностей должна быть равна 1");
-                else
-                {
-                    double ent = 0;
-                    for (int i = 0; i < grid1.RowCount; i++)
-                    {
-                        double prob = Convert.ToDouble(grid1.Rows[i].Cells[1].Value.ToString());
-                        ent += -prob * Math.Log(prob, 2);
-                    }
-                    textBox1.Text = Math.Round(ent, 3).ToString();
-                }
+                textBox1.Text = Math.Round(ent, 3).ToString();
+            }
+            else
+            {
+                MessageBox.Show("Проверьте правильность введенных данных");
             }
         }
 

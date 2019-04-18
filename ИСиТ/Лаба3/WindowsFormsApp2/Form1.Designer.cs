@@ -36,17 +36,14 @@
             this.grid2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.grid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // grid1
             // 
             this.grid1.AllowUserToAddRows = false;
-            this.grid1.BackgroundColor = System.Drawing.Color.Khaki;
+            this.grid1.BackgroundColor = System.Drawing.Color.White;
             this.grid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.symbol,
@@ -71,17 +68,17 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(198, 152);
+            this.button1.Location = new System.Drawing.Point(116, 152);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(327, 34);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Рассчииать энтропию и вероятности событий";
+            this.button1.Text = "Расчитать энтропию и вероятности событий";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(198, 208);
+            this.textBox1.Location = new System.Drawing.Point(116, 208);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(325, 20);
@@ -93,7 +90,7 @@
             this.grid2.AllowUserToDeleteRows = false;
             this.grid2.AllowUserToResizeColumns = false;
             this.grid2.AllowUserToResizeRows = false;
-            this.grid2.BackgroundColor = System.Drawing.Color.Khaki;
+            this.grid2.BackgroundColor = System.Drawing.Color.White;
             this.grid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -116,28 +113,11 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(32, 163);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Количество элементов";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(35, 193);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 4;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(537, 240);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.grid2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
@@ -147,7 +127,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,8 +142,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn symbol;
         private System.Windows.Forms.DataGridViewTextBoxColumn prob;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 

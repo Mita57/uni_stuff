@@ -89,14 +89,8 @@ namespace WindowsFormsApp2
             }
             if (flag3 && flag4)
             {
-                if (prob1 + prob2 > 1)
+                if (prob1 + prob2 != 1)
                 {
-                    MessageBox.Show("Сумма вероятностей не может быть больше единицы");
-                    flag5 = false;
-                }
-                else if (prob1 + prob2 != 1)
-                {
-                    MessageBox.Show("Сумма вероятностей должна быть равна единице");
                     flag5 = false;
                 }
                 else flag5 = true;
@@ -111,7 +105,7 @@ namespace WindowsFormsApp2
                 }
                 else flag6 = true;
             }
-            if (flag1 && flag2 && flag3 && flag4 && flag5 && flag6)
+            if (flag1 && flag2 && flag3 && flag4  && flag6)
             {
                 button1.Enabled = true;
             }
@@ -120,30 +114,34 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double entropy = 0;
-            entropy += prob1*(Math.Log(prob1, 2));
-            entropy += prob2*(Math.Log(prob2, 2));
-            entropy = -entropy;
-            textBox1.Text = Math.Round(entropy, 4).ToString();
+            if (!flag5) MessageBox.Show("Сумма вероятностей должна быть равна 1");
+            else
+            {
+                double entropy = 0;
+                entropy += prob1 * (Math.Log(prob1, 2));
+                entropy += prob2 * (Math.Log(prob2, 2));
+                entropy = -entropy;
+                textBox1.Text = Math.Round(entropy, 4).ToString();
 
-            char char1 = char.Parse(grid1.Rows[0].Cells[0].Value.ToString());
-            char char2 = char.Parse(grid1.Rows[1].Cells[0].Value.ToString());
-            double probar1 = (prob1*prob1);
-            grid2.RowCount = 4;
-            //aa
-            grid2.Rows[0].Cells[0].Value = (char1.ToString() + char1.ToString());
-            grid2.Rows[0].Cells[1].Value = probar1;
-            //ab
-            double probar2 = (prob1 * prob2);
-            grid2.Rows[1].Cells[0].Value = (char1.ToString() + char2.ToString());
-            grid2.Rows[1].Cells[1].Value = probar2;
-            //ba
-            grid2.Rows[2].Cells[0].Value = (char2.ToString() + char1.ToString());
-            grid2.Rows[2].Cells[1].Value = probar2;
-            //bb
-            double probar3 = prob2 * prob2;
-            grid2.Rows[3].Cells[0].Value = (char2.ToString() + char2.ToString());
-            grid2.Rows[3].Cells[1].Value = probar3;
+                char char1 = char.Parse(grid1.Rows[0].Cells[0].Value.ToString());
+                char char2 = char.Parse(grid1.Rows[1].Cells[0].Value.ToString());
+                double probar1 = (prob1 * prob1);
+                grid2.RowCount = 4;
+                //aa
+                grid2.Rows[0].Cells[0].Value = (char1.ToString() + char1.ToString());
+                grid2.Rows[0].Cells[1].Value = probar1;
+                //ab
+                double probar2 = (prob1 * prob2);
+                grid2.Rows[1].Cells[0].Value = (char1.ToString() + char2.ToString());
+                grid2.Rows[1].Cells[1].Value = probar2;
+                //ba
+                grid2.Rows[2].Cells[0].Value = (char2.ToString() + char1.ToString());
+                grid2.Rows[2].Cells[1].Value = probar2;
+                //bb
+                double probar3 = prob2 * prob2;
+                grid2.Rows[3].Cells[0].Value = (char2.ToString() + char2.ToString());
+                grid2.Rows[3].Cells[1].Value = probar3;
+            }
         }
     }
 }

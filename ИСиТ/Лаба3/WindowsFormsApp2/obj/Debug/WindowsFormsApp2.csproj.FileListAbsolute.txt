@@ -38,3 +38,13 @@ C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Лаба3\WindowsFormsApp2\ob
 C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
 C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 C:\Users\57thr\Documents\GitHub\uni_stuff\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+E:\ИСиТ\Лаба3\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+E:\ИСиТ\Лаба3\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+E:\ИСиТ\Лаба3\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+E:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojAssemblyReference.cache
+E:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+E:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+E:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+E:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+E:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+E:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
