@@ -89,10 +89,7 @@ namespace Laba4
 
         }
 
-        static int row = 0; //idk wut 4 but it doesn't work without it
-        private string[] vals; //possible variants
-
-
+        static string[] vals; //possible variants
         private void button1_Click(object sender, EventArgs e)
         {
             //check if the sum of probs isn't 1
@@ -116,8 +113,6 @@ namespace Laba4
             }
             else
             {
-                grid2.Rows.Clear();
-                grid2.Refresh();
                 row = 0;
                 char[] elems = new char[grid1.RowCount];
                 for (int j = 0; j < grid1.RowCount; j++)
@@ -127,10 +122,13 @@ namespace Laba4
                 int k = Convert.ToInt32(power.Value.ToString()); 
                 double rows2 = Math.Pow(elems.Length, k); //amout of possible variants
                 progressBar1.Maximum = Convert.ToInt32(rows2);
+                grid2.RowCount = 1;
+                grid2.Refresh();
                 progressBar1.Value = 0;
                 grid2.RowCount = Convert.ToInt32(rows2);
                 Array.Resize(ref vals ,Convert.ToInt32(rows2));
                 printAllKLength(elems, k); //getting all varitants
+                progressBar1.Value = row;
                 double [] probs = new double[Convert.ToInt32(grid1.RowCount)];
                 for(int i = 0; i < probs.Length; i++)
                 {
@@ -158,30 +156,30 @@ namespace Laba4
                     entropy += -probs[i]*Math.Log(probs[i], 2);
                 }
                 textBox1.Text = entropy.ToString();
+                progressBar1.Value = 0;
             }
 
         }
 
 
-        private void pbprogress()
-        {
-            progressBar1.Value++;
-        }
 
-        private void printAllKLength(char[] set, int k)
+
+        private int printAllKLength(char[] set, int k)
         {
             int n = set.Length;
             printAllKLengthRec(set, "", n, k);
+            return row;
         }
 
+        static int row = 0;
 
         private int printAllKLengthRec(char[] set, String prefix, int n, int k)
         {
             if (k == 0)
             {
-                grid2.Rows[row].Cells[0].Value = prefix;
+                grid2.Rows[row].Cells[0].Value = prefix.ToString();
                 row++;
-                pbprogress();
+                progressBar1.Value = row;
                 return (row);
             }
             for (int i = 0; i < n; ++i)
