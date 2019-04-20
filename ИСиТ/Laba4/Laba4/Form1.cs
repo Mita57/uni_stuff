@@ -156,7 +156,6 @@ namespace Laba4
                     entropy += -probs[i]*Math.Log(probs[i], 2);
                 }
                 textBox1.Text = entropy.ToString();
-                progressBar1.Value = 0;
             }
 
         }
