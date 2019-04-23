@@ -18,9 +18,9 @@ namespace exercise2_2
             string[] subinit = init.Split(',');
             int countA = 0;
             int countB = 0;
-            for (int i = 0; i<subinit.Length; i++)
+            for (int i = 0; i < subinit.Length; i++)
             {
-                subinit[i]=subinit[i].Replace(",","");
+                subinit[i] = subinit[i].Replace(",", "");
                 subinit[i] = subinit[i].Replace(" ", "");
                 subinit[i] = subinit[i].Replace("(", "");
                 subinit[i] = subinit[i].Replace(")", "");
@@ -40,22 +40,48 @@ namespace exercise2_2
                     countB++;
                 }
             }
-            string finalA="(";
+            string[] check = new string[0];
+            int checkCount = 0;
             for (int i = 0; i < arrA.Length; i++)
             {
-                // if this is the last element semicolon isn't added and a closing bracket
-                if (i == arrA.Length-1) finalA += arrA[i]+")";
-                else finalA+=arrA[i].ToString() +"; ";
+                for (int j = 0; j < arrB.Length; j++)
+                {
+                    Array.Resize(ref check, check.Length + 1);
+                    check[checkCount] = arrA[i].ToString() + ";" + arrB[j].ToString();
+                    checkCount++;
+                }
+            }
+            bool flag = true;
+            for (int i = 0; i < check.Length; i++)
+            {
+                if (subinit.Contains(check[i]) == false)
+                {
+                    Console.WriteLine("Введены неверные данные");
+                    flag = false;
+                    break;
+                }
+
             }
 
-            string finalB = "(";
-            for (int i = 0; i < arrB.Length; i++)
+            if (flag == true)
             {
-                if (i == arrB.Length-1) finalB += arrB[i]+")";
-                else finalB += arrB[i].ToString() + "; ";
+                string finalA = "(";
+                for (int i = 0; i < arrA.Length; i++)
+                {
+                    // if this is the last element semicolon isn't added and a closing bracket is added
+                    if (i == arrA.Length - 1) finalA += arrA[i] + ")";
+                    else finalA += arrA[i].ToString() + "; ";
+                }
+
+                string finalB = "(";
+                for (int i = 0; i < arrB.Length; i++)
+                {
+                    if (i == arrB.Length - 1) finalB += arrB[i] + ")";
+                    else finalB += arrB[i].ToString() + "; ";
+                }
+                Console.WriteLine(finalA);
+                Console.WriteLine(finalB);
             }
-            Console.WriteLine(finalA);
-            Console.WriteLine(finalB);
             Console.ReadLine();
         }
     }

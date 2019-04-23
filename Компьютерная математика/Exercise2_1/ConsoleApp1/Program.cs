@@ -11,15 +11,28 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.WriteLine("Введите первое множество");
-            char[] splitter = { ' ', ',',')', '(' };
-            var setA = Console.ReadLine().Split(splitter, StringSplitOptions.RemoveEmptyEntries);
-            Console.WriteLine("Введите второе множество");
-            var setB = Console.ReadLine().Split(splitter, StringSplitOptions.RemoveEmptyEntries);
-            for (int i = 0; i<setA.Length; i++)
+            char[] splitter = {' '};
+            string [] strA = Console.ReadLine().Split(splitter, StringSplitOptions.RemoveEmptyEntries);
+            List<string> setA = new List<string>();
+            for(int i = 0; i <strA.Length; i++)
             {
-                for(int j = 0; j<setB.Length; j++)
+                setA.Add(strA[i]);
+            }
+            setA=setA.Distinct().ToList();
+            Console.WriteLine("Введите второе множество");
+            string[] strB = Console.ReadLine().Split(splitter, StringSplitOptions.RemoveEmptyEntries);
+            List<string> setB = new List<string>();
+            for (int i = 0; i<strB.Length; i++)
+            {
+                setB.Add(strB[i]);
+            }
+            setB=setB.Distinct().ToList();
+            Console.WriteLine();
+            for(int i = 0; i < setA.Count; i++)
+            {
+                for (int j = 0; j < setB.Count; j++)
                 {
-                    Console.WriteLine(setA[i].ToString()+ "; "+ setB[j].ToString());
+                    Console.Write(" (" + setA[i] + "; " + setB[j] + "),");
                 }
             }
             Console.ReadLine();

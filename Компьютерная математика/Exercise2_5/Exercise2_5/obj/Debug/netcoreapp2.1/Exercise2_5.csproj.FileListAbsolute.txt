@@ -1,0 +1,11 @@
+K:\Компьютерная математика\Exercise2_5\Exercise2_5\bin\Debug\netcoreapp2.1\Exercise2_5.deps.json
+K:\Компьютерная математика\Exercise2_5\Exercise2_5\bin\Debug\netcoreapp2.1\Exercise2_5.runtimeconfig.json
+K:\Компьютерная математика\Exercise2_5\Exercise2_5\bin\Debug\netcoreapp2.1\Exercise2_5.runtimeconfig.dev.json
+K:\Компьютерная математика\Exercise2_5\Exercise2_5\bin\Debug\netcoreapp2.1\Exercise2_5.dll
+K:\Компьютерная математика\Exercise2_5\Exercise2_5\bin\Debug\netcoreapp2.1\Exercise2_5.pdb
+K:\Компьютерная математика\Exercise2_5\Exercise2_5\obj\Debug\netcoreapp2.1\Exercise2_5.csprojAssemblyReference.cache
+K:\Компьютерная математика\Exercise2_5\Exercise2_5\obj\Debug\netcoreapp2.1\Exercise2_5.csproj.CoreCompileInputs.cache
+K:\Компьютерная математика\Exercise2_5\Exercise2_5\obj\Debug\netcoreapp2.1\Exercise2_5.AssemblyInfoInputs.cache
+K:\Компьютерная математика\Exercise2_5\Exercise2_5\obj\Debug\netcoreapp2.1\Exercise2_5.AssemblyInfo.cs
+K:\Компьютерная математика\Exercise2_5\Exercise2_5\obj\Debug\netcoreapp2.1\Exercise2_5.dll
+K:\Компьютерная математика\Exercise2_5\Exercise2_5\obj\Debug\netcoreapp2.1\Exercise2_5.pdb

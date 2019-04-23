@@ -5,10 +5,10 @@ C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная матема�
 C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise2_2\exercise2_2\exercise2_2\obj\Debug\exercise2_2.csproj.CoreCompileInputs.cache
 C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise2_2\exercise2_2\exercise2_2\obj\Debug\exercise2_2.exe
 C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\Exercise2_2\exercise2_2\exercise2_2\obj\Debug\exercise2_2.pdb
-C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\exercise2_2\exercise2_2\bin\Debug\exercise2_2.exe.config
-C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\exercise2_2\exercise2_2\bin\Debug\exercise2_2.exe
-C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\exercise2_2\exercise2_2\bin\Debug\exercise2_2.pdb
-C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\exercise2_2\exercise2_2\obj\Debug\exercise2_2.csprojAssemblyReference.cache
-C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\exercise2_2\exercise2_2\obj\Debug\exercise2_2.csproj.CoreCompileInputs.cache
-C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\exercise2_2\exercise2_2\obj\Debug\exercise2_2.exe
-C:\Users\57thr\Documents\GitHub\uni_stuff\Компьютерная математика\exercise2_2\exercise2_2\obj\Debug\exercise2_2.pdb
+K:\Компьютерная математика\exercise2_2\exercise2_2\bin\Debug\exercise2_2.exe.config
+K:\Компьютерная математика\exercise2_2\exercise2_2\bin\Debug\exercise2_2.exe
+K:\Компьютерная математика\exercise2_2\exercise2_2\bin\Debug\exercise2_2.pdb
+K:\Компьютерная математика\exercise2_2\exercise2_2\obj\Debug\exercise2_2.csprojAssemblyReference.cache
+K:\Компьютерная математика\exercise2_2\exercise2_2\obj\Debug\exercise2_2.csproj.CoreCompileInputs.cache
+K:\Компьютерная математика\exercise2_2\exercise2_2\obj\Debug\exercise2_2.exe
+K:\Компьютерная математика\exercise2_2\exercise2_2\obj\Debug\exercise2_2.pdb
