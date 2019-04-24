@@ -28,28 +28,808 @@ namespace exercise2_7
             Console.WriteLine("Выберите способ задания отношения: \n 1. Булева матрица \n 2. Множество пар ");
             if (Console.ReadLine() == "1")
             {
-                bitArray=matrix(setSorted);
+                bitArray = matrix(setSorted);
             }
-            else 
+            else
             {
-                bitArray=sets(setSorted);
+                bitArray = sets(setSorted);
             }
             bool checkReflex = true;
-            for(int i = 0; i < setSorted.Length; i++)
+            for (int i = 0; i < setSorted.Length; i++)
             {
-                for(int j = 0; j < setSorted.Length; j++)
+                for (int j = 0; j < setSorted.Length; j++)
                 {
-                    if (j == i && bitArray[j,i] != 1)
+                    if (j == i && bitArray[j, i] != 1)
                     {
                         checkReflex = false;
+                        break;
                     }
                 }
             }
             //рефлексивность
             if (checkReflex) Console.WriteLine("Отношение рефлексивно");
             else Console.WriteLine("Отношение не рефлексивно");
-
+            //антирефлексивность
+            bool checkAntiReflex = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (j == i && bitArray[i, j] != 0)
+                    {
+                        checkAntiReflex = false;
+                        break;
+                    }
+                }
+            }
+            if (checkAntiReflex)
+            {
+                Console.WriteLine("Отошение антисимметрично");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не антисимметричное");
+            }
+            // симметричность
+            bool checkSymmetry = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] != bitArray[setSorted.Length - i, setSorted.Length - j])
+                    {
+                        checkSymmetry = false;
+                        break;
+                    }
+                }
+            }
+            if (checkSymmetry)
+            {
+                Console.WriteLine("Отношение симметрично");
+            }
+            else
+            {
+                Console.WriteLine("Отношение симметрично");
+            }
+            //антисимметрия
+            bool checkAntiSymmetry = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == bitArray[setSorted.Length - i, setSorted.Length - j])
+                    {
+                        checkAntiSymmetry = false;
+                        break;
+                    }
+                }
+            }
+            if (checkAntiSymmetry)
+            {
+                Console.WriteLine("Отношение антисимметрично");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не антисимметрично");
+            }
+            //транзитивность
+            bool checkTransitive = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                int counter = 0;
+                int columnCounter = 0;
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == 1)
+                    {
+                        counter++;
+                    }
+                    if (bitArray[j, i] == 1)
+                    {
+                        columnCounter++;
+                    }
+                }
+                if (counter < 3 || columnCounter < 3)
+                {
+                    checkTransitive = false;
+                    break;
+                }
+            }
+            if (checkTransitive)
+            {
+                Console.WriteLine("Отношение тразитивно");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не транзитивно");
+            }
+            //полнота
+            bool checkFull = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                int counterFull = 0;
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == 1 && i != j)
+                    {
+                        counterFull++;
+                    }
+                }
+                if (counterFull == 0)
+                {
+                    checkFull = false;
+                    break;
+                }
+                if (!checkFull)
+                {
+                    break;
+                }
+            }
+            if (checkFull)
+            {
+                Console.WriteLine("Отношение полное");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не полное");
+            }
+            //Эквивалентность
+            if (checkSymmetry && checkTransitive && checkReflex)
+            {
+                Console.WriteLine("Отношение эквивалентно");
+            }
+            //частичный порядок
+            if (checkReflex && checkAntiSymmetry && checkTransitive)
+            {
+                Console.WriteLine("Отношение частично упорядочено");
+            }
+            //линейный порядок
+            bool linearOrder = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == bitArray[j, i])
+                    {
+                        linearOrder = false;
+                        break;
+                    }
+                    if (!linearOrder)
+                    {
+                        break;
+                    }
+                }
+            }
+            //полный порядок
+            bool fullOrder = true;
+            if (linearOrder)
+            {
+                for (int i = 1; i < setSorted.Length; i++)
+                {
+                    for (int j = 0; j < i; j++)
+                    {
+                        if (bitArray[i, j] != 1)
+                        {
+                            fullOrder = false;
+                            break;
+                        }
+                    }
+                    if (!fullOrder)
+                    {
+                        break;
+                    }
+                }
+            }
+            if (fullOrder)
+            {
+                Console.WriteLine("Отношение полностью упорядочено");
+            }
+            Console.ReadLine();
+            check1();
+            Console.WriteLine();
+            check2();
+            Console.WriteLine();
+            check3();
         }
+
+        //проверка1
+        static void check1()
+        {
+            string[] setSorted = { "-8", "-2", "-1", "0", "1", "2", "8" };
+            int[,] bitArray = { { 1, 0, 0, 0, 0, 0, 1 }, { 0, 1, 0, 0, 0, 1, 0 }, { 0, 0, 1, 0, 1, 0, 0 }, { 0, 0, 0, 1, 0, 0, 0 }, { 0, 0, 1, 0, 1, 0, 0 }, { 0, 1, 0, 0, 0, 1, 0 }, { 1, 0, 0, 0, 0, 0, 1 } };
+            bool checkReflex = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (j == i && bitArray[j, i] != 1)
+                    {
+                        checkReflex = false;
+                        break;
+                    }
+                }
+            }
+            //рефлексивность
+            if (checkReflex) Console.WriteLine("Отношение рефлексивно");
+            else Console.WriteLine("Отношение не рефлексивно");
+            //антирефлексивность
+            bool checkAntiReflex = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (j == i && bitArray[i, j] != 0)
+                    {
+                        checkAntiReflex = false;
+                        break;
+                    }
+                }
+            }
+            if (checkAntiReflex)
+            {
+                Console.WriteLine("Отошение антисимметрично");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не антисимметричное");
+            }
+            // симметричность
+            bool checkSymmetry = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] != bitArray[setSorted.Length - i, setSorted.Length - j])
+                    {
+                        checkSymmetry = false;
+                        break;
+                    }
+                }
+            }
+            if (checkSymmetry)
+            {
+                Console.WriteLine("Отношение симметрично");
+            }
+            else
+            {
+                Console.WriteLine("Отношение симметрично");
+            }
+            //антисимметрия
+            bool checkAntiSymmetry = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == bitArray[setSorted.Length - i, setSorted.Length - j])
+                    {
+                        checkAntiSymmetry = false;
+                        break;
+                    }
+                }
+            }
+            if (checkAntiSymmetry)
+            {
+                Console.WriteLine("Отношение антисимметрично");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не антисимметрично");
+            }
+            //транзитивность
+            bool checkTransitive = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                int counter = 0;
+                int columnCounter = 0;
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == 1)
+                    {
+                        counter++;
+                    }
+                    if (bitArray[j, i] == 1)
+                    {
+                        columnCounter++;
+                    }
+                }
+                if (counter < 3 || columnCounter < 3)
+                {
+                    checkTransitive = false;
+                    break;
+                }
+            }
+            if (checkTransitive)
+            {
+                Console.WriteLine("Отношение тразитивно");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не транзитивно");
+            }
+            //полнота
+            bool checkFull = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                int counterFull = 0;
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == 1 && i != j)
+                    {
+                        counterFull++;
+                    }
+                }
+                if (counterFull == 0)
+                {
+                    checkFull = false;
+                    break;
+                }
+                if (!checkFull)
+                {
+                    break;
+                }
+            }
+            if (checkFull)
+            {
+                Console.WriteLine("Отношение полное");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не полное");
+            }
+            //Эквивалентность
+            if (checkSymmetry && checkTransitive && checkReflex)
+            {
+                Console.WriteLine("Отношение эквивалентно");
+            }
+            //частичный порядок
+            if (checkReflex && checkAntiSymmetry && checkTransitive)
+            {
+                Console.WriteLine("Отношение частично упорядочено");
+            }
+            //линейный порядок
+            bool linearOrder = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == bitArray[j, i])
+                    {
+                        linearOrder = false;
+                        break;
+                    }
+                    if (!linearOrder)
+                    {
+                        break;
+                    }
+                }
+            }
+            //полный порядок
+            bool fullOrder = true;
+            if (linearOrder)
+            {
+                for (int i = 1; i < setSorted.Length; i++)
+                {
+                    for (int j = 0; j < i; j++)
+                    {
+                        if (bitArray[i, j] != 1)
+                        {
+                            fullOrder = false;
+                            break;
+                        }
+                    }
+                    if (!fullOrder)
+                    {
+                        break;
+                    }
+                }
+            }
+            if (fullOrder)
+            {
+                Console.WriteLine("Отношение полностью упорядочено");
+            }
+        }
+
+        //check2
+
+
+
+
+        static void check2()
+        {
+            string[] setSorted = { "1", "2", "3" };
+            int[,] bitArray = { { 1, 1, 1 }, {1,1,0}, {1,0,0} };
+            bool checkReflex = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (j == i && bitArray[j, i] != 1)
+                    {
+                        checkReflex = false;
+                        break;
+                    }
+                }
+            }
+            //рефлексивность
+            if (checkReflex) Console.WriteLine("Отношение рефлексивно");
+            else Console.WriteLine("Отношение не рефлексивно");
+            //антирефлексивность
+            bool checkAntiReflex = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (j == i && bitArray[i, j] != 0)
+                    {
+                        checkAntiReflex = false;
+                        break;
+                    }
+                }
+            }
+            if (checkAntiReflex)
+            {
+                Console.WriteLine("Отошение антисимметрично");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не антисимметричное");
+            }
+            // симметричность
+            bool checkSymmetry = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] != bitArray[setSorted.Length - i, setSorted.Length - j])
+                    {
+                        checkSymmetry = false;
+                        break;
+                    }
+                }
+            }
+            if (checkSymmetry)
+            {
+                Console.WriteLine("Отношение симметрично");
+            }
+            else
+            {
+                Console.WriteLine("Отношение симметрично");
+            }
+            //антисимметрия
+            bool checkAntiSymmetry = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == bitArray[setSorted.Length - i, setSorted.Length - j])
+                    {
+                        checkAntiSymmetry = false;
+                        break;
+                    }
+                }
+            }
+            if (checkAntiSymmetry)
+            {
+                Console.WriteLine("Отношение антисимметрично");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не антисимметрично");
+            }
+            //транзитивность
+            bool checkTransitive = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                int counter = 0;
+                int columnCounter = 0;
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == 1)
+                    {
+                        counter++;
+                    }
+                    if (bitArray[j, i] == 1)
+                    {
+                        columnCounter++;
+                    }
+                }
+                if (counter < 3 || columnCounter < 3)
+                {
+                    checkTransitive = false;
+                    break;
+                }
+            }
+            if (checkTransitive)
+            {
+                Console.WriteLine("Отношение тразитивно");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не транзитивно");
+            }
+            //полнота
+            bool checkFull = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                int counterFull = 0;
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == 1 && i != j)
+                    {
+                        counterFull++;
+                    }
+                }
+                if (counterFull == 0)
+                {
+                    checkFull = false;
+                    break;
+                }
+                if (!checkFull)
+                {
+                    break;
+                }
+            }
+            if (checkFull)
+            {
+                Console.WriteLine("Отношение полное");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не полное");
+            }
+            //Эквивалентность
+            if (checkSymmetry && checkTransitive && checkReflex)
+            {
+                Console.WriteLine("Отношение эквивалентно");
+            }
+            //частичный порядок
+            if (checkReflex && checkAntiSymmetry && checkTransitive)
+            {
+                Console.WriteLine("Отношение частично упорядочено");
+            }
+            //линейный порядок
+            bool linearOrder = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == bitArray[j, i])
+                    {
+                        linearOrder = false;
+                        break;
+                    }
+                    if (!linearOrder)
+                    {
+                        break;
+                    }
+                }
+            }
+            //полный порядок
+            bool fullOrder = true;
+            if (linearOrder)
+            {
+                for (int i = 1; i < setSorted.Length; i++)
+                {
+                    for (int j = 0; j < i; j++)
+                    {
+                        if (bitArray[i, j] != 1)
+                        {
+                            fullOrder = false;
+                            break;
+                        }
+                    }
+                    if (!fullOrder)
+                    {
+                        break;
+                    }
+                }
+            }
+            if (fullOrder)
+            {
+                Console.WriteLine("Отношение полностью упорядочено");
+            }
+        }
+
+
+
+        //check3
+
+        static void check3()
+        {
+            string[] setSorted = { "abab", "a", "ab" };
+            int[,] bitArray = { { 1, 0,1,0}, { 0, 1, 0, 0}, { 1, 0, 1, 0}, { 0, 0, 0, 1}};
+            bool checkReflex = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (j == i && bitArray[j, i] != 1)
+                    {
+                        checkReflex = false;
+                        break;
+                    }
+                }
+            }
+            //рефлексивность
+            if (checkReflex) Console.WriteLine("Отношение рефлексивно");
+            else Console.WriteLine("Отношение не рефлексивно");
+            //антирефлексивность
+            bool checkAntiReflex = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (j == i && bitArray[i, j] != 0)
+                    {
+                        checkAntiReflex = false;
+                        break;
+                    }
+                }
+            }
+            if (checkAntiReflex)
+            {
+                Console.WriteLine("Отошение антисимметрично");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не антисимметричное");
+            }
+            // симметричность
+            bool checkSymmetry = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] != bitArray[setSorted.Length - i, setSorted.Length - j])
+                    {
+                        checkSymmetry = false;
+                        break;
+                    }
+                }
+            }
+            if (checkSymmetry)
+            {
+                Console.WriteLine("Отношение симметрично");
+            }
+            else
+            {
+                Console.WriteLine("Отношение симметрично");
+            }
+            //антисимметрия
+            bool checkAntiSymmetry = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == bitArray[setSorted.Length - i, setSorted.Length - j])
+                    {
+                        checkAntiSymmetry = false;
+                        break;
+                    }
+                }
+            }
+            if (checkAntiSymmetry)
+            {
+                Console.WriteLine("Отношение антисимметрично");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не антисимметрично");
+            }
+            //транзитивность
+            bool checkTransitive = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                int counter = 0;
+                int columnCounter = 0;
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == 1)
+                    {
+                        counter++;
+                    }
+                    if (bitArray[j, i] == 1)
+                    {
+                        columnCounter++;
+                    }
+                }
+                if (counter < 3 || columnCounter < 3)
+                {
+                    checkTransitive = false;
+                    break;
+                }
+            }
+            if (checkTransitive)
+            {
+                Console.WriteLine("Отношение тразитивно");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не транзитивно");
+            }
+            //полнота
+            bool checkFull = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                int counterFull = 0;
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == 1 && i != j)
+                    {
+                        counterFull++;
+                    }
+                }
+                if (counterFull == 0)
+                {
+                    checkFull = false;
+                    break;
+                }
+                if (!checkFull)
+                {
+                    break;
+                }
+            }
+            if (checkFull)
+            {
+                Console.WriteLine("Отношение полное");
+            }
+            else
+            {
+                Console.WriteLine("Отношение не полное");
+            }
+            //Эквивалентность
+            if (checkSymmetry && checkTransitive && checkReflex)
+            {
+                Console.WriteLine("Отношение эквивалентно");
+            }
+            //частичный порядок
+            if (checkReflex && checkAntiSymmetry && checkTransitive)
+            {
+                Console.WriteLine("Отношение частично упорядочено");
+            }
+            //линейный порядок
+            bool linearOrder = true;
+            for (int i = 0; i < setSorted.Length; i++)
+            {
+                for (int j = 0; j < setSorted.Length; j++)
+                {
+                    if (bitArray[i, j] == bitArray[j, i])
+                    {
+                        linearOrder = false;
+                        break;
+                    }
+                    if (!linearOrder)
+                    {
+                        break;
+                    }
+                }
+            }
+            //полный порядок
+            bool fullOrder = true;
+            if (linearOrder)
+            {
+                for (int i = 1; i < setSorted.Length; i++)
+                {
+                    for (int j = 0; j < i; j++)
+                    {
+                        if (bitArray[i, j] != 1)
+                        {
+                            fullOrder = false;
+                            break;
+                        }
+                    }
+                    if (!fullOrder)
+                    {
+                        break;
+                    }
+                }
+            }
+            if (fullOrder)
+            {
+                Console.WriteLine("Отношение полностью упорядочено");
+            }
+        }
+
 
 
         static int[,] matrix(string[] set)
