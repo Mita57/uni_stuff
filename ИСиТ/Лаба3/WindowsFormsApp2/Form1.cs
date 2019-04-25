@@ -84,7 +84,6 @@ namespace WindowsFormsApp2
                 {
                     grid1.Rows[1].Cells[1].Style.BackColor = Color.Tomato;
                     flag4 = false;
-                    MessageBox.Show("asd");
                 }
             }
             if (flag3 && flag4)
@@ -142,6 +141,11 @@ namespace WindowsFormsApp2
                 grid2.Rows[3].Cells[0].Value = (char2.ToString() + char2.ToString());
                 grid2.Rows[3].Cells[1].Value = probar3;
             }
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
