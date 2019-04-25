@@ -2,8 +2,9 @@ body{
     text-align:center;
 }
 #cars{
-    height:600px;
-    width:800px;
+    margin-top: 200px;
+    height:350px;
+    width:900px;
     border:1px black solid;
     margin:auto;
     display: flex;
@@ -13,27 +14,34 @@ body{
     align-items: flex-start;
 }
 #block1{
+    /*DB5*/
     order: 1;
     background-image: url("1549-large.jpg");
     width: 450px;
     height: 160px;
     background-size:900px;
+    background-position:bottom 0px right 450px;
 }
 #block2{
+    /*Lotus*/
     order: 2;
     background-image: url("1549-large.jpg");
     width: 450px;
     height: 160px;
     background-size:900px;
+    background-position: bottom 0px right 0px;
 }
 #block3{
+    /*RR*/
     order: 3;
     background-image: url("1549-large.jpg");
     width: 450px;
     height: 160px;
     background-size:900px;
+    background-position: bottom 320px right 450px;
 }
 #block4{
+    /*Jaaaaag*/
     order:4;
     background-image: url("1549-large.jpg");
     width: 450px;
