@@ -1,0 +1,42 @@
+body{
+    text-align:center;
+}
+#cars{
+    height:600px;
+    width:800px;
+    border:1px black solid;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+#block1{
+    order: 1;
+    background-image: url("1549-large.jpg");
+    width: 450px;
+    height: 160px;
+    background-size:900px;
+}
+#block2{
+    order: 2;
+    background-image: url("1549-large.jpg");
+    width: 450px;
+    height: 160px;
+    background-size:900px;
+}
+#block3{
+    order: 3;
+    background-image: url("1549-large.jpg");
+    width: 450px;
+    height: 160px;
+    background-size:900px;
+}
+#block4{
+    order:4;
+    background-image: url("1549-large.jpg");
+    width: 450px;
+    height: 160px;
+    background-size:900px;
+}
