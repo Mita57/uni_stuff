@@ -1,0 +1,34 @@
+article{
+    width: 500px;
+    margin: auto;
+    border: 3px black solid;
+    text-align: center;
+    padding: 10px;
+}
+article input{
+    width: 500px;
+    height:30px;
+    margin-left: 0px;
+}
+article div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family:arial;
+    size:12pt;
+    text-align: left;
+    border: 1px gray solid;
+    width:492px; 
+    height: 30px;
+    padding: 5px;
+    margin-top: 10px;
+}
+article div input[type = checkbox]{
+    width: 10px;
+}
+article div img{
+    width: 25px;
+}
+article div input[type = text]{
+    text-align: center;
+}
