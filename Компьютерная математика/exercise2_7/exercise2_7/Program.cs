@@ -201,24 +201,12 @@ namespace exercise2_7
                 }
             }
             //полный порядок
-            bool fullOrder = true;
-            if (linearOrder)
+            bool fullOrder = false;
+            //полнота транзитивность антисимметричность
+            if (linearOrder&&checkTransitive&&checkFull&&checkAntiSymmetry)
             {
-                for (int i = 1; i < setSorted.Length; i++)
-                {
-                    for (int j = 0; j < i; j++)
-                    {
-                        if (bitArray[i, j] != 1)
-                        {
-                            fullOrder = false;
-                            break;
-                        }
-                    }
-                    if (!fullOrder)
-                    {
-                        break;
-                    }
-                }
+                            fullOrder = true;
+                
             }
             if (fullOrder)
             {
@@ -404,24 +392,11 @@ namespace exercise2_7
                 }
             }
             //полный порядок
-            bool fullOrder = true;
-            if (linearOrder)
+            bool fullOrder = false;
+            if (linearOrder && checkTransitive && checkFull && checkAntiSymmetry)
             {
-                for (int i = 1; i < setSorted.Length; i++)
-                {
-                    for (int j = 0; j < i; j++)
-                    {
-                        if (bitArray[i, j] != 1)
-                        {
-                            fullOrder = false;
-                            break;
-                        }
-                    }
-                    if (!fullOrder)
-                    {
-                        break;
-                    }
-                }
+                fullOrder = true;
+
             }
             if (fullOrder)
             {
@@ -605,24 +580,11 @@ namespace exercise2_7
                 }
             }
             //полный порядок
-            bool fullOrder = true;
-            if (linearOrder)
+            bool fullOrder = false;
+            if (linearOrder && checkTransitive && checkFull && checkAntiSymmetry)
             {
-                for (int i = 1; i < setSorted.Length; i++)
-                {
-                    for (int j = 0; j < i; j++)
-                    {
-                        if (bitArray[i, j] != 1)
-                        {
-                            fullOrder = false;
-                            break;
-                        }
-                    }
-                    if (!fullOrder)
-                    {
-                        break;
-                    }
-                }
+                fullOrder = true;
+
             }
             if (fullOrder)
             {
@@ -805,24 +767,11 @@ namespace exercise2_7
                 }
             }
             //полный порядок
-            bool fullOrder = true;
-            if (linearOrder)
+            bool fullOrder = false;
+            if (linearOrder && checkTransitive && checkFull && checkAntiSymmetry)
             {
-                for (int i = 1; i < setSorted.Length; i++)
-                {
-                    for (int j = 0; j < i; j++)
-                    {
-                        if (bitArray[i, j] != 1)
-                        {
-                            fullOrder = false;
-                            break;
-                        }
-                    }
-                    if (!fullOrder)
-                    {
-                        break;
-                    }
-                }
+                fullOrder = true;
+
             }
             if (fullOrder)
             {
