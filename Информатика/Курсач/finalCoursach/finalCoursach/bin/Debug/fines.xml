@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<fines>
+    <fine>
+        <fineCode>1</fineCode>
+        <driverCode>2</driverCode>
+        <violationCode>1</violationCode>
+        <date>22/04/2019</date>
+    </fine>
+    <fine>
+        <fineCode>2</fineCode>
+        <driverCode>1</driverCode>
+        <violationCode>1</violationCode>
+        <date>22/04/2019</date>
+    </fine>
+</fines>

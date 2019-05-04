@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<drivers>
+    <driver>
+        <driverCode>1</driverCode>
+        <driverName>Иванов</driverName>
+        <category>B</category>
+        <bDay>01/02/1995</bDay>
+    </driver>
+    <driver>
+        <driverCode>2</driverCode>
+        <driverName>Петров</driverName>
+        <category>B</category>
+        <bDay>02/03/1996</bDay>
+    </driver>
+</drivers>
