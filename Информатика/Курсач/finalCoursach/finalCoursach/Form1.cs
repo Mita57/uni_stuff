@@ -48,6 +48,7 @@ namespace finalCoursach
         private void loadFines()
         {
             //building the DGW
+            Array.Resize(ref fines,0);
             grid1.ColumnCount = 0;
             grid1.Refresh();
             grid1.ColumnCount = 4;
@@ -94,12 +95,21 @@ namespace finalCoursach
                 fines[counter] = new fine(date, fineCode,violationCode,driverCode);
                 counter++;
             }
+            grid1.RowCount = fines.Length;
+            for(int i = 0; i < fines.Length; i++)
+            {
+                grid1.Rows[i].Cells[0].Value = fines[i].fineCode.ToString();
+                grid1.Rows[i].Cells[1].Value = fines[i].driverCode.ToString();
+                grid1.Rows[i].Cells[2].Value = fines[i].violationCode.ToString();
+                grid1.Rows[i].Cells[3].Value = fines[i].date;
+            }
         }
 
         //drivers
         private void loadDrivers()
         {
             //building the DGW
+            Array.Resize(ref drivers, 0);
             grid1.ColumnCount = 0;
             grid1.Refresh();
             grid1.ColumnCount = 4;
@@ -144,6 +154,15 @@ namespace finalCoursach
                     }
                 }
                 drivers[counter] = new driver(driverCode,driverName,category,bDay);
+                counter++;
+            }
+            grid1.RowCount = drivers.Length;
+            for(int i =0; i < drivers.Length; i++)
+            {
+                grid1.Rows[i].Cells[0].Value = drivers[i].driverCode;
+                grid1.Rows[i].Cells[1].Value = drivers[i].driverName;
+                grid1.Rows[i].Cells[2].Value = drivers[i].category;
+                grid1.Rows[i].Cells[3].Value = drivers[i].bDay;
             }
         }
 
@@ -152,6 +171,7 @@ namespace finalCoursach
         private void loadViolations()
         {
             //building the DGW
+            Array.Resize(ref violations, 0);
             grid1.ColumnCount = 0;
             grid1.Refresh();
             grid1.ColumnCount = 3;
@@ -189,6 +209,14 @@ namespace finalCoursach
                     }
                 }
                 violations[counter] = new violation(violationCode, violationName, punishment);
+                counter++;
+            }
+            grid1.RowCount = violations.Length;
+            for(int i =0; i < violations.Length; i++)
+            {
+                grid1.Rows[i].Cells[0].Value = violations[i].violationCode.ToString();
+                grid1.Rows[i].Cells[1].Value = violations[i].violationName;
+                grid1.Rows[i].Cells[2].Value = violations[i].punishment;
             }
         }
 
@@ -198,6 +226,9 @@ namespace finalCoursach
             //building the DGW
             grid1.ColumnCount = 0;
             grid1.Refresh();
+            loadDrivers();
+            loadFines();
+            loadViolations();
             grid1.ColumnCount = 8;
             grid1.Columns[0].HeaderCell.Value = "Код штрафа";
             grid1.Columns[0].Width = 70;
@@ -216,6 +247,18 @@ namespace finalCoursach
             grid1.Columns[7].HeaderCell.Value = "Наказание";
             grid1.Columns[7].Width = 150;
             grid1.Width = 545;
+            grid1.RowCount = fines.Length;
+            for(int i = 0; i < fines.Length; i++)
+            {
+                grid1.Rows[i].Cells[0].Value = fines[i].violationCode.ToString();
+                grid1.Rows[i].Cells[1].Value = violations[fines[i].violationCode-1].violationName;
+                grid1.Rows[i].Cells[2].Value = violations[fines[i].violationCode-1].violationCode;
+                grid1.Rows[i].Cells[3].Value = fines[i].date;
+                grid1.Rows[i].Cells[4].Value = fines[i].driverCode.ToString();
+                grid1.Rows[i].Cells[5].Value = drivers[fines[i].driverCode - 1].driverName;
+                grid1.Rows[i].Cells[6].Value = drivers[fines[i].driverCode - 1].category;
+                grid1.Rows[i].Cells[7].Value = violations[fines[i].violationCode - 1].punishment;
+            }
         }
     }
 
@@ -223,14 +266,14 @@ namespace finalCoursach
     class driver
     {
         public int driverCode;
-        public string name;
+        public string driverName;
         public string category;
         public string bDay;
 
         public driver(int driverCode, string name, string category, string bDay)
         {
             this.driverCode = driverCode;
-            this.name = name;
+            this.driverName = name;
             this.category = category;
             this.bDay = bDay;
         }
