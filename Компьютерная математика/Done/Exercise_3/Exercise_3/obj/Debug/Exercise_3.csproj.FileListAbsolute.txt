@@ -1,0 +1,7 @@
+C:\Users\57thr\Desktop\Кодерство\Компьютерная математика\Exercise_3\Exercise_3\bin\Debug\Exercise_3.exe.config
+C:\Users\57thr\Desktop\Кодерство\Компьютерная математика\Exercise_3\Exercise_3\bin\Debug\Exercise_3.exe
+C:\Users\57thr\Desktop\Кодерство\Компьютерная математика\Exercise_3\Exercise_3\bin\Debug\Exercise_3.pdb
+C:\Users\57thr\Desktop\Кодерство\Компьютерная математика\Exercise_3\Exercise_3\obj\Debug\Exercise_3.csprojAssemblyReference.cache
+C:\Users\57thr\Desktop\Кодерство\Компьютерная математика\Exercise_3\Exercise_3\obj\Debug\Exercise_3.csproj.CoreCompileInputs.cache
+C:\Users\57thr\Desktop\Кодерство\Компьютерная математика\Exercise_3\Exercise_3\obj\Debug\Exercise_3.exe
+C:\Users\57thr\Desktop\Кодерство\Компьютерная математика\Exercise_3\Exercise_3\obj\Debug\Exercise_3.pdb

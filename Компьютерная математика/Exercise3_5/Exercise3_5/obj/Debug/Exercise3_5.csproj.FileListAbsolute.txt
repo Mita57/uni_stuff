@@ -1,0 +1,14 @@
+E:\Компьютерная математика\Exercise3_5\Exercise3_5\bin\Debug\Exercise3_5.exe.config
+E:\Компьютерная математика\Exercise3_5\Exercise3_5\bin\Debug\Exercise3_5.exe
+E:\Компьютерная математика\Exercise3_5\Exercise3_5\bin\Debug\Exercise3_5.pdb
+E:\Компьютерная математика\Exercise3_5\Exercise3_5\obj\Debug\Exercise3_5.csprojAssemblyReference.cache
+E:\Компьютерная математика\Exercise3_5\Exercise3_5\obj\Debug\Exercise3_5.csproj.CoreCompileInputs.cache
+E:\Компьютерная математика\Exercise3_5\Exercise3_5\obj\Debug\Exercise3_5.exe
+E:\Компьютерная математика\Exercise3_5\Exercise3_5\obj\Debug\Exercise3_5.pdb
+J:\Компьютерная математика\Exercise3_5\Exercise3_5\bin\Debug\Exercise3_5.exe.config
+J:\Компьютерная математика\Exercise3_5\Exercise3_5\bin\Debug\Exercise3_5.exe
+J:\Компьютерная математика\Exercise3_5\Exercise3_5\bin\Debug\Exercise3_5.pdb
+J:\Компьютерная математика\Exercise3_5\Exercise3_5\obj\Debug\Exercise3_5.csprojAssemblyReference.cache
+J:\Компьютерная математика\Exercise3_5\Exercise3_5\obj\Debug\Exercise3_5.csproj.CoreCompileInputs.cache
+J:\Компьютерная математика\Exercise3_5\Exercise3_5\obj\Debug\Exercise3_5.exe
+J:\Компьютерная математика\Exercise3_5\Exercise3_5\obj\Debug\Exercise3_5.pdb

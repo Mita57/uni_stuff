@@ -28,13 +28,14 @@ namespace exercise2_7
             Console.WriteLine("Выберите способ задания отношения: \n 1. Булева матрица \n 2. Множество пар ");
             if (Console.ReadLine() == "1")
             {
-                bitArray = matrix(setSorted);
+                bitArray = matrix(setSorted); //returns bitarray
             }
             else
             {
-                bitArray = sets(setSorted);
+                bitArray = sets(setSorted); //actually both return bitarray
             }
-            bool checkReflex = true;
+            //рефлексивность
+            bool checkReflex = true; //only if the D contains "1" only
             for (int i = 0; i < setSorted.Length; i++)
             {
                 for (int j = 0; j < setSorted.Length; j++)
@@ -46,11 +47,10 @@ namespace exercise2_7
                     }
                 }
             }
-            //рефлексивность
             if (checkReflex) Console.WriteLine("Отношение рефлексивно");
             else Console.WriteLine("Отношение не рефлексивно");
             //антирефлексивность
-            bool checkAntiReflex = true;
+            bool checkAntiReflex = true; //onlu if the D contains "0" only
             for (int i = 0; i < setSorted.Length; i++)
             {
                 for (int j = 0; j < setSorted.Length; j++)
@@ -70,9 +70,9 @@ namespace exercise2_7
             {
                 Console.WriteLine("Отношение не антисимметричное");
             }
-            // симметричность
+            // симметричность 
             bool checkSymmetry = true;
-            for (int i = 0; i < setSorted.Length; i++)
+            for (int i = 0; i < setSorted.Length; i++)// only if the elements relative to D are simmilar
             {
                 for (int j = 0; j < setSorted.Length; j++)
                 {
@@ -91,9 +91,9 @@ namespace exercise2_7
             {
                 Console.WriteLine("Отношение симметрично");
             }
-            //антисимметрия
+            //антисимметрия 
             bool checkAntiSymmetry = true;
-            for (int i = 0; i < setSorted.Length; i++)
+            for (int i = 0; i < setSorted.Length; i++)//only if the elements relative to D are different
             {
                 for (int j = 0; j < setSorted.Length; j++)
                 {
@@ -112,8 +112,8 @@ namespace exercise2_7
             {
                 Console.WriteLine("Отношение не антисимметрично");
             }
-            //транзитивность
-            bool checkTransitive = true;
+            //транзитивность перемножениие на саму себя должно давать изначальную матрицу так же антирефлексивность
+            bool checkTransitive = true; //there should be at least 3 "1" in each columns and rows
             for (int i = 0; i < setSorted.Length; i++)
             {
                 int counter = 0;
@@ -144,7 +144,7 @@ namespace exercise2_7
                 Console.WriteLine("Отношение не транзитивно");
             }
             //полнота
-            bool checkFull = true;
+            bool checkFull = true; // only if the element is in the relation with anything except for itself
             for (int i = 0; i < setSorted.Length; i++)
             {
                 int counterFull = 0;
@@ -184,7 +184,7 @@ namespace exercise2_7
                 Console.WriteLine("Отношение частично упорядочено");
             }
             //линейный порядок
-            bool linearOrder = true;
+            bool linearOrder = true;// i,j and j,i must be different, like Xor
             for (int i = 0; i < setSorted.Length; i++)
             {
                 for (int j = 0; j < setSorted.Length; j++)
@@ -205,8 +205,7 @@ namespace exercise2_7
             //полнота транзитивность антисимметричность
             if (linearOrder&&checkTransitive&&checkFull&&checkAntiSymmetry)
             {
-                            fullOrder = true;
-                
+                fullOrder = true;   
             }
             if (fullOrder)
             {
@@ -393,6 +392,7 @@ namespace exercise2_7
             }
             //полный порядок
             bool fullOrder = false;
+            //полнота транзитивность антисимметричность
             if (linearOrder && checkTransitive && checkFull && checkAntiSymmetry)
             {
                 fullOrder = true;
@@ -404,12 +404,12 @@ namespace exercise2_7
             }
         }
 
-        //check2
+            //check2
 
 
 
 
-        static void check2()
+            static void check2()
         {
             string[] setSorted = { "1", "2", "3" };
             int[,] bitArray = { { 1, 1, 1 }, {1,1,0}, {1,0,0} };
@@ -581,6 +581,7 @@ namespace exercise2_7
             }
             //полный порядок
             bool fullOrder = false;
+            //полнота транзитивность антисимметричность
             if (linearOrder && checkTransitive && checkFull && checkAntiSymmetry)
             {
                 fullOrder = true;
@@ -768,6 +769,7 @@ namespace exercise2_7
             }
             //полный порядок
             bool fullOrder = false;
+            //полнота транзитивность антисимметричность
             if (linearOrder && checkTransitive && checkFull && checkAntiSymmetry)
             {
                 fullOrder = true;
@@ -777,25 +779,7 @@ namespace exercise2_7
             {
                 Console.WriteLine("Отношение полностью упорядочено");
             }
-        }
-
-
-
-        static int[,] matrix(string[] set)
-        {
-            int[,] bitArray = new int[set.Length, set.Length];
-            Console.WriteLine("Введите булеву матрицу");
-            for (int i = 0; i < set.Length; i++)
-            {
-                string input = Console.ReadLine();
-                string[] inputArr = input.Split(' ');
-                for (int j = 0; j < set.Length; j++)
-                {
-                    bitArray[i, j] = int.Parse(inputArr[j]);
-                }
-            }
-            return bitArray;
-        }
+        тран
 
 
 
