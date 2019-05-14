@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.grid1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +47,7 @@
             this.grid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid1.Location = new System.Drawing.Point(14, 7);
             this.grid1.Name = "grid1";
-            this.grid1.Size = new System.Drawing.Size(545, 434);
+            this.grid1.Size = new System.Drawing.Size(906, 529);
             this.grid1.TabIndex = 0;
             // 
             // tables
@@ -57,7 +58,7 @@
             "Штрафы",
             "Нарушения",
             "Общая"});
-            this.tables.Location = new System.Drawing.Point(574, 41);
+            this.tables.Location = new System.Drawing.Point(937, 37);
             this.tables.Name = "tables";
             this.tables.Size = new System.Drawing.Size(218, 21);
             this.tables.TabIndex = 1;
@@ -66,7 +67,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(654, 25);
+            this.label1.Location = new System.Drawing.Point(1017, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 2;
@@ -79,7 +80,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.comboBox3);
             this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Location = new System.Drawing.Point(565, 217);
+            this.groupBox1.Location = new System.Drawing.Point(931, 467);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(227, 170);
             this.groupBox1.TabIndex = 3;
@@ -134,16 +135,27 @@
             "Штрафы",
             "Нарушения",
             "Общая"});
-            this.comboBox2.Location = new System.Drawing.Point(5, 48);
+            this.comboBox2.Location = new System.Drawing.Point(9, 48);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(218, 21);
             this.comboBox2.TabIndex = 2;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(19, 563);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(900, 95);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Добавление элементов";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1170, 671);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tables);
@@ -169,6 +181,7 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

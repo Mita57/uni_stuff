@@ -60,7 +60,6 @@ namespace finalCoursach
             grid1.Columns[2].Width = 70;
             grid1.Columns[3].HeaderCell.Value = "Дата";
             grid1.Columns[3].Width = 70;
-            grid1.Width = 330;
             //loading from XML
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load("fines.xml");
@@ -121,7 +120,6 @@ namespace finalCoursach
             grid1.Columns[2].Width = 70;
             grid1.Columns[3].HeaderCell.Value = "Дата рождения";
             grid1.Columns[3].Width = 150;
-            grid1.Width = 440;
             //loading from XML
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load("drivers.xml");
@@ -181,7 +179,6 @@ namespace finalCoursach
             grid1.Columns[1].Width = 150;
             grid1.Columns[2].HeaderCell.Value = "Наказание";
             grid1.Columns[2].Width = 150;
-            grid1.Width = 420;
             //loading from XML
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load("violations.xml");
@@ -246,7 +243,6 @@ namespace finalCoursach
             grid1.Columns[6].Width = 70;
             grid1.Columns[7].HeaderCell.Value = "Наказание";
             grid1.Columns[7].Width = 150;
-            grid1.Width = 545;
             grid1.RowCount = fines.Length;
             for(int i = 0; i < fines.Length; i++)
             {
