@@ -1,0 +1,35 @@
+body{
+    font-family:arial;
+}
+#all{
+    border:green 2px solid;
+    padding:0px;
+    border-radius:20px;
+    width:600px;
+    margin:auto;
+    margin-top:150px;
+
+}
+#tabs{
+    display:flex;
+    justify-content:space-evenly;
+}
+.tab:hover{
+    background-color: green;
+}
+.tab{
+    padding:10px;
+    border-radius:5px;
+    background-color:lightgrey;
+    width:100px;
+    text-align:center;
+}
+#heading{
+    height:30px;
+    width:500px;
+    border:2px black solid;
+    margin:auto;
+    text-align:center;
+    border-radius:10px;
+    margin-top:15px;
+}
