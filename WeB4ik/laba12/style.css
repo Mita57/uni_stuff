@@ -3,33 +3,40 @@ body{
 }
 #all{
     border:green 2px solid;
-    padding:0px;
+    padding:10px;
     border-radius:20px;
     width:600px;
     margin:auto;
     margin-top:150px;
-
 }
 #tabs{
     display:flex;
     justify-content:space-evenly;
+    padding:10px;
 }
 .tab:hover{
     background-color: green;
+    color:white;
 }
 .tab{
     padding:10px;
-    border-radius:5px;
+    border-radius:10px 10px 0px 0px;
     background-color:lightgrey;
     width:100px;
     text-align:center;
+    font-weight:bold;
 }
 #heading{
-    height:30px;
+    height:20px;
     width:500px;
     border:2px black solid;
     margin:auto;
     text-align:center;
     border-radius:10px;
-    margin-top:15px;
+}
+#info{
+    margin-top:10px;
+    padding:10px;
+    border:1px black solid;
+    border-radius:15px;
 }
