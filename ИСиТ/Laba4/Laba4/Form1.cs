@@ -171,7 +171,7 @@ namespace Laba4
         }
 
         static int row = 0;
-
+        //https://www.geeksforgeeks.org/print-all-combinations-of-given-length/
         private int printAllKLengthRec(char[] set, String prefix, int n, int k)
         {
             if (k == 0)
