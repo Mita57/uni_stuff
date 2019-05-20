@@ -14,7 +14,7 @@ function cock() {
             var checkPhoneRegex = /[0-9,+]{6,12}/;
             checkPhone = checkPhoneRegex.test(input);
             if (checkEmail && checkName && checkPhone) {
-                document.getElementById("memes").innerHTML += ('<div id = "p_' + counter + '" ondblclick="change(' + "'" + -- "')" + '"><input type = "checkbox" id="a_' + counter + '" onChange = "imp(' + "'p_" + counter + "'" + ')">' + "<span id='s_" + counter + "'>" + input + '</span><img src = "remove.png" onClick = "remove(' + "'p_" + counter + "'" + ')"></div>')
+                document.getElementById("memes").innerHTML += ('<div id = "p_' + counter + '" ondblclick="change(' + "'"+"p_"+counter+  "')" + '"><input type = "checkbox" id="a_' + counter + '" onChange = "imp(' + "'p_" + counter + "'" + ')">' + "<span id='s_" + counter + "'>" + input + '</span><img src = "remove.png" onClick = "remove(' + "'p_" + counter + "'" + ')"></div>')
                 document.getElementById("ffs").value = '';
                 counter++;
             }
