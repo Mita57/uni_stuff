@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fines>
+  <fine>
+    <fineCode>1</fineCode>
+    <driverCode>3</driverCode>
+    <violationCode>3</violationCode>
+    <date>04.01.2019</date>
+    <removed>False</removed>
+  </fine>
+  <fine>
+    <fineCode>2</fineCode>
+    <driverCode>2</driverCode>
+    <violationCode>2</violationCode>
+    <date>24.01.1999</date>
+    <removed>False</removed>
+  </fine>
+  <fine>
+    <fineCode>3</fineCode>
+    <driverCode>1</driverCode>
+    <violationCode>1</violationCode>
+    <date>29.01.2009</date>
+    <removed>False</removed>
+  </fine>
+</fines>

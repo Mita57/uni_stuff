@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<violations>
+  <violation>
+    <violationCode>1</violationCode>
+    <violationName>Не признает Моора своим богом</violationName>
+    <punishment>смерц</punishment>
+    <removed>False</removed>
+  </violation>
+  <violation>
+    <violationCode>2</violationCode>
+    <violationName>Не тянет дедлайны</violationName>
+    <punishment>ОТЧИСЛЕН</punishment>
+    <removed>False</removed>
+  </violation>
+  <violation>
+    <violationCode>3</violationCode>
+    <violationName>SELED HIS WIFE FOR INTERNET CONNECTION</violationName>
+    <punishment>смертная казнь сроком на 15 лет</punishment>
+    <removed>False</removed>
+  </violation>
+</violations>

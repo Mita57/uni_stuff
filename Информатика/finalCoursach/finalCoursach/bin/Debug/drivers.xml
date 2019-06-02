@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<drivers>
+  <driver>
+    <driverCode>1</driverCode>
+    <driverName>Сасаев</driverName>
+    <category>B</category>
+    <bDay>28.05.2019</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>2</driverCode>
+    <driverName>Пенопласт</driverName>
+    <category>B</category>
+    <bDay>14.07.2000</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>3</driverCode>
+    <driverName>Коксакер</driverName>
+    <category>B</category>
+    <bDay>24.01.1999</bDay>
+    <removed>False</removed>
+  </driver>
+</drivers>
