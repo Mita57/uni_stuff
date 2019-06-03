@@ -270,6 +270,7 @@ namespace finalCoursach
                 grid1.Columns[0].HeaderCell.Value = "Код водителя";
                 grid1.Columns[0].Width = 70;
                 grid1.Columns[1].HeaderCell.Value = "Имя водителя";
+                grid1.Columns[1].Width = 300;
                 grid1.Columns[2].Width = 150;
                 grid1.Columns[2].HeaderCell.Value = "Категория";
                 grid1.Columns[2].Width = 70;
@@ -379,9 +380,9 @@ namespace finalCoursach
                 grid1.Columns[0].HeaderCell.Value = "Код нарушения";
                 grid1.Columns[0].Width = 70;
                 grid1.Columns[1].HeaderCell.Value = "Название нарушения";
-                grid1.Columns[1].Width = 150;
+                grid1.Columns[1].Width = 390;
                 grid1.Columns[2].HeaderCell.Value = "Наказание";
-                grid1.Columns[2].Width = 150;
+                grid1.Columns[2].Width = 390;
                 grid1.RowCount = violations.Length - removedViolations;
                 removeKebab.Enabled = false;
                 saveButton.Enabled = true;
@@ -742,8 +743,8 @@ namespace finalCoursach
         private void removeDriver()
         {
             int selected = grid1.CurrentCell.RowIndex;
-            allDrivers[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value) - 1].removed = true;
-            drivers[selected].removed = true;
+            allDrivers[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value) - 1].removeKebab();
+            drivers[selected].removeKebab();
             removedDrivers++;
             renderDrivers();
         }
@@ -751,16 +752,16 @@ namespace finalCoursach
         private void removeFine()
         {
             int selected = grid1.CurrentCell.RowIndex;
-            allFines[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value) - 1].removed = true;
-            fines[selected].removed = true;
+            allFines[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value) - 1].removeKebab();
+            fines[selected].removeKebab();
             removedFines++;
             renderFines();
         }
         private void removeViolation()
         {
             int selected = grid1.CurrentCell.RowIndex;
-            allViolations[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value) - 1].removed = true;
-            violations[selected].removed = true;
+            allViolations[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value) - 1].removeKebab();
+            violations[selected].removeKebab();
             removedViolations++;
             renderViolations();
         }
@@ -788,12 +789,11 @@ namespace finalCoursach
             int selected = grid1.CurrentCell.RowIndex;
             if (!string.IsNullOrWhiteSpace(editTB2.Text) && !string.IsNullOrWhiteSpace(editTB3.Text))
             {
-                drivers[selected].driverName = editTB2.Text;
-                drivers[selected].category = editTB3.Text;
-                drivers[selected].bDay = editDTP1.Value.ToShortDateString();
-                allDrivers[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1].driverName = editTB2.Text;
-                allDrivers[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1].category = editTB3.Text;
-                allDrivers[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1].bDay = addDTP2.Value.ToShortDateString();
+                string newDriverName = editTB2.Text;
+                string newCategory = editTB3.Text;
+                string newBDay = editDTP1.Value.ToShortDateString();
+                drivers[selected].change(newDriverName, newCategory, newBDay);
+                allDrivers[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1].change(newDriverName, newCategory, newBDay);
                 renderDrivers();
             }
             else
@@ -808,12 +808,11 @@ namespace finalCoursach
             int selected = grid1.CurrentCell.RowIndex;
             if (editCB1.SelectedIndex != -1 && editCB2.SelectedIndex != -1)
             {
-                fines[selected].driverCode = drivers[editCB1.SelectedIndex].driverCode;
-                fines[selected].violationCode = violations[editCB2.SelectedIndex].violationCode;
-                fines[selected].date = addDTP2.Value.ToShortDateString();
-                allFines[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1].driverCode = drivers[editCB1.SelectedIndex].driverCode;
-                allFines[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1].violationCode = violations[editCB2.SelectedIndex].violationCode;
-                allFines[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1].date = editDTP1.Value.ToShortDateString();
+                int newDriverCode = drivers[editCB1.SelectedIndex].driverCode;
+                int newViolationCode = violations[editCB2.SelectedIndex].violationCode;
+                string newDate = addDTP2.Value.ToShortDateString();
+                fines[selected].change(newDate, newViolationCode, newDriverCode);
+                allFines[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1].change(newDate, newViolationCode, newDriverCode);
                 renderFines();
             }
             else
@@ -828,10 +827,10 @@ namespace finalCoursach
             int selected = grid1.CurrentCell.RowIndex;
             if (!string.IsNullOrWhiteSpace(editTB2.Text) && !string.IsNullOrWhiteSpace(editTB3.Text))
             {
-                violations[selected].violationName = editTB2.Text;
-                violations[selected].punishment = editTB3.Text;
-                allDrivers[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1].driverName = editTB2.Text;
-                allDrivers[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1].category = editTB3.Text;
+                string newViolationName = editTB2.Text;
+                string newPunishment = editTB3.Text;
+                violations[selected].change(newViolationName, newPunishment);
+                allViolations[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1].change(newViolationName, newPunishment);
                 renderViolations();
             }
             else
@@ -1060,11 +1059,15 @@ namespace finalCoursach
 
     class driver
     {
+        //props
+
         public int driverCode;
         public string driverName;
         public string category;
         public string bDay;
         public bool removed;
+
+        //builder
 
         public driver(int driverCode, string name, string category, string bDay, bool removed)
         {
@@ -1073,6 +1076,19 @@ namespace finalCoursach
             this.category = category;
             this.bDay = bDay;
             this.removed = removed;
+        }
+        //methods
+
+        public void change(string newDriverName, string newCategory, string newBDay)
+        {
+            this.driverName = newDriverName;
+            this.category = newCategory;
+            this.bDay = newBDay;
+        }
+
+        public void removeKebab()
+        {
+            this.removed = true;
         }
 
     }
@@ -1092,7 +1108,19 @@ namespace finalCoursach
             this.removed = removed;
         }
 
+        public void change(string newViolationName, string newPunishment)
+        {
+            this.violationName = newViolationName;
+            this.punishment = newPunishment;
+        }
+
+        public void removeKebab()
+        {
+            this.removed = true;
+        }
+
     }
+
 
 
     class fine
@@ -1111,6 +1139,21 @@ namespace finalCoursach
             this.driverCode = driverCode;
             this.removed = removed;
         }
+
+
+        public void change(string newDate, int newViolationCode, int newDriverCode)
+        {
+            this.date = newDate;
+            this.violationCode = newViolationCode;
+            this.driverCode = newDriverCode;
+        }
+
+        public void removeKebab()
+        {
+            this.removed = true;
+        }
+
+
     }
 
 
