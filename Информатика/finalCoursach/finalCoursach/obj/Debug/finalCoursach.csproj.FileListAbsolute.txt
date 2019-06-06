@@ -48,3 +48,13 @@ J:\Инфа\Курсач\finalCoursach\finalCoursach\obj\Debug\finalCoursach.csp
 J:\Инфа\Курсач\finalCoursach\finalCoursach\obj\Debug\finalCoursach.csproj.CoreCompileInputs.cache
 J:\Инфа\Курсач\finalCoursach\finalCoursach\obj\Debug\finalCoursach.exe
 J:\Инфа\Курсач\finalCoursach\finalCoursach\obj\Debug\finalCoursach.pdb
+G:\Инфа\Курсач\finalCoursach - Copy\finalCoursach\bin\Debug\finalCoursach.exe.config
+G:\Инфа\Курсач\finalCoursach - Copy\finalCoursach\bin\Debug\finalCoursach.exe
+G:\Инфа\Курсач\finalCoursach - Copy\finalCoursach\bin\Debug\finalCoursach.pdb
+G:\Инфа\Курсач\finalCoursach - Copy\finalCoursach\obj\Debug\finalCoursach.csprojAssemblyReference.cache
+G:\Инфа\Курсач\finalCoursach - Copy\finalCoursach\obj\Debug\finalCoursach.Form1.resources
+G:\Инфа\Курсач\finalCoursach - Copy\finalCoursach\obj\Debug\finalCoursach.Properties.Resources.resources
+G:\Инфа\Курсач\finalCoursach - Copy\finalCoursach\obj\Debug\finalCoursach.csproj.GenerateResource.cache
+G:\Инфа\Курсач\finalCoursach - Copy\finalCoursach\obj\Debug\finalCoursach.csproj.CoreCompileInputs.cache
+G:\Инфа\Курсач\finalCoursach - Copy\finalCoursach\obj\Debug\finalCoursach.exe
+G:\Инфа\Курсач\finalCoursach - Copy\finalCoursach\obj\Debug\finalCoursach.pdb
