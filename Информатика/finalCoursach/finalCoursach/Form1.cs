@@ -14,8 +14,8 @@ namespace finalCoursach
         private void Form1_Load(object sender, EventArgs e)
         {
             loadDrivers();
-            loadFines();
             loadViolations();
+            loadFines();
             tabControl1.Visible = false;
         }
 
@@ -37,21 +37,22 @@ namespace finalCoursach
             {
                 renderAll();
             }
+            if(Convert.ToString(tables.SelectedItem) == "Итоговая")
+            {
+                renderFinal();
+            }
         }
 
         fine[] fines = new fine[0];
         violation[] violations = new violation[0];
         driver[] drivers = new driver[0];
-
         fine[] allFines = new fine[0];
         violation[] allViolations = new violation[0];
         driver[] allDrivers = new driver[0];
-
         int totalFines = 0;
         int totalViolations = 0;
         int totalDrivers = 0;
-
-        //in the current session!!!
+        int sumFine = 0;
         int removedFines = 0;
         int removedViolations = 0;
         int removedDrivers = 0;
@@ -61,6 +62,7 @@ namespace finalCoursach
         {
             Array.Resize(ref fines, 0);
             Array.Resize(ref allFines, 0);
+            sumFine = 0;
             totalFines = 0;
             //loading from XML
             XmlDocument xDoc = new XmlDocument();
@@ -101,6 +103,7 @@ namespace finalCoursach
                 {
                     Array.Resize(ref fines, fines.Length + 1);
                     fines[counter] = new fine(date, fineCode, violationCode, driverCode, removed);
+                    sumFine = Convert.ToInt32(allViolations[fines[counter].violationCode-1].punishment);
                     counter++;
                 }
                 Array.Resize(ref allFines, allFines.Length + 1);
@@ -122,9 +125,9 @@ namespace finalCoursach
                 grid1.Columns[0].HeaderCell.Value = "Код штрафа";
                 grid1.Columns[0].Width = 70;
                 grid1.Columns[1].HeaderCell.Value = "Код водителя";
-                grid1.Columns[1].Width = 70;
+                grid1.Columns[1].Width = 300;
                 grid1.Columns[2].HeaderCell.Value = "Код нарушения";
-                grid1.Columns[2].Width = 70;
+                grid1.Columns[2].Width = 400;
                 grid1.Columns[3].HeaderCell.Value = "Дата";
                 grid1.Columns[3].Width = 70;
                 grid1.RowCount = fines.Length - removedFines;
@@ -133,8 +136,8 @@ namespace finalCoursach
                     if (!fines[i].removed)
                     {
                         grid1.Rows[counter].Cells[0].Value = fines[i].fineCode.ToString();
-                        grid1.Rows[counter].Cells[1].Value = fines[i].driverCode.ToString();
-                        grid1.Rows[counter].Cells[2].Value = fines[i].violationCode.ToString();
+                        grid1.Rows[counter].Cells[1].Value = fines[i].driverCode.ToString() + " " + allDrivers[fines[i].driverCode-1].driverName;
+                        grid1.Rows[counter].Cells[2].Value = fines[i].violationCode.ToString() + " " +allViolations[fines[i].violationCode-1].violationName;
                         grid1.Rows[counter].Cells[3].Value = fines[i].date;
                         counter++;
                     }
@@ -334,7 +337,7 @@ namespace finalCoursach
             {
                 int violationCode = 0;
                 string violationName = "";
-                string punishment = "";
+                int punishment = 0;
                 bool removed = false;
                 foreach (XmlNode childnode in xnode.ChildNodes)
                 {
@@ -348,7 +351,7 @@ namespace finalCoursach
                     }
                     if (childnode.Name == "punishment")
                     {
-                        punishment = childnode.InnerText;
+                        punishment = Convert.ToInt32(childnode.InnerText);
                     }
                     if (childnode.Name == "removed")
                     {
@@ -501,6 +504,43 @@ namespace finalCoursach
                 tabPage1.Enabled = false;
             }
         }
+
+        private void renderFinal()
+        {
+            if (fines.Length > 0)
+            {
+                tabControl1.Visible = false;
+                removeKebab.Visible = false;
+                emptyLabel.Visible = false;
+                saveButton.Visible = false;
+                grid1.ColumnCount = 5;
+                grid1.RowCount = 1;
+                grid1.Columns[0].HeaderCell.Value = "Количество штрафов";
+                grid1.Columns[0].Width = 150;
+                grid1.Columns[1].HeaderCell.Value = "Количество нарушений";
+                grid1.Columns[1].Width = 150;
+                grid1.Columns[2].HeaderCell.Value = "Количесиво водителей";
+                grid1.Columns[2].Width = 150;
+                grid1.Columns[3].Width = 150;
+                grid1.Columns[3].HeaderCell.Value = "Сумма";
+                grid1.Columns[4].HeaderCell.Value = "Средний штраф";
+                grid1.Columns[4].Width = 150;
+                grid1.Rows[0].Cells[0].Value = fines.Length;
+                grid1.Rows[0].Cells[1].Value = violations.Length;
+                grid1.Rows[0].Cells[2].Value = drivers.Length;
+                grid1.Rows[0].Cells[3].Value = sumFine;
+                grid1.Rows[0].Cells[4].Value = sumFine / fines.Length;
+            }
+            else
+            {
+                emptyLabel.Visible = true;
+                removeKebab.Visible = false;
+                tabControl1.Visible = false;
+                removeKebab.Visible = false;
+                saveButton.Visible = false;
+            }
+        }
+
         //make the add elements visible when loading grids
         private void appear()
         {
@@ -650,7 +690,7 @@ namespace finalCoursach
                 XmlElement violationRemoved = xDoc.CreateElement("removed");
                 XmlText violationCodeText = xDoc.CreateTextNode(obj.violationCode.ToString());
                 XmlText violationNameText = xDoc.CreateTextNode(obj.violationName);
-                XmlText violationPunishmentText = xDoc.CreateTextNode(obj.punishment);
+                XmlText violationPunishmentText = xDoc.CreateTextNode(obj.punishment.ToString());
                 XmlText violationRemovedText = xDoc.CreateTextNode(obj.removed.ToString());
                 violationCode.AppendChild(violationCodeText);
                 violationName.AppendChild(violationNameText);
@@ -669,7 +709,7 @@ namespace finalCoursach
 
 
 
-        //enbles the remove button when the grid cell is clicked and some other shit, idk
+        //enables the remove button when the grid cell is clicked and some other shit, idk
         private void Grid1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             removeKebab.Enabled = true;
@@ -785,10 +825,10 @@ namespace finalCoursach
             }
             if (Convert.ToString(tables.SelectedItem) == "Нарушения")
             {
-                if (!string.IsNullOrWhiteSpace(editTB2.Text) && !string.IsNullOrWhiteSpace(editTB3.Text))
+                if (!string.IsNullOrWhiteSpace(editTB2.Text) && !string.IsNullOrWhiteSpace(editTB3.Text)&&int.TryParse(editTB3.Text, out int cock))
                 {
                     string newViolationName = editTB2.Text;
-                    string newPunishment = editTB3.Text;
+                    int newPunishment = Convert.ToInt32(editTB3.Text);
                     violations[selected].change(newViolationName, newPunishment);
                     allViolations[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1].change(newViolationName, newPunishment);
                     renderViolations();
@@ -858,13 +898,13 @@ namespace finalCoursach
 
         private void addViolation()
         {
-            if (!string.IsNullOrWhiteSpace(addTB2.Text) && !string.IsNullOrWhiteSpace(addTB4.Text))
+            if (!string.IsNullOrWhiteSpace(addTB2.Text) && !string.IsNullOrWhiteSpace(addTB4.Text) && int.TryParse(addTB4.Text, out int cock))
             {
                 Array.Resize(ref violations, violations.Length + 1);
                 Array.Resize(ref allViolations, allViolations.Length + 1);
                 int violationCode = Convert.ToInt32(addCodeTB.Text);
                 string violationName = addTB2.Text;
-                string punishment = addTB4.Text;
+                int punishment = Convert.ToInt32(addTB4.Text);
                 violations[violations.Length - 1] = new violation(violationCode, violationName, punishment, false);
                 allViolations[violationCode - 1] = new violation(violationCode, violationName, punishment, false);
                 renderViolations();
@@ -1059,10 +1099,10 @@ namespace finalCoursach
         //properties
         public int violationCode;
         public string violationName;
-        public string punishment;
+        public int punishment;
         public bool removed;
         //constructor
-        public violation(int violationCode, string violationName, string punishment, bool removed)
+        public violation(int violationCode, string violationName, int punishment, bool removed)
         {
             this.violationCode = violationCode;
             this.violationName = violationName;
@@ -1070,7 +1110,7 @@ namespace finalCoursach
             this.removed = removed;
         }
         //methods
-        public void change(string newViolationName, string newPunishment)
+        public void change(string newViolationName, int newPunishment)
         {
             this.violationName = newViolationName;
             this.punishment = newPunishment;

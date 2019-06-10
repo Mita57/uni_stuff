@@ -96,7 +96,8 @@
             "Водители",
             "Штрафы",
             "Нарушения",
-            "Общая"});
+            "Общая",
+            "Итоговая"});
             this.tables.Location = new System.Drawing.Point(937, 37);
             this.tables.Name = "tables";
             this.tables.Size = new System.Drawing.Size(218, 21);
@@ -526,7 +527,7 @@
             this.Controls.Add(this.tables);
             this.Controls.Add(this.grid1);
             this.Name = "Form1";
-            this.Text = "СУБД228";
+            this.Text = "СУБД228 ( ͡° ͜ʖ ͡°)";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid1)).EndInit();
             this.pickGB.ResumeLayout(false);
