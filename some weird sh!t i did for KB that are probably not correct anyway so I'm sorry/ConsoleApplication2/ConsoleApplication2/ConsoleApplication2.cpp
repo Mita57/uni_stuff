@@ -1,8 +1,8 @@
 #include <iostream>
+#include <math.h>
 #include <vector>
 using namespace std;
 
-int carsAmount;
 double avg;
 
 class car {
@@ -20,7 +20,24 @@ public:
 	}
 };
 
-vector <string> manufacturers;
+class manufacturer {
+	string name;
+	vector <int> years;
+	int amount;
+	int avgAge;
 
-
-
+public: int countAvgAge() {
+	int sum = 0;
+	for (int i = 0; i < years.size; i++) {
+		sum += years[i];
+	}
+	double avgAgeDouble = (sum / amount);
+	avgAge = round(avgAgeDouble);
+	return avgAge;
+}
+public:
+	manufacturer(string name) {
+		name = name;
+		vector <int> years;
+	}
+};
