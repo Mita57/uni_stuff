@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8cf84fba-96f3-4cbb-a19a-85528fbc7d28" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/Coolthing.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/out/production/Coolthing/DayOfTheWeekService$DoItListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/out/production/Coolthing/DayOfTheWeekService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/out/production/Coolthing/DiceService$RollListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/out/production/Coolthing/DiceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/out/production/Coolthing/META-INF/Coolthing.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/out/production/Coolthing/MiniMusicService$PlayItListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/out/production/Coolthing/MiniMusicService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/out/production/Coolthing/MyDrawPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/out/production/Coolthing/Service.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/out/production/Coolthing/ServiceBrowser$MylistListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/out/production/Coolthing/ServiceBrowser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/out/production/Coolthing/ServiceServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/out/production/Coolthing/ServiceServerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/src/DayOfTheWeekService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/src/DiceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/src/MiniMusicService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/src/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/src/ServiceBrowser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/src/ServiceServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/Coolthing/src/ServiceServerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/finalBeatbox.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/out/production/finalBeatbox/BeatBoxFinal$MyDownTempoListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/out/production/finalBeatbox/BeatBoxFinal$MyListSelectionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/out/production/finalBeatbox/BeatBoxFinal$MyPlayMineListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/out/production/finalBeatbox/BeatBoxFinal$MyRestoreListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/out/production/finalBeatbox/BeatBoxFinal$MySaveListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/out/production/finalBeatbox/BeatBoxFinal$MySendListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/out/production/finalBeatbox/BeatBoxFinal$MyStartListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/out/production/finalBeatbox/BeatBoxFinal$MyStopListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/out/production/finalBeatbox/BeatBoxFinal$MyUpTempoListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/out/production/finalBeatbox/BeatBoxFinal$RemoteReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/out/production/finalBeatbox/BeatBoxFinal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/out/production/finalBeatbox/MusicServer$ClientHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/out/production/finalBeatbox/MusicServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/src/BeatBoxFinal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../learning stuff myself/Java/finalBeatbox/src/MusicServer.java" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1QKlGcV1gtUjxVbVM1Izako9oLj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8cf84fba-96f3-4cbb-a19a-85528fbc7d28" name="Default Changelist" comment="" />
+      <created>1567527073763</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1567527073763</updated>
+      <workItem from="1567527076129" duration="22000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

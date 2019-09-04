@@ -1,0 +1,21 @@
+body{
+    text-align: center;
+    font-family: "Comic Sans MS";
+}
+table, th, td{
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.blue{
+    background-color: deepskyblue;
+}
+#tablediv{
+    text-align: center;
+}
