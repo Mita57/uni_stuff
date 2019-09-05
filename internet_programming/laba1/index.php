@@ -7,8 +7,6 @@
 <body>
     <div id="heading">
         <h1>Введите размерность таблицы</h1>
-    </div>
-    <div id="fields">
         <form method="post" action="index.php">
         <input type="text" name="cols" placeholder="Колонки">
         <input type="text" name="rows" placeholder="Строки">
@@ -36,22 +34,22 @@
         //filling the rest of the table
         for ($i = 1; $i <= $rows; $i++){
             for ($j = 0;$j <= $cols; $j++){
-                if ($j == 0){
-                    echo ("<td class='yellow'>".$i);
+                if($i == $j && $cols == $rows){
+                    echo ("<td class='pink'>".($i * $j));
                 }
-                else{
-                    if($i*$j%2 == 0){
-                    echo ("<td class='green'>".($i*$j));
-                    }
-                    else{
-                        echo ("<td class='blue'>".($i*$j));
+                else {
+                    if ($j == 0) {
+                        echo("<td class='yellow'>" . $i);
+                    } else {
+                        if ($i * $j % 2 == 0) {
+                            echo("<td class='green'>" . ($i * $j));
+                        } else {
+                            echo("<td class='blue'>" . ($i * $j));
+                        }
                     }
                 }
             }
             echo ("<tr>");
-        }
-        if(i!==rows) {
-            echo("<tr>");
         }
         echo ("</div>");
     }

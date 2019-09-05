@@ -1,6 +1,10 @@
 body{
     text-align: center;
     font-family: "Comic Sans MS";
+    display:flex;
+    flex-direction:column;
+    align-content:center;
+    background-image:url("bg.gif");
 }
 table, th, td{
     text-align: center;
@@ -16,6 +20,16 @@ table, th, td{
 .blue{
     background-color: deepskyblue;
 }
+.pink{
+    background-color: palevioletred;
+}
 #tablediv{
     text-align: center;
+    margin: auto;
+    background-color:white;
+}
+#heading{
+    background-color:white;
+    border-radius:20px;
+    padding-bottom:20px;
 }
