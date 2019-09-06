@@ -20,18 +20,18 @@ public class max {
     }
 
      private static void checkMother(ArrayList<Integer> list, int sum){
-        int check = 0;
-        for(int i = 0; i < list.size(); i++){
+        for(int i = 0; i <list.size(); i++){
             for (int j = 0; j < list.size(); j++){
-                check++;
-                if (j == list.size()-i-1){
+                if (list.get(j) > Math.round(sum/2)){
                     break;
                 }
                 if ((list.get(i) + list.get(j)) == sum){
                     System.out.println("Числа: " + list.get(i) + ", " + list.get(j));
                 }
             }
+            if (list.get(i) > Math.round(sum/2)){
+                break;
+            }
         }
-        System.out.println(check);
     }
 }
