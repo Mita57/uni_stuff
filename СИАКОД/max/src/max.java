@@ -22,7 +22,7 @@ public class max {
      private static void checkMother(ArrayList<Integer> list, int sum){
         int brIndex = 0;
         for (int i = 0; i < list.size(); i++){
-            if (list.get(i) > Math.round((double)sum/2)){
+            if (list.get(i) > sum){
                 break;
             }
             else{
@@ -33,7 +33,7 @@ public class max {
 
 
         for(int i = 0; i < brIndex; i++){
-            for (int j = list.size()-1; j > 0; j--){
+            for (int j = i; j < brIndex-i-1; j++){
                 if ((list.get(i) + list.get(j)) == sum){
                     System.out.println("Числа: " + list.get(i) + ", " + list.get(j));
                 }
