@@ -20,17 +20,23 @@ public class max {
     }
 
      private static void checkMother(ArrayList<Integer> list, int sum){
-        for(int i = 0; i <list.size(); i++){
-            for (int j = 0; j < list.size(); j++){
-                if (list.get(j) > Math.round(sum/2)){
-                    break;
-                }
+        int brIndex = 0;
+        for (int i = 0; i < list.size(); i++){
+            if (list.get(i) > Math.round((double)sum/2)){
+                break;
+            }
+            else{
+                brIndex = i+1;
+            }
+
+        }
+
+
+        for(int i = 0; i < brIndex; i++){
+            for (int j = list.size()-1; j > 0; j--){
                 if ((list.get(i) + list.get(j)) == sum){
                     System.out.println("Числа: " + list.get(i) + ", " + list.get(j));
                 }
-            }
-            if (list.get(i) > Math.round(sum/2)){
-                break;
             }
         }
     }
