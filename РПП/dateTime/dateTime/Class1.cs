@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace dateTime
 {
-    class myDate
+    class MyDate
     {
         private int day;
         private int month;
         private int year;
         private DateTime fuckCS;
 
-        public myDate(int day, int month, int year)
+        public MyDate(int day, int month, int year)
         {
             this.day = day;
             this.month = month;
             this.year = year;
-            getDateTime();
         }
 
         private void getDateTime()
@@ -40,35 +39,36 @@ namespace dateTime
         public int countDifference(string date)
         {
             string[] parts = date.Split('.');
+            getDateTime();
             DateTime thisDate = new DateTime(int.Parse(parts[2]),int.Parse(parts[1]), int.Parse(parts[0]));
-            return (thisDate - fuckCS).Days;
+            return Math.Abs((thisDate - fuckCS).Days);
         }
 
         public void setDay(int day)
         {
             this.day = day;
-            getDateTime();
         }
 
         public void setMonth(int month)
         {
             this.month = month;
-            getDateTime();
         }
 
         public void setYear(int year)
         {
             this.year = year;
-            getDateTime();
         }
 
+        
         public void changeDays(int days)
         {
-            this.fuckCS.AddDays(days);
-            this.day = fuckCS.Day;
-            this.month = fuckCS.Month;
-            this.year = fuckCS.Year;
+            this.fuckCS = this.fuckCS.AddDays(days);
+            setDay(this.fuckCS.Day);
+            setMonth(this.fuckCS.Month);
+            setYear(this.fuckCS.Year);
         }
+
+
 
     }
 }

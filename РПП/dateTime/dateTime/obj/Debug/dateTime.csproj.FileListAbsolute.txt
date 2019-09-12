@@ -1,0 +1,7 @@
+C:\Users\57thr\Documents\GitHub\uni_stuff\РПП\dateTime\dateTime\bin\Debug\dateTime.exe.config
+C:\Users\57thr\Documents\GitHub\uni_stuff\РПП\dateTime\dateTime\bin\Debug\dateTime.exe
+C:\Users\57thr\Documents\GitHub\uni_stuff\РПП\dateTime\dateTime\bin\Debug\dateTime.pdb
+C:\Users\57thr\Documents\GitHub\uni_stuff\РПП\dateTime\dateTime\obj\Debug\dateTime.csprojAssemblyReference.cache
+C:\Users\57thr\Documents\GitHub\uni_stuff\РПП\dateTime\dateTime\obj\Debug\dateTime.csproj.CoreCompileInputs.cache
+C:\Users\57thr\Documents\GitHub\uni_stuff\РПП\dateTime\dateTime\obj\Debug\dateTime.exe
+C:\Users\57thr\Documents\GitHub\uni_stuff\РПП\dateTime\dateTime\obj\Debug\dateTime.pdb
