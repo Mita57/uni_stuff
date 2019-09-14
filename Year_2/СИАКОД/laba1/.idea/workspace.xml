@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe91d809-afcc-4833-8fc7-051f9a0b954b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arrays.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HeightChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/duplicates.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/max/META-INF/max.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/max/avgOfPositives.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/max/sum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,8 +90,16 @@
       <workItem from="1568357507184" duration="4342000" />
       <workItem from="1568441166998" duration="379000" />
       <workItem from="1568442160949" duration="836000" />
-      <workItem from="1568481007955" duration="5769000" />
+      <workItem from="1568481007955" duration="6091000" />
     </task>
+    <task id="LOCAL-00001" summary="ggnffgn">
+      <created>1568491028150</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568491028150</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,5 +115,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ggnffgn" />
+    <option name="LAST_COMMIT_MESSAGE" value="ggnffgn" />
   </component>
 </project>
