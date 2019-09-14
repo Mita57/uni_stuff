@@ -1,0 +1,36 @@
+body{
+    font-family:arial; 
+ }
+.qst1{
+    border:1px black solid;
+    padding:10px;
+    border-radius:10px;
+    width:800px;
+}
+.due{
+    border:1px black solid;
+    padding:10px;
+    border-radius:10px;
+    width:800px;
+}
+.tre{
+    border:1px black solid;
+    padding:10px;
+    border-radius:10px;
+    width:800px;
+}
+.quattro{
+    border:1px black solid;
+    padding:10px;
+    border-radius:10px;
+    width:800px;
+}
+#result{
+    border:3px black solid;
+    padding:10px;
+    border-radius:10px;
+    width:800px;
+    visibility: hidden;
+    font-weight: bold;
+    color:white;
+}

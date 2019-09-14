@@ -1,0 +1,28 @@
+body{
+    background-color: lightgreen;
+    font-weight: bold;
+    background-image: url(background.jpg);
+    font-family: arial;
+}
+h1{
+    color:white;
+    text-align:centerter;
+    font-size: 30pt;
+    background-color: green;
+    border-radius: 5px;
+    width:300px;
+    margin:auto;
+    padding:5px;
+}
+article{
+    border-bottom: 1px solid cyan;
+    text-align: left;
+    padding: 10px;
+    border-top: 1px solid cyan;
+    background-color: lightblue;
+    width: 400px;
+    margin: auto;
+}
+.forms{
+    float: right;
+}

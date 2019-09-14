@@ -1,0 +1,37 @@
+body{
+    background: lightgrey;
+    font-family: "times";
+    color:black;
+}
+.after_script{
+    background-color: #fff9a8;
+    text-align: center;
+    font-family: arial;
+}
+.pokup{
+    font-weight: bold;
+    color:Red;
+    font-size: 30pt;
+}
+article{
+   background-color: #fffde4;  
+   text-align: left;
+   padding: 30px;
+   font-size:14pt;
+   width:800px;
+   color:black;
+   margin:auto;
+}
+.val{
+    font-size: 16pt;
+    font-weight: bold;
+    color:darkblue;
+}
+.crit{
+    font-size: 16pt;
+    text-decoration: underline;
+}
+.tovars{
+    font-size: 14pt;
+    font-family: times;
+}

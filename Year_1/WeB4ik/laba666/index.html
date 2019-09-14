@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>memez</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <article>
+        <form name="lul">
+        <div class="num">
+            Число элементов массива <input type="text" id="num" onchange="check()">
+            <input type="button" value="Создать массив" disabled id="crt" onclick="gener()">
+        </div> <P>
+            <div class="init">
+                Исходный массив <br>
+                <input type="text" id="initial" readonly>
+            </div> <p>
+
+            <fieldset class="det"> 
+                <legend>Определить</legend>
+                <input type="checkbox" id="min"> Минимальный элемент <P>
+                <input type="checkbox" id="max"> Максимальный элемент <P>
+                <input type="checkbox" id="sum"> Сумма элементов <P>
+                <input type="checkbox" id="pos"> Число отрицательных <P>
+                <input type="checkbox" id="neg"> Число положительных <P>
+                    <div class="right">
+                        <input type="text" id="min_txt"> <P>
+                        <input type="text" id="max_txt"> <P>
+                        <input type="text" id="sum_txt"> <P>
+                        <input type="text" id="pos_txt"> <P>
+                        <input type="text" id="neg_txt"> <P>
+                    </div>
+            </fieldset>           
+            <fieldset class="sort">
+                <legend>Сортировать</legend>
+                <input type="radio" name="kok" id="up"> По возрастанию <P>
+                <input type="radio" name="kok" id="down"> По убыванию <P>
+                <input type="radio" name="kok" id="none"> Без сортировки <P>
+            </fieldset>
+        <div class="sorted">
+           <p> Отсортированый массив</p> <br>
+            <input type="text" id="end" readonly> <p>
+                <div class="knopk">
+            <input type="button" disabled value="Вычислить" id="calc" onclick="asf()">
+                </div>
+        </div>
+    </form>
+    </article>
+</body>
+</html>
