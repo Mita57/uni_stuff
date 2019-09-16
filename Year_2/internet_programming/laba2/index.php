@@ -8,10 +8,10 @@
 <body>
     <div class="inputs">
     <form method="post" action="index.php">
-        <input type="text" name="range" placeholder="Размерность">
-        <input type="text" name="min" placeholder="Минимум">
-        <input type="text" name="max" placeholder="Максимум">
-        <input type="submit" name="run" value="Let's go biach">
+        <input type="text" name="range" placeholder="Размерность"><br>
+        <input type="text" name="min" placeholder="Минимум"><br>
+        <input type="text" name="max" placeholder="Максимум"><br>
+        <input type="submit" name="run" value="Let's go biach"><br>
     </form>
     </div>
     <?php
@@ -20,57 +20,64 @@
         $min = $_POST['min'];
         $max = $_POST['max'];
         $range = $_POST['range'];
-        $array = [];
+        $ara = [];
+        //generating an array
         for ($i = 0; $i < $range; $i++) {
-            $randNum = rand($min, $max);
-            array_push($array, $randNum);
+            array_push($ara, rand($min, $max));
         }
-        //approaching minimums
-        $minElem = $array[0];
-        $amountOfZeros = 0;
+        echo ("<div class='sas'>Массив: ");
+        //having FUN with minimums
+        $min = $ara[0];
         $minIndex = 0;
-        for ($i = 1; i < count($array); $i++){
-            if($array[$i] < $minElem){
-                $minElem = $array[$i];
+        for ($i = 0; $i < sizeof($ara); $i++){
+            echo ($ara[$i].' ');
+            if($ara[$i]<$min){
+                $min = $ara[$i];
                 $minIndex = $i;
             }
 
         }
+        echo ("<br>Минимальный элемент массива: ".$min.", его индекс: ".$minIndex);
 
-        //sum of all the elements in between 2 positive elements
-        $firstElem = NULL;
-        $lastElem = NULL;
-        $sum = 0;
-        for ($i = 0; $i < count($array); $i++){
-            if ($array[$i] > 0){
-                if (empty($firstElem)){
-                    $firstElem = $array[$i];
+        //sum of elems in between last and first positive elems
+
+        $firstPositive = null;
+        $lastPositive = null;
+
+        for ($i = 0; $i < sizeof($ara); $i++){
+            if($ara[$i] > 0){
+                if (is_null($firstPositive)){
+                    $firstPositive = $ara[$i];
                 }
-                $lastElem[$i] = $array[$i];
+                else{
+                    $lastPositive = $ara[$i];
+                }
+            }
+
+        }
+        $sum = 0;
+        for ($i = $firstPositive; $i<$lastPositive;$i++){
+            $sum += $ara[$i];
+        }
+        echo (" <br>Сумма элементов между крайними положительными элементами: ".$sum);
+
+        //fucking around with zeroZ
+
+        $zeroCounter = 0;
+        for ($i = 0; $i < sizeof($ara); $i++){
+            if($ara[$i] == 0){
+                $zeroCounter++;
+                unset($ara[$i]);
             }
         }
-        for ($i = $firstElem; $i < $lastElem; $i++){
-            $sum += $array[$i];
+        for ($i = 0; $i < $zeroCounter; $i++){
+            array_unshift($ara, 0);
         }
-        for ($i = 0; $i < count($array);  $i++){
-            echo ("Массив: ". $array);
+        echo ("<br>". "Массив пiсля смещения элементов: ");
+        for ($i = 0; $i < sizeof($ara); $i++){
+            echo ($ara[$i]." ");
         }
-
-        //pushing zeros to the beginning
-        for ($i = 0; $i < count($array);  $i++){
-            if($array[$i] == 0){
-                $amountOfZeros++;
-                unset($array[$i]);
-            }
-        }
-        for ($i = 0; $i < $amountOfZeros; $i++){
-            array_unshift($array, 0);
-        }
-        echo("Минимальный элемент массива: " . $minElem . ", его индекс: " . $minIndex);
-        echo ("Сумма элементв между элементами: ".$sum);
-        echo ("Массив пiсля смещення нулэй: ". $array);
-
-
+        echo("</div>");
     }
     ?>
 </body>
