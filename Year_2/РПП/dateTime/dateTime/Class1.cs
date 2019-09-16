@@ -53,7 +53,7 @@ namespace dateTime
             }
             else
             {
-                Console.WriteLine("Неправиьный формат");
+                Console.WriteLine("Неправильный формат");
             }
         }
         public void setMonth(int month)

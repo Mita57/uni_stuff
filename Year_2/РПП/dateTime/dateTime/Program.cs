@@ -17,6 +17,7 @@ namespace dateTime
             cock.changeDays(1337);
             Console.WriteLine("Добавим 1337 дней: " + cock.showNormal());
             Console.WriteLine(cock.checkLeap());
+            cock.setDay(-323232);
             Console.ReadLine();
         }
     }
