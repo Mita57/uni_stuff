@@ -42,8 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.power)).BeginInit();
@@ -58,9 +56,9 @@
             this.grid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.X,
             this.P});
-            this.grid1.Location = new System.Drawing.Point(30, 47);
+            this.grid1.Location = new System.Drawing.Point(30, 9);
             this.grid1.Name = "grid1";
-            this.grid1.Size = new System.Drawing.Size(304, 400);
+            this.grid1.Size = new System.Drawing.Size(304, 438);
             this.grid1.TabIndex = 0;
             this.grid1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid1_CellEndEdit);
             // 
@@ -83,10 +81,10 @@
             this.grid2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.comb,
             this.prob});
-            this.grid2.Location = new System.Drawing.Point(404, 47);
+            this.grid2.Location = new System.Drawing.Point(404, 9);
             this.grid2.Name = "grid2";
             this.grid2.ReadOnly = true;
-            this.grid2.Size = new System.Drawing.Size(303, 400);
+            this.grid2.Size = new System.Drawing.Size(303, 438);
             this.grid2.TabIndex = 1;
             // 
             // comb
@@ -191,31 +189,11 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "The greatest progress bar evar";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(127, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Алфавит символов";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(386, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(340, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Слова и вероятности появления составленных из алфавита слов";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 594);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.amval);
@@ -254,8 +232,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
     }
 }
 

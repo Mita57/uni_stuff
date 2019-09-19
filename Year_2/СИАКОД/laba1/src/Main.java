@@ -52,6 +52,13 @@ public class Main {
 
         //mins sum of subarray
 
+        System.out.println("----------------------------------Min of subarrays----------------------------------");
+        System.out.println("Введите размерность массива");
+        ara = new int[Integer.parseInt(sca.nextLine())];
+        for (int i = 0; i< ara.length; i++) {
+            ara[i] = Integer.parseInt(sca.nextLine());
+        }
+        System.out.println(minOfSubarrays(ara));
 
     }
 
@@ -128,5 +135,28 @@ public class Main {
     }
 
 
+    private static int minOfSubarrays(int [] ara){
+        ArrayList<Integer> list= new ArrayList<Integer>();
+        int sum = 0;
+        for (int i = 0; i <ara.length ; i++) {
+            for (int grps = i; grps <=ara.length ; grps++) {
+                for (int j = i ; j < grps ; j++) {
+                    list.add(ara[j]);
+                    sum += countMin(list);
+                }
+            }
+        }
+        return sum;
+    }
+
+    private static int countMin(ArrayList<Integer> list){
+        int min = list.get(0);
+        for(int x:list){
+            if(x < min){
+                min = x;
+            }
+        }
+        return min;
+    }
 
 }

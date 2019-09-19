@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<drivers>
+  <driver>
+    <driverCode>1</driverCode>
+    <driverName>Джеймс Хэтфилд</driverName>
+    <category>B</category>
+    <bDay>03.08.1963</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>2</driverCode>
+    <driverName>Дейв Мастейн</driverName>
+    <category>B</category>
+    <bDay>13.09.1961</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>3</driverCode>
+    <driverName>Ларс Ульрих</driverName>
+    <category>A, B</category>
+    <bDay>26.12.1963</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>4</driverCode>
+    <driverName>Оззи Осборн</driverName>
+    <category>B</category>
+    <bDay>03.12.1948</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>5</driverCode>
+    <driverName>Том Арайа</driverName>
+    <category>A,B</category>
+    <bDay>06.06.1961</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>6</driverCode>
+    <driverName>Кирк Хэммет</driverName>
+    <category>B</category>
+    <bDay>18.11.1962</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>7</driverCode>
+    <driverName>Ронни Джеймс Дио</driverName>
+    <category>B</category>
+    <bDay>03.07.1942</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>8</driverCode>
+    <driverName>Ангус Янг</driverName>
+    <category>A</category>
+    <bDay>31.03.1955</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>9</driverCode>
+    <driverName>Бон Скотт</driverName>
+    <category>A, B</category>
+    <bDay>09.07.1946</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>10</driverCode>
+    <driverName>Клифф Бертон</driverName>
+    <category>A, B</category>
+    <bDay>10.02.1962</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>11</driverCode>
+    <driverName>Даймбег Даррел</driverName>
+    <category>B</category>
+    <bDay>20.08.1966</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>12</driverCode>
+    <driverName>Винни Пол</driverName>
+    <category>A</category>
+    <bDay>11.03.1964</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>13</driverCode>
+    <driverName>Фил Ансельмо</driverName>
+    <category>B</category>
+    <bDay>30.06.1968</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>14</driverCode>
+    <driverName>Тони Айомми</driverName>
+    <category>A, B</category>
+    <bDay>19.02.1948</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>15</driverCode>
+    <driverName>Малькольм Янг</driverName>
+    <category>B</category>
+    <bDay>06.01.1953</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>16</driverCode>
+    <driverName>Керри Кинг</driverName>
+    <category>A</category>
+    <bDay>04.06.1965</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>17</driverCode>
+    <driverName>Генрман Ли</driverName>
+    <category>B</category>
+    <bDay>03.10.1976</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>18</driverCode>
+    <driverName>Билл Уорд</driverName>
+    <category>B</category>
+    <bDay>05.05.1948</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>19</driverCode>
+    <driverName>Гизер Батлер</driverName>
+    <category>B</category>
+    <bDay>17.07.1949</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>20</driverCode>
+    <driverName>Марти Фридман</driverName>
+    <category>B</category>
+    <bDay>08.12.1962</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>21</driverCode>
+    <driverName>Ник Менца</driverName>
+    <category>A, B</category>
+    <bDay>23.07.1964</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>22</driverCode>
+    <driverName>Джефф Ханнеман</driverName>
+    <category>A</category>
+    <bDay>31.01.1964</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>23</driverCode>
+    <driverName>Дейв Ломбардо</driverName>
+    <category>B</category>
+    <bDay>16.02.1965</bDay>
+    <removed>False</removed>
+  </driver>
+  <driver>
+    <driverCode>24</driverCode>
+    <driverName>Крис Бродерик </driverName>
+    <category>A</category>
+    <bDay>06.06.1970</bDay>
+    <removed>False</removed>
+  </driver>
+</drivers>

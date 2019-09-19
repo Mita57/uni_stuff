@@ -48,3 +48,13 @@ E:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.Generat
 E:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
 E:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 E:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+F:\ИСиТ\Лаба3\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+F:\ИСиТ\Лаба3\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+F:\ИСиТ\Лаба3\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+F:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojAssemblyReference.cache
+F:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+F:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+F:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+F:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+F:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+F:\ИСиТ\Лаба3\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
