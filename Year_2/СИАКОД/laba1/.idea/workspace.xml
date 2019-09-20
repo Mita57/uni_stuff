@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fe91d809-afcc-4833-8fc7-051f9a0b954b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/max/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/max/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.avgOfPositives">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="max" />
@@ -90,6 +91,7 @@
       <workItem from="1568481007955" duration="6091000" />
       <workItem from="1568920509973" duration="733000" />
       <workItem from="1568954876116" duration="318000" />
+      <workItem from="1568958745429" duration="968000" />
     </task>
     <task id="LOCAL-00001" summary="ggnffgn">
       <created>1568491028150</created>
@@ -120,5 +122,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ggnffgn" />
     <option name="LAST_COMMIT_MESSAGE" value="ggnffgn" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
