@@ -6,51 +6,51 @@ public class Main {
 
         //sum of two elems in the array
 
-//        System.out.println("------------------------------Нахождение элементов------------------------------");
+        System.out.println("------------------------------Нахождение элементов------------------------------");
         Scanner sca = new Scanner(System.in);
-//        System.out.println("Введите количество элементов");
+        System.out.println("Введите количество элементов");
         int [] ara = new int[Integer.parseInt(sca.nextLine())];
-//        for (int i = 0; i < ara.length; i++){
-//            System.out.println("Введите элемент " + i);
-//            ara[i] = Integer.parseInt(sca.nextLine());
-//        }
-//        Arrays.sort(ara);
-//        System.out.println("Введите число");
-//        int sum = Integer.parseInt(sca.nextLine());
-//        sumOfElems(ara, sum);
-//
-//        //avgOfPositives
-//
-//        System.out.println("----------------------------------Среднее положительных----------------------------------");
-//        System.out.println("Введите размерность массива");
-//        ara = new int[Integer.parseInt(sca.nextLine())];
-//        for (int i = 0; i< ara.length; i++){
-//            ara[i] = Integer.parseInt(sca.nextLine());
-//        }
-//        System.out.println(avgOfPositives(ara));
-//
-//
-//        //rabotyagi s zavoda
-//
-//        System.out.println("----------------------------------Height checker----------------------------------");
-//        System.out.println("Введите размерность массива");
-//        ara = new int[Integer.parseInt(sca.nextLine())];
-//        for (int i = 0; i< ara.length; i++){
-//            ara[i] = Integer.parseInt(sca.nextLine());
-//        }
-//        System.out.println(heightcheker(ara));
-//
-//        //checking duplicates
-//
-//        System.out.println("----------------------------------Checking duplicateZ----------------------------------");
-//        System.out.println("Введите размерность массива");
-//        ara = new int[Integer.parseInt(sca.nextLine())];
-//        for (int i = 0; i< ara.length; i++) {
-//            ara[i] = Integer.parseInt(sca.nextLine());
-//        }
-//        checkDuplicates(ara);
-//
-//        //mins sum of subarray
+        for (int i = 0; i < ara.length; i++){
+            System.out.println("Введите элемент " + i);
+            ara[i] = Integer.parseInt(sca.nextLine());
+        }
+        Arrays.sort(ara);
+        System.out.println("Введите число");
+        int sum = Integer.parseInt(sca.nextLine());
+        sumOfElems(ara, sum);
+
+        //avgOfPositives
+
+        System.out.println("----------------------------------Среднее положительных----------------------------------");
+        System.out.println("Введите размерность массива");
+        ara = new int[Integer.parseInt(sca.nextLine())];
+        for (int i = 0; i< ara.length; i++){
+            ara[i] = Integer.parseInt(sca.nextLine());
+        }
+        System.out.println(avgOfPositives(ara));
+
+
+        //rabotyagi s zavoda
+
+        System.out.println("----------------------------------Height checker----------------------------------");
+        System.out.println("Введите размерность массива");
+        ara = new int[Integer.parseInt(sca.nextLine())];
+        for (int i = 0; i< ara.length; i++){
+            ara[i] = Integer.parseInt(sca.nextLine());
+        }
+        System.out.println(heightcheker(ara));
+
+        //checking duplicates
+
+        System.out.println("----------------------------------Checking duplicateZ----------------------------------");
+        System.out.println("Введите размерность массива");
+        ara = new int[Integer.parseInt(sca.nextLine())];
+        for (int i = 0; i< ara.length; i++) {
+            ara[i] = Integer.parseInt(sca.nextLine());
+        }
+        checkDuplicates(ara);
+
+        //mins sum of subarray
 
         System.out.println("----------------------------------Min of subarrays----------------------------------");
         System.out.println("Введите размерность массива");
