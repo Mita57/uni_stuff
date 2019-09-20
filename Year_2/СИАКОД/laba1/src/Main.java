@@ -139,8 +139,8 @@ public class Main {
         ArrayList<Integer> list= new ArrayList<Integer>();
         int sum = 0;
         for (int i = 0; i <ara.length ; i++) {
-            for (int grps = i; grps <=ara.length ; grps++) {
-                for (int j = i ; j < grps ; j++) {
+            for (int j = i; j <=ara.length ; j++) {
+                for (int j = i ; j < j ; j++) {
                     list.add(ara[j]);
                     sum += countMin(list);
                 }

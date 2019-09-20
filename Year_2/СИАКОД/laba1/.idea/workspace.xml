@@ -2,81 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe91d809-afcc-4833-8fc7-051f9a0b954b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/.vs/Laba4/v15/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/.vs/Laba4/v15/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/.vs/Laba4/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/.vs/Laba4/v15/Server/sqlite3/storage.ide-shm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/.vs/Laba4/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/.vs/Laba4/v15/Server/sqlite3/storage.ide-wal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/Form1.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/bin/Debug/Laba4.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/bin/Debug/Laba4.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/bin/Debug/Laba4.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/bin/Debug/Laba4.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/Laba4.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/Laba4.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/Laba4.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/Laba4.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/Laba4.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/Laba4.csproj.GenerateResource.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/Laba4.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/Laba4.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/Laba4.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/Laba4.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/Laba4.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/Laba4.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Laba4/Laba4/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба2/WindowsFormsApp1/WindowsFormsApp1/bin/Debug/WindowsFormsApp1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба2/WindowsFormsApp1/WindowsFormsApp1/bin/Debug/WindowsFormsApp1.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба2/WindowsFormsApp1/WindowsFormsApp1/bin/Debug/WindowsFormsApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба2/WindowsFormsApp1/WindowsFormsApp1/bin/Debug/WindowsFormsApp1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба2/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба2/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба2/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба2/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба2/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба2/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба2/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба2/WindowsFormsApp1/WindowsFormsApp1/obj/Debug/WindowsFormsApp1.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/.vs/WindowsFormsApp2/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/.vs/WindowsFormsApp2/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/.vs/WindowsFormsApp2/v16/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/.vs/WindowsFormsApp2/v16/Server/sqlite3/storage.ide" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/Form1.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/Form1.resx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/Form1.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/bin/Debug/WindowsFormsApp2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/bin/Debug/WindowsFormsApp2.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/bin/Debug/WindowsFormsApp2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/bin/Debug/WindowsFormsApp2.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/obj/Debug/WindowsFormsApp2.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/obj/Debug/WindowsFormsApp2.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/obj/Debug/WindowsFormsApp2.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/obj/Debug/WindowsFormsApp2.csproj.GenerateResource.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/obj/Debug/WindowsFormsApp2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/obj/Debug/WindowsFormsApp2.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/obj/Debug/WindowsFormsApp2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Year_1/ИСиТ/Лаба3/WindowsFormsApp2/obj/Debug/WindowsFormsApp2.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/.vs/VSWorkspaceState.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/.vs/finalCoursach/v15/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/.vs/finalCoursach/v15/Server/sqlite3/db.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/.vs/finalCoursach/v15/Server/sqlite3/storage.ide" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/.vs/finalCoursach/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/.vs/finalCoursach/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/.vs/finalCoursach/v16/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/.vs/finalCoursach/v16/Server/sqlite3/db.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/.vs/finalCoursach/v16/Server/sqlite3/storage.ide" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/.vs/slnx.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/App.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/Form1.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/Form1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/Form1.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/Properties/Resources.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/Properties/Resources.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/Properties/Settings.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/Properties/Settings.settings" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/bin/Debug/drivers.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/bin/Debug/finalCoursach.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/bin/Debug/finalCoursach.exe.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/bin/Debug/finalCoursach.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/bin/Debug/fines.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/bin/Debug/violations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/finalCoursach.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/DesignTimeResolveAssemblyReferences.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/finalCoursach.Form1.resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/finalCoursach.Properties.Resources.resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/finalCoursach.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/finalCoursach.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/finalCoursach.csproj.GenerateResource.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/finalCoursach.csprojAssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/finalCoursach.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Debug/finalCoursach.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Year_1/Информатика/finalCoursach/finalCoursach/obj/Release/finalCoursach.csproj.CoreCompileInputs.cache" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -164,6 +89,7 @@
       <workItem from="1568442160949" duration="836000" />
       <workItem from="1568481007955" duration="6091000" />
       <workItem from="1568920509973" duration="733000" />
+      <workItem from="1568954876116" duration="318000" />
     </task>
     <task id="LOCAL-00001" summary="ggnffgn">
       <created>1568491028150</created>
