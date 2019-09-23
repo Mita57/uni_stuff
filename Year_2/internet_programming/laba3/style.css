@@ -20,3 +20,11 @@ body{
     width: 500px;
     margin: auto;
 }
+table{
+    margin:auto;
+}
+tr, td{
+    border: 1px solid black;
+    border-collapse:collapse;
+    text-align:center;
+}

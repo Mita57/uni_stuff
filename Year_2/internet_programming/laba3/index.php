@@ -30,10 +30,10 @@
         $maxElem = $ara[$i][$j];
         $minElemROw = 0;
         $minElem = 0;
-        echo ("<div class='output'> Голодний: <br>");
+        echo ("<div class='output'> Голодний: <br> <table>");
         for ($i = 0; $i < $rows; $i++){
             for ($j = 0; $j < $cols; $j++){
-                echo ($ara[$i][$j].' '.' '. ' ');
+                echo ('<td>'.$ara[$i][$j]);
                 if($ara[$i][$j]> $maxElem ){
                     $maxElem = $ara[$i][$j];
                     $maxELemCol = $j;
@@ -42,22 +42,24 @@
                     $minElem = $ara[$i][$j];
                     $minElemRow = $i;
                 }
+
             }
-            echo ('<br>');
+            echo ('<tr>');
         }
+        echo ('</table> <br>');
         $araCock = $ara;
         for ($i = 0; $i < $rows; $i++) {
             $ara[$minElemROw][$i] = $araCock[$i][$maxELemCol];
             $ara[$i][$maxELemCol] = $araCock[$maxELemCol][$i];
         }
-        echo ("Бахнув пельменiв: <br>");
+        echo ("Бахнув пельменiв: <br><table>");
         for ($i = 0; $i < $rows; $i++){
             for ($j = 0; $j < $cols; $j++){
-                echo ($ara[$i][$j]).(' '.' '. ' ');
+                echo ('<td>'.$ara[$i][$j]);
             }
-            echo ("<br>");
+            echo ("<tr>");
         }
-
+        echo ("<br> </table>");
 
 
 
