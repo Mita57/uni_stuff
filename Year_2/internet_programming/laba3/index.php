@@ -50,7 +50,7 @@
         $araCock = $ara;
         for ($i = 0; $i < $rows; $i++) {
             $ara[$minElemROw][$i] = $araCock[$i][$maxELemCol];
-            $ara[$i][$maxELemCol] = $araCock[$maxELemCol][$i];
+            $ara[$i][$maxELemCol] = $araCock[$minElemROw][$i];
         }
         echo ("Бахнув пельменiв: <br><table>");
         for ($i = 0; $i < $rows; $i++){
