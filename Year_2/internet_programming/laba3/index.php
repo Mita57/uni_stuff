@@ -30,7 +30,7 @@
         $maxElem = $ara[$i][$j];
         $minElemROw = 0;
         $minElem = 0;
-        echo ("<div class='output'> Голодний: <br> <table>");
+        echo ("<div class='outism'> Голодний: <br> <table>");
         for ($i = 0; $i < $rows; $i++){
             for ($j = 0; $j < $cols; $j++){
                 echo ('<td>'.$ara[$i][$j]);
@@ -59,7 +59,7 @@
             }
             echo ("<tr>");
         }
-        echo ("<br> </table>");
+        echo ("<br> </table> </div>");
 
 
 
