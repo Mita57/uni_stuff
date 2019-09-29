@@ -29,7 +29,18 @@ namespace inheritance
 
         public string info()
         {
-            return String.Format("Точка "+ this.x + " " + this.y);
+            return String.Format("Точка ({0,5:F1}, {1,5:F1})", x, y);
+        }
+
+        public void Simm()
+        {
+            this.x = -this.x;
+            this.y = -this.y;
+        }
+
+        public double ReFrom(Point a)
+        {
+            return (Math.Round(Math.Sqrt(Math.Abs(this.x - a.x) + Math.Abs(this.y - a.y)), 2));
         }
     }
 }

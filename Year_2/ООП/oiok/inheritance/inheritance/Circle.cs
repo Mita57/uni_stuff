@@ -9,23 +9,24 @@ namespace inheritance
     class Circle:Point
     {
         protected double r;
+
         public Circle(double x, double y, double r) : base(x, y)
         {
             if (r < 0)
-            { 
-            r = 1;
+            {
+                r = 1;
             }
-            this.r = r;
+                this.r = r;
         }
 
         public Circle()
         {
-
+            this.r = 1;
         }
 
-        public string info()
+        public new string info()
         {
-            return String.Format("Точка " + this.x + " " + this.y + " R:" + this.r);
+            return String.Format("Круг ({0,5:F1}, {1,5:F1}), R = {2,5:F1}", x, y, r);
         }
 
         public void SetSquare(double value)

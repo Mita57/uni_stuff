@@ -29,7 +29,39 @@ namespace inheritance
             Create(out p, n);
             Show(p);
             Transform(p);
+            Show3(p);
+            invokeSimm(p);
+            Console.WriteLine("Метод simm()");
             Show(p);
+            Console.WriteLine("Метод RoFrom()");
+            for (int i = 0; i < 7; i++)
+            {
+                if(i == 0)
+                {
+                    continue;
+                }
+                else
+                {
+                    Console.Write((i-1).ToString().PadLeft(10));
+                }
+            }
+            Console.Write(" \n_______________________________________________________________________________________ \n");
+            for(int i = 0; i < 6; i++)
+            {
+                for(int j = 0; j < 7; j++)
+                {
+                    if(j == 0)
+                    {
+                        Console.Write((i).ToString().PadLeft(10));
+                    }
+                    else
+                    {
+                        Console.Write(p[i].ReFrom(p[j-1]).ToString().PadLeft(10));
+                    }
+                }
+                Console.WriteLine();
+            }
+
             Console.ReadLine();
         }
 
@@ -50,6 +82,14 @@ namespace inheritance
             }
         }
 
+        static void invokeSimm(Point[] p)
+        {
+            for (int i = 0; i < p.Length; i++)
+            {
+                p[i].Simm();
+            }
+        }
+
         static void Show(Point[] p)
         {
             int k = p.Length;
@@ -57,6 +97,7 @@ namespace inheritance
             {
                 Console.WriteLine("{0, 2} - {1}", i, p[i].info());
             }
+            Console.WriteLine("---------------------------------------------");
         }
 
         static void Show2(Point[] p)
