@@ -41,9 +41,9 @@ namespace inheritance
         {
             return Math.PI * r * r;
         }
-        public new double ReFrom(Point a)
+        public  double ReFrom(Circle a)
         {
-            return (Math.Round(Math.Sqrt(Math.Abs(this.x - a.x) + Math.Abs(this.y - a.y)), 2))-r;
+            return (Math.Round(Math.Sqrt(Math.Abs(this.x - a.x) + Math.Abs(this.y - a.y)), 2))-this.r;
         }
     }
 }
