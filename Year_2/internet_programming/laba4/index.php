@@ -16,6 +16,7 @@
         </form>
     </div>
     <?php
+    if(isset($_POST['run'])){
     $SS = explode(" ",$_POST['cock']); //finally I've a var named SS in my project
     for ($i = 0; $i < sizeof($SS); $i++){
         if(!is_numeric($SS[$i])){
@@ -32,11 +33,13 @@
         }
     }
 
+
     echo ("<div class='outism'>") ;
     for ($i = 0; $i < sizeof($SS); $i++){
         echo ($SS[$i]." ");
     }
     echo ("</div>");
+}
     ?>
 </body>
 </html>
