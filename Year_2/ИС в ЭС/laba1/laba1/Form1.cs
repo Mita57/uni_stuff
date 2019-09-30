@@ -32,12 +32,10 @@ namespace laba1
                 inputDGW.Rows[i - 2].Cells[i].Value = 0;
                 inputDGW.Rows[i - 2].Cells[i].ReadOnly = true;
             }
-            inputDGW.Columns.Add("lal", "ИБЗ");
             inputDGW.Columns.Add("lalal", "Баллы 1");
             inputDGW.Columns.Add("lalal", "Баллы 2");
-            inputDGW.Columns[Convert.ToInt32(amountUpDown.Value)+2].Width = 50;//ИБЗ
-            inputDGW.Columns[Convert.ToInt32(amountUpDown.Value)+3].Width = 50;//баллы1
-            inputDGW.Columns[Convert.ToInt32(amountUpDown.Value)+4].Width = 50;//баллы2
+            inputDGW.Columns[Convert.ToInt32(amountUpDown.Value)+2].Width = 50;//баллы1
+            inputDGW.Columns[Convert.ToInt32(amountUpDown.Value)+3].Width = 50;//баллы2
         }
 
 
@@ -58,13 +56,13 @@ namespace laba1
                     flag = true;
                     break;
                 }
-                if(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 3].Value == null)
+                if(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 2].Value == null)
                 {
                     MessageBox.Show("Проверьте баллы 1");
                     flag = true;
                     break;
                 }
-                if (inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 4].Value == null)
+                if (inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 3].Value == null)
                 {
                     MessageBox.Show("Проверьте баллы 2");
                     flag = true;
@@ -72,38 +70,30 @@ namespace laba1
                 }
 
             }
-            //check if the IBZ is equal to 1
-            double cock = 0;
-            for(int i = 0; i < Convert.ToInt32(amountUpDown.Value); i++)
+            if (!flag)
             {
-                cock += Convert.ToDouble(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 2].Value);
-            }
-            if (cock != 1)
-            {
-                MessageBox.Show("Сумма ИБЗ должна быть равна 1");
-                flag = true;
-            }
 
-            //check if the score 1 is max of 10
+                //check if the score 1 is max of 10
 
-            for (int i = 0; i < Convert.ToInt32(amountUpDown.Value); i++)
-            {
-                if(int.Parse(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 3].Value.ToString()) > 10 || int.Parse(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 3].Value.ToString()) < 0)
+                for (int i = 0; i < Convert.ToInt32(amountUpDown.Value); i++)
                 {
-                    MessageBox.Show("Проверьте баллы 1");
-                    flag = true;
-                    break;
+                    if (int.Parse(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 2].Value.ToString()) > 10 || int.Parse(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 3].Value.ToString()) < 0)
+                    {
+                        MessageBox.Show("Проверьте баллы 1");
+                        flag = true;
+                        break;
+                    }
                 }
-            }
-            //check if the score 2 is max of 10
+                //check if the score 2 is max of 10
 
-            for (int i = 0; i < Convert.ToInt32(amountUpDown.Value); i++)
-            {
-                if (int.Parse(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 4].Value.ToString()) > 10 || int.Parse(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 4].Value.ToString()) < 0)
+                for (int i = 0; i < Convert.ToInt32(amountUpDown.Value); i++)
                 {
-                    MessageBox.Show("Проверьте баллы 2");
-                    flag = true;
-                    break;
+                    if (int.Parse(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 2].Value.ToString()) > 10 || int.Parse(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 2].Value.ToString()) < 0)
+                    {
+                        MessageBox.Show("Проверьте баллы 2");
+                        flag = true;
+                        break;
+                    }
                 }
             }
 
@@ -122,22 +112,30 @@ namespace laba1
             for(int i = 0; i < rowSum.Length; i++)
             {
                 rowSum[i] = 0;
-                for(int j = 1; j < rowSum.Length; j++)
+                for(int j = 2; j < rowSum.Length+2; j++)
                 {
-                    rowSum[i] += int.Parse(inputDGW.Rows[0].Cells[j].Value.ToString());
-                    total += int.Parse(inputDGW.Rows[0].Cells[j].Value.ToString());
+                    rowSum[i] += int.Parse(inputDGW.Rows[i].Cells[j].Value.ToString());
+                    total += int.Parse(inputDGW.Rows[i].Cells[j].Value.ToString());
                 }
             }
+
 
             DGW1.RowCount = inputDGW.RowCount;
 
             for (int i = 0; i < inputDGW.RowCount; i++)
             {
-                DGW1.Rows[i].Cells[0].Value = inputDGW.Rows[i].Cells[0];
+                DGW1.Rows[i].Cells[0].Value = (string)inputDGW.Rows[i].Cells[1].Value;
                 DGW1.Rows[i].Cells[1].Value = inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 3].Value;
-                DGW1.Rows[i].Cells[2].Value = rowSum[i] / total;
-                DGW2.Rows[i].Cells[3].Value = double.Parse(DGW1.Rows[i].Cells[1].Value.ToString()) * double.Parse(DGW1.Rows[i].Cells[2].Value.ToString());
+                DGW1.Rows[i].Cells[2].Value = Math.Round((double)((double)rowSum[i] / (double)total),2);
+                DGW1.Rows[i].Cells[3].Value = double.Parse(DGW1.Rows[i].Cells[1].Value.ToString()) * double.Parse(DGW1.Rows[i].Cells[2].Value.ToString());
             }
+
+            double cock = 0;
+            for(int i = 0; i < rowSum.Length; i++)
+            {
+                cock += Convert.ToDouble(DGW1.Rows[i].Cells[3].Value.ToString());
+            }
+            textBox1.Text = cock.ToString();
 
         }
 
@@ -149,21 +147,42 @@ namespace laba1
             for (int i = 0; i < rowSum.Length; i++)
             {
                 rowSum[i] = 0;
-                for (int j = 1; j < rowSum.Length; j++)
+                for (int j = 2; j < rowSum.Length + 2; j++)
                 {
-                    rowSum[i] += int.Parse(inputDGW.Rows[0].Cells[j].Value.ToString());
-                    total += int.Parse(inputDGW.Rows[0].Cells[j].Value.ToString());
+                    rowSum[i] += int.Parse(inputDGW.Rows[i].Cells[j].Value.ToString());
+                    total += int.Parse(inputDGW.Rows[i].Cells[j].Value.ToString());
                 }
             }
 
-            DGW1.RowCount = inputDGW.RowCount;
+            DGW2.RowCount = inputDGW.RowCount;
 
             for (int i = 0; i < inputDGW.RowCount; i++)
             {
-                DGW1.Rows[i].Cells[0].Value = inputDGW.Rows[i].Cells[0];
-                DGW1.Rows[i].Cells[1].Value = inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 4].Value;
-                DGW1.Rows[i].Cells[2].Value = rowSum[i] / total;
-                DGW2.Rows[i].Cells[3].Value = double.Parse(DGW1.Rows[i].Cells[1].Value.ToString()) * double.Parse(DGW1.Rows[i].Cells[2].Value.ToString());
+                DGW2.Rows[i].Cells[0].Value = inputDGW.Rows[i].Cells[1].Value;
+                DGW2.Rows[i].Cells[1].Value = inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 3].Value;
+                DGW2.Rows[i].Cells[2].Value = Math.Round((double)((double)rowSum[i] / (double)total), 2);
+                DGW2.Rows[i].Cells[3].Value = double.Parse(DGW2.Rows[i].Cells[1].Value.ToString()) * double.Parse(DGW2.Rows[i].Cells[2].Value.ToString());
+            }
+            textBox4.Text = total.ToString();
+
+            double cock = 0;
+            for (int i = 0; i < rowSum.Length; i++)
+            {
+                cock += Convert.ToDouble(DGW2.Rows[i].Cells[3].Value.ToString());
+            }
+            textBox2.Text = cock.ToString();
+
+            if(Convert.ToDouble(textBox1.Text) > Convert.ToDouble(textBox2.Text))
+            {
+                textBox3.Text = "1 лучше";
+            }
+            if (Convert.ToDouble(textBox1.Text) < Convert.ToDouble(textBox2.Text))
+            {
+                textBox3.Text = "2 лучше";
+            }
+            if (Convert.ToDouble(textBox1.Text) == Convert.ToDouble(textBox2.Text))
+            {
+                textBox3.Text = "Одинаково";
             }
         }
     }
