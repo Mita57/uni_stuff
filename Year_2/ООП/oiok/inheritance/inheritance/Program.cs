@@ -38,7 +38,7 @@ namespace inheritance
             {
                 if(i == 0)
                 {
-                    continue;
+                    Console.Write(("").ToString().PadLeft(10));
                 }
                 else
                 {
