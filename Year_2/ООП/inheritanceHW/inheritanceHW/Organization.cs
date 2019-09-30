@@ -37,8 +37,11 @@ namespace inheritanceHW
             return this.openHour.ToString() + "-" + this.closeHour.ToString();
         }
 
+         public abstract string info(); 
+    }
+
         
 
 
     }
-}
+

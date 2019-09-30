@@ -40,7 +40,7 @@ namespace inheritance
 
         public double ReFrom(Point a)
         {
-            return (Math.Round(Math.Sqrt(Math.Abs(this.x - a.x) + Math.Abs(this.y - a.y)), 2));
+            return (Math.Round(Math.Sqrt((this.x - a.x) * (this.x - a.x) + (this.y - a.y) * (this.y - a.y)), 2));
         }
     }
 }
