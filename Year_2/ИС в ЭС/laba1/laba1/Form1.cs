@@ -36,6 +36,8 @@ namespace laba1
             inputDGW.Columns.Add("lalal", "Баллы 2");
             inputDGW.Columns[Convert.ToInt32(amountUpDown.Value)+2].Width = 50;//баллы1
             inputDGW.Columns[Convert.ToInt32(amountUpDown.Value)+3].Width = 50;//баллы2
+            DGW1.Rows.Clear();
+            DGW2.Rows.Clear();
         }
 
 
@@ -125,7 +127,7 @@ namespace laba1
             for (int i = 0; i < inputDGW.RowCount; i++)
             {
                 DGW1.Rows[i].Cells[0].Value = (string)inputDGW.Rows[i].Cells[1].Value;
-                DGW1.Rows[i].Cells[1].Value = inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 3].Value;
+                DGW1.Rows[i].Cells[1].Value = inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 2].Value;
                 DGW1.Rows[i].Cells[2].Value = Math.Round((double)((double)rowSum[i] / (double)total),2);
                 DGW1.Rows[i].Cells[3].Value = double.Parse(DGW1.Rows[i].Cells[1].Value.ToString()) * double.Parse(DGW1.Rows[i].Cells[2].Value.ToString());
             }
