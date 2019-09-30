@@ -40,33 +40,34 @@ namespace laba1
             inputDGW.Columns[Convert.ToInt32(amountUpDown.Value)+4].Width = 50;//баллы2
         }
 
+
         private void ExecuteButton_Click(object sender, EventArgs e)
         {
-            bool nullCheck = false;
+            bool flag = false;
             for(int i = 0; i < Convert.ToInt32(amountUpDown.Value); i++)
             {
                 if(inputDGW.Rows[i].Cells[1] == null)
                 {
                     MessageBox.Show("Введите названия показателей");
-                    nullCheck = true;
+                    flag = true;
                     break;
                 }
                 if (inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 2].Value == null)
                 {
                     MessageBox.Show("Проверьте индексы балло-значимости");
-                    nullCheck = true;
+                    flag = true;
                     break;
                 }
                 if(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 3].Value == null)
                 {
                     MessageBox.Show("Проверьте баллы 1");
-                    nullCheck = true;
+                    flag = true;
                     break;
                 }
                 if (inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 4].Value == null)
                 {
                     MessageBox.Show("Проверьте баллы 2");
-                    nullCheck = true;
+                    flag = true;
                     break;
                 }
 
@@ -80,7 +81,7 @@ namespace laba1
             if (cock != 1)
             {
                 MessageBox.Show("Сумма ИБЗ должна быть равна 1");
-                nullCheck = true;
+                flag = true;
             }
 
             //check if the score 1 is max of 10
@@ -90,7 +91,7 @@ namespace laba1
                 if(int.Parse(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 3].Value.ToString()) > 10 || int.Parse(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 3].Value.ToString()) < 0)
                 {
                     MessageBox.Show("Проверьте баллы 1");
-                    nullCheck = true;
+                    flag = true;
                     break;
                 }
             }
@@ -100,15 +101,52 @@ namespace laba1
             {
                 if (int.Parse(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 4].Value.ToString()) > 10 || int.Parse(inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 4].Value.ToString()) < 0)
                 {
-                    MessageBox.Show("Проверьте баллы 1");
-                    nullCheck = true;
+                    MessageBox.Show("Проверьте баллы 2");
+                    flag = true;
                     break;
                 }
             }
 
-        }
+            if (!flag)
+            {
+                renderDGW1();
+                renderDGW2();
+            }
 
         }
+
+        private void renderDGW1()
+        {
+            int[] rowSum = new int[inputDGW.RowCount];
+            int total = 0;
+            for(int i = 0; i < rowSum.Length; i++)
+            {
+                rowSum[i] = 0;
+                for(int j = 1; j < rowSum.Length; j++)
+                {
+                    rowSum[i] += int.Parse(inputDGW.Rows[0].Cells[j].Value.ToString());
+                    total += int.Parse(inputDGW.Rows[0].Cells[j].Value.ToString());
+                }
+            }
+
+
+
+        }
+
+
+        private void renderDGW2()
+        {
+            int[] rowSum = new int[inputDGW.RowCount];
+            for (int i = 0; i < rowSum.Length; i++)
+            {
+                rowSum[i] = 0;
+                for (int j = 1; j < rowSum.Length; j++)
+                {
+                    rowSum[i] += int.Parse(inputDGW.Rows[0].Cells[j].Value.ToString());
+                }
+            }
+        }
     }
-    }
+}
+
 

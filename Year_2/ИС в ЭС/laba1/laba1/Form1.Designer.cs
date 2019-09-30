@@ -32,15 +32,17 @@
             this.amountUpDown = new System.Windows.Forms.NumericUpDown();
             this.inputDGW = new System.Windows.Forms.DataGridView();
             this.autoDGW = new System.Windows.Forms.DataGridView();
-            this.manDGW = new System.Windows.Forms.DataGridView();
             this.critIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.criName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.executeButton = new System.Windows.Forms.Button();
             this.renderButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.amountUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputDGW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoDGW)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.manDGW)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -48,9 +50,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.Size = new System.Drawing.Size(109, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Кол-во показаелей";
+            this.label1.Text = "Кол-во показателей";
             // 
             // amountUpDown
             // 
@@ -84,18 +86,10 @@
             // autoDGW
             // 
             this.autoDGW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.autoDGW.Location = new System.Drawing.Point(421, 16);
+            this.autoDGW.Location = new System.Drawing.Point(421, 30);
             this.autoDGW.Name = "autoDGW";
-            this.autoDGW.Size = new System.Drawing.Size(426, 236);
+            this.autoDGW.Size = new System.Drawing.Size(426, 199);
             this.autoDGW.TabIndex = 3;
-            // 
-            // manDGW
-            // 
-            this.manDGW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.manDGW.Location = new System.Drawing.Point(421, 261);
-            this.manDGW.Name = "manDGW";
-            this.manDGW.Size = new System.Drawing.Size(426, 236);
-            this.manDGW.TabIndex = 4;
             // 
             // critIndex
             // 
@@ -128,14 +122,42 @@
             this.renderButton.UseVisualStyleBackColor = true;
             this.renderButton.Click += new System.EventHandler(this.RenderButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(590, 245);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Баллы 2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(590, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Баллы 1";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(421, 268);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(426, 199);
+            this.dataGridView1.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 505);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.renderButton);
             this.Controls.Add(this.executeButton);
-            this.Controls.Add(this.manDGW);
             this.Controls.Add(this.autoDGW);
             this.Controls.Add(this.inputDGW);
             this.Controls.Add(this.amountUpDown);
@@ -145,7 +167,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.amountUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inputDGW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoDGW)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.manDGW)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,11 +179,13 @@
         private System.Windows.Forms.NumericUpDown amountUpDown;
         private System.Windows.Forms.DataGridView inputDGW;
         private System.Windows.Forms.DataGridView autoDGW;
-        private System.Windows.Forms.DataGridView manDGW;
         private System.Windows.Forms.DataGridViewTextBoxColumn critIndex;
         private System.Windows.Forms.DataGridViewTextBoxColumn criName;
         private System.Windows.Forms.Button executeButton;
         private System.Windows.Forms.Button renderButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
