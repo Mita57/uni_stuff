@@ -129,7 +129,15 @@ namespace laba1
                 }
             }
 
+            DGW1.RowCount = inputDGW.RowCount;
 
+            for (int i = 0; i < inputDGW.RowCount; i++)
+            {
+                DGW1.Rows[i].Cells[0].Value = inputDGW.Rows[i].Cells[0];
+                DGW1.Rows[i].Cells[1].Value = inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 3].Value;
+                DGW1.Rows[i].Cells[2].Value = rowSum[i] / total;
+                DGW2.Rows[i].Cells[3].Value = double.Parse(DGW1.Rows[i].Cells[1].Value.ToString()) * double.Parse(DGW1.Rows[i].Cells[2].Value.ToString());
+            }
 
         }
 
@@ -137,13 +145,25 @@ namespace laba1
         private void renderDGW2()
         {
             int[] rowSum = new int[inputDGW.RowCount];
+            int total = 0;
             for (int i = 0; i < rowSum.Length; i++)
             {
                 rowSum[i] = 0;
                 for (int j = 1; j < rowSum.Length; j++)
                 {
                     rowSum[i] += int.Parse(inputDGW.Rows[0].Cells[j].Value.ToString());
+                    total += int.Parse(inputDGW.Rows[0].Cells[j].Value.ToString());
                 }
+            }
+
+            DGW1.RowCount = inputDGW.RowCount;
+
+            for (int i = 0; i < inputDGW.RowCount; i++)
+            {
+                DGW1.Rows[i].Cells[0].Value = inputDGW.Rows[i].Cells[0];
+                DGW1.Rows[i].Cells[1].Value = inputDGW.Rows[i].Cells[Convert.ToInt32(amountUpDown.Value) + 4].Value;
+                DGW1.Rows[i].Cells[2].Value = rowSum[i] / total;
+                DGW2.Rows[i].Cells[3].Value = double.Parse(DGW1.Rows[i].Cells[1].Value.ToString()) * double.Parse(DGW1.Rows[i].Cells[2].Value.ToString());
             }
         }
     }
