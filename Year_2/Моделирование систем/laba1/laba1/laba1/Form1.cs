@@ -28,22 +28,58 @@ namespace laba1
             for (int i = 0; i < opsAmount; i++)
             {
                 p[0] += (Math.Pow(requestsStreamDensity, i) / factorial(i));
-                MessageBox.Show(p[0].ToString());
             }
             p[0] += Math.Pow(requestsStreamDensity, opsAmount) / ((factorial(opsAmount - 1)) * (opsAmount - requestsStreamDensity));
             p[0] = Math.Round(1 / p[0],3);
             for (int i = 1; i < p.Length; i++)
             {
-                p[i] = Math.Round(((Math.Pow(serviceStream, i) / factorial(i)) * p[0]),3);
+                p[i] = Math.Round((Math.Pow(requestsStreamDensity, i)/factorial(i))*p[0],2);
             }
             DGW.RowCount = opsAmount + 1;
 
-
+            //rendering the probs DGW
             for (int i = 0; i < p.Length; i++)
             {
                 DGW.Rows[i].Cells[0].Value = i;
                 DGW.Rows[i].Cells[1].Value = p[i];
             }
+
+            //textboxes
+            
+            //вероятность очереди
+            double sumOfProbs = 0;
+            foreach(double x in p)
+            {
+                sumOfProbs += x;
+            }
+
+            QProbability.Text = (1 - sumOfProbs).ToString();
+
+            //средняя длина очереди L
+
+            double allAreBusy = (Math.Pow(requestsStreamDensity, opsAmount)/(factorial(opsAmount-1)*(opsAmount - requestsStreamDensity)))*p[0]; //Pi
+            avgQLength.Text = (Math.Round(requestsStreamDensity * allAreBusy/(opsAmount - requestsStreamDensity),2)).ToString();
+
+            //среднее время ожидания в очереди Tср
+            avgQTime.Text = (Math.Round(allAreBusy / (serviceStream * (opsAmount - requestsStreamDensity)),3)).ToString();
+
+            //среднее число занятых каналов Nзан
+            double avgFreeOps = 0;
+            for(int i = 0; i < opsAmount; i++)
+            {
+                avgFreeOps += (opsAmount - i) * p[i]; //N своб
+            }
+
+            avgBusyOps.Text = (Math.Round((opsAmount - avgFreeOps), 2)).ToString();
+            MessageBox.Show((allAreBusy / (serviceStream * (opsAmount - requestsStreamDensity))).ToString());
+            MessageBox.Show(textBox1.Text);
+
+            while((allAreBusy / (serviceStream * (opsAmount - requestsStreamDensity)) > Convert.ToDouble(textBox1.Text)))
+            {
+                opsAmount++;
+            }
+            opsRequired.Text = opsAmount.ToString();
+
 
         }
 
@@ -54,5 +90,6 @@ namespace laba1
             else
                 return number * factorial(number - 1);
         }
+
     }
 }

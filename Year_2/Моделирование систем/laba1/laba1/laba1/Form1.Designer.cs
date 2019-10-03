@@ -35,19 +35,23 @@
             this.streamDensity = new System.Windows.Forms.TextBox();
             this.averageTime = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.DGW = new System.Windows.Forms.DataGridView();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.probability = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.QProbability = new System.Windows.Forms.TextBox();
+            this.avgQLength = new System.Windows.Forms.TextBox();
+            this.avgQTime = new System.Windows.Forms.TextBox();
+            this.avgBusyOps = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.probability = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.opsRequired = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGW)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -103,7 +107,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.averageTime);
             this.groupBox1.Controls.Add(this.streamDensity);
             this.groupBox1.Controls.Add(this.operatorsAmount);
@@ -112,20 +118,10 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(7, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(292, 161);
+            this.groupBox1.Size = new System.Drawing.Size(292, 190);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inputs";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(102, 114);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Посчитать";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // DGW
             // 
@@ -137,6 +133,16 @@
             this.DGW.Name = "DGW";
             this.DGW.Size = new System.Drawing.Size(519, 474);
             this.DGW.TabIndex = 7;
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "n Операторов";
+            this.amount.Name = "amount";
+            // 
+            // probability
+            // 
+            this.probability.HeaderText = "Вероятность";
+            this.probability.Name = "probability";
             // 
             // label4
             // 
@@ -174,64 +180,99 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Ср. число занятых операторов";
             // 
-            // textBox1
+            // QProbability
             // 
-            this.textBox1.Location = new System.Drawing.Point(179, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 12;
+            this.QProbability.Location = new System.Drawing.Point(179, 22);
+            this.QProbability.Name = "QProbability";
+            this.QProbability.ReadOnly = true;
+            this.QProbability.Size = new System.Drawing.Size(100, 20);
+            this.QProbability.TabIndex = 12;
             // 
-            // textBox2
+            // avgQLength
             // 
-            this.textBox2.Location = new System.Drawing.Point(179, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 13;
+            this.avgQLength.Location = new System.Drawing.Point(179, 48);
+            this.avgQLength.Name = "avgQLength";
+            this.avgQLength.ReadOnly = true;
+            this.avgQLength.Size = new System.Drawing.Size(100, 20);
+            this.avgQLength.TabIndex = 13;
             // 
-            // textBox3
+            // avgQTime
             // 
-            this.textBox3.Location = new System.Drawing.Point(179, 73);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 14;
+            this.avgQTime.Location = new System.Drawing.Point(179, 73);
+            this.avgQTime.Name = "avgQTime";
+            this.avgQTime.ReadOnly = true;
+            this.avgQTime.Size = new System.Drawing.Size(100, 20);
+            this.avgQTime.TabIndex = 14;
             // 
-            // textBox4
+            // avgBusyOps
             // 
-            this.textBox4.Location = new System.Drawing.Point(179, 96);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 15;
+            this.avgBusyOps.Location = new System.Drawing.Point(179, 96);
+            this.avgBusyOps.Name = "avgBusyOps";
+            this.avgBusyOps.ReadOnly = true;
+            this.avgBusyOps.Size = new System.Drawing.Size(100, 20);
+            this.avgBusyOps.TabIndex = 15;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.opsRequired);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.avgBusyOps);
+            this.groupBox2.Controls.Add(this.avgQTime);
+            this.groupBox2.Controls.Add(this.avgQLength);
+            this.groupBox2.Controls.Add(this.QProbability);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(7, 206);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(291, 130);
+            this.groupBox2.Size = new System.Drawing.Size(291, 184);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Outputs";
             // 
-            // amount
+            // textBox1
             // 
-            this.amount.HeaderText = "n Операторов";
-            this.amount.Name = "amount";
+            this.textBox1.Location = new System.Drawing.Point(165, 106);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(117, 20);
+            this.textBox1.TabIndex = 7;
             // 
-            // probability
+            // label8
             // 
-            this.probability.HeaderText = "Вероятность";
-            this.probability.Name = "probability";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 109);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(124, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Макс. ожидание (τmax)";
+            // 
+            // opsRequired
+            // 
+            this.opsRequired.Location = new System.Drawing.Point(179, 122);
+            this.opsRequired.Name = "opsRequired";
+            this.opsRequired.ReadOnly = true;
+            this.opsRequired.Size = new System.Drawing.Size(100, 20);
+            this.opsRequired.TabIndex = 17;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 122);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(174, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Необходимое кол-во операторов";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(105, 149);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Посчитать";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button1_Click);
             // 
             // Form1
             // 
@@ -261,19 +302,23 @@
         private System.Windows.Forms.TextBox streamDensity;
         private System.Windows.Forms.TextBox averageTime;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView DGW;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox QProbability;
+        private System.Windows.Forms.TextBox avgQLength;
+        private System.Windows.Forms.TextBox avgQTime;
+        private System.Windows.Forms.TextBox avgBusyOps;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn probability;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox opsRequired;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button2;
     }
 }
 
