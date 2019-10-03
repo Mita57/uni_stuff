@@ -52,6 +52,8 @@
             this.opsRequired = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.probs2 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGW)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -214,6 +216,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.probs2);
+            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.opsRequired);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.avgBusyOps);
@@ -274,6 +278,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // probs2
+            // 
+            this.probs2.Location = new System.Drawing.Point(179, 148);
+            this.probs2.Name = "probs2";
+            this.probs2.ReadOnly = true;
+            this.probs2.Size = new System.Drawing.Size(100, 20);
+            this.probs2.TabIndex = 19;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1, 151);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(179, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Вероятность 1+ своб. операторов";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,6 +340,8 @@
         private System.Windows.Forms.TextBox opsRequired;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox probs2;
+        private System.Windows.Forms.Label label10;
     }
 }
 

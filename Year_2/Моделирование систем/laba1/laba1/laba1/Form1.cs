@@ -33,7 +33,7 @@ namespace laba1
             p[0] = Math.Round(1 / p[0],3);
             for (int i = 1; i < p.Length; i++)
             {
-                p[i] = Math.Round((Math.Pow(requestsStreamDensity, i)/factorial(i))*p[0],2);
+                p[i] = (Math.Pow(requestsStreamDensity, i)/factorial(i))*p[0];
             }
             DGW.RowCount = opsAmount + 1;
 
@@ -71,8 +71,8 @@ namespace laba1
             }
 
             avgBusyOps.Text = (Math.Round((opsAmount - avgFreeOps), 2)).ToString();
-            MessageBox.Show((allAreBusy / (serviceStream * (opsAmount - requestsStreamDensity))).ToString());
-            MessageBox.Show(textBox1.Text);
+
+            //необходиомое количество операторов
 
             while((allAreBusy / (serviceStream * (opsAmount - requestsStreamDensity)) > Convert.ToDouble(textBox1.Text)))
             {
@@ -80,6 +80,27 @@ namespace laba1
             }
             opsRequired.Text = opsAmount.ToString();
 
+            //вероятность более одного доступного оператора
+            double[] p2 = new double[opsAmount + 1]; ;//вероятности
+            for (int i = 0; i < opsAmount; i++)
+            {
+                p2[0] += (Math.Pow(requestsStreamDensity, i) / factorial(i));
+            }
+            p2[0] += Math.Pow(requestsStreamDensity, opsAmount) / ((factorial(opsAmount - 1)) * (opsAmount - requestsStreamDensity));
+            p2[0] = Math.Round(1 / p2[0], 3);
+            for (int i = 1; i < p.Length; i++)
+            {
+                p2[i] = (Math.Pow(requestsStreamDensity, i) / factorial(i)) * p2[0];
+            }
+
+
+            double probAddedOps = 0;
+            for(int i = 0; i < p2.Length - 1; i++)
+            {
+                probAddedOps += p2[i];
+            }
+
+            probs2.Text = (Math.Round(probAddedOps, 3)).ToString();
 
         }
 
