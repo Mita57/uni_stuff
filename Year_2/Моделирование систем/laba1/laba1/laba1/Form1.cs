@@ -16,5 +16,6 @@ namespace laba1
         {
             InitializeComponent();
         }
+
     }
 }
