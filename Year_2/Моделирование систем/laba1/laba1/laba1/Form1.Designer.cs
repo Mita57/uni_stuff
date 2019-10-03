@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.operatorsAmount = new System.Windows.Forms.TextBox();
             this.streamDensity = new System.Windows.Forms.TextBox();
-            this.avgTime = new System.Windows.Forms.TextBox();
+            this.averageTime = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.DGW = new System.Windows.Forms.DataGridView();
@@ -92,17 +92,17 @@
             this.streamDensity.Size = new System.Drawing.Size(117, 20);
             this.streamDensity.TabIndex = 4;
             // 
-            // avgTime
+            // averageTime
             // 
-            this.avgTime.Location = new System.Drawing.Point(165, 80);
-            this.avgTime.Name = "avgTime";
-            this.avgTime.Size = new System.Drawing.Size(117, 20);
-            this.avgTime.TabIndex = 5;
+            this.averageTime.Location = new System.Drawing.Point(165, 80);
+            this.averageTime.Name = "averageTime";
+            this.averageTime.Size = new System.Drawing.Size(117, 20);
+            this.averageTime.TabIndex = 5;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.avgTime);
+            this.groupBox1.Controls.Add(this.averageTime);
             this.groupBox1.Controls.Add(this.streamDensity);
             this.groupBox1.Controls.Add(this.operatorsAmount);
             this.groupBox1.Controls.Add(this.label3);
@@ -123,6 +123,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Посчитать";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // DGW
             // 
@@ -243,7 +244,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox operatorsAmount;
         private System.Windows.Forms.TextBox streamDensity;
-        private System.Windows.Forms.TextBox avgTime;
+        private System.Windows.Forms.TextBox averageTime;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView DGW;
