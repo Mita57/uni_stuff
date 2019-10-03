@@ -46,6 +46,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.probability = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGW)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -128,6 +130,9 @@
             // DGW
             // 
             this.DGW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.amount,
+            this.probability});
             this.DGW.Location = new System.Drawing.Point(312, 10);
             this.DGW.Name = "DGW";
             this.DGW.Size = new System.Drawing.Size(519, 474);
@@ -218,6 +223,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Outputs";
             // 
+            // amount
+            // 
+            this.amount.HeaderText = "n Операторов";
+            this.amount.Name = "amount";
+            // 
+            // probability
+            // 
+            this.probability.HeaderText = "Вероятность";
+            this.probability.Name = "probability";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +272,8 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn probability;
     }
 }
 
