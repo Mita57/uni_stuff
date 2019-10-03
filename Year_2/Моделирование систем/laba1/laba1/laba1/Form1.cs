@@ -27,11 +27,14 @@ namespace laba1
             double[] p = new double[opsAmount+1]; ;//вероятности
             for (int i = 0; i < opsAmount; i++)
             {
-                p[0] += 1 / (Math.Pow(requestsStreamDensity, i) / factorial(i)) + Math.Pow(requestsStreamDensity, opsAmount) / ((factorial(opsAmount - 1)) * (opsAmount - requestsStreamDensity));
+                p[0] += (Math.Pow(requestsStreamDensity, i) / factorial(i));
+                MessageBox.Show(p[0].ToString());
             }
+            p[0] += Math.Pow(requestsStreamDensity, opsAmount) / ((factorial(opsAmount - 1)) * (opsAmount - requestsStreamDensity));
+            p[0] = Math.Round(1 / p[0],3);
             for (int i = 1; i < p.Length; i++)
             {
-                p[i] = Math.Pow(serviceStream, i) / factorial(i) * p[0];
+                p[i] = Math.Round(((Math.Pow(serviceStream, i) / factorial(i)) * p[0]),3);
             }
             DGW.RowCount = opsAmount + 1;
 
