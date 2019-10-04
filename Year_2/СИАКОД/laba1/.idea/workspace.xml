@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe91d809-afcc-4833-8fc7-051f9a0b954b" name="Default Changelist" comment="ggnffgn">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Моделирование систем/laba1.2/laba1.2.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Моделирование систем/laba1.2/laba1.2/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Моделирование систем/laba1.2/laba1.2/Form1.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Моделирование систем/laba1.2/laba1.2/Form1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Моделирование систем/laba1.2/laba1.2/Form1.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Моделирование систем/laba1.2/laba1.2/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Моделирование систем/laba1.2/laba1.2/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Моделирование систем/laba1.2/laba1.2/Properties/Resources.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Моделирование систем/laba1.2/laba1.2/Properties/Resources.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Моделирование систем/laba1.2/laba1.2/Properties/Settings.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Моделирование систем/laba1.2/laba1.2/Properties/Settings.settings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Моделирование систем/laba1.2/laba1.2/laba1.2.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Моделирование систем/laba1/laba1/laba1/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../Моделирование систем/laba1/laba1/laba1/Form1.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,6 +105,7 @@
       <workItem from="1568960016599" duration="105000" />
       <workItem from="1568961579163" duration="402000" />
       <workItem from="1569303119797" duration="5000" />
+      <workItem from="1570165990711" duration="97000" />
     </task>
     <task id="LOCAL-00001" summary="ggnffgn">
       <created>1568491028150</created>

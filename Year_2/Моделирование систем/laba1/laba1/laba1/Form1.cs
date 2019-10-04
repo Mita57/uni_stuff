@@ -14,7 +14,7 @@ namespace laba1
         {
             int opsAmount = Convert.ToInt32(operatorsAmount.Text); // количетсво операторов, n
             double strDensity = Convert.ToDouble(streamDensity.Text);// плотность потока, Lambda
-            double avgTime = Convert.ToInt32(averageTime.Text);// среднее время обслуживания, Tao
+            double avgTime = Convert.ToDouble(averageTime.Text)/60;// среднее время обслуживания, Tao
             double serviceStream = 1 / avgTime; // поток обслуживаний, Myu
             double requestsStreamDensity = strDensity / serviceStream;// плотноть потока заявок, ro
             double[] p = new double[opsAmount+1]; ;//вероятности
@@ -23,7 +23,7 @@ namespace laba1
                 p[0] += (Math.Pow(requestsStreamDensity, i) / factorial(i));
             }
             p[0] += Math.Pow(requestsStreamDensity, opsAmount) / ((factorial(opsAmount - 1)) * (opsAmount - requestsStreamDensity));
-            p[0] = Math.Round(1 / p[0],3);
+            p[0] = Math.Abs(Math.Round(1 / p[0],3));
             for (int i = 1; i < p.Length; i++)
             {
                 p[i] = (Math.Pow(requestsStreamDensity, i)/factorial(i))*p[0];
