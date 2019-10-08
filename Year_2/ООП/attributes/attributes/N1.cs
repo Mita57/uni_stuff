@@ -146,8 +146,12 @@ namespace attributes
 
         public bool DigSimple()
         {
+
         }
-        public void 
+        public void DigSimple()
+        {
+
+        }
 
     }
 }
