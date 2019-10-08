@@ -109,9 +109,45 @@ namespace attributes
             Console.WriteLine(Info());
         }
 
-        public bool isSimm()
+        public bool IsSimm(N1 d)
+        {
+            return (d.Val == this.Val);
+        }
+        public int DigSum()
+        {
+            int sum = 0;
+            char[] cockAr = Val.ToString().ToCharArray();
+            foreach(char cock in cockAr)
+            {
+                sum += Convert.ToInt32(cock);
+            }
+            return sum;
+        }
+
+        public int DigSum(int cock)
+        {
+            int dick = 0;
+            while (true)
+            {
+                int sum = 0;
+                char[] cockAr = dick.ToString().ToCharArray();
+                foreach (char meme in cockAr)
+                {
+                    sum += Convert.ToInt32(meme);
+                }
+                dick++;
+                if(sum == cock)
+                {
+                    return dick;
+                }
+
+            }
+        } 
+
+        public bool DigSimple()
         {
 
         }
+
     }
 }
