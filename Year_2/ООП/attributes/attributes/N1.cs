@@ -80,7 +80,7 @@ namespace attributes
             }
         }
 
-        public void swap()
+        public void Swap()
         {
             Val = D2 * 10 + D1;
         }
@@ -92,7 +92,26 @@ namespace attributes
 
         public string Info()
         {
-            string result = string.Format("Двузначное число '{0}' = {1}. Цифры {2} и {3}")
+            string result = string.Format("Двузначное число '{0}' = {1}. Цифры {2} и {3} ", Name, Val, D1, D2);
+            if (Odd)
+            {
+                result += "Нечетное";
+            }
+            else
+            {
+                result += "Четное";
+            }
+            return  result;
+        }
+
+        public void Show()
+        {
+            Console.WriteLine(Info());
+        }
+
+        public bool isSimm()
+        {
+
         }
     }
 }
