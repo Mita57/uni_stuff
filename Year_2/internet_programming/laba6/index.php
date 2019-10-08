@@ -19,40 +19,37 @@
 
 
     <?php
+    if(isset($_POST['run'])) {
 
-    $dirName = $_POST['dirName'];
-    $file1Name = $_POST['file1'];
-    $file2Name = $_POST['file2'];
-    $file3Name = $_POST['file3'];
+        $dirName = $_POST['dirName'];
+        $file1Name = $_POST['file1'];
+        $file2Name = $_POST['file2'];
+        $file3Name = $_POST['file3'];
 
-    $resultingFile  = '';
+        $resultingFile = '';
 
-    //first file
-    $fileAd = $dirName.'/'.$file1Name;
-    $memes = fopen($fileAd, "r") or die("Unable to open file!");
-    $resultingFile = $resultingFile.fread($memes,filesize($fileAd))."\n";
-    //second file
-    $fileAd = $dirName.'/'.$file2Name;
-    $memes = fopen($fileAd, "r") or die("Unable to open file!");
-    $resultingFile = $resultingFile.fread($memes,filesize($fileAd))."\n";
-    //third file
-    $fileAd = $dirName.'/'.$file3Name;
-    $memes = fopen($fileAd, "r") or die("Unable to open file!");
-    $resultingFile = $resultingFile.fread($memes,filesize($fileAd))."\n";
-    //writing the final file
-    $fp = fopen($dirName.'/output.txt', "w");
-    fwrite($fp, $resultingFile);
-    fclose($fp);
-
-    echo(" <div class='outism'> Подкаталоги этого каталога: <br>");
-    $dh = opendir($dirName);
-    while($file = readdir($dh)){
-        if(is_dir($file)) {
-            if (!(basename($file) == '.' || basename($file) == '..')) {
-                echo(basename($file) . '<br>'."meme");
-            }
+        //first file
+        $fileAd = $dirName . '/' . $file1Name;
+        $memes = fopen($fileAd, "r") or die("Unable to open file!");
+        $resultingFile = $resultingFile . fread($memes, filesize($fileAd)) . "\n";
+        //second file
+        $fileAd = $dirName . '/' . $file2Name;
+        $memes = fopen($fileAd, "r") or die("Unable to open file!");
+        $resultingFile = $resultingFile . fread($memes, filesize($fileAd)) . "\n";
+        //third file
+        $fileAd = $dirName . '/' . $file3Name;
+        $memes = fopen($fileAd, "r") or die("Unable to open file!");
+        $resultingFile = $resultingFile . fread($memes, filesize($fileAd)) . "\n";
+        //writing the final file
+        $fp = fopen($dirName . '/output.txt', "w");
+        fwrite($fp, $resultingFile);
+        fclose($fp);
+        echo(" <div class='outism'> Подкаталоги этого каталога: <br>");
+        $workFFS = scandir($dirName);
+        $workFFS = glob($dirName . '/*' , GLOB_ONLYDIR);
+        for($i = 0; $i < sizeof($workFFS); $i++){
+            echo(basename($workFFS[$i]) . " <br>");
         }
-
     }
 
 
