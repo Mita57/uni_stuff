@@ -2,24 +2,58 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>autism</title>
+    <title>UR MOM JUNIOR PHP PROGRAMMER</title>
     <link rel="stylesheet"  href="style.css">
 </head>
 <body>
 
+    <div class="inputs">
+        <form action="index.php" method="post">
+            <input type="text" placeholder="Имя каталога" name="dirName"><br>
+            <input type="text" placeholder="Файл 1" name="file1"><br>
+            <input type="text" placeholder="Файл 2" name="file2"><br>
+            <input type="text" placeholder="Файл 3" name="file3"><br>
+            <input type="submit" value="Погналити" name="run">
+        </form>
+    </div>
+
+
     <?php
 
-    $memes = fopen("input.txt", "r") or die("Unable to open file!");
-    $cock = fread($memes,filesize("input.txt"));
-    $syllables = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
-    for($i = 0; $i < strlen($cock); $i++){
-        if(in_array($cock[$i], $syllables)){
-            $cock[$i] = ucfirst($cock[$i]);
+    $dirName = $_POST['dirName'];
+    $file1Name = $_POST['file1'];
+    $file2Name = $_POST['file2'];
+    $file3Name = $_POST['file3'];
+
+    $resultingFile  = '';
+
+    //first file
+    $fileAd = $dirName.'/'.$file1Name;
+    $memes = fopen($fileAd, "r") or die("Unable to open file!");
+    $resultingFile = $resultingFile.fread($memes,filesize($fileAd))."\n";
+    //second file
+    $fileAd = $dirName.'/'.$file2Name;
+    $memes = fopen($fileAd, "r") or die("Unable to open file!");
+    $resultingFile = $resultingFile.fread($memes,filesize($fileAd))."\n";
+    //third file
+    $fileAd = $dirName.'/'.$file3Name;
+    $memes = fopen($fileAd, "r") or die("Unable to open file!");
+    $resultingFile = $resultingFile.fread($memes,filesize($fileAd))."\n";
+    //writing the final file
+    $fp = fopen($dirName.'/output.txt', "w");
+    fwrite($fp, $resultingFile);
+    fclose($fp);
+
+    echo(" <div class='outism'> Подкаталоги этого каталога: <br>");
+    $dh = opendir($dirName);
+    while($file = readdir($dh)){
+        if(is_dir($file)) {
+            if (!(basename($file) == '.' || basename($file) == '..')) {
+                echo(basename($file) . '<br>'."meme");
+            }
         }
+
     }
-    $fp = fopen('output.txt', "w");
-    fwrite($fp, $cock);
-    fclose($fp)
 
 
     ?>
