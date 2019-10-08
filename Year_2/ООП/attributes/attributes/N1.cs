@@ -142,12 +142,12 @@ namespace attributes
                 }
 
             }
-        } 
+        }
 
         public bool DigSimple()
         {
-
         }
+        public void 
 
     }
 }
