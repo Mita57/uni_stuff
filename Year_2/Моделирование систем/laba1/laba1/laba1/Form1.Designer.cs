@@ -35,6 +35,9 @@
             this.streamDensity = new System.Windows.Forms.TextBox();
             this.averageTime = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.DGW = new System.Windows.Forms.DataGridView();
             this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.probability = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,13 +50,10 @@
             this.avgQTime = new System.Windows.Forms.TextBox();
             this.avgBusyOps = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.opsRequired = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.probs2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.opsRequired = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGW)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -124,6 +124,32 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inputs";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(105, 149);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Посчитать";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 109);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(124, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Макс. ожидание (τmax)";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(165, 106);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(117, 20);
+            this.textBox1.TabIndex = 7;
             // 
             // DGW
             // 
@@ -235,21 +261,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Outputs";
             // 
-            // textBox1
+            // probs2
             // 
-            this.textBox1.Location = new System.Drawing.Point(165, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 20);
-            this.textBox1.TabIndex = 7;
+            this.probs2.Location = new System.Drawing.Point(179, 148);
+            this.probs2.Name = "probs2";
+            this.probs2.ReadOnly = true;
+            this.probs2.Size = new System.Drawing.Size(100, 20);
+            this.probs2.TabIndex = 19;
             // 
-            // label8
+            // label10
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 109);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(124, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Макс. ожидание (τmax)";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1, 151);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(179, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Вероятность 1+ своб. операторов";
             // 
             // opsRequired
             // 
@@ -267,33 +294,6 @@
             this.label9.Size = new System.Drawing.Size(174, 13);
             this.label9.TabIndex = 16;
             this.label9.Text = "Необходимое кол-во операторов";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(105, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Посчитать";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // probs2
-            // 
-            this.probs2.Location = new System.Drawing.Point(179, 148);
-            this.probs2.Name = "probs2";
-            this.probs2.ReadOnly = true;
-            this.probs2.Size = new System.Drawing.Size(100, 20);
-            this.probs2.TabIndex = 19;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1, 151);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(179, 13);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Вероятность 1+ своб. операторов";
             // 
             // Form1
             // 

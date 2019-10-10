@@ -15,15 +15,15 @@ namespace laba1._2
             double opsAmount = Convert.ToInt32(lotsAmount.Text); //количество операторов n
             double storageVol = Convert.ToInt32(storageVolume.Text);//емкость накопителя, m
             double strDensity = Convert.ToDouble(streamDensity.Text);//плотность потока, Lambda
-            double avgTime = Convert.ToDouble(averageTime.Text);//среднее обслуживание, Tao
-            double serviceStream = 1 / avgTime; // поток обслуживаний, Myu
+            double avgTime = Convert.ToDouble(averageTime.Text);//среднее обслуживание, Tao0
+            double serviceStream = 60 / avgTime; // поток обслуживаний, Myu, converted to hours
             double requestsStreamDensity = strDensity / serviceStream;// плотность потока заявок, ro
             double p0 = 0;
-            for (int i = 0; i < opsAmount; i++)
+            for (int i = 0; i <= opsAmount; i++)
             {
                 p0 += (Math.Pow(requestsStreamDensity, i) / factorial(i));
             }
-            p0 += Math.Pow(requestsStreamDensity, opsAmount) / ((factorial(opsAmount - 1)) * (opsAmount - requestsStreamDensity));
+            p0 += (Math.Pow(requestsStreamDensity, opsAmount + 1) * (1 - Math.Pow(requestsStreamDensity / opsAmount, storageVol))) / (opsAmount * factorial(opsAmount) * (1 - requestsStreamDensity / opsAmount));
             p0 = Math.Abs(Math.Round(1 / p0, 3));
 
             //среднее число отказов в обслуживании

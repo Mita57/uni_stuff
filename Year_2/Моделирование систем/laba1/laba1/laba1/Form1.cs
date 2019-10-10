@@ -15,7 +15,7 @@ namespace laba1
             int opsAmount = Convert.ToInt32(operatorsAmount.Text); // количетсво операторов, n
             double strDensity = Convert.ToDouble(streamDensity.Text);// плотность потока, Lambda
             double avgTime = Convert.ToDouble(averageTime.Text);// среднее время обслуживания, Tao
-            double serviceStream = 1 / avgTime; // поток обслуживаний, Myu
+            double serviceStream = 60 / avgTime; // поток обслуживаний, Myu
             double requestsStreamDensity = strDensity / serviceStream;// плотноть потока заявок, ro
             if (requestsStreamDensity > opsAmount)
             {
@@ -24,12 +24,14 @@ namespace laba1
             else
             {
                 double[] p = new double[opsAmount + 1]; ;//вероятности
-                for (int i = 0; i < opsAmount; i++)
+                for (int i = 0; i <= opsAmount; i++)
                 {
                     p[0] += (Math.Pow(requestsStreamDensity, i) / factorial(i));
                 }
-                p[0] += Math.Pow(requestsStreamDensity, opsAmount) / ((factorial(opsAmount - 1)) * (opsAmount - requestsStreamDensity));
-                p[0] = Math.Abs(Math.Round(1 / p[0], 3));
+
+                p[0] += (Math.Pow(requestsStreamDensity, opsAmount + 1) / (factorial(opsAmount) * (opsAmount - requestsStreamDensity)))*(1-Math.Pow(requestsStreamDensity/opsAmount, 2147483647));
+
+                p[0] = (1 / p[0]);
                 for (int i = 1; i < p.Length; i++)
                 {
                     p[i] = (Math.Pow(requestsStreamDensity, i) / factorial(i)) * p[0];
@@ -40,24 +42,20 @@ namespace laba1
                 for (int i = 0; i < p.Length; i++)
                 {
                     DGW.Rows[i].Cells[0].Value = i;
-                    DGW.Rows[i].Cells[1].Value = p[i];
+                    DGW.Rows[i].Cells[1].Value = Math.Round(p[i], 3);
                 }
 
-                //textboxes
 
                 //вероятность очереди
-                double sumOfProbs = 0;
-                foreach (double x in p)
-                {
-                    sumOfProbs += x;
-                }
+                double allAreBusy = (Math.Pow(requestsStreamDensity, opsAmount)) / (factorial(opsAmount - 1) * (opsAmount - requestsStreamDensity)) * p[0]; //Pi
 
-                QProbability.Text = (1 - sumOfProbs).ToString();
+                QProbability.Text = Math.Round(allAreBusy, 3).ToString();
 
                 //средняя длина очереди L
 
-                double allAreBusy = (Math.Pow(requestsStreamDensity, opsAmount) / (factorial(opsAmount - 1) * (opsAmount - requestsStreamDensity))) * p[0]; //Pi
-                avgQLength.Text = (Math.Round(requestsStreamDensity * allAreBusy / (opsAmount - requestsStreamDensity), 2)).ToString();
+
+                double pQueue = (Math.Pow(requestsStreamDensity, opsAmount + 1)) / (factorial(opsAmount) * (opsAmount - requestsStreamDensity)) * p[0]; //Pi
+                avgQLength.Text = (Math.Round((requestsStreamDensity * pQueue) / (opsAmount - requestsStreamDensity), 3)).ToString();
 
                 //среднее время ожидания в очереди Tср
                 avgQTime.Text = (Math.Round(allAreBusy / (serviceStream * (opsAmount - requestsStreamDensity)), 3)).ToString();
@@ -81,20 +79,22 @@ namespace laba1
 
                 //вероятность более одного доступного оператора
                 double[] p2 = new double[opsAmount + 1]; ;//вероятности
-                for (int i = 0; i < opsAmount; i++)
+                for (int i = 0; i <= opsAmount; i++)
                 {
                     p2[0] += (Math.Pow(requestsStreamDensity, i) / factorial(i));
                 }
-                p2[0] += Math.Pow(requestsStreamDensity, opsAmount) / ((factorial(opsAmount - 1)) * (opsAmount - requestsStreamDensity));
-                p2[0] = Math.Round(1 / p2[0], 3);
-                for (int i = 1; i < p.Length; i++)
+
+                p2[0] += (Math.Pow(requestsStreamDensity, opsAmount + 1) / (factorial(opsAmount) * (opsAmount - requestsStreamDensity))) * (1 - Math.Pow(requestsStreamDensity / opsAmount, 2147483647));
+
+                p2[0] = (1 / p2[0]);
+                for (int i = 1; i < p2.Length; i++)
                 {
                     p2[i] = (Math.Pow(requestsStreamDensity, i) / factorial(i)) * p2[0];
                 }
 
 
                 double probAddedOps = 0;
-                for (int i = 0; i < p2.Length - 1; i++)
+                for (int i = 1; i < p2.Length; i++)
                 {
                     probAddedOps += p2[i];
                 }
@@ -111,6 +111,5 @@ namespace laba1
             else
                 return number * factorial(number - 1);
         }
-
     }
 }
