@@ -33,22 +33,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pLotsAmount = new System.Windows.Forms.TextBox();
-            this.pedestrianLots = new System.Windows.Forms.TextBox();
-            this.strDensity = new System.Windows.Forms.TextBox();
-            this.averageTIme = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.averageTime = new System.Windows.Forms.TextBox();
+            this.streamDensity = new System.Windows.Forms.TextBox();
+            this.storageVolume = new System.Windows.Forms.TextBox();
+            this.lotsAmount = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.eightHoursShit = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.avgBusyPed = new System.Windows.Forms.TextBox();
+            this.avgBusyLots = new System.Windows.Forms.TextBox();
+            this.carsWaiting = new System.Windows.Forms.TextBox();
+            this.lotsUsed = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -92,48 +92,20 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.averageTIme);
-            this.groupBox1.Controls.Add(this.strDensity);
-            this.groupBox1.Controls.Add(this.pedestrianLots);
-            this.groupBox1.Controls.Add(this.pLotsAmount);
+            this.groupBox1.Controls.Add(this.averageTime);
+            this.groupBox1.Controls.Add(this.streamDensity);
+            this.groupBox1.Controls.Add(this.storageVolume);
+            this.groupBox1.Controls.Add(this.lotsAmount);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(28, 47);
+            this.groupBox1.Location = new System.Drawing.Point(12, 47);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 171);
+            this.groupBox1.Size = new System.Drawing.Size(390, 171);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inputs";
-            // 
-            // pLotsAmount
-            // 
-            this.pLotsAmount.Location = new System.Drawing.Point(163, 17);
-            this.pLotsAmount.Name = "pLotsAmount";
-            this.pLotsAmount.Size = new System.Drawing.Size(184, 20);
-            this.pLotsAmount.TabIndex = 4;
-            // 
-            // pedestrianLots
-            // 
-            this.pedestrianLots.Location = new System.Drawing.Point(163, 46);
-            this.pedestrianLots.Name = "pedestrianLots";
-            this.pedestrianLots.Size = new System.Drawing.Size(184, 20);
-            this.pedestrianLots.TabIndex = 5;
-            // 
-            // strDensity
-            // 
-            this.strDensity.Location = new System.Drawing.Point(163, 73);
-            this.strDensity.Name = "strDensity";
-            this.strDensity.Size = new System.Drawing.Size(184, 20);
-            this.strDensity.TabIndex = 6;
-            // 
-            // averageTIme
-            // 
-            this.averageTIme.Location = new System.Drawing.Point(163, 99);
-            this.averageTIme.Name = "averageTIme";
-            this.averageTIme.Size = new System.Drawing.Size(184, 20);
-            this.averageTIme.TabIndex = 7;
             // 
             // button1
             // 
@@ -145,109 +117,137 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // averageTime
+            // 
+            this.averageTime.Location = new System.Drawing.Point(200, 100);
+            this.averageTime.Name = "averageTime";
+            this.averageTime.Size = new System.Drawing.Size(184, 20);
+            this.averageTime.TabIndex = 7;
+            // 
+            // streamDensity
+            // 
+            this.streamDensity.Location = new System.Drawing.Point(200, 74);
+            this.streamDensity.Name = "streamDensity";
+            this.streamDensity.Size = new System.Drawing.Size(184, 20);
+            this.streamDensity.TabIndex = 6;
+            // 
+            // storageVolume
+            // 
+            this.storageVolume.Location = new System.Drawing.Point(200, 47);
+            this.storageVolume.Name = "storageVolume";
+            this.storageVolume.Size = new System.Drawing.Size(184, 20);
+            this.storageVolume.TabIndex = 5;
+            // 
+            // lotsAmount
+            // 
+            this.lotsAmount.Location = new System.Drawing.Point(200, 18);
+            this.lotsAmount.Name = "lotsAmount";
+            this.lotsAmount.Size = new System.Drawing.Size(184, 20);
+            this.lotsAmount.TabIndex = 4;
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.eightHoursShit);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.avgBusyPed);
+            this.groupBox2.Controls.Add(this.avgBusyLots);
+            this.groupBox2.Controls.Add(this.carsWaiting);
+            this.groupBox2.Controls.Add(this.lotsUsed);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(28, 247);
+            this.groupBox2.Location = new System.Drawing.Point(12, 247);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(353, 171);
+            this.groupBox2.Size = new System.Drawing.Size(390, 171);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Outputs";
             // 
-            // textBox1
+            // eightHoursShit
             // 
-            this.textBox1.Location = new System.Drawing.Point(163, 99);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(184, 20);
-            this.textBox1.TabIndex = 7;
+            this.eightHoursShit.Location = new System.Drawing.Point(200, 130);
+            this.eightHoursShit.Name = "eightHoursShit";
+            this.eightHoursShit.ReadOnly = true;
+            this.eightHoursShit.Size = new System.Drawing.Size(184, 20);
+            this.eightHoursShit.TabIndex = 9;
             // 
-            // textBox2
+            // label9
             // 
-            this.textBox2.Location = new System.Drawing.Point(163, 73);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(184, 20);
-            this.textBox2.TabIndex = 6;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 153);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(331, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Среднее число посетителей, не нашедших место через 8 часов ";
             // 
-            // textBox3
+            // avgBusyPed
             // 
-            this.textBox3.Location = new System.Drawing.Point(163, 46);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(184, 20);
-            this.textBox3.TabIndex = 5;
+            this.avgBusyPed.Location = new System.Drawing.Point(200, 104);
+            this.avgBusyPed.Name = "avgBusyPed";
+            this.avgBusyPed.ReadOnly = true;
+            this.avgBusyPed.Size = new System.Drawing.Size(184, 20);
+            this.avgBusyPed.TabIndex = 7;
             // 
-            // textBox4
+            // avgBusyLots
             // 
-            this.textBox4.Location = new System.Drawing.Point(163, 17);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(184, 20);
-            this.textBox4.TabIndex = 4;
+            this.avgBusyLots.Location = new System.Drawing.Point(200, 78);
+            this.avgBusyLots.Name = "avgBusyLots";
+            this.avgBusyLots.ReadOnly = true;
+            this.avgBusyLots.Size = new System.Drawing.Size(184, 20);
+            this.avgBusyLots.TabIndex = 6;
+            // 
+            // carsWaiting
+            // 
+            this.carsWaiting.Location = new System.Drawing.Point(200, 51);
+            this.carsWaiting.Name = "carsWaiting";
+            this.carsWaiting.ReadOnly = true;
+            this.carsWaiting.Size = new System.Drawing.Size(184, 20);
+            this.carsWaiting.TabIndex = 5;
+            // 
+            // lotsUsed
+            // 
+            this.lotsUsed.Location = new System.Drawing.Point(200, 22);
+            this.lotsUsed.Name = "lotsUsed";
+            this.lotsUsed.ReadOnly = true;
+            this.lotsUsed.Size = new System.Drawing.Size(184, 20);
+            this.lotsUsed.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 102);
+            this.label5.Location = new System.Drawing.Point(5, 107);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 13);
+            this.label5.Size = new System.Drawing.Size(195, 13);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Среднее время на стоянке";
+            this.label5.Text = "Ср. число занятых мест на дорожках";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 76);
+            this.label6.Location = new System.Drawing.Point(5, 81);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 13);
+            this.label6.Size = new System.Drawing.Size(191, 13);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Плотность потока";
+            this.label6.Text = "Ср число занятых мест на парковке";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 49);
+            this.label7.Location = new System.Drawing.Point(5, 54);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 13);
+            this.label7.Size = new System.Drawing.Size(116, 13);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Кол-во мест на дорожках";
+            this.label7.Text = "Ожидают на дорожке";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(6, 25);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 13);
+            this.label8.Size = new System.Drawing.Size(177, 13);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Кол-во мест";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(163, 125);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(184, 20);
-            this.textBox5.TabIndex = 9;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 128);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(144, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Среднее время на стоянке";
+            this.label8.Text = "Ищут другое место для парковки";
             // 
             // Form1
             // 
@@ -274,20 +274,20 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox averageTIme;
-        private System.Windows.Forms.TextBox strDensity;
-        private System.Windows.Forms.TextBox pedestrianLots;
-        private System.Windows.Forms.TextBox pLotsAmount;
+        private System.Windows.Forms.TextBox averageTime;
+        private System.Windows.Forms.TextBox streamDensity;
+        private System.Windows.Forms.TextBox storageVolume;
+        private System.Windows.Forms.TextBox lotsAmount;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox avgBusyPed;
+        private System.Windows.Forms.TextBox avgBusyLots;
+        private System.Windows.Forms.TextBox carsWaiting;
+        private System.Windows.Forms.TextBox lotsUsed;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox eightHoursShit;
         private System.Windows.Forms.Label label9;
     }
 }
