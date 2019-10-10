@@ -44,7 +44,7 @@
             this.avgBusyPed = new System.Windows.Forms.TextBox();
             this.avgBusyLots = new System.Windows.Forms.TextBox();
             this.carsWaiting = new System.Windows.Forms.TextBox();
-            this.lotsUsed = new System.Windows.Forms.TextBox();
+            this.deniedComplelely = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -152,7 +152,7 @@
             this.groupBox2.Controls.Add(this.avgBusyPed);
             this.groupBox2.Controls.Add(this.avgBusyLots);
             this.groupBox2.Controls.Add(this.carsWaiting);
-            this.groupBox2.Controls.Add(this.lotsUsed);
+            this.groupBox2.Controls.Add(this.deniedComplelely);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
@@ -205,13 +205,13 @@
             this.carsWaiting.Size = new System.Drawing.Size(184, 20);
             this.carsWaiting.TabIndex = 5;
             // 
-            // lotsUsed
+            // deniedComplelely
             // 
-            this.lotsUsed.Location = new System.Drawing.Point(200, 22);
-            this.lotsUsed.Name = "lotsUsed";
-            this.lotsUsed.ReadOnly = true;
-            this.lotsUsed.Size = new System.Drawing.Size(184, 20);
-            this.lotsUsed.TabIndex = 4;
+            this.deniedComplelely.Location = new System.Drawing.Point(200, 22);
+            this.deniedComplelely.Name = "deniedComplelely";
+            this.deniedComplelely.ReadOnly = true;
+            this.deniedComplelely.Size = new System.Drawing.Size(184, 20);
+            this.deniedComplelely.TabIndex = 4;
             // 
             // label5
             // 
@@ -282,7 +282,7 @@
         private System.Windows.Forms.TextBox avgBusyPed;
         private System.Windows.Forms.TextBox avgBusyLots;
         private System.Windows.Forms.TextBox carsWaiting;
-        private System.Windows.Forms.TextBox lotsUsed;
+        private System.Windows.Forms.TextBox deniedComplelely;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

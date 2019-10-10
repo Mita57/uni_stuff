@@ -12,35 +12,27 @@ namespace laba1._2
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            double opsAmount = Convert.ToInt32(lotsAmount.Text); //количество операторов n
-            double storageVol = Convert.ToInt32(storageVolume.Text);//емкость накопителя, m
-            double strDensity = Convert.ToDouble(streamDensity.Text);//плотность потока, Lambda
-            double avgTime = Convert.ToDouble(averageTime.Text);//среднее обслуживание, Tao0
-            double serviceStream = 60 / avgTime; // поток обслуживаний, Myu, converted to hours
-            double requestsStreamDensity = strDensity / serviceStream;// плотность потока заявок, ro
+            double n = Convert.ToInt32(lotsAmount.Text); //количество операторов n
+            double k = Convert.ToInt32(storageVolume.Text);//емкость накопителя, m
+            double a = Convert.ToDouble(streamDensity.Text);//плотность потока, Lambda
+            double t0 = Convert.ToDouble(averageTime.Text);//среднее обслуживание, Tao0
+            double u = 60 / t0; // поток обслуживаний, Myu, converted to hours
+            double pa = a / u;// плотность потока заявок, ro
             double p0 = 0;
-            for (int i = 0; i <= opsAmount; i++)
+            for (int i = 0; i <= n; i++)
             {
-                p0 += (Math.Pow(requestsStreamDensity, i) / factorial(i));
+                p0 += Math.Pow(pa, i) / factorial(i);
             }
-            p0 += (Math.Pow(requestsStreamDensity, opsAmount + 1) * (1 - Math.Pow(requestsStreamDensity / opsAmount, storageVol))) / (opsAmount * factorial(opsAmount) * (1 - requestsStreamDensity / opsAmount));
-            p0 = Math.Abs(Math.Round(1 / p0, 3));
-
-            //среднее число отказов в обслуживании
-            double serviceDenies = (Math.Pow(requestsStreamDensity, opsAmount + storageVol) / (Math.Pow(opsAmount, storageVol) * factorial(opsAmount))) * p0;
-            //среднее число заявок в очереди
-            double pedWaiting = (Math.Pow(requestsStreamDensity, opsAmount + 1) * p0 * (1 - (storageVol + 1 - storageVol * (requestsStreamDensity / opsAmount)) * Math.Pow(requestsStreamDensity / opsAmount, storageVol))) / (opsAmount * factorial(opsAmount) * Math.Pow((1 - requestsStreamDensity / opsAmount), 2));
-            //среднее число занятых мест на парковке
-            double parkingAvgBusy = requestsStreamDensity * (1 - (Math.Pow(requestsStreamDensity, opsAmount + storageVol) / (Math.Pow(opsAmount, storageVol) * factorial(opsAmount))) * p0);
-            //rendering stuff
-
-            lotsUsed.Text = Math.Round(serviceDenies * 100, 3).ToString();
-            carsWaiting.Text = Math.Round((pedWaiting/parkingAvgBusy)*100, 3).ToString();
-            avgBusyLots.Text = Math.Round(parkingAvgBusy, 3).ToString();
-            avgBusyPed.Text = Math.Round(pedWaiting, 3).ToString();
-            eightHoursShit.Text = Math.Round(serviceDenies * strDensity * 8).ToString();
-
-
+            p0 += (Math.Pow(pa, n + 1) * (1 - Math.Pow(pa / n, k))) / (n * factorial(n) * (1 - pa / n));
+            p0 = 1/p0;
+            double potk = (Math.Pow(pa, n + k) / (Math.Pow(n, k) * factorial(n))) * p0; //среднее число отказов в обслуживании
+            deniedComplelely.Text = (Math.Round(potk, 3)*100).ToString();
+            double loch = (Math.Pow(pa, n + 1) * p0 * (1 - (k + 1 - k * (pa / n)) * Math.Pow(pa / n, k))) / (n * factorial(n) * Math.Pow((1 - pa / n), 2)); //среднее число заявок в очереди
+            double kk = pa * (1 - (Math.Pow(pa, n + k) / (Math.Pow(n, k) * factorial(n))) * p0); //среднее число занятых каналов
+            carsWaiting.Text = (Math.Round((loch / kk)*100, 3)).ToString();
+            avgBusyLots.Text = Math.Round(kk, 2).ToString();
+            avgBusyPed.Text = Math.Round(loch, 3).ToString();
+            eightHoursShit.Text = Math.Round((a * 8) * potk, 3).ToString();
         }
 
 

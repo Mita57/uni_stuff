@@ -47,18 +47,18 @@ namespace laba1
 
 
                 //вероятность очереди
-                double allAreBusy = (Math.Pow(requestsStreamDensity, opsAmount)) / (factorial(opsAmount - 1) * (opsAmount - requestsStreamDensity)) * p[0]; //Pi
+                double allAreBusy = (Math.Pow(requestsStreamDensity, opsAmount + 1)) / (factorial(opsAmount) * (opsAmount - requestsStreamDensity)) * p[0]; //p очер
 
                 QProbability.Text = Math.Round(allAreBusy, 3).ToString();
 
                 //средняя длина очереди L
 
 
-                double pQueue = (Math.Pow(requestsStreamDensity, opsAmount + 1)) / (factorial(opsAmount) * (opsAmount - requestsStreamDensity)) * p[0]; //Pi
+                double pQueue = (Math.Pow(requestsStreamDensity, opsAmount)) / (factorial(opsAmount - 1) * (opsAmount - requestsStreamDensity)) * p[0] ; //Pi
                 avgQLength.Text = (Math.Round((requestsStreamDensity * pQueue) / (opsAmount - requestsStreamDensity), 3)).ToString();
 
                 //среднее время ожидания в очереди Tср
-                avgQTime.Text = (Math.Round(allAreBusy / (serviceStream * (opsAmount - requestsStreamDensity)), 3)).ToString();
+                avgQTime.Text = (Math.Round(pQueue / (serviceStream * (opsAmount - requestsStreamDensity)), 3)).ToString();
 
                 //среднее число занятых каналов Nзан
                 double avgFreeOps = 0;
