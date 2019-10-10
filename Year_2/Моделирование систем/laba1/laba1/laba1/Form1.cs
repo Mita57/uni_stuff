@@ -58,7 +58,7 @@ namespace laba1
                 avgQLength.Text = (Math.Round((requestsStreamDensity * pQueue) / (opsAmount - requestsStreamDensity), 3)).ToString();
 
                 //среднее время ожидания в очереди Tср
-                avgQTime.Text = (Math.Round(pQueue / (serviceStream * (opsAmount - requestsStreamDensity)), 3)).ToString();
+                avgQTime.Text = (Math.Round(allAreBusy / (serviceStream * (opsAmount - requestsStreamDensity)), 3)).ToString();
 
                 //среднее число занятых каналов Nзан
                 double avgFreeOps = 0;
