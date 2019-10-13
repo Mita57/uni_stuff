@@ -50,7 +50,7 @@ namespace attributes
             }
             set
             {
-                if((value >= 1 && value <= 9))
+                if ((value >= 1 && value <= 9))
                 {
                     Val = value * 10 + D2;
                 }
@@ -65,16 +65,16 @@ namespace attributes
             }
             set
             {
-                if(value >= 0 && value <= 9)
+                if (value >= 0 && value <= 9)
                 {
                     Val = D1 * 10 + value;
                 }
             }
         }
 
-        public void SetN2 (int value)
+        public void SetN2(int value)
         {
-            if(value >= 10 && value <= 90)
+            if (value >= 10 && value <= 90)
             {
                 _value = value;
             }
@@ -85,7 +85,7 @@ namespace attributes
             Val = D2 * 10 + D1;
         }
 
-        public bool LessThan (N1 d)
+        public bool LessThan(N1 d)
         {
             return Val < d.Val;
         }
@@ -101,7 +101,7 @@ namespace attributes
             {
                 result += "Четное";
             }
-            return  result;
+            return result;
         }
 
         public void Show()
@@ -117,7 +117,7 @@ namespace attributes
         {
             int sum = 0;
             char[] cockAr = this.Val.ToString().ToCharArray();
-            for(int i = 0; i < cockAr.Length; i++)
+            for (int i = 0; i < cockAr.Length; i++)
             {
                 sum += Convert.ToInt32(cockAr[i].ToString());
             }
@@ -131,11 +131,11 @@ namespace attributes
             {
                 int sum = 0;
                 char[] araTyCho = num.ToString().ToCharArray();
-                for(int i = 0; i < araTyCho.Length; i++)
+                for (int i = 0; i < araTyCho.Length; i++)
                 {
                     sum += Convert.ToInt32(araTyCho[i].ToString());
                 }
-                if(sum == value)
+                if (sum == value)
                 {
                     this.Val = num;
                     break;
@@ -146,13 +146,13 @@ namespace attributes
 
         public bool DigPrime()
         {
-            if(this.Val == 1)
+            if (this.Val == 1)
             {
                 return false;
             }
-            for (int i = 2; i < this.Val/2; i++)
+            for (int i = 2; i < this.Val / 2; i++)
             {
-                if((this.Val%i) == 0)
+                if ((this.Val % i) == 0)
                 {
                     return false;
                 }
@@ -163,42 +163,37 @@ namespace attributes
         {
             int count1 = this.Val;
             int count2 = this.Val;
-            int closest = 2;
             while (true)
             {
-                bool flag1 = false;
+                for (int i = 2; i <= count1 / 2; i++)
+                {
+                    if (count1 % i == 0)
+                    {
+                        break;
+                    }
+                    if (i == count1 / 2)
+                    {
+                        this.Val = count1;
+                        return;
+                    }
+                }
                 count1++;
-                for (int i = 2; i < count1 / 2; i++)
-                {
-                    if ((this.Val % i) == 0)
-                    {
-                        closest = count1;
-                        flag1 = true;
-                        break;
-                    }
-                }
-                if (flag1)
-                {
-                    break;
-                }
                 count2--;
-                for (int i = 2; i < count2 / 2; i++)
+                for (int i = 2; i <= count2 / 2; i++)
                 {
-                    if ((this.Val % i) == 0)
+                    if (count2 % i == 0)
                     {
-                        closest = count2;
-                        flag1 = true;
                         break;
                     }
-                }
-                if (flag1)
-                {
-                    break;
-                }
-                this.Val = closest;
+                    if (i == count2 / 2)
+                    {
+                        this.Val = count2;
+                        return;
+                    }
 
+                }
             }
-        }
 
+        }
     }
 }
