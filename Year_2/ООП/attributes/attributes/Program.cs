@@ -28,6 +28,14 @@ namespace attributes
             b.Show();
             Console.WriteLine("A<B - {0}", a.LessThan(b));
             Console.WriteLine("B<A - {0}", b.LessThan(a));
+            Console.WriteLine("Симметричность: " + a.IsSimm(b));
+            Console.WriteLine(a.Val);
+            Console.WriteLine("DigSum: " + a.DigSum());
+            a.DigSum(13);
+            Console.WriteLine("Бахнув a.DigSum(13):" + a.Val);
+            Console.WriteLine("isS1mple: " + a.DigPrime());
+            a.DigPrime(true);
+            Console.WriteLine("Ближайшее простецкое числоу: " + a.Val);
             Console.ReadLine();
         }
     }

@@ -116,41 +116,88 @@ namespace attributes
         public int DigSum()
         {
             int sum = 0;
-            char[] cockAr = Val.ToString().ToCharArray();
-            foreach(char cock in cockAr)
+            char[] cockAr = this.Val.ToString().ToCharArray();
+            for(int i = 0; i < cockAr.Length; i++)
             {
-                sum += Convert.ToInt32(cock);
+                sum += Convert.ToInt32(cockAr[i].ToString());
             }
             return sum;
         }
 
-        public int DigSum(int cock)
+        public void DigSum(int value)
         {
-            int dick = 0;
+            int num = 0;
             while (true)
             {
                 int sum = 0;
-                char[] cockAr = dick.ToString().ToCharArray();
-                foreach (char meme in cockAr)
+                char[] araTyCho = num.ToString().ToCharArray();
+                for(int i = 0; i < araTyCho.Length; i++)
                 {
-                    sum += Convert.ToInt32(meme);
+                    sum += Convert.ToInt32(araTyCho[i].ToString());
                 }
-                dick++;
-                if(sum == cock)
+                if(sum == value)
                 {
-                    return dick;
+                    this.Val = num;
+                    break;
                 }
-
+                num++;
             }
         }
 
-        public bool DigSimple()
+        public bool DigPrime()
         {
-
+            if(this.Val == 1)
+            {
+                return false;
+            }
+            for (int i = 2; i < this.Val/2; i++)
+            {
+                if((this.Val%i) == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
-        public void DigSimple()
+        public void DigPrime(bool flag)
         {
+            int count1 = this.Val;
+            int count2 = this.Val;
+            int closest = 2;
+            while (true)
+            {
+                bool flag1 = false;
+                count1++;
+                for (int i = 2; i < count1 / 2; i++)
+                {
+                    if ((this.Val % i) == 0)
+                    {
+                        closest = count1;
+                        flag1 = true;
+                        break;
+                    }
+                }
+                if (flag1)
+                {
+                    break;
+                }
+                count2--;
+                for (int i = 2; i < count2 / 2; i++)
+                {
+                    if ((this.Val % i) == 0)
+                    {
+                        closest = count2;
+                        flag1 = true;
+                        break;
+                    }
+                }
+                if (flag1)
+                {
+                    break;
+                }
+                this.Val = closest;
 
+            }
         }
 
     }
