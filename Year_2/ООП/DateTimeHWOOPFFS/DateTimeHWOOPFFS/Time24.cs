@@ -19,6 +19,11 @@ namespace DateTimeHWOOPFFS
             }
         }
 
+        public int getMinutes()
+        {
+            return this.minutes;
+        }
+
         public int getHours()
         {
             return this.hours;
