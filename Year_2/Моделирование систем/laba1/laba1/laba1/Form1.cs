@@ -71,7 +71,8 @@ namespace laba1
 
                 //необходиомое количество операторов
 
-                while ((allAreBusy / (serviceStream * (opsAmount - requestsStreamDensity)) > Convert.ToDouble(textBox1.Text)))
+                opsAmount = 1;
+                while ((allAreBusy / (serviceStream * (opsAmount - requestsStreamDensity)) < Convert.ToDouble(textBox1.Text)))
                 {
                     opsAmount++;
                 }
