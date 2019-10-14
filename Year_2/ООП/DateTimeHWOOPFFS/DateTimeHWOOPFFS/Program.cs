@@ -28,6 +28,10 @@ namespace DateTimeHWOOPFFS
             hammerTime.setHours(13);
             hammerTime.setMinutes(37);
             hammerTime.show();
+            Console.WriteLine("Надо ли спац: " + hammerTime.checkIfAsleep());
+            hammerTime.stupidAmericano();
+            Console.WriteLine("Разбуди меня через: " + hammerTime.timeTill420am().hourR());
+            Console.ReadLine();
         }
     }
 }

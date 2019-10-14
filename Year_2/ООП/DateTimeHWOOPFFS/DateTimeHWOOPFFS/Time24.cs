@@ -108,7 +108,7 @@ namespace DateTimeHWOOPFFS
             }
             else
             {
-                this.minutes = this.minutes--;
+                this.minutes--;
             }
         }
 
@@ -140,7 +140,7 @@ namespace DateTimeHWOOPFFS
                 }
                 else
                 {
-                    this.hours = this.hours++;
+                    this.hours++;
                 }
             }
             this.minutes = 0;
@@ -169,15 +169,15 @@ namespace DateTimeHWOOPFFS
         {
             if(this.hours < 12)
             {
-                Console.WriteLine(this.hourR() + "am");
+                Console.WriteLine("Stupid americano format: " + this.hourR() + "am");
             }
             else
             {
-                Console.WriteLine(this.hourR() + "pm");
+                Console.WriteLine("Stupid americano format: " + this.hourR() + "pm");
             }
         }
 
-        public Time24 timeTil420am()
+        public Time24 timeTill420am()
         {
             if(this.hours == 4 && this.minutes == 20)
             {
