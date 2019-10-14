@@ -143,16 +143,17 @@ namespace DateTimeHWOOPFFS
                     this.hours = this.hours++;
                 }
             }
+            this.minutes = 0;
         }
 
-        public string Info()
+        public string info()
         {
             return this.hourR() + ", " + this.dayTime() ;
         }
 
-        public void Show()
+        public void show()
         {
-            Console.WriteLine(this.Info());
+            Console.WriteLine(this.info());
         }
 
         public bool checkIfAsleep()
@@ -210,15 +211,10 @@ namespace DateTimeHWOOPFFS
             this.minutes = minutes;
         }
 
-        public Time24 (int hours)
-        {
-            this.hours = hours;
-            this.minutes = 0;
-        }
 
-        public Time24 Create(int hours)
+        static public Time24 Create(int hours)
         {
-            return new Time24(hours);
+            return new Time24(hours, 0);
         }
     }
 }
