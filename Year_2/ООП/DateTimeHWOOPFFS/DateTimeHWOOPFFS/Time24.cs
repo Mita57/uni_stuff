@@ -178,13 +178,28 @@ namespace DateTimeHWOOPFFS
 
         public Time24 timeTil420am()
         {
-            if (this.hours > 4)
+            if(this.hours == 4 && this.minutes == 20)
             {
-                if (this.minutes > 19)
-                {
-                    return new Time24(27 - this.hours, 80 - this.hours);
-                }
+                Console.WriteLine("Ня пока");
+                return new Time24(0, 0);
             }
+            if(this.hours >= 4 && this.minutes >= 21)
+            {
+                return new Time24(27 - this.hours, 80 - this.minutes);
+            }
+            if (this.hours >= 4 && this.minutes < 21)
+            {
+                return new Time24(27 - this.hours, 60 - this.minutes);
+            }
+            if(this.hours < 4 && this.minutes >=21)
+            {
+                return new Time24(4 - this.hours, 80-this.minutes);
+            }
+            {
+                return new Time24(4-this.hours, 60 - this.minutes);
+            }
+
+
         }
 
 
