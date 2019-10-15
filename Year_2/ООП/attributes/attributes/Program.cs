@@ -14,7 +14,7 @@ namespace attributes
             a.Show();
             N1 b = new N1("B");
             b.Show();
-            a.Val = 54;
+            a.Val = 98;
             a.Show();
             b.Val = -17;
             b.Show();

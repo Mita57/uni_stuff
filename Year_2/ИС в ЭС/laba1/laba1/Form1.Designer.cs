@@ -97,7 +97,7 @@
             this.inputDGW.Location = new System.Drawing.Point(12, 30);
             this.inputDGW.Name = "inputDGW";
             this.inputDGW.RowHeadersVisible = false;
-            this.inputDGW.Size = new System.Drawing.Size(379, 437);
+            this.inputDGW.Size = new System.Drawing.Size(384, 437);
             this.inputDGW.TabIndex = 2;
             // 
             // critIndex
@@ -122,7 +122,7 @@
             this.DGW1.Location = new System.Drawing.Point(421, 30);
             this.DGW1.Name = "DGW1";
             this.DGW1.ReadOnly = true;
-            this.DGW1.Size = new System.Drawing.Size(426, 199);
+            this.DGW1.Size = new System.Drawing.Size(444, 199);
             this.DGW1.TabIndex = 3;
             // 
             // name
@@ -172,7 +172,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(590, 245);
+            this.label2.Location = new System.Drawing.Point(608, 245);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 7;
@@ -181,7 +181,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(590, 14);
+            this.label3.Location = new System.Drawing.Point(608, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 8;
@@ -198,7 +198,7 @@
             this.DGW2.Location = new System.Drawing.Point(421, 268);
             this.DGW2.Name = "DGW2";
             this.DGW2.ReadOnly = true;
-            this.DGW2.Size = new System.Drawing.Size(426, 199);
+            this.DGW2.Size = new System.Drawing.Size(444, 199);
             this.DGW2.TabIndex = 9;
             // 
             // dataGridViewTextBoxColumn1
@@ -297,7 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 505);
+            this.ClientSize = new System.Drawing.Size(877, 505);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label6);

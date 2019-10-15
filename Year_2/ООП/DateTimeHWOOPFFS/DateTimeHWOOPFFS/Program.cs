@@ -15,9 +15,9 @@ namespace DateTimeHWOOPFFS
             hammerTime.show();
             Time24 nowItsTimeToDiiiiie = Time24.Create(12);
             Console.WriteLine("nowItsTimeToDie info: " + nowItsTimeToDiiiiie.info());
-            nowItsTimeToDiiiiie.assign("13:37");
-            Console.WriteLine("Приравняли время к 13:37: " + nowItsTimeToDiiiiie.info());
-            Console.WriteLine("Сравним эти два времени: " + hammerTime.compare(nowItsTimeToDiiiiie.hourR()));
+            nowItsTimeToDiiiiie.assign(Console.ReadLine());
+            Console.WriteLine("Приравняли nowItsTimeToDie к инпуту: " + nowItsTimeToDiiiiie.info());
+            Console.WriteLine("Сравним эти два времени: " + hammerTime.compare(nowItsTimeToDiiiiie));
             hammerTime.nextMin();
             Console.WriteLine("Добавили минуту к hammerTime: " + hammerTime.info());
             hammerTime.prevMin();

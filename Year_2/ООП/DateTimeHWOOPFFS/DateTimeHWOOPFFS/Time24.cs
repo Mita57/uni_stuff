@@ -67,10 +67,9 @@ namespace DateTimeHWOOPFFS
             this.setMinutes(Convert.ToInt32(cock[1]));
         }
 
-        public bool compare(string time)
+        public bool compare(Time24 time)
         {
-            string[] cock = time.Split(':');
-            if (this.hours == Convert.ToInt32(cock[0]) && this.minutes == Convert.ToInt32(cock[1]))
+            if (this.hours == time.hours && this.minutes == time.minutes)
             {
                 return true;
             }
