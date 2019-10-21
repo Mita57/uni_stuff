@@ -34,6 +34,7 @@ namespace attributes
             a.DigSum(13);
             Console.WriteLine("Бахнув a.DigSum(13):" + a.Val);
             Console.WriteLine("isS1mple: " + a.DigPrime());
+            a.Val = 87;
             a.DigPrime(true);
             Console.WriteLine("Ближайшее простецкое числоу: " + a.Val);
             Console.ReadLine();

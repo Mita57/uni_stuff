@@ -29,7 +29,7 @@ namespace laba1
                     p[0] += (Math.Pow(requestsStreamDensity, i) / factorial(i));
                 }
 
-                p[0] += (Math.Pow(requestsStreamDensity, opsAmount + 1) / (factorial(opsAmount) * (opsAmount - requestsStreamDensity)))*(1-Math.Pow(requestsStreamDensity/opsAmount, 2147483647));
+                p[0] += (Math.Pow(requestsStreamDensity, opsAmount + 1) / (factorial(opsAmount) * (opsAmount - requestsStreamDensity))) * (1 - Math.Pow(requestsStreamDensity / opsAmount, 2147483647));
 
                 p[0] = (1 / p[0]);
                 for (int i = 1; i < p.Length; i++)
@@ -54,7 +54,7 @@ namespace laba1
                 //средняя длина очереди L
 
 
-                double pQueue = (Math.Pow(requestsStreamDensity, opsAmount)) / (factorial(opsAmount - 1) * (opsAmount - requestsStreamDensity)) * p[0] ; //Pi
+                double pQueue = (Math.Pow(requestsStreamDensity, opsAmount)) / (factorial(opsAmount - 1) * (opsAmount - requestsStreamDensity)) * p[0]; //Pi
                 avgQLength.Text = (Math.Round((requestsStreamDensity * pQueue) / (opsAmount - requestsStreamDensity), 3)).ToString();
 
                 //среднее время ожидания в очереди Tср
@@ -72,8 +72,12 @@ namespace laba1
                 //необходиомое количество операторов
 
                 opsAmount = 1;
-                while ((allAreBusy / (serviceStream * (opsAmount - requestsStreamDensity)) < Convert.ToDouble(textBox1.Text)))
+                
+                while (((allAreBusy) / (serviceStream * (opsAmount - requestsStreamDensity))) < Convert.ToDouble(textBox1.Text))
                 {
+                    allAreBusy = (Math.Pow(requestsStreamDensity, opsAmount + 1)) / (factorial(opsAmount) * (opsAmount - requestsStreamDensity)) * p[0]; //p очер
+                    serviceStream = 60 / avgTime; // поток обслуживаний, Myu
+                    requestsStreamDensity = strDensity / serviceStream;// плотноть потока заявок, ro
                     opsAmount++;
                 }
                 opsRequired.Text = opsAmount.ToString();
