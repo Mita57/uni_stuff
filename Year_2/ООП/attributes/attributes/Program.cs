@@ -30,12 +30,11 @@ namespace attributes
             Console.WriteLine("B<A - {0}", b.LessThan(a));
             Console.WriteLine("Симметричность: " + a.IsSimm(b));
             Console.WriteLine(a.Val);
-            Console.WriteLine("DigSum: " + a.DigSum());
-            a.DigSum(13);
+            Console.WriteLine("DigSum: " + a.DigSum);
+            a.DigSum = 13;
             Console.WriteLine("Бахнув a.DigSum(13):" + a.Val);
-            Console.WriteLine("isS1mple: " + a.DigPrime());
-            a.Val = 87;
-            a.DigPrime(true);
+            Console.WriteLine("isS1mple: " + Convert.ToBoolean(a.DigPrime));
+            a.DigPrime = 96;
             Console.WriteLine("Ближайшее простецкое числоу: " + a.Val);
             Console.ReadLine();
         }

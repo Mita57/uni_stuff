@@ -74,7 +74,7 @@ namespace attributes
 
         public void SetN2(int value)
         {
-            if (value >= 10 && value <= 90)
+            if (value >= 10 && value <= 100)
             {
                 _value = value;
             }
@@ -113,86 +113,85 @@ namespace attributes
         {
             return (d.Val == this.Val);
         }
-        public int DigSum()
-        {
-            int sum = 0;
-            char[] cockAr = this.Val.ToString().ToCharArray();
-            for (int i = 0; i < cockAr.Length; i++)
-            {
-                sum += Convert.ToInt32(cockAr[i].ToString());
-            }
-            return sum;
-        }
 
-        public void DigSum(int value)
-        {
-            int num = 0;
-            while (true)
+
+        public int DigSum {
+            get
             {
                 int sum = 0;
-                char[] araTyCho = num.ToString().ToCharArray();
-                for (int i = 0; i < araTyCho.Length; i++)
+                char[] cockAr = this.Val.ToString().ToCharArray();
+                for (int i = 0; i < cockAr.Length; i++)
                 {
-                    sum += Convert.ToInt32(araTyCho[i].ToString());
+                    sum += Convert.ToInt32(cockAr[i].ToString());
                 }
-                if (sum == value)
-                {
-                    this.Val = num;
-                    break;
-                }
-                num++;
+                return sum;
             }
+
+            set
+            {
+                string N2 = "9";
+                string N1 = Convert.ToString(value - 9);
+                string kek = N1 + N2;
+                this.Val = Convert.ToInt32(kek);
+            }
+
         }
 
-        public bool DigPrime()
+        public int DigPrime
         {
-            if (this.Val == 1)
+            get
             {
-                return false;
-            }
-            for (int i = 2; i < this.Val / 2; i++)
-            {
-                if ((this.Val % i) == 0)
+                if (this.Val == 1)
                 {
-                    return false;
+                    return 0;
                 }
-            }
-            return true;
-        }
-        public void DigPrime(bool flag)
-        {
-            int count1 = this.Val;
-            int count2 = this.Val;
-            while (true)
-            {
-                for (int i = 2; i <= count1 / 2; i++)
+                for (int i = 2; i < this.Val / 2; i++)
                 {
-                    if (count1 % i == 0)
+                    if ((this.Val % i) == 0)
                     {
-                        break;
-                    }
-                    if (i == count1 / 2)
-                    {
-                        this.Val = count1;
-                        return;
+                        return 0;
                     }
                 }
-                count1++;
-                count2--;
-                for (int i = 2; i <= count2 / 2; i++)
-                {
-                    if (count2 % i == 0)
-                    {
-                        break;
-                    }
-                    if (i == count2 / 2)
-                    {
-                        this.Val = count2;
-                        return;
-                    }
+                return 1;
+            }
 
+
+            set
+            {
+                int count1 = value;
+                int count2 = value;
+                while (true)
+                {
+                    for (int i = 2; i <= count1 / 2; i++)
+                    {
+                        if (count1 % i == 0)
+                        {
+                            break;
+                        }
+                        if (i == count1 / 2)
+                        {
+                            this.Val = count1;
+                            return;
+                        }
+                    }
+                    count1++;
+                    count2--;
+                    for (int i = 2; i <= count2 / 2; i++)
+                    {
+                        if (count2 % i == 0)
+                        {
+                            break;
+                        }
+                        if (i == count2 / 2)
+                        {
+                            this.Val = count2;
+                            return;
+                        }
+
+                    }
                 }
             }
+        
 
         }
     }

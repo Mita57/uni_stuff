@@ -22,15 +22,15 @@ namespace DateTimeHWOOPFFS
             Console.WriteLine("Добавили минуту к hammerTime: " + hammerTime.info());
             hammerTime.prevMin();
             Console.WriteLine("Убрали миунту от hammerTime: " + hammerTime.info());
-            Console.WriteLine("Время до конца дня: " +hammerTime.timeRemain().hourR());
+            Console.WriteLine("Время до конца дня: " +hammerTime.timeRemain().hourR);
             hammerTime.nearHour();
-            Console.WriteLine("Округленное до часа: " + hammerTime.hourR());
+            Console.WriteLine("Округленное до часа: " + hammerTime.hourR);
             hammerTime.setHours(13);
             hammerTime.setMinutes(37);
             hammerTime.show();
             Console.WriteLine("Надо ли спац: " + hammerTime.checkIfAsleep());
             hammerTime.stupidAmericano();
-            Console.WriteLine("Разбуди меня через: " + hammerTime.timeTill420am().hourR());
+            Console.WriteLine("Разбуди меня через: " + hammerTime.timeTill420am().hourR);
             Console.ReadLine();
         }
     }
