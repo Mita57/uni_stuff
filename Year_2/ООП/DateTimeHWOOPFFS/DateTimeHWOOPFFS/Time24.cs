@@ -37,27 +37,40 @@ namespace DateTimeHWOOPFFS
             }
         }
 
-        public string hourR()
+        public double hourR
         {
-            return (this.hours + ":" + this.minutes);
+            get
+            {
+                return (Math.Round((((double)this.hours * 60) + (double)this.minutes)/60, 3));
+            }
+            set
+            {
+                int hours = (int)value;
+                this.hours = hours;
+                double mins = value - hours;
+                this.minutes = (int)mins / 60;
+            }
         }
 
-        public string dayTime()
+        public string dayTime
         {
-            if (this.hours > 5 && this.hours < 12)
+            get
             {
-                return ("TOP OF THE MORNING TO YA LADIES MY NAME IS JACKSEPTICEYE");
-            }
-            if (this.hours > 11 && this.hours < 17)
-            {
-                return ("It's daytime");
-            }
+                if (this.hours > 3 && this.hours < 12)
+                {
+                    return ("TOP OF THE MORNING TO YA LADIES MY NAME IS JACKSEPTICEYE");
+                }
+                if (this.hours > 11 && this.hours < 16)
+                {
+                    return ("It's daytime");
+                }
 
-            if (this.hours > 16 && this.hours < 21)
-            {
-                return ("It's evening");
+                if (this.hours > 15 && this.hours < 21)
+                {
+                    return ("It's evening");
+                }
+                return ("It's the best time of the day");
             }
-            return ("It's the best time of the day");
         }
 
         public void assign(string time)
@@ -152,7 +165,7 @@ namespace DateTimeHWOOPFFS
 
         public string info()
         {
-            return this.hourR() + ", " + this.dayTime() ;
+            return this.hourR + ", " + this.dayTime;
         }
 
         public void show()
@@ -173,11 +186,11 @@ namespace DateTimeHWOOPFFS
         {
             if(this.hours < 12)
             {
-                Console.WriteLine("Stupid americano format: " + this.hourR() + "am");
+                Console.WriteLine("Stupid americano format: " + this.hourR + "am");
             }
             else
             {
-                Console.WriteLine("Stupid americano format: " + this.hourR() + "pm");
+                Console.WriteLine("Stupid americano format: " + this.hourR + "pm");
             }
         }
 
