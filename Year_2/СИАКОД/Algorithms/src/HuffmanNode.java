@@ -6,7 +6,7 @@ class HuffmanNode {
     int data;
     char c;
     String code;
-    static ArrayList<HuffmanNode> allElements= new ArrayList<HuffmanNode>();
+    static ArrayList<HuffmanNode> allElements;
 
     HuffmanNode left;
     HuffmanNode right;
