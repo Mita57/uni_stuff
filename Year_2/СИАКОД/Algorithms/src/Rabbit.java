@@ -15,9 +15,10 @@ public class Rabbit {
                 if (cellsArray[k + 1] == '"') {
                     k++;
                     p++;
-                } else if (cellsArray[k + 1] == '.') {
+                } else
+                    if (cellsArray[k + 1] == '.') {
                     k++;
-                } else if (cellsArray[k + 1] == 'w') {
+                } else{
                     p = -1;
                     break;
                 }
@@ -33,9 +34,6 @@ public class Rabbit {
                     k += 3;
                 } else if (cellsArray[k + 1] == '.') {
                     k++;
-                } else if (cellsArray[k + 1] == 'w') {
-                    p = -1;
-                    break;
                 } else {
                     p = -1;
                     break;
@@ -62,7 +60,7 @@ public class Rabbit {
                     break;
                 }
             }
-            System.out.println(p);
+            System.out.println("Max grass cells: "+p);
         }
         else {
             System.out.println("Incorrect input, the amount cells must be between 2 and 1000");
