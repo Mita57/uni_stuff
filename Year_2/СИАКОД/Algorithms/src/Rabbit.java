@@ -21,7 +21,6 @@ public class Rabbit {
                     p = -1;
                     break;
                 }
-
             }
             while (k + 1 < cellsArray.length && cellsArray.length <= 5 && cellsArray.length > 3 || k + 3 <= cellsArray.length - 1 && cellsArray.length <= 5 && cellsArray.length > 3) {
                 if (cellsArray[k + 1] == '"') {
@@ -41,7 +40,6 @@ public class Rabbit {
                     p = -1;
                     break;
                 }
-
             }
             while (k + 1 < cellsArray.length && cellsArray.length > 5 || k + 3 <= cellsArray.length - 1 && cellsArray.length > 5 || k + 5 <= cellsArray.length - 1 && cellsArray.length > 5) {
                 if (cellsArray[k + 1] == '"') {
@@ -65,8 +63,9 @@ public class Rabbit {
                 }
             }
             System.out.println(p);
-        } else
+        }
+        else {
             System.out.println("Incorrect input, the amount cells must be between 2 and 1000");
-        System.out.println();
+        }
     }
 }
