@@ -27,6 +27,7 @@ public class HuffmanDecode{
             strB.append(encodedStringAr[i]);
             if(codes.contains(strB.toString())){
                 System.out.print(HuffmanNode.allElements.get(codes.indexOf(strB.toString())).c);
+                strB = new StringBuilder();
             }
         }
 
