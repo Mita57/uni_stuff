@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HuffmanDecode{
@@ -14,6 +15,19 @@ public class HuffmanDecode{
             node.c = comb[0].charAt(0);
             node.code = comb[1];
             HuffmanNode.allElements.add(node);
+        }
+        System.out.println("Enter the encoded string");
+        char[] encodedStringAr = sca.nextLine().toCharArray();
+        StringBuilder strB = new StringBuilder();
+        ArrayList<String> codes = new ArrayList<String>(); //list of HuffmanNodes codes to use with the get() method
+        for(int i = 0; i < k; i++){
+            codes.add(HuffmanNode.allElements.get(i).code);
+        }
+        for (int i = 0; i < encodedStringAr.length; i++){
+            strB.append(encodedStringAr[i]);
+            if(codes.contains(strB.toString())){
+                System.out.print(HuffmanNode.allElements.get(codes.indexOf(strB.toString())).c);
+            }
         }
 
     }
