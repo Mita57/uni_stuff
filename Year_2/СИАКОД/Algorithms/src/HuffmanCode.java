@@ -12,7 +12,6 @@ class Huffman {
     {
         if (root.left == null && root.right == null && Character.isLetter(root.c)) {
 
-            // c is the character in the node
             System.out.println(root.c + ":" + s);
             root.code = s;
             HuffmanNode.allElements.add(root);
@@ -22,7 +21,7 @@ class Huffman {
         printCode(root.right, s + "1");
     }
 
-    // main function
+    // main method
     public static void main(String[] args)
     {
         Scanner sca = new Scanner(System.in);

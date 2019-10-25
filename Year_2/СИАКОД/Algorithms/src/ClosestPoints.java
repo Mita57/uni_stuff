@@ -6,9 +6,9 @@ class ClosestPoints {
     private int[][] points;
 
     int[][] kClosest(int[][] points, int K) {
-        this.points = points;
+        this.points = points; //making the array dimensions the same
         sort(0, points.length - 1, K);
-        return Arrays.copyOfRange(points, 0, K);
+        return points;
     }
 
     private void sort(int i, int j, int K) {
@@ -16,7 +16,7 @@ class ClosestPoints {
         int k = ThreadLocalRandom.current().nextInt(i, j);
         swap(i, k);
 
-        int mid = partition(i, j);
+        int mid = separate(i, j);
         int leftLength = mid - i + 1;
         if (K < leftLength)
             sort(i, mid - 1, K);
@@ -24,15 +24,15 @@ class ClosestPoints {
             sort(mid + 1, j, K - leftLength);
     }
 
-    private int partition(int i, int j) {
+    private int separate(int i, int j) {
         int oi = i;
-        int pivot = dist(i);
+        double part = distance(i);
         i++;
 
         while (true) {
-            while (i < j && dist(i) < pivot)
+            while (i < j && distance(i) < part)
                 i++;
-            while (i <= j && dist(j) > pivot)
+            while (i <= j && distance(j) > part)
                 j--;
             if (i >= j){
                 break;
@@ -43,8 +43,8 @@ class ClosestPoints {
         return j;
     }
 
-    private int dist(int i) {
-        return points[i][0] * points[i][0] + points[i][1] * points[i][1];
+    private double distance(int i) {
+        return Math.sqrt(points[i][0] * points[i][0] + points[i][1] * points[i][1]);
     }
 
     private void swap(int i, int j) {
@@ -74,7 +74,7 @@ class ClosestPointsTestDrive{
         int k = Integer.parseInt(sca.nextLine());
         ClosestPoints CP = new ClosestPoints();
         int[][] end = CP.kClosest(thisPoint, k);
-        System.out.println("Here are the dot(s)");
+        System.out.println("Here are (is) the dot(s)");
         for(int i = 0; i < k; i++){
             System.out.println(end[i][0] +", " + end[i][1]);
         }
