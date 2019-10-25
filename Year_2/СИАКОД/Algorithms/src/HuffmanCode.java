@@ -71,7 +71,7 @@ class Huffman {
             HuffmanNode x = q.peek();
             q.poll();
 
-            // second min extarct.
+            // second min extarct
             HuffmanNode y = q.peek();
             q.poll();
 

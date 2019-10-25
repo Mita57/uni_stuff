@@ -2,8 +2,9 @@ import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.Scanner;
 
-public class ClosestPoints {
-    int[][] points;
+class ClosestPoints {
+    private int[][] points;
+
     int[][] kClosest(int[][] points, int K) {
         this.points = points;
         sort(0, points.length - 1, K);
@@ -53,7 +54,29 @@ public class ClosestPoints {
         points[j][0] = t0;
         points[j][1] = t1;
     }
-    public static  void  main(String[] args){
 
+}
+
+class ClosestPointsTestDrive{
+    public static void main(String[] args){
+        System.out.println("Enter the amount of points on the plane");
+        Scanner sca = new Scanner(System.in);
+        int pointAmount = Integer.parseInt(sca.nextLine());
+        System.out.println("Enter the points divided by a comma");
+        int[][] thisPoint = new int[pointAmount][2];
+        for(int i = 0; i < pointAmount; i ++){
+            String input = sca.nextLine();
+            String[] inputAr = input.split(",");
+            thisPoint[i][0] = Integer.parseInt(inputAr[0]);
+            thisPoint[i][1] = Integer.parseInt(inputAr[1]);
+        }
+        System.out.println("Enter the amount of points to be found");
+        int k = Integer.parseInt(sca.nextLine());
+        ClosestPoints CP = new ClosestPoints();
+        int[][] end = CP.kClosest(thisPoint, k);
+        System.out.println("Here are the dot(s)");
+        for(int i = 0; i < k; i++){
+            System.out.println(end[i][0] +", " + end[i][1]);
+        }
     }
 }
