@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.Scanner;
 
 public class ClosestPoints {
     int[][] points;
@@ -32,7 +33,9 @@ public class ClosestPoints {
                 i++;
             while (i <= j && dist(j) > pivot)
                 j--;
-            if (i >= j) break;
+            if (i >= j){
+                break;
+            }
             swap(i, j);
         }
         swap(oi, j);
