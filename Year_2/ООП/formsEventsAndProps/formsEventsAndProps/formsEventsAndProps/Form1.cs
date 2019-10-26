@@ -66,6 +66,26 @@ namespace formsEventsAndProps
             {
                 closeStuff();
             }
+            //moving up
+            if(e.KeyCode == Keys.Up)
+            {
+                this.Top -= 5;
+            }
+            //moving down
+            if (e.KeyCode == Keys.Down)
+            {
+                this.Top += 5;
+            }
+            //moving left
+            if (e.KeyCode == Keys.Left)
+            {
+                this.Left -= 5;
+            }
+            //moving rig
+            if (e.KeyCode == Keys.Right)
+            {
+                this.Left += 5;
+            }
 
         }
 
@@ -85,6 +105,16 @@ namespace formsEventsAndProps
             else if (dialogResult == DialogResult.No)
             {
                 return;
+            }
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+            MouseEventArgs me = (MouseEventArgs)e;
+            if (me.Button == MouseButtons.Right)
+            {
+                this.Height -= 5;
+                this.Width -= 5;
             }
         }
     }
