@@ -9,58 +9,28 @@ public class Rabbit {
             System.out.println("Enter the cells characters: 'w' - swamp; '\"' - grass; '.' - empty cell). The first and the last cells are empty");
             String cellsInput = sca.nextLine();
             char[] cellsArray = cellsInput.toCharArray();
-            int k = 0;
-            int p = 0;
-            while (k + 1 <= cellsArray.length - 1 && cellsArray.length <= 3) {
-                if (cellsArray[k + 1] == '"') {
-                    k++;
-                    p++;
-                } else
-                    if (cellsArray[k + 1] == '.') {
-                    k++;
-                } else{
-                    p = -1;
-                    break;
+            int[] a = new int[cellsAmount];
+            a[0] = 0;
+            for (int i = 1; i < a.length; i++) {
+                a[i] = -1;
+            }
+            for (int i = 1; i < a.length; i++) {
+                if (cellsArray[i] == 'w') {
+                    continue;
+                }
+                if (i < 3) {
+                    a[i] = a[i - 1];
+                }
+                else if (i < 5)
+                    a[i] = Math.max(a[i - 1], a[i - 3]);
+                else {
+                    a[i] = Math.max(Math.max(a[i - 1], a[i - 3]), a[i - 5]);
+                }
+                if (cellsArray[i] == '"') {
+                    a[i]++;
                 }
             }
-            while (k + 1 < cellsArray.length && cellsArray.length <= 5 && cellsArray.length > 3 || k + 3 <= cellsArray.length - 1 && cellsArray.length <= 5 && cellsArray.length > 3) {
-                if (cellsArray[k + 1] == '"') {
-                    k++;
-                    p++;
-                } else if (k + 3 <= cellsArray.length - 1 && cellsArray[k + 3] == '"') {
-                    k += 3;
-                    p++;
-                } else if (k + 3 <= cellsArray.length - 1 && cellsArray[k + 3] == '.') {
-                    k += 3;
-                } else if (cellsArray[k + 1] == '.') {
-                    k++;
-                } else {
-                    p = -1;
-                    break;
-                }
-            }
-            while (k + 1 < cellsArray.length && cellsArray.length > 5 || k + 3 <= cellsArray.length - 1 && cellsArray.length > 5 || k + 5 <= cellsArray.length - 1 && cellsArray.length > 5) {
-                if (cellsArray[k + 1] == '"') {
-                    k++;
-                    p++;
-                } else if (k + 3 <= cellsArray.length - 1 && cellsArray[k + 3] == '"') {
-                    k += 3;
-                    p++;
-                } else if (k + 5 <= cellsArray.length - 1 && cellsArray[k + 5] == '"') {
-                    k += 5;
-                    p++;
-                } else if (cellsArray[k + 1] == '.') {
-                    k++;
-                } else if (k + 3 <= cellsArray.length - 1 && cellsArray[k + 3] == '.') {
-                    k += 3;
-                } else if (k + 5 <= cellsArray.length - 1 && cellsArray[k + 5] == '.') {
-                    k += 5;
-                } else {
-                    p = -1;
-                    break;
-                }
-            }
-            System.out.println("Max grass cells: "+p);
+            System.out.println(a[cellsAmount - 1]);
         }
         else {
             System.out.println("Incorrect input, the amount cells must be between 2 and 1000");

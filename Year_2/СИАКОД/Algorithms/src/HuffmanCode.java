@@ -3,7 +3,6 @@ import java.util.*;
 class MyComparator implements Comparator<HuffmanNode> {
     public int compare(HuffmanNode x, HuffmanNode y)
     {
-
         return x.data - y.data;
     }
 }
@@ -13,7 +12,6 @@ class Huffman {
     {
         if (root.left == null && root.right == null && Character.isLetter(root.c)) {
 
-            // c is the character in the node
             System.out.println(root.c + ":" + s);
             root.code = s;
             HuffmanNode.allElements.add(root);
@@ -23,7 +21,7 @@ class Huffman {
         printCode(root.right, s + "1");
     }
 
-    // main function
+    // main method
     public static void main(String[] args)
     {
         Scanner sca = new Scanner(System.in);
@@ -72,7 +70,7 @@ class Huffman {
             HuffmanNode x = q.peek();
             q.poll();
 
-            // second min extarct.
+            // second min extarct
             HuffmanNode y = q.peek();
             q.poll();
 
