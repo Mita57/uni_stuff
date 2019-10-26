@@ -67,27 +67,62 @@ namespace formsEventsAndProps
                 closeStuff();
             }
             //moving up
-            if(e.KeyCode == Keys.Up)
+            if(e.KeyCode == Keys.Up & Control.ModifierKeys == Keys.None)
             {
                 this.Top -= 5;
             }
             //moving down
-            if (e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Down & Control.ModifierKeys == Keys.None)
             {
                 this.Top += 5;
             }
             //moving left
-            if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.Left & Control.ModifierKeys == Keys.None)
             {
                 this.Left -= 5;
             }
-            //moving rig
-            if (e.KeyCode == Keys.Right)
+            //moving right
+            if (e.KeyCode == Keys.Right & Control.ModifierKeys == Keys.None)
             {
                 this.Left += 5;
             }
-
+            //moving to the center of the screen
+            if(e.KeyCode == Keys.Space & Control.ModifierKeys == Keys.None)
+            {
+                this.CenterToScreen();
+            }
+            //moving to the top of the screen
+            if (e.KeyCode == Keys.Up && Control.ModifierKeys == Keys.Alt)
+            {
+                this.Top = 0;
+            }
+            //moving to the left of the screen
+            if (e.KeyCode == Keys.Left && Control.ModifierKeys == Keys.Alt)
+            {
+                this.Left = 0;
+            }
+            //moving to the right of the screen
+            if (e.KeyCode == Keys.Right && Control.ModifierKeys == Keys.Alt)
+            {
+                this.Left = Screen.PrimaryScreen.Bounds.Width - this.Width;
+            }
+            //moving to the bottom of the screen
+            if (e.KeyCode == Keys.Down && Control.ModifierKeys == Keys.Alt)
+            {
+                this.Top = Screen.PrimaryScreen.Bounds.Height - this.Height;
+            }
+            //increasing the opacity
+            if (e.KeyCode == Keys.Up && Control.ModifierKeys == Keys.Control)
+            {
+                this.Opacity += 0.05;
+            }
+            //decreasing the opacity
+            if (e.KeyCode == Keys.Down && Control.ModifierKeys == Keys.Control)
+            {
+                this.Opacity -= 0.05;
+            }
         }
+
 
         //also closing stuff
         private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -110,11 +145,36 @@ namespace formsEventsAndProps
 
         private void Form1_Click(object sender, EventArgs e)
         {
+            //shrinking this MF
             MouseEventArgs me = (MouseEventArgs)e;
-            if (me.Button == MouseButtons.Right)
+            if (me.Button == MouseButtons.Right & Control.ModifierKeys == Keys.None)
             {
                 this.Height -= 5;
                 this.Width -= 5;
+                string cock =" W:"+this.Width + ", H:" + this.Height; 
+                this.Text = header + cock;
+            }
+            //expanding this MF
+            if (me.Button == MouseButtons.Right & Control.ModifierKeys == Keys.Shift)
+            {
+                this.Height += 5;
+                this.Width += 5;
+                string cock = " W:" + this.Width + ", H:" + this.Height;
+                this.Text = header + cock;
+            }
+            //centering at the pointer
+            if (me.Button == MouseButtons.Middle)
+            {
+                this.Left = Cursor.Position.X - this.Width/2;
+                this.Top = Cursor.Position.Y - this.Height/2;
+            }
+        }
+        //painting the color yellow when the mouse leaves
+        private void Form1_MouseLeave(object sender, EventArgs e)
+        {
+            if (changeColor)
+            {
+                this.BackColor = Color.Yellow;
             }
         }
     }
