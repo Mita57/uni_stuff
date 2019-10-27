@@ -1,0 +1,1568 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Cache-Control" content="private">
+<meta http-equiv="Pragma" content="no-cache">
+<meta name="keywords" content="php, скрипты php, скачать php, download, скрипты, программирование, mysql, php mysql, apache, сайт php, php apache, установка php, php учебники, форум, форум php, функции php, php5, php6, изучение php, веб-технологии">
+<meta http-equiv="Keywords" content="php, скрипты php, скачать php, download, скрипты, программирование, mysql, php mysql, apache, сайт php, php apache, установка php, php учебники, форум, форум php, функции php, php5, php6, изучение php, веб-технологии">
+<meta name="description" content="Портал по PHP, MySQL и другим веб-технологиям, Форум PHP программистов">
+<meta http-equiv="description" content="Портал по PHP, MySQL и другим веб-технологиям, Форум PHP программистов">
+<meta name="Resource-type" content="document">
+<meta name="Robots" content="index,follow">
+<title>PHP.SU - Использование mysqli
+</title>
+<LINK href="main.css" type=text/css rel=stylesheet>
+<script type="text/javascript" src="../main.js"></script>
+</head>
+<body>
+<div align="center">
+<!--Header-->
+<table width=950 height="60" border=0 align="center" cellpadding=0 cellspacing=0>
+  <tr align="left">
+    <td valign="middle" class="backgroundlogo">
+      <table width="100%" border="0">
+        <tr>
+          <td align="left" width="200">
+            <p class="phpsulogo">&nbsp;&nbsp;
+              <a href="http://php.su" style="text-decoration:none" title="Портал по PHP, MySQL и другим веб-технологиям">
+                <span class="xq1">PHP</span><span class="xq2">.</span><span class="xq3">SU</span>
+              </a>
+            </p>
+          </td>
+          <td>
+            <div style="float:left"></div>
+          </td>
+          <td width="20%" valign="middle" align="right" class="backgroundlogo">
+            <p class="phpsulogo">
+              <a href="http://forum.php.su" style="text-decoration:none" title="Форум портала PHP.SU"><span class="xq2">FORUM<span class="xq2">.</span></span><span class="xq1">PHP</span><span class="xq2">.</span><span class="xq3">SU</span></a>&nbsp;&nbsp;
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- End of Header-->
+<!-- Menu -->
+<!-- Header Menu -->
+<table width="950" cellspacing="0" cellpadding="1" border="0">
+  <tr>
+    <td bgcolor="#EBEBEB">
+      <table width="950" border="0" align="left" cellpadding="3" cellspacing="1">
+        <tr>
+          <td align="center" class="nav" background="/hdrm.gif">
+            <span class="navText"><b><a href="/">&nbsp;&nbsp;Главная&nbsp;&nbsp;</a></b></span>
+          </td>
+          <td align="center" class="nav" background="/hdrm.gif">
+            <span class="navText"><b><a href="/articles/">&nbsp;&nbsp;Статьи&nbsp;&nbsp;</a></b></span>
+          </td>
+          <td align="center" class="nav" background="/hdrm.gif">
+            <span class="navText"><b><a href="/learnphp/">Изучение PHP</a></b></span>
+          </td>
+          <td align="center" class="nav" background="/hdrm.gif">
+            <span class="navText"><b><a href="/functions/">Функции PHP</a></b></span>
+          </td>
+          <td align="center" class="nav" background="/hdrm.gif">
+            <span class="navText"><b><a href="/faq/">FAQ</a></b></span>
+          </td>
+          <td align="center" class="nav" background="/hdrm.gif">
+            <span class="navText"><b><a href="/scripts/">PHP скрипты</a></b></span>
+          </td>
+          <td align="center" class="nav" background="/hdrm.gif">
+            <span class="navText"><b><a href="/mysql/">MySQL</a></b></span>
+          </td>
+          <td align="center" class="nav" background="/hdrm.gif">
+            <span class="navText"><b><a href="/prepare/">Установка</a></b></span>
+          </td>
+          <td align="center" class="nav" background="/hdrm.gif">
+            <span class="navText"><b><a href="/books/">Учебники</a></b></span>
+          </td>
+          <td align="center" class="nav" background="/hdrm.gif">
+            <span class="navText"><b><a href="/lessons/" title="Уроки на основе обсуждений форума">Уроки</a></b></span>
+          </td>
+          <td align="center" class="nav" background="/hdrm.gif">
+            <span class="navText"><b><a href="/download/">Download</a></b></span>
+          </td>
+          <td align="center" class="nav" background="/hdrm.gif">
+            <span class="navText"><b><a href="http://forum.php.su" title="Форумы портала PHP.SU">&nbsp;&nbsp;Форум&nbsp;&nbsp;</a></b></span>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!--End of Header Menu-->
+<br />
+<!--Global table of content-->
+<table cellspacing="0" cellpadding="0" width="950" border="0" bgcolor="#D7EAF7">
+  <tr>
+    <td width="150" valign="top">
+      <table cellspacing="0" cellpadding="0" width="150" border="0">
+        <tr>
+          <td bgcolor="#ffffff">
+            <table width="150" border="1" cellpadding="1" cellspacing="0" bordercolorlight="#CCCCCC">
+              <tr class="bg2">
+                <td background="/nmdr.gif" bgcolor="#2170ad">&nbsp;&nbsp;<span class="text2"><a href="/php/" style="color:#FFFFFF">Основы PHP</a></span></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/php/?php">&nbsp;&nbsp;<span class="navText2">Что такое PHP?</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/php/?can">&nbsp;&nbsp;<span class="navText2">Возможности PHP</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/php/?opport">&nbsp;&nbsp;<span class="navText2">Преимущества PHP</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/php/?history">&nbsp;&nbsp;<span class="navText2">История развития</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/php/?php5">&nbsp;&nbsp;<span class="navText2">Что нового в PHP5?</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/php/?phpengine">&nbsp;&nbsp;<span class="navText2">«Движок» PHP</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/php/?migration53">&nbsp;&nbsp;<span class="navText2">Переход на PHP 5.3</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/php/?migration56"><span class="navText2">New&nbsp;Переход на PHP 5.6</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/php/intro/">&nbsp;&nbsp;<span class="navText2">Введение в PHP</span></a></td>
+              </tr>
+            </table>
+            <table width="150" border="1" cellpadding="1" cellspacing="0" bordercolorlight="#CCCCCC">
+              <tr class="bg2">
+                <td width="145" background="/nmdr.gif" bgcolor="#2170ad">&nbsp;&nbsp;<span class="text2"><a href="/learnphp/" style="color:#FFFFFF">Изучение PHP</a></span></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/learnphp/cgi/">&nbsp;&nbsp;<span class="navText2">Основы CGI</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/learnphp/?syntax">&nbsp;&nbsp;<span class="navText2">Синтаксис PHP</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/learnphp/datatypes/">&nbsp;&nbsp;<span class="navText2">Типы данных PHP</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/learnphp/vars/">&nbsp;&nbsp;<span class="navText2">Переменные в PHP</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/learnphp/?const">&nbsp;&nbsp;<span class="navText2">Константы PHP</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/learnphp/?expressions">&nbsp;&nbsp;<span class="navText2">Выражения PHP</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/learnphp/operators/">&nbsp;&nbsp;<span class="navText2">Операторы PHP</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/learnphp/cs/">&nbsp;&nbsp;<span class="navText2">Конструкции PHP</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/learnphp/?re">&nbsp;&nbsp;<span class="navText2">Ссылки в PHP</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/learnphp/phpoo/">&nbsp;&nbsp;<span class="navText2">PHP и ООП</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/security/">&nbsp;&nbsp;<span class="navText2">Безопасность</span></a></td>
+              </tr>
+            </table>
+            <table width="150" border="1" cellpadding="1" cellspacing="0" bordercolorlight="#CCCCCC">
+              <tr class="bg2">
+                <td background="/nmdr.gif" bgcolor="#2170ad">&nbsp;&nbsp;<span class="text2"><a href="/functions/" style="color:#FFFFFF">Функции PHP</a></span></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/functions/?page=cat">&nbsp;&nbsp;<span class="navText2">Функции по категориям</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/functions/?page=abc">&nbsp;&nbsp;<span class="navText2">Функции по алфавиту</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/functions/?page=standard">&nbsp;&nbsp;<span class="navText2">Стандартные функции</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/functions/custom/">&nbsp;&nbsp;<span class="navText2">Пользовательские</span></a></td>
+              </tr>
+            </table>
+            <table width="150" border="1" cellpadding="1" cellspacing="0" bordercolorlight="#CCCCCC">
+              <tr class="bg2">
+                <td background="/nmdr.gif" bgcolor="#2170ad">&nbsp;&nbsp;<span class="text2"><a href="/phphttp/" style="color:#FFFFFF">PHP и HTTP</a></span></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/phphttp/forms/">&nbsp;&nbsp;<span class="navText2">Работа с формами</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/phphttp/?uploads">&nbsp;&nbsp;<span class="navText2">PHP и Upload</span></a></td>
+              </tr>
+              <tr class="bg2">
+                <td class="bg"><a href="/phphttp/?cookies">&nbsp;&nbsp;<span class="navText2">PHP и Cookies</span></a></td>
+              </tr>
+            </table>
+          <table width="150" border="1" cellpadding="1" cellspacing="0" bordercolorlight="#CCCCCC">
+            <tr class="bg2">
+              <td background="/nmdr.gif" bgcolor="#2170ad">&nbsp;&nbsp;<span class="text2"><a href="/phpdb/" style="color:#FFFFFF">PHP и базы данных</a></span></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/mysql/">&nbsp;&nbsp;<span class="navText2">PHP и MySQL</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/mysql/manual/">&nbsp;&nbsp;<span class="navText2">Документация MySQL</span></a></td>
+            </tr>
+          </table>
+          <table width="150" border="1" cellpadding="1" cellspacing="0" bordercolorlight="#CCCCCC">
+            <tr class="bg2">
+              <td background="/nmdr.gif" bgcolor="#2170ad">&nbsp;&nbsp;<span class="text2"><a href="/books/" style="color:#FFFFFF">Учебники</a></span></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/books/?php">&nbsp;&nbsp;<span class="navText2">Учебники по PHP</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/books/?mysql">&nbsp;&nbsp;<span class="navText2">Учебники по MySQL</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/books/">&nbsp;&nbsp;<span class="navText2">Другие учебники</span></a></td>
+            </tr>
+          </table>
+
+          <table width="150" border="1" cellpadding="1" cellspacing="0" bordercolorlight="#CCCCCC">
+            <tr class="bg2">
+              <td background="/nmdr.gif" bgcolor="#2170ad">&nbsp;&nbsp;<span class="text2"><a href="/lessons/" style="color:#FFFFFF">Уроки PHP</a></span></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_0">&nbsp;&nbsp;<span class="navText2">Введение</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_1">&nbsp;&nbsp;<span class="navText2">Самые основы</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_2">&nbsp;&nbsp;<span class="navText2">Управление</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_3">&nbsp;&nbsp;<span class="navText2">Функции</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_4">&nbsp;&nbsp;<span class="navText2">Документация</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_5">&nbsp;&nbsp;<span class="navText2">Математика</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_8">&nbsp;&nbsp;<span class="navText2">Файлы</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_9">&nbsp;&nbsp;<span class="navText2">Основы SQL</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_10">&nbsp;&nbsp;<span class="navText2">Дата и время</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_11">&nbsp;&nbsp;<span class="navText2">CURL</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_12">&nbsp;&nbsp;<span class="navText2">Изображения</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_13">&nbsp;&nbsp;<span class="navText2">Стили</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_14">&nbsp;&nbsp;<span class="navText2">Безопасность</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_15">&nbsp;&nbsp;<span class="navText2">Установка</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_16">&nbsp;&nbsp;<span class="navText2">Проектирование БД</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/lessons/?lesson_17">&nbsp;&nbsp;<span class="navText2">Регулярные выражения</span></a></td>
+            </tr>
+          </table>
+
+          <table width="150" border="1" cellpadding="1" cellspacing="0" bordercolorlight="#CCCCCC">
+            <tr class="bg2">
+              <td background="/nmdr.gif" bgcolor="#2170ad">&nbsp;&nbsp;<span class="text2"><a href="/prepare/" style="color:#FFFFFF">Подготовка к работе</a></span></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/prepare/">&nbsp;&nbsp;<span class="navText2">Быстрый старт</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/prepare/?install_apache_php">&nbsp;&nbsp;<span class="navText2">Установка PHP</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/prepare/?install_mysql">&nbsp;&nbsp;<span class="navText2">Установка MySQL</span></a></td>
+            </tr>
+            <tr class="bg2">
+              <td class="bg"><a href="/prepare/?phpini">&nbsp;&nbsp;<span class="navText2">Конфигурация PHP</span></a></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table width="150" border="1" cellpadding="1" cellspacing="0" bordercolorlight="#CCCCCC">
+      <tr class="bg2">
+        <td background="/nmdr.gif" bgcolor="#2170ad">&nbsp;&nbsp;<span class="text2"><a href="/download/" style="color:#FFFFFF">Download / Скачать</a></span></td>
+      </tr>
+      <tr class="bg2">
+        <td class="bg"><a href="/download/?apache">&nbsp;&nbsp;<span class="navText2">Скачать Apache</span></a></td>
+      </tr>
+      <tr class="bg2">
+        <td class="bg"><a href="/download/?php">&nbsp;&nbsp;<span class="navText2">Скачать PHP</span></a></td>
+      </tr>
+      <tr class="bg2">
+        <td class="bg"><a href="/download/?pecl">&nbsp;&nbsp;<span class="navText2">Скачать PECL</span></a></td>
+      </tr>
+      <tr class="bg2">
+        <td class="bg"><a href="/download/?pear">&nbsp;&nbsp;<span class="navText2">Скачать PEAR</span></a></td>
+      </tr>
+      <tr class="bg2">
+        <td class="bg"><a href="/download/?mysql">&nbsp;&nbsp;<span class="navText2">Скачать MySQL</span></a></td>
+      </tr>
+      <tr class="bg2">
+        <td class="bg"><a href="/download/editors/">&nbsp;&nbsp;<span class="navText2">Редакторы PHP</span></a></td>
+      </tr>
+      <tr class="bg2">
+        <td class="bg"><a href="/download/utilites/">&nbsp;&nbsp;<span class="navText2">Полезные утилиты</span></a></td>
+      </tr>
+      <tr class="bg2">
+        <td class="bg"><a href="/download/?docs">&nbsp;&nbsp;<span class="navText2">Документация</span></a></td>
+      </tr>
+    </table>
+    <table width="150" border="1" cellpadding="1" cellspacing="0" bordercolorlight="#CCCCCC">
+      <tr class="bg2">
+        <td background="/nmdr.gif" bgcolor="#2170ad">&nbsp;&nbsp;<span class="text2"><a href="/scripts/" style="color:#FFFFFF">PHP скрипты</a></span></td>
+      </tr>
+      <tr class="bg2">
+        <td class="bg"><a href="/scripts/?download">&nbsp;&nbsp;<span class="navText2">Скачать скрипты</span></a></td>
+      </tr>
+      <tr class="bg2">
+        <td class="bg"><a href="/instruments/">&nbsp;&nbsp;<span class="navText2">Инструменты</span></a></td>
+      </tr>
+      <tr class="bg2">
+        <td class="bg"><a href="/articles/?cat=examples">&nbsp;&nbsp;<span class="navText2">PHP в примерах</span></a></td>
+      </tr>
+      <tr class="bg2">
+        <td class="bg"><a href="/news/">&nbsp;&nbsp;<span class="navText2">Новости портала</span></a></td>
+      </tr>
+    </table>
+  </td>
+  <!--End of Main Menu--><!--End of Menu-->
+<!--MM Spacer-->
+<td width="10" bgcolor="#ffffff"></td>
+<!-- End of MM Spacer-->
+<td width="790" bgcolor="#ffffff" valign="top">
+<!--Main Content-->
+<!--TBL_HAT-->
+<table width="100%" border="0" cellpadding="1" cellspacing="0" bordercolorlight="#CCCCCC" bordercolordark="#FFFFFF">
+<tr>
+  <td height="8" background="/ndrs.gif" bgcolor="#4D7CCC">
+    <span class="hats">
+      &nbsp;<a href="/" title="Портал PHP.SU">Главная</a>
+      &nbsp;&nbsp;&raquo;&nbsp;&nbsp;<a href="/articles/" title="Сборник статей">Сборник статей</a>    </span>
+  </td>
+</tr>
+</table>
+<!--END OF TBL_HAT-->
+<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#4D7CCC">
+<tr>
+  <td height="1682" valign="top" bgcolor="#F7F7F7">
+  <index>
+  <!--CONTENT_OF_PAGE-->
+  
+
+<a style="font-size:4px">&nbsp;</a><br />
+<a style="font-size:1px">&nbsp;</a><br/>
+<h2>Использование mysqli</h2>
+<p class="mtx1">Автор перевода: <span style="color:#006633">Илья Гофман</span></p>
+<p>Источник: <noindex><a href="http://detail.phpclub.net" target="_blank">detail.phpclub.net </a></noindex></p>
+<div style="MARGIN-LEFT: 40px; WIDTH: 60%"><font class="mtx1">1. &nbsp; <a 
+                  href="#part_1">Предполагаемая 
+  аудитория</a><br />
+  2. &nbsp; <a 
+                  href="#part_2">Введение</a><br />
+                    <div style="MARGIN-LEFT: 60px">2.1 &nbsp; <a 
+                  href="#part_2_1">Основные 
+                      цели</a><br />
+                      2.2 &nbsp; <a 
+                  href="#part_2_2">Основные 
+                        возможности</a><br />
+                      2.3 &nbsp; <a 
+                  href="#part_2_3">Зачем 
+                        переходить?</a><br />
+                      2.4 &nbsp; <a 
+                  href="#part_2_4">Предупреждения 
+                        и неожиданности</a><br />
+                    </div>
+  3. &nbsp; <a 
+                  href="#part_3">Покажите 
+    мне код!</a><br />
+                    <div style="MARGIN-LEFT: 60px">3.1 &nbsp; <a 
+                  href="#part_3_1">Базовое 
+                      использование</a><br />
+                      3.2 &nbsp; <a 
+                  href="#part_3_2">Использование 
+                        объектно-ориентированного интерфейса</a><br />
+                    </div>
+  4. &nbsp; <a 
+                  href="#part_4">Подготовленные 
+    выражения</a><br />
+                    <div style="MARGIN-LEFT: 60px">4.1 &nbsp; <a 
+                  href="#part_4_1">С 
+                      заданными параметрами</a><br />
+                      4.2 &nbsp; <a 
+                  href="#part_4_2">С 
+                        заданными результатами</a><br />
+                      4.3 &nbsp; <a 
+                  href="#part_4_3">Использование 
+                        заданных параметров и результатов вместе</a><br />
+                    </div>
+  5. 
+  &nbsp; <a 
+                  href="#part_5">Резюме</a><br />
+  6. 
+  &nbsp; <a 
+                  href="#part_6">Словарь 
+    терминов</a><br />
+  7. &nbsp; <a 
+                  href="#part_7">Об 
+    авторах</a><br />
+</font></div>
+<div class="club_article"><a name="part_1" id="part_1"></a>
+    <p class="mtx3">1. Предполагаемая 
+      аудитория</p>
+  <p>Статья предназначена для читателей, имеющих некоторый опыт 
+    использования PHP и MySQL. Она предполагает, что читатель 
+    понимает основные принципы работы с базами данных и 
+    программирования и может использовать сценарий PHP для 
+    отправки запроса серверу MySQL. </p>
+  <p>Обратите внимание на то, что в конце статьи имеются сноски 
+    для разъяснения некоторых утверждений и словарь терминов. </p>
+  <p>Инструкции по установке PHP и MySQL выходят за рамки данной 
+    статьи; </p>
+  <ul style="MARGIN-LEFT: 60px; MARGIN-TOP: 5px" 
+                  cass="club_article">
+      <li>Для получения информации об установке PHP 5, посетите <noindex><a 
+                    href="http://www.php.net/installation" 
+                    target="_blank">http://www.php.net/installation</a></noindex> </li>
+    <li>Информация о компиляции PHP 5 c поддержкой ext/mysqli 
+      доступна по адресу <noindex><a href="http://www.php.net/mysqli" 
+                    target="_blank">http://www.php.net/mysqli</a></noindex> </li>
+    <li>За информацией по установке MySQL 4.1.2 или выше, 
+      обращайтесь на <noindex><a 
+                    href="http://www.mysql.com/doc/en/Installing.html" 
+                    target="_blank">http://www.mysql.com/doc/en/Installing.html</a></noindex> </li>
+  </ul>
+  <a name="part_2" id="part_2"></a>
+    <p class="mtx3">2. Введение</p>
+  <p>Начиная с середины 90х, ext/mysql служило основным мостом 
+    между PHP и MySQL. Хотя в нем имелись недостатки и проблемы 
+    росли с годами, в общем, ext/mysql делал свое дело неплохо и 
+    шел в ногу с изменениями как в PHP, так и в MySQL. </p>
+  <p>Однако с появлением PHP 5 и MySQL 4.1 все изменилось - 
+    начали образовываться несколько достаточно обширных трещин. </p>
+  <p>В ext/mysql имелись &quot;достоинства, оказавшиеся 
+    недостатками&quot;: в первую очередь это mysql_pconnect()<i>[1]</i> , подключение по умолчанию и автоматическое 
+    подключение<i>[2]</i>. Кроме того, проявились несовместимости 
+    между функциями ext/mysql и теми, что поддерживались 
+    клиентской библиотекой MySQL, на которой основаны и ext/mysql, 
+    и ext/mysqli. </p>
+  <p>В попытке исправить эти расхождения, Георг Рихтер создал 
+    очередное расширение PHP 5, которое поддерживает новые 
+    возможности MySQL 4.1+. Это расширение получило название 
+    ext/mysqli, где 'i' заменяет одно из слов: 
+    improved(улучшенное), interface(интерфейс), 
+    ingenious(изобретательное), incompatible(несовместимое) or 
+    incomplete(неполное).<i>[3]</i> <a name="part_2_1" id="part_2_1"></a> </p>
+  <p class="mtx3">2.1 Основные цели</p>
+  <p>Некоторыми из основных целей создания нового расширения 
+    были: </p>
+  <ul style="MARGIN-LEFT: 60px; MARGIN-TOP: 5px" 
+                  cass="club_article">
+      <li>Простота использования. Код ext/mysql стал очень сложным 
+        и беспорядочным. Значительная модернизация функциональности 
+        MySQL потребовала возможности подключения и отключения тех 
+        или иных частей в зависимости от версии клиентской 
+        библиотеки. Другие проблемы требовали изменения 
+        функциональности в зависимости от операционной системы. </li>
+    <li>Лучшая совместимость. Расширение должно было более 
+      аккуратно использовать клиентскую библиотеку MySQL, чтобы 
+      будущие усовершенствования библиотеки проще поддерживались в 
+      PHP. </li>
+    <li>Обратная совместимость. Хотя совместимость между 
+      ext/mysql и ext/mysqli не идеальна, были приложены 
+      значительные усилия для облегчения портирования приложений с 
+      ext/mysql на ext/mysqli. </li>
+  </ul>
+  <a name="part_2_2" id="part_2_2"></a>
+    <p class="mtx3">2.2 Основные 
+      возможности</p>
+  <p>Ext/mysqli поддерживает новые возможности, появившиеся в 
+    последних версиях MySQL, и предлагает новые функции. </p>
+  <p>Основные возможности расширения: </p>
+  <ul style="MARGIN-LEFT: 60px; MARGIN-TOP: 5px" 
+                  cass="club_article">
+      <li>Процедурный интерфейс, очень похожий на интерфейс 
+        ext/mysql. </li>
+    <li>Объектно-ориентированный интерфейс, который позволяет 
+      использовать стиль, более простой и расширяемый, нежели 
+      процедурный интерфейс. </li>
+    <li>Поддержка нового бинарного протокола MySQL, введенного в 
+      версии 4.1. (Новый протокол более эффективен, чем старый, и 
+      поддерживает более широкий набор возможностей, например 
+      подготовленные выражения). </li>
+    <li>Поддержка полного набора возможностей клиентской 
+      библиотеки MySQL C, в том числе установки сложных параметров 
+      соединения с помощью mysqli_init() и других функций. Кроме 
+      того, расширение имеет поддержку дополнительных функций 
+      мониторинга, отлова ошибок, управления загрузкой и 
+      репликации. </li>
+  </ul>
+  <a name="part_2_3" id="part_2_3"></a>
+    <p class="mtx3">2.3 Зачем переходить?</p>
+  <p>Кроме получения доступа к дополнительному функционалу MySQL 
+    4.1+, зачем же стоит переходить на использование ext/mysqli? </p>
+  <p>В дополнение к упомянутому функционалу, ext/mysqli имеет 
+    несколько существенных преимуществ: </p>
+  <ul style="MARGIN-LEFT: 60px; MARGIN-TOP: 5px" 
+                  cass="club_article">
+      <li>Заметно большая скорость. Усовершенствования, как в 
+        расширении, так и в MySQL, ускорили большинство операций, 
+        иногда достигая 40-кратного увеличения производительности по 
+        сравнению с ext/mysql. </li>
+    <li>Усиленная безопасность. В ранних версиях MySQL RDBMS 
+      (см. Словарь терминов в конце статьи - прим. переводчика), 
+      существовала возможность отловить хэш слабого пароля в сети 
+      и затем воссоздать пароль пользователя. Новая процедура 
+      аутентификации гораздо прочнее и повторяет устойчивые к 
+      атакам механизмы авторизации таких инструментов как SSH. </li>
+  </ul>
+  <a name="part_2_4" id="part_2_4"></a>
+    <p class="mtx3">2.4 Предупреждения и 
+      неожиданности</p>
+  <p>Некоторые аспекты ext/mysqli сильно отличаются от старого 
+    расширения. С целью исправления определенных изъянов в дизайне 
+    и поведения, склонного к ошибкам, некоторые возможности были 
+    убраны: </p>
+  <ul style="MARGIN-LEFT: 60px; MARGIN-TOP: 5px" 
+                  cass="club_article">
+      <li>Подключение к базе данных по умолчанию. Если вы явно не 
+        подключитесь к ней, ext/mysqli не сделает этого за вас. </li>
+    <li>Соединение по умолчанию(link). Необходимо явно 
+      обращаться к соединению с сервером базы данных, которое вы 
+      хотите использовать, если вы работаете с ext/mysqli через 
+      процедурный интерфейс, например mysqli_query($link, $query); </li>
+  </ul>
+  <PЗАМЕТЬТЕ, name="part_3" <a быстрее.="быстрее." mysql="MySQL" и="и" php="PHP" 
+                  ресурсы="ресурсы" затраченные="затраченные" возвращать="возвращать" поможет="поможет" Это="Это" нуждаться.="нуждаться." них="них" в="в" 
+                  перестаете="перестаете" вы="вы" только="только" как="как" выражений,="выражений," идентификаторы="идентификаторы" множества="множества" 
+                  результирующие="результирующие" соединения,="соединения," все="все" освобождать="освобождать" или="или" закрывать="закрывать" нужно="нужно" 
+                  равно="равно" Однако="Однако" скрипта.="скрипта." выполнения="выполнения" после="после" разрушаются="разрушаются" 
+                  автоматически="автоматически" ресурсы)="ресурсы)" подобные="подобные" (и соединения="соединения" открытые="открытые" 
+что="что"></a>
+    <p class="mtx3">3. Покажите мне код!</p>
+  <p>Теперь, когда вы знаете, что изменилось, мы начнем 
+    анализировать код, который демонстрирует, как выглядит и 
+    работает новое расширение. Весь самостоятельный код, 
+    приведенный в этой статье, использует базу данных &quot;world&quot;, 
+    которая бесплатно доступна на сайте <noindex><a 
+                  href="http://www.mysql.com/documentation/index.html" 
+                  target="_blank">http://www.mysql.com/documentation/index.html</a></noindex>. <a name="part_3_1" id="part_3_1"></a> </p>
+  <p class="mtx3">3.1 Базовое 
+    использование</p>
+  <p>Вот простой скрипт, который соединяется с сервером MySQL, 
+    посылает запрос серверу с помощью этого соединения, выводит 
+    результаты запроса и затем освобождает результирующее 
+    множество запроса и закрывает соединение. </p>
+  <p class="highlight"><code><span style="COLOR: #000000"><span 
+                  style="COLOR: #0000bb">&lt;?php <br />
+            <br />
+    </span><span 
+                  style="COLOR: #ff8000">/* Подключение к серверу MySQL */ <br />
+      </span><span style="COLOR: #0000bb">$link </span><span 
+                  style="COLOR: #007700">= </span><span 
+                  style="COLOR: #0000bb">mysqli_connect</span><span 
+                  style="COLOR: #007700">( <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #dd0000">'localhost'</span><span 
+                  style="COLOR: #007700">,&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* Хост, к которому мы подключаемся */ <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #dd0000">'user'</span><span 
+                  style="COLOR: #007700">,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* Имя пользователя */ <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #dd0000">'password'</span><span 
+                  style="COLOR: #007700">,&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* Используемый пароль */ <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #dd0000">'world'</span><span 
+                  style="COLOR: #007700">);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* База данных для запросов по 
+                умолчанию */ <br />
+                <br />
+                </span><span style="COLOR: #007700">if 
+                  (!</span><span style="COLOR: #0000bb">$link</span><span 
+                  style="COLOR: #007700">) { <br />
+                    &nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">printf</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;Невозможно подключиться к базе данных. 
+                      Код ошибки: %s\n&quot;</span><span style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">mysqli_connect_error</span><span 
+                  style="COLOR: #007700">()); <br />
+                        &nbsp;&nbsp;&nbsp;exit; <br />
+                        } <br />
+                        <br />
+                        </span><span style="COLOR: #ff8000">/* Посылаем запрос 
+                          серверу */ <br />
+                          </span><span style="COLOR: #007700">if 
+                            (</span><span style="COLOR: #0000bb">$result </span><span 
+                  style="COLOR: #007700">= </span><span 
+                  style="COLOR: #0000bb">mysqli_query</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">$link</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">'SELECT Name, Population FROM City 
+                              ORDER BY Population DESC LIMIT 5'</span><span 
+                  style="COLOR: #007700">)) { <br />
+                                <br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;print(</span><span 
+                  style="COLOR: #dd0000">&quot;Очень крупные города:\n&quot;</span><span 
+                  style="COLOR: #007700">); <br />
+                                  <br />
+                                  &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* Выборка результатов запроса */ <br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #007700">while( </span><span 
+                  style="COLOR: #0000bb">$row </span><span 
+                  style="COLOR: #007700">= </span><span 
+                  style="COLOR: #0000bb">mysqli_fetch_assoc</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">$result</span><span 
+                  style="COLOR: #007700">) ){ <br />
+                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">printf</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;%s (%s)\n&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$row</span><span 
+                  style="COLOR: #007700">[</span><span 
+                  style="COLOR: #dd0000">'Name'</span><span 
+                  style="COLOR: #007700">], </span><span 
+                  style="COLOR: #0000bb">$row</span><span 
+                  style="COLOR: #007700">[</span><span 
+                  style="COLOR: #dd0000">'Population'</span><span 
+                  style="COLOR: #007700">]); <br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+                                        <br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* Освобождаем используемую память */ <br />
+                                          &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">mysqli_free_result</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">$result</span><span 
+                  style="COLOR: #007700">); <br />
+                                            } <br />
+                                            <br />
+                                            </span><span 
+                  style="COLOR: #ff8000">/* Закрываем соединение */ <br />
+                                              </span><span 
+                  style="COLOR: #0000bb">mysqli_close</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">$link</span><span 
+                  style="COLOR: #007700">); <br />
+                                              </span><span 
+                  style="COLOR: #0000bb">?&gt;</span> </span></code></p>
+  <p>Приведенный сценарий должен вывести что-то вроде: </p>
+  <p class="highlight"><code><span style="COLOR: #000000"><span 
+                  style="COLOR: #0000bb">Очень крупные города</span><span 
+                  style="COLOR: #007700">:<br />
+            <br />
+    </span><span 
+                  style="COLOR: #0000bb">Mumbai </span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">Bombay</span><span 
+                  style="COLOR: #007700">) (</span><span 
+                  style="COLOR: #0000bb">10500000</span><span 
+                  style="COLOR: #007700">)<br />
+      </span><span 
+                  style="COLOR: #0000bb">Seoul </span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">9981619</span><span 
+                  style="COLOR: #007700">)<br />
+        </span><span 
+                  style="COLOR: #0000bb">Sao Paulo </span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">9968485</span><span 
+                  style="COLOR: #007700">)<br />
+          </span><span 
+                  style="COLOR: #0000bb">Shanghai </span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">9696300</span><span 
+                  style="COLOR: #007700">)<br />
+          </span><span 
+                  style="COLOR: #0000bb">Jakarta </span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">9604900</span><span 
+                  style="COLOR: #007700">) </span><span 
+                  style="COLOR: #0000bb"></span></span></code></p>
+  <p>Как видно из кода, ext/mysqli и ext/mysql могут быть очень 
+    похожи. Единственным существенным различием является то, что 
+    процедурный стиль ext/mysqli несколько более &quot;многословен&quot;. </p>
+  <p>Заметьте, что без проверки на ошибки приведенный скрипт мог 
+    бы дать сбой в любом месте и вывести пользователю мерзкое 
+    сообщение об ошибке. <a name="part_3_2" id="part_3_2"></a> </p>
+  <p class="mtx3">3.2 Использование 
+    объектно-ориентированного интерфейса</p>
+  <p>Объектно-ориентированный интерфейс предоставляет немного 
+    более лаконичный и менее восприимчивый к ошибкам метод 
+    использования ext/mysqli. Код, приведенный ниже, производит те 
+    же действия, что и предыдущий, однако, имеются несколько 
+    ключевых отличий, на которые стоит обратить внимание: </p>
+  <ul style="MARGIN-LEFT: 60px; MARGIN-TOP: 5px" 
+                  cass="club_article">
+      <li>Нам не нужно явно задавать соединение, используемое в 
+        наших командах. Информация о подключении содержится в наших 
+        объектах $mysqli и $result и доступна при вызове 
+        соответствующих методов. </li>
+    <li>Когда производится выборка из результирующего набора 
+      данных запроса с использованием fetch_assoc(), не нужно явно 
+      задавать идентификатор используемого результирующего набора. 
+      Также как и информация о подключении, он содержится в 
+      объекте $result. </li>
+  </ul>
+  <p class="highlight"><code><span style="COLOR: #000000"><span 
+                  style="COLOR: #0000bb">&lt;?php <br />
+            <br />
+    </span><span 
+                  style="COLOR: #ff8000">/* Подключение к серверу MySQL */ <br />
+      </span><span style="COLOR: #0000bb">$mysqli </span><span 
+                  style="COLOR: #007700">= new </span><span 
+                  style="COLOR: #0000bb">mysqli</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">'localhost'</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">'user'</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">'password'</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">'world'</span><span 
+                  style="COLOR: #007700">); <br />
+        <br />
+        if (</span><span 
+                  style="COLOR: #0000bb">mysqli_connect_errno</span><span 
+                  style="COLOR: #007700">()) { <br />
+          &nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">printf</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;Подключение к серверу MySQL 
+            невозможно. Код ошибки: %s\n&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">mysqli_connect_error</span><span 
+                  style="COLOR: #007700">()); <br />
+              &nbsp;&nbsp;&nbsp;exit; <br />
+              } <br />
+              <br />
+              </span><span style="COLOR: #ff8000">/* Посылаем запрос 
+                серверу */ <br />
+                </span><span style="COLOR: #007700">if 
+                  (</span><span style="COLOR: #0000bb">$result </span><span 
+                  style="COLOR: #007700">= </span><span 
+                  style="COLOR: #0000bb">$mysqli</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">query</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">'SELECT Name, Population FROM City 
+                    ORDER BY Population DESC LIMIT 5'</span><span 
+                  style="COLOR: #007700">)) { <br />
+                      <br />
+                      &nbsp;&nbsp;&nbsp;&nbsp;print(</span><span 
+                  style="COLOR: #dd0000">&quot;Очень крупные города:\n&quot;</span><span 
+                  style="COLOR: #007700">); <br />
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* Выбираем результаты запроса: */ <br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #007700">while( </span><span 
+                  style="COLOR: #0000bb">$row </span><span 
+                  style="COLOR: #007700">= </span><span 
+                  style="COLOR: #0000bb">$result</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">fetch_assoc</span><span 
+                  style="COLOR: #007700">() ){ <br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">printf</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;%s (%s)\n&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$row</span><span 
+                  style="COLOR: #007700">[</span><span 
+                  style="COLOR: #dd0000">'Name'</span><span 
+                  style="COLOR: #007700">], </span><span 
+                  style="COLOR: #0000bb">$row</span><span 
+                  style="COLOR: #007700">[</span><span 
+                  style="COLOR: #dd0000">'Population'</span><span 
+                  style="COLOR: #007700">]); <br />
+                              &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+                              <br />
+                              &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* Освобождаем память */ <br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">$result</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">close</span><span 
+                  style="COLOR: #007700">(); <br />
+                                  } <br />
+                                  <br />
+                                  </span><span 
+                  style="COLOR: #ff8000">/* Закрываем соединение */ <br />
+                                    </span><span style="COLOR: #0000bb">$mysqli</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">close</span><span 
+                  style="COLOR: #007700">(); <br />
+                                    </span><span 
+                  style="COLOR: #0000bb">?&gt;</span> </span></code></p>
+  <a 
+                  name="part_4" id="part_4"></a>
+    <p class="mtx3">4. Подготовленные 
+      выражения</p>
+  <p>Теперь, когда мы разобрали азы использования расширения, 
+    рассмотрим несколько новых возможностей. </p>
+  <p>Подготовленные выражения предоставляют разработчикам 
+    возможность создавать запросы, которые являются более 
+    безопасными, имеют более высокую производительность и более 
+    удобны в написании. </p>
+  <p>Подготовленные выражения можно использовать двумя 
+    способами: с заданными параметрами и с заданными результатами. <a name="part_4_1" id="part_4_1"></a> </p>
+  <p class="mtx3">4.1 С заданными 
+    параметрами</p>
+  <p>Подготовленные выражения с заданными параметрами позволяют 
+    создавать шаблоны запросов и хранить их на сервере MySQL. 
+    Когда нужно создать запрос, данные, заполняющие шаблон, 
+    отправляются серверу MySQL, где полностью сформированный 
+    запрос и выполняется. </p>
+  <p>Основной процесс создания и использования подготовленных 
+    выражений с заданными параметрами прост. </p>
+  <p>Создается шаблон запроса и посылается серверу MySQL. Сервер 
+    его получает, проверяет его корректность, чтобы убедиться, что 
+    он имеет смысл, и сохраняет его в специальном буфере. Затем 
+    сервер возвращает идентификатор, который может быть в 
+    дальнейшем использован для обращения к подготовленному 
+    выражению. </p>
+  <p>Когда нужно создать запрос, данные, заполняющие шаблон, 
+    отправляются серверу MySQL и полностью сформированный запрос 
+    выполняется. </p>
+  <p>В этом процессе заключено несколько очень важных деталей. </p>
+  <p>Тело шаблона отсылается серверу MySQL только один раз. Для 
+    выполнения выражения посылаются только данные, необходимые для 
+    заполнения шаблона. </p>
+  <p>Большая часть работы по проверке и обработке запроса 
+    проделывается только один раз, вместо того, чтобы делать это 
+    каждый раз. </p>
+  <p>Кроме того, для запросов, которые содержат небольшое 
+    количество дынных, расходы сильно уменьшены. Например, если у 
+    вас есть запрос типа: </p>
+  <p class="highlight"><code><span style="COLOR: #000000"><span 
+                  style="COLOR: #0000bb">INSERT INTO City </span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">ID</span><span style="COLOR: #007700">, </span><span style="COLOR: #0000bb">Name</span><span 
+                  style="COLOR: #007700">) </span><span 
+                  style="COLOR: #0000bb">VALUES </span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">NULL</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">'Calgary'</span><span 
+                  style="COLOR: #007700">); </span><span 
+                  style="COLOR: #0000bb"></span></span></code></p>
+  <p>то каждый раз при выполнении запроса нужно отослать лишь 
+    около 16 байт вместо обычных 60 или более байт. (Эти 
+    приближенные числа включают расходы на все данные вроде 
+    идентификатора подготовленного выражения, длины данных запроса 
+    - для безопасности бинарных данных - и т.д., но не включают 
+    расходы на строку запроса.) </p>
+  <p>Данные запроса не должны проходить через функции вроде 
+    mysql_real_escape_string(), чтобы убедиться, что нет угрозы 
+    атаки &quot;SQL-впрыска&quot;[4] Вместо этого, клиент и сервер MySQL 
+    работают так, чтобы убедиться, что посланные данные безопасно 
+    обработаны при их комбинировании с подготовленным выражением. </p>
+  <p>Шаблон запроса выглядит как-то так: </p>
+  <p class="highlight"><code><span style="COLOR: #000000"><span 
+                  style="COLOR: #0000bb">INSERT INTO City </span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">ID</span><span style="COLOR: #007700">, </span><span style="COLOR: #0000bb">Name</span><span 
+                  style="COLOR: #007700">) </span><span 
+                  style="COLOR: #0000bb">VALUES </span><span 
+                  style="COLOR: #007700">(?, ?); </span><span 
+                  style="COLOR: #0000bb"></span></span></code></p>
+  <p>Знак '?' можно использовать в большинстве мест, где 
+    используются символьные данные, например запрос может быть 
+    переделан из </p>
+  <p class="highlight"><code><span style="COLOR: #000000"><span 
+                  style="COLOR: #0000bb">SELECT Name FROM City WHERE Name </span><span style="COLOR: #007700">= </span><span 
+                  style="COLOR: #dd0000">'Calgary'</span><span 
+                  style="COLOR: #007700">; </span><span 
+                  style="COLOR: #0000bb"></span></span></code></p>
+  <p>в </p>
+  <p class="highlight"><code><span style="COLOR: #000000"><span 
+                  style="COLOR: #0000bb">SELECT Name FROM City WHERE name </span><span style="COLOR: #007700">= ?; </span><span 
+                  style="COLOR: #0000bb"></span></span></code></p>
+  <p>Вот более полный пример, демонстрирующий весь процесс: </p>
+  <p class="highlight"><code><span style="COLOR: #000000"><span 
+                  style="COLOR: #0000bb">&lt;?php <br />
+    $mysqli </span><span 
+                  style="COLOR: #007700">= new </span><span 
+                  style="COLOR: #0000bb">mysqli</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">'localhost'</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">'user'</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">'password'</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">'world'</span><span 
+                  style="COLOR: #007700">); <br />
+      <br />
+      </span><span 
+                  style="COLOR: #ff8000">/* Проверка соединения */ <br />
+        </span><span style="COLOR: #007700">if (</span><span 
+                  style="COLOR: #0000bb">mysqli_connect_errno</span><span 
+                  style="COLOR: #007700">()) { <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">printf</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;Подключение невозможно: 
+            %s\n&quot;</span><span style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">mysqli_connect_error</span><span 
+                  style="COLOR: #007700">()); <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;exit(); <br />
+              } <br />
+              <br />
+              </span><span 
+                  style="COLOR: #0000bb">$stmt </span><span 
+                  style="COLOR: #007700">= </span><span 
+                  style="COLOR: #0000bb">$mysqli</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">prepare</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;INSERT INTO CountryLanguage VALUES (?, 
+                ?, ?, ?)&quot;</span><span style="COLOR: #007700">); <br />
+                  </span><span style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">bind_param</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">'sssd'</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$code</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$language</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$official</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$percent</span><span 
+                  style="COLOR: #007700">); <br />
+                    <br />
+                    </span><span 
+                  style="COLOR: #0000bb">$code </span><span 
+                  style="COLOR: #007700">= </span><span 
+                  style="COLOR: #dd0000">'DEU'</span><span 
+                  style="COLOR: #007700">; <br />
+                      </span><span 
+                  style="COLOR: #0000bb">$language </span><span 
+                  style="COLOR: #007700">= </span><span 
+                  style="COLOR: #dd0000">'Bavarian'</span><span 
+                  style="COLOR: #007700">; <br />
+                        </span><span 
+                  style="COLOR: #0000bb">$official </span><span 
+                  style="COLOR: #007700">= </span><span 
+                  style="COLOR: #dd0000">&quot;F&quot;</span><span 
+                  style="COLOR: #007700">; <br />
+                          </span><span 
+                  style="COLOR: #0000bb">$percent </span><span 
+                  style="COLOR: #007700">= </span><span 
+                  style="COLOR: #0000bb">11.2</span><span 
+                  style="COLOR: #007700">; <br />
+                            <br />
+                            </span><span 
+                  style="COLOR: #ff8000">/* выполнение подготовленного 
+                              выражения&nbsp;&nbsp;*/ <br />
+                              </span><span 
+                  style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">execute</span><span 
+                  style="COLOR: #007700">(); <br />
+                                <br />
+                                </span><span 
+                  style="COLOR: #0000bb">printf</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;%d Row inserted.\n&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">affected_rows</span><span 
+                  style="COLOR: #007700">); <br />
+                                  <br />
+                                  </span><span 
+                  style="COLOR: #ff8000">/* Закрытие соединения и выражения*/ <br />
+                                    </span><span style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">close</span><span 
+                  style="COLOR: #007700">(); <br />
+                                      <br />
+                                      </span><span 
+                  style="COLOR: #ff8000">/* Очистить таблицу CountryLanguage */ <br />
+                                        </span><span style="COLOR: #0000bb">$mysqli</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">query</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;DELETE FROM CountryLanguage WHERE 
+                                          Language='Bavarian'&quot;</span><span style="COLOR: #007700">); <br />
+                                            </span><span style="COLOR: #0000bb">printf</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;%d Row deleted.\n&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$mysqli</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">affected_rows</span><span 
+                  style="COLOR: #007700">); <br />
+                                              <br />
+                                              </span><span 
+                  style="COLOR: #ff8000">/* Закрыть подключение */ <br />
+                                                </span><span style="COLOR: #0000bb">$mysqli</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">close</span><span 
+                  style="COLOR: #007700">(); <br />
+                                                </span><span 
+                  style="COLOR: #0000bb">?&gt;</span> </span></code></p>
+  <p>Обратите внимание на то, что первым параметром bind_param() 
+    является короткая строка. Это строка формата, используемая для 
+    определения того, как объявленные параметры должны быть 
+    интерпретированы. </p>
+  <p>В случае вышеприведенного сценария 'sssd' означает, что 
+    значения первых трех параметров $code, $language и $official 
+    будут посланы как строки, а четвертый параметр $percent будет 
+    содержать значения типа double с плавающей запятой. </p>
+  <p>Для каждой заявленной переменной в bind_param(), должна 
+    быть своя буква в строке формата, которая означает, как 
+    переменная будет отправлена. Например </p>
+  <p class="highlight"><code><span style="COLOR: #000000"><span 
+                  style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">bind_param</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">'s'</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$foo</span><span 
+                  style="COLOR: #007700">); <br />
+    </span><span 
+                  style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">bind_param</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">'si'</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$foo</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$bar</span><span 
+                  style="COLOR: #007700">); <br />
+    </span><span 
+                  style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">bind_param</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">'sid'</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$foo</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$bar</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$baz</span><span 
+                  style="COLOR: #007700">); </span><span 
+                  style="COLOR: #0000bb"></span></span></code></p>
+  <p>Объявление типов обеспечивает то, что расширение mysqli 
+    знает, как зашифровать данные для большей эффективности. </p>
+  <p>Определения типов очень просты: данные в заданных 
+    переменных будут обрабатываться как целочисленные, 
+    рациональные числа (double) или как строки. </p>
+  <p>Также имеется специальный тип, позволяющий отправлять блобы 
+    (большие бинарные объекты) порциями. </p>
+  <p>Следующая таблица иллюстрирует типы и возможности 
+    использования: </p>
+  <table 
+                  width="400" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#000066" class="mtx5">
+      <tbody>
+        <tr bgcolor="#F2FDFF">
+          <td class="grey">Идентификатор типа</td>
+          <td class="grey">Тип столбца</td>
+        </tr>
+        <tr bgcolor="#F2FDFF">
+          <td align="middle" class="thin">i</td>
+          <td class="thin">Все INT типы</td>
+        </tr>
+        <tr bgcolor="#F2FDFF">
+          <td align="middle" class="thin">d</td>
+          <td class="thin">DOUBLE и FLOAT</td>
+        </tr>
+        <tr bgcolor="#F2FDFF">
+          <td align="middle" class="thin">b</td>
+          <td class="thin">BLOB'ы</td>
+        </tr>
+        <tr bgcolor="#F2FDFF">
+          <td align="middle" class="thin">s</td>
+          <td class="thin">Остальные типы</td>
+        </tr>
+      </tbody>
+  </table>
+  <a 
+                  name="part_4_2" id="part_4_2"></a>
+    <p class="mtx3">4.2 С заданными 
+      результатами</p>
+  <p>Подготовленные выражения с объявленными результатами 
+    позволяют привязывать переменные PHP-скрипта к значениям полей 
+    данных в результирующем множестве запроса. </p>
+  <p>Процесс объявления таков: </p>
+  <ul style="MARGIN-LEFT: 60px; MARGIN-TOP: 5px" 
+                  cass="club_article">
+      <li>Создать запрос. </li>
+    <li>Попросить сервер MySQL заготовить запрос. </li>
+    <li>Привязать переменные PHP к столбцам в заготовке запроса. </li>
+    <li>Заставить сервер MySQL выполнить запрос. </li>
+    <li>Запросить добавление нового ряда данных в привязанные 
+      переменные. </li>
+  </ul>
+  <p>Вот простой фрагмент кода, иллюстрирующий процесс: </p>
+  <p class="highlight"><code><span style="COLOR: #000000"><span 
+                  style="COLOR: #0000bb">&lt;?php <br />
+    $mysqli </span><span 
+                  style="COLOR: #007700">= new </span><span 
+                  style="COLOR: #0000bb">mysqli</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;localhost&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">&quot;user&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">&quot;password&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">&quot;world&quot;</span><span 
+                  style="COLOR: #007700">); <br />
+      <br />
+      if (</span><span 
+                  style="COLOR: #0000bb">mysqli_connect_errno</span><span 
+                  style="COLOR: #007700">()) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">printf</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;Подключение невозможно: 
+          %s\n&quot;</span><span style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">mysqli_connect_error</span><span 
+                  style="COLOR: #007700">()); <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;exit(); <br />
+            } <br />
+            <br />
+            </span><span 
+                  style="COLOR: #ff8000">/* Подготовленное выражение */ <br />
+              </span><span style="COLOR: #007700">if (</span><span 
+                  style="COLOR: #0000bb">$stmt </span><span 
+                  style="COLOR: #007700">= </span><span 
+                  style="COLOR: #0000bb">$mysqli</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">prepare</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;SELECT Code, Name FROM Country ORDER 
+                BY Name LIMIT 5&quot;</span><span style="COLOR: #007700">)) { <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">execute</span><span 
+                  style="COLOR: #007700">(); <br />
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* Привязывание переменных к заготовке 
+                      */ <br />
+                      &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">bind_result</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">$col1</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$col2</span><span 
+                  style="COLOR: #007700">); <br />
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* Выборка значений */ <br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #007700">while (</span><span 
+                  style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">fetch</span><span 
+                  style="COLOR: #007700">()) { <br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">printf</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;%s %s\n&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$col1</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$col2</span><span 
+                  style="COLOR: #007700">); <br />
+                              &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+                              <br />
+                              &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* Закрытие оператора 
+                                $stmt-&gt;close(); <br />
+                                } <br />
+                                /* Закрытие соединения */ <br />
+                                </span><span style="COLOR: #0000bb">$mysqli</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">close</span><span 
+                  style="COLOR: #007700">(); <br />
+                                  <br />
+                                </span><span 
+                  style="COLOR: #0000bb">?&gt;</span> </span></code></p>
+  <a 
+                  name="part_4_3" id="part_4_3"></a>
+    <p class="mtx3">4.3 Использование заданных 
+      параметров и результатов вместе</p>
+  <p>Вот более полный пример, демонстрирующий использование и 
+    заданных параметров, и заданных результатов одновременно: </p>
+  <p class="highlight"><code><span style="COLOR: #000000"><span 
+                  style="COLOR: #0000bb">&lt;?php <br />
+    $mysqli </span><span 
+                  style="COLOR: #007700">= new </span><span 
+                  style="COLOR: #0000bb">mysqli</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;localhost&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">&quot;user&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">&quot;password&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #dd0000">&quot;world&quot;</span><span 
+                  style="COLOR: #007700">); <br />
+      <br />
+      if (</span><span 
+                  style="COLOR: #0000bb">mysqli_connect_errno</span><span 
+                  style="COLOR: #007700">()) { <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">printf</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;Подключение невозможно: 
+          %s\n&quot;</span><span style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">mysqli_connect_error</span><span 
+                  style="COLOR: #007700">()); <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;exit(); <br />
+            } <br />
+            <br />
+            </span><span 
+                  style="COLOR: #ff8000">/* Подготовленное выражение */ <br />
+              </span><span style="COLOR: #007700">if (</span><span 
+                  style="COLOR: #0000bb">$stmt </span><span 
+                  style="COLOR: #007700">= </span><span 
+                  style="COLOR: #0000bb">$mysqli</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">prepare</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;SELECT Code, Name FROM Country WHERE 
+                Code LIKE ? LIMIT 5&quot;</span><span style="COLOR: #007700">)) { <br />
+                  <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">bind_param</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;s&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$code</span><span 
+                  style="COLOR: #007700">); <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">$code </span><span 
+                  style="COLOR: #007700">= </span><span 
+                  style="COLOR: #dd0000">&quot;C%&quot;</span><span 
+                  style="COLOR: #007700">; <br />
+                      <br />
+                      &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">execute</span><span 
+                  style="COLOR: #007700">(); <br />
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* Объявление переменных для 
+                          заготовленного выражения*/ <br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">bind_result</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #0000bb">$col1</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$col2</span><span 
+                  style="COLOR: #007700">); <br />
+                            <br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* Выборка значений */ <br />
+                              &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #007700">while (</span><span 
+                  style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">fetch</span><span 
+                  style="COLOR: #007700">()) { <br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">printf</span><span 
+                  style="COLOR: #007700">(</span><span 
+                  style="COLOR: #dd0000">&quot;%s %s\n&quot;</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$col1</span><span 
+                  style="COLOR: #007700">, </span><span 
+                  style="COLOR: #0000bb">$col2</span><span 
+                  style="COLOR: #007700">); <br />
+                                  &nbsp;&nbsp;&nbsp;&nbsp;} <br />
+                                  <br />
+                                  &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #ff8000">/* Закрытие выражения */ <br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;</span><span 
+                  style="COLOR: #0000bb">$stmt</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">close</span><span 
+                  style="COLOR: #007700">(); <br />
+                                      } <br />
+                                      </span><span 
+                  style="COLOR: #ff8000">/* Закрытие подключение */ <br />
+                                        </span><span style="COLOR: #0000bb">$mysqli</span><span 
+                  style="COLOR: #007700">-&gt;</span><span 
+                  style="COLOR: #0000bb">close</span><span 
+                  style="COLOR: #007700">(); <br />
+                                          <br />
+                                        </span><span 
+                  style="COLOR: #0000bb">?&gt;</span> </span></code></p>
+  <a 
+                  name="part_5" id="part_5"></a>
+    <p class="mtx3">5. Резюме</p>
+  <p>В этой статье мы привели обзор возможностей и архитектуры 
+    ext/mysqli, а также краткое изложение истории его развития. К 
+    этому моменту вы должны понимать, как использовать и получать 
+    выгоду от подготовленных выражений MySQL и должны чувствовать 
+    удобство использования объектно-ориентированного интерфейса к 
+    ext/mysqli. <a name="part_6" id="part_6"></a> </p>
+  <p class="mtx3">6. Словарь терминов</p>
+  <p>ext/mysql - старое расширение PHP для работы с MySQL. Не 
+    поддерживает всех возможностей MySQL версий 4.1 и выше. </p>
+  <p>ext/mysqli - новое расширение PHP 5 для работы с MySQL. 
+    Поддерживает возможности MySQL версий от 3.22 до 5.0 </p>
+  <p>Клиентская библиотека MySQL - Компонент MySQL RDBMS (MySQL 
+    Relational DataBase Management System - Система управления 
+    реляционной базой данных MySQL - прим. переводчика), который 
+    позволяет программам общаться с RDBMS. </p>
+  <p>Сервер MySQL - Компонент MySQL RDBMS, который обрабатывает 
+    и отвечает на запросы, управляет файловым представлением 
+    данных внутри базы и т.д. </p>
+  <p>[1] - Функция mysql_pconnect() была создана для 
+    предоставления механизма уменьшения затрат на установление и 
+    разрыв соединений с сервером MySQL. К сожалению, из-за 
+    взаимодействия между архитектурами сервера Apache и PHP, 
+    большой трафик на сайте, использующем pconnect, мог быстро 
+    загрязнить сервер MySQL большим количеством неиспользуемых 
+    соединений, которые мешали активным соединениям получать 
+    доступ к базе данных. </p>
+  <p>[2] - Возможности автоматического соединения позволяли 
+    определенным вызовам функций автоматически соединяться с базой 
+    данных (если правильная информация о соединении находилась в 
+    конфигурационном файле php.ini). Возможность соединения по 
+    умолчанию работала по следующему принципу. Последнее открытое 
+    соединение с базой MySQL становится используемым соединением, 
+    если параметр соединения не был явно указан в аргументах 
+    функции. </p>
+  <p>[3] - Это расширение все еще находится в стадии разработки. 
+    В то время как набор возможностей ядра должен быть 
+    действительно стабильным, ни MySQL 4.1, ни PHP 5.0 не имеют 
+    стабильных релизов (статья появилась до выхода PHP 5.0.0 - 
+    прим. переводчика). Также, дополнительный набор возможностей, 
+    который не очень аккуратно использует клиентскую библиотеку 
+    MySQL, все еще дорабатывается. </p>
+  <p>[4] - Атаки типа &quot;SQL-впрыск&quot; возможны, когда данные входят 
+    в запрос, заставляя его совершать неожиданные и/или 
+    злонамеренные действия. Пусть, для примера, дан простой запрос 
+    в PHP скрипте типа &quot;DELETE FROM grades WHERE 
+    class_name='test_$class'&quot;. Атакующий может получить контроль 
+    над переменной $class и получить возможность an attacker who 
+    can gain control over the value of $class can force unintended 
+    deletes to occur by changing the value of $class to something 
+    like &quot;oops' or class_name LIKE '%'&quot;. <a name="part_7" id="part_7"></a> </p>
+  <p class="mtx3">7. Об авторах</p>
+  <p>Зак Грэнт (Zak Greant) - профессиональный защитник 
+    концепции Open Source, писатель и программист. Он работает в 
+    MySQL AB пропагандистом Сообщества. Зак поддерживает оба 
+    расширения PHP для работы с MySQL и является соавтором PHP 
+    Functions Essential Reference. </p>
+  <p>Георг Рихтер (Georg Richter) - создатель расширения mysqli. 
+    Он также поддерживает расширения mysql и ncurses. Он работает 
+    в MySQL AB Старшим Разработчиком и является членом Apache 
+    Software Foundation. </p>
+</div>
+<a style="font-size:4px">&nbsp;</a><br />
+
+<table width="230" border="0" cellpadding="3" cellspacing="1" bgcolor="#BEBEBE" class="mtx5">
+  <tr>
+    <td bgcolor="#F4FBFF">&nbsp;<strong style="color:#FF6600">&raquo;</strong> <a href="http://forum.php.su/forums.php?forum=33" target="_blank" style="text-decoration:none">Обсудить эту статью на форуме</a></td>
+  </tr>
+</table><br>
+</index>
+<a style="font-size:4px">&nbsp;</a><br />
+<table width="300" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#000066" class="mtx1">
+<tr>
+<td bgcolor="#CAEEFF"><center>&nbsp;<a href="/articles/"><strong>Сборник статей</strong></a>&nbsp;
+</center></td>
+<td bgcolor="#CAEEFF"><center>&nbsp;<a href="/articles/?cat=phpdb"><strong>Содержание раздела</strong></a>&nbsp;
+</center></td>
+</tr>
+</table>
+
+  <center>
+  <table width="470" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#000066" class="mtx1">
+    <tr>
+      <td bgcolor="#CAEEFF">
+        <center>
+          Есть еще вопросы или что-то непонятно - добро пожаловать на наш &nbsp;<a href="http://forum.php.su" title="форум портала PHP.SU" target="_phpsuforum"><b>форум портала <span class="xq1">PHP</span><span class="xq2">.</span><span class="xq3">SU</span></b></a>&nbsp;
+        </center>
+      </td>
+    </tr>
+    <tr><td bgcolor="#F7F7F7">&nbsp;</td></tr>
+    <tr>
+      <td bgcolor="#CAEEFF">
+        <table width="100%">
+        <tr>
+          <td width="100%">
+            <script type="text/javascript">
+            window.vkAsyncInit = function() {
+              VK.init({apiId: 2254330, onlyWidgets: true});
+              VK.Widgets.Like('vk_like', {pageUrl: 'http://php.su', type: 'button'});
+            }
+            </script>
+            <span id="vk_like"></span>
+            <span class="g-plusone" data-href="http://php.su"></span>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-lang="ru" data-url="http://php.su">Tweet</a>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+            <span class="fb-like" data-href="http://www.php.su" data-layout="button_count" data-action="recommend" data-send="true"></span>
+          </td>
+        </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  </center>
+  </index>
+  </td>
+</tr>
+
+<tr>
+  <td valign="bottom" bgcolor="#F7F7F7">
+    <center>
+<script type="text/javascript"><!--
+google_ad_client = "pub-6731571838950830";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+google_ad_channel ="8345202312";
+google_color_border = "F7F7F7";
+google_color_link = "0066CC";
+google_color_bg = "F7F7F7";
+google_color_text = "000000";
+google_color_url = "0066CC";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</center>
+<br />
+    <!--EOF_CONTENT_OF_PAGE-->
+  </td>
+</tr>
+</table>
+<!--End of main Content-->
+</td>
+</tr></table>
+<!--End global table of content-->
+<a>&nbsp;</a>
+<!--Footer-->
+<table cellspacing="0" cellpadding="4" width="950" border="0">
+  <tr>
+    <td class="footer" align="center" background="/ftrs.gif" >
+    &nbsp;&nbsp;<span class="footertext">&copy; 2006 - 2015 &nbsp;<a href="http://www.php.su" title="Портал PHP.SU"><span style="color:#003399"><b>PHP</b></span><span style="color:#009900"><b>.</b></span><span style="color:#FF0000"><b>SU</b></span></a> |
+      <a href="/project/?about" title="О проекте PHP.SU">О проекте</a> |
+      <a href="/gm/" target="_blank" title="Гостевая книга">Гостевая книга</a> |
+      <a href="/feedback/" target="_blank" title="Обратная связь с администрацией">Обратная связь</a> |
+      <a href="#" onclick='window.external.AddFavorite(location.href, document.title);return false'>Добавить в избранное</a> |
+      <a href="/project/?buttons" title="Кнопки портала">Наши кнопки</a> |
+      <a href="/project/?policy" title="Политика проекта">Политика проекта</a> |
+      <a href="#" onclick='window.external.AddFavorite(location.href, document.title);return false'>Добавить в избранное</a> |
+      <a href="map.html">sitemap</a> |
+    </span>
+    </td>
+  </tr>
+</table>
+<!--End of Footer-->
+</div>
+<div align="center">
+  <table cellspacing="0" cellpadding="4" width="950" border="0">
+    <tr>
+      <td align="center">
+        <a href="http://www.php.net" title="Powered by PHP" target="_blank"><img src="/forum/templates/InvisionExBB/im/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>&nbsp;
+        <a href="http://www.mysql.com/" target="_blank"><img src="/forum/templates/InvisionExBB/im/mysql.png" alt="Powered By MySQL" /></a>&nbsp;
+        <a href="http://nginx.org" target="_blank"><img src="/forum/templates/InvisionExBB/im/nginxpowered.png" alt="Powered by Nginx"></a>&nbsp;
+        <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS" target="_blank"><img src="/forum/templates/InvisionExBB/im/button-css.png" width="80" height="15" alt="Valid CSS" /></a>&nbsp;
+      </td>
+    </tr>
+    <tr>
+      <td class="footer" align="center" background="/ftrs.gif" >
+        &nbsp;<font size="1">Наши партнеры:</font> <span class="footertext"><script type="text/javascript">
+<!--
+var _acic={dataProvider:10};(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="//www.acint.net/aci.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})()
+//-->
+</script> Запчасти kamaz купить автозапчасти камаз <a href="http://mamont.org.ua/gruzovye-avto-43/otechestvennye-15/kamaz-5/" target="_blank">купить запчасти камаз украина</a>. </span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div align="center">
+<noindex>
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write('<a href="http://www.liveinternet.ru/click" '+
+'target=_blank><img src="http://counter.yadro.ru/hit?t15.1;r'+
+escape(document.referrer)+((typeof(screen)=='undefined')?'':
+';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
+";h"+escape(document.title.substring(0,80))+';'+Math.random()+
+'" alt="" title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодн\я" '+
+'border=0 width=87 height=30><\/a>')//--></script><!--/LiveInternet-->
+&nbsp;
+<!--Rating@Mail.ru counter-->
+<script language="javascript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer);js=10;//--></script>
+<script language="javascript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled();js=11;//--></script>
+<script language="javascript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height;
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth);js=12;//--></script>
+<script language="javascript1.3" type="text/javascript"><!--
+js=13;//--></script><script language="javascript" type="text/javascript"><!--
+d.write('<a href="http://top.mail.ru/jump?from=1079531" target="_blank">'+
+'<img src="http://d8.c7.b0.a1.top.mail.ru/counter?id=1079531;t=52;js='+js+
+a+';rand='+Math.random()+'" alt="Рейтинг@Mail.ru" border="0" '+
+'height="30" width="87"><\/a>');if(11<js)d.write('<'+'!-- ');//--></script>
+<noscript><a target="_blank" href="http://top.mail.ru/jump?from=1079531">
+<img src="http://d8.c7.b0.a1.top.mail.ru/counter?js=na;id=1079531;t=52" 
+height="30" width="87" border="0" alt="Рейтинг@Mail.ru"></a></noscript>
+<script language="javascript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>');//--></script>
+<!--// Rating@Mail.ru counter-->
+</noindex>
+&nbsp;&nbsp;&nbsp;</div></body>
+</html>

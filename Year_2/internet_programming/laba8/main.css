@@ -1,0 +1,368 @@
+.ads_clickun a:Link {
+    text-decoration: none;
+    color: #000000;
+}
+
+.ads_clickun a:Visited {
+    text-decoration: none;
+    color: #000000;
+}
+
+.ads_clickun a:Active {
+    text-decoration: none;
+    color: #000000;
+}
+
+.ads_clickun a:Hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+.clickun_body {
+    background-color: #F7F7F7;
+}
+
+.clickun_onmouseover {
+    background-color: #F4FBFF;
+}
+
+.clickun_onmouseout {
+    background-color: #F7F7F7;
+}
+
+.clickun_link {
+    font-family: Arial;
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none
+}
+
+.clickun_text {
+    font-family: Arial;
+    font-size: 11px;
+    color: #000000;
+    text-decoration: none
+}
+
+.backgroundlogo {
+    MARGIN: 2px 2px 10px;
+    COLOR: #000;
+    BACKGROUND-COLOR: #D3E8F5;
+    BACKGROUND-IMAGE: url(hdrs.gif)
+}
+
+.bg {
+    MARGIN: 2px 2px 10px;
+    COLOR: #000;
+    BACKGROUND-COLOR: #b4d7ef
+}
+
+TR.bg2 TD {
+    BORDER-RIGHT: #77b9e4 1px solid;
+    BORDER-TOP: #ffffff 1px solid;
+    VERTICAL-ALIGN: middle;
+    BORDER-LEFT: medium none;
+    BORDER-BOTTOM: #77b9e4 1px solid
+}
+
+TR.nav TD.swath {
+    BORDER-RIGHT: medium none;
+}
+
+.bg A:link {
+    COLOR: #000
+}
+
+.bg A:visited {
+    COLOR: #000
+}
+
+.bg A:hover {
+    COLOR: #2170ad
+}
+
+.bg A:link {
+    TEXT-DECORATION: none
+}
+
+.bg A:visited {
+    TEXT-DECORATION: none
+}
+
+.bg A:hover {
+    TEXT-DECORATION: none
+}
+
+.navText2 {
+    FONT-FAMILY: arial, helvetica, sans-serif
+}
+
+.navText2 {
+    FONT-SIZE: 12px
+}
+
+.navbutton {
+    BORDER-RIGHT: #003366 1px solid;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: #003366 1px solid;
+    PADDING-LEFT: 1px;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10px;
+    PADDING-BOTTOM: 1px;
+    MARGIN: 1px;
+    BORDER-LEFT: #003366 1px solid;
+    COLOR: #036;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM: #036 1px solid;
+    FONT-FAMILY: verdana, arial, sans-serif;
+    BACKGROUND-COLOR: #eaeff4
+}
+
+.text2 {
+    FONT-FAMILY: arial, helvetica, sans-serif;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bold;
+    COLOR: white
+}
+
+.nav {
+    MARGIN: 2px 2px 10px;
+    COLOR: #FFFFFF;
+    background-color: #2170ad;
+}
+
+.nav {
+    text-align: center
+}
+
+.nav A:link {
+    COLOR: #FFFFFF
+}
+
+.nav A:visited {
+    COLOR: #FFFFFF
+}
+
+.nav A:hover {
+    COLOR: #00FFFF
+}
+
+.nav A:link {
+    text-decoration: none
+}
+
+.nav A:visited {
+    text-decoration: none
+}
+
+.nav A:hover {
+    text-decoration: none
+}
+
+.navText {
+    FONT-SIZE: 11px;
+    FONT-FAMILY: arial, verdana, sans-serif
+}
+
+.navText {
+    line-height: 10px
+}
+
+.footer {
+    MARGIN: 2px 2px 10px;
+    COLOR: #000;
+    BACKGROUND-COLOR: #EBEBEB;
+}
+
+.footer {
+    text-align: center
+}
+
+.footer A:link {
+    COLOR: #000
+}
+
+.footer A:visited {
+    COLOR: #000
+}
+
+.footer A:hover {
+    COLOR: #FF0000;
+}
+
+.footer A:link {
+    text-decoration: none
+}
+
+.footer A:visited {
+    text-decoration: none
+}
+
+.footer A:hover {
+    text-decoration: none
+}
+
+.phpsulogo {
+    font-family: tahoma;
+    font-size: 29px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.xq1 {
+    color: #003399;
+}
+
+.xq2 {
+    color: #009900;
+}
+
+.xq3 {
+    color: #FF0000;
+}
+
+a:Link {
+    text-decoration: none;
+    color: #0033CC;
+}
+
+a:Visited {
+    text-decoration: none;
+    color: #003399;
+}
+
+a:Active {
+    text-decoration: none;
+    color: #339933;
+}
+
+a:Hover {
+    text-decoration: underline;
+    color: #FF6600;
+}
+
+
+li {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+}
+
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.stlr {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2170ad;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.mtx1 {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.mtx2 {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.mtx3 {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.mtx4 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.mtx5 {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+.mtx6 {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+
+H1 {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: green;
+}
+
+H2 {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+
+H3 {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+H4 {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.hats {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.hats a:Link {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.hats a:Visited {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.hats a:Active {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.hats a:Hover {
+    text-decoration: none;
+    color: #00FFFF;
+}
+
+
+.footertext {
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 10px
+}
+
+
+.highlight {
+    BACKGROUND-COLOR: #E6F3F9;
+    BORDER-BOTTOM: #000066 1px solid;
+    BORDER-LEFT: #000066 1px solid;
+    BORDER-RIGHT: #000066 1px solid;
+    BORDER-TOP: #000066 1px solid;
+    MARGIN: 5px 5px 5px 5px;
+    PADDING-LEFT: 9px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px;
+    PADDING-BOTTOM: 5px;
+    TEXT-INDENT: 0px;
+    font-size: 13px;
+}

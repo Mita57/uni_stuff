@@ -158,6 +158,7 @@ public class Main {
             }
         }
         return min;
+        trolling();
     }
 
 }
