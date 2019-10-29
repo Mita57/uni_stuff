@@ -101,6 +101,7 @@ namespace task1
                 }
 
             }
+            chart1.Series.Clear();
 
             for(int i = 0; i < 10; i++)
             {
