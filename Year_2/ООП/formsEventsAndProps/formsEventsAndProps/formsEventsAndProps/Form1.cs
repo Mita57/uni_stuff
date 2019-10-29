@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace formsEventsAndProps
@@ -69,22 +63,32 @@ namespace formsEventsAndProps
             //moving up
             if(e.KeyCode == Keys.Up & Control.ModifierKeys == Keys.None)
             {
-                this.Top -= 5;
+                if (this.Top > 0)
+                {
+                    this.Top -= 5;
+                }
             }
             //moving down
             if (e.KeyCode == Keys.Down & Control.ModifierKeys == Keys.None)
             {
+                if(this.Top < Screen.PrimaryScreen.Bounds.Height - this.Height)
                 this.Top += 5;
             }
             //moving left
             if (e.KeyCode == Keys.Left & Control.ModifierKeys == Keys.None)
             {
-                this.Left -= 5;
+                if (this.Left > 0)
+                {
+                    this.Left -= 5;
+                }
             }
             //moving right
             if (e.KeyCode == Keys.Right & Control.ModifierKeys == Keys.None)
             {
-                this.Left += 5;
+                if (this.Right < Screen.PrimaryScreen.Bounds.Width)
+                {
+                    this.Left += 5;
+                }
             }
             //moving to the center of the screen
             if(e.KeyCode == Keys.Space & Control.ModifierKeys == Keys.None)
