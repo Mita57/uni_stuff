@@ -35,8 +35,79 @@ namespace task1
 
         private void fillChart()
         {
+            int[] freq = new int[10];
 
-            chart1.Series[0].Points.Clear();
+            double[] series = new double[10];
+            for (int i = 0; i < series.Length; i++)
+            {
+                series[i] = (double)i / 10;
+            }
+
+            for (int i = 0; i < 500; i++)
+            {
+                double value = Convert.ToDouble(dataGridView1a.Rows[i].Cells[1].Value);
+                if (value < series[1])
+                {
+                    freq[0]++;
+                    continue;
+                }
+                if (value < series[2])
+                {
+                    freq[1]++;
+                    continue;
+                }
+                if (value < series[3])
+                {
+                    freq[2]++;
+                    continue;
+                }
+                if (value < series[4])
+                {
+                    freq[3]++;
+                    continue;
+                }
+                if (value < series[5])
+                {
+                    freq[4]++;
+                    continue;
+                }
+                if (value < series[6])
+                {
+                    freq[5]++;
+                    continue;
+                }
+                if (value < series[7])
+                {
+                    freq[6]++;
+                    continue;
+                }
+                if (value < series[8])
+                {
+                    freq[7]++;
+                    continue;
+                }
+                if (value < series[9])
+                {
+                    freq[8]++;
+                    continue;
+                }
+                else
+                {
+                    freq[9]++;
+                    continue;
+                }
+
+            }
+            chart2.Series.Clear();
+
+            for (int i = 0; i < 10; i++)
+            {
+                Series meme = chart2.Series.Add(series[i].ToString());
+                meme.Points.Add(freq[i]);
+            }
+
+
+            chart1.Series.Clear();
 
             for (int i = 1; i < 500; i++)
             {
