@@ -30,72 +30,44 @@
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.c1a = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.xInit1a = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1a = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.aTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.mTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridView1a = new System.Windows.Forms.DataGridView();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.button1a = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1a)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(-1, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(802, 452);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.chart1);
-            this.tabPage1.Controls.Add(this.dataGridView1a);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(794, 426);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "1 а";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.c1a);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.xInit1a);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.button1a);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.aTextBox);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.mTextBox);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(14, 14);
+            this.groupBox1.Location = new System.Drawing.Point(20, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(192, 180);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.Size = new System.Drawing.Size(192, 199);
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Данные";
             // 
@@ -131,24 +103,12 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Xo";
             // 
-            // button1a
+            // aTextBox
             // 
-            this.button1a.Location = new System.Drawing.Point(55, 132);
-            this.button1a.Name = "button1a";
-            this.button1a.Size = new System.Drawing.Size(75, 23);
-            this.button1a.TabIndex = 4;
-            this.button1a.Text = "Посчитать";
-            this.button1a.UseVisualStyleBackColor = true;
-            this.button1a.Click += new System.EventHandler(this.Button1a_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(36, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(150, 20);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "23";
+            this.aTextBox.Location = new System.Drawing.Point(34, 54);
+            this.aTextBox.Name = "aTextBox";
+            this.aTextBox.Size = new System.Drawing.Size(150, 20);
+            this.aTextBox.TabIndex = 3;
             // 
             // label2
             // 
@@ -159,14 +119,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "a";
             // 
-            // textBox1
+            // mTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "10E8 + 1";
+            this.mTextBox.Location = new System.Drawing.Point(34, 28);
+            this.mTextBox.Name = "mTextBox";
+            this.mTextBox.Size = new System.Drawing.Size(150, 20);
+            this.mTextBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -177,30 +135,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "m";
             // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Location = new System.Drawing.Point(493, 7);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(281, 384);
-            this.chart1.TabIndex = 1;
-            this.chart1.Text = "chart1a";
-            // 
             // dataGridView1a
             // 
             this.dataGridView1a.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1a.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.number,
             this.value});
-            this.dataGridView1a.Location = new System.Drawing.Point(226, 14);
+            this.dataGridView1a.Location = new System.Drawing.Point(232, 39);
             this.dataGridView1a.Name = "dataGridView1a";
             this.dataGridView1a.RowHeadersVisible = false;
             this.dataGridView1a.Size = new System.Drawing.Size(261, 379);
-            this.dataGridView1a.TabIndex = 0;
+            this.dataGridView1a.TabIndex = 3;
             // 
             // number
             // 
@@ -214,73 +159,91 @@
             this.value.Name = "value";
             this.value.Width = 228;
             // 
-            // tabPage2
+            // button1a
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(794, 426);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "1 б";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.button1a.Location = new System.Drawing.Point(55, 132);
+            this.button1a.Name = "button1a";
+            this.button1a.Size = new System.Drawing.Size(75, 23);
+            this.button1a.TabIndex = 4;
+            this.button1a.Text = "Посчитать";
+            this.button1a.UseVisualStyleBackColor = true;
+            this.button1a.Click += new System.EventHandler(this.Button1a_Click);
             // 
-            // tabPage3
+            // button1
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(794, 426);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "2";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(11, 170);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "1А";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // tabPage4
+            // button2
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(794, 426);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "3";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(109, 170);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "1Б";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // chart1
+            // 
+            this.chart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.chart1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
+            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.Location = new System.Drawing.Point(498, 39);
+            this.chart1.Margin = new System.Windows.Forms.Padding(2);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 2;
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(291, 379);
+            this.chart1.TabIndex = 36;
+            this.chart1.Text = "chart1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dataGridView1a);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1a)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.DataGridView dataGridView1a;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button button1a;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox xInit1a;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox c1a;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox xInit1a;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox aTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox mTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1a;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.DataGridViewTextBoxColumn value;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button1a;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 
