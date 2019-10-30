@@ -107,13 +107,12 @@ namespace task1
             }
 
 
-            chart1.Series.Clear();
+            chart1.Series[0].Points.Clear();
 
             for (int i = 1; i < 500; i++)
             {
-                chart1.Series[0].Points.AddXY(Convert.ToDouble(dataGridView1a.Rows[i].Cells[1].Value), Convert.ToDouble(dataGridView1a.Rows[i-1].Cells[1].Value));
+                chart1.Series[0].Points.AddXY(Convert.ToDouble(dataGridView1a.Rows[i].Cells[1].Value), Convert.ToDouble(dataGridView1a.Rows[i - 1].Cells[1].Value));
             }
-
         }
 
         private void Button1_Click(object sender, EventArgs e)
