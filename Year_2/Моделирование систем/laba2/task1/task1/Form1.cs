@@ -45,57 +45,14 @@ namespace task1
             for (int i = 0; i < 500; i++)
             {
                 double value = Convert.ToDouble(dataGridView1a.Rows[i].Cells[1].Value);
-                if (value < series[1])
+                for (int j = 0; j < 10; j++)
                 {
-                    freq[0]++;
-                    continue;
+                    if(value < series[j])
+                    {
+                        freq[j]++;
+                        break;
+                    }
                 }
-                if (value < series[2])
-                {
-                    freq[1]++;
-                    continue;
-                }
-                if (value < series[3])
-                {
-                    freq[2]++;
-                    continue;
-                }
-                if (value < series[4])
-                {
-                    freq[3]++;
-                    continue;
-                }
-                if (value < series[5])
-                {
-                    freq[4]++;
-                    continue;
-                }
-                if (value < series[6])
-                {
-                    freq[5]++;
-                    continue;
-                }
-                if (value < series[7])
-                {
-                    freq[6]++;
-                    continue;
-                }
-                if (value < series[8])
-                {
-                    freq[7]++;
-                    continue;
-                }
-                if (value < series[9])
-                {
-                    freq[8]++;
-                    continue;
-                }
-                else
-                {
-                    freq[9]++;
-                    continue;
-                }
-
             }
             chart2.Series.Clear();
 
