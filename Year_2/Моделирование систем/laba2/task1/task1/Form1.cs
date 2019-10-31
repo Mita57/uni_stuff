@@ -20,8 +20,8 @@ namespace task1
             double a = Convert.ToInt32(aTextBox.Text);
             for (int i = 0; i < 500; i++)
             {
-                int nextX = Convert.ToInt32((a * X) % m);
-                double U = (double)nextX / m;
+                double nextX = Convert.ToDouble((a * X) % m);
+                double U = nextX / m;
                 dataGridView1a.Rows[i].Cells[0].Value = (i + 1).ToString();
                 dataGridView1a.Rows[i].Cells[1].Value = U.ToString();
                 X = nextX;
@@ -139,23 +139,13 @@ namespace task1
             for (int i = 0; i < 500; i++)
             {
                 double value1 = (a1 * X1) % m1;
-                value1 /= m1;
-                double U1 = X1 / m1;
                 double value2 = (a2 * X2) % m2;
-                value2 /= m2;
-                double U2 = X2 / m2;
-                double cock = Math.Abs((U1 * m1 - U2 * m2) % (m1 - 1));
-                if (cock > 0)
-                {
-                    cock = Math.Round(cock / m1, 6);
-                }
-                else
-                {
-                    cock = Math.Round((m1 - 1) / m1, 6);
-                }
+                double U1 = value1 / m1;
+                double U2 = value2 / m2;
+                double united = Math.Abs((U1*m1 - U2*m2) % (m1 - 1));
+                united /=  m1;
                 dataGridView1a.Rows[i].Cells[0].Value = i + 1;
-                dataGridView1a.Rows[i].Cells[1].Value = cock;
-
+                dataGridView1a.Rows[i].Cells[1].Value = united;
                 X1 = value1;
                 X2 = value2;
             }
