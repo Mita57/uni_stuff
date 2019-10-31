@@ -18,10 +18,9 @@ namespace task1
             dataGridView1a.RowCount = 500;
             double m = Convert.ToDouble(mTextBox.Text);
             double a = Convert.ToInt32(aTextBox.Text);
-            int c = Convert.ToInt32(c1a.Text);
             for (int i = 0; i < 500; i++)
             {
-                int nextX = Convert.ToInt32((a * X + c) % m);
+                int nextX = Convert.ToInt32((a * X) % m);
                 double U = (double)nextX / m;
                 dataGridView1a.Rows[i].Cells[0].Value = (i + 1).ToString();
                 dataGridView1a.Rows[i].Cells[1].Value = U.ToString();
@@ -125,6 +124,43 @@ namespace task1
         {
             mTextBox.Text = "2147483399";
             aTextBox.Text = "40692";
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            dataGridView1a.Rows.Clear();
+            double m1 = 100000001;
+            double a1 = 23;
+            double m2 = 2147483399;
+            double a2 = 40692;
+            double X1 = Convert.ToDouble(xInit1a.Text);
+            double X2 = X1;
+            dataGridView1a.RowCount = 500;
+            for (int i = 0; i < 500; i++)
+            {
+                double value1 = Convert.ToDouble((a1 * X1) % m1);
+                X1 = value1;
+                double U1 = X1 / m1;
+                double value2 = Convert.ToDouble((a2 * X2) % m2);
+                X2 = value2;
+                double U2 = X2 / m2;
+                dataGridView1a.Rows[i].Cells[0].Value = i + 1;
+                dataGridView1a.Rows[i].Cells[1].Value = Math.Abs((U1 * m1 - U2 * m2) % (m1 - 1)); 
+            }
+            fillChart();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            dataGridView1a.Rows.Clear();
+            dataGridView1a.RowCount = 500;
+            Random rnd = new Random();
+            for(int i = 0; i < 500; i++)
+            {
+                dataGridView1a.Rows[i].Cells[0].Value = i + 1;
+                dataGridView1a.Rows[i].Cells[1].Value = rnd.NextDouble();
+            }
+            fillChart();
         }
     }
 }
