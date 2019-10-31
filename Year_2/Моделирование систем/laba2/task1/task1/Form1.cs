@@ -40,7 +40,7 @@ namespace task1
             double[] series = new double[10];
             for (int i = 0; i < series.Length; i++)
             {
-                series[i] = (double)i / 10;
+                series[i] = (double)(i+1) / 10;
             }
 
             for (int i = 0; i < 500; i++)
@@ -151,7 +151,7 @@ namespace task1
             double hi = 0;
             for(int i = 0; i < freq.Length; i++)
             {
-                hi += Math.Pow(freq[i] - 500 * 0.1, 2) / (500 * 0.1);
+                hi += Math.Pow(((freq[i]) - 500 * 0.1), 2) / (500 * 0.1);
             }
             textBox2.Text = hi.ToString();
         }
