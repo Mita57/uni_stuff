@@ -138,14 +138,26 @@ namespace task1
             dataGridView1a.RowCount = 500;
             for (int i = 0; i < 500; i++)
             {
-                double value1 = Convert.ToDouble((a1 * X1) % m1);
-                X1 = value1;
+                double value1 = (a1 * X1) % m1;
+                value1 /= m1;
                 double U1 = X1 / m1;
-                double value2 = Convert.ToDouble((a2 * X2) % m2);
-                X2 = value2;
+                double value2 = (a2 * X2) % m2;
+                value2 /= m2;
                 double U2 = X2 / m2;
+                double cock = Math.Abs((U1 * m1 - U2 * m2) % (m1 - 1));
+                if (cock > 0)
+                {
+                    cock = Math.Round(cock / m1, 6);
+                }
+                else
+                {
+                    cock = Math.Round((m1 - 1) / m1, 6);
+                }
                 dataGridView1a.Rows[i].Cells[0].Value = i + 1;
-                dataGridView1a.Rows[i].Cells[1].Value = Math.Abs((U1 * m1 - U2 * m2) % (m1 - 1)); 
+                dataGridView1a.Rows[i].Cells[1].Value = cock;
+
+                X1 = value1;
+                X2 = value2;
             }
             fillChart();
         }
