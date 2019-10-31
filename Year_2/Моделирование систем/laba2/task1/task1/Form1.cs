@@ -137,12 +137,15 @@ namespace task1
         private void disp(double sum)
         {
             double disp = 0;
+            double hi = 0;
             for(int i = 1; i < 500; i++)
             {
                 double value = Convert.ToDouble(dataGridView1a.Rows[i].Cells[1].Value) - sum;
                 disp += 0.002 * Math.Pow(value, 2);
+              //  hi += Math.Pow((double.Parse(dataGridView1a.Rows[i].Cells[0].ToString()) - sum * 0.002) , 2) / (sum * 0.002);
             }
             standDevTextBox.Text = Math.Sqrt(disp).ToString();
+            textBox2.Text = hi.ToString();
         }
     }
 }
