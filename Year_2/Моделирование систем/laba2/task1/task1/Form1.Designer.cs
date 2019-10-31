@@ -49,10 +49,22 @@
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.standDevTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.avgTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1a)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -209,7 +221,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 228);
+            this.button3.Location = new System.Drawing.Point(12, 206);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(192, 23);
             this.button3.TabIndex = 38;
@@ -219,7 +231,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 266);
+            this.button4.Location = new System.Drawing.Point(12, 244);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(192, 23);
             this.button4.TabIndex = 39;
@@ -227,11 +239,109 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.standDevTextBox);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.avgTextBox);
+            this.groupBox2.Location = new System.Drawing.Point(12, 357);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(190, 81);
+            this.groupBox2.TabIndex = 40;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Величины";
+            // 
+            // standDevTextBox
+            // 
+            this.standDevTextBox.Location = new System.Drawing.Point(33, 52);
+            this.standDevTextBox.Name = "standDevTextBox";
+            this.standDevTextBox.ReadOnly = true;
+            this.standDevTextBox.Size = new System.Drawing.Size(150, 20);
+            this.standDevTextBox.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(2, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "σ(x)";
+            // 
+            // avgTextBox
+            // 
+            this.avgTextBox.Location = new System.Drawing.Point(33, 26);
+            this.avgTextBox.Name = "avgTextBox";
+            this.avgTextBox.ReadOnly = true;
+            this.avgTextBox.Size = new System.Drawing.Size(150, 20);
+            this.avgTextBox.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(0, 29);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(27, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "M(x)";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Location = new System.Drawing.Point(14, 273);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(190, 81);
+            this.groupBox3.TabIndex = 41;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Ожидаемые величины";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(33, 52);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(150, 20);
+            this.textBox3.TabIndex = 14;
+            this.textBox3.Text = "0,2887";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(2, 55);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(25, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "σ(x)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(0, 29);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "M(x)";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(33, 26);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(150, 20);
+            this.textBox4.TabIndex = 12;
+            this.textBox4.Text = "0,5";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 450);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.chart2);
@@ -245,6 +355,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1a)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -268,6 +382,16 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox standDevTextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox avgTextBox;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
 

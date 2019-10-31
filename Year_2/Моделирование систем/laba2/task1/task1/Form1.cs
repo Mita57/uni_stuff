@@ -17,17 +17,20 @@ namespace task1
             dataGridView1a.Rows.Clear();
             dataGridView1a.RowCount = 500;
             double m = Convert.ToDouble(mTextBox.Text);
+            double sum = 0;
             double a = Convert.ToInt32(aTextBox.Text);
             for (int i = 0; i < 500; i++)
             {
                 double nextX = Convert.ToDouble((a * X) % m);
                 double U = nextX / m;
+                sum += U * 0.002;
                 dataGridView1a.Rows[i].Cells[0].Value = (i + 1).ToString();
                 dataGridView1a.Rows[i].Cells[1].Value = U.ToString();
                 X = nextX;
             }
-
+            avgTextBox.Text = (sum / 500).ToString();
             fillChart();
+            disp(sum);
         }
 
 
@@ -92,6 +95,7 @@ namespace task1
             double a2 = 40692;
             double X1 = Convert.ToDouble(xInit1a.Text);
             double X2 = X1;
+            double sum = 0;
             dataGridView1a.RowCount = 500;
             for (int i = 0; i < 500; i++)
             {
@@ -101,12 +105,15 @@ namespace task1
                 double U2 = value2 / m2;
                 double united = Math.Abs((U1*m1 - U2*m2) % (m1 - 1));
                 united /=  m1;
+                sum += united * 0.002;
                 dataGridView1a.Rows[i].Cells[0].Value = i + 1;
                 dataGridView1a.Rows[i].Cells[1].Value = united;
                 X1 = value1;
                 X2 = value2;
             }
+            avgTextBox.Text = (sum/500).ToString();
             fillChart();
+            disp(sum);
         }
 
         private void Button4_Click(object sender, EventArgs e)
@@ -114,12 +121,28 @@ namespace task1
             dataGridView1a.Rows.Clear();
             dataGridView1a.RowCount = 500;
             Random rnd = new Random();
+            double sum = 0;
             for(int i = 0; i < 500; i++)
             {
                 dataGridView1a.Rows[i].Cells[0].Value = i + 1;
                 dataGridView1a.Rows[i].Cells[1].Value = rnd.NextDouble();
+                sum += Convert.ToDouble(dataGridView1a.Rows[i].Cells[1].Value) * 0.002;
             }
+            avgTextBox.Text = (sum / 500).ToString();
             fillChart();
+            disp(sum);
+        }
+
+
+        private void disp(double sum)
+        {
+            double disp = 0;
+            for(int i = 1; i < 500; i++)
+            {
+                double value = Convert.ToDouble(dataGridView1a.Rows[i].Cells[1].Value) - sum;
+                disp += 0.002 * Math.Pow(value, 2);
+            }
+            standDevTextBox.Text = Math.Sqrt(disp).ToString();
         }
     }
 }
