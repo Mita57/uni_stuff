@@ -33,10 +33,18 @@ namespace task1
             disp(sum);
             double firstElem = Convert.ToDouble(dataGridView1a.Rows[0].Cells[1].Value);
             int period = 0;
+            X = Convert.ToDouble(xInit1a.Text);
             while (true)
             {
-
+                double nextX = Convert.ToDouble((a * X) % m);
+                X = nextX;
+                if(nextX == Convert.ToDouble(dataGridView1a.Rows[0].Cells[1].Value))
+                {
+                    break;
+                }
+                period++;
             }
+            textBox5.Text = period.ToString();
         }
 
         private void fillChart()
@@ -50,7 +58,6 @@ namespace task1
             }
             for (int i = 0; i < 500; i++)
             {
-                period++;
                 double value = Convert.ToDouble(dataGridView1a.Rows[i].Cells[1].Value);
 
                 for (int j = 0; j < 10; j++)

@@ -57,8 +57,11 @@ namespace laba1
                 double pQueue = (Math.Pow(requestsStreamDensity, opsAmount)) / (factorial(opsAmount - 1) * (opsAmount - requestsStreamDensity)) * p[0]; //Pi
                 avgQLength.Text = (Math.Round((requestsStreamDensity * pQueue) / (opsAmount - requestsStreamDensity), 3)).ToString();
 
+
                 //среднее время ожидания в очереди Tср
-                avgQTime.Text = (Math.Round(allAreBusy / (serviceStream * (opsAmount - requestsStreamDensity)), 3)).ToString();
+                avgQTime.Text = Math.Round(Convert.ToDouble(avgQLength.Text)/strDensity, 2).ToString();
+
+                //avgQTime.Text = (Math.Round(allAreBusy / (serviceStream * (opsAmount - requestsStreamDensity)), 3)).ToString();
 
                 //среднее число занятых каналов Nзан
                 double avgFreeOps = 0;
@@ -72,12 +75,17 @@ namespace laba1
                 //необходиомое количество операторов
 
                 opsAmount = 1;
-                
-                while (((allAreBusy) / (serviceStream * (opsAmount - requestsStreamDensity))) < Convert.ToDouble(textBox1.Text))
+                double valueSup = 0;
+                double value = 0;
+                strDensity = Convert.ToDouble(streamDensity.Text);// плотность потока, Lambda
+                avgTime = Convert.ToDouble(averageTime.Text);// среднее время обслуживания, Tao
+                serviceStream = 60 / avgTime; // поток обслуживаний, Myu
+                requestsStreamDensity = strDensity / serviceStream;// плотноть потока заявок, ro
+
+                while ((value) < Convert.ToDouble(textBox1.Text))
                 {
-                    allAreBusy = (Math.Pow(requestsStreamDensity, opsAmount + 1)) / (factorial(opsAmount) * (opsAmount - requestsStreamDensity)) * p[0]; //p очер
-                    serviceStream = 60 / avgTime; // поток обслуживаний, Myu
-                    requestsStreamDensity = strDensity / serviceStream;// плотноть потока заявок, ro
+                    valueSup = (Math.Pow(requestsStreamDensity, opsAmount)) / (factorial(opsAmount - 1) * (opsAmount - requestsStreamDensity)) * p[0]; ;
+                    value = (requestsStreamDensity * valueSup) / (opsAmount - requestsStreamDensity);
                     opsAmount++;
                 }
                 opsRequired.Text = opsAmount.ToString();
@@ -115,6 +123,14 @@ namespace laba1
                 return 1;
             else
                 return number * factorial(number - 1);
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            operatorsAmount.Text = "4";
+            streamDensity.Text = "45";
+            averageTime.Text = "5";
+            textBox1.Text = "7";
         }
     }
 }
