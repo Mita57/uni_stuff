@@ -31,6 +31,12 @@ namespace task1
             avgTextBox.Text = (sum / 500).ToString();
             fillChart();
             disp(sum);
+            double firstElem = Convert.ToDouble(dataGridView1a.Rows[0].Cells[1].Value);
+            int period = 0;
+            while (true)
+            {
+
+            }
         }
 
         private void fillChart()
@@ -42,10 +48,11 @@ namespace task1
             {
                 series[i] = (double)(i+1) / 10;
             }
-
             for (int i = 0; i < 500; i++)
             {
+                period++;
                 double value = Convert.ToDouble(dataGridView1a.Rows[i].Cells[1].Value);
+
                 for (int j = 0; j < 10; j++)
                 {
                     if(value < series[j])
