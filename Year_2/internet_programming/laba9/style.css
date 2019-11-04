@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+    font-family: "Comic Sans MS";
+    background-image: url("kopatel.jpg");
+    background-size: cover;
+}
+
+.inputs{
+    background-color: deepskyblue;
+    border-radius: 20px;
+    padding: 20px;
+    width: 500px;
+    margin: auto;
+}
+.outism{
+    background-color: yellow;
+    color: black;
+    border-radius: 20px;
+    padding: 20px;
+    width: 500px;
+    margin: auto;
+}
