@@ -1,7 +1,7 @@
 public class ArrayList {
     private int size;
     private int capacity;
-    private int[] elements;
+    private Object[] elements;
 
     public int getSize(){
         return this.size;
@@ -17,7 +17,7 @@ public class ArrayList {
 
 
     public void setCapacity(int capacity) throws SizeGreaterThanCapacityException {
-        if(capacity > this.elements.length) {
+        if(capacity >= this.elements.length) {
             this.capacity = capacity;
         }
         else {
@@ -26,11 +26,11 @@ public class ArrayList {
     }
 
 
-    public int[] getElements() {
+    public Object[] getElements() {
         return elements;
     }
 
-    public void setElements(int[] elements) throws SizeGreaterThanCapacityException{
+    public void setElements(Object[] elements) throws SizeGreaterThanCapacityException{
         if(elements.length > capacity){
             throw new SizeGreaterThanCapacityException();
         }
@@ -39,13 +39,13 @@ public class ArrayList {
         }
     }
 
-    public ArrayList(int [] elements){
+    public ArrayList(Object [] elements){
         this.elements = elements;
         this.size = elements.length;
         this.capacity = elements.length;
     }
 
-    public ArrayList(int [] elements, int capacity) throws SizeGreaterThanCapacityException{
+    public ArrayList(Object [] elements, int capacity) throws SizeGreaterThanCapacityException{
         this.elements = elements;
         this.size = elements.length;
         if(this.size < capacity) {
@@ -57,7 +57,7 @@ public class ArrayList {
     }
 
     public ArrayList(){
-        this.elements = new int[0];
+        this.elements = new Object[0];
         this.capacity = 0;
         this.size = 0;
     }
@@ -72,21 +72,21 @@ public class ArrayList {
     public void insert(int value, int pos) throws SizeGreaterThanCapacityException {
         this.size++;
         increaseCapacity();
-        int [] newArray = new int[capacity];
+        Object [] newArray = new Object[capacity];
         System.arraycopy(this.elements, 0, newArray, 0, pos);
         newArray[pos] = value;
         System.arraycopy(this.elements, pos, newArray, pos + 1, capacity - pos);
         setElements(newArray);
     }
 
-    public int getByIndex(int index) throws ArrayIndexOutOfBoundsException{
+    public Object getByIndex(int index) throws ArrayIndexOutOfBoundsException{
         return this.elements[index];
     }
 
 
     public void removeByIndex(int index) throws ArrayIndexOutOfBoundsException, SizeGreaterThanCapacityException {
         this.size--;
-        int[] newArray = new int[capacity];
+        Object[] newArray = new Object[capacity];
         System.arraycopy(this.elements, 0, newArray, 0, index);
         System.arraycopy(this.elements, index + 1, newArray, index, capacity - index);
         setElements(newArray);
@@ -95,12 +95,26 @@ public class ArrayList {
     public void increaseCapacity(){
         if(this.capacity <= this.size){
             this.capacity = (int) (this.capacity * 1.5);
-            int[] newArray = new int[capacity];
-            System.arraycopy(this.elements, 0, newArray, 0, this.elements.length);
-            this.elements = newArray;
+            rewrite();
         }
     }
 
+    public void ensureCapacity(int minCapacity){
+        if(this.capacity <= minCapacity){
+            this.capacity = minCapacity;
+            rewrite();
+        }
+    }
+    public void trimToSize(){
+        this.capacity = this.size;
+        rewrite();
+    }
+
+    private void rewrite(){
+        Object[] newArray = new Object[capacity];
+        System.arraycopy(this.elements, 0, newArray, 0, this.elements.length);
+        this.elements = newArray;
+    }
 
 
 }
