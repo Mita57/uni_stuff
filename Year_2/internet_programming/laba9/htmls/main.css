@@ -30,5 +30,7 @@
 #btnbtn{
     text-align: center;
     font-size: 40pt;
-    visibility: hidden;
+}
+body{
+    background-image: url("../pesnya.gif");
 }

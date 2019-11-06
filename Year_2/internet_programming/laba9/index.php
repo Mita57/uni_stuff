@@ -7,6 +7,7 @@
 </head>
 <body>
     <div id= 'cock'>
+        <a href="info.php">Statistics, lul</a>
     <?php
     $num = random_int(1, 5);
     $gifka = '../gifs/0'.$num.'.gif';
@@ -14,6 +15,7 @@
 echo ("<a href='$site'>");
 echo ("<img src = '$gifka'>");
 echo ("</a");
+
     echo ("</div>");
     $memes = fopen("sites.json", "r") or die("Unable to open file!");
     $currFile = fread($memes, filesize("sites.json"));
