@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>UR MOM JUNIOR PHP PROGRAMMER</title>
+    <title>Information</title>
     <link rel="stylesheet"  href="htmls/main.css">
 </head>
 <body>
