@@ -16,5 +16,17 @@ namespace task2
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView1.RowCount = 100;
+            Random rnd = new Random();
+            for(int i = 0; i < 100; i++)
+            {
+                dataGridView1.Rows[i].Cells[0].Value = i + 1;
+                dataGridView1.Rows[i].Cells[1].Value = -(Math.Log(1-rnd.NextDouble())) / 2;
+            }
+        }
     }
 }

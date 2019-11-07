@@ -50,6 +50,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.standDevTextBox = new System.Windows.Forms.TextBox();
@@ -63,8 +65,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1a)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -129,9 +129,9 @@
             // 
             // button1a
             // 
-            this.button1a.Location = new System.Drawing.Point(55, 108);
+            this.button1a.Location = new System.Drawing.Point(13, 108);
             this.button1a.Name = "button1a";
-            this.button1a.Size = new System.Drawing.Size(75, 23);
+            this.button1a.Size = new System.Drawing.Size(171, 23);
             this.button1a.TabIndex = 4;
             this.button1a.Text = "Посчитать";
             this.button1a.UseVisualStyleBackColor = true;
@@ -178,7 +178,7 @@
             this.dataGridView1a.Location = new System.Drawing.Point(232, 12);
             this.dataGridView1a.Name = "dataGridView1a";
             this.dataGridView1a.RowHeadersVisible = false;
-            this.dataGridView1a.Size = new System.Drawing.Size(261, 426);
+            this.dataGridView1a.Size = new System.Drawing.Size(261, 472);
             this.dataGridView1a.TabIndex = 3;
             // 
             // number
@@ -208,7 +208,7 @@
             series1.Name = "Series1";
             series1.YValuesPerPoint = 2;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(291, 426);
+            this.chart1.Size = new System.Drawing.Size(291, 472);
             this.chart1.TabIndex = 36;
             this.chart1.Text = "chart1";
             // 
@@ -221,7 +221,7 @@
             series2.ChartArea = "ChartArea1";
             series2.Name = "Series1";
             this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(300, 426);
+            this.chart2.Size = new System.Drawing.Size(300, 472);
             this.chart2.TabIndex = 37;
             this.chart2.Text = "chart2";
             // 
@@ -261,6 +261,23 @@
             this.groupBox2.TabIndex = 40;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Величины";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(33, 101);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(150, 20);
+            this.textBox5.TabIndex = 18;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(2, 104);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(27, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Пер";
             // 
             // textBox2
             // 
@@ -381,23 +398,6 @@
             this.textBox4.Size = new System.Drawing.Size(150, 20);
             this.textBox4.TabIndex = 12;
             this.textBox4.Text = "0,5";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(33, 101);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(150, 20);
-            this.textBox5.TabIndex = 18;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(2, 104);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(27, 13);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Пер";
             // 
             // Form1
             // 
