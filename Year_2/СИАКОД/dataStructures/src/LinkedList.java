@@ -21,23 +21,55 @@ public class LinkedList <E> implements Iterable<E> {
     }
 
     public LinkedList(LinkedListNode elem){
-        this.size = 1;
+        LinkedListNode node = elem;
+        while (node != null){
+            elem = elem.getNext();
+            this.size++;
+        }
         this.head = elem;
     }
 
-    public void addAll(int index, List<? extends E> collection) throws OuttaRangeException{
-        if(index > this.size){
-           throw new OuttaRangeException();
-        }
-        else{
-            LinkedListNode nodeLeft = this.head;
-            this.size += collection.size();
-            for (int i = 0; i < index; i++){
-                nodeLeft = nodeLeft.getNext();
-            }
 
-        }
+    public void push(E value){
+        this.size++;
+        this.head = new LinkedListNode(value, 0, this.head);
     }
+
+    public void insert(E value, int index) throws OuttaRangeException{
+        if(index > this.size){
+            throw  new OuttaRangeException();
+        }
+        this.size++;
+        LinkedListNode node = this.head;
+        for (int i = 0; i < index; i++){
+            node = node.getNext();
+        }
+        LinkedListNode newElem = new LinkedListNode (value, index, node);
+        node.next = newElem;
+    }
+
+    public void remove(int index){
+        LinkedListNode node = this.head;
+        for(int i = 0; i < index + 1; i++){
+            node = node.getNext();
+        }
+        node.next = node.getNext().getNext();
+    }
+
+    public E getByIndex(int index){
+        LinkedListNode node = this.head;
+        for(int i = 0; i < index + 1; i++){
+            node = node.getNext();
+        }
+        return (E) node.value;
+    }
+
+
+
+
+
+
+
 
     public boolean contains(E compare){
         LinkedListNode node = this.head;
@@ -103,25 +135,26 @@ public class LinkedList <E> implements Iterable<E> {
     }
 
 
-    public LinkedList (int fromIndex, int toIndex){
+    public LinkedList subList(int fromIndex, int toIndex){
+        LinkedListNode head = this.head;
+        LinkedListNode tail = null;
+        for(int i = 0; i < toIndex;i++){
+            head = head.next;
+            if(i == toIndex){
+                tail = head;
+                tail.next = null;
+            }
+        }
+        return new LinkedList(head);
+    }
 
+    public E Peek(){
+        return (E) this.head.value;
     }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-//Iterator
+    //Iterator
     @Override
     public Iterator<E> iterator() {
         return new LinkedListNodeIterator<E>();
