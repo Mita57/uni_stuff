@@ -1,0 +1,42 @@
+{
+  "site1": {
+    "shown": 20,
+    "tags": []
+  },
+  "site2": {
+    "shown": 40,
+    "tags": []
+  },
+  "site3": {
+    "shown": 50,
+    "tags": []
+  },
+  "site4": {
+    "shown": 10,
+    "tags": []
+  },
+  "site5": {
+    "shown": 70,
+    "tags": []
+  },
+  "site6": {
+    "shown": 20,
+    "tags": []
+  },
+  "site7": {
+    "shown": 40,
+    "tags": []
+  },
+  "site8": {
+    "shown": 50,
+    "tags": []
+  },
+  "site9": {
+    "shown": 10,
+    "tags": []
+  },
+  "site10": {
+    "shown": 70,
+    "tags": []
+  }
+}
