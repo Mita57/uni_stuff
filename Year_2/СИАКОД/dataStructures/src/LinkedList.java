@@ -16,23 +16,21 @@ public class LinkedList <E> implements Iterable<E> {
     }
 
     public LinkedList(){
-        this.size = 0;
-        this.head = null;
     }
 
     public LinkedList(LinkedListNode elem){
         LinkedListNode node = elem;
         while (node != null){
-            elem = elem.getNext();
+            node = node.getNext();
             this.size++;
         }
         this.head = elem;
     }
 
 
-    public void push(E value){
+    public void push(LinkedListNode value){
         this.size++;
-        this.head = new LinkedListNode(value, 0, this.head);
+        this.head = value;
     }
 
     public void insert(E value, int index) throws OuttaRangeException{
@@ -44,7 +42,7 @@ public class LinkedList <E> implements Iterable<E> {
         for (int i = 0; i < index; i++){
             node = node.getNext();
         }
-        LinkedListNode newElem = new LinkedListNode (value, index, node);
+        LinkedListNode newElem = new LinkedListNode(value, index, node);
         node.next = newElem;
     }
 
@@ -133,6 +131,9 @@ public class LinkedList <E> implements Iterable<E> {
         }
         fromNode = toNode;
     }
+
+
+
 
 
     public LinkedList subList(int fromIndex, int toIndex){

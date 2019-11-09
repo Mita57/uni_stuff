@@ -183,7 +183,7 @@
             // 
             // avgBusyPed
             // 
-            this.avgBusyPed.Location = new System.Drawing.Point(200, 104);
+            this.avgBusyPed.Location = new System.Drawing.Point(200, 81);
             this.avgBusyPed.Name = "avgBusyPed";
             this.avgBusyPed.ReadOnly = true;
             this.avgBusyPed.Size = new System.Drawing.Size(184, 20);
@@ -191,7 +191,7 @@
             // 
             // avgBusyLots
             // 
-            this.avgBusyLots.Location = new System.Drawing.Point(200, 78);
+            this.avgBusyLots.Location = new System.Drawing.Point(200, 104);
             this.avgBusyLots.Name = "avgBusyLots";
             this.avgBusyLots.ReadOnly = true;
             this.avgBusyLots.Size = new System.Drawing.Size(184, 20);
@@ -216,7 +216,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 107);
+            this.label5.Location = new System.Drawing.Point(3, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(195, 13);
             this.label5.TabIndex = 3;
@@ -225,7 +225,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 81);
+            this.label6.Location = new System.Drawing.Point(3, 107);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(191, 13);
             this.label6.TabIndex = 2;

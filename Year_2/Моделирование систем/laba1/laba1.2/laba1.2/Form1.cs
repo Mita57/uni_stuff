@@ -18,24 +18,73 @@ namespace laba1._2
             double avgTime = Convert.ToDouble(averageTime.Text);//среднее обслуживание, Tao0
             double serviceStream = 60 / avgTime; // поток обслуживаний, Myu, converted to hours
             double requestsStreamDensity = strDensity / serviceStream;// плотность потока заявок, ro
-            double p0 = 0;
-            for (int i = 0; i <= opsAmount; i++)
+            double[] p = new double[(int)opsAmount];
+            double znam1 = 0;
+            for (int k = 0; k <= opsAmount; k++)
             {
-                p0 += Math.Pow(requestsStreamDensity, i) / factorial(i);
+                znam1 += Math.Pow(requestsStreamDensity, bufferVolume) / factorial(bufferVolume);
             }
-            p0 += (Math.Pow(requestsStreamDensity, opsAmount + 1) * (1 - Math.Pow(requestsStreamDensity / opsAmount, bufferVolume))) / (opsAmount * factorial(opsAmount) * (1 - requestsStreamDensity / opsAmount));
-            p0 = 1 / p0;
-            //среднее число отказов в обслуживании
-            double serviceDenies = (Math.Pow(requestsStreamDensity, opsAmount + bufferVolume) / (Math.Pow(opsAmount, bufferVolume) * factorial(opsAmount))) * p0;
-            deniedComplelely.Text = (Math.Round(serviceDenies, 3) * 100).ToString();
+            double znam2 = Math.Pow(requestsStreamDensity, opsAmount) / factorial(opsAmount);
+            double znam3 = 0;
+            for (int s = 1; s <= bufferVolume; s++)
+            {
+                znam3 += Math.Pow((requestsStreamDensity / opsAmount), s);
+            }
+            double p0 = 1 / (znam1 + (znam2 * znam3));
+            MessageBox.Show(p0.ToString());
+
+            //среднее число потерь заявок
+            double serviceDenies = Math.Pow(requestsStreamDensity, opsAmount)/factorial(opsAmount);
+            serviceDenies *= Math.Pow(requestsStreamDensity / opsAmount, bufferVolume);
+            serviceDenies *= p0;
+            deniedComplelely.Text = (Math.Round(serviceDenies, 3) * 100).ToString() + "%";
+
             //среднее число заявок в очереди
-            double avgRequests = (Math.Pow(requestsStreamDensity, opsAmount + 1) * p0 * (1 - (bufferVolume + 1 - bufferVolume * (requestsStreamDensity / opsAmount)) * Math.Pow(requestsStreamDensity / opsAmount, bufferVolume))) / (opsAmount * factorial(opsAmount) * Math.Pow((1 - requestsStreamDensity / opsAmount), 2));
+            double avgRequests = 0;
+            for(int i = 1; i < bufferVolume; i++)
+            {
+                avgRequests += i * Math.Pow(requestsStreamDensity/opsAmount, i);
+            }
+            avgRequests *= Math.Pow(requestsStreamDensity, opsAmount) / factorial(opsAmount);
+            avgRequests *= p0;
+            avgBusyPed.Text = avgRequests.ToString();
+
             //среднее число занятых каналов
-            double avgBusy = requestsStreamDensity * (1 - (Math.Pow(requestsStreamDensity, opsAmount + bufferVolume) / (Math.Pow(opsAmount, bufferVolume) * factorial(opsAmount))) * p0);
-            carsWaiting.Text = (Math.Round((avgRequests / avgBusy) * 100, 3)).ToString();
-            avgBusyLots.Text = Math.Round(avgBusy, 2).ToString();
-            avgBusyPed.Text = Math.Round(avgRequests, 3).ToString();
-            eightHoursShit.Text = Math.Round((strDensity * 8) * serviceDenies, 3).ToString();
+            double[] arr = new double[(int)opsAmount + (int)bufferVolume + 1];
+            for (int k = 1; k <= opsAmount; k++)
+            {
+                arr[k] = (Math.Pow(requestsStreamDensity, bufferVolume) / factorial(k)) * p0;
+            }
+            for (int s = (int)opsAmount + 1; s < arr.Length; s++)
+            {
+                arr[s] = (Math.Pow(requestsStreamDensity, opsAmount) / factorial(opsAmount)) * (Math.Pow(requestsStreamDensity / opsAmount, s - opsAmount)) * p0;
+            }
+            double sum1 = 0;
+            for (int s = 1; s <= (int)opsAmount; s++)
+            {
+                sum1 += (arr[s] * s);
+            }
+            double sum2 = 0;
+            for (int s = (int)opsAmount + 1; s < arr.Length; s++)
+            {
+                sum2 += (arr[s] * opsAmount);
+            }
+            avgBusyLots.Text = (sum1 + sum2).ToString();
+                //вероятность ожидания обслуживания
+
+            double serviceWaitProb = 0;
+            for(int i = 0; i < bufferVolume-1; i++)
+            {
+                serviceWaitProb += Math.Pow(requestsStreamDensity, opsAmount) / factorial(opsAmount)*(Math.Pow(requestsStreamDensity/opsAmount, i));
+            }
+            serviceWaitProb *= p0;
+            serviceWaitProb *= 100;
+            carsWaiting.Text = serviceWaitProb.ToString() +"%";
+
+            //среднее число посетителей, не нашедших места 
+
+            double haventGotPlace = strDensity * serviceDenies*8;
+            eightHoursShit.Text = haventGotPlace.ToString();
         }
 
 
