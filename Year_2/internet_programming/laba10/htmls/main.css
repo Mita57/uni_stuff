@@ -1,0 +1,30 @@
+body{
+    background-image: url("kopatel.jpg");
+}
+article{
+    background-color: darkblue;
+    color: white;
+    font-family: "Comic Sans MS";
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+p{
+    text-align: justify;
+}
+.sas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: darkblue;
+    color: white;
+    font-family: "Impact";
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    margin: auto;
+}
+table{
+    display: none;
+}

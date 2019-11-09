@@ -1,42 +1,42 @@
 {
   "site1": {
-    "shown": 20,
-    "tags": []
+    "shown": 2,
+    "tags": ["Электронная коммерция", "Дистрибутор", "Производственная компания", "Розничная продажа", "Потребитель"]
   },
   "site2": {
-    "shown": 40,
-    "tags": []
+    "shown": 4,
+    "tags": ["Интернет-маркетинг", "Internet-marketing", "Продукты", "Ценообразование", "Конкуренция", "Продукты"]
   },
   "site3": {
-    "shown": 50,
-    "tags": []
+    "shown": 5,
+    "tags": ["E-marketplace", "buyer-driven", "Торговая площадка", "supplier-driven", "third-party-driven"]
   },
   "site4": {
-    "shown": 10,
-    "tags": []
+    "shown": 1,
+    "tags": ["Интернет-банкинг", "Inetnet-banking", "MOOR KRUTO"]
   },
   "site5": {
-    "shown": 70,
-    "tags": []
+    "shown": 7,
+    "tags": ["Internet-insurance", "Интернет-страхование", "Ренессанс", "РОСНО", "CyberPlat", "Ингосстрах", "Центр брокер"]
   },
   "site6": {
-    "shown": 20,
-    "tags": []
+    "shown": 2,
+    "tags": ["Web-content management system", "Системы управления Web-контентом", "клиент", "сервер"]
   },
   "site7": {
-    "shown": 40,
-    "tags": []
+    "shown": 4,
+    "tags": ["e-Shop", "Интернет-магазин", "покупатели", "продавцы", "заказ"]
   },
   "site8": {
-    "shown": 50,
-    "tags": []
+    "shown": 5,
+    "tags": ["Аукцион", "auction", "торги", "Лот", "Ставка", "eBay"]
   },
   "site9": {
-    "shown": 10,
-    "tags": []
+    "shown": 1,
+    "tags": ["Коропоративные информационные сети", "Портал", "Portal", "DataChannel Server", "Sybase Enterprise Portal"]
   },
   "site10": {
-    "shown": 70,
-    "tags": []
+    "shown": 7,
+    "tags": ["Брокерские услуги", "Inernet-trading", "Росбанк", "Церих Кэпитал Менеджмент", "Z=trade"]
   }
 }
