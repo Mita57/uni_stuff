@@ -29,7 +29,7 @@ namespace Formulas
             outism += "%username% ";
             outism += DateTime.Now.ToString("F");
             outism += " \nИсходные данные: \n";
-            outism += "Масса молекулы: " + textBox1.Text;
+            outism += "Молярная масса молекулы: " + textBox1.Text;
             outism += "\nТемпература: " + temperature.Text;
             outism += "\nРезультаты \n";
             if (double.Parse(textBox1.Text) <= 0)
