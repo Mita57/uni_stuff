@@ -28,7 +28,7 @@
         for ($i = 0; $i < 11; $i++) {
             $number = 'site' . $i;
             $elems = $stuff->$number->tags;
-            foreach ($elems as $X) {
+            foreach ((array)$elems as $X) {
                 array_push($size, ((int)($stuff->$number->shown / $counter * 250.)));
             }
         }
