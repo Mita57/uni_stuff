@@ -11,19 +11,9 @@ namespace Formulas
             InitializeComponent();
         }
 
-        bool flagTemp = false;
-        bool flagMass = false;
-
-
-
-        private void TextBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
-
         private void check()
         {
-            if(flagMass && flagTemp)
+            if(!String.IsNullOrEmpty(textBox1.Text) && !String.IsNullOrEmpty(temperature.Text))
             {
                 button1.Enabled = true;
             }
@@ -71,19 +61,25 @@ namespace Formulas
         string lastMassCorrect = "";
         private void TextBox1_KeyDown(object sender, EventArgs e)
         {
-            bool correct = double.TryParse(textBox1.Text, out double mass);
+            bool correct = double.TryParse(textBox1.Text, out double mass) || textBox1.Text == "";
             if (!correct)
             {
-                int pos = textBox1.SelectionStart - 1;
-                textBox1.Text = lastMassCorrect;
-                textBox1.Focus();
-                textBox1.SelectionStart = pos;
-                textBox1.SelectionLength = 0;
+                try
+                {
+                    int pos = textBox1.SelectionStart - 1;
+                    textBox1.Text = lastMassCorrect;
+                    textBox1.Focus();
+                    textBox1.SelectionStart = pos;
+                    textBox1.SelectionLength = 0;
+                }
+                catch
+                {
+                    textBox1.Text = "";
+                }
             }
             else
             {
                 lastMassCorrect = mass.ToString();
-                flagMass = true;
             }
             check();
         }
@@ -92,19 +88,25 @@ namespace Formulas
         string lastTempCorrect = "";
         private void Temperature_KeyUp(object sender, EventArgs e)
         {
-            bool correct = double.TryParse(temperature.Text, out double temp);
+            bool correct = double.TryParse(temperature.Text, out double temp) || temperature.Text == "";
             if (!correct)
             {
-                int pos = temperature.SelectionStart - 1;
-                temperature.Text = lastTempCorrect;
-                temperature.Focus();
-                temperature.SelectionStart = pos;
-                temperature.SelectionLength = 0;
+                try
+                {
+                    int pos = temperature.SelectionStart - 1;
+                    temperature.Text = lastTempCorrect;
+                    temperature.Focus();
+                    temperature.SelectionStart = pos;
+                    temperature.SelectionLength = 0;
+                }
+                catch
+                {
+                    temperature.Text = "";
+                }
             }
             else
             {
                 lastTempCorrect = temp.ToString();
-                flagTemp = true;
             }
             check();
         }
