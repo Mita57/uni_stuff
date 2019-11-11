@@ -210,7 +210,6 @@ namespace ИСвЭиУ_2
                     {
                         if (cond<1 || cond>1)
                         {
-                            MessageBox.Show("Функция должна иметь распределение в сумме равное единице!");
                             break;
                         }
                         else
@@ -290,7 +289,7 @@ namespace ИСвЭиУ_2
                 {
                     x++;
                     chart1.Series[0].Points.AddXY(x, dataGridView1.Rows[y].Cells[matrix_size + 2].Value);
-                    chart1.Series[1].Points.AddXY(x, dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells[y + 2].Value);
+                    chart1.Series[1].Points.AddXY(x, (double)dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells[y + 2].Value * 1.05);
                 }
                 condit = true;
                 x = 0;

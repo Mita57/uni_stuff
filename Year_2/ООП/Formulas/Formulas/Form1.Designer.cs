@@ -67,7 +67,7 @@
             this.temperature.Name = "temperature";
             this.temperature.Size = new System.Drawing.Size(100, 20);
             this.temperature.TabIndex = 3;
-            this.temperature.TextChanged += new System.EventHandler(this.Temperature_KeyUp);
+            this.temperature.TextChanged += new System.EventHandler(this.Temperature_TextChanged);
             // 
             // label3
             // 
@@ -93,7 +93,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 6;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_KeyDown);
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // label5
             // 

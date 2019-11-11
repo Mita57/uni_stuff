@@ -59,7 +59,7 @@ namespace Formulas
 
 
         string lastMassCorrect = "";
-        private void TextBox1_KeyDown(object sender, EventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
             bool correct = double.TryParse(textBox1.Text, out double mass) || textBox1.Text == "";
             if (!correct)
@@ -86,7 +86,7 @@ namespace Formulas
 
 
         string lastTempCorrect = "";
-        private void Temperature_KeyUp(object sender, EventArgs e)
+        private void Temperature_TextChanged(object sender, EventArgs e)
         {
             bool correct = double.TryParse(temperature.Text, out double temp) || temperature.Text == "";
             if (!correct)
