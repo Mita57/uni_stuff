@@ -25,7 +25,7 @@ namespace Formulas
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string outism = "----------------------------------- \n";
+            string outism = "( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°)( ͡° ͜ʖ ͡°) \n";
             outism += "%username% ";
             outism += DateTime.Now.ToString("F");
             outism += " \nИсходные данные: \n";
