@@ -32,16 +32,23 @@ namespace task1
             fillChart();
             disp(sum);
             double firstElem = Convert.ToDouble(dataGridView1a.Rows[0].Cells[1].Value);
-            int period = 0;
             X = Convert.ToDouble(xInit1a.Text);
+           findPeriod(a, Convert.ToDouble(xInit1a.Text), m);
+        }
+
+        private void findPeriod(double a, double X, double m)
+        {
+            int period = 1;
+            double lX = X;
             while (true)
             {
-                double nextX = Convert.ToDouble((a * X) % m);
-                X = nextX;
-                if(nextX == Convert.ToDouble(dataGridView1a.Rows[0].Cells[1].Value))
+                double nextX = Convert.ToDouble((a * lX) % m);
+                double U = nextX / m;
+                if (Math.Round(U,8) == (Math.Round(Convert.ToDouble(dataGridView1a.Rows[0].Cells[1].Value), 8)) && period != 1)
                 {
                     break;
                 }
+                lX = nextX;
                 period++;
             }
             textBox5.Text = period.ToString();
@@ -128,6 +135,31 @@ namespace task1
             avgTextBox.Text = (sum/500).ToString();
             fillChart();
             disp(sum);
+
+            m1 = 100000001;
+            a1 = 23;
+            m2 = 2147483399;
+            a2 = 40692;
+            X1 = Convert.ToDouble(xInit1a.Text);
+            X2 = X1;
+            int period = 1;
+            while (true)
+            {
+                double value1 = (a1 * X1) % m1;
+                double value2 = (a2 * X2) % m2;
+                double U1 = value1 / m1;
+                double U2 = value2 / m2;
+                double united = Math.Abs((U1 * m1 - U2 * m2) % (m1 - 1));
+                united /= m1;
+                if (Math.Round(united, 8) == (Math.Round(Convert.ToDouble(dataGridView1a.Rows[0].Cells[1].Value), 8)) && period != 1)
+                {
+                    break;
+                }
+                X1 = value1;
+                X2 = value2;
+                period++;
+            }
+            textBox5.Text = period.ToString();
         }
 
         private void Button4_Click(object sender, EventArgs e)
