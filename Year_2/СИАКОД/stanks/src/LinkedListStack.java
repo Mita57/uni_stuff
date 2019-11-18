@@ -2,14 +2,14 @@ import java.util.LinkedList;
 
 public class LinkedListStack <E> {
     private int size;
-    private StackNode head;
+    private StackNode<E> head;
 
     public void pop(){
         this.head = head.getNext();
         this.size--;
     }
 
-    public void push(StackNode node) {
+    public void push(StackNode<E> node) {
         StackNode temp = this.head;
         this.head = node;
         this.head.next = temp;
@@ -17,7 +17,7 @@ public class LinkedListStack <E> {
     }
 
     public E peek() {
-        return (E) this.head.value;
+        return this.head.value;
     }
 
     public void print() {
@@ -61,7 +61,7 @@ public class LinkedListStack <E> {
             this.value = value;
         }
 
-        public StackNode getNext() {
+        public StackNode<E> getNext() {
             return next;
         }
         public void setNext(StackNode next){

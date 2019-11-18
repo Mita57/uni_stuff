@@ -33,7 +33,10 @@ namespace task1
             disp(sum);
             double firstElem = Convert.ToDouble(dataGridView1a.Rows[0].Cells[1].Value);
             X = Convert.ToDouble(xInit1a.Text);
-           findPeriod(a, Convert.ToDouble(xInit1a.Text), m);
+            if (checkBox1.Checked)
+            {
+                findPeriod(a, Convert.ToDouble(xInit1a.Text), m);
+            }
         }
 
         private void findPeriod(double a, double X, double m)
@@ -201,6 +204,8 @@ namespace task1
             }
             textBox2.Text = hi.ToString();
         }
+
+
     }
 }
 

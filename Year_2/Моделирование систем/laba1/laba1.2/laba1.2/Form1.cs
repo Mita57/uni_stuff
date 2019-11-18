@@ -31,7 +31,6 @@ namespace laba1._2
                 znam3 += Math.Pow((requestsStreamDensity / opsAmount), s);
             }
             double p0 = 1 / (znam1 + (znam2 * znam3));
-            MessageBox.Show(p0.ToString());
 
             //среднее число потерь заявок
             double serviceDenies = Math.Pow(requestsStreamDensity, opsAmount)/factorial(opsAmount);
@@ -50,6 +49,7 @@ namespace laba1._2
             avgBusyPed.Text = avgRequests.ToString();
 
             //среднее число занятых каналов
+
             double[] arr = new double[(int)opsAmount + (int)bufferVolume + 1];
             for (int k = 1; k <= opsAmount; k++)
             {
@@ -70,16 +70,23 @@ namespace laba1._2
                 sum2 += (arr[s] * opsAmount);
             }
             avgBusyLots.Text = (sum1 + sum2).ToString();
-                //вероятность ожидания обслуживания
 
-            double serviceWaitProb = 0;
-            for(int i = 0; i < bufferVolume-1; i++)
+            //вероятность ожидания обслуживания
+
+
+            for (int i = 1; i < p.Length; i++)
             {
-                serviceWaitProb += Math.Pow(requestsStreamDensity, opsAmount) / factorial(opsAmount)*(Math.Pow(requestsStreamDensity/opsAmount, i));
+                p[i] = (Math.Pow(requestsStreamDensity, i) / factorial(i)) * p0;
             }
-            serviceWaitProb *= p0;
+
+            double serviceWaitProb = 1;
+            for(int i = 0; i <p.Length; i++)
+            {
+                serviceWaitProb -= p[i];
+            }
             serviceWaitProb *= 100;
             carsWaiting.Text = serviceWaitProb.ToString() +"%";
+
 
             //среднее число посетителей, не нашедших места 
 
