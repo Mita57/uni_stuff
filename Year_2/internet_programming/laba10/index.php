@@ -13,6 +13,7 @@
         $counter = 0;
         $tags = [];
         $size = [];
+        $opcs = [];
         $indexes = [];
         $index = 0;
         for ($i = 1; $i < 11; $i++) {
@@ -30,11 +31,12 @@
             $elems = $stuff->$number->tags;
             foreach ((array)$elems as $X) {
                 array_push($size, ((int)($stuff->$number->shown / $counter * 250.)));
+                array_push($opcs, ((($stuff->$number->shown / $counter * 250.))/50));
             }
         }
         shuffle($indexes);
         for ($i = 0; $i < sizeof($indexes); $i++) {
-            echo('<div style="font-size:' . $size[$indexes[$i]] . '">' . $tags[$indexes[$i]] . ' </div>');
+            echo('<div style="font-size:' . $size[$indexes[$i]] . '; opacity: '. $opcs[$indexes[$i]].'">' . $tags[$indexes[$i]] . ' </div>');
         }
         echo("</div>");
         ?>
