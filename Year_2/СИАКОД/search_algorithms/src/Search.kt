@@ -1,6 +1,6 @@
 class Search<T:Number>(private val amount: Int){
 //linear search
-    private val array = arrayOf(for ())
+    private val array = arrayListOf<T>()
     private val element: T = null
 
     fun <T> linearSearch():Int {

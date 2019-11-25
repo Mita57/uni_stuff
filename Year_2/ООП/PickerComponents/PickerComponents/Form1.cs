@@ -15,8 +15,9 @@ namespace PickerComponents
         public Form1()
         {
             InitializeComponent();
+            oneNumberRadio.Checked = true;
         }
-
+        
         private void OneNumberRadio_CheckedChanged(object sender, EventArgs e)
         {
             secondNumberGroupBox.Visible = false;
@@ -96,7 +97,8 @@ namespace PickerComponents
                     }
                 case 3:
                     {
-                        resultTextBox.Text = (Math.Cos(Convert.ToDouble(firstNumberTextBox.Text))/Math.Sin(Convert.ToDouble(firstNumberTextBox.Text))).ToString();
+                        resultTextBox.Text = (Math.Cos(Convert.ToDouble(firstNumberTextBox.Text))/Math.Sin
+                            (Convert.ToDouble(firstNumberTextBox.Text))).ToString();
                         if (formulaCheckBox.Checked)
                         {
                             resultLabel.Text = "Ctg(" + firstNumberTextBox.Text + ") = " + resultTextBox.Text;
@@ -123,17 +125,20 @@ namespace PickerComponents
                     }
                 case 2:
                     {
-                        resultTextBox.Text = (Convert.ToDouble(firstNumberTextBox.Text) + Convert.ToDouble(secondNumberTextBox.Text)).ToString();
+                        resultTextBox.Text = (Convert.ToDouble(firstNumberTextBox.Text) +
+                            Convert.ToDouble(secondNumberTextBox.Text)).ToString();
                         if (formulaCheckBox.Checked)
                         {
-                            resultLabel.Text = firstNumberTextBox.Text + " + " + secondNumberGroupBox.Text + " = " + resultTextBox.Text;
+                            resultLabel.Text = firstNumberTextBox.Text + " + " + 
+                                secondNumberTextBox.Text + " = " + resultTextBox.Text;
                             resultLabel.Visible = true;
                         }
                         break;
                     }
                 case 0:
                     {
-                        resultTextBox.Text = (Convert.ToDouble(firstNumberTextBox.Text) - Convert.ToDouble(secondNumberTextBox.Text)).ToString();
+                        resultTextBox.Text = (Convert.ToDouble(firstNumberTextBox.Text) - 
+                            Convert.ToDouble(secondNumberTextBox.Text)).ToString();
                         if (formulaCheckBox.Checked)
                         {
                             string secondOperand = "";
@@ -145,17 +150,20 @@ namespace PickerComponents
                             {
                                 secondOperand = "(" + secondNumberTextBox.Text + ")";
                             }
-                            resultLabel.Text = firstNumberTextBox.Text + " - " + secondOperand + " = " + resultTextBox.Text;
+                            resultLabel.Text = firstNumberTextBox.Text + " - " + secondOperand +
+                                " = " + resultTextBox.Text;
                             resultLabel.Visible = true;
                         }
                         break;
                     }
                 case 1:
                     {
-                        resultTextBox.Text = (Convert.ToDouble(firstNumberTextBox.Text) * Convert.ToDouble(secondNumberTextBox.Text)).ToString();
+                        resultTextBox.Text = (Convert.ToDouble(firstNumberTextBox.Text) * 
+                            Convert.ToDouble(secondNumberTextBox.Text)).ToString();
                         if (formulaCheckBox.Checked)
                         {
-                            resultLabel.Text = firstNumberTextBox.Text + " * " + secondNumberGroupBox.Text + " = " + resultTextBox.Text;
+                            resultLabel.Text = firstNumberTextBox.Text + " * " +
+                                secondNumberTextBox.Text + " = " + resultTextBox.Text;
                             resultLabel.Visible = true;
                         }
                         break;
@@ -165,10 +173,12 @@ namespace PickerComponents
                         {
                             try
                             {
-                                resultTextBox.Text = (Convert.ToDouble(firstNumberTextBox.Text) / Convert.ToDouble(secondNumberTextBox.Text)).ToString();
+                                resultTextBox.Text = (Convert.ToDouble(firstNumberTextBox.Text) /
+                                    Convert.ToDouble(secondNumberTextBox.Text)).ToString();
                                 if (formulaCheckBox.Checked)
                                 {
-                                    resultLabel.Text = firstNumberTextBox.Text + " / " + secondNumberGroupBox.Text + " / " + resultTextBox.Text;
+                                    resultLabel.Text = firstNumberTextBox.Text + " / " +
+                                        secondNumberTextBox.Text + " = " + resultTextBox.Text;
                                     resultLabel.Visible = true;
                                 }
                                 break;
@@ -233,7 +243,8 @@ namespace PickerComponents
         string lastFirstCorrect = "";
         private void FirstNumberTextBox_TextChanged(object sender, EventArgs e)
         {
-            bool correct = double.TryParse(firstNumberTextBox.Text, out double temp) || firstNumberTextBox.Text == "";
+            bool correct = double.TryParse(firstNumberTextBox.Text, out double temp) ||
+                firstNumberTextBox.Text == "" || firstNumberTextBox.Text == "-";
             if (!correct)
             {
                 try
@@ -260,7 +271,8 @@ namespace PickerComponents
 
         private void SecondNumberTextBox_TextChanged(object sender, EventArgs e)
         {
-            bool correct = double.TryParse(secondNumberTextBox.Text, out double temp) || secondNumberTextBox.Text == "";
+            bool correct = double.TryParse(secondNumberTextBox.Text, out double temp) ||
+                secondNumberTextBox.Text == "" || secondNumberTextBox.Text == "-";
             if (!correct)
             {
                 try

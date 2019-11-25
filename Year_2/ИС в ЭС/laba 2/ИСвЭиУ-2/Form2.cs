@@ -287,9 +287,16 @@ namespace ИСвЭиУ_2
                 chart1.Visible = true;
                 for (int y = 0; y < matrix_size; y++)
                 {
-                    x++;
-                    chart1.Series[0].Points.AddXY(x, dataGridView1.Rows[y].Cells[matrix_size + 2].Value);
-                    chart1.Series[1].Points.AddXY(x, (double)dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells[y + 2].Value * 1.05);
+                    try
+                    {
+                        x++;
+                        chart1.Series[0].Points.AddXY(x, dataGridView1.Rows[y].Cells[matrix_size + 2].Value);
+                        chart1.Series[1].Points.AddXY(x, (double)dataGridView2.Rows[dataGridView2.Rows.Count - 1].Cells[y + 2].Value * 1.05);
+                    }
+                    catch
+                    {
+                        return;
+                    }
                 }
                 condit = true;
                 x = 0;

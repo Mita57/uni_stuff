@@ -34,11 +34,20 @@ namespace Length
                 sazhenTextBox.Text = (metres / 2.1336).ToString();
                 yardsTextBox.Text = (metres / 0.9144).ToString();
                 ignoreEvents = false;
+
             }
             catch
             {
                 TextBox cox = (TextBox)sender;
-                cox.ForeColor = Color.Red;
+                if (String.IsNullOrEmpty(cox.Text))
+                {
+                    sazhenTextBox.Text = "";
+                    yardsTextBox.Text = "";
+                }
+                else
+                {
+                    cox.ForeColor = Color.Red;
+                }
             }
         }
 
@@ -61,7 +70,15 @@ namespace Length
             catch
             {
                 TextBox cox = (TextBox)sender;
-                cox.ForeColor = Color.Red;
+                if (String.IsNullOrEmpty(cox.Text))
+                {
+                    metresTextBox.Text = "";
+                    yardsTextBox.Text = "";
+                }
+                else
+                {
+                    cox.ForeColor = Color.Red;
+                }
             }
         }
 
@@ -78,13 +95,21 @@ namespace Length
                 cox.ForeColor = Color.Black;
                 ignoreEvents = true;
                 metresTextBox.Text = (yard * 0.9144).ToString();
-                yardsTextBox.Text = (yard * 0.42).ToString();
+                sazhenTextBox.Text = (yard * 0.42).ToString();
                 ignoreEvents = false;
             }
             catch
             {
                 TextBox cox = (TextBox)sender;
-                cox.ForeColor = Color.Red;
+                if (String.IsNullOrEmpty(cox.Text))
+                {
+                    sazhenTextBox.Text = "";
+                    metresTextBox.Text = "";
+                }
+                else
+                {
+                    cox.ForeColor = Color.Red;
+                }
             }
         }
     }
