@@ -177,6 +177,7 @@
             this.chart1.Text = "chart1";
             this.chart1.Visible = false;
             this.chart1.VisibleChanged += new System.EventHandler(this.Button4_Click);
+            this.chart1.Click += new System.EventHandler(this.Chart1_Click);
             // 
             // button4
             // 

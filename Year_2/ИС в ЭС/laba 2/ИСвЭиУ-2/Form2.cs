@@ -300,6 +300,12 @@ namespace ИСвЭиУ_2
                 condit = false;
             }
         }
+
+        private void Chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         void tb2_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
