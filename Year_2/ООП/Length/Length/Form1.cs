@@ -95,7 +95,7 @@ namespace Length
                 cox.ForeColor = Color.Black;
                 ignoreEvents = true;
                 metresTextBox.Text = (yard * 0.9144).ToString();
-                yardsTextBox.Text = (yard * 0.42).ToString();
+                sazhenTextBox.Text = (yard * 0.42).ToString();
                 ignoreEvents = false;
             }
             catch
