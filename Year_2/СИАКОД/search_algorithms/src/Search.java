@@ -1,3 +1,4 @@
+import java.time.Instant;
 import java.util.*;
 
 public class Search {
@@ -13,7 +14,7 @@ public class Search {
         return this.array;
     }
 
-    public Search(int size){
+    public  Search(int size){
         this.size = size;
         for(int i = 0 ; i < size; i++){
             array.add(new Random().nextInt(20000));
@@ -25,17 +26,17 @@ public class Search {
 
     //linear search
 
-    public int linearSearch(){
+    public long linearSearch(){
         for(int i = 0; i < this.size; i++){
             if(this.array.get(i) == this.needle){
-                return this.array.get(i);
+                return System.nanoTime();
             }
         }
-        return -1;
+        return System.nanoTime();
     }
     //binary search
 
-    public int binarySearch(){
+    public long binarySearch(){
         array.sort(Integer::compareTo);
         int left = -1;
         int right = this.size - 1;
@@ -48,12 +49,12 @@ public class Search {
                 right = middle;
             }
         }
-        return  right;
+        return System.nanoTime();
     }
 
     //Интерполяционный поиск
 
-    public int interpolationalSearch(){
+    public long interpolationalSearch(){
         this.array.sort(Integer::compareTo);
         int left = 0;
         int right = this.size - 1;
@@ -68,18 +69,18 @@ public class Search {
                     right = middle--;
                 }
                 else{
-                    return middle;
+                    return System.nanoTime();
                 }
             }
 
             if(this.array.get(left) == this.needle) {
-                return  left;
+                return System.nanoTime();
             }
             if(this.array.get(right) == this.needle) {
-                return right;
+                return System.nanoTime();
             }
         }
-        return  -1;
+        return System.nanoTime();
     }
 
 

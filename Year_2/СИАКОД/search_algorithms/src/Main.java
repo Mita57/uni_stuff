@@ -7,20 +7,20 @@ public class Main {
         for(int i = 0; i < sizes.length; i++){
             System.out.println("Amount of elements: " + sizes[i]);
             Search search = new Search(sizes[i]);
-            Instant start = Instant.now();
-            search.linearSearch();
-            Instant finish = Instant.now();
-            long timeElapsed = Duration.between(start, finish).toMillis();
+            long timeElapsed;
+            long start;
+            long finish;
+            start = System.nanoTime();
+            finish = search.linearSearch();
+            timeElapsed = finish - start;
             System.out.println("Linear search: " + timeElapsed);
-            start = Instant.now();
-            search.binarySearch();
-            finish = Instant.now();
-            timeElapsed = Duration.between(start, finish).toMillis();
+            start = System.nanoTime();
+            finish = search.binarySearch();
+            timeElapsed = finish - start;
             System.out.println("Binary search " + timeElapsed);
-            start = Instant.now();
-            search.interpolationalSearch();
-            finish = Instant.now();
-            timeElapsed = Duration.between(start, finish).toMillis();
+            start = System.nanoTime();
+            finish = search.interpolationalSearch();
+            timeElapsed = finish - start;
             System.out.println("Interpolation search " + timeElapsed);
         }
     }
