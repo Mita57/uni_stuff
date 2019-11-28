@@ -79,9 +79,10 @@ public class Search {
             if(this.array.get(right) == this.needle) {
                 return System.nanoTime();
             }
+            else {
+                return System.nanoTime();
+            }
         }
         return System.nanoTime();
     }
-
-
 }
