@@ -19,7 +19,8 @@ public class Search {
         for(int i = 0 ; i < size; i++){
             array.add(new Random().nextInt(20000));
         }
-        this.needle = array.get(new Random().nextInt(size));
+        this.needle = this.array.get(new Random().nextInt(size));
+        this.array.sort(Integer::compareTo);
     }
 
 
@@ -37,7 +38,6 @@ public class Search {
     //binary search
 
     public long binarySearch(){
-        array.sort(Integer::compareTo);
         int left = -1;
         int right = this.size - 1;
         while(left < right - 1) {
@@ -55,7 +55,6 @@ public class Search {
     //Интерполяционный поиск
 
     public long interpolationalSearch(){
-        this.array.sort(Integer::compareTo);
         int left = 0;
         int right = this.size - 1;
 
