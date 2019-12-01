@@ -1,5 +1,5 @@
 <?php
-$handle = fopen("inputfile.txt", "r");
+$handle = fopen("oldbase.txt", "r");
 if ($handle){
     while (($line = fgets($handle)) != false){
         process($line);
@@ -8,7 +8,6 @@ if ($handle){
     fclose($handle);
     getAverages();
 }
-
 
 function process($string){
     $parts = explode(',', $string);
@@ -32,20 +31,25 @@ function process($string){
     postProcess($parts); // sending the array to write, calculate  heights, weights and ages for men and women
 }
 
+$emailProblems = 0;
 
 function verifyEmail($email){
+    global $emailProblems;
     if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return $email;
     }
+    $emailProblems++;
+
     return "";
 }
 
 $maleAmount = 0;
 $femaleAmount = 0;
 
-
+$genderProblems = 0;
 
 function verifyGender($gender){
+    global $genderProblems;
     $vars = ['female', 'male'];
     for($i = 0; $i < sizeof($vars); $i++){
         if($gender == $vars[$i]){
@@ -60,16 +64,19 @@ function verifyGender($gender){
             $femaleAmount++;
         }
     }
+    $genderProblems++;
     return "";
 }
 
-
+$phoneProblems = 0;
 
 function verifyPhoneNumber($number){
+    global $phoneProblems;
     $chars = str_split($number);
     for($i = 0; $i < sizeof($chars); $i++){
         if(!(ctype_digit($chars[$i])) || $chars[$i] == '-'){
             unset($chars[$i]);
+            $phoneProblems++;
         }
     }
 
@@ -85,9 +92,13 @@ function verifyPhoneNumber($number){
     return "";
 }
 
+$addressProblems = 0;
+
 function verifyAddress($address){
+    global $addressProblems;
     $parts = explode(' ', $address);
     if(!(ctype_digit($parts[0]))){
+        $addressProblems++;
         return "";
     }
     else{
@@ -126,29 +137,29 @@ $femaleHeight = 0;
 $maleWeight = 0;
 $femaleWeight = 0;
 
-$allFemaleWeights = [];
-$allFemaleHeights = [];
-$allFemaleAges = [];
+$allFemaleWeights = array();
+$allFemaleHeights = array();
+$allFemaleAges = array();
 
-$allMaleAges = [];
-$allMaleWeights = [];
-$allMaleHeights = [];
+$allMaleAges = array();
+$allMaleWeights = array();
+$allMaleHeights = array();
 
 $youngestPerson = "";
 $leastAge = 9999;
 $oldestPerson = "";
 $biggestAge = 0;
 
-$bornIn0101 = [];
-$bornIn0701 = [];
-$bornIn1402 = [];
-$bornIn2302 = [];
-$bornIn0803 = [];
-$bornIn0105 = [];
-$bornIn3112 = [];
+$bornIn0101 = array();
+$bornIn0701 = array();
+$bornIn1402 = array();
+$bornIn2302 = array();
+$bornIn0803 = array();
+$bornIn0105 = array();
+$bornIn3112 = array();
 
-$postProviders = [];
-$postUsers = [];
+$postProviders = array();
+$postUsers = array();
 
 function postProcess($parts){
     global $maleAge, $femaleAge, $maleHeight, $femaleHeight, $maleWeight, $femaleWeight,
@@ -158,12 +169,12 @@ function postProcess($parts){
     $gender = $parts[4];
     if($gender == 0){ //female
         $femaleHeight += $parts[13];
-        $femaleWeight += $parts[14];
+        $femaleWeight += $parts[12];
         $bdayParts = explode('.', $parts[9]);
         $femaleAge += 2019 - $bdayParts[2];
-        array_push($allFemaleHeights, $parts[13]);
-        array_push($allFemaleWeights, $parts[14]);
-        array_push($allFemaleAges, 2019 - $bdayParts[2]);
+        $allFemaleHeights[] = $parts[13];
+        $allFemaleWeights[] = $parts[12];
+        $allFemaleAges[] = 2019 - $bdayParts[2];
 
         //if is the oldest person
         if(2019 - $bdayParts[2] > $biggestAge){
@@ -180,74 +191,74 @@ function postProcess($parts){
         //if the BD is any of the celebrations
 
         if($bdayParts[0] == "01" || $bdayParts[1] == "01"){
-            array_push($bornIn0101, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn0101[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
 
         if($bdayParts[0] == "07" || $bdayParts[1] == "01"){
-            array_push($bornIn0701, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn0701[] =  $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
 
         if($bdayParts[0] == "14" || $bdayParts[1] == "02"){
-            array_push($bornIn1402, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn1402 = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
 
         if($bdayParts[0] == "23" || $bdayParts[1] == "02"){
-            array_push($bornIn2302, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn2302[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
 
         if($bdayParts[0] == "08" || $bdayParts[1] == "03"){
-            array_push($bornIn0803, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn0803[] =  $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
 
         if($bdayParts[0] == "01" || $bdayParts[1] == "05"){
-            array_push($bornIn0105, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn0105[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
 
         if($bdayParts[0] == "31" || $bdayParts[1] == "12"){
-            array_push($bornIn3112, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn3112[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
     }
     else{ //male
         $maleHeight += $parts[13];
-        $maleWeight += $parts[14];
+        $maleWeight += $parts[12];
         $bdayParts = explode('.', $parts[9]);
         $maleAge += 2019 - $bdayParts[2];
-        array_push($allMaleHeights, $parts[13]);
-        array_push($allMaleWeights, $parts[14]);
-        array_push($allMaleAges, 2019 - $bdayParts[2]);
+        $allMaleHeights = $parts[13];
+        $allMaleWeights = $parts[12];
+        $allMaleAges[] = 2019 - $bdayParts[2];
         if($bdayParts[0] == "01" || $bdayParts[1] == "01"){
-            array_push($bornIn0101, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn0101[] =  $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
 
         if($bdayParts[0] == "07" || $bdayParts[1] == "01"){
-            array_push($bornIn0701, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn0701[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
 
         if($bdayParts[0] == "14" || $bdayParts[1] == "02"){
-            array_push($bornIn1402, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn1402[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
 
         if($bdayParts[0] == "23" || $bdayParts[1] == "02"){
-            array_push($bornIn2302, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn2302[] =  $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
 
         if($bdayParts[0] == "08" || $bdayParts[1] == "03"){
-            array_push($bornIn0803, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn0803[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
 
         if($bdayParts[0] == "01" || $bdayParts[1] == "05"){
-            array_push($bornIn0105, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn0105[] =  $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
 
         if($bdayParts[0] == "31" || $bdayParts[1] == "12"){
-            array_push($bornIn3112, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
+            $bornIn3112[] =  $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
         }
     }
 
     $domain = explode('@', $parts[7])[1];
-    if(!in_array($postProviders, $domain)){
-        array_push($postProviders, $domain);
-        array_push($postUsers, 0);
+    if(!in_array($domain, $postProviders)){
+        $postProviders[] =  $domain;
+        $postUsers[] = 0;
     }
 
     for($i = 0; $i < sizeof($postProviders); $i++){
@@ -258,9 +269,6 @@ function postProcess($parts){
 
     writeFile($parts);
 }
-
-
-
 
 function writeFile($parts){
     $outism = '';

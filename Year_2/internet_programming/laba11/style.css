@@ -1,0 +1,17 @@
+body{
+    font-family: Arial;
+}
+
+.inputs{
+    background-color: limegreen;
+    width: 700px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.pink{
+    color:hotpink;
+}
+.lightblue{
+    color:deepskyblue;
+}
