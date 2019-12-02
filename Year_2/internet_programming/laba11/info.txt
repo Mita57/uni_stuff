@@ -1,13 +1,18 @@
-Количество хлопцев: 4992; количество тянок: ; ср. высота хлопцев: 176.45292467949; ср. высота тянок: INF; ср. вес хлопцев: 86.018629807692; ср. вес тянок: INF; ср. возраст хлопцев: 58.9945913461540\nТянок меньше ср. возрасата1; тянок ср. возраста: 0; тянок выше ср. возраста: 0
-Тянок меньше ср. роста1; тянок ср. роста: 0; тянок выше ср. роста: 0
-Тянок меньше ср. веса1; тянок ср. веса: 0; тянок выше ср. веса: 0
-Хлопцев меньше ср. возраста1; лопцев ср. возраста: 0; хлопцев выше ср. возраста: 2
-Хлопцев меньше ср. роста1; лопцев ср. роста: 0; хлопцев выше ср. роста: 0
-Хлопцев меньше ср. веса1; лопцев ср. веса: 0; хлопцев выше ср. веса: 0
-Родившиеся 01.01:  
- Родившиеся 07.01:  
- Родившиеся 14.02:  
- Родившиеся 23.02:  
- Родившиеся 08.03:  
- Родившиеся 01.05:  
- Родившиеся 31.12: Richard K Bingaman Самый пожилой: Имя: Mandy R Pastor; Телефон:740-34-838; адресс: Newark OH Robinson Lane , 2570\nСамый молодой: /nПользователей почты dodgit.com :1
+Количество хлопцев: 4992; количество тянок: 5005; ср. высота хлопцев: 176.45292467949; ср. высота тянок: 162.81358641359; ср. вес хлопцев: 86.018629807692; ср. вес тянок: 75.524675324675; ср. возраст хлопцев: 58.994591346154; ср. возраст тянок: 58.987812187812\n
+Тянок меньше ср. возрасата: 2443; тянок ср. возраста: 83; тянок выше ср. возраста: 2482
+Тянок меньше ср. роста: 2475; тянок ср. роста: 240; тянок выше ср. роста: 2293
+Тянок меньше ср. веса: 3488; тянок ср. веса: 98; тянок выше ср. веса: 1422
+Хлопцев меньше ср. возраста: 2448; хлопцев ср. возраста: 62; хлопцев выше ср. возраста: 2482
+Хлопцев меньше ср. роста: 2289; лопцев ср. роста: 219; хлопцев выше ср. роста: 2484
+Хлопцев меньше ср. веса: 2479; хлопцев ср. веса: 105; хлопцев выше ср. веса: 2408
+Родившиеся 01.01: Ellen C Weaver, Eunice J Houpt, Steven C Livingston, Debbie J Hassler, Paul A Thomas, Max L Moore, Dallas J Harris, Brian L Curtis, Frances J Andreasen, Mark L Palmer, Elaine S Hanna, Dixie L Delahoussaye, Sharon J Rhymer, Jennifer R Ho, Jeffery C Berg, Mary B Vanderburg, Andre P Roach, Martha P King, Sarah M Jones, Justin C Winegar, Alberto K Cartwright, Joseph I Scruggs, Gary A Torres, Dorothy S Hawkin, Katherine A Green, Lisa R Mahood,  
+Родившиеся 07.01: Jeffery P Grant, Frances D Byers, Tammy C Ricca, Kevin A Lamanna, Christy J Williams, Sonia P Molina, Cynthia G Neal, Nathan M Morrison, Alfredo J Holland, Bill R Villa, Rosalinda E Nelson, Kimiko F Bezanson, Mary A Harris, Veronica C Harris, Linda C Krebs, Kenneth S Black, Allan V Knopp, Angelica M Kennedy, Carrie J Howes, Michelle T Adams, Ruby R Boger, Joe R Sander, Jamie R Hawthorne, Christine J Ramirez, Joseph W Gamble, Ann E Westerman, Mildred K Kaufman, Jeremy A Batt,  
+Родившиеся 14.02: Steven E Trujillo, Jarrod N Robertson, Cynthia J Branham, Julie S Pruitt, Luis B Taylor, Kenneth K Darnell, Jon S Zuniga, Pennie W Johnson, Natalie E Wiggins, Marion S Saxton, Heather C Kulas, Marion C Hulbert, Sydney W Jones, Jimmy P Adams, Gladys J Masterson, Felton M Rodriquez, Victor M Parson, Betsy J Donahoe, Gene L Cruz, Robert W Nation, Violet R Buchman, Lillian R Eldridge, Luz Q Wiggins, Kathleen H Fillion, Gerald P Mull,  
+Родившиеся 23.02: Wendy M Croft, Mary M Patchett, Sharon C Kelly, Marcus K Pike, Albert R Torres, Victoria B Fleming, Kevin E Pokorny, Maud H Fields, Luis H Santoyo, Kimberlee A Sena, Justin L Luckett, Luis K Smith, Chassidy O Bell, Mary W Markham, Maria A Fudge, Shirley J Fontenot, Sal K Jordan, William S Gandy, Henry L Lenz, Dorothy J Shoe, Ernest C Dortch, Helen T Anderson, Joshua S Smith,  
+Родившиеся 08.03: Amanda M Watchman, Harry J Armstrong, Susan R Miraglia, Maxine W Lyon, Rocco J Toland, Jennifer J Swain, Alice J Klemm, Charlotte B Seabolt, Victoria D Jacoby, Leanna J Church, Desirae C Chatman, Pamela D Duff, Mary E Puckett, Andrea R Sy, Linda D Andrews, Nancy J Daniels, Stuart M Leslie, Dianna M Strong, Angela R Babcock, Robert Y Knox, Margaret W Miller, Damon B Murray, Malcolm C Carrasco, Kerry L Guzman, Megan M Chavez, Clarence L Hakala, Jennifer M Burton, Johnny E Sweet, Melanie J Cassette, Larisa J Crouch, Lucille F Farmer, Edward K Miller, Kevin J Mayes, Louise F Garrett,  
+Родившиеся 01.05: Robert L Waugh, Lawanda J Sutton, Angela E Charles, Ray M Dennison, Nancy J Santiago, Marion T Marcum, Sandra S Hurst, Becky M Kang, Elaine D Wilson, Roger S Moser, Cecil H Vest, Frank K Noe, Janice S Chumley, Edward M Stjohn, Saul I Boggs, Derek L Goodrich, Alice B Morales, Patricia W Vandervort, John D Torrance, Mike T Fenner, Catherine C Merryman, Linda J Adams, Pamela M Funk, Jeanette F Vines, Holli M Perry, George S Ebner, Rosa S Aleshire, Steve G Real, Chris N Boucher, Debra R Sterling, Lisa R Thomas, Micheal R Carleton, Young J Wilder, Erin R McQueen, Robert L Paul, Sarah W Rideout, Charles A Hanson, Mckinley L Arnett, Maria H Brown, Annie E Barone, Leonard J Greene, Emely S Clark,  
+Родившиеся 31.12: Alton M Harnish, Alice K Maloney, Laurel B Bonner, Louise L Dawson, Ray J Flores, John E Nesbitt, Sean D Sawyer, Rebecca N Diaz, James A Howell, Joel C Dominguez, Jose B Lantz, Bill E Lightner, Marvin P Breton, Vivian J Alvey, Norma S Donlon, Carlos K Alvarado, Stanley C Ballou, John S Harper, Joseph M Reese, Carolyn R Strohm, Jimmy P Johnson, Phyllis T Middleton, Robert D Telford, William M Sprenger, Maxine J Strong, Brittany K Wilhelm, Anne E Hernandez, Russell B Jones, 
+Самый пожилой: Имя: Phyllis T Middleton; Телефон:559-37-103; адрес: Stockton CA Center Avenue , 3236, 
+Самый молодой Имя: Barbara F Scott; Телефон:508-92-872; адрес: Needham MA Lyon Avenue , 463, 
+ Кол-во ошибок, адрес:165, телефон: 20205, email: 924, пол: 3
+Пользователей почты:mailinator.com :1830, dodgit.com :1823, pookmail.com :1783, spambob.com :1843, trashymail.com :1797, 

@@ -7,22 +7,59 @@
 </head>
 <body>
     <div class="inputs">
-        <form action="result.php" method="get">
-            <input type="submit" name="run" value="Let's do dis sh!t">
+        <form action="getThings.php" method="get">
             <select name="regions" id='regID'>
                 <?php
-                $handle = fopen("inputfile.txt", "r");
+                $handle = fopen("output.txt", "r");
                 if ($handle) {
+                    $states = [];
                     while (($line = fgets($handle)) != false) {
                         $parts = explode(';', $line);
-                        echo("<option value='>" . strtolower($parts[6]) . "'" . $parts[6] . "</option>");
+                        if(!(in_array($parts[6], $states))) {
+                            echo("<option value='" . $parts[6] . "'>" . $parts[6] . "</option>");
+                            $states[] = $parts[6];
+                        }
                     }
                 }
                 fclose($handle);
                 ?>
-                <input type="submit" value="Отправить">
+                <input type="submit" name="run" value="Отправить">
             </select>
         </form>
+        <?php
+        if(isset($_GET['run'])){
+            $handle = fopen("output.txt", "r");
+            $names [] = [];
+            if ($handle) {
+                while (($line = fgets($handle)) != false) {
+                    $parts = explode(';', $line);
+                    if($parts[6] == $_GET['regions']){
+                        $outism = $parts[1] . ' '. $parts[2] . ' ' . $parts[3];
+
+                        if($parts[4] == 0){
+                            $outism .= "1";
+                        }
+                        else{
+                            $outism .= "0";
+                        }
+                        $names[] = $outism;
+                        $outism = '';
+                    }
+                }
+            }
+            sort($names);
+            for($i = 0; $i < sizeof($names); $i++){
+                $gender = substr($names[$i], -1);
+                $names[$i] = substr($names[$i],0,-1);
+                if($gender == '0'){
+                    echo ("<span class='tyan'>" . $names[$i] . '</span>');
+                }
+                else{
+                    echo ("<span class='kun'>" . $names[$i] . '</span><br>');
+                }
+            }
+        }
+        ?>
     </div>
 
 </body>

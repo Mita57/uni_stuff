@@ -53,15 +53,15 @@ function verifyGender($gender){
     $vars = ['female', 'male'];
     for($i = 0; $i < sizeof($vars); $i++){
         if($gender == $vars[$i]){
+            if($gender == 'male'){
+                global $maleAmount;
+                $maleAmount++;
+            }
+            else{
+                global $femaleAmount;
+                $femaleAmount++;
+            }
             return $i;
-        }
-        if($gender == 'male'){
-            global $maleAmount;
-            $maleAmount++;
-        }
-        if($gender == 'female'){
-            global $femaleAmount;
-            $femaleAmount++;
         }
     }
     $genderProblems++;
@@ -137,29 +137,29 @@ $femaleHeight = 0;
 $maleWeight = 0;
 $femaleWeight = 0;
 
-$allFemaleWeights = array();
-$allFemaleHeights = array();
-$allFemaleAges = array();
+$allFemaleWeights = [];
+$allFemaleHeights = [];
+$allFemaleAges = [];
 
-$allMaleAges = array();
-$allMaleWeights = array();
-$allMaleHeights = array();
+$allMaleAges = [];
+$allMaleWeights = [];
+$allMaleHeights = [];
+
+$oldestPerson = "";
+$biggestAge =  mktime(0,0,0,1,1,1);
 
 $youngestPerson = "";
-$leastAge = 9999;
-$oldestPerson = "";
-$biggestAge = 0;
+$leastAge = mktime(0,0,0,1,1,9999);
 
-$bornIn0101 = array();
-$bornIn0701 = array();
-$bornIn1402 = array();
-$bornIn2302 = array();
-$bornIn0803 = array();
-$bornIn0105 = array();
-$bornIn3112 = array();
-
-$postProviders[] = array();
-$postUsers[] = array();
+$bornIn0101[] = [];
+$bornIn0701[] = [];
+$bornIn1402[] = [];
+$bornIn2302[] = [];
+$bornIn0803[] = [];
+$bornIn0105[] = [];
+$bornIn3112[] = [];
+$postProviders = [];
+$postUsers = [];
 
 function postProcess($parts){
     global $maleAge, $femaleAge, $maleHeight, $femaleHeight, $maleWeight, $femaleWeight,
@@ -167,110 +167,75 @@ function postProcess($parts){
         $youngestPerson, $leastAge, $oldestPerson, $biggestAge, $bornIn0101, $bornIn0701, $bornIn1402, $bornIn2302,
         $bornIn0803, $bornIn0105, $bornIn3112, $postProviders, $postUsers;
     $gender = $parts[4];
-    $bornIn0101 = array();
-    $bornIn0701 = array();
-    $bornIn1402 = array();
-    $bornIn2302 = array();
-    $bornIn0803 = array();
-    $bornIn0105 = array();
-    $bornIn3112 = array();
-    $postProviders = array();
-    $postUsers = array();
+    $bdayParts = explode('.', $parts[9]);
+    //if is the oldest person
+    if((int)mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]) > (int)$biggestAge){
+        $oldestPerson = 'Имя: '. $parts[1] . ' ' . $parts[2] . ' ' . $parts[3] . '; Телефон:' . $parts[8] . '; адрес: ' . $parts[5] . ' ' . $parts[6] . ' ' . $parts[14];
+        $biggestAge = mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]);
+    }
+    //if is the youngest person
+    if((int)mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]) < (int)$leastAge){
+        $youngestPerson = 'Имя: '. $parts[1] . ' ' . $parts[2] . ' ' . $parts[3] . '; Телефон:' . $parts[8] . '; адрес: ' . $parts[5] . ' ' . $parts[6] . ' ' . $parts[14];
+        $leastAge = mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]);
+    }
+
+    //if the BD is any of the celebrations
+
+    if($bdayParts[0] == "01" && $bdayParts[1] == "01"){
+        $bornIn0101[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
+    }
+
+    if($bdayParts[0] == "07" && $bdayParts[1] == "01"){
+        $bornIn0701[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
+    }
+
+    if($bdayParts[0] == "14" && $bdayParts[1] == "02"){
+        $bornIn1402[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
+    }
+
+    if($bdayParts[0] == "23" && $bdayParts[1] == "02"){
+        $bornIn2302[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
+    }
+
+    if($bdayParts[0] == "08" && $bdayParts[1] == "03"){
+        $bornIn0803[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
+    }
+
+    if($bdayParts[0] == "01" && $bdayParts[1] == "05"){
+        $bornIn0105[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
+    }
+
+    if($bdayParts[0] == "31" && $bdayParts[1] == "12"){
+        $bornIn3112[] = $parts[1] . ' ' . $parts[2] . ' ' . $parts[3];
+    }
+
+
     if($gender == 0){ //female
         $femaleHeight += $parts[13];
         $femaleWeight += $parts[12];
-        $bdayParts = explode('.', $parts[9]);
         $femaleAge += 2019 - $bdayParts[2];
         $allFemaleHeights[] = $parts[13];
         $allFemaleWeights[] = $parts[12];
         $allFemaleAges[] = 2019 - $bdayParts[2];
 
-        //if is the oldest person
-        if(2019 - $bdayParts[2] > $biggestAge){
-            $oldestPerson = 'Имя: '. $parts[1] . ' ' . $parts[2] . ' ' . $parts[3] . '; Телефон:' . $parts[8] . '; адресс: ' . $parts[5] . ' ' . $parts[6] . ' ' . $parts[14];
-            $biggestAge = 2019 - $bdayParts[2];
-        }
-        //if is the youngest person
-
-        if(2019 - $bdayParts[2] < $leastAge){
-            $youngestPerson = 'Имя: ' . $parts[1] . ' ' . $parts[2] . ' ' . $parts[3] . '; Телефон:' . $parts[8] . '; адресс: ' . $parts[5] . ' ' . $parts[6] . ' ' . $parts[14];
-            $leastAge = 2019 - $bdayParts[2];
-        }
-
-        //if the BD is any of the celebrations
-
-        if($bdayParts[0] == "01" || $bdayParts[1] == "01"){
-            array_push($bornIn0101, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
-
-        if($bdayParts[0] == "07" || $bdayParts[1] == "01"){
-            array_push($bornIn0701, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
-
-        if($bdayParts[0] == "14" || $bdayParts[1] == "02"){
-            array_push($bornIn1402, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
-
-        if($bdayParts[0] == "23" || $bdayParts[1] == "02"){
-            array_push($bornIn2302, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
-
-        if($bdayParts[0] == "08" || $bdayParts[1] == "03"){
-            array_push($bornIn0803,$parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
-
-        if($bdayParts[0] == "01" || $bdayParts[1] == "05"){
-            array_push($bornIn0105, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
-
-        if($bdayParts[0] == "31" || $bdayParts[1] == "12"){
-            array_push($bornIn3112,$parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
     }
     else{ //male
         $maleHeight += $parts[13];
         $maleWeight += $parts[12];
-        $bdayParts = explode('.', $parts[9]);
         $maleAge += 2019 - $bdayParts[2];
-        $allMaleHeights = $parts[13];
-        $allMaleWeights = $parts[12];
+        $allMaleHeights[] = $parts[13];
+        $allMaleWeights[] = $parts[12];
         $allMaleAges[] = 2019 - $bdayParts[2];
-        if($bdayParts[0] == "01" || $bdayParts[1] == "01"){
-            array_push($bornIn0101, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
 
-        if($bdayParts[0] == "07" || $bdayParts[1] == "01"){
-            array_push($bornIn0701, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
-
-        if($bdayParts[0] == "14" || $bdayParts[1] == "02"){
-            array_push($bornIn1402, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
-
-        if($bdayParts[0] == "23" || $bdayParts[1] == "02"){
-            array_push($bornIn2302, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
-
-        if($bdayParts[0] == "08" || $bdayParts[1] == "03"){
-            array_push($bornIn0803,$parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
-
-        if($bdayParts[0] == "01" || $bdayParts[1] == "05"){
-            array_push($bornIn0105, $parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
-
-        if($bdayParts[0] == "31" || $bdayParts[1] == "12"){
-            array_push($bornIn3112,$parts[1] . ' ' . $parts[2] . ' ' . $parts[3]);
-        }
     }
 
     $domain = explode('@', $parts[7])[1];
-    if(!in_array($domain, $postProviders)){
-        array_push($postProviders, $domain);
-        array_push($postUsers, 0);
+    if(!in_array($domain, (array)$postProviders) && $domain != ''){
+        $postProviders[] = $domain;
+        $postUsers[] = 0;
     }
 
-    for($i = 0; $i < sizeof($postProviders); $i++){
+    for($i = 0; $i < sizeof((array)$postProviders); $i++){
         if($domain == $postProviders[$i]){
             $postUsers[$i]++;
         }
@@ -297,17 +262,17 @@ function getAverages(){
     $avgFemaleWeight = $femaleWeight / $femaleAmount;
     $avgFemaleHeight = $femaleHeight / $femaleAmount;
     $outism = "Количество хлопцев: " . $maleAmount . "; количество тянок: " . $femaleAmount . "; ср. высота хлопцев: " . $avgMaleHeight . "; ср. высота тянок: " . $avgFemaleHeight .
-        "; ср. вес хлопцев: ". $avgMaleWeight . "; ср. вес тянок: ". $avgFemaleWeight . "; ср. возраст хлопцев: " . $avgMaleAge . "; ср. возраст тянок: " / $avgFemaleAge . '\n';
-    $outism = $outism . getDifferentThanAvgs($avgMaleHeight, $avgMaleAge, $avgMaleWeight, $avgFemaleAge, $avgFemaleWeight, $avgMaleHeight) . '/n';
-    $outism = $outism . getMailProviders();
+        "; ср. вес хлопцев: ". $avgMaleWeight . "; ср. вес тянок: ". $avgFemaleWeight . "; ср. возраст хлопцев: " . $avgMaleAge . "; ср. возраст тянок: " . $avgFemaleAge . '\n';
+    $outism = $outism . getDifferentThanAvgs($avgMaleHeight, $avgMaleAge, $avgMaleWeight, $avgFemaleAge, $avgMaleWeight, $avgFemaleHeight);
+    $outism =  $outism . "\n" . getMailProviders();
     file_put_contents('info.txt', $outism , FILE_APPEND | LOCK_EX);
 }
 
 function getMailProviders(){
     global $postUsers, $postProviders;
-    $outism = "";
-    for($i = 0; $i < sizeof($postProviders); $i++){
-        $outism = $outism . "Пользователей почты " . $postProviders[$i] . " :" . $postUsers[$i];
+    $outism = "Пользователей почты:";
+    for($i = 0; $i < sizeof((array)$postProviders); $i++){
+        $outism .= ($postProviders[$i] . " :" . $postUsers[$i]. ", ");
     }
     return $outism;
 }
@@ -348,152 +313,157 @@ function getDifferentThanAvgs($avgMaleHeight, $avgMaleAge, $avgMaleWeight, $avgF
     //female ages
 
     for($i = 0; $i < sizeof($allFemaleAges); $i++){
-        if($allFemaleAges[$i] < $avgFemaleAge){
+        if(round($allFemaleAges[$i]) < round($avgFemaleAge)){
             $lowerAgeFemale++;
-            break;
+            continue;
         }
-        if($allFemaleAges[$i] == $avgFemaleAge){
+        if(round($allFemaleAges[$i]) == round($avgFemaleAge)){
             $sameAgeFemale++;
-            break;
+            continue;
         }
         else{
             $higherAgeFemale++;
         }
     }
 
-    $outism  = $outism . "Тянок меньше ср. возрасата" . $lowerAgeFemale . "; тянок ср. возраста: " . $sameAgeFemale . '; тянок выше ср. возраста: ' . $higherAgeFemale . "\n";
+    $outism  = $outism . "\nТянок меньше ср. возрасата: " . $lowerAgeFemale . "; тянок ср. возраста: " . $sameAgeFemale . '; тянок выше ср. возраста: ' . $higherAgeFemale . "\n";
 
     //female heights
 
     for($i = 0; $i < sizeof($allFemaleHeights); $i++){
-        if($allFemaleHeights[$i] < $avgFemaleHeight){
+        if(round($allFemaleHeights[$i]) < round($avgFemaleHeight)){
             $lowerHeightFemale++;
-            break;
+            continue;
         }
-        if($allFemaleHeights[$i] == $avgFemaleHeight){
+        if(round($allFemaleHeights[$i]) == round($avgFemaleHeight)){
             $sameHeightFemale++;
-            break;
+            continue;
         }
         else{
             $higherHeightFemale++;
         }
     }
 
-    $outism  = $outism . "Тянок меньше ср. роста" . $lowerHeightFemale . "; тянок ср. роста: " . $sameHeightFemale . '; тянок выше ср. роста: ' . $higherHeightFemale . "\n";
+    $outism  = $outism . "Тянок меньше ср. роста: " . $lowerHeightFemale . "; тянок ср. роста: " . $sameHeightFemale . '; тянок выше ср. роста: ' . $higherHeightFemale . "\n";
 
     //female weights
 
     for($i = 0; $i < sizeof($allFemaleWeights); $i++){
-        if($allFemaleWeights[$i] < $avgFemaleWeight){
+        if(round($allFemaleWeights[$i]) < round($avgFemaleWeight)){
             $lowerWeightFemale++;
-            break;
+            continue;
         }
-        if($allFemaleWeights[$i] == $avgFemaleWeight){
+        if(round($allFemaleWeights[$i]) == round($avgFemaleWeight)){
             $sameWeightFemale++;
-            break;
+            continue;
         }
         else{
             $higherWeightFemale++;
         }
     }
 
-    $outism  = $outism . "Тянок меньше ср. веса" . $lowerWeightFemale . "; тянок ср. веса: " . $sameWeightFemale . '; тянок выше ср. веса: ' . $higherWeightFemale . "\n";
+    $outism  = $outism . "Тянок меньше ср. веса: " . $lowerWeightFemale . "; тянок ср. веса: " . $sameWeightFemale . '; тянок выше ср. веса: ' . $higherWeightFemale . "\n";
 
     //male ages
 
-    for($i = 0; $i < sizeof($allMaleAges); $i++){
-        if($allMaleAges[$i] < $avgMaleAge){
+    for($i = 0; $i < sizeof((array)$allMaleAges); $i++){
+        if(round($allMaleAges[$i]) < round($avgMaleAge)){
             $lowerAgeMale++;
-            break;
+            continue;
         }
-        if($allMaleAges[$i] == $avgMaleAge){
+        if(round($allMaleAges[$i]) == round($avgMaleAge)){
             $sameAgeMale++;
-            break;
+            continue;
         }
         else{
             $higherAgeMale++;
         }
     }
 
-    $outism  = $outism . "Хлопцев меньше ср. возраста" . $lowerAgeMale . "; лопцев ср. возраста: " . $sameAgeMale . '; хлопцев выше ср. возраста: ' . $higherAgeMale . "\n";
+    $outism  = $outism . "Хлопцев меньше ср. возраста: " . $lowerAgeMale . "; хлопцев ср. возраста: " . $sameAgeMale . '; хлопцев выше ср. возраста: ' . $higherAgeMale . "\n";
 
     //male heights
 
-    for($i = 0; $i < sizeof($allMaleHeights); $i++){
-        if($allMaleHeights[$i] < $avgMaleHeight){
+    for($i = 0; $i < sizeof((array)$allMaleHeights); $i++){
+        if(round($allMaleHeights[$i]) < round($avgMaleHeight)){
             $lowerHeightMale++;
-            break;
+            continue;
         }
-        if($allMaleHeights[$i] == $avgMaleHeight){
+        if(round($allMaleHeights[$i]) == round($avgMaleHeight)){
             $sameHeightMale++;
-            break;
+            continue;
         }
         else{
             $higherHeightMale++;
         }
     }
 
-    $outism  = $outism . "Хлопцев меньше ср. роста" . $lowerHeightMale . "; лопцев ср. роста: " . $sameHeightMale . '; хлопцев выше ср. роста: ' . $higherHeightMale . "\n";
+    $outism  = $outism . "Хлопцев меньше ср. роста: " . $lowerHeightMale . "; лопцев ср. роста: " . $sameHeightMale . '; хлопцев выше ср. роста: ' . $higherHeightMale . "\n";
 
     //male weights
 
-    for($i = 0; $i < sizeof($allMaleWeights); $i++){
-        if($allMaleWeights[$i] < $avgMaleWeight){
+    for($i = 0; $i < sizeof((array)$allMaleWeights); $i++){
+        if(round($allMaleWeights[$i]) < round($avgMaleWeight)){
             $lowerWeightMale++;
-            break;
+            continue;
         }
-        if($allMaleWeights[$i] == $allMaleWeights){
+        if(round($allMaleWeights[$i]) == round($avgMaleWeight)){
             $sameWeightMale++;
-            break;
+            continue;
         }
         else{
             $higherWeightMale++;
         }
     }
 
-    $outism  = $outism . "Хлопцев меньше ср. веса" . $lowerWeightMale . "; лопцев ср. веса: " . $sameWeightMale . '; хлопцев выше ср. веса: ' . $higherWeightFemale . "\n";
+    $outism  = $outism . "Хлопцев меньше ср. веса: " . $lowerWeightMale . "; хлопцев ср. веса: " . $sameWeightMale . '; хлопцев выше ср. веса: ' . $higherWeightMale . "\n";
     $outism = $outism . printCelebrations();
     return $outism;
 }
 
 function printCelebrations(){
-    global $bornIn1402, $bornIn0101, $bornIn2302, $bornIn0105, $bornIn0701, $bornIn0803, $bornIn3112, $youngestPerson, $oldestPerson;
+    global $bornIn1402, $bornIn0101, $bornIn2302, $bornIn0105, $bornIn0701, $bornIn0803, $bornIn3112, $youngestPerson, $oldestPerson,
+           $addressProblems, $phoneProblems, $emailProblems, $genderProblems;
     $outism = "Родившиеся 01.01: ";
-    for($i = 0; $i < sizeof($bornIn0101); $i++){
-        $outism = $outism . $bornIn0101[$i] . ' ';
+    for($i = 0; $i < sizeof((array)$bornIn0101); $i++){
+        $outism = $outism . $bornIn0101[$i] . ', ';
     }
 
-    $outism .= " \n Родившиеся 07.01: ";
-    for($i = 0; $i < sizeof($bornIn0701); $i++){
-        $outism = $outism . $bornIn0701[$i] . ' ';
+    $outism .= " \nРодившиеся 07.01: ";
+    for($i = 0; $i < sizeof((array)$bornIn0701); $i++){
+        $outism = $outism . $bornIn0701[$i] . ', ';
     }
 
-    $outism .= " \n Родившиеся 14.02: ";
-    for($i = 0; $i < sizeof($bornIn1402); $i++){
-        $outism = $outism . $bornIn1402[$i] . ' ';
+    $outism .= " \nРодившиеся 14.02: ";
+    for($i = 0; $i < sizeof((array)$bornIn1402); $i++){
+        $outism = $outism . $bornIn1402[$i] . ', ';
     }
 
-    $outism .= " \n Родившиеся 23.02: ";
-    for($i = 0; $i < sizeof($bornIn2302); $i++){
-        $outism = $outism . $bornIn2302[$i] . ' ';
+    $outism .= " \nРодившиеся 23.02: ";
+    for($i = 0; $i < sizeof((array)$bornIn2302); $i++){
+        $outism = $outism . $bornIn2302[$i] . ', ';
     }
 
-    $outism .= " \n Родившиеся 08.03: ";
-    for($i = 0; $i < sizeof($bornIn0803); $i++){
-        $outism = $outism . $bornIn0803[$i] . ' ';
+    $outism .= " \nРодившиеся 08.03: ";
+    for($i = 0; $i < sizeof((array)$bornIn0803); $i++){
+        $outism = $outism . $bornIn0803[$i] . ', ';
     }
 
-    $outism .= " \n Родившиеся 01.05: ";
-    for($i = 0; $i < sizeof($bornIn0105); $i++){
-        $outism = $outism . $bornIn0105[$i] . ' ';
+    $outism .= " \nРодившиеся 01.05: ";
+    for($i = 0; $i < sizeof((array)$bornIn0105); $i++){
+        $outism = $outism . $bornIn0105[$i] . ', ';
     }
 
-    $outism .= " \n Родившиеся 31.12: ";
-    for($i = 0; $i < sizeof($bornIn3112); $i++){
-        $outism = $outism . $bornIn3112[$i] . ' ';
+    $outism .= " \nРодившиеся 31.12: ";
+    for($i = 0; $i < sizeof((array)$bornIn3112); $i++){
+        $outism = $outism . $bornIn3112[$i] . ', ';
     }
-    $outism .= "Самый пожилой: " . $oldestPerson . '\n';
-    $outism .= "Самый молодой: " . $youngestPerson;
+    $outism .= "\nСамый пожилой: " . $oldestPerson . ', ';
+    $outism .= "\nСамый молодой " . $youngestPerson . ', ';
+
+    //errors in data
+
+    $outism .= "\nКол-во ошибок, адрес:" . $addressProblems . ', телефон: ' . $phoneProblems . ', email: ' . $emailProblems . ', пол: ' . $genderProblems;
 
     return $outism;
 }

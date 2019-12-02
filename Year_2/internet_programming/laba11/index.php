@@ -11,9 +11,8 @@
         <form action="main.php" method="post">
             <input type="submit" name="run" value="Let's do dis sh!t">
         </form>
+        <a href="getThings.php"> Получить по области </a>
     </div>
-
-    <a href="getThings.php"> Получить по области </a>
 
     <?php
 
