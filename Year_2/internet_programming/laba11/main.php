@@ -173,15 +173,29 @@ function postProcess($parts){
         $youngestPerson, $leastAge, $oldestPerson, $biggestAge, $bornIn0101, $bornIn0701, $bornIn1402, $bornIn2302,
         $bornIn0803, $bornIn0105, $bornIn3112, $postProviders, $postUsers;
     $gender = $parts[4];
+    $flag = true;
     $bdayParts = explode('.', $parts[9]);
-    //if is the oldest person
+    //if is the youngest person
     if((int)mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]) > (int)$biggestAge){
         $youngestPerson = 'Имя: '. $parts[1] . ' ' . $parts[2] . ' ' . $parts[3] . '; Телефон:' . $parts[8] . '; адрес: ' . $parts[5] . ' ' . $parts[6] . ' ' . $parts[14];
         $biggestAge = mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]);
+        $flag = false;
     }
-    //if is the youngest person
+    if((int)mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]) == (int)$biggestAge && $flag) {
+        $youngestPerson .= ', Имя: ' . $parts[1] . ' ' . $parts[2] . ' ' . $parts[3] . '; Телефон:' . $parts[8] . '; адрес: ' . $parts[5] . ' ' . $parts[6] . ' ' . $parts[14];
+        $biggestAge = mktime(0, 0, 0, $bdayParts[1], $bdayParts[0], $bdayParts[2]);
+    }
+    $flag = true;
+
+    //if is the oldest person
     if((int)mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]) < (int)$leastAge){
         $oldestPerson = 'Имя: '. $parts[1] . ' ' . $parts[2] . ' ' . $parts[3] . '; Телефон:' . $parts[8] . '; адрес: ' . $parts[5] . ' ' . $parts[6] . ' ' . $parts[14];
+        $leastAge = mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]);
+        $flag = false;
+    }
+
+    if((int)mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]) == (int)$leastAge && $flag){
+        $oldestPerson .= 'Имя: '. $parts[1] . ' ' . $parts[2] . ' ' . $parts[3] . '; Телефон:' . $parts[8] . '; адрес: ' . $parts[5] . ' ' . $parts[6] . ' ' . $parts[14];
         $leastAge = mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]);
     }
 
