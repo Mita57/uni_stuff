@@ -48,11 +48,11 @@
                 }
             }
             sort($names);
-            for($i = 0; $i < sizeof($names); $i++){
-                $gender = substr($names[$i], -1);
-                $names[$i] = substr($names[$i],0,-1);
+            for($i = 0; $i < sizeof($names) - 1; $i++){
+                $gender = substr((string)$names[$i], -1);
+                $names[$i] = substr((string)$names[$i],0,-1);
                 if($gender == '0'){
-                    echo ("<span class='tyan'>" . $names[$i] . '</span>');
+                    echo ("<span class='tyan'>" . $names[$i] . '</span><br>');
                 }
                 else{
                     echo ("<span class='kun'>" . $names[$i] . '</span><br>');

@@ -72,22 +72,28 @@ $phoneProblems = 0;
 
 function verifyPhoneNumber($number){
     global $phoneProblems;
+    $bad_number = false;
     $chars = str_split($number);
     for($i = 0; $i < sizeof($chars); $i++){
-        if(!(ctype_digit($chars[$i])) || $chars[$i] == '-'){
+        if(!(ctype_digit($chars[$i])) && $chars[$i] !== '-'){
             unset($chars[$i]);
-            $phoneProblems++;
+            $chars = array_values($chars);
+            $bad_number = true;
         }
     }
 
-    if(sizeof($chars) == 8){
-        return $chars[0].'-'.$chars[1].$chars[2].$chars[3].'-'.$chars[4].$chars[5].$chars[6].$chars[7];
+    if($bad_number){
+        $phoneProblems++;
     }
-    if(sizeof($chars) == 9){
-        return $chars[0].$chars[1].'-'.$chars[2].$chars[3].$chars[4].'-'.$chars[5].$chars[6].$chars[7].$chars[8];
-    }
+
     if(sizeof($chars) == 10){
-        return $chars[0].$chars[1].$chars[2].'-'.$chars[3].$chars[4].$chars[5].'-'.$chars[6].$chars[7].$chars[8].$chars[9];
+        return $chars[0].'-'.$chars[1].$chars[2].$chars[3].'-'.$chars[5].$chars[6].$chars[7].$chars[8];
+    }
+    if(sizeof($chars) == 11){
+        return $chars[0].$chars[1].'-'.$chars[3].$chars[4].$chars[5].'-'.$chars[6].$chars[7].$chars[8].$chars[9];
+    }
+    if(sizeof($chars) == 12){
+        return $chars[0].$chars[1].$chars[2].'-'.$chars[4].$chars[5].$chars[6].'-'.$chars[8].$chars[9].$chars[10].$chars[11];
     }
     return "";
 }
@@ -167,15 +173,29 @@ function postProcess($parts){
         $youngestPerson, $leastAge, $oldestPerson, $biggestAge, $bornIn0101, $bornIn0701, $bornIn1402, $bornIn2302,
         $bornIn0803, $bornIn0105, $bornIn3112, $postProviders, $postUsers;
     $gender = $parts[4];
+    $flag = true;
     $bdayParts = explode('.', $parts[9]);
-    //if is the oldest person
-    if((int)mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]) > (int)$biggestAge){
-        $oldestPerson = 'Имя: '. $parts[1] . ' ' . $parts[2] . ' ' . $parts[3] . '; Телефон:' . $parts[8] . '; адрес: ' . $parts[5] . ' ' . $parts[6] . ' ' . $parts[14];
-        $biggestAge = mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]);
-    }
     //if is the youngest person
-    if((int)mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]) < (int)$leastAge){
+    if((int)mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]) > (int)$biggestAge){
         $youngestPerson = 'Имя: '. $parts[1] . ' ' . $parts[2] . ' ' . $parts[3] . '; Телефон:' . $parts[8] . '; адрес: ' . $parts[5] . ' ' . $parts[6] . ' ' . $parts[14];
+        $biggestAge = mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]);
+        $flag = false;
+    }
+    if((int)mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]) == (int)$biggestAge && $flag) {
+        $youngestPerson .= ', Имя: ' . $parts[1] . ' ' . $parts[2] . ' ' . $parts[3] . '; Телефон:' . $parts[8] . '; адрес: ' . $parts[5] . ' ' . $parts[6] . ' ' . $parts[14];
+        $biggestAge = mktime(0, 0, 0, $bdayParts[1], $bdayParts[0], $bdayParts[2]);
+    }
+    $flag = true;
+
+    //if is the oldest person
+    if((int)mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]) < (int)$leastAge){
+        $oldestPerson = 'Имя: '. $parts[1] . ' ' . $parts[2] . ' ' . $parts[3] . '; Телефон:' . $parts[8] . '; адрес: ' . $parts[5] . ' ' . $parts[6] . ' ' . $parts[14];
+        $leastAge = mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]);
+        $flag = false;
+    }
+
+    if((int)mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]) == (int)$leastAge && $flag){
+        $oldestPerson .= 'Имя: '. $parts[1] . ' ' . $parts[2] . ' ' . $parts[3] . '; Телефон:' . $parts[8] . '; адрес: ' . $parts[5] . ' ' . $parts[6] . ' ' . $parts[14];
         $leastAge = mktime(0,0,0, $bdayParts[1],$bdayParts[0],$bdayParts[2]);
     }
 
