@@ -80,11 +80,13 @@ namespace task1
                 }
             }
             chart2.Series.Clear();
-
+            Series meme = new Series();
+            meme.ChartType = SeriesChartType.Column;
+            meme.Name = "Попадания";
+            chart2.Series.Add(meme);
             for (int i = 0; i < 10; i++)
             {
-                Series meme = chart2.Series.Add(series[i].ToString());
-                meme.Points.Add(freq[i]);
+                chart2.Series["Попадания"].Points.AddXY((double)i/10, freq[i]);
             }
 
 
