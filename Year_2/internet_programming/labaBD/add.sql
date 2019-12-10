@@ -1,1 +1,1 @@
-INSERT INTO staff VALUES ()
+INSERT INTO staff VALUES ('Linus Torvalds', 'Our god and savior', '300', '1969-12-28', 5, 20)

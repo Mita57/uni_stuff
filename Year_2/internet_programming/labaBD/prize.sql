@@ -1,1 +1,1 @@
-SELECT sum(basic_salary)*prize_ratio FROM staff WHERE position = 'Fucking slave'
+SELECT sum(staff.salary * staff.prize_ratio) FROM staff WHERE position = 'Fucking slave' 

@@ -1,1 +1,1 @@
-DELETE FROM staff WHERE
+DELETE FROM staff WHERE full_name = 'Linus Torvalds'

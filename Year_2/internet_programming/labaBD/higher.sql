@@ -1,3 +1,1 @@
-SELECT count(
-    SELECT * FROM staff WHERE salary > (avg(basic_salary)) AND begin_date = '2019.12.10'
-           ) FROM staff
+SELECT count(full_name) FROM staff GROUP BY full_name, salary HAVING (salary > avg(salary)) and exp = 0
