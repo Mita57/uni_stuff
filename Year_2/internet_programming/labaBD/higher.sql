@@ -1,1 +1,1 @@
-SELECT count(full_name) FROM staff GROUP BY full_name, salary HAVING (salary > avg(salary)) and exp = 0
+SELECT (full_name) FROM staff WHERE exp = 0 AND (salary > (SELECT AVG(salary) from staff))
