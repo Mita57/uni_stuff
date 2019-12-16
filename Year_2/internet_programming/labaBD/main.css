@@ -1,0 +1,31 @@
+body{
+    text-align: center;
+    background-image: url("bg.jpg");
+    font-family: "Comic Sans MS";
+}
+
+.outism{
+    width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background-color: deepskyblue;
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+td, th{
+    padding: 10px;
+    border: 1px solid red;
+    border-collapse: collapse;
+}
+.add, .remove, .query{
+    background-color: yellow;
+    margin: auto;
+    width: 1000px;
+    padding: 20px;
+}
+#queryInput{
+    display: none;
+}
