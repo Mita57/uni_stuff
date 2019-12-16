@@ -17,12 +17,12 @@ namespace SDI
         private void OpenDetkaButton_Click(object sender, EventArgs e)
         {
             Detka detka = new Detka();
-            detka.Name = "Detka " + amountOfDetkas;
+            detka.Text = "Detka " + amountOfDetkas;
             amountOfDetkas++;
             detka.Show();
             comboBox1.Items.Add(detka.Name);
             detkas.Add(detka);
-            textBox1.Text = detka.Name;
+            textBox1.Text = "Detka " + amountOfDetkas;
             heightUD.Value = detka.Height;
             widthUD.Value = detka.Width;
             detkaVisibilityCB.Checked = true;
@@ -53,7 +53,7 @@ namespace SDI
         {
             if (allRb.Checked)
             {
-                foreach(Detka ded in detkas)
+                foreach (Detka ded in detkas)
                 {
                     ded.Visible = detkaVisibilityCB.Checked;
                 }
@@ -62,22 +62,6 @@ namespace SDI
             {
                 int num = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
                 detkas[num].Visible = detkaVisibilityCB.Checked;
-            }
-        }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (allRb.Checked)
-            {
-                foreach (Detka ded in detkas)
-                {
-                    ded.Text = textBox1.Text;
-                }
-            }
-            else
-            {
-                int num = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
-                detkas[num].Text = textBox1.Text;
             }
         }
 
@@ -117,11 +101,11 @@ namespace SDI
         {
             if (allRb.Checked)
             {
-                foreach (Detka ded in detkas)
+                for(int i = 0; i < detkas.Count; i++)
                 {
-                    ded.Close();
-                    detkas.Remove(ded);
+                    detkas[i].Close();
                 }
+                detkas.Clear();
             }
             else
             {
@@ -195,6 +179,22 @@ namespace SDI
             foreach (Detka ded in detkas)
             {
                 ded.Mamka_resize(this.Width, this.Height);
+            }
+        }
+
+        private void HdrButton_Click(object sender, EventArgs e)
+        {
+            if (allRb.Checked)
+            {
+                foreach (Detka ded in detkas)
+                {
+                    ded.Text = textBox1.Text;
+                }
+            }
+            else
+            {
+                int num = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
+                detkas[num].Text = textBox1.Text;
             }
         }
     }

@@ -58,6 +58,7 @@
             this.abootVisibilityCB = new System.Windows.Forms.CheckBox();
             this.aboutOpenButton = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.hdrButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.widthUD)).BeginInit();
@@ -69,6 +70,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.hdrButton);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.killDetkaButton);
             this.groupBox1.Controls.Add(this.button1);
@@ -167,6 +169,11 @@
             // widthUD
             // 
             this.widthUD.Location = new System.Drawing.Point(213, 189);
+            this.widthUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.widthUD.Name = "widthUD";
             this.widthUD.Size = new System.Drawing.Size(74, 20);
             this.widthUD.TabIndex = 9;
@@ -184,6 +191,11 @@
             // heightUD
             // 
             this.heightUD.Location = new System.Drawing.Point(52, 189);
+            this.heightUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.heightUD.Name = "heightUD";
             this.heightUD.Size = new System.Drawing.Size(74, 20);
             this.heightUD.TabIndex = 7;
@@ -211,9 +223,8 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(54, 143);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(232, 20);
+            this.textBox1.Size = new System.Drawing.Size(136, 20);
             this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // label1
             // 
@@ -366,6 +377,16 @@
             this.aboutOpenButton.UseVisualStyleBackColor = true;
             this.aboutOpenButton.Click += new System.EventHandler(this.AboutOpenButton_Click);
             // 
+            // hdrButton
+            // 
+            this.hdrButton.Location = new System.Drawing.Point(211, 141);
+            this.hdrButton.Name = "hdrButton";
+            this.hdrButton.Size = new System.Drawing.Size(75, 23);
+            this.hdrButton.TabIndex = 14;
+            this.hdrButton.Text = "Change";
+            this.hdrButton.UseVisualStyleBackColor = true;
+            this.hdrButton.Click += new System.EventHandler(this.HdrButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,6 +445,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.RadioButton allRb;
         private System.Windows.Forms.RadioButton oneRB;
+        private System.Windows.Forms.Button hdrButton;
     }
 }
 
