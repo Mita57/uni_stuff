@@ -1,5 +1,5 @@
 function shtuka() {
-    let value:String = (<HTMLSelectElement>document.getElementById('querySelect')).value;
+    let value: String = (<HTMLSelectElement>document.getElementById('querySelect')).value;
     switch (value) {
         case 'avg_and_xp': {
             document.getElementById('queryInput').style.display = 'none';
@@ -18,8 +18,8 @@ function shtuka() {
     }
 }
 
-function request(){
-    let value:string = (<HTMLSelectElement>document.getElementById('querySelect')).value;
+function request() {
+    let value: string = (<HTMLSelectElement>document.getElementById('querySelect')).value;
     switch (value) {
         case 'avg_and_xp': {
             averageNoExp();
@@ -35,26 +35,52 @@ function request(){
         }
     }
 }
+
 function averageNoExp() {
     let xmlHTTP: XMLHttpRequest = new XMLHttpRequest();
     xmlHTTP.open('get', 'query.php?q=' + 'noExp');
     xmlHTTP.send();
-    (document.getElementById('outism') as HTMLInputElement).innerText = xmlHTTP.responseText;
-    console.log(xmlHTTP.responseText);
+    xmlHTTP.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let outism: string = '';
+            let meme = (JSON.parse(xmlHTTP.responseText));
+            for(let i = 0; i < meme.length; i++){
+                outism += meme[i].fullname + ' ';
+            }
+            (document.getElementById('outism') as HTMLInputElement).innerText = outism;
+        }
+    }
 }
 
-function prizeSum(pos:String) {
+function prizeSum(pos: String) {
     let xmlHTTP: XMLHttpRequest = new XMLHttpRequest();
-    xmlHTTP.open('get', 'query.php?q=' + 'prize' + '?st=' + pos);
+    xmlHTTP.open('get', 'query.php?q=' + 'prize' + '&st=' + pos);
     xmlHTTP.send();
-    (document.getElementById('outism') as HTMLInputElement).innerText = xmlHTTP.responseText;
-    console.log(xmlHTTP.responseText);
+    xmlHTTP.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let outism: string = '';
+            console.log(xmlHTTP.responseText);
+            let meme = (JSON.parse(xmlHTTP.responseText));
+            for(let i = 0; i < meme.length; i++){
+                outism += meme[i].sum + ' ';
+            }
+            (document.getElementById('outism') as HTMLInputElement).innerText = outism;
+        }
+    }
 }
 
-function MROT(span:String) {
+function MROT(span: String) {
     let xmlHTTP: XMLHttpRequest = new XMLHttpRequest();
-    xmlHTTP.open('get', 'query.php?q=' + 'MROT' + '?span=' + span);
+    xmlHTTP.open('get', 'query.php?q=' + 'MROT' + '&span=' + span);
     xmlHTTP.send();
-    (document.getElementById('outism') as HTMLInputElement).innerText = xmlHTTP.responseText;
-    console.log(xmlHTTP.responseText);
+    xmlHTTP.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let outism: string = '';
+            let meme = (JSON.parse(xmlHTTP.responseText));
+            for(let i = 0; i < meme.length; i++){
+                outism += meme[i].fullname + ' ';
+            }
+            (document.getElementById('outism') as HTMLInputElement).innerText = outism;
+        }
+    }
 }

@@ -12,7 +12,7 @@
                 <th>Full name</th>
                 <th>Position</th>
                 <th>Basic salary</th>
-                <th>Begin date</th>
+                <th>Experience</th>
                 <th>Prize ratio</th>
                 <th>Min salary</th>
             </tr>
@@ -20,7 +20,7 @@
             $dbconn = pg_connect('host=localhost dbname=staff user=postgres password=MOORMOOR port=5432');
             $query = pg_query($dbconn, 'SELECT * FROM staff');
             $result = pg_fetch_all($query);
-            $cols = ['fullname', 'position', 'basic_salary', 'begin_date', 'prize_ratio', 'min_salary'];
+            $cols = ['fullname', 'position', 'basic_salary', 'exp', 'prize_ratio', 'min_salary'];
             for ($i = 0; $i < sizeof($result); $i++) {
                 echo("<tr>");
                 for ($j = 0; $j < sizeof($result[$i]); $j++) {
@@ -46,7 +46,7 @@
             <input type="text" name="full_name" placeholder="Name">
             <input type="text" name="pos" placeholder="Position">
             <input type="text" name="basic_salary" placeholder="Basic salary"> <br>
-            <input type="text" name="begin_date" placeholder="Begin date">
+            <input type="text" name="begin_date" placeholder="Experience">
             <input type="text" name="prize_ratio" placeholder="Prize ratio">
         </div>
         <input type="submit" value="Add row" style="margin-top: 6px">
@@ -59,7 +59,7 @@
         </select>
         <input type="text" id="queryInput">
         <input type="button" value="Send bass" onclick = 'request()'>
-        <div id="outism"> </div>
+        <div id="outism"></div>
     </div>
 </body>
 </html>
