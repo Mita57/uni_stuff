@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SDI
@@ -15,6 +8,29 @@ namespace SDI
         public Detka()
         {
             InitializeComponent();
+            Detka_Resize(null, null);
+            Form1 mamka = null;
+            Aboot aboot = null;
+            foreach (Form X in Application.OpenForms)
+            {
+                if (X is Form1)
+                {
+                    mamka = (Form1)X;
+                }
+                if(X is Aboot)
+                {
+                    aboot = (Aboot)X;
+                }
+            }
+            Mamka_resize(mamka.Width, mamka.Height);
+            try
+            {
+                about_resize(aboot.Width, aboot.Height);
+            }
+            catch
+            {
+
+            }
         }
 
         private void Detka_Resize(object sender, EventArgs e)
