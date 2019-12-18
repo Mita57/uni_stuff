@@ -199,6 +199,8 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Detka";
             this.Text = "detka";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Detka_FormClosing);
+            this.LocationChanged += new System.EventHandler(this.Detka_LocationChanged);
             this.Resize += new System.EventHandler(this.Detka_Resize);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

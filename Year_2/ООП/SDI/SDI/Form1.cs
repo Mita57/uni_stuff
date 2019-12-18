@@ -20,9 +20,10 @@ namespace SDI
             detka.Text = "Detka " + amountOfDetkas;
             amountOfDetkas++;
             detka.Show();
-            comboBox1.Items.Add(detka.Name);
+            comboBox1.Items.Add(detka.Text);
             detkas.Add(detka);
             textBox1.Text = "Detka " + amountOfDetkas;
+            label3.Text = "Позишн " + detka.Left + "; " +  detka.Top;
             heightUD.Value = detka.Height;
             widthUD.Value = detka.Width;
             detkaVisibilityCB.Checked = true;
@@ -60,8 +61,12 @@ namespace SDI
             }
             else
             {
-                int num = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
-                detkas[num].Visible = detkaVisibilityCB.Checked;
+                try
+                {
+                    int num = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
+                    detkas[num].Visible = detkaVisibilityCB.Checked;
+                }
+                catch { }
             }
         }
 
@@ -76,8 +81,12 @@ namespace SDI
             }
             else
             {
-                int num = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
-                detkas[num].Height = Convert.ToInt32(heightUD.Value);
+                try
+                {
+                    int num = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
+                    detkas[num].Height = Convert.ToInt32(heightUD.Value);
+                }
+                catch { }
             }
         }
 
@@ -92,8 +101,12 @@ namespace SDI
             }
             else
             {
-                int num = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
-                detkas[num].Width = Convert.ToInt32(widthUD.Value);
+                try
+                {
+                    int num = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
+                    detkas[num].Width = Convert.ToInt32(widthUD.Value);
+                }
+                catch { }
             }
         }
 
@@ -106,12 +119,17 @@ namespace SDI
                     detkas[i].Close();
                 }
                 detkas.Clear();
+                comboBox1.Items.Clear();
+                amountOfDetkas = 0;
             }
             else
             {
                 int num = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
                 detkas[num].Close();
+                comboBox1.Items.Remove(comboBox1.SelectedItem);
+                comboBox1.SelectedIndex = -1;
                 detkas.Remove(detkas[num]);
+                amountOfDetkas--;
             }
         }
 
@@ -138,6 +156,7 @@ namespace SDI
             textBox1.Text = detkas[num].Name;
             heightUD.Value = detkas[num].Height;
             widthUD.Value = detkas[num].Width;
+            label3.Text = "Позишн " + detkas[num].Left + "; "+ detkas[num].Top;
             switch (detkas[num].WindowState)
             {
                 case FormWindowState.Normal:
@@ -167,6 +186,14 @@ namespace SDI
         private void AllRb_CheckedChanged(object sender, EventArgs e)
         {
             comboBox1.Enabled = false;
+            try
+            {
+                label3.Text = "Позишн " + detkas[0].Left + "; " + detkas[0].Top;
+            }
+            catch
+            {
+
+            }
         }
 
         private void OneRB_CheckedChanged(object sender, EventArgs e)
@@ -196,6 +223,48 @@ namespace SDI
                 int num = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
                 detkas[num].Text = textBox1.Text;
             }
+        }
+
+        public void detkaResize(int left, int top, string cock)
+        {
+            if (allRb.Checked)
+            {
+                int num = Convert.ToInt32(cock.Split(' ')[1]);
+                if(num == 0)
+                {
+                    label3.Text = "Позишн: " + left + ", " + top;
+                }
+            }
+            else
+            {
+                try
+                {
+                    int numba = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
+                    int num = Convert.ToInt32(cock.Split(' ')[1]);
+                    if (num == numba)
+                    {
+                        label3.Text = "Позишн: " + left + ", " + top;
+                    }
+                }
+                catch { }
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to close" + this.Text + "?", "Fucking Slave", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        public void removeCB(int index)
+        {
+            comboBox1.Items.RemoveAt(index);
         }
     }
 }
