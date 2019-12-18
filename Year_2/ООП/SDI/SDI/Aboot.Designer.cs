@@ -61,6 +61,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Aboot";
             this.Text = "Aboot";
+            this.Load += new System.EventHandler(this.Aboot_Load);
             this.Resize += new System.EventHandler(this.Aboot_Resize);
             this.ResumeLayout(false);
 

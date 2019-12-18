@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.hdrButton = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.allRb = new System.Windows.Forms.RadioButton();
@@ -58,7 +60,6 @@
             this.abootVisibilityCB = new System.Windows.Forms.CheckBox();
             this.aboutOpenButton = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.hdrButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.widthUD)).BeginInit();
@@ -70,6 +71,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.hdrButton);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.killDetkaButton);
@@ -87,10 +89,29 @@
             this.groupBox1.Controls.Add(this.openDetkaButton);
             this.groupBox1.Location = new System.Drawing.Point(7, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(309, 335);
+            this.groupBox1.Size = new System.Drawing.Size(309, 364);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Детка";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 332);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Позишн:";
+            // 
+            // hdrButton
+            // 
+            this.hdrButton.Location = new System.Drawing.Point(211, 141);
+            this.hdrButton.Name = "hdrButton";
+            this.hdrButton.Size = new System.Drawing.Size(75, 23);
+            this.hdrButton.TabIndex = 14;
+            this.hdrButton.Text = "Change";
+            this.hdrButton.UseVisualStyleBackColor = true;
+            this.hdrButton.Click += new System.EventHandler(this.HdrButton_Click);
             // 
             // groupBox5
             // 
@@ -307,7 +328,7 @@
             this.groupBox2.Controls.Add(this.aboutOpenButton);
             this.groupBox2.Location = new System.Drawing.Point(322, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(309, 335);
+            this.groupBox2.Size = new System.Drawing.Size(309, 364);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "About";
@@ -377,26 +398,17 @@
             this.aboutOpenButton.UseVisualStyleBackColor = true;
             this.aboutOpenButton.Click += new System.EventHandler(this.AboutOpenButton_Click);
             // 
-            // hdrButton
-            // 
-            this.hdrButton.Location = new System.Drawing.Point(211, 141);
-            this.hdrButton.Name = "hdrButton";
-            this.hdrButton.Size = new System.Drawing.Size(75, 23);
-            this.hdrButton.TabIndex = 14;
-            this.hdrButton.Text = "Change";
-            this.hdrButton.UseVisualStyleBackColor = true;
-            this.hdrButton.Click += new System.EventHandler(this.HdrButton_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 351);
+            this.ClientSize = new System.Drawing.Size(638, 376);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Laba hz kakaya";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Resize += new System.EventHandler(this.DetkaVisibilityCB_Resize);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -446,6 +458,7 @@
         private System.Windows.Forms.RadioButton allRb;
         private System.Windows.Forms.RadioButton oneRB;
         private System.Windows.Forms.Button hdrButton;
+        private System.Windows.Forms.Label label3;
     }
 }
 
