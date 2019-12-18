@@ -21,7 +21,7 @@ public class AVL<E extends Number> {
     }
 
     private int balance(AVLNode<E> node) {
-        if(node == null){
+        if (node == null) {
             return 0;
         }
         return (height(node.left) - height(node.right));
@@ -53,33 +53,31 @@ public class AVL<E extends Number> {
     }
 
     public AVLNode<E> insert(AVLNode<E> node, E value) {
-        if(node == null) {
+        if (node == null) {
             return (new AVLNode<E>(value));
         }
-        if((double)value < (double)node.value) {
+        if (value.doubleValue() < node.value.doubleValue()) {
             node.left = insert(node.left, value);
-        }
-        else{
-            if((double)value > (double)node.value) {
+        } else {
+            if (value.doubleValue() > node.value.doubleValue()) {
                 node.right = insert(node.right, value);
-            }
-            else {
+            } else {
                 return node;
             }
         }
         node.height = 1 + Math.max(height(node.left), height(node.right));
         int balance = balance(node);
-        if (balance > 1 && (double)value < (double)node.left.value) {
+        if (balance > 1 && value.doubleValue() < node.left.value.doubleValue()) {
             return rightRotate(node);
         }
-        if (balance < -1 && (double)value > (double)node.right.value) {
+        if (balance < -1 && value.doubleValue() > node.right.value.doubleValue()) {
             return leftRotate(node);
         }
-        if (balance > 1 && (double)value > (double)node.left.value) {
+        if (balance > 1 && value.doubleValue() > node.left.value.doubleValue()) {
             node.left = leftRotate(node.left);
             return rightRotate(node);
         }
-        if (balance < -1 && (double)value < (double)node.right.value) {
+        if (balance < -1 && value.doubleValue() < node.right.value.doubleValue()) {
             node.right = rightRotate(node.right);
             return leftRotate(node);
         }
@@ -87,14 +85,12 @@ public class AVL<E extends Number> {
     }
 
     public AVLNode<E> findElement(AVLNode<E> node, E value) {
-        if((double)value < (double)node.value) {
+        if (value.doubleValue() < node.value.doubleValue()) {
             findElement(node.left, value);
-        }
-        else{
-            if((double)value > (double)node.value) {
+        } else {
+            if (value.doubleValue() > node.value.doubleValue()) {
                 findElement(node.right, value);
-            }
-            else {
+            } else {
                 return node;
             }
         }
@@ -115,7 +111,7 @@ public class AVL<E extends Number> {
 
     private void preOrder(AVLNode<E> node) {
         if (node != null) {
-            elementsSum += (double)node.value;
+            elementsSum += node.value.doubleValue();
             elementsAmount++;
             elements.add(node.value);
             preOrder(node.left);
@@ -126,8 +122,8 @@ public class AVL<E extends Number> {
     public double standartDeviation() {
         double avg = elementsSum / elementsAmount;
         double sum = 0;
-        for(E X: elements) {
-            sum += ((double)X - avg) * ((double)X - avg);
+        for (E X : elements) {
+            sum += (X.doubleValue() - avg) * (X.doubleValue() - avg);
         }
         return Math.sqrt(sum / elementsAmount);
     }
@@ -140,25 +136,21 @@ public class AVL<E extends Number> {
         while (!s1.isEmpty()) {
             AVLNode<E> temp = s1.pop();
             s2.push(temp);
-            if(temp.left!=null){
+            if (temp.left != null) {
                 s1.push(temp.left);
             }
-            if(temp.right!=null){
+            if (temp.right != null) {
                 s1.push(temp.right);
             }
         }
         System.out.println("Postorder Traversal: ");
-        while(!s2.isEmpty()){
+        while (!s2.isEmpty()) {
             System.out.print(s2.pop());
         }
     }
 
 
-
-
-
-
-    class AVLNode<E extends Number> {
+    static class AVLNode<E extends Number> {
         private AVLNode<E> left;
         private AVLNode<E> right;
         private int height;
@@ -167,7 +159,8 @@ public class AVL<E extends Number> {
         public AVLNode<E> getLeft() {
             return this.left;
         }
-        public int getHeight(){
+
+        public int getHeight() {
             return this.height;
         }
 
@@ -180,11 +173,9 @@ public class AVL<E extends Number> {
             this.value = value;
         }
 
-
-        public AVLNode(E value){
+        public AVLNode(E value) {
             this.value = value;
             this.height = 1;
-
         }
 
     }
