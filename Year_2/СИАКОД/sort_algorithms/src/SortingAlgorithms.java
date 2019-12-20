@@ -32,8 +32,8 @@ public class SortingAlgorithms<E extends Number> {
     public void mergeSort(E[] array, int l, int r) {
         if (l < r) {
             int m = (l + r) / 2;
-            Arrays.sort(array, l, m);
-            Arrays.sort(array,m + 1, r);
+            mergeSort(array, l, m);
+            mergeSort(array,m + 1, r);
             merge(array, l, m, r);
         }
     }
