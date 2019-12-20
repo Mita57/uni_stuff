@@ -1,11 +1,10 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class SortingAlgorithms<E extends Number, priavte> {
+public class SortingAlgorithms<E extends Number> {
     public void quickSort(E[] array, int low, int high) {
         if (low < high) {
-
             int parted = partition(array, low, high);
-
             quickSort(array, low, parted - 1);
             quickSort(array, parted + 1, high);
         }
@@ -15,7 +14,7 @@ public class SortingAlgorithms<E extends Number, priavte> {
         E pivot = arr[high];
         int i = (low - 1);
         for (int j = low; j < high; j++) {
-            if ((double) arr[j] < (double) pivot) {
+            if (arr[j].doubleValue() < pivot.doubleValue()) {
                 i++;
                 E temp = arr[i];
                 arr[i] = arr[j];
@@ -30,12 +29,12 @@ public class SortingAlgorithms<E extends Number, priavte> {
     }
 
 
-    public void mergeSort(E[] array, int i, int l, int r) {
+    public void mergeSort(E[] array, int l, int r) {
         if (l < r) {
             int m = (l + r) / 2;
-            mergeSort(array, l, l, m);
-            mergeSort(array, l, m + 1, r);
-            mergeSort(array, l, m, r);
+            Arrays.sort(array, l, m);
+            Arrays.sort(array,m + 1, r);
+            merge(array, l, m, r);
         }
     }
 
@@ -79,6 +78,39 @@ public class SortingAlgorithms<E extends Number, priavte> {
     }
 
 
+    void cocktailSort(int a[]) {
+        boolean swapped = true;
+        int start = 0;
+        int end = a.length;
+        while (swapped) {
+            swapped = false;
+            for (int i = start; i < end - 1; ++i) {
+                if (a[i] > a[i + 1]) {
+                    int temp = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            }
+            swapped = false;
+            end = end - 1;
+            for (int i = end - 1; i >= start; i--) {
+                if (a[i] > a[i + 1]) {
+                    int temp = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+            start++;
+        }
+    }
+
+
+
     public void bogoSortLul(E[] array) {
         while (!isSorted(array)) {
             shuffle(array);
@@ -106,4 +138,5 @@ public class SortingAlgorithms<E extends Number, priavte> {
         array[i] = array[j];
         array[j] = temp;
     }
+
 }
