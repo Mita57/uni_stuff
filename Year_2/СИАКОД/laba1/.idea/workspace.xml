@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fe91d809-afcc-4833-8fc7-051f9a0b954b" name="Default Changelist" comment="ggnffgn" />
+    <list default="true" id="fe91d809-afcc-4833-8fc7-051f9a0b954b" name="Default Changelist" comment="ggnffgn">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/max/META-INF/max.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/max/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/max/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/max/sas.class" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +36,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -44,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.sas">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="max" />
@@ -68,8 +74,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.sas" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.sas" />
         <item itemvalue="Application.avgOfPositives" />
       </list>
     </recent_temporary>
@@ -107,6 +113,7 @@
       <workItem from="1570771178196" duration="57000" />
       <workItem from="1571685970505" duration="3000" />
       <workItem from="1571850300751" duration="116000" />
+      <workItem from="1576944012674" duration="169000" />
     </task>
     <task id="LOCAL-00001" summary="ggnffgn">
       <created>1568491028150</created>
