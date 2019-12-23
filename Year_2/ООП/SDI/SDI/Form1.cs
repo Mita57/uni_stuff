@@ -22,7 +22,7 @@ namespace SDI
             detka.Show();
             comboBox1.Items.Add(detka.Text);
             detkas.Add(detka);
-            textBox1.Text = "Detka " + amountOfDetkas;
+            textBox1.Text = "Detka " + (amountOfDetkas - 1);
             label3.Text = "Позишн " + detka.Left + "; " +  detka.Top;
             heightUD.Value = detka.Height;
             widthUD.Value = detka.Width;
@@ -124,12 +124,19 @@ namespace SDI
             }
             else
             {
-                int num = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
-                detkas[num].Close();
-                comboBox1.Items.Remove(comboBox1.SelectedItem);
-                comboBox1.SelectedIndex = -1;
-                detkas.Remove(detkas[num]);
-                amountOfDetkas--;
+                try
+                {
+                    int num = Convert.ToInt32(comboBox1.Text.Split(' ')[1]);
+                    detkas[num].Close();
+                    comboBox1.Items.Remove(comboBox1.SelectedItem);
+                    comboBox1.SelectedIndex = -1;
+                    detkas.Remove(detkas[num]);
+                    amountOfDetkas--;
+                }
+                catch
+                {
+
+                }
             }
         }
 
@@ -252,7 +259,7 @@ namespace SDI
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Do you want to close" + this.Text + "?", "Fucking Slave", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Do you want to close " + this.Text + "?", "Fucking Slave", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
             }
@@ -264,7 +271,14 @@ namespace SDI
 
         public void removeCB(int index)
         {
-            comboBox1.Items.RemoveAt(index);
+            try
+            {
+                comboBox1.Items.RemoveAt(index);
+            }
+            catch
+            {
+                comboBox1.Items.Clear();
+            }
         }
     }
 }
