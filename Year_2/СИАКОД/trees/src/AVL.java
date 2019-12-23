@@ -84,12 +84,12 @@ public class AVL<E extends Number> {
         return node;
     }
 
-    public AVLNode<E> findElement(AVLNode<E> node, E value) {
+    public AVLNode<E> search(AVLNode<E> node, E value) {
         if (value.doubleValue() < node.value.doubleValue()) {
-            findElement(node.left, value);
+            search(node.left, value);
         } else {
             if (value.doubleValue() > node.value.doubleValue()) {
-                findElement(node.right, value);
+                search(node.right, value);
             } else {
                 return node;
             }

@@ -119,6 +119,14 @@ public class RedBlackTree<E extends Number> {
         fixViolation(head, node);
     }
 
+    public void printTree(Node<E> node) {
+        if (node != null) {
+            System.out.print(node.value + ", ");
+            printTree(node.left);
+            printTree(node.right);
+        }
+    }
+
     public Node<E> findElement(Node<E> node, E value) {
         if (value.doubleValue() < node.value.doubleValue()) {
             findElement(node.left, value);
@@ -150,5 +158,16 @@ public class RedBlackTree<E extends Number> {
             this.color = Color.RED;
         }
     }
+
+
+    public static void main(String[] args) {
+        Node<Integer> meme = new Node<>(23);
+        meme.left = new Node<Integer>(10);
+        meme.right = new Node<Integer>(33);
+        RedBlackTree<Integer> tree = new RedBlackTree<Integer>(meme);
+        tree.insert(34);
+        tree.printTree(tree.head);
+    }
+
 
 }

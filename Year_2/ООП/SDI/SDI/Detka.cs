@@ -77,7 +77,7 @@ namespace SDI
                     break;
                 }
             }
-            DialogResult dialogResult = MessageBox.Show("Do you want to close" + this.Text + "?", "Fucking Slave", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Do you want to close " + this.Text + "?", "Fucking Slave", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 mamka.removeCB(Convert.ToInt32(this.Text.Split(' ')[1]));
