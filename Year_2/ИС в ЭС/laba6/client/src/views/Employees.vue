@@ -1,7 +1,7 @@
 <template>
     <v-data-table :headers="headers" :items="dealers" sort-by="ID" class="elevation-1">
         <template v-slot:top>
-            <h1 class="ml-3">Поставщики</h1>
+            <h1 class="ml-3">Сотрудники</h1>
             <v-dialog v-model="dialog" max-width="500px">
                 <template v-slot:activator="{ on }">
                     <v-btn color="primary" dark class="mb-2 ml-2" v-on="on" tile>Добавить элемент</v-btn>
@@ -28,8 +28,8 @@
 
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
-                        <v-btn color="blue darken-1" text @click="save">Save</v-btn>
+                        <v-btn color="blue darken-1" text @click="close">Отменить</v-btn>
+                        <v-btn color="blue darken-1" text @click="save">Сохранить</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-dialog>
@@ -50,12 +50,16 @@
         data: () => ({
             dialog: false,
             headers: [
-                {text: 'ID товара', value: 'IDProd'},
-                {text: 'ID чека', value: 'IDBill'},
-                {text: 'Количество', value: 'amount'},
+                {text: 'ID сотрудника', value: 'IDEmp'},
+                {text: 'ФИО', value: 'name'},
+                {text: 'Паспортные данные', value: 'passport'},
+                {text: 'Зарплата', value: 'salary'},
+                {text: 'Должность', value: 'position'},
+                {text: 'СНИЛС', value: 'SNILS'},
+                {text: 'ИНН', value: 'INN'},
                 {text: 'Действия', value: 'action', sortable: false},
             ],
-            billsinfo: [],
+            employees: [],
             editedIndex: -1,
             editedItem: {
                 amount: 0,
@@ -91,14 +95,14 @@
             },
 
             editItem(item) {
-                this.editedIndex = this.billsinfo.indexOf(item);
+                this.editedIndex = this.employees.indexOf(item);
                 this.editedItem = Object.assign({}, item);
                 this.dialog = true;
             },
 
             deleteItem(item) {
-                const index = this.billsinfo.indexOf(item);
-                confirm('Удалить элемент') && this.dealers.splice(index, 1);
+                const index = this.employees.indexOf(item);
+                confirm('Удалить элемент') && this.employees.splice(index, 1);
             },
 
             close() {
@@ -111,9 +115,9 @@
 
             save() {
                 if (this.editedIndex > -1) {
-                    Object.assign(this.billsinfo[this.editedIndex], this.editedItem);
+                    Object.assign(this.employees[this.editedIndex], this.editedItem);
                 } else {
-                    this.billsinfo.push(this.editedItem);
+                    this.employees.push(this.editedItem);
                 }
                 this.close();
             },

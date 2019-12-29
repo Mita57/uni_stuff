@@ -1,7 +1,7 @@
 <template>
     <v-data-table :headers="headers" :items="dealers" sort-by="ID" class="elevation-1">
         <template v-slot:top>
-            <h1 class="ml-3">Поставщики</h1>
+            <h1 class="ml-3">Информация в чеках</h1>
             <v-dialog v-model="dialog" max-width="500px">
                 <template v-slot:activator="{ on }">
                     <v-btn color="primary" dark class="mb-2 ml-2" v-on="on" tile>Добавить элемент</v-btn>
@@ -28,8 +28,8 @@
 
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
-                        <v-btn color="blue darken-1" text @click="save">Save</v-btn>
+                        <v-btn color="blue darken-1" text @click="close">Отменить</v-btn>
+                        <v-btn color="blue darken-1" text @click="save">Сохранить</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-dialog>

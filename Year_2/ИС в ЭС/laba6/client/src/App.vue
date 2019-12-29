@@ -16,17 +16,16 @@
         </v-app-bar>
         <!-- Sidebar -->
         <v-navigation-drawer app id="side">
-            <v-list two-line subheader>
-                <v-list-item v-for="i in 20">
-                    <v-list-item-avatar class="sas" tile>
-                        <v-img src="./assets/moorava.jpg"></v-img>
-                    </v-list-item-avatar>
-                    <v-list-item-content>
-                        <v-list-item-title>MoorPK</v-list-item-title>
-                        <v-list-item-subtitle>Майн форек гетленч</v-list-item-subtitle>
-                        <v-list-item-subtitle>Подкасты</v-list-item-subtitle>
-                    </v-list-item-content>
-                </v-list-item>
+            <v-list>
+                <v-list-item to="/bills">Чеки</v-list-item>
+                <v-list-item to="/billsinfo">Информация в чеках</v-list-item>
+                <v-list-item to="/dealers">Поставщики</v-list-item>
+                <v-list-item to="/employees">Сотрудники</v-list-item>
+                <v-list-item to="/products">Продукция</v-list-item>
+                <v-list-item to="/reports">Отчеты</v-list-item>
+                <v-list-item to="/waybills">Накладные</v-list-item>
+                <v-list-item to="/waybillentries">Записи в накладных</v-list-item>
+
             </v-list>
         </v-navigation-drawer>
         <v-content>
