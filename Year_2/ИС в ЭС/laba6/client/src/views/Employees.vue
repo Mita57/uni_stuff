@@ -1,5 +1,5 @@
 <template>
-    <v-data-table :headers="headers" :items="dealers" sort-by="ID" class="elevation-1">
+    <v-data-table :headers="headers" :items="employees" sort-by="ID" class="elevation-1">
         <template v-slot:top>
             <h1 class="ml-3">Сотрудники</h1>
             <v-dialog v-model="dialog" max-width="500px">
@@ -14,13 +14,22 @@
                         <v-container>
                             <v-row>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.IDProduct" label="ID товара"></v-text-field>
+                                    <v-text-field v-model="editedItem.name" label="ФИО"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.IDBill" label="ID чека"></v-text-field>
+                                    <v-text-field v-model="editedItem.passport" label="Паспортные данные"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.amount" label="Количество"></v-text-field>
+                                    <v-text-field v-model="editedItem.salary" label="Зарплата"></v-text-field>
+                                </v-col>
+                                <v-col cols="12" sm="6" md="4">
+                                    <v-text-field v-model="editedItem.place" label="Должность"></v-text-field>
+                                </v-col>
+                                <v-col cols="12" sm="6" md="4">
+                                    <v-text-field v-model="editedItem.SNILS" label="СНИЛС"></v-text-field>
+                                </v-col>
+                                <v-col cols="12" sm="6" md="4">
+                                    <v-text-field v-model="editedItem.INN" label="ИНН"></v-text-field>
                                 </v-col>
                             </v-row>
                         </v-container>
@@ -50,11 +59,11 @@
         data: () => ({
             dialog: false,
             headers: [
-                {text: 'ID сотрудника', value: 'IDEmp'},
+                {text: 'ID сотрудника', value: 'ID'},
                 {text: 'ФИО', value: 'name'},
                 {text: 'Паспортные данные', value: 'passport'},
                 {text: 'Зарплата', value: 'salary'},
-                {text: 'Должность', value: 'position'},
+                {text: 'Должность', value: 'place'},
                 {text: 'СНИЛС', value: 'SNILS'},
                 {text: 'ИНН', value: 'INN'},
                 {text: 'Действия', value: 'action', sortable: false},
@@ -62,14 +71,20 @@
             employees: [],
             editedIndex: -1,
             editedItem: {
-                amount: 0,
-                IDProduct: 0,
-                IDBill: 0,
+                name: '',
+                passport: '',
+                salary: 0,
+                place: '',
+                SNILS: '',
+                INN: '',
             },
             defaultItem: {
-                amount: 0,
-                IDProduct: 0,
-                IDBill: 0,
+                name: '',
+                passport: '',
+                salary: 0,
+                place: '',
+                SNILS: '',
+                INN: '',
             },
         }),
 
@@ -91,7 +106,17 @@
 
         methods: {
             initialize() {
-
+                this.employees = [
+                    {
+                        ID: 1,
+                        name: 'Van Darkholme',
+                        passport: 23424234234234,
+                        salary: 300,
+                        place: 'Dungeon Master',
+                        SNILS: 2344234234434,
+                        INN: 32423534534
+                    }
+                ]
             },
 
             editItem(item) {

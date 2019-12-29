@@ -11,7 +11,7 @@
             </v-toolbar-items>
             <v-spacer></v-spacer>
             <v-toolbar-items>
-                <v-btn text class=" white--text" to="/login">{{user}}</v-btn>
+                <v-btn text class=" white--text" id="cock" to="/login">{{user}}</v-btn>
             </v-toolbar-items>
         </v-app-bar>
         <!-- Sidebar -->
@@ -25,7 +25,6 @@
                 <v-list-item to="/reports">Отчеты</v-list-item>
                 <v-list-item to="/waybills">Накладные</v-list-item>
                 <v-list-item to="/waybillentries">Записи в накладных</v-list-item>
-
             </v-list>
         </v-navigation-drawer>
         <v-content>
@@ -35,8 +34,6 @@
 </template>
 
 <script>
-    import axios from 'axios';
-    import router from "./router";
     export default {
         name: 'App',
         data() {
@@ -47,60 +44,9 @@
             }
         },
         methods: {
-            loginValidation: function () {
-                //input validation
-                const aw = this;
-                let passwordFlag = false;
-                let emailFlag = false;
-                if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById('email').value)) {
-                    emailFlag = true;
-                    document.getElementById('email').style.backgroundColor = '#424242';
-                } else {
-                    document.getElementById('email').style.backgroundColor = 'darkred';
-                    emailFlag = false;
-                }
-                if (document.getElementById('password').value.length >= 4) {
-                    passwordFlag = true;
-                    document.getElementById('password').style.backgroundColor = '#424242';
-                } else {
-                    document.getElementById('password').style.backgroundColor = 'darkred';
-                    passwordFlag = false;
-                }
-                if (passwordFlag && emailFlag) {
-                    login(document.getElementById('email').value, document.getElementById('password').value);
-                }
-                function login(email, pwrd) {
-                    axios({
-                        headers: {
-                            'Access-Control-Allow-Origin': '*',
-                            'Content-Type': 'application/json',
-                        },
-                        method: 'post',
-                        url: 'http://localhost:5000/login',
-                        data: {
-                            email: email,
-                            password: pwrd
-                        },
-                    }).then(function (response) {
-                        if (response.data.result == 'fail') {
-                            aw.auth_result = 'Неправильное имя пользователя или пароль';
-                        }
-                        else {
-                            localStorage.user = response.data.result;
-                            aw.user = response.data.result;
-                        }
-                    })
-                        .catch(function (response) {
-                            //handle error
-                            console.log(response);
-                        })
-                }
-            },
-            search(){
-                if(document.getElementById('search').value.length > 0) {
-                    router.push('search/' + document.getElementById('search').value);
-                }
-            }
+           changeName(name) {
+               this.user = name;
+           }
         }
     };
 </script>

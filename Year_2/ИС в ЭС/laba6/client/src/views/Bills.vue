@@ -1,5 +1,5 @@
 <template>
-    <v-data-table :headers="headers" :items="dealers" sort-by="ID" class="elevation-1">
+    <v-data-table :headers="headers" :items="bills" sort-by="ID" class="elevation-1">
         <template v-slot:top>
             <h1 class="ml-3">Чеки</h1>
             <v-dialog v-model="dialog" max-width="500px">
@@ -84,7 +84,13 @@
 
         methods: {
             initialize() {
-
+                this.bills = [
+                    {
+                        ID: 1,
+                        IDEmp:2,
+                        price: 300,
+                    }
+                ]
             },
 
             editItem(item) {

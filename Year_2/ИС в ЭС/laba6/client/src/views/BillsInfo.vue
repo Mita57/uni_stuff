@@ -1,5 +1,5 @@
 <template>
-    <v-data-table :headers="headers" :items="dealers" sort-by="ID" class="elevation-1">
+    <v-data-table :headers="headers" :items="billsinfo" sort-by="ID" class="elevation-1">
         <template v-slot:top>
             <h1 class="ml-3">Информация в чеках</h1>
             <v-dialog v-model="dialog" max-width="500px">
@@ -50,7 +50,7 @@
         data: () => ({
             dialog: false,
             headers: [
-                {text: 'ID товара', value: 'IDProd'},
+                {text: 'ID товара', value: 'IDProduct'},
                 {text: 'ID чека', value: 'IDBill'},
                 {text: 'Количество', value: 'amount'},
                 {text: 'Действия', value: 'action', sortable: false},
@@ -87,6 +87,13 @@
 
         methods: {
             initialize() {
+                this.billsinfo = [
+                    {
+                        amount: 123,
+                        IDProduct: 12323,
+                        IDBill: 45345,
+                    }
+                ]
 
             },
 

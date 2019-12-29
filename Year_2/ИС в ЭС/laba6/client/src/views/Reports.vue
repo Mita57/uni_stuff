@@ -1,5 +1,5 @@
 <template>
-    <v-data-table :headers="headers" :items="dealers" sort-by="ID" class="elevation-1">
+    <v-data-table :headers="headers" :items="reports" sort-by="ID" class="elevation-1">
         <template v-slot:top>
             <h1 class="ml-3">Отчеты</h1>
             <v-dialog v-model="dialog" max-width="500px">
@@ -14,10 +14,16 @@
                         <v-container>
                             <v-row>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.price" label="Цена"></v-text-field>
+                                    <v-text-field v-model="editedItem.begin" label="Начало"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.name" label="Название"></v-text-field>
+                                    <v-text-field v-model="editedItem.end" label="Конец"></v-text-field>
+                                </v-col>
+                                <v-col cols="12" sm="6" md="4">
+                                    <v-text-field v-model="editedItem.volume" label="Объем продаж"></v-text-field>
+                                </v-col>
+                                <v-col cols="12" sm="6" md="4">
+                                    <v-text-field v-model="editedItem.expenses" label="Расход"></v-text-field>
                                 </v-col>
                             </v-row>
                         </v-container>
@@ -88,6 +94,15 @@
 
         methods: {
             initialize() {
+                this.reports = [
+                    {
+                        ID:1,
+                        begin: '1.12.2019',
+                        end: '31.12.2019',
+                        volume: 1333,
+                        expenses: 23434
+                    }
+                ]
 
             },
 

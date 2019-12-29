@@ -10,6 +10,7 @@ import Bills from "@/views/Bills";
 import BillsInfo from "@/views/BillsInfo";
 import Reports from "@/views/Reports";
 import Employees from "@/views/Employees";
+import WaybillEntries from "@/views/WaybillEntries";
 
 Vue.use(Router);
 
@@ -35,34 +36,40 @@ const router = new Router({
             component: Dealers
         },
         {
-            path:'/waybills',
+            path: '/waybills',
             name: 'Waybills',
             component: Waybills
         },
         {
-            path:'/products',
+            path: '/products',
             name: 'Products',
             component: Products
         },
         {
-            path:'/bills',
+            path: '/bills',
             name: 'Bills',
             component: Bills
         },
         {
-            path:'/billsinfo',
+            path: '/billsinfo',
             name: 'Billsinfo',
             component: BillsInfo
         },
         {
-            path:'/reports',
+            path: '/reports',
             name: 'Reports',
             component: Reports
         },
         {
-            path:'/employees',
+            path: '/employees',
             name: 'Employees',
             component: Employees
+        }
+        ,
+        {
+            path: '/waybillentries',
+            name: 'WaybillEntries',
+            component: WaybillEntries
         }
 
 

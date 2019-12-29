@@ -84,7 +84,14 @@
 
         methods: {
             initialize() {
+                this.dealers = [
+                    {
+                        ID: 1,
+                        product: 'Хлеб да соль',
+                        price: 300,
 
+                    }
+                ]
             },
 
             editItem(item) {

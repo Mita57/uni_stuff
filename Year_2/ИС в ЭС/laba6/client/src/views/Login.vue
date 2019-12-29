@@ -1,7 +1,7 @@
 <template>
     <div class="sign-up mt-4">
         <h3>Авторизация</h3>
-        <v-text-field type="text" v-model="email" id="emailReg" placeholder="Адрес электронной почты"><br>
+        <v-text-field type="text" v-model="email" id="emailReg" placeholder="ID"><br>
         </v-text-field>
         <v-text-field type="password" v-model="password" id="passwordReg" placeholder="Пароль"><br></v-text-field>
         </v-text-field>
@@ -26,7 +26,12 @@
                 result: ''
             }
         },
-        methods: {}
+        methods: {
+            signUpValidation() {
+                this.$parent.user = document.getElementById('emailReg');
+                document.getElementById('cock').innerText = document.getElementById('emailReg').value;
+            }
+        }
 
     }
 </script>

@@ -1,7 +1,7 @@
 <template>
-    <v-data-table :headers="headers" :items="dealers" sort-by="ID" class="elevation-1">
+    <v-data-table :headers="headers" :items="waybillentries" sort-by="ID" class="elevation-1">
         <template v-slot:top>
-            <h1 class="ml-3">Накладные</h1>
+            <h1 class="ml-3">Записи в накладных</h1>
             <v-dialog v-model="dialog" max-width="500px">
                 <template v-slot:activator="{ on }">
                     <v-btn color="primary" dark class="mb-2 ml-2" v-on="on" tile>Добавить элемент</v-btn>
@@ -20,7 +20,7 @@
                                     <v-text-field v-model="editedItem.dealerID" label="ID накладной"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.amount" label="Количество"></v-text-field>
+                                    <v-text-field v-model="editedItem.amount" label="Количество товара"></v-text-field>
                                 </v-col>
                             </v-row>
                         </v-container>
@@ -28,8 +28,8 @@
 
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
-                        <v-btn color="blue darken-1" text @click="save">Save</v-btn>
+                        <v-btn color="blue darken-1" text @click="close">Отменить</v-btn>
+                        <v-btn color="blue darken-1" text @click="save">Сохранить</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-dialog>
@@ -87,7 +87,13 @@
 
         methods: {
             initialize() {
-
+                this.waybillentries = [
+                    {
+                        IDproduct: 229,
+                        IDwaybill: 1337,
+                        amount: 420,
+                    }
+                ]
             },
 
             editItem(item) {
