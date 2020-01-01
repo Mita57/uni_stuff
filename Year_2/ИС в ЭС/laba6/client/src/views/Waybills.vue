@@ -14,6 +14,9 @@
                         <v-container>
                             <v-row>
                                 <v-col cols="12" sm="6" md="4">
+                                    <v-text-field v-model="editedItem.ID" label="ID накладной"></v-text-field>
+                                </v-col>
+                                <v-col cols="12" sm="6" md="4">
                                     <v-text-field v-model="editedItem.number" label="Номер"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">

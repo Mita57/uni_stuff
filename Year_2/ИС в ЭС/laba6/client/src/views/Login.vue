@@ -13,6 +13,7 @@
 <script>
     import axios from 'axios';
     import App from '../App.vue';
+    import router from '../router';
 
     export default {
         name: "Register",
@@ -30,6 +31,7 @@
             signUpValidation() {
                 this.$parent.user = document.getElementById('emailReg');
                 document.getElementById('cock').innerText = document.getElementById('emailReg').value;
+                router.push('/bills');
             }
         }
 

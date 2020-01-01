@@ -7,7 +7,7 @@
               <span class="mt-n6">СБИС 2</span>
             </v-toolbar-title>
             <v-toolbar-items class="ml-10">
-                <v-btn text class="white--text">Помощь</v-btn>
+                <v-btn text class="white--text">Помогите</v-btn>
             </v-toolbar-items>
             <v-spacer></v-spacer>
             <v-toolbar-items>
