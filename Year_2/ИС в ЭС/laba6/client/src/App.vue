@@ -25,6 +25,8 @@
                 <v-list-item to="/reports">Отчеты</v-list-item>
                 <v-list-item to="/waybills">Накладные</v-list-item>
                 <v-list-item to="/waybillentries">Записи в накладных</v-list-item>
+                <v-list-item to="/sales">Отчет по продажам</v-list-item>
+                <v-list-item to="/finance">Отчет по финансам</v-list-item>
             </v-list>
         </v-navigation-drawer>
         <v-content>
