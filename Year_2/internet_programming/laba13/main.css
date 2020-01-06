@@ -1,0 +1,73 @@
+body {
+    text-align: center;
+    font-family: "Comic Sans MS";
+    background-color: orange;
+}
+.objects {
+    display: inline-block;
+    height: 90%;
+    overflow-y: scroll;
+    margin: 30px;
+    border: white solid 3px;
+    width: 28%;
+}
+
+.rentors {
+    display: inline-block;
+    height: 90%;
+    overflow-y: scroll;
+    margin: 30px;
+    border: white solid 3px;
+    width: 28%;
+}
+
+.rentals {
+    display: inline-block;
+    height: 90%;
+    overflow-y: scroll;
+    margin: 30px;
+    border: white solid 3px;
+    width: 28%;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid red;
+    border-collapse: collapse;
+}
+.outism {
+    background-color: deepskyblue;
+    height: 75%;
+}
+.qrs {
+    background-color: yellow;
+    height: 25%;
+}
+#query {
+    width: 200px;
+}
+.cock{
+    display: inline-block;
+    height: 90%;
+    overflow-y: scroll;
+}
+#overlay{
+    padding: 100px;
+    height: 20%;
+    width: 50%;
+    background-color: darkblue;
+    border-radius: 20px;
+    position: absolute;
+    margin-left: 20%;
+    margin-top: 10%;
+    display: none;
+}
+#overlay input {
+    padding: 10px;
+    margin: 20px;
+}
