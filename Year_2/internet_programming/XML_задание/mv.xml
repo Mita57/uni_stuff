@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mvideo SYSTEM "mv.dtd">
+<mvideo>
+       
+	<catalogue catalog="TV and video">
+		<view vid="plasma TVs">
+			<subspecies podvid="Plasma TVs 42">
+				<marka company="LG">
+					<model mod="PT351"/>				
+					<model mod="WE638"/>
+				</marka>
+				<marka company="SAMSUNG">
+					<model mod="RT587"/>
+				</marka>
+				<marka company="SONY">
+					<model mod="SK532"/>
+				</marka>
+			</subspecies>
+		</view>
+		<view vid=" LCD/LED TVs">
+			<subspecies podvid="TV 15,30">
+				<marka company="Polar">
+					<model mod="48 LTV3101"/>
+				</marka>
+			</subspecies>
+			<subspecies podvid="TV 36,52">
+				<marka company="Akai">
+					<model mod="LEA-19V07P"/>
+				</marka>
+			</subspecies>
+		</view>
+	</catalogue>
+	 
+	<catalogue catalog="Catalogue of laptops and computers">
+		<view vid="Laptops and Computers">
+			<subspecies podvid="Computers">
+				<marka company="Lenovo">
+					<model mod="H410e"/>
+				</marka>
+				<marka company="HP">
+					<model mod="p6-2000ru H0B97EA"/>
+				</marka>
+			</subspecies>
+			<subspecies podvid="Monoblocks">
+				<marka company="Acer">
+					<model mod="Aspire Z1650 PW.SJ8E8.002"/>
+				</marka>
+				<marka company="Packard Bell">
+					<model mod="ONETWO S A3425 RU"/>
+				</marka>
+			</subspecies>
+		</view>
+	</catalogue>  
+       
+	
+</mvideo>
