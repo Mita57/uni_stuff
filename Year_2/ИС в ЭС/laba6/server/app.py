@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
-
+from models.BasicModel import SQLModel
 
 app = Flask(__name__)
 CORS(app)
@@ -14,14 +14,17 @@ def login():
     Returns: JSON with auth result info
     """
     data = request.get_json()
-    email = data.get('email')
-    password = data.get('password')
-    user = User.get_by_attrs(('nickname', 'password'), 'email', email)
-    user_pw = user[0][1]
-    user_nick = user[0][0]
-    if password == user_pw:
-        return jsonify(result=user_nick)
-    else:
+    try:
+        id = data.get('id')
+        password = data.get('password')
+        user = SQLModel.get_by_attrs('*', 'users', 'id', id)
+        user_pw = user[0][1]
+        user_id = user[0][0]
+        if password == user_pw:
+            return jsonify(result=user_id)
+        else:
+            return jsonify(result='fail')
+    except:
         return jsonify(result='fail')
 
 
