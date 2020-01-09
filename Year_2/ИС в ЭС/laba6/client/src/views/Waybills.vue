@@ -45,6 +45,7 @@
 </template>
 
 <script>
+    import axios from 'axios';
     export default {
         name: "Waybills",
         data: () => ({
@@ -87,14 +88,15 @@
 
         methods: {
             initialize() {
-                this.waybills = [
-                    {
-                        ID: 1,
-                        number:12323,
-                        dealerID: 233232,
-                    }
-                ]
-
+                const rw = this;
+                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[4])
+                    .then(function (res) {
+                        rw.bills = res.data;
+                    })
+                    .catch(function (res) {
+                        //handle error
+                        console.log(res);
+                    })
             },
 
             editItem(item) {

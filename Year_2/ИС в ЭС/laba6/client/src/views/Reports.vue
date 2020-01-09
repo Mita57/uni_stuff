@@ -51,6 +51,7 @@
 </template>
 
 <script>
+    import axios from 'axios';
     export default {
         name: "Reports",
         data: () => ({
@@ -97,16 +98,15 @@
 
         methods: {
             initialize() {
-                this.reports = [
-                    {
-                        ID:1,
-                        begin: '1.12.2019',
-                        end: '31.12.2019',
-                        volume: 1333,
-                        expenses: 23434
-                    }
-                ]
-
+                const rw = this;
+                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[4])
+                    .then(function (res) {
+                        rw.bills = res.data;
+                    })
+                    .catch(function (res) {
+                        //handle error
+                        console.log(res);
+                    })
             },
 
             editItem(item) {

@@ -27,6 +27,11 @@ def login():
     except:
         return jsonify(result='fail')
 
+@app.route("/getInfo")
+def get_info():
+    table = request.args.get('table')
+    response = SQLModel.get_by_attrs('*', table, 1, 1)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

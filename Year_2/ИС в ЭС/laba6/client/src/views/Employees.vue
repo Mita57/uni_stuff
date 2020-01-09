@@ -57,6 +57,7 @@
 </template>
 
 <script>
+    import axios from 'axios';
     export default {
         name: "BillsInfo",
         data: () => ({
@@ -109,17 +110,15 @@
 
         methods: {
             initialize() {
-                this.employees = [
-                    {
-                        ID: 1,
-                        name: 'Van Darkholme',
-                        passport: 23424234234234,
-                        salary: 300,
-                        place: 'Dungeon Master',
-                        SNILS: 2344234234434,
-                        INN: 32423534534
-                    }
-                ]
+                const rw = this;
+                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[4])
+                    .then(function (res) {
+                        rw.bills = res.data;
+                    })
+                    .catch(function (res) {
+                        //handle error
+                        console.log(res);
+                    })
             },
 
             editItem(item) {

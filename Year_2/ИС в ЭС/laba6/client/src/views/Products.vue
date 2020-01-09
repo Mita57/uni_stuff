@@ -45,6 +45,7 @@
 </template>
 
 <script>
+    import axios from 'axios';
     export default {
         name: "Products",
         data: () => ({
@@ -85,14 +86,15 @@
 
         methods: {
             initialize() {
-                this.products = [
-                    {
-                        ID: 1,
-                        price: 300,
-                        name: 'Я нехлеб, я кот',
-
-                    }
-                ]
+                const rw = this;
+                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[4])
+                    .then(function (res) {
+                        rw.bills = res.data;
+                    })
+                    .catch(function (res) {
+                        //handle error
+                        console.log(res);
+                    })
             },
 
             editItem(item) {

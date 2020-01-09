@@ -45,6 +45,7 @@
 </template>
 
 <script>
+    import axios from 'axios';
     export default {
         name: "BillsInfo",
         data: () => ({
@@ -87,14 +88,15 @@
 
         methods: {
             initialize() {
-                this.billsinfo = [
-                    {
-                        amount: 123,
-                        IDProduct: 12323,
-                        IDBill: 45345,
-                    }
-                ]
-
+                const rw = this;
+                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[4])
+                    .then(function (res) {
+                        rw.billsinfo = res.data;
+                    })
+                    .catch(function (res) {
+                        //handle error
+                        console.log(res);
+                    })
             },
 
             editItem(item) {
@@ -131,3 +133,5 @@
 <style scoped>
 
 </style>
+
+//TODO: make billsinfo table
