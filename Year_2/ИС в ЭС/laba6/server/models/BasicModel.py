@@ -12,7 +12,8 @@ class SQLModel:
         new_cols = new_cols[0:-2]
         return new_cols
 
-    def insert(self, table, values):
+    @staticmethod
+    def insert(table, cols, values):
         """
             Inserts the data into the database
             args:
@@ -21,7 +22,8 @@ class SQLModel:
         with closing(psycopg2.connect(database='crm', user='postgres', password='MOORMOOR',
                                       host='127.0.0.1', port='5432')) as conn:
             with conn.cursor() as cursor:
-                sql_insert_query = """INSERT INTO {} VALUES {} """.format(table, values)
+                sql_insert_query = """INSERT INTO {}({}) VALUES {} """.format(table, cols, values)
+                print(sql_insert_query)
                 cursor.execute(sql_insert_query)
                 conn.commit()
 
@@ -52,23 +54,25 @@ class SQLModel:
                     cursor.execute(sql_select_query)
                     value = cursor.fectchall()
                     return value
-
     @classmethod
-    def update_by_attrs(cls, columns, values, attr_cols, attr_values):
-        new_cols = cls.normalize_cols(columns)
+    def update_by_attrs(cls, table, columns, values, attr_cols, attr_values):
         with closing(psycopg2.connect(database='crm', user='postgres', password='MOORMOOR',
                                       host='127.0.0.1', port='5432')) as conn:
             with conn.cursor() as cursor:
-                sql_update_query = """UPDATE {} SET {}=%s WHERE {}=%s""".format(cls._TABLE, new_cols, attr_cols)
-                cursor.execute(sql_update_query, (values, attr_values))
+                sql_update_query = """UPDATE {} SET ({})={} WHERE {}={}""".format(table, columns, values, attr_cols, attr_values)
+                print(sql_update_query)
+                cursor.execute(sql_update_query)
+                conn.commit()
 
-    @classmethod
-    def delete_by_attrs(cls, attr_cols, attr_values):
+    @staticmethod
+    def delete_by_attrs(table, attr_cols, attr_values):
         with closing(psycopg2.connect(database='crm', user='postgres', password='MOORMOOR',
                                       host='127.0.0.1', port='5432')) as conn:
             with conn.cursor() as cursor:
-                sql_delete_query = """DELETE FROM {} where {}=%s""".format(cls._TABLE, attr_cols)
-                cursor.execute(sql_delete_query, attr_values)
+                sql_delete_query = """DELETE FROM {} where {}='{}'""".format(table, attr_cols, attr_values)
+                print(sql_delete_query)
+                cursor.execute(sql_delete_query)
+                conn.commit()
 
 
 class BasicModel(SQLModel):

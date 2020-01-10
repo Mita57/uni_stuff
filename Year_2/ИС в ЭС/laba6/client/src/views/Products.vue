@@ -14,13 +14,13 @@
                         <v-container>
                             <v-row>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.ID" label="ID товара"></v-text-field>
+                                    <v-text-field v-model="editedItem.ID" id="id" disabled label="ID товара"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.price" label="Цена"></v-text-field>
+                                    <v-text-field v-model="editedItem.price" id="price" label="Цена"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.name" label="Название"></v-text-field>
+                                    <v-text-field v-model="editedItem.name"  id="name" label="Название"></v-text-field>
                                 </v-col>
                             </v-row>
                         </v-container>
@@ -46,23 +46,26 @@
 
 <script>
     import axios from 'axios';
+
     export default {
         name: "Products",
         data: () => ({
             dialog: false,
             headers: [
                 {text: 'ID', align: 'left', value: 'ID'},
-                {text: 'Цена', value: 'price'},
                 {text: 'Навзвание', value: 'name'},
+                {text: 'Цена', value: 'price'},
                 {text: 'Действия', value: 'action', sortable: false},
             ],
             products: [],
             editedIndex: -1,
             editedItem: {
+                ID:'ID',
                 price: 0,
                 name: '',
             },
             defaultItem: {
+                ID:'ID',
                 price: 0,
                 name: '',
             },
@@ -87,9 +90,18 @@
         methods: {
             initialize() {
                 const rw = this;
-                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[4])
+                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[3])
                     .then(function (res) {
-                        rw.bills = res.data;
+                        let goodBills = [];
+                        for (let i = 0; i < res.data.length; i++) {
+                            let elem = {
+                                ID: res.data[i][0],
+                                name: res.data[i][2],
+                                price: res.data[i][1],
+                            };
+                            goodBills.push(elem);
+                        }
+                        rw.products = goodBills;
                     })
                     .catch(function (res) {
                         //handle error
@@ -104,8 +116,25 @@
             },
 
             deleteItem(item) {
-                const index = this.products.indexOf(item);
-                confirm('Удалить элемент') && this.products.splice(index, 1);
+                const rw = this;
+                const index = this.dealers.indexOf(item);
+                let result = confirm("Удалить элемент " + (this.products[index].ID) + '?');
+                if (result) {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/removeElement',
+                        data: {
+                            table: 'products',
+                            id: rw.products[index].ID
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
             },
 
             close() {
@@ -117,13 +146,68 @@
             },
 
             save() {
-                if (this.editedIndex > -1) {
-                    Object.assign(this.products[this.editedIndex], this.editedItem);
-                } else {
-                    this.products.push(this.editedItem);
+                let nameCheck = false;
+                let priceCheck = false;
+                if (document.getElementById('name').value) {
+                    nameCheck = true;
                 }
-                this.close();
+                if (!isNaN(document.getElementById('price').value)) {
+                    priceCheck = true;
+                }
+
+
+                if (nameCheck && priceCheck) {
+                    if (document.getElementById('id').value == 'ID') {
+                        addItem();
+                    } else {
+                        updateItem();
+                    }
+                }
+
+
+                function addItem() {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/addElement',
+                        data: {
+                            table: 'products',
+                            cols: 'name, price',
+                            values: "('" + document.getElementById('name').value + "', '"
+                                + document.getElementById('price').value + "')"
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
+
+
+                function updateItem() {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/updateElement',
+                        data: {
+                            table: 'products',
+                            cols: 'name, price',
+                            id: document.getElementById('id').value,
+                            values: "('" + document.getElementById('name').value + "', '"
+                                + document.getElementById('price').value + "')"
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
+
             },
+
+
         },
     }
 </script>

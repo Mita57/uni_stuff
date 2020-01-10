@@ -8,31 +8,28 @@
                 </template>
                 <v-card>
                     <v-card-title>
-                        <span class="headline">{{ formTitle }}</span>
+                        <span class="headline">Сотрудник</span>
                     </v-card-title>
                     <v-card-text>
                         <v-container>
                             <v-row>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.ID" label="ID сотрудника"></v-text-field>
+                                    <v-text-field v-model="editedItem.ID" id="id" disabled label="ID сотрудника"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.name" label="ФИО"></v-text-field>
+                                    <v-text-field v-model="editedItem.name" id="name" label="ФИО"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.passport" label="Паспортные данные"></v-text-field>
+                                    <v-text-field v-model="editedItem.position" id="position"
+                                                  label="Должность"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.salary" label="Зарплата"></v-text-field>
+                                    <v-text-field v-model="editedItem.salary" id="salary"
+                                                  label="Зарплата"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.place" label="Должность"></v-text-field>
-                                </v-col>
-                                <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.SNILS" label="СНИЛС"></v-text-field>
-                                </v-col>
-                                <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.INN" label="ИНН"></v-text-field>
+                                    <v-text-field v-model="editedItem.passport" id="passport"
+                                                  label="Паспорт"></v-text-field>
                                 </v-col>
                             </v-row>
                         </v-container>
@@ -58,6 +55,7 @@
 
 <script>
     import axios from 'axios';
+
     export default {
         name: "BillsInfo",
         data: () => ({
@@ -65,30 +63,26 @@
             headers: [
                 {text: 'ID сотрудника', value: 'ID'},
                 {text: 'ФИО', value: 'name'},
-                {text: 'Паспортные данные', value: 'passport'},
+                {text: 'Должность', value: 'position'},
                 {text: 'Зарплата', value: 'salary'},
-                {text: 'Должность', value: 'place'},
-                {text: 'СНИЛС', value: 'SNILS'},
-                {text: 'ИНН', value: 'INN'},
+                {text: 'Паспорт', value: 'passport'},
                 {text: 'Действия', value: 'action', sortable: false},
             ],
             employees: [],
             editedIndex: -1,
             editedItem: {
+                ID: 'ID',
                 name: '',
                 passport: '',
                 salary: 0,
-                place: '',
-                SNILS: '',
-                INN: '',
+                position: '',
             },
             defaultItem: {
+                ID: 'ID',
                 name: '',
                 passport: '',
                 salary: 0,
-                place: '',
-                SNILS: '',
-                INN: '',
+                position: '',
             },
         }),
 
@@ -111,14 +105,26 @@
         methods: {
             initialize() {
                 const rw = this;
-                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[4])
+                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[3])
                     .then(function (res) {
-                        rw.bills = res.data;
+                        let goodBills = [];
+                        for (let i = 0; i < res.data.length; i++) {
+                            let elem = {
+                                ID: res.data[i][0],
+                                name: res.data[i][1],
+                                position: res.data[i][2],
+                                salary: res.data[i][3],
+                                passport: res.data[i][4]
+                            };
+                            goodBills.push(elem);
+                        }
+                        rw.employees = goodBills;
                     })
                     .catch(function (res) {
                         //handle error
                         console.log(res);
-                    })
+                    });
+
             },
 
             editItem(item) {
@@ -128,8 +134,25 @@
             },
 
             deleteItem(item) {
-                const index = this.employees.indexOf(item);
-                confirm('Удалить элемент') && this.employees.splice(index, 1);
+                const rw = this;
+                const index = this.dealers.indexOf(item);
+                let result = confirm("Удалить элемент " + (this.employees[index].ID) + '?');
+                if (result) {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/removeElement',
+                        data: {
+                            table: 'employees',
+                            id: rw.employees[index].ID
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
             },
 
             close() {
@@ -141,13 +164,78 @@
             },
 
             save() {
-                if (this.editedIndex > -1) {
-                    Object.assign(this.employees[this.editedIndex], this.editedItem);
-                } else {
-                    this.employees.push(this.editedItem);
+                let nameCheck = false;
+                let positionCheck = false;
+                let salaryCheck = false;
+                let passportCheck = false;
+                if (document.getElementById('name').value) {
+                    nameCheck = true;
                 }
-                this.close();
+                if (document.getElementById('position').value) {
+                    positionCheck = true;
+                }
+                if (document.getElementById('passport').value) {
+                    passportCheck = true;
+                }
+                if (!isNaN(document.getElementById('salary').value)) {
+                    salaryCheck = true;
+                }
+
+
+                if (nameCheck && positionCheck && salaryCheck && passportCheck) {
+                    if (document.getElementById('id').value == 'ID') {
+                        addItem();
+                    } else {
+                        updateItem();
+                    }
+                }
+
+
+                function addItem() {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/addElement',
+                        data: {
+                            table: 'employees',
+                            cols: 'name, position, salary, passport',
+                            values: "('" + document.getElementById('name').value + "', '"
+                                + document.getElementById('position').value + "','" + document.getElementById('salary').value +
+                                "', '" + document.getElementById('passport').value + "')"
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
+
+
+                function updateItem() {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/updateElement',
+                        data: {
+                            table: 'employees',
+                            cols: 'name, position, salary, passport',
+                            id: document.getElementById('id').value,
+                            values: "('" + document.getElementById('name').value + "', '"
+                                + document.getElementById('position').value + "','" + document.getElementById('salary').value +
+                                "', '" + document.getElementById('passport').value + "')"
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
+
             },
+
+
         },
     }
 </script>

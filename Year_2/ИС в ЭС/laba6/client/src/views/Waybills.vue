@@ -8,7 +8,7 @@
                 </template>
                 <v-card>
                     <v-card-title>
-                        <span class="headline">{{ formTitle }}</span>
+                        <span class="headline">Накладная</span>
                     </v-card-title>
                     <v-card-text>
                         <v-container>
@@ -16,11 +16,21 @@
                                 <v-col cols="12" sm="6" md="4">
                                     <v-text-field v-model="editedItem.ID" label="ID накладной"></v-text-field>
                                 </v-col>
+                                <v-menu ref="menu" v-model="menu" :close-on-content-click="false" :return-value.sync="date" transition="scale-transition" offset-y min-width="290px">
+                                    <template v-slot:activator="{ on }">
+                                        <v-text-field v-model="date" label="Дата"  readonly v-on="on"></v-text-field>
+                                    </template>
+                                    <v-date-picker v-model="date" no-title scrollable>
+                                        <v-spacer></v-spacer>
+                                        <v-btn text color="primary" @click="menu = false">Cancel</v-btn>
+                                        <v-btn text color="primary" @click="$refs.menu.save(date)">OK</v-btn>
+                                    </v-date-picker>
+                                </v-menu>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.number" label="Номер"></v-text-field>
+                                    <v-text-field v-model="editedItem.number" label="Количество"></v-text-field>
                                 </v-col>
-                                <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.dealerID" label="ID поставщика"></v-text-field>
+                                <v-col class="d-flex" cols="12" sm="6">
+                                    <v-select :items="dealers" id="sas" label="Поставщик" dense outlined></v-select>
                                 </v-col>
                             </v-row>
                         </v-container>
@@ -52,11 +62,13 @@
             dialog: false,
             headers: [
                 {text: 'ID', align: 'left', value: 'ID'},
-                {text: 'Номер', value: 'number'},
+                {text: 'Дата', value: 'date'},
+                {text: 'Количество', value: 'amount'},
                 {text: 'ID поставщика', value: 'dealerID'},
                 {text: 'Действия', value: 'action', sortable: false},
             ],
             waybills: [],
+            dealers: [],
             editedIndex: -1,
             editedItem: {
                 ID: '',
@@ -89,9 +101,32 @@
         methods: {
             initialize() {
                 const rw = this;
-                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[4])
+                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[3])
                     .then(function (res) {
-                        rw.bills = res.data;
+                        let goodBills = [];
+                        for (let i = 0; i < res.data.length; i++) {
+                            let elem = {
+                                ID: res.data[i][0],
+                                date: res.data[i][1],
+                                amount: res.data[i][2],
+                                dealerID: res.data[i][3],
+                            };
+                            goodBills.push(elem);
+                        }
+                        rw.waybills = goodBills;
+                    })
+                    .catch(function (res) {
+                        //handle error
+                        console.log(res);
+                    });
+                axios.get('http://localhost:5000/getInfo?table=dealers')
+                    .then(function (res) {
+                        let goodBills = [];
+                        for (let i = 0; i < res.data.length; i++) {
+                            let elem = res.data[i][0] +" : "+ res.data[i][1];
+                            goodBills.push(elem);
+                        }
+                        rw.dealers = goodBills;
                     })
                     .catch(function (res) {
                         //handle error
@@ -100,14 +135,31 @@
             },
 
             editItem(item) {
-                this.editedIndex = this.waybills.indexOf(item);
+                this.editedIndex = this.reports.indexOf(item);
                 this.editedItem = Object.assign({}, item);
                 this.dialog = true;
             },
 
             deleteItem(item) {
-                const index = this.waybills.indexOf(item);
-                confirm('Удалить элемент') && this.waybills.splice(index, 1);
+                const rw = this;
+                const index = this.reports.indexOf(item);
+                let result = confirm("Удалить элемент " + (this.reports[index].ID) + '?');
+                if (result) {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/removeElement',
+                        data: {
+                            table: 'reports',
+                            id: rw.reports[index].ID
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
             },
 
             close() {
@@ -119,13 +171,71 @@
             },
 
             save() {
-                if (this.editedIndex > -1) {
-                    Object.assign(this.waybills[this.editedIndex], this.editedItem);
-                } else {
-                    this.waybills.push(this.editedItem);
+                let nameCheck = false;
+                let productCheck = false;
+                let priceCheck = false;
+                if (document.getElementById('name').value) {
+                    nameCheck = true;
                 }
-                this.close();
+                if (document.getElementById('prod').value) {
+                    productCheck = true;
+                }
+                if (!isNaN(document.getElementById('price').value)) {
+                    priceCheck = true;
+                }
+
+
+                if (priceCheck && nameCheck && productCheck) {
+                    if (document.getElementById('id').value == 'ID') {
+                        addItem();
+                    } else {
+                        updateItem();
+                    }
+                }
+
+
+                function addItem() {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/addElement',
+                        data: {
+                            table: 'dealers',
+                            cols: 'products, name, retail_price',
+                            values: "('" + document.getElementById('prod').value + "', '"
+                                + document.getElementById('name').value + "','" + document.getElementById('price').value + "')"
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
+
+
+                function updateItem() {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/updateElement',
+                        data: {
+                            table: 'dealers',
+                            cols: 'products, name, retail_price',
+                            id: document.getElementById('id').value,
+                            values: "('" + document.getElementById('prod').value + "', '"
+                                + document.getElementById('name').value + "','" + document.getElementById('price').value + "')"
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
+
             },
+
         },
     }
 </script>

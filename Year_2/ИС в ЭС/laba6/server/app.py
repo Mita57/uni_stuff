@@ -27,10 +27,44 @@ def login():
     except:
         return jsonify(result='fail')
 
+
 @app.route("/getInfo")
 def get_info():
     table = request.args.get('table')
+    print(table)
     response = SQLModel.get_by_attrs('*', table, 1, 1)
+    return jsonify(response)
+
+
+@app.route('/addElement', methods=['POST'])
+def add_element():
+    data = request.get_json()
+    table = data.get('table')
+    values = data.get('values')
+    cols = data.get('cols')
+    SQLModel.insert(table, cols, values)
+    return 'sas'
+
+
+@app.route('/removeElement', methods=['POST'])
+def remove_element():
+    data = request.get_json()
+    table = data.get('table')
+    id = data.get('id')
+    print(data)
+    SQLModel.delete_by_attrs(table, 'id', id)
+    return 'sas'
+
+
+@app.route('/updateElement', methods=['POST'])
+def update_element():
+    data = request.get_json()
+    table = data.get('table')
+    attr_values = data.get('id')
+    cols = data.get('cols')
+    values = data.get('values')
+    SQLModel.update_by_attrs(table, cols, values, 'id', attr_values)
+    return 'sas'
 
 
 if __name__ == '__main__':
