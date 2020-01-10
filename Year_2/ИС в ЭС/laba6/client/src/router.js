@@ -7,10 +7,8 @@ import Dealers from "@/views/Dealers"
 import Waybills from "@/views/Waybills";
 import Products from "@/views/Products";
 import Bills from "@/views/Bills";
-import BillsInfo from "@/views/BillsInfo";
 import Reports from "@/views/Reports";
 import Employees from "@/views/Employees";
-import WaybillEntries from "@/views/WaybillEntries";
 import Finance from "@/views/Finance";
 import Sales from "@/views/Sales";
 
@@ -53,11 +51,6 @@ const router = new Router({
             component: Bills
         },
         {
-            path: '/billsinfo',
-            name: 'Billsinfo',
-            component: BillsInfo
-        },
-        {
             path: '/reports',
             name: 'Reports',
             component: Reports
@@ -68,11 +61,6 @@ const router = new Router({
             component: Employees
         }
         ,
-        {
-            path: '/waybillentries',
-            name: 'WaybillEntries',
-            component: WaybillEntries
-        },
         {
             path: '/finance',
             name: 'Finance',

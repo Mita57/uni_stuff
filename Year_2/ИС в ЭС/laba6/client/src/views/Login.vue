@@ -1,18 +1,17 @@
 <template>
     <div class="sign-up mt-4">
         <h3>Авторизация</h3>
-        <v-text-field type="text" v-model="email" id="emailReg" placeholder="ID"><br>
+        <v-text-field type="text" v-model="email" id="id" placeholder="ID"><br>
         </v-text-field>
-        <v-text-field type="password" v-model="password" id="passwordReg" placeholder="Пароль"><br></v-text-field>
+        <v-text-field type="password" v-model="password" id="password" placeholder="Пароль"><br></v-text-field>
         </v-text-field>
-        <v-btn x-large tile dark class="blue mt-4 sas" @click="signUpValidation()">Войти в систему</v-btn>
+        <v-btn x-large tile dark class="blue mt-4 sas" @click="loginValidation()">Войти в систему</v-btn>
         <div class="mt-5">{{result}}</div>
     </div>
 </template>
 
 <script>
     import axios from 'axios';
-    import App from '../App.vue';
     import router from '../router';
 
     export default {
@@ -28,10 +27,52 @@
             }
         },
         methods: {
-            signUpValidation() {
-                this.$parent.user = document.getElementById('emailReg');
-                document.getElementById('cock').innerText = document.getElementById('emailReg').value;
-                router.push('/bills');
+            loginValidation: function () {
+                //input validation
+                const aw = this;
+                let passwordFlag = false;
+                let emailFlag = false;
+
+                if(document.getElementById('id').value.length > 3) {
+                    emailFlag = true;
+                }
+
+                if (document.getElementById('password').value.length > 3) {
+                    passwordFlag = true;
+                }
+
+                if (passwordFlag && emailFlag) {
+                    login(document.getElementById('id').value, document.getElementById('password').value);
+                }
+
+
+                function login(id, pwrd) {
+                    axios({
+                        headers: {
+                            'Access-Control-Allow-Origin': '*',
+                            'Content-Type': 'application/json',
+                        },
+                        method: 'post',
+                        url: 'http://localhost:5000/login',
+                        data: {
+                            id: id,
+                            password: pwrd
+                        },
+                    }).then(function (response) {
+                        if (response.data.result == 'fail') {
+                            alert('Неправильное имя пользователя или пароль');
+                        } else {
+                            localStorage.user = response.data.result;
+                            aw.user = response.data.result;
+                            document.getElementById('cock').innerText = response.data.result;
+                            router.push('/bills');
+                        }
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
             }
         }
 

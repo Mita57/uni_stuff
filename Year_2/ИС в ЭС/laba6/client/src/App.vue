@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <!-- Header -->
-        <v-app-bar app class="blue white--text" absolute short fixed clipped-right>
+        <v-app-bar app class="blue white--text" absolute short fixed >
             <img class="mr-3 mt-1" :src="require('./assets/logosmall.png')" height="50">
             <v-toolbar-title class="headline text-uppercase" dark>
               <span class="mt-n6">СБИС 2</span>
@@ -18,13 +18,11 @@
         <v-navigation-drawer app id="side">
             <v-list>
                 <v-list-item to="/bills">Чеки</v-list-item>
-                <v-list-item to="/billsinfo">Информация в чеках</v-list-item>
                 <v-list-item to="/dealers">Поставщики</v-list-item>
                 <v-list-item to="/employees">Сотрудники</v-list-item>
-                <v-list-item to="/products">Продукция</v-list-item>
+                <v-list-item to="/products">Товары</v-list-item>
                 <v-list-item to="/reports">Отчеты</v-list-item>
                 <v-list-item to="/waybills">Накладные</v-list-item>
-                <v-list-item to="/waybillentries">Записи в накладных</v-list-item>
                 <v-list-item to="/sales">Отчет по продажам</v-list-item>
                 <v-list-item to="/finance">Отчет по финансам</v-list-item>
             </v-list>

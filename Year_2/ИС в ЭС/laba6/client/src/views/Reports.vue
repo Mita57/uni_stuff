@@ -8,7 +8,7 @@
                 </template>
                 <v-card>
                     <v-card-title>
-                        <span class="headline">{{ formTitle }}</span>
+                        <span class="headline">Отчет</span>
                     </v-card-title>
                     <v-card-text>
                         <v-container>
@@ -16,22 +16,38 @@
                                 <v-col cols="12" sm="6" md="4">
                                     <v-text-field v-model="editedItem.ID" label="ID отчета"></v-text-field>
                                 </v-col>
-                                <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.begin" label="Начало"></v-text-field>
-                                </v-col>
-                                <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.end" label="Конец"></v-text-field>
-                                </v-col>
+                                <v-menu ref="menu" v-model="menu" :close-on-content-click="false" :return-value.sync="date" transition="scale-transition" offset-y min-width="290px">
+                                    <template v-slot:activator="{ on }">
+                                        <v-text-field v-model="date" label="Начало"  readonly v-on="on"></v-text-field>
+                                    </template>
+                                    <v-date-picker v-model="date" no-title scrollable>
+                                        <v-spacer></v-spacer>
+                                        <v-btn text color="primary" @click="menu = false">Cancel</v-btn>
+                                        <v-btn text color="primary" @click="$refs.menu.save(date)">OK</v-btn>
+                                    </v-date-picker>
+                                </v-menu>
+                                <v-menu ref="menu" v-model="menu" :close-on-content-click="false" :return-value.sync="date" transition="scale-transition" offset-y min-width="290px">
+                                    <template v-slot:activator="{ on }">
+                                        <v-text-field v-model="date" label="Конец"  readonly v-on="on"></v-text-field>
+                                    </template>
+                                    <v-date-picker v-model="date" no-title scrollable>
+                                        <v-spacer></v-spacer>
+                                        <v-btn text color="primary" @click="menu = false">Cancel</v-btn>
+                                        <v-btn text color="primary" @click="$refs.menu.save(date)">OK</v-btn>
+                                    </v-date-picker>
+                                </v-menu>
                                 <v-col cols="12" sm="6" md="4">
                                     <v-text-field v-model="editedItem.volume" label="Объем продаж"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.expenses" label="Расход"></v-text-field>
+                                    <v-text-field v-model="editedItem.outcome" label="Расход"></v-text-field>
+                                </v-col>
+                                <v-col cols="12" sm="6" md="4">
+                                    <v-text-field v-model="editedItem.income" label="Доход"></v-text-field>
                                 </v-col>
                             </v-row>
                         </v-container>
                     </v-card-text>
-
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn color="blue darken-1" text @click="close">Отменить</v-btn>
@@ -51,6 +67,7 @@
 </template>
 
 <script>
+    import axios from 'axios';
     export default {
         name: "Reports",
         data: () => ({
@@ -59,8 +76,9 @@
                 {text: 'ID', align: 'left', value: 'ID'},
                 {text: 'Начало', value: 'begin'},
                 {text: 'Конец', value: 'end'},
+                {text: 'Доход', value: 'income'},
+                {text: 'Расход', value: 'outcome'},
                 {text: 'Объем продаж', value: 'volume'},
-                {text: 'Расход', value: 'expenses'},
                 {text: 'Действия', value: 'action', sortable: false},
             ],
             reports: [],
@@ -97,16 +115,27 @@
 
         methods: {
             initialize() {
-                this.reports = [
-                    {
-                        ID:1,
-                        begin: '1.12.2019',
-                        end: '31.12.2019',
-                        volume: 1333,
-                        expenses: 23434
-                    }
-                ]
-
+                const rw = this;
+                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[3])
+                    .then(function (res) {
+                        let goodBills = [];
+                        for (let i = 0; i < res.data.length; i++) {
+                            let elem = {
+                                ID: res.data[i][0],
+                                begin: res.data[i][1],
+                                end: res.data[i][2],
+                                income: res.data[i][3],
+                                outcome:res.data[i][4],
+                                volume: res.data[i][5]
+                            };
+                            goodBills.push(elem);
+                        }
+                        rw.reports = goodBills;
+                    })
+                    .catch(function (res) {
+                        //handle error
+                        console.log(res);
+                    })
             },
 
             editItem(item) {
@@ -116,8 +145,25 @@
             },
 
             deleteItem(item) {
+                const rw = this;
                 const index = this.reports.indexOf(item);
-                confirm('Удалить элемент') && this.reports.splice(index, 1);
+                let result = confirm("Удалить элемент " + (this.reports[index].ID) + '?');
+                if (result) {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/removeElement',
+                        data: {
+                            table: 'reports',
+                            id: rw.reports[index].ID
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
             },
 
             close() {
@@ -129,13 +175,71 @@
             },
 
             save() {
-                if (this.editedIndex > -1) {
-                    Object.assign(this.prodreportsucts[this.editedIndex], this.editedItem);
-                } else {
-                    this.reports.push(this.editedItem);
+                let nameCheck = false;
+                let productCheck = false;
+                let priceCheck = false;
+                if (document.getElementById('name').value) {
+                    nameCheck = true;
                 }
-                this.close();
+                if (document.getElementById('prod').value) {
+                    productCheck = true;
+                }
+                if (!isNaN(document.getElementById('price').value)) {
+                    priceCheck = true;
+                }
+
+
+                if (priceCheck && nameCheck && productCheck) {
+                    if (document.getElementById('id').value == 'ID') {
+                        addItem();
+                    } else {
+                        updateItem();
+                    }
+                }
+
+
+                function addItem() {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/addElement',
+                        data: {
+                            table: 'dealers',
+                            cols: 'products, name, retail_price',
+                            values: "('" + document.getElementById('prod').value + "', '"
+                                + document.getElementById('name').value + "','" + document.getElementById('price').value + "')"
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
+
+
+                function updateItem() {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/updateElement',
+                        data: {
+                            table: 'dealers',
+                            cols: 'products, name, retail_price',
+                            id: document.getElementById('id').value,
+                            values: "('" + document.getElementById('prod').value + "', '"
+                                + document.getElementById('name').value + "','" + document.getElementById('price').value + "')"
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
+
             },
+
         },
     }
 </script>

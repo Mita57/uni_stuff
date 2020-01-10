@@ -8,19 +8,25 @@
                 </template>
                 <v-card>
                     <v-card-title>
-                        <span class="headline">{{ formTitle }}</span>
+                        <span class="headline">Поставщик</span>
                     </v-card-title>
                     <v-card-text>
                         <v-container>
                             <v-row>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.ID" label="ID"></v-text-field>
+                                    <v-text-field v-model="editedItem.ID" disabled id="id"
+                                                  label="ID"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.product" label="Имеющийся товар"></v-text-field>
+                                    <v-text-field v-model="editedItem.product" id="prod"
+                                                  label="Товар"></v-text-field>
                                 </v-col>
                                 <v-col cols="12" sm="6" md="4">
-                                    <v-text-field v-model="editedItem.price" label="Оптовая цена"></v-text-field>
+                                    <v-text-field v-model="editedItem.name" id="name" label="Название"></v-text-field>
+                                </v-col>
+                                <v-col cols="12" sm="6" md="4">
+                                    <v-text-field v-model="editedItem.price" id="price"
+                                                  label="Оптовая цена"></v-text-field>
                                 </v-col>
                             </v-row>
                         </v-container>
@@ -45,27 +51,32 @@
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
         name: "Dealers",
         data: () => ({
             dialog: false,
             headers: [
                 {text: 'ID', align: 'left', value: 'ID'},
-                {text: 'Имеющийся товар', value: 'product'},
+                {text: 'Товар', value: 'product'},
                 {text: 'Оптовая цена', value: 'price'},
+                {text: 'Название', value: 'name'},
                 {text: 'Действия', value: 'action', sortable: false},
             ],
             dealers: [],
             editedIndex: -1,
             editedItem: {
-                ID: '',
-                product: 0,
+                product: '',
+                name: '',
                 price: 0,
+                ID: 'ID',
             },
             defaultItem: {
-                ID: '',
-                product: 0,
+                product: '',
+                name: '',
                 price: 0,
+                ID: 'ID'
             },
         }),
 
@@ -87,14 +98,25 @@
 
         methods: {
             initialize() {
-                this.dealers = [
-                    {
-                        ID: 1,
-                        product: 'Хлеб да соль',
-                        price: 300,
-
-                    }
-                ]
+                const rw = this;
+                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[3])
+                    .then(function (res) {
+                        let goodBills = [];
+                        for (let i = 0; i < res.data.length; i++) {
+                            let elem = {
+                                ID: res.data[i][0],
+                                name: res.data[i][1],
+                                product: res.data[i][3],
+                                price: res.data[i][2]
+                            };
+                            goodBills.push(elem);
+                        }
+                        rw.dealers = goodBills;
+                    })
+                    .catch(function (res) {
+                        //handle error
+                        console.log(res);
+                    })
             },
 
             editItem(item) {
@@ -104,8 +126,25 @@
             },
 
             deleteItem(item) {
+                const rw = this;
                 const index = this.dealers.indexOf(item);
-                confirm('Удалить элемент') && this.dealers.splice(index, 1);
+                let result = confirm("Удалить элемент " + (this.dealers[index].ID) + '?');
+                if (result) {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/removeElement',
+                        data: {
+                            table: 'dealers',
+                            id: rw.dealers[index].ID
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
             },
 
             close() {
@@ -117,13 +156,72 @@
             },
 
             save() {
-                if (this.editedIndex > -1) {
-                    Object.assign(this.dealers[this.editedIndex], this.editedItem);
-                } else {
-                    this.dealers.push(this.editedItem);
+                let nameCheck = false;
+                let productCheck = false;
+                let priceCheck = false;
+                if (document.getElementById('name').value) {
+                    nameCheck = true;
                 }
-                this.close();
+                if (document.getElementById('prod').value) {
+                    productCheck = true;
+                }
+                if (!isNaN(document.getElementById('price').value)) {
+                    priceCheck = true;
+                }
+
+
+                if (priceCheck && nameCheck && productCheck) {
+                    if (document.getElementById('id').value == 'ID') {
+                        addItem();
+                    } else {
+                        updateItem();
+                    }
+                }
+
+
+                function addItem() {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/addElement',
+                        data: {
+                            table: 'dealers',
+                            cols: 'products, name, retail_price',
+                            values: "('" + document.getElementById('prod').value + "', '"
+                                + document.getElementById('name').value + "','" + document.getElementById('price').value + "')"
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
+
+
+                function updateItem() {
+                    axios({
+                        method: 'post',
+                        url: 'http://localhost:5000/updateElement',
+                        data: {
+                            table: 'dealers',
+                            cols: 'products, name, retail_price',
+                            id: document.getElementById('id').value,
+                            values: "('" + document.getElementById('prod').value + "', '"
+                                + document.getElementById('name').value + "','" + document.getElementById('price').value + "')"
+                        },
+                    }).then(function (response) {
+                        location.reload();
+                    })
+                        .catch(function (response) {
+                            //handle error
+                            console.log(response);
+                        })
+                }
+
             },
+
+
         },
     }
 </script>
