@@ -106,8 +106,8 @@
                             let elem = {
                                 ID: res.data[i][0],
                                 name: res.data[i][1],
-                                product: res.data[i][2],
-                                price: res.data[i][3]
+                                product: res.data[i][3],
+                                price: res.data[i][2]
                             };
                             goodBills.push(elem);
                         }
