@@ -64,7 +64,7 @@
                 {text: 'ID', align: 'left', value: 'ID'},
                 {text: 'Дата', value: 'date'},
                 {text: 'Количество', value: 'amount'},
-                {text: 'ID поставщика', value: 'dealerID'},
+                {text: 'Поставщик', value: 'dealer'},
                 {text: 'Действия', value: 'action', sortable: false},
             ],
             waybills: [],
@@ -101,24 +101,6 @@
         methods: {
             initialize() {
                 const rw = this;
-                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[3])
-                    .then(function (res) {
-                        let goodBills = [];
-                        for (let i = 0; i < res.data.length; i++) {
-                            let elem = {
-                                ID: res.data[i][0],
-                                date: res.data[i][1],
-                                amount: res.data[i][2],
-                                dealerID: res.data[i][3],
-                            };
-                            goodBills.push(elem);
-                        }
-                        rw.waybills = goodBills;
-                    })
-                    .catch(function (res) {
-                        //handle error
-                        console.log(res);
-                    });
                 axios.get('http://localhost:5000/getInfo?table=dealers')
                     .then(function (res) {
                         let goodBills = [];
@@ -131,7 +113,34 @@
                     .catch(function (res) {
                         //handle error
                         console.log(res);
+                    });
+                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[3])
+                    .then(function (res) {
+                        let goodBills = [];
+                        for (let i = 0; i < res.data.length; i++) {
+                            let dealer = '';
+                            for(let j = 0; j < rw.dealers.length; j++) {
+                                console.log(rw.dealers[j].split(':')[0]);
+                                console.log(res.data[i][3]);
+                                if (res.data[i][3] == rw.dealers[j].split(':')[0]) {
+                                    dealer = rw.dealers[j].split(':')[1];
+                                }
+                            }
+                            let elem = {
+                                ID: res.data[i][0],
+                                date: res.data[i][1],
+                                amount: res.data[i][2],
+                                dealerID: res.data[i][3],
+                                dealer: dealer
+                            };
+                            goodBills.push(elem);
+                        }
+                        rw.waybills = goodBills;
                     })
+                    .catch(function (res) {
+                        //handle error
+                        console.log(res);
+                    });
             },
 
             editItem(item) {

@@ -62,7 +62,7 @@
             headers: [
                 {text: 'ID', align: 'left', value: 'ID'},
                 {text: 'Стоимость', value: 'price'},
-                {text: 'ID сотрудника', value: 'employee_id'},
+                {text: 'Сотрудник', value: 'employee'},
                 {text: 'Товары', value: 'list'},
                 {text: 'Действия', value: 'action', sortable: false},
             ],
@@ -155,18 +155,25 @@
                 axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[3])
                     .then(function (res) {
                         let goodBills = [];
-                        let cock = '';
                         for (let i = 0; i < res.data.length; i++) {
+                            let cock = '';
                             for (let j = 0; j < rw.productsBills.length; j++) {
                                 if (rw.productsBills[i].bill == res.data[i][0]) {
                                     cock += rw.productsBills[i].product + ' ';
+                                }
+                            }
+                            let name = '';
+                            for (let j = 0; j < rw.employees.length; j++) {
+                                if (res.data[i][2] == rw.employees[i].split(":")[0]) {
+                                    name = rw.employees[i].split(':')[1];
                                 }
                             }
                             let elem = {
                                 ID: res.data[i][0],
                                 employee_id: res.data[i][2],
                                 price: res.data[i][1],
-                                list: cock
+                                list: cock,
+                                employee: name
                             };
 
                             goodBills.push(elem);

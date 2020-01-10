@@ -65,6 +65,7 @@
                 {text: 'Действия', value: 'action', sortable: false},
             ],
             dealers: [],
+            products: [],
             editedIndex: -1,
             editedItem: {
                 product: '',
@@ -99,15 +100,40 @@
         methods: {
             initialize() {
                 const rw = this;
-                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[3])
+                axios.get('http://localhost:5000/getInfo?table=products')
                     .then(function (res) {
                         let goodBills = [];
                         for (let i = 0; i < res.data.length; i++) {
                             let elem = {
                                 ID: res.data[i][0],
                                 name: res.data[i][1],
-                                product: res.data[i][3],
-                                price: res.data[i][2]
+                            };
+                            goodBills.push(elem);
+                        }
+                        rw.products = goodBills;
+                    })
+                    .catch(function (res) {
+                        //handle error
+                        console.log(res);
+                    });
+                axios.get('http://localhost:5000/getInfo?table=' + window.location.href.split('/')[3])
+                    .then(function (res) {
+                        let goodBills = [];
+                        let product = 'asd';
+                        for (let i = 0; i < res.data.length; i++) {
+                            for(let j = 0; j < rw.products.length; j++) {
+                                console.log(rw.products);
+                                console.log(res.data);
+                                if(res.data[i][3] == rw.products[j].ID) {
+                                    product = rw.products[j].name;
+                                }
+                            }
+                            let elem = {
+                                ID: res.data[i][0],
+                                name: res.data[i][1],
+                                product_id: res.data[i][3],
+                                price: res.data[i][2],
+                                product: product
                             };
                             goodBills.push(elem);
                         }

@@ -9,7 +9,6 @@ import Products from "@/views/Products";
 import Bills from "@/views/Bills";
 import Reports from "@/views/Reports";
 import Employees from "@/views/Employees";
-import Finance from "@/views/Finance";
 import Sales from "@/views/Sales";
 
 Vue.use(Router);
@@ -61,11 +60,6 @@ const router = new Router({
             component: Employees
         }
         ,
-        {
-            path: '/finance',
-            name: 'Finance',
-            component: Finance
-        },
         {
             path: '/sales',
             name: 'Sales',

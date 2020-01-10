@@ -53,8 +53,7 @@
             dialog: false,
             headers: [
                 {text: 'ID', align: 'left', value: 'ID'},
-                {text: 'Навзвание', value: 'name'},
-                {text: 'Цена', value: 'price'},
+                {text: 'Название', value: 'name'},
                 {text: 'Действия', value: 'action', sortable: false},
             ],
             products: [],
@@ -96,8 +95,7 @@
                         for (let i = 0; i < res.data.length; i++) {
                             let elem = {
                                 ID: res.data[i][0],
-                                name: res.data[i][2],
-                                price: res.data[i][1],
+                                name: res.data[i][1],
                             };
                             goodBills.push(elem);
                         }
