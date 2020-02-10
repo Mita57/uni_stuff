@@ -159,7 +159,7 @@
                             let cock = '';
                             for (let j = 0; j < rw.productsBills.length; j++) {
                                 if (rw.productsBills[i].bill == res.data[i][0]) {
-                                    cock += rw.productsBills[i].product + ' ';
+                                    cock += rw.productsBills[j].product + ' ';
                                 }
                             }
                             let name = '';
