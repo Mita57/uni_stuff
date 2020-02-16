@@ -5,7 +5,7 @@ function get_text_and_ing($id) {
     $query = "SELECT * FROM news WHERE id=$id";
     $result = pg_query($db_conn, $query);
     $exec = pg_fetch_all($result);
-    $response = $exec[0]['kindaheader'] . "; \n" . $exec[0]['text'] . "; \n" . $exec[0]['topic'];
+    $response = $exec[0]['kindaheader'] . "; \n" . $exec[0]['text'] . "; \n" . $exec[0]['topic'] . '^' . $exec[0]['img'];
     echo $response;
 }
 ?>

@@ -4,7 +4,11 @@ function idSearch():void {
     xmlHTTP.send();
     xmlHTTP.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById('idSearch').innerHTML = xmlHTTP.responseText;
+            let resposne:string = xmlHTTP.responseText;
+            let responseParts = resposne.split('^');
+            document.getElementById('idSearch').innerHTML = '';
+            document.getElementById('idSearch').innerHTML = responseParts[0];
+            document.getElementById('idSearch').innerHTML += '<br> <img src="' + responseParts[1] + '">';
         }
     }
 }

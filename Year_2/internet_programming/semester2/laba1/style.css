@@ -3,9 +3,9 @@ body {
     font-family: "Comic Sans MS";
 }
 .inputs {
-    width: 1000px;
+    width: 1300px;
     background-color: darkblue;
-    height: 500px;
+    height: 700px;
     margin: auto;
     padding: 20px;
     border-radius: 10px;
@@ -13,22 +13,26 @@ body {
 
 #id {
     float: left;
-    width: 500px;
+    width: 650px;
     text-align: center;
     color: white;
-    height:450px;
+    height:650px;
+}
+
+#id img {
+    height: 200px;
 }
 
 #search {
     float: right;
-    width: 500px;
+    width: 650px;
     text-align: center;
     color: white;
-    height:450px;
+    height:650px;
 }
 #conn {
     height: 50px;
-    width: 1000px;
+    width: 1300px;
     color: white;
     text-align: center;
 }
