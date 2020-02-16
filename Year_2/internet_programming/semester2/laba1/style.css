@@ -1,0 +1,34 @@
+body {
+    background-image: url("bg.jpg");
+    font-family: "Comic Sans MS";
+}
+.inputs {
+    width: 1000px;
+    background-color: darkblue;
+    height: 500px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#id {
+    float: left;
+    width: 500px;
+    text-align: center;
+    color: white;
+    height:450px;
+}
+
+#search {
+    float: right;
+    width: 500px;
+    text-align: center;
+    color: white;
+    height:450px;
+}
+#conn {
+    height: 50px;
+    width: 1000px;
+    color: white;
+    text-align: center;
+}
