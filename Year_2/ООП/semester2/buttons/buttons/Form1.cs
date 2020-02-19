@@ -56,6 +56,8 @@ namespace buttons
             MinimizeBox = !MinimizeBox;
         }
 
+        int chosen = 1;
+
         private void Button5_Click(object sender, EventArgs e)
         {
             if(Control.ModifierKeys == Keys.None)
@@ -76,13 +78,19 @@ namespace buttons
                 label5.Font = new Font(label5.Font.Name, label5.Font.Size - 1);
             }
 
+            FontStyle[] array = new FontStyle[]{FontStyle.Regular, FontStyle.Bold, FontStyle.Italic, FontStyle.Underline};
             if (Control.ModifierKeys == Keys.Control)
             {
-                label1.Font = new Font(label1.Font.Name, label1.Font.Size);
-                label2.Font = new Font(label2.Font.Name, label2.Font.Size);
-                label3.Font = new Font(label3.Font.Name, label3.Font.Size);
-                label4.Font = new Font(label4.Font.Name, label4.Font.Size);
-                label5.Font = new Font(label5.Font.Name, label5.Font.Size);
+                label1.Font = new Font(label1.Font.Name, label1.Font.Size, array[chosen]);
+                label2.Font = new Font(label2.Font.Name, label2.Font.Size, array[chosen]);
+                label3.Font = new Font(label3.Font.Name, label3.Font.Size, array[chosen]);
+                label4.Font = new Font(label4.Font.Name, label4.Font.Size, array[chosen]);
+                label5.Font = new Font(label5.Font.Name, label5.Font.Size, array[chosen]);
+                chosen++;
+                if(chosen == 4)
+                {
+                    chosen = 0;
+                }
             }
         }
     }
