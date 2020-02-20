@@ -93,5 +93,76 @@ namespace buttons
                 }
             }
         }
+
+
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+            restore();
+        }
+
+        private void restore()
+        {
+            this.MinimizeBox = true;
+            label1.Left = 12;
+            label2.Left = 134;
+            label3.Left = 293;
+            label4.Left = 404;
+            label5.Left = 530;
+            button1.Left = 25;
+            button2.Left = 152;
+            button3.Left = 280;
+            button4.Left = 404;
+            button5.Left = 530;
+            this.Width = 677;
+            this.Height = 161;
+        }
+
+        private void Form1_DoubleClick(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(Control.ModifierKeys == Keys.Alt && e.KeyCode == Keys.I)
+            {
+                restore();
+            }
+
+            if (Control.ModifierKeys == Keys.Alt && e.KeyCode == Keys.X)
+            {
+                this.Close();
+            }
+        }
+
+        private void MouseOver(object sender, EventArgs e)
+        {
+            infoLabel.Text += (Convert.ToString(((Button)sender).Tag));
+        }
+
+        private void MouseLeeft(object sender, EventArgs e)
+        {
+            infoLabel.Text = "Инфа: ";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.PaleGreen;
+            button2.BackColor = Color.MediumSpringGreen;
+            button3.BackColor = Color.SpringGreen;
+            button4.BackColor = Color.Lime;
+            button5.BackColor = Color.Green;
+        }
+
+        private void RBMClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                ColorDialog MyDialog = new ColorDialog();
+                if (MyDialog.ShowDialog() == DialogResult.OK)
+                    ((Button)sender).BackColor = MyDialog.Color;
+            }
+        }
     }
 }
