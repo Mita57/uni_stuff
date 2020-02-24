@@ -1,0 +1,45 @@
+body {
+    font-family: "Comic Sans MS";
+    margin: 0;
+    padding: 0;
+    background-image: url("bg.jpg");
+}
+
+header {
+    margin: auto;
+    height: 150px;
+    width: 600px;
+    text-align: center;
+    background-color: lightskyblue;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+header img {
+    height: 100px;
+}
+
+ul {
+    float: left;
+    background-color: lightyellow;
+    width: 25%;
+    padding: 10px;
+}
+
+article {
+    padding: 10px;
+    float: right;
+    width: 70%;
+    margin-top: 20px;
+    background-color: lime;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    width: 400px;
+    background-color: orange;
+    padding: 10px;
+    left: 34%;
+}
+
+
