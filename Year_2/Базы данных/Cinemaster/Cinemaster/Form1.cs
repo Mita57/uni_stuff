@@ -15,6 +15,7 @@ namespace Cinemaster
         public Form1()
         {
             InitializeComponent();
+            name
         }
     }
 }

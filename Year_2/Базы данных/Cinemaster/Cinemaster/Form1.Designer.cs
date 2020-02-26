@@ -93,15 +93,87 @@
             this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.film = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filmsGrid = new System.Windows.Forms.DataGridView();
+            this.filmsAddGroup = new System.Windows.Forms.GroupBox();
+            this.filmsAddGenreCB = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.filmsAddIDField = new System.Windows.Forms.TextBox();
+            this.addFilmButton = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.filmsAddNameField = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.filmsAddAgeRestr = new System.Windows.Forms.NumericUpDown();
+            this.filmsEditGroup = new System.Windows.Forms.GroupBox();
+            this.filmsEditAgeRestr = new System.Windows.Forms.NumericUpDown();
+            this.label21 = new System.Windows.Forms.Label();
+            this.filmsEditNameField = new System.Windows.Forms.TextBox();
+            this.filmsEditGenreCB = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.filmsEditIDField = new System.Windows.Forms.TextBox();
+            this.changeFilmButton = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.filmsDeleteButton = new System.Windows.Forms.Button();
+            this.cashiersGrid = new System.Windows.Forms.DataGridView();
+            this.filmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageRestr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addCashierGroup = new System.Windows.Forms.GroupBox();
+            this.cashierAddNameField = new System.Windows.Forms.TextBox();
+            this.cashierAddIDField = new System.Windows.Forms.TextBox();
+            this.addCashierButton = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.editCashierGroup = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.updateCashierButton = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.removeCashierButton = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cashierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomsGrid = new System.Windows.Forms.DataGridView();
+            this.roomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addRoomGroup = new System.Windows.Forms.GroupBox();
+            this.roomsAddNameField = new System.Windows.Forms.TextBox();
+            this.roomsAddIDField = new System.Windows.Forms.TextBox();
+            this.addRoomButton = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.editRoomGroup = new System.Windows.Forms.GroupBox();
+            this.roomsEditNameField = new System.Windows.Forms.TextBox();
+            this.roomsEditIDField = new System.Windows.Forms.TextBox();
+            this.updateRoomButton = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.deleteCashierButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tickets.SuspendLayout();
             this.sessions.SuspendLayout();
+            this.films.SuspendLayout();
+            this.cashiers.SuspendLayout();
+            this.rooms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).BeginInit();
             this.ticketsAddGroup.SuspendLayout();
             this.ticketsEditGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sessionsGrid)).BeginInit();
             this.sessionsAddGroup.SuspendLayout();
             this.sessionsEditGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsGrid)).BeginInit();
+            this.filmsAddGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsAddAgeRestr)).BeginInit();
+            this.filmsEditGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsEditAgeRestr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cashiersGrid)).BeginInit();
+            this.addCashierGroup.SuspendLayout();
+            this.editCashierGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsGrid)).BeginInit();
+            this.addRoomGroup.SuspendLayout();
+            this.editRoomGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -112,7 +184,7 @@
             this.tabControl1.Controls.Add(this.cashiers);
             this.tabControl1.Controls.Add(this.rooms);
             this.tabControl1.Controls.Add(this.genres);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(1, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1040, 554);
@@ -148,6 +220,10 @@
             // 
             // films
             // 
+            this.films.Controls.Add(this.filmsDeleteButton);
+            this.films.Controls.Add(this.filmsEditGroup);
+            this.films.Controls.Add(this.filmsAddGroup);
+            this.films.Controls.Add(this.filmsGrid);
             this.films.Location = new System.Drawing.Point(4, 22);
             this.films.Name = "films";
             this.films.Size = new System.Drawing.Size(1032, 528);
@@ -157,6 +233,10 @@
             // 
             // cashiers
             // 
+            this.cashiers.Controls.Add(this.removeCashierButton);
+            this.cashiers.Controls.Add(this.editCashierGroup);
+            this.cashiers.Controls.Add(this.addCashierGroup);
+            this.cashiers.Controls.Add(this.cashiersGrid);
             this.cashiers.Location = new System.Drawing.Point(4, 22);
             this.cashiers.Name = "cashiers";
             this.cashiers.Size = new System.Drawing.Size(1032, 528);
@@ -166,6 +246,10 @@
             // 
             // rooms
             // 
+            this.rooms.Controls.Add(this.deleteCashierButton);
+            this.rooms.Controls.Add(this.editRoomGroup);
+            this.rooms.Controls.Add(this.addRoomGroup);
+            this.rooms.Controls.Add(this.roomsGrid);
             this.rooms.Location = new System.Drawing.Point(4, 22);
             this.rooms.Name = "rooms";
             this.rooms.Size = new System.Drawing.Size(1032, 528);
@@ -603,7 +687,7 @@
             this.sessionsEditGroup.Controls.Add(this.label15);
             this.sessionsEditGroup.Controls.Add(this.label16);
             this.sessionsEditGroup.Controls.Add(this.label18);
-            this.sessionsEditGroup.Location = new System.Drawing.Point(760, 229);
+            this.sessionsEditGroup.Location = new System.Drawing.Point(762, 229);
             this.sessionsEditGroup.Name = "sessionsEditGroup";
             this.sessionsEditGroup.Size = new System.Drawing.Size(263, 199);
             this.sessionsEditGroup.TabIndex = 13;
@@ -745,6 +829,542 @@
             this.room.Name = "room";
             this.room.Width = 164;
             // 
+            // filmsGrid
+            // 
+            this.filmsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.filmsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.filmID,
+            this.name,
+            this.genre,
+            this.ageRestr});
+            this.filmsGrid.Location = new System.Drawing.Point(6, 5);
+            this.filmsGrid.Name = "filmsGrid";
+            this.filmsGrid.RowHeadersVisible = false;
+            this.filmsGrid.Size = new System.Drawing.Size(748, 515);
+            this.filmsGrid.TabIndex = 2;
+            // 
+            // filmsAddGroup
+            // 
+            this.filmsAddGroup.Controls.Add(this.filmsAddAgeRestr);
+            this.filmsAddGroup.Controls.Add(this.label19);
+            this.filmsAddGroup.Controls.Add(this.filmsAddNameField);
+            this.filmsAddGroup.Controls.Add(this.filmsAddGenreCB);
+            this.filmsAddGroup.Controls.Add(this.label20);
+            this.filmsAddGroup.Controls.Add(this.filmsAddIDField);
+            this.filmsAddGroup.Controls.Add(this.addFilmButton);
+            this.filmsAddGroup.Controls.Add(this.label22);
+            this.filmsAddGroup.Controls.Add(this.label23);
+            this.filmsAddGroup.Location = new System.Drawing.Point(762, 10);
+            this.filmsAddGroup.Name = "filmsAddGroup";
+            this.filmsAddGroup.Size = new System.Drawing.Size(263, 168);
+            this.filmsAddGroup.TabIndex = 12;
+            this.filmsAddGroup.TabStop = false;
+            this.filmsAddGroup.Text = "Добавить фильм";
+            // 
+            // filmsAddGenreCB
+            // 
+            this.filmsAddGenreCB.FormattingEnabled = true;
+            this.filmsAddGenreCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
+            this.filmsAddGenreCB.Location = new System.Drawing.Point(58, 71);
+            this.filmsAddGenreCB.Name = "filmsAddGenreCB";
+            this.filmsAddGenreCB.Size = new System.Drawing.Size(186, 21);
+            this.filmsAddGenreCB.TabIndex = 9;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(7, 75);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(39, 13);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "Жанр:";
+            // 
+            // filmsAddIDField
+            // 
+            this.filmsAddIDField.Location = new System.Drawing.Point(58, 19);
+            this.filmsAddIDField.Name = "filmsAddIDField";
+            this.filmsAddIDField.ReadOnly = true;
+            this.filmsAddIDField.Size = new System.Drawing.Size(186, 20);
+            this.filmsAddIDField.TabIndex = 7;
+            // 
+            // addFilmButton
+            // 
+            this.addFilmButton.Location = new System.Drawing.Point(6, 124);
+            this.addFilmButton.Name = "addFilmButton";
+            this.addFilmButton.Size = new System.Drawing.Size(247, 34);
+            this.addFilmButton.TabIndex = 6;
+            this.addFilmButton.Text = "Добавить фильм";
+            this.addFilmButton.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(7, 49);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(32, 13);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Имя:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(7, 22);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(44, 13);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Номер:";
+            // 
+            // filmsAddNameField
+            // 
+            this.filmsAddNameField.Location = new System.Drawing.Point(58, 45);
+            this.filmsAddNameField.Name = "filmsAddNameField";
+            this.filmsAddNameField.Size = new System.Drawing.Size(186, 20);
+            this.filmsAddNameField.TabIndex = 13;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(7, 102);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(32, 13);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "Огр.:";
+            // 
+            // filmsAddAgeRestr
+            // 
+            this.filmsAddAgeRestr.Location = new System.Drawing.Point(58, 98);
+            this.filmsAddAgeRestr.Name = "filmsAddAgeRestr";
+            this.filmsAddAgeRestr.Size = new System.Drawing.Size(186, 20);
+            this.filmsAddAgeRestr.TabIndex = 15;
+            // 
+            // filmsEditGroup
+            // 
+            this.filmsEditGroup.Controls.Add(this.filmsEditAgeRestr);
+            this.filmsEditGroup.Controls.Add(this.label21);
+            this.filmsEditGroup.Controls.Add(this.filmsEditNameField);
+            this.filmsEditGroup.Controls.Add(this.filmsEditGenreCB);
+            this.filmsEditGroup.Controls.Add(this.label24);
+            this.filmsEditGroup.Controls.Add(this.filmsEditIDField);
+            this.filmsEditGroup.Controls.Add(this.changeFilmButton);
+            this.filmsEditGroup.Controls.Add(this.label25);
+            this.filmsEditGroup.Controls.Add(this.label26);
+            this.filmsEditGroup.Location = new System.Drawing.Point(762, 229);
+            this.filmsEditGroup.Name = "filmsEditGroup";
+            this.filmsEditGroup.Size = new System.Drawing.Size(263, 168);
+            this.filmsEditGroup.TabIndex = 13;
+            this.filmsEditGroup.TabStop = false;
+            this.filmsEditGroup.Text = "Изменить фильм";
+            // 
+            // filmsEditAgeRestr
+            // 
+            this.filmsEditAgeRestr.Location = new System.Drawing.Point(58, 98);
+            this.filmsEditAgeRestr.Name = "filmsEditAgeRestr";
+            this.filmsEditAgeRestr.Size = new System.Drawing.Size(186, 20);
+            this.filmsEditAgeRestr.TabIndex = 15;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(7, 102);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(32, 13);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Огр.:";
+            // 
+            // filmsEditNameField
+            // 
+            this.filmsEditNameField.Location = new System.Drawing.Point(58, 45);
+            this.filmsEditNameField.Name = "filmsEditNameField";
+            this.filmsEditNameField.Size = new System.Drawing.Size(186, 20);
+            this.filmsEditNameField.TabIndex = 13;
+            // 
+            // filmsEditGenreCB
+            // 
+            this.filmsEditGenreCB.FormattingEnabled = true;
+            this.filmsEditGenreCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
+            this.filmsEditGenreCB.Location = new System.Drawing.Point(58, 71);
+            this.filmsEditGenreCB.Name = "filmsEditGenreCB";
+            this.filmsEditGenreCB.Size = new System.Drawing.Size(186, 21);
+            this.filmsEditGenreCB.TabIndex = 9;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(7, 75);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(39, 13);
+            this.label24.TabIndex = 8;
+            this.label24.Text = "Жанр:";
+            // 
+            // filmsEditIDField
+            // 
+            this.filmsEditIDField.Location = new System.Drawing.Point(58, 19);
+            this.filmsEditIDField.Name = "filmsEditIDField";
+            this.filmsEditIDField.ReadOnly = true;
+            this.filmsEditIDField.Size = new System.Drawing.Size(186, 20);
+            this.filmsEditIDField.TabIndex = 7;
+            // 
+            // changeFilmButton
+            // 
+            this.changeFilmButton.Location = new System.Drawing.Point(6, 124);
+            this.changeFilmButton.Name = "changeFilmButton";
+            this.changeFilmButton.Size = new System.Drawing.Size(247, 34);
+            this.changeFilmButton.TabIndex = 6;
+            this.changeFilmButton.Text = "Изменить фильм";
+            this.changeFilmButton.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(7, 49);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(32, 13);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Имя:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(7, 22);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(44, 13);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Номер:";
+            // 
+            // filmsDeleteButton
+            // 
+            this.filmsDeleteButton.BackColor = System.Drawing.Color.Tomato;
+            this.filmsDeleteButton.Location = new System.Drawing.Point(772, 471);
+            this.filmsDeleteButton.Name = "filmsDeleteButton";
+            this.filmsDeleteButton.Size = new System.Drawing.Size(247, 34);
+            this.filmsDeleteButton.TabIndex = 14;
+            this.filmsDeleteButton.Text = "Удалить фильм";
+            this.filmsDeleteButton.UseVisualStyleBackColor = false;
+            // 
+            // cashiersGrid
+            // 
+            this.cashiersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cashiersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.cashierName});
+            this.cashiersGrid.Location = new System.Drawing.Point(6, 5);
+            this.cashiersGrid.Name = "cashiersGrid";
+            this.cashiersGrid.RowHeadersVisible = false;
+            this.cashiersGrid.Size = new System.Drawing.Size(748, 515);
+            this.cashiersGrid.TabIndex = 3;
+            // 
+            // filmID
+            // 
+            this.filmID.HeaderText = "ID";
+            this.filmID.Name = "filmID";
+            this.filmID.Width = 97;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Название";
+            this.name.Name = "name";
+            this.name.Width = 216;
+            // 
+            // genre
+            // 
+            this.genre.HeaderText = "Жанр";
+            this.genre.Name = "genre";
+            this.genre.Width = 216;
+            // 
+            // ageRestr
+            // 
+            this.ageRestr.HeaderText = "Огр";
+            this.ageRestr.Name = "ageRestr";
+            this.ageRestr.Width = 216;
+            // 
+            // addCashierGroup
+            // 
+            this.addCashierGroup.Controls.Add(this.cashierAddNameField);
+            this.addCashierGroup.Controls.Add(this.cashierAddIDField);
+            this.addCashierGroup.Controls.Add(this.addCashierButton);
+            this.addCashierGroup.Controls.Add(this.label29);
+            this.addCashierGroup.Controls.Add(this.label30);
+            this.addCashierGroup.Location = new System.Drawing.Point(762, 10);
+            this.addCashierGroup.Name = "addCashierGroup";
+            this.addCashierGroup.Size = new System.Drawing.Size(263, 114);
+            this.addCashierGroup.TabIndex = 13;
+            this.addCashierGroup.TabStop = false;
+            this.addCashierGroup.Text = "Добавить кассира";
+            // 
+            // cashierAddNameField
+            // 
+            this.cashierAddNameField.Location = new System.Drawing.Point(58, 45);
+            this.cashierAddNameField.Name = "cashierAddNameField";
+            this.cashierAddNameField.Size = new System.Drawing.Size(186, 20);
+            this.cashierAddNameField.TabIndex = 13;
+            // 
+            // cashierAddIDField
+            // 
+            this.cashierAddIDField.Location = new System.Drawing.Point(58, 19);
+            this.cashierAddIDField.Name = "cashierAddIDField";
+            this.cashierAddIDField.ReadOnly = true;
+            this.cashierAddIDField.Size = new System.Drawing.Size(186, 20);
+            this.cashierAddIDField.TabIndex = 7;
+            // 
+            // addCashierButton
+            // 
+            this.addCashierButton.Location = new System.Drawing.Point(6, 71);
+            this.addCashierButton.Name = "addCashierButton";
+            this.addCashierButton.Size = new System.Drawing.Size(247, 34);
+            this.addCashierButton.TabIndex = 6;
+            this.addCashierButton.Text = "Добавить кассира";
+            this.addCashierButton.UseVisualStyleBackColor = true;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(7, 49);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(32, 13);
+            this.label29.TabIndex = 1;
+            this.label29.Text = "Имя:";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(7, 22);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(44, 13);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "Номер:";
+            // 
+            // editCashierGroup
+            // 
+            this.editCashierGroup.Controls.Add(this.textBox1);
+            this.editCashierGroup.Controls.Add(this.textBox2);
+            this.editCashierGroup.Controls.Add(this.updateCashierButton);
+            this.editCashierGroup.Controls.Add(this.label27);
+            this.editCashierGroup.Controls.Add(this.label28);
+            this.editCashierGroup.Location = new System.Drawing.Point(762, 229);
+            this.editCashierGroup.Name = "editCashierGroup";
+            this.editCashierGroup.Size = new System.Drawing.Size(263, 114);
+            this.editCashierGroup.TabIndex = 14;
+            this.editCashierGroup.TabStop = false;
+            this.editCashierGroup.Text = "Изменить кассира";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(58, 45);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(186, 20);
+            this.textBox1.TabIndex = 13;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(58, 19);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(186, 20);
+            this.textBox2.TabIndex = 7;
+            // 
+            // updateCashierButton
+            // 
+            this.updateCashierButton.Location = new System.Drawing.Point(6, 71);
+            this.updateCashierButton.Name = "updateCashierButton";
+            this.updateCashierButton.Size = new System.Drawing.Size(247, 34);
+            this.updateCashierButton.TabIndex = 6;
+            this.updateCashierButton.Text = "Обновить кассира";
+            this.updateCashierButton.UseVisualStyleBackColor = true;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(7, 49);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(32, 13);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "Имя:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(7, 22);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(44, 13);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Номер:";
+            // 
+            // removeCashierButton
+            // 
+            this.removeCashierButton.BackColor = System.Drawing.Color.Tomato;
+            this.removeCashierButton.Location = new System.Drawing.Point(772, 471);
+            this.removeCashierButton.Name = "removeCashierButton";
+            this.removeCashierButton.Size = new System.Drawing.Size(247, 34);
+            this.removeCashierButton.TabIndex = 15;
+            this.removeCashierButton.Text = "Удалить кассира";
+            this.removeCashierButton.UseVisualStyleBackColor = false;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 50;
+            // 
+            // cashierName
+            // 
+            this.cashierName.HeaderText = "Имя";
+            this.cashierName.Name = "cashierName";
+            this.cashierName.Width = 694;
+            // 
+            // roomsGrid
+            // 
+            this.roomsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.roomsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.roomID,
+            this.roomName});
+            this.roomsGrid.Location = new System.Drawing.Point(6, 5);
+            this.roomsGrid.Name = "roomsGrid";
+            this.roomsGrid.RowHeadersVisible = false;
+            this.roomsGrid.Size = new System.Drawing.Size(748, 515);
+            this.roomsGrid.TabIndex = 4;
+            // 
+            // roomID
+            // 
+            this.roomID.HeaderText = "ID";
+            this.roomID.Name = "roomID";
+            this.roomID.Width = 50;
+            // 
+            // roomName
+            // 
+            this.roomName.HeaderText = "Имя";
+            this.roomName.Name = "roomName";
+            this.roomName.Width = 694;
+            // 
+            // addRoomGroup
+            // 
+            this.addRoomGroup.Controls.Add(this.roomsAddNameField);
+            this.addRoomGroup.Controls.Add(this.roomsAddIDField);
+            this.addRoomGroup.Controls.Add(this.addRoomButton);
+            this.addRoomGroup.Controls.Add(this.label31);
+            this.addRoomGroup.Controls.Add(this.label32);
+            this.addRoomGroup.Location = new System.Drawing.Point(762, 10);
+            this.addRoomGroup.Name = "addRoomGroup";
+            this.addRoomGroup.Size = new System.Drawing.Size(263, 114);
+            this.addRoomGroup.TabIndex = 14;
+            this.addRoomGroup.TabStop = false;
+            this.addRoomGroup.Text = "Добавить зал";
+            // 
+            // roomsAddNameField
+            // 
+            this.roomsAddNameField.Location = new System.Drawing.Point(58, 45);
+            this.roomsAddNameField.Name = "roomsAddNameField";
+            this.roomsAddNameField.Size = new System.Drawing.Size(186, 20);
+            this.roomsAddNameField.TabIndex = 13;
+            // 
+            // roomsAddIDField
+            // 
+            this.roomsAddIDField.Location = new System.Drawing.Point(58, 19);
+            this.roomsAddIDField.Name = "roomsAddIDField";
+            this.roomsAddIDField.ReadOnly = true;
+            this.roomsAddIDField.Size = new System.Drawing.Size(186, 20);
+            this.roomsAddIDField.TabIndex = 7;
+            // 
+            // addRoomButton
+            // 
+            this.addRoomButton.Location = new System.Drawing.Point(6, 71);
+            this.addRoomButton.Name = "addRoomButton";
+            this.addRoomButton.Size = new System.Drawing.Size(247, 34);
+            this.addRoomButton.TabIndex = 6;
+            this.addRoomButton.Text = "Добавить комнату";
+            this.addRoomButton.UseVisualStyleBackColor = true;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(7, 49);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(32, 13);
+            this.label31.TabIndex = 1;
+            this.label31.Text = "Имя:";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(7, 22);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(44, 13);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "Номер:";
+            // 
+            // editRoomGroup
+            // 
+            this.editRoomGroup.Controls.Add(this.roomsEditNameField);
+            this.editRoomGroup.Controls.Add(this.roomsEditIDField);
+            this.editRoomGroup.Controls.Add(this.updateRoomButton);
+            this.editRoomGroup.Controls.Add(this.label33);
+            this.editRoomGroup.Controls.Add(this.label34);
+            this.editRoomGroup.Location = new System.Drawing.Point(762, 229);
+            this.editRoomGroup.Name = "editRoomGroup";
+            this.editRoomGroup.Size = new System.Drawing.Size(263, 114);
+            this.editRoomGroup.TabIndex = 15;
+            this.editRoomGroup.TabStop = false;
+            this.editRoomGroup.Text = "Изменить зал";
+            // 
+            // roomsEditNameField
+            // 
+            this.roomsEditNameField.Location = new System.Drawing.Point(58, 45);
+            this.roomsEditNameField.Name = "roomsEditNameField";
+            this.roomsEditNameField.Size = new System.Drawing.Size(186, 20);
+            this.roomsEditNameField.TabIndex = 13;
+            // 
+            // roomsEditIDField
+            // 
+            this.roomsEditIDField.Location = new System.Drawing.Point(58, 19);
+            this.roomsEditIDField.Name = "roomsEditIDField";
+            this.roomsEditIDField.ReadOnly = true;
+            this.roomsEditIDField.Size = new System.Drawing.Size(186, 20);
+            this.roomsEditIDField.TabIndex = 7;
+            // 
+            // updateRoomButton
+            // 
+            this.updateRoomButton.Location = new System.Drawing.Point(6, 71);
+            this.updateRoomButton.Name = "updateRoomButton";
+            this.updateRoomButton.Size = new System.Drawing.Size(247, 34);
+            this.updateRoomButton.TabIndex = 6;
+            this.updateRoomButton.Text = "Добавить комнату";
+            this.updateRoomButton.UseVisualStyleBackColor = true;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(7, 49);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(32, 13);
+            this.label33.TabIndex = 1;
+            this.label33.Text = "Имя:";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(7, 22);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(44, 13);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "Номер:";
+            // 
+            // deleteCashierButton
+            // 
+            this.deleteCashierButton.BackColor = System.Drawing.Color.Tomato;
+            this.deleteCashierButton.Location = new System.Drawing.Point(772, 471);
+            this.deleteCashierButton.Name = "deleteCashierButton";
+            this.deleteCashierButton.Size = new System.Drawing.Size(247, 34);
+            this.deleteCashierButton.TabIndex = 16;
+            this.deleteCashierButton.Text = "Удалить комнату";
+            this.deleteCashierButton.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -757,6 +1377,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tickets.ResumeLayout(false);
             this.sessions.ResumeLayout(false);
+            this.films.ResumeLayout(false);
+            this.cashiers.ResumeLayout(false);
+            this.rooms.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).EndInit();
             this.ticketsAddGroup.ResumeLayout(false);
             this.ticketsAddGroup.PerformLayout();
@@ -767,6 +1390,23 @@
             this.sessionsAddGroup.PerformLayout();
             this.sessionsEditGroup.ResumeLayout(false);
             this.sessionsEditGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsGrid)).EndInit();
+            this.filmsAddGroup.ResumeLayout(false);
+            this.filmsAddGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsAddAgeRestr)).EndInit();
+            this.filmsEditGroup.ResumeLayout(false);
+            this.filmsEditGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsEditAgeRestr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cashiersGrid)).EndInit();
+            this.addCashierGroup.ResumeLayout(false);
+            this.addCashierGroup.PerformLayout();
+            this.editCashierGroup.ResumeLayout(false);
+            this.editCashierGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsGrid)).EndInit();
+            this.addRoomGroup.ResumeLayout(false);
+            this.addRoomGroup.PerformLayout();
+            this.editRoomGroup.ResumeLayout(false);
+            this.editRoomGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -837,6 +1477,64 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
         private System.Windows.Forms.DataGridViewTextBoxColumn film;
         private System.Windows.Forms.DataGridViewTextBoxColumn room;
+        private System.Windows.Forms.GroupBox filmsAddGroup;
+        private System.Windows.Forms.ComboBox filmsAddGenreCB;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox filmsAddIDField;
+        private System.Windows.Forms.Button addFilmButton;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DataGridView filmsGrid;
+        private System.Windows.Forms.TextBox filmsAddNameField;
+        private System.Windows.Forms.NumericUpDown filmsAddAgeRestr;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.GroupBox filmsEditGroup;
+        private System.Windows.Forms.NumericUpDown filmsEditAgeRestr;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox filmsEditNameField;
+        private System.Windows.Forms.ComboBox filmsEditGenreCB;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox filmsEditIDField;
+        private System.Windows.Forms.Button changeFilmButton;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button filmsDeleteButton;
+        private System.Windows.Forms.DataGridView cashiersGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filmID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ageRestr;
+        private System.Windows.Forms.GroupBox addCashierGroup;
+        private System.Windows.Forms.TextBox cashierAddNameField;
+        private System.Windows.Forms.TextBox cashierAddIDField;
+        private System.Windows.Forms.Button addCashierButton;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.GroupBox editCashierGroup;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button updateCashierButton;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button removeCashierButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cashierName;
+        private System.Windows.Forms.DataGridView roomsGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomName;
+        private System.Windows.Forms.GroupBox addRoomGroup;
+        private System.Windows.Forms.TextBox roomsAddNameField;
+        private System.Windows.Forms.TextBox roomsAddIDField;
+        private System.Windows.Forms.Button addRoomButton;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.GroupBox editRoomGroup;
+        private System.Windows.Forms.TextBox roomsEditNameField;
+        private System.Windows.Forms.TextBox roomsEditIDField;
+        private System.Windows.Forms.Button updateRoomButton;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button deleteCashierButton;
     }
 }
 
