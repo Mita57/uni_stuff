@@ -34,7 +34,7 @@
             this.sessions = new System.Windows.Forms.TabPage();
             this.films = new System.Windows.Forms.TabPage();
             this.cashiers = new System.Windows.Forms.TabPage();
-            this.room = new System.Windows.Forms.TabPage();
+            this.rooms = new System.Windows.Forms.TabPage();
             this.genres = new System.Windows.Forms.TabPage();
             this.ticketsGrid = new System.Windows.Forms.DataGridView();
             this.ticketsDeleteButton = new System.Windows.Forms.Button();
@@ -58,11 +58,50 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cashier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.session = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ticketID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sessionsGrid = new System.Windows.Forms.DataGridView();
+            this.sessionsDeleteButton = new System.Windows.Forms.Button();
+            this.sessionsAddGroup = new System.Windows.Forms.GroupBox();
+            this.sessionsAddFilmCB = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.sessionsAddIDField = new System.Windows.Forms.TextBox();
+            this.addSessionButton = new System.Windows.Forms.Button();
+            this.sessionsAddRoomCB = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.sessionsAddDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.sessionsAddTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label17 = new System.Windows.Forms.Label();
+            this.sessionsEditGroup = new System.Windows.Forms.GroupBox();
+            this.sessionEditTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.sessionsEditDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.sessionsEditFilmCB = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.sessionsEditField = new System.Windows.Forms.TextBox();
+            this.sessionEditButton = new System.Windows.Forms.Button();
+            this.sessionsEditRoomCB = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.sessionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.film = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tickets.SuspendLayout();
+            this.sessions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).BeginInit();
             this.ticketsAddGroup.SuspendLayout();
             this.ticketsEditGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionsGrid)).BeginInit();
+            this.sessionsAddGroup.SuspendLayout();
+            this.sessionsEditGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -71,7 +110,7 @@
             this.tabControl1.Controls.Add(this.sessions);
             this.tabControl1.Controls.Add(this.films);
             this.tabControl1.Controls.Add(this.cashiers);
-            this.tabControl1.Controls.Add(this.room);
+            this.tabControl1.Controls.Add(this.rooms);
             this.tabControl1.Controls.Add(this.genres);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -95,6 +134,10 @@
             // 
             // sessions
             // 
+            this.sessions.Controls.Add(this.sessionsEditGroup);
+            this.sessions.Controls.Add(this.sessionsAddGroup);
+            this.sessions.Controls.Add(this.sessionsDeleteButton);
+            this.sessions.Controls.Add(this.sessionsGrid);
             this.sessions.Location = new System.Drawing.Point(4, 22);
             this.sessions.Name = "sessions";
             this.sessions.Padding = new System.Windows.Forms.Padding(3);
@@ -121,14 +164,14 @@
             this.cashiers.Text = "Кассиры";
             this.cashiers.UseVisualStyleBackColor = true;
             // 
-            // room
+            // rooms
             // 
-            this.room.Location = new System.Drawing.Point(4, 22);
-            this.room.Name = "room";
-            this.room.Size = new System.Drawing.Size(1032, 528);
-            this.room.TabIndex = 4;
-            this.room.Text = "Кинозал";
-            this.room.UseVisualStyleBackColor = true;
+            this.rooms.Location = new System.Drawing.Point(4, 22);
+            this.rooms.Name = "rooms";
+            this.rooms.Size = new System.Drawing.Size(1032, 528);
+            this.rooms.TabIndex = 4;
+            this.rooms.Text = "Кинозалы";
+            this.rooms.UseVisualStyleBackColor = true;
             // 
             // genres
             // 
@@ -142,8 +185,14 @@
             // ticketsGrid
             // 
             this.ticketsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ticketsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ticketID,
+            this.session,
+            this.cashier,
+            this.type});
             this.ticketsGrid.Location = new System.Drawing.Point(6, 5);
             this.ticketsGrid.Name = "ticketsGrid";
+            this.ticketsGrid.RowHeadersVisible = false;
             this.ticketsGrid.Size = new System.Drawing.Size(748, 515);
             this.ticketsGrid.TabIndex = 0;
             // 
@@ -367,6 +416,335 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Номер:";
             // 
+            // type
+            // 
+            this.type.HeaderText = "Тип";
+            this.type.Name = "type";
+            this.type.Width = 216;
+            // 
+            // cashier
+            // 
+            this.cashier.HeaderText = "Кассир";
+            this.cashier.Name = "cashier";
+            this.cashier.Width = 216;
+            // 
+            // session
+            // 
+            this.session.HeaderText = "Сеанс";
+            this.session.Name = "session";
+            this.session.Width = 216;
+            // 
+            // ticketID
+            // 
+            this.ticketID.HeaderText = "ID";
+            this.ticketID.Name = "ticketID";
+            this.ticketID.Width = 97;
+            // 
+            // sessionsGrid
+            // 
+            this.sessionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sessionID,
+            this.date,
+            this.time,
+            this.film,
+            this.room});
+            this.sessionsGrid.Location = new System.Drawing.Point(6, 5);
+            this.sessionsGrid.Name = "sessionsGrid";
+            this.sessionsGrid.RowHeadersVisible = false;
+            this.sessionsGrid.Size = new System.Drawing.Size(748, 515);
+            this.sessionsGrid.TabIndex = 1;
+            // 
+            // sessionsDeleteButton
+            // 
+            this.sessionsDeleteButton.BackColor = System.Drawing.Color.Tomato;
+            this.sessionsDeleteButton.Location = new System.Drawing.Point(772, 471);
+            this.sessionsDeleteButton.Name = "sessionsDeleteButton";
+            this.sessionsDeleteButton.Size = new System.Drawing.Size(247, 34);
+            this.sessionsDeleteButton.TabIndex = 10;
+            this.sessionsDeleteButton.Text = "Удалить сеанс";
+            this.sessionsDeleteButton.UseVisualStyleBackColor = false;
+            // 
+            // sessionsAddGroup
+            // 
+            this.sessionsAddGroup.Controls.Add(this.sessionsAddTimePicker);
+            this.sessionsAddGroup.Controls.Add(this.label17);
+            this.sessionsAddGroup.Controls.Add(this.sessionsAddDatePicker);
+            this.sessionsAddGroup.Controls.Add(this.sessionsAddFilmCB);
+            this.sessionsAddGroup.Controls.Add(this.label9);
+            this.sessionsAddGroup.Controls.Add(this.sessionsAddIDField);
+            this.sessionsAddGroup.Controls.Add(this.addSessionButton);
+            this.sessionsAddGroup.Controls.Add(this.sessionsAddRoomCB);
+            this.sessionsAddGroup.Controls.Add(this.label10);
+            this.sessionsAddGroup.Controls.Add(this.label11);
+            this.sessionsAddGroup.Controls.Add(this.label12);
+            this.sessionsAddGroup.Location = new System.Drawing.Point(762, 10);
+            this.sessionsAddGroup.Name = "sessionsAddGroup";
+            this.sessionsAddGroup.Size = new System.Drawing.Size(263, 199);
+            this.sessionsAddGroup.TabIndex = 11;
+            this.sessionsAddGroup.TabStop = false;
+            this.sessionsAddGroup.Text = "Добавить сеанс";
+            // 
+            // sessionsAddFilmCB
+            // 
+            this.sessionsAddFilmCB.FormattingEnabled = true;
+            this.sessionsAddFilmCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
+            this.sessionsAddFilmCB.Location = new System.Drawing.Point(58, 97);
+            this.sessionsAddFilmCB.Name = "sessionsAddFilmCB";
+            this.sessionsAddFilmCB.Size = new System.Drawing.Size(186, 21);
+            this.sessionsAddFilmCB.TabIndex = 9;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 103);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Фильм:";
+            // 
+            // sessionsAddIDField
+            // 
+            this.sessionsAddIDField.Location = new System.Drawing.Point(58, 19);
+            this.sessionsAddIDField.Name = "sessionsAddIDField";
+            this.sessionsAddIDField.ReadOnly = true;
+            this.sessionsAddIDField.Size = new System.Drawing.Size(186, 20);
+            this.sessionsAddIDField.TabIndex = 7;
+            // 
+            // addSessionButton
+            // 
+            this.addSessionButton.Location = new System.Drawing.Point(9, 155);
+            this.addSessionButton.Name = "addSessionButton";
+            this.addSessionButton.Size = new System.Drawing.Size(247, 34);
+            this.addSessionButton.TabIndex = 6;
+            this.addSessionButton.Text = "Добавить сеанс";
+            this.addSessionButton.UseVisualStyleBackColor = true;
+            // 
+            // sessionsAddRoomCB
+            // 
+            this.sessionsAddRoomCB.FormattingEnabled = true;
+            this.sessionsAddRoomCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
+            this.sessionsAddRoomCB.Location = new System.Drawing.Point(58, 124);
+            this.sessionsAddRoomCB.Name = "sessionsAddRoomCB";
+            this.sessionsAddRoomCB.Size = new System.Drawing.Size(186, 21);
+            this.sessionsAddRoomCB.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(8, 130);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Зал:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 49);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Дата:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(7, 22);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Номер:";
+            // 
+            // sessionsAddDatePicker
+            // 
+            this.sessionsAddDatePicker.Location = new System.Drawing.Point(58, 45);
+            this.sessionsAddDatePicker.Name = "sessionsAddDatePicker";
+            this.sessionsAddDatePicker.Size = new System.Drawing.Size(186, 20);
+            this.sessionsAddDatePicker.TabIndex = 10;
+            // 
+            // sessionsAddTimePicker
+            // 
+            this.sessionsAddTimePicker.CustomFormat = "HH:mm";
+            this.sessionsAddTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.sessionsAddTimePicker.Location = new System.Drawing.Point(58, 71);
+            this.sessionsAddTimePicker.Name = "sessionsAddTimePicker";
+            this.sessionsAddTimePicker.ShowUpDown = true;
+            this.sessionsAddTimePicker.Size = new System.Drawing.Size(186, 20);
+            this.sessionsAddTimePicker.TabIndex = 12;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(7, 76);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(43, 13);
+            this.label17.TabIndex = 11;
+            this.label17.Text = "Время:";
+            // 
+            // sessionsEditGroup
+            // 
+            this.sessionsEditGroup.Controls.Add(this.sessionEditTimePicker);
+            this.sessionsEditGroup.Controls.Add(this.label13);
+            this.sessionsEditGroup.Controls.Add(this.sessionsEditDatePicker);
+            this.sessionsEditGroup.Controls.Add(this.sessionsEditFilmCB);
+            this.sessionsEditGroup.Controls.Add(this.label14);
+            this.sessionsEditGroup.Controls.Add(this.sessionsEditField);
+            this.sessionsEditGroup.Controls.Add(this.sessionEditButton);
+            this.sessionsEditGroup.Controls.Add(this.sessionsEditRoomCB);
+            this.sessionsEditGroup.Controls.Add(this.label15);
+            this.sessionsEditGroup.Controls.Add(this.label16);
+            this.sessionsEditGroup.Controls.Add(this.label18);
+            this.sessionsEditGroup.Location = new System.Drawing.Point(760, 229);
+            this.sessionsEditGroup.Name = "sessionsEditGroup";
+            this.sessionsEditGroup.Size = new System.Drawing.Size(263, 199);
+            this.sessionsEditGroup.TabIndex = 13;
+            this.sessionsEditGroup.TabStop = false;
+            this.sessionsEditGroup.Text = "Изменить сеанс";
+            // 
+            // sessionEditTimePicker
+            // 
+            this.sessionEditTimePicker.CustomFormat = "HH:mm";
+            this.sessionEditTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.sessionEditTimePicker.Location = new System.Drawing.Point(58, 71);
+            this.sessionEditTimePicker.Name = "sessionEditTimePicker";
+            this.sessionEditTimePicker.ShowUpDown = true;
+            this.sessionEditTimePicker.Size = new System.Drawing.Size(186, 20);
+            this.sessionEditTimePicker.TabIndex = 12;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 76);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 13);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Время:";
+            // 
+            // sessionsEditDatePicker
+            // 
+            this.sessionsEditDatePicker.Location = new System.Drawing.Point(58, 45);
+            this.sessionsEditDatePicker.Name = "sessionsEditDatePicker";
+            this.sessionsEditDatePicker.Size = new System.Drawing.Size(186, 20);
+            this.sessionsEditDatePicker.TabIndex = 10;
+            // 
+            // sessionsEditFilmCB
+            // 
+            this.sessionsEditFilmCB.FormattingEnabled = true;
+            this.sessionsEditFilmCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
+            this.sessionsEditFilmCB.Location = new System.Drawing.Point(58, 97);
+            this.sessionsEditFilmCB.Name = "sessionsEditFilmCB";
+            this.sessionsEditFilmCB.Size = new System.Drawing.Size(186, 21);
+            this.sessionsEditFilmCB.TabIndex = 9;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(8, 103);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 13);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Фильм:";
+            // 
+            // sessionsEditField
+            // 
+            this.sessionsEditField.Location = new System.Drawing.Point(58, 19);
+            this.sessionsEditField.Name = "sessionsEditField";
+            this.sessionsEditField.ReadOnly = true;
+            this.sessionsEditField.Size = new System.Drawing.Size(186, 20);
+            this.sessionsEditField.TabIndex = 7;
+            // 
+            // sessionEditButton
+            // 
+            this.sessionEditButton.Location = new System.Drawing.Point(9, 155);
+            this.sessionEditButton.Name = "sessionEditButton";
+            this.sessionEditButton.Size = new System.Drawing.Size(247, 34);
+            this.sessionEditButton.TabIndex = 6;
+            this.sessionEditButton.Text = "Добавить сеанс";
+            this.sessionEditButton.UseVisualStyleBackColor = true;
+            // 
+            // sessionsEditRoomCB
+            // 
+            this.sessionsEditRoomCB.FormattingEnabled = true;
+            this.sessionsEditRoomCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
+            this.sessionsEditRoomCB.Location = new System.Drawing.Point(58, 124);
+            this.sessionsEditRoomCB.Name = "sessionsEditRoomCB";
+            this.sessionsEditRoomCB.Size = new System.Drawing.Size(186, 21);
+            this.sessionsEditRoomCB.TabIndex = 5;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(8, 130);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(29, 13);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Зал:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(7, 49);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(36, 13);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Дата:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(7, 22);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(44, 13);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Номер:";
+            // 
+            // sessionID
+            // 
+            this.sessionID.HeaderText = "ID";
+            this.sessionID.Name = "sessionID";
+            this.sessionID.Width = 89;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Дата";
+            this.date.Name = "date";
+            this.date.Width = 164;
+            // 
+            // time
+            // 
+            this.time.HeaderText = "Время";
+            this.time.Name = "time";
+            this.time.Width = 164;
+            // 
+            // film
+            // 
+            this.film.HeaderText = "Фильм";
+            this.film.Name = "film";
+            this.film.Width = 164;
+            // 
+            // room
+            // 
+            this.room.HeaderText = "Зал";
+            this.room.Name = "room";
+            this.room.Width = 164;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,11 +756,17 @@
             this.Text = "Cinemaster";
             this.tabControl1.ResumeLayout(false);
             this.tickets.ResumeLayout(false);
+            this.sessions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).EndInit();
             this.ticketsAddGroup.ResumeLayout(false);
             this.ticketsAddGroup.PerformLayout();
             this.ticketsEditGroup.ResumeLayout(false);
             this.ticketsEditGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionsGrid)).EndInit();
+            this.sessionsAddGroup.ResumeLayout(false);
+            this.sessionsAddGroup.PerformLayout();
+            this.sessionsEditGroup.ResumeLayout(false);
+            this.sessionsEditGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -395,7 +779,7 @@
         private System.Windows.Forms.DataGridView ticketsGrid;
         private System.Windows.Forms.TabPage films;
         private System.Windows.Forms.TabPage cashiers;
-        private System.Windows.Forms.TabPage room;
+        private System.Windows.Forms.TabPage rooms;
         private System.Windows.Forms.TabPage genres;
         private System.Windows.Forms.Button ticketsDeleteButton;
         private System.Windows.Forms.GroupBox ticketsAddGroup;
@@ -418,6 +802,41 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ticketID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn session;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cashier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridView sessionsGrid;
+        private System.Windows.Forms.Button sessionsDeleteButton;
+        private System.Windows.Forms.GroupBox sessionsAddGroup;
+        private System.Windows.Forms.ComboBox sessionsAddFilmCB;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox sessionsAddIDField;
+        private System.Windows.Forms.Button addSessionButton;
+        private System.Windows.Forms.ComboBox sessionsAddRoomCB;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker sessionsAddDatePicker;
+        private System.Windows.Forms.DateTimePicker sessionsAddTimePicker;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.GroupBox sessionsEditGroup;
+        private System.Windows.Forms.DateTimePicker sessionEditTimePicker;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DateTimePicker sessionsEditDatePicker;
+        private System.Windows.Forms.ComboBox sessionsEditFilmCB;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox sessionsEditField;
+        private System.Windows.Forms.Button sessionEditButton;
+        private System.Windows.Forms.ComboBox sessionsEditRoomCB;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sessionID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn film;
+        private System.Windows.Forms.DataGridViewTextBoxColumn room;
     }
 }
 
