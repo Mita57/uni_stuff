@@ -151,12 +151,29 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.deleteCashierButton = new System.Windows.Forms.Button();
+            this.genresGrid = new System.Windows.Forms.DataGridView();
+            this.genreID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genresAddGroup = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.genresAddIDField = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.editGenreGroup = new System.Windows.Forms.GroupBox();
+            this.genresEditNameField = new System.Windows.Forms.TextBox();
+            this.genresEditIDField = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tickets.SuspendLayout();
             this.sessions.SuspendLayout();
             this.films.SuspendLayout();
             this.cashiers.SuspendLayout();
             this.rooms.SuspendLayout();
+            this.genres.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).BeginInit();
             this.ticketsAddGroup.SuspendLayout();
             this.ticketsEditGroup.SuspendLayout();
@@ -174,6 +191,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.roomsGrid)).BeginInit();
             this.addRoomGroup.SuspendLayout();
             this.editRoomGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.genresGrid)).BeginInit();
+            this.genresAddGroup.SuspendLayout();
+            this.editGenreGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -259,6 +279,10 @@
             // 
             // genres
             // 
+            this.genres.Controls.Add(this.button3);
+            this.genres.Controls.Add(this.editGenreGroup);
+            this.genres.Controls.Add(this.genresAddGroup);
+            this.genres.Controls.Add(this.genresGrid);
             this.genres.Location = new System.Drawing.Point(4, 22);
             this.genres.Name = "genres";
             this.genres.Size = new System.Drawing.Size(1032, 528);
@@ -320,7 +344,7 @@
             // ticketsAddCashierCB
             // 
             this.ticketsAddCashierCB.FormattingEnabled = true;
-            this.ticketsAddCashierCB.Location = new System.Drawing.Point(58, 44);
+            this.ticketsAddCashierCB.Location = new System.Drawing.Point(67, 44);
             this.ticketsAddCashierCB.Name = "ticketsAddCashierCB";
             this.ticketsAddCashierCB.Size = new System.Drawing.Size(186, 21);
             this.ticketsAddCashierCB.TabIndex = 4;
@@ -333,7 +357,7 @@
             "3D",
             "IMAX 2D",
             "IMAX 3D"});
-            this.ticketsAddTypeCB.Location = new System.Drawing.Point(58, 96);
+            this.ticketsAddTypeCB.Location = new System.Drawing.Point(67, 96);
             this.ticketsAddTypeCB.Name = "ticketsAddTypeCB";
             this.ticketsAddTypeCB.Size = new System.Drawing.Size(186, 21);
             this.ticketsAddTypeCB.TabIndex = 5;
@@ -349,7 +373,7 @@
             // 
             // ticketsAddIDField
             // 
-            this.ticketsAddIDField.Location = new System.Drawing.Point(58, 19);
+            this.ticketsAddIDField.Location = new System.Drawing.Point(67, 19);
             this.ticketsAddIDField.Name = "ticketsAddIDField";
             this.ticketsAddIDField.ReadOnly = true;
             this.ticketsAddIDField.Size = new System.Drawing.Size(186, 20);
@@ -372,7 +396,7 @@
             "3D",
             "IMAX 2D",
             "IMAX 3D"});
-            this.ticketsAddSessionB.Location = new System.Drawing.Point(58, 70);
+            this.ticketsAddSessionB.Location = new System.Drawing.Point(67, 70);
             this.ticketsAddSessionB.Name = "ticketsAddSessionB";
             this.ticketsAddSessionB.Size = new System.Drawing.Size(186, 21);
             this.ticketsAddSessionB.TabIndex = 9;
@@ -421,7 +445,7 @@
             "3D",
             "IMAX 2D",
             "IMAX 3D"});
-            this.ticketsChangeSessionCB.Location = new System.Drawing.Point(58, 70);
+            this.ticketsChangeSessionCB.Location = new System.Drawing.Point(67, 70);
             this.ticketsChangeSessionCB.Name = "ticketsChangeSessionCB";
             this.ticketsChangeSessionCB.Size = new System.Drawing.Size(186, 21);
             this.ticketsChangeSessionCB.TabIndex = 9;
@@ -437,7 +461,7 @@
             // 
             // ticketsChangeIDField
             // 
-            this.ticketsChangeIDField.Location = new System.Drawing.Point(58, 19);
+            this.ticketsChangeIDField.Location = new System.Drawing.Point(67, 19);
             this.ticketsChangeIDField.Name = "ticketsChangeIDField";
             this.ticketsChangeIDField.ReadOnly = true;
             this.ticketsChangeIDField.Size = new System.Drawing.Size(186, 20);
@@ -449,7 +473,7 @@
             this.ticketEditButton.Name = "ticketEditButton";
             this.ticketEditButton.Size = new System.Drawing.Size(247, 34);
             this.ticketEditButton.TabIndex = 6;
-            this.ticketEditButton.Text = "Сохранить изменения";
+            this.ticketEditButton.Text = "Изменить билет";
             this.ticketEditButton.UseVisualStyleBackColor = true;
             // 
             // ticketsEditTypeCB
@@ -460,7 +484,7 @@
             "3D",
             "IMAX 2D",
             "IMAX 3D"});
-            this.ticketsEditTypeCB.Location = new System.Drawing.Point(58, 96);
+            this.ticketsEditTypeCB.Location = new System.Drawing.Point(67, 96);
             this.ticketsEditTypeCB.Name = "ticketsEditTypeCB";
             this.ticketsEditTypeCB.Size = new System.Drawing.Size(186, 21);
             this.ticketsEditTypeCB.TabIndex = 5;
@@ -468,7 +492,7 @@
             // ticketsChangeCashierCB
             // 
             this.ticketsChangeCashierCB.FormattingEnabled = true;
-            this.ticketsChangeCashierCB.Location = new System.Drawing.Point(58, 44);
+            this.ticketsChangeCashierCB.Location = new System.Drawing.Point(67, 44);
             this.ticketsChangeCashierCB.Name = "ticketsChangeCashierCB";
             this.ticketsChangeCashierCB.Size = new System.Drawing.Size(186, 21);
             this.ticketsChangeCashierCB.TabIndex = 4;
@@ -577,7 +601,7 @@
             "3D",
             "IMAX 2D",
             "IMAX 3D"});
-            this.sessionsAddFilmCB.Location = new System.Drawing.Point(58, 97);
+            this.sessionsAddFilmCB.Location = new System.Drawing.Point(67, 97);
             this.sessionsAddFilmCB.Name = "sessionsAddFilmCB";
             this.sessionsAddFilmCB.Size = new System.Drawing.Size(186, 21);
             this.sessionsAddFilmCB.TabIndex = 9;
@@ -593,7 +617,7 @@
             // 
             // sessionsAddIDField
             // 
-            this.sessionsAddIDField.Location = new System.Drawing.Point(58, 19);
+            this.sessionsAddIDField.Location = new System.Drawing.Point(67, 19);
             this.sessionsAddIDField.Name = "sessionsAddIDField";
             this.sessionsAddIDField.ReadOnly = true;
             this.sessionsAddIDField.Size = new System.Drawing.Size(186, 20);
@@ -616,7 +640,7 @@
             "3D",
             "IMAX 2D",
             "IMAX 3D"});
-            this.sessionsAddRoomCB.Location = new System.Drawing.Point(58, 124);
+            this.sessionsAddRoomCB.Location = new System.Drawing.Point(67, 124);
             this.sessionsAddRoomCB.Name = "sessionsAddRoomCB";
             this.sessionsAddRoomCB.Size = new System.Drawing.Size(186, 21);
             this.sessionsAddRoomCB.TabIndex = 5;
@@ -650,7 +674,7 @@
             // 
             // sessionsAddDatePicker
             // 
-            this.sessionsAddDatePicker.Location = new System.Drawing.Point(58, 45);
+            this.sessionsAddDatePicker.Location = new System.Drawing.Point(67, 45);
             this.sessionsAddDatePicker.Name = "sessionsAddDatePicker";
             this.sessionsAddDatePicker.Size = new System.Drawing.Size(186, 20);
             this.sessionsAddDatePicker.TabIndex = 10;
@@ -659,7 +683,7 @@
             // 
             this.sessionsAddTimePicker.CustomFormat = "HH:mm";
             this.sessionsAddTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.sessionsAddTimePicker.Location = new System.Drawing.Point(58, 71);
+            this.sessionsAddTimePicker.Location = new System.Drawing.Point(67, 71);
             this.sessionsAddTimePicker.Name = "sessionsAddTimePicker";
             this.sessionsAddTimePicker.ShowUpDown = true;
             this.sessionsAddTimePicker.Size = new System.Drawing.Size(186, 20);
@@ -698,7 +722,7 @@
             // 
             this.sessionEditTimePicker.CustomFormat = "HH:mm";
             this.sessionEditTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.sessionEditTimePicker.Location = new System.Drawing.Point(58, 71);
+            this.sessionEditTimePicker.Location = new System.Drawing.Point(67, 71);
             this.sessionEditTimePicker.Name = "sessionEditTimePicker";
             this.sessionEditTimePicker.ShowUpDown = true;
             this.sessionEditTimePicker.Size = new System.Drawing.Size(186, 20);
@@ -715,7 +739,7 @@
             // 
             // sessionsEditDatePicker
             // 
-            this.sessionsEditDatePicker.Location = new System.Drawing.Point(58, 45);
+            this.sessionsEditDatePicker.Location = new System.Drawing.Point(67, 45);
             this.sessionsEditDatePicker.Name = "sessionsEditDatePicker";
             this.sessionsEditDatePicker.Size = new System.Drawing.Size(186, 20);
             this.sessionsEditDatePicker.TabIndex = 10;
@@ -728,7 +752,7 @@
             "3D",
             "IMAX 2D",
             "IMAX 3D"});
-            this.sessionsEditFilmCB.Location = new System.Drawing.Point(58, 97);
+            this.sessionsEditFilmCB.Location = new System.Drawing.Point(67, 97);
             this.sessionsEditFilmCB.Name = "sessionsEditFilmCB";
             this.sessionsEditFilmCB.Size = new System.Drawing.Size(186, 21);
             this.sessionsEditFilmCB.TabIndex = 9;
@@ -744,7 +768,7 @@
             // 
             // sessionsEditField
             // 
-            this.sessionsEditField.Location = new System.Drawing.Point(58, 19);
+            this.sessionsEditField.Location = new System.Drawing.Point(67, 19);
             this.sessionsEditField.Name = "sessionsEditField";
             this.sessionsEditField.ReadOnly = true;
             this.sessionsEditField.Size = new System.Drawing.Size(186, 20);
@@ -756,7 +780,7 @@
             this.sessionEditButton.Name = "sessionEditButton";
             this.sessionEditButton.Size = new System.Drawing.Size(247, 34);
             this.sessionEditButton.TabIndex = 6;
-            this.sessionEditButton.Text = "Добавить сеанс";
+            this.sessionEditButton.Text = "Изменить сеанс";
             this.sessionEditButton.UseVisualStyleBackColor = true;
             // 
             // sessionsEditRoomCB
@@ -767,7 +791,7 @@
             "3D",
             "IMAX 2D",
             "IMAX 3D"});
-            this.sessionsEditRoomCB.Location = new System.Drawing.Point(58, 124);
+            this.sessionsEditRoomCB.Location = new System.Drawing.Point(67, 124);
             this.sessionsEditRoomCB.Name = "sessionsEditRoomCB";
             this.sessionsEditRoomCB.Size = new System.Drawing.Size(186, 21);
             this.sessionsEditRoomCB.TabIndex = 5;
@@ -869,7 +893,7 @@
             "3D",
             "IMAX 2D",
             "IMAX 3D"});
-            this.filmsAddGenreCB.Location = new System.Drawing.Point(58, 71);
+            this.filmsAddGenreCB.Location = new System.Drawing.Point(67, 71);
             this.filmsAddGenreCB.Name = "filmsAddGenreCB";
             this.filmsAddGenreCB.Size = new System.Drawing.Size(186, 21);
             this.filmsAddGenreCB.TabIndex = 9;
@@ -885,7 +909,7 @@
             // 
             // filmsAddIDField
             // 
-            this.filmsAddIDField.Location = new System.Drawing.Point(58, 19);
+            this.filmsAddIDField.Location = new System.Drawing.Point(67, 19);
             this.filmsAddIDField.Name = "filmsAddIDField";
             this.filmsAddIDField.ReadOnly = true;
             this.filmsAddIDField.Size = new System.Drawing.Size(186, 20);
@@ -905,9 +929,9 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(7, 49);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(32, 13);
+            this.label22.Size = new System.Drawing.Size(60, 13);
             this.label22.TabIndex = 1;
-            this.label22.Text = "Имя:";
+            this.label22.Text = "Название:";
             // 
             // label23
             // 
@@ -920,7 +944,7 @@
             // 
             // filmsAddNameField
             // 
-            this.filmsAddNameField.Location = new System.Drawing.Point(58, 45);
+            this.filmsAddNameField.Location = new System.Drawing.Point(67, 45);
             this.filmsAddNameField.Name = "filmsAddNameField";
             this.filmsAddNameField.Size = new System.Drawing.Size(186, 20);
             this.filmsAddNameField.TabIndex = 13;
@@ -936,7 +960,7 @@
             // 
             // filmsAddAgeRestr
             // 
-            this.filmsAddAgeRestr.Location = new System.Drawing.Point(58, 98);
+            this.filmsAddAgeRestr.Location = new System.Drawing.Point(67, 98);
             this.filmsAddAgeRestr.Name = "filmsAddAgeRestr";
             this.filmsAddAgeRestr.Size = new System.Drawing.Size(186, 20);
             this.filmsAddAgeRestr.TabIndex = 15;
@@ -961,7 +985,7 @@
             // 
             // filmsEditAgeRestr
             // 
-            this.filmsEditAgeRestr.Location = new System.Drawing.Point(58, 98);
+            this.filmsEditAgeRestr.Location = new System.Drawing.Point(67, 98);
             this.filmsEditAgeRestr.Name = "filmsEditAgeRestr";
             this.filmsEditAgeRestr.Size = new System.Drawing.Size(186, 20);
             this.filmsEditAgeRestr.TabIndex = 15;
@@ -977,7 +1001,7 @@
             // 
             // filmsEditNameField
             // 
-            this.filmsEditNameField.Location = new System.Drawing.Point(58, 45);
+            this.filmsEditNameField.Location = new System.Drawing.Point(67, 45);
             this.filmsEditNameField.Name = "filmsEditNameField";
             this.filmsEditNameField.Size = new System.Drawing.Size(186, 20);
             this.filmsEditNameField.TabIndex = 13;
@@ -990,7 +1014,7 @@
             "3D",
             "IMAX 2D",
             "IMAX 3D"});
-            this.filmsEditGenreCB.Location = new System.Drawing.Point(58, 71);
+            this.filmsEditGenreCB.Location = new System.Drawing.Point(67, 71);
             this.filmsEditGenreCB.Name = "filmsEditGenreCB";
             this.filmsEditGenreCB.Size = new System.Drawing.Size(186, 21);
             this.filmsEditGenreCB.TabIndex = 9;
@@ -1006,7 +1030,7 @@
             // 
             // filmsEditIDField
             // 
-            this.filmsEditIDField.Location = new System.Drawing.Point(58, 19);
+            this.filmsEditIDField.Location = new System.Drawing.Point(67, 19);
             this.filmsEditIDField.Name = "filmsEditIDField";
             this.filmsEditIDField.ReadOnly = true;
             this.filmsEditIDField.Size = new System.Drawing.Size(186, 20);
@@ -1026,9 +1050,9 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(7, 49);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(32, 13);
+            this.label25.Size = new System.Drawing.Size(60, 13);
             this.label25.TabIndex = 1;
-            this.label25.Text = "Имя:";
+            this.label25.Text = "Название:";
             // 
             // label26
             // 
@@ -1101,14 +1125,14 @@
             // 
             // cashierAddNameField
             // 
-            this.cashierAddNameField.Location = new System.Drawing.Point(58, 45);
+            this.cashierAddNameField.Location = new System.Drawing.Point(67, 45);
             this.cashierAddNameField.Name = "cashierAddNameField";
             this.cashierAddNameField.Size = new System.Drawing.Size(186, 20);
             this.cashierAddNameField.TabIndex = 13;
             // 
             // cashierAddIDField
             // 
-            this.cashierAddIDField.Location = new System.Drawing.Point(58, 19);
+            this.cashierAddIDField.Location = new System.Drawing.Point(67, 19);
             this.cashierAddIDField.Name = "cashierAddIDField";
             this.cashierAddIDField.ReadOnly = true;
             this.cashierAddIDField.Size = new System.Drawing.Size(186, 20);
@@ -1157,14 +1181,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(58, 45);
+            this.textBox1.Location = new System.Drawing.Point(67, 45);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(186, 20);
             this.textBox1.TabIndex = 13;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(58, 19);
+            this.textBox2.Location = new System.Drawing.Point(67, 19);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(186, 20);
@@ -1176,7 +1200,7 @@
             this.updateCashierButton.Name = "updateCashierButton";
             this.updateCashierButton.Size = new System.Drawing.Size(247, 34);
             this.updateCashierButton.TabIndex = 6;
-            this.updateCashierButton.Text = "Обновить кассира";
+            this.updateCashierButton.Text = "Изменить кассира";
             this.updateCashierButton.UseVisualStyleBackColor = true;
             // 
             // label27
@@ -1259,14 +1283,14 @@
             // 
             // roomsAddNameField
             // 
-            this.roomsAddNameField.Location = new System.Drawing.Point(58, 45);
+            this.roomsAddNameField.Location = new System.Drawing.Point(67, 45);
             this.roomsAddNameField.Name = "roomsAddNameField";
             this.roomsAddNameField.Size = new System.Drawing.Size(186, 20);
             this.roomsAddNameField.TabIndex = 13;
             // 
             // roomsAddIDField
             // 
-            this.roomsAddIDField.Location = new System.Drawing.Point(58, 19);
+            this.roomsAddIDField.Location = new System.Drawing.Point(67, 19);
             this.roomsAddIDField.Name = "roomsAddIDField";
             this.roomsAddIDField.ReadOnly = true;
             this.roomsAddIDField.Size = new System.Drawing.Size(186, 20);
@@ -1278,7 +1302,7 @@
             this.addRoomButton.Name = "addRoomButton";
             this.addRoomButton.Size = new System.Drawing.Size(247, 34);
             this.addRoomButton.TabIndex = 6;
-            this.addRoomButton.Text = "Добавить комнату";
+            this.addRoomButton.Text = "Добавить зал";
             this.addRoomButton.UseVisualStyleBackColor = true;
             // 
             // label31
@@ -1286,9 +1310,9 @@
             this.label31.AutoSize = true;
             this.label31.Location = new System.Drawing.Point(7, 49);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(32, 13);
+            this.label31.Size = new System.Drawing.Size(60, 13);
             this.label31.TabIndex = 1;
-            this.label31.Text = "Имя:";
+            this.label31.Text = "Название:";
             // 
             // label32
             // 
@@ -1315,14 +1339,14 @@
             // 
             // roomsEditNameField
             // 
-            this.roomsEditNameField.Location = new System.Drawing.Point(58, 45);
+            this.roomsEditNameField.Location = new System.Drawing.Point(67, 45);
             this.roomsEditNameField.Name = "roomsEditNameField";
             this.roomsEditNameField.Size = new System.Drawing.Size(186, 20);
             this.roomsEditNameField.TabIndex = 13;
             // 
             // roomsEditIDField
             // 
-            this.roomsEditIDField.Location = new System.Drawing.Point(58, 19);
+            this.roomsEditIDField.Location = new System.Drawing.Point(67, 19);
             this.roomsEditIDField.Name = "roomsEditIDField";
             this.roomsEditIDField.ReadOnly = true;
             this.roomsEditIDField.Size = new System.Drawing.Size(186, 20);
@@ -1334,7 +1358,7 @@
             this.updateRoomButton.Name = "updateRoomButton";
             this.updateRoomButton.Size = new System.Drawing.Size(247, 34);
             this.updateRoomButton.TabIndex = 6;
-            this.updateRoomButton.Text = "Добавить комнату";
+            this.updateRoomButton.Text = "Изменить зал";
             this.updateRoomButton.UseVisualStyleBackColor = true;
             // 
             // label33
@@ -1342,9 +1366,9 @@
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(7, 49);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(32, 13);
+            this.label33.Size = new System.Drawing.Size(60, 13);
             this.label33.TabIndex = 1;
-            this.label33.Text = "Имя:";
+            this.label33.Text = "Название:";
             // 
             // label34
             // 
@@ -1362,8 +1386,154 @@
             this.deleteCashierButton.Name = "deleteCashierButton";
             this.deleteCashierButton.Size = new System.Drawing.Size(247, 34);
             this.deleteCashierButton.TabIndex = 16;
-            this.deleteCashierButton.Text = "Удалить комнату";
+            this.deleteCashierButton.Text = "Удалить зал";
             this.deleteCashierButton.UseVisualStyleBackColor = false;
+            // 
+            // genresGrid
+            // 
+            this.genresGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.genresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.genreID,
+            this.genreName});
+            this.genresGrid.Location = new System.Drawing.Point(6, 5);
+            this.genresGrid.Name = "genresGrid";
+            this.genresGrid.RowHeadersVisible = false;
+            this.genresGrid.Size = new System.Drawing.Size(748, 515);
+            this.genresGrid.TabIndex = 5;
+            // 
+            // genreID
+            // 
+            this.genreID.HeaderText = "ID";
+            this.genreID.Name = "genreID";
+            this.genreID.Width = 50;
+            // 
+            // genreName
+            // 
+            this.genreName.HeaderText = "Название";
+            this.genreName.Name = "genreName";
+            this.genreName.Width = 694;
+            // 
+            // genresAddGroup
+            // 
+            this.genresAddGroup.Controls.Add(this.textBox3);
+            this.genresAddGroup.Controls.Add(this.genresAddIDField);
+            this.genresAddGroup.Controls.Add(this.button1);
+            this.genresAddGroup.Controls.Add(this.label35);
+            this.genresAddGroup.Controls.Add(this.label36);
+            this.genresAddGroup.Location = new System.Drawing.Point(762, 10);
+            this.genresAddGroup.Name = "genresAddGroup";
+            this.genresAddGroup.Size = new System.Drawing.Size(263, 114);
+            this.genresAddGroup.TabIndex = 15;
+            this.genresAddGroup.TabStop = false;
+            this.genresAddGroup.Text = "Добавить жанр";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(67, 45);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(186, 20);
+            this.textBox3.TabIndex = 13;
+            // 
+            // genresAddIDField
+            // 
+            this.genresAddIDField.Location = new System.Drawing.Point(67, 19);
+            this.genresAddIDField.Name = "genresAddIDField";
+            this.genresAddIDField.ReadOnly = true;
+            this.genresAddIDField.Size = new System.Drawing.Size(186, 20);
+            this.genresAddIDField.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 71);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(247, 34);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Добавить жанр";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(7, 49);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(60, 13);
+            this.label35.TabIndex = 1;
+            this.label35.Text = "Название:";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(7, 22);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(44, 13);
+            this.label36.TabIndex = 0;
+            this.label36.Text = "Номер:";
+            // 
+            // editGenreGroup
+            // 
+            this.editGenreGroup.Controls.Add(this.genresEditNameField);
+            this.editGenreGroup.Controls.Add(this.genresEditIDField);
+            this.editGenreGroup.Controls.Add(this.button2);
+            this.editGenreGroup.Controls.Add(this.label37);
+            this.editGenreGroup.Controls.Add(this.label38);
+            this.editGenreGroup.Location = new System.Drawing.Point(762, 229);
+            this.editGenreGroup.Name = "editGenreGroup";
+            this.editGenreGroup.Size = new System.Drawing.Size(263, 114);
+            this.editGenreGroup.TabIndex = 16;
+            this.editGenreGroup.TabStop = false;
+            this.editGenreGroup.Text = "Изменить жанр";
+            // 
+            // genresEditNameField
+            // 
+            this.genresEditNameField.Location = new System.Drawing.Point(67, 45);
+            this.genresEditNameField.Name = "genresEditNameField";
+            this.genresEditNameField.Size = new System.Drawing.Size(186, 20);
+            this.genresEditNameField.TabIndex = 13;
+            // 
+            // genresEditIDField
+            // 
+            this.genresEditIDField.Location = new System.Drawing.Point(67, 19);
+            this.genresEditIDField.Name = "genresEditIDField";
+            this.genresEditIDField.ReadOnly = true;
+            this.genresEditIDField.Size = new System.Drawing.Size(186, 20);
+            this.genresEditIDField.TabIndex = 7;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(6, 71);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(247, 34);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Изменить жанр";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(7, 49);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(60, 13);
+            this.label37.TabIndex = 1;
+            this.label37.Text = "Название:";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(7, 22);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(44, 13);
+            this.label38.TabIndex = 0;
+            this.label38.Text = "Номер:";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Tomato;
+            this.button3.Location = new System.Drawing.Point(772, 471);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(247, 34);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Удалить жанр";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -1380,6 +1550,7 @@
             this.films.ResumeLayout(false);
             this.cashiers.ResumeLayout(false);
             this.rooms.ResumeLayout(false);
+            this.genres.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).EndInit();
             this.ticketsAddGroup.ResumeLayout(false);
             this.ticketsAddGroup.PerformLayout();
@@ -1407,6 +1578,11 @@
             this.addRoomGroup.PerformLayout();
             this.editRoomGroup.ResumeLayout(false);
             this.editRoomGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.genresGrid)).EndInit();
+            this.genresAddGroup.ResumeLayout(false);
+            this.genresAddGroup.PerformLayout();
+            this.editGenreGroup.ResumeLayout(false);
+            this.editGenreGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1535,6 +1711,22 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button deleteCashierButton;
+        private System.Windows.Forms.DataGridView genresGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genreID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genreName;
+        private System.Windows.Forms.GroupBox editGenreGroup;
+        private System.Windows.Forms.TextBox genresEditNameField;
+        private System.Windows.Forms.TextBox genresEditIDField;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.GroupBox genresAddGroup;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox genresAddIDField;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Button button3;
     }
 }
 
