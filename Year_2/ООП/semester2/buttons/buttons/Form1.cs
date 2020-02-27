@@ -24,7 +24,6 @@ namespace buttons
             button2.Enabled = !button2.Enabled;
             button2.ForeColor = forecolor;
             button2.BackColor = backcolor;
-            //TODO: color changes when disabled
         }
 
         private void Button2_Click(object sender, EventArgs e)
