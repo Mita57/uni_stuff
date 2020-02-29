@@ -1,0 +1,113 @@
+﻿<html><body>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+<h1>Пример обращения к API</h1>
+
+Введите номер: <input type="text" id="id"><br>
+Вид инфо: <br>
+<input type=checkbox id="name" value="name">Наименование</option><br>
+<input type=checkbox id="desc" value="desc">Описание</option><br>
+
+<select>
+<option id="com">Производитель</option>
+<option id="pr">Цена</option>
+</select><br>
+
+<p>&nbsp;<p>
+<button id="but">Инфо о товаре</button>
+
+<div id="out" style="border: solid 1px navy; min-height: 100; background-color: #ffffbb; padding:10px">
+<h3>Наименование</h3>
+Peak 2
+<h3>Производитель</h3>
+Rock Land
+
+</div>
+
+<script>
+
+const button=document.getElementById("but");
+button.addEventListener("click", OnClickEnter);
+
+const id=document.getElementById("id");
+const out=document.getElementById("out");
+const name=document.getElementById("name");
+const desc=document.getElementById("desc");
+const com=document.getElementById("com");
+const pr=document.getElementById("pr");
+var per;
+
+// Выбираем метод
+
+
+function OnClickEnter(){
+
+xhttp=new XMLHttpRequest();
+xhttp.open('GET','http://localhost/myshop/api/product/read.php?id='+id.value,true);
+xhttp.send();
+xhttp.onreadystatechange=function()
+{
+  if (xhttp.readyState==4){
+        var result=eval('('+xhttp.responseText+')');        
+        //alert(result[0].name);   
+        
+        per = ""; 
+		if(name.checked==true){per += "<h3>Наименование</h3> "+result[0].name;} 
+		if(desc.checked==true){per += "<h3>Описание</h3> "+result[0].description;}
+		if(com.selected==true){per += "<h3>Производитель</h3> "+result[0].company;} 
+		else if (pr.selected==true){per += "<h3>Цена</h3> "+result[0].price;}
+        
+		out.innerHTML=per.replace(/\\r\\n/g,"");
+      
+   	}
+};
+}
+
+/*
+function OnClickEnter(){
+
+fetch("http://localhost/myshop/api/product/read.php?id="+id.value)
+  .then(function(response) {
+    return response.json();
+  })  
+  .then(function(result) {
+    //alert(JSON.stringify(result));
+    
+    per = ""; 
+		if(name.checked==true){per += "<h3>Наименование</h3> "+result[0].name;} 
+		if(desc.checked==true){per += "<h3>Описание</h3> "+result[0].description;}
+		if(com.selected==true){per += "<h3>Производитель</h3> "+result[0].company;} 
+		else if (pr.selected==true){per += "<h3>Цена</h3> "+result[0].price;}
+        
+		out.innerHTML=per.replace(/\\r\\n/g,"");
+    
+  });
+
+}
+*/
+
+/*
+function OnClickEnter(){
+$.ajax({
+   type:"GET",
+        url: "http://localhost/myshop/api/product/read.php",
+        dataType:"json",
+        data:{id: id.value},
+        success: function(result){
+
+		per = "";
+		if(name.checked==true){per += "<h3>Наименование</h3> "+JSON.stringify(result[0].name);} 
+		if(desc.checked==true){per += "<h3>Описание</h3> "+JSON.stringify(result[0].description);}
+		if(com.selected==true){per += "<h3>Производитель</h3> "+JSON.stringify(result[0].company);} 
+		else if (pr.selected==true){per += "<h3>Цена</h3> "+JSON.stringify(result[0].price);}
+
+		out.innerHTML=per.replace(/\\r\\n/g,"");
+                    
+                }
+        }); 
+};
+
+*/
+</script>
+</body>
+</html>
