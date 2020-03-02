@@ -1,0 +1,39 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: "Comic Sans MS";
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 30px;
+}
+
+#left {
+    overflow-y: scroll;
+    width: 80%;
+    height: 100%;
+    float: left;
+    background-color: dodgerblue;
+}
+
+#right {
+    float: right;
+    width: 20%;
+    height: 100%;
+    background-color: yellow;
+}
+
+#cart {
+    border: 1px black solid;
+    width: 90%;
+    height: 70%;
+    margin: auto;
+    margin-top: 20px;
+}
+
