@@ -20,6 +20,9 @@ function addToCart(id) {
             }
         }
     }
+    else {
+        alert("Wait, it's illegal");
+    }
 }
 function removeFromCart(id) {
     if (document.getElementById("am_" + id).innerText != '0') {
@@ -43,7 +46,7 @@ function updatePrice(id, action) {
     switch (action) {
         case '+': {
             // @ts-ignore
-            document.getElementById('price').innerText -= -price;
+            document.getElementById('price').innerText = price;
             break;
         }
         case '-': {

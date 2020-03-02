@@ -33,6 +33,10 @@ article {
     background-color: lime;
 }
 
+article img {
+    height: 100px;
+}
+
 footer {
     position: absolute;
     bottom: 20px;

@@ -51,6 +51,8 @@ class HTMLPage {
         for ($i = 0; $i < sizeof($result[0]); $i++) {
             echo $result[0][$cols[$i]] . '<p>';
         }
+        $img = $result[0]['img'];
+        echo("<img src='$img'>");
         echo ("</article>");
     }
 

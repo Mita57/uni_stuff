@@ -1,0 +1,17 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: "Comic Sans MS";
+    background-image: url("bg.jpg");
+}
+
+
+#form {
+    text-align: center;
+    width: 50%;
+    padding: 20px;
+    border: 1px black solid;
+    background-color: aqua;
+    margin: auto;
+    margin-top: 20px;
+}

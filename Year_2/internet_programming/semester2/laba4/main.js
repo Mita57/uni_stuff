@@ -24,5 +24,5 @@ function login() {
                 alert('Lol ceque chebureque');
             }
         }
-    };
+    }
 }
