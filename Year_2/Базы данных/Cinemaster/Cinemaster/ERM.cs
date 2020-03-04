@@ -8,6 +8,46 @@ using System.Data.SqlClient;
 
 namespace Cinemaster
 {
+    public class Date
+    {
+        public int day { get; set; }
+
+        public int month { get; set; }
+
+        public int year { get; set; }
+
+        public Date(int day, int month, int year)
+        {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+
+        public string serialize()
+        {
+            return this.day + "." + this.month + "." + this.year;
+        }
+    }
+
+    public class Time
+    {
+        public int hours { get; set; }
+
+        public int minutes { get; set; }
+
+        public Time(int hours, int minutes)
+        {
+            this.hours = hours;
+            this.minutes = minutes;
+        }
+
+        public string serialze()
+        {
+            return this.hours + ":" + this.minutes;
+        }
+    }
+
+
 
     public class Ticket
     {
@@ -41,28 +81,23 @@ namespace Cinemaster
 
         public Time time { get; set; }
 
-        public int film { get; set; }
+        public int filmID { get; set; }
 
-        public int roomId { get; set; }
+        public int roomID { get; set; }
 
         public string type { get; set; }
 
-
-        public class Time
+        public Session(int id, Date date, Time time, int filmID, int roomId, string type)
         {
-            public int hours { get; set; }
-
-            public int minutes { get; set; }
+            this.id = id;
+            this.date = date;
+            this.time = time;
+            this.filmID = filmID;
+            this.roomID = roomID;
+            this.type = type;
         }
 
-        public class Date
-        {
-            public int day { get; set; }
-
-            public int month { get; set; }
-
-            public int year { get; set; }
-        }
+      
     }
 
 
@@ -76,6 +111,14 @@ namespace Cinemaster
 
         public int ageRest { get; set; }
 
+        public Film(int id, string name, int genreID, int ageRest)
+        {
+            this.id = id;
+            this.name = name;
+            this.genreID = genreID;
+            this.ageRest = ageRest;
+        }
+
     }
 
     public class Cashier
@@ -83,6 +126,12 @@ namespace Cinemaster
         public int id { get; set; }
 
         public string name { get; set; }
+
+        public Cashier(int id, string name)
+        {
+            this.id = id;
+            this.name = name;
+        }
     }
 
     public class Room
@@ -90,6 +139,12 @@ namespace Cinemaster
         public int id { get; set; }
 
         public string name { get; set; }
+
+        public Room(int id, string name)
+        {
+            this.id = id;
+            this.name = name;
+        }
     }
 
     public class Genre
@@ -97,6 +152,12 @@ namespace Cinemaster
         public int id { get; set; }
 
         public string name { get; set; }
+
+        public Genre(int id, string name)
+        {
+            this.id = id;
+            this.name = name;
+        }
     }
 
     public class ERM
@@ -196,39 +257,39 @@ namespace Cinemaster
         //}
 
 
-        static List<object> getAll(String table)
+        static object[] getAll(String table)
         {
             String query = String.Format("SELECT * FROM {0}", table);
-            String output = "";
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader dataReader = command.ExecuteReader();
             switch (table)
             {
                 case ("tickets"):
                     {
-                        return getTickets(dataReader);
+                        return getTickets(dataReader).ToArray();
                     }
                 case ("sessions"):
                     {
-                        return getSessions(dataReader);
+                        return getSessions(dataReader).ToArray();
                     }
                 case ("films"):
                     {
-                        return getFilms(dataReader);
+                        return getFilms(dataReader).ToArray();
                     }
                 case ("cashiers"):
                     {
-                        return getCashiers(dataReader);
+                        return getCashiers(dataReader).ToArray();
                     }
                 case ("rooms"):
                     {
-                        return getRooms(dataReader);
+                        return getRooms(dataReader).ToArray();
                     }
                 case ("genres"):
                     {
-                        return getGenres(dataReader);
+                        return getGenres(dataReader).ToArray();
                     }
             }
+            return null;
         }
 
         //methods to get data from the database and convert them to Class ojbects
@@ -238,40 +299,92 @@ namespace Cinemaster
             List<Ticket> list = new List<Ticket>();
             while(dataReader.Read())
             {
-                int id = 0;
-                int sessionID = 0;
-                int cashierID = 0;
-                int row = 0;
-                int seat = 0;
+                int id = (int)dataReader.GetValue(0);
+                int sessionID = (int)dataReader.GetValue(1);
+                int cashierID = (int)dataReader.GetValue(2);
+                int row = (int)dataReader.GetValue(3);
+                int seat = (int)dataReader.GetValue(4);
                 Ticket ticket = new Ticket(id, sessionID, cashierID, row, seat);
                 list.Add(ticket);
             }
-
+            return list;
         }
 
         static List<Session> getSessions(SqlDataReader dataReader)
         {
+            List<Session> list = new List<Session>();
+            while (dataReader.Read())
+            {
+                int id = (int)dataReader.GetValue(0);
+                string dateStr = (string)dataReader.GetValue(1);
+                string timeStr = (string)dataReader.GetValue(2);
+                int filmID = (int)dataReader.GetValue(3);
+                int roomID = (int)dataReader.GetValue(4);
+                string type = (string)dataReader.GetValue(5);
 
+                //creating Date instance
+                string[] dateParts = dateStr.Split('.');
+                string[] timeParts = dateStr.Split(':');
+                Date date = new Date(Convert.ToInt32(dateParts[0]), Convert.ToInt32(dateParts[1]), Convert.ToInt32(dateParts[2]));
+                Time time = new Time(Convert.ToInt32(timeParts[0]), Convert.ToInt32(timeParts[1]));
+                Session session = new Session(id, date, time, filmID, roomID, type);
+                list.Add(session);
+            }
+            return list;
         }
 
         static List<Film> getFilms(SqlDataReader dataReader)
         {
-
+            List<Film> list = new List<Film>();
+            while (dataReader.Read())
+            {
+                int id = (int)dataReader.GetValue(0);
+                string name = (string)dataReader.GetValue(1);
+                int genreID = (int)dataReader.GetValue(2);
+                int ageRest = (int)dataReader.GetValue(3);
+                Film film = new Film(id, name, genreID, ageRest);
+                list.Add(film);
+            }
+            return list;
         }
 
         static List<Cashier> getCashiers(SqlDataReader dataReader)
         {
-
+            List<Cashier> list = new List<Cashier>();
+            while (dataReader.Read())
+            {
+                int id = (int)dataReader.GetValue(0);
+                string name = (string)dataReader.GetValue(1);
+                Cashier cashier = new Cashier(id, name);
+                list.Add(cashier);
+            }
+            return list;
         }
 
         static List<Room> getRooms(SqlDataReader dataReader)
         {
-
+            List<Room> list = new List<Room>();
+            while(dataReader.Read())
+            {
+                int id = (int)dataReader.GetValue(0);
+                string name = (string)dataReader.GetValue(1);
+                Room room = new Room(id, name);
+                list.Add(room);
+            }
+            return list;
         }
 
         static List<Genre> getGenres(SqlDataReader dataReader)
         {
-
+            List<Genre> list = new List<Genre>();
+            while(dataReader.Read())
+            {
+                int id = (int)dataReader.GetValue(0);
+                string name = (string)dataReader.GetValue(1);
+                Genre genre = new Genre(id, name);
+                list.Add(genre);
+            }
+            return list;
         }
 
 
