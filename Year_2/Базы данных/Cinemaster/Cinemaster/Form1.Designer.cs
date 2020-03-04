@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.tickets = new System.Windows.Forms.TabPage();
             this.ticetsEditGroup = new System.Windows.Forms.GroupBox();
             this.ticketsEditSear = new System.Windows.Forms.NumericUpDown();
@@ -177,7 +177,7 @@
             this.genresGrid = new System.Windows.Forms.DataGridView();
             this.genreID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl1.SuspendLayout();
+            this.tabControl.SuspendLayout();
             this.tickets.SuspendLayout();
             this.ticetsEditGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsEditSear)).BeginInit();
@@ -210,19 +210,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.genresGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControl
             // 
-            this.tabControl1.Controls.Add(this.tickets);
-            this.tabControl1.Controls.Add(this.sessions);
-            this.tabControl1.Controls.Add(this.films);
-            this.tabControl1.Controls.Add(this.cashiers);
-            this.tabControl1.Controls.Add(this.rooms);
-            this.tabControl1.Controls.Add(this.genres);
-            this.tabControl1.Location = new System.Drawing.Point(1, 4);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1040, 550);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl.Controls.Add(this.tickets);
+            this.tabControl.Controls.Add(this.sessions);
+            this.tabControl.Controls.Add(this.films);
+            this.tabControl.Controls.Add(this.cashiers);
+            this.tabControl.Controls.Add(this.rooms);
+            this.tabControl.Controls.Add(this.genres);
+            this.tabControl.Location = new System.Drawing.Point(1, 4);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1040, 550);
+            this.tabControl.TabIndex = 0;
+            this.tabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabControl1_Selected);
             // 
             // tickets
             // 
@@ -233,7 +234,7 @@
             this.tickets.Location = new System.Drawing.Point(4, 22);
             this.tickets.Name = "tickets";
             this.tickets.Padding = new System.Windows.Forms.Padding(3);
-            this.tickets.Size = new System.Drawing.Size(1032, 528);
+            this.tickets.Size = new System.Drawing.Size(1032, 524);
             this.tickets.TabIndex = 0;
             this.tickets.Text = "Билеты";
             this.tickets.UseVisualStyleBackColor = true;
@@ -324,7 +325,7 @@
             // ticketsEditCashierCB
             // 
             this.ticketsEditCashierCB.FormattingEnabled = true;
-            this.ticketsEditCashierCB.Location = new System.Drawing.Point(67, 48);
+            this.ticketsEditCashierCB.Location = new System.Drawing.Point(67, 45);
             this.ticketsEditCashierCB.Name = "ticketsEditCashierCB";
             this.ticketsEditCashierCB.Size = new System.Drawing.Size(186, 21);
             this.ticketsEditCashierCB.TabIndex = 4;
@@ -1172,7 +1173,7 @@
             this.cashiers.Controls.Add(this.cashiersGrid);
             this.cashiers.Location = new System.Drawing.Point(4, 22);
             this.cashiers.Name = "cashiers";
-            this.cashiers.Size = new System.Drawing.Size(1032, 528);
+            this.cashiers.Size = new System.Drawing.Size(1032, 524);
             this.cashiers.TabIndex = 3;
             this.cashiers.Text = "Кассиры";
             this.cashiers.UseVisualStyleBackColor = true;
@@ -1333,7 +1334,7 @@
             this.rooms.Controls.Add(this.roomsGrid);
             this.rooms.Location = new System.Drawing.Point(4, 22);
             this.rooms.Name = "rooms";
-            this.rooms.Size = new System.Drawing.Size(1032, 528);
+            this.rooms.Size = new System.Drawing.Size(1032, 524);
             this.rooms.TabIndex = 4;
             this.rooms.Text = "Кинозалы";
             this.rooms.UseVisualStyleBackColor = true;
@@ -1494,7 +1495,7 @@
             this.genres.Controls.Add(this.genresGrid);
             this.genres.Location = new System.Drawing.Point(4, 22);
             this.genres.Name = "genres";
-            this.genres.Size = new System.Drawing.Size(1032, 528);
+            this.genres.Size = new System.Drawing.Size(1032, 524);
             this.genres.TabIndex = 5;
             this.genres.Text = "Жанры";
             this.genres.UseVisualStyleBackColor = true;
@@ -1652,11 +1653,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 551);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Cinemaster";
-            this.tabControl1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.tabControl.ResumeLayout(false);
             this.tickets.ResumeLayout(false);
             this.ticetsEditGroup.ResumeLayout(false);
             this.ticetsEditGroup.PerformLayout();
@@ -1705,7 +1707,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tickets;
         private System.Windows.Forms.TabPage sessions;
         private System.Windows.Forms.DataGridView ticketsGrid;

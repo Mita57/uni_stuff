@@ -58,15 +58,18 @@ namespace Cinemaster
 
         public int cashierID { get; set; }
 
+        public string cashier { get; set }
+
         public int row { get; set; }
 
         public int seat { get; set; }
 
-        public Ticket(int id, int sessionID, int cashierID, int row, int seat)
+        public Ticket(int id, int sessionID, int cashierID, string cashier, int row, int seat)
         {
             this.id = id;
             this.sessionID = sessionID;
             this.cashierID = cashierID;
+            this.cashier = cashier;
             this.row = row;
             this.seat = seat;
         }
@@ -83,17 +86,23 @@ namespace Cinemaster
 
         public int filmID { get; set; }
 
+        public string film { get; set }
+
         public int roomID { get; set; }
+
+        public string room { get; set }
 
         public string type { get; set; }
 
-        public Session(int id, Date date, Time time, int filmID, int roomId, string type)
+        public Session(int id, Date date, Time time, int filmID, string film, int roomId, string room, string type)
         {
             this.id = id;
             this.date = date;
             this.time = time;
             this.filmID = filmID;
+            this.film = film;
             this.roomID = roomID;
+            this.room = room;
             this.type = type;
         }
 
@@ -109,13 +118,16 @@ namespace Cinemaster
 
         public int genreID { get; set; }
 
+        public string genre { get; set }
+
         public int ageRest { get; set; }
 
-        public Film(int id, string name, int genreID, int ageRest)
+        public Film(int id, string name, int genreID, string genre, int ageRest)
         {
             this.id = id;
             this.name = name;
             this.genreID = genreID;
+            this.genre = genre;
             this.ageRest = ageRest;
         }
 
@@ -164,18 +176,18 @@ namespace Cinemaster
     {
         static SqlConnection connection;
 
-        static void connect()
+        public static void connect()
         {
             String connectString = @"Data Source = LALTOP Initial Catalog = cinema";
             connection = new SqlConnection(connectString);
         }
 
-        static void disconnect()
+        public static void disconnect()
         {
             connection.Close();
         }
 
-        static void insert(String table, String[] values)
+        public static void insert(String table, String[] values)
         {
             String newValues = "(";
             foreach (String str in values)
@@ -192,7 +204,7 @@ namespace Cinemaster
             command.Dispose();
         }
 
-        static void update(String table, String[] cols, String[] values, String[] attrCols, String[] attrVals)
+        public static void update(String table, String[] cols, String[] values, String[] attrCols, String[] attrVals)
         {
             String newCols = "(";
             foreach (String col in cols)
@@ -231,33 +243,10 @@ namespace Cinemaster
             command.Dispose();
         }
 
-        //static object[] getByAttrs(String table, String[] cols, String[] colsArgs, String[] vals)
-        //{
-        //    String newValues = "(";
-        //    foreach (String val in vals)
-        //    {
-        //        newValues += "'" + val + "', ";
-        //    }
-        //    newValues += ")";
-
-        //    String newCols = "(";
-        //    foreach (String col in cols)
-        //    {
-        //        newCols += col + ", ";
-        //    }
-        //    newCols += ")";
-
-        //    String newColsArgs = "(";
-        //    foreach (String col in colsArgs)
-        //    {
-        //        newColsArgs += col + ", ";
-        //    }
-        //    newColsArgs += ")";
-        //    String query = String.Format("SELECT {0} FROM {1} WHERE {2} = {3}", newCols, table, newColsArgs, newValues);
-        //}
+        
 
 
-        static object[] getAll(String table)
+        public static object[] getAll(String table)
         {
             String query = String.Format("SELECT * FROM {0}", table);
             SqlCommand command = new SqlCommand(query, connection);
@@ -390,7 +379,7 @@ namespace Cinemaster
 
 
 
-        static void delete(String table, String[] cols, String[] vals)
+        public static void delete(String table, String[] cols, String[] vals)
         {
             String newCols = "(";
             foreach (String col in cols)
