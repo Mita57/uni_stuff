@@ -189,6 +189,7 @@ namespace Cinemaster
 
         public static void insert(String table, String[] values)
         {
+            connect();
             String newValues = "(";
             foreach (String str in values)
             {
@@ -202,10 +203,12 @@ namespace Cinemaster
             adapter.InsertCommand = command;
             adapter.InsertCommand.ExecuteNonQuery();
             command.Dispose();
+            disconnect();
         }
 
         public static void update(String table, String[] cols, String[] values, String[] attrCols, String[] attrVals)
         {
+            connect();
             String newCols = "(";
             foreach (String col in cols)
             {
@@ -241,6 +244,7 @@ namespace Cinemaster
             adapter.UpdateCommand = command;
             adapter.UpdateCommand.ExecuteNonQuery();
             command.Dispose();
+            disconnect();
         }
 
         
@@ -248,6 +252,7 @@ namespace Cinemaster
 
         public static object[] getAll(String table)
         {
+            connect();
             String query = String.Format("SELECT * FROM {0}", table);
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader dataReader = command.ExecuteReader();
@@ -255,15 +260,15 @@ namespace Cinemaster
             {
                 case ("tickets"):
                     {
-                        return getTickets(dataReader).ToArray();
+                        return getTickets().ToArray();
                     }
                 case ("sessions"):
                     {
-                        return getSessions(dataReader).ToArray();
+                        return getSessions().ToArray();
                     }
                 case ("films"):
                     {
-                        return getFilms(dataReader).ToArray();
+                        return getFilms().ToArray();
                     }
                 case ("cashiers"):
                     {
@@ -278,53 +283,64 @@ namespace Cinemaster
                         return getGenres(dataReader).ToArray();
                     }
             }
+            disconnect();
             return null;
         }
 
-        //methods to get data from the database and convert them to Class ojbects
-
-        static List<Ticket> getTickets(SqlDataReader dataReader)
+        static List<Ticket> getTickets()
         {
             List<Ticket> list = new List<Ticket>();
-            while(dataReader.Read())
+            String query = String.Format("SELECT cashier.name, * FROM tickets INNER JOIN cashiers ON ticket.cashierID = cashier.ID GROUP BY tickets.ID");
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader dataReader = command.ExecuteReader();
+            while (dataReader.Read())
             {
-                int id = (int)dataReader.GetValue(0);
-                int sessionID = (int)dataReader.GetValue(1);
-                int cashierID = (int)dataReader.GetValue(2);
-                int row = (int)dataReader.GetValue(3);
-                int seat = (int)dataReader.GetValue(4);
-                Ticket ticket = new Ticket(id, sessionID, cashierID, row, seat);
+                string cashierName = (string)dataReader.GetValue(0);
+                int id = (int)dataReader.GetValue(1);
+                int sessionID = (int)dataReader.GetValue(2);
+                int cashierID = (int)dataReader.GetValue(3);
+                int row = (int)dataReader.GetValue(4);
+                int seat = (int)dataReader.GetValue(5);
+                Ticket ticket = new Ticket(id, sessionID, cashierID, cashierName, row, seat);
                 list.Add(ticket);
             }
             return list;
         }
 
-        static List<Session> getSessions(SqlDataReader dataReader)
+        static List<Session> getSessions()
         {
             List<Session> list = new List<Session>();
+            String query = String.Format("SELECT films.name, rooms.name, * FROM sessions INNER JOIN films ON sessions.filmID = films.ID INNER JOIN rooms ON sessions.roomID = room.ID");
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
-                int id = (int)dataReader.GetValue(0);
-                string dateStr = (string)dataReader.GetValue(1);
-                string timeStr = (string)dataReader.GetValue(2);
-                int filmID = (int)dataReader.GetValue(3);
-                int roomID = (int)dataReader.GetValue(4);
-                string type = (string)dataReader.GetValue(5);
+                string filmName = (string)dataReader.GetValue(0);
+                string roomName = (string)dataReader.GetValue(1);
+                int id = (int)dataReader.GetValue(2);
+                string dateStr = (string)dataReader.GetValue(3);
+                string timeStr = (string)dataReader.GetValue(4);
+                int filmID = (int)dataReader.GetValue(5);
+                int roomID = (int)dataReader.GetValue(6);
+                string type = (string)dataReader.GetValue(7);
 
                 //creating Date instance
                 string[] dateParts = dateStr.Split('.');
                 string[] timeParts = dateStr.Split(':');
                 Date date = new Date(Convert.ToInt32(dateParts[0]), Convert.ToInt32(dateParts[1]), Convert.ToInt32(dateParts[2]));
                 Time time = new Time(Convert.ToInt32(timeParts[0]), Convert.ToInt32(timeParts[1]));
-                Session session = new Session(id, date, time, filmID, roomID, type);
+                Session session = new Session(id, date, time, filmID, filmName, roomID, roomName, type);
                 list.Add(session);
             }
             return list;
         }
 
-        static List<Film> getFilms(SqlDataReader dataReader)
+        static List<Film> getFilms()
         {
             List<Film> list = new List<Film>();
+            String query = String.Format("SELECT sessions.id, cashier.id, * FROM ");
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
                 int id = (int)dataReader.GetValue(0);
