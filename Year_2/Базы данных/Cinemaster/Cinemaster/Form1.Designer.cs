@@ -48,7 +48,7 @@
             this.ticketsAddSeat = new System.Windows.Forms.NumericUpDown();
             this.label39 = new System.Windows.Forms.Label();
             this.ticketsAddRow = new System.Windows.Forms.NumericUpDown();
-            this.ticketsAddSessionB = new System.Windows.Forms.ComboBox();
+            this.ticketsAddSessionCB = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.ticketsAddIDField = new System.Windows.Forms.TextBox();
             this.addTicketButton = new System.Windows.Forms.Button();
@@ -373,7 +373,7 @@
             this.ticketsAddGroup.Controls.Add(this.ticketsAddSeat);
             this.ticketsAddGroup.Controls.Add(this.label39);
             this.ticketsAddGroup.Controls.Add(this.ticketsAddRow);
-            this.ticketsAddGroup.Controls.Add(this.ticketsAddSessionB);
+            this.ticketsAddGroup.Controls.Add(this.ticketsAddSessionCB);
             this.ticketsAddGroup.Controls.Add(this.label8);
             this.ticketsAddGroup.Controls.Add(this.ticketsAddIDField);
             this.ticketsAddGroup.Controls.Add(this.addTicketButton);
@@ -411,18 +411,18 @@
             this.ticketsAddRow.Size = new System.Drawing.Size(186, 20);
             this.ticketsAddRow.TabIndex = 10;
             // 
-            // ticketsAddSessionB
+            // ticketsAddSessionCB
             // 
-            this.ticketsAddSessionB.FormattingEnabled = true;
-            this.ticketsAddSessionB.Items.AddRange(new object[] {
+            this.ticketsAddSessionCB.FormattingEnabled = true;
+            this.ticketsAddSessionCB.Items.AddRange(new object[] {
             "2D",
             "3D",
             "IMAX 2D",
             "IMAX 3D"});
-            this.ticketsAddSessionB.Location = new System.Drawing.Point(67, 70);
-            this.ticketsAddSessionB.Name = "ticketsAddSessionB";
-            this.ticketsAddSessionB.Size = new System.Drawing.Size(186, 21);
-            this.ticketsAddSessionB.TabIndex = 9;
+            this.ticketsAddSessionCB.Location = new System.Drawing.Point(67, 70);
+            this.ticketsAddSessionCB.Name = "ticketsAddSessionCB";
+            this.ticketsAddSessionCB.Size = new System.Drawing.Size(186, 21);
+            this.ticketsAddSessionCB.TabIndex = 9;
             // 
             // label8
             // 
@@ -1717,7 +1717,7 @@
         private System.Windows.Forms.TabPage genres;
         private System.Windows.Forms.Button ticketsDeleteButton;
         private System.Windows.Forms.GroupBox ticketsAddGroup;
-        private System.Windows.Forms.ComboBox ticketsAddSessionB;
+        private System.Windows.Forms.ComboBox ticketsAddSessionCB;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox ticketsAddIDField;
         private System.Windows.Forms.Button addTicketButton;

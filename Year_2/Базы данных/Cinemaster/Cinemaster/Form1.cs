@@ -15,6 +15,7 @@ namespace Cinemaster
             TabControl1_Selected(sender, null);
         }
 
+
         private void TabControl1_Selected(object sender, TabControlEventArgs e)
         {
             string tab = tabControl.SelectedTab.Text;
@@ -22,6 +23,19 @@ namespace Cinemaster
             {
                 case "Билеты":
                     {
+                        ticketsEditCashierCB.Items.Clear();
+                        ticketsEditSessionCB.Items.Clear();
+                        ticketsAddCashierCB.Items.Clear();
+                        ticketsAddSessionCB.Items.Clear();
+
+                        Cashier[] cashiers = (Cashier[])ERM.getAll("cashiers");
+                        ticketsAddCashierCB.Items.AddRange(cashiers);
+                        ticketsEditCashierCB.Items.AddRange(cashiers);
+
+                        Session[] sessions = (Session[])ERM.getAll("sessions");
+                        ticketsAddSessionCB.Items.AddRange(sessions);
+                        ticketsEditSessionCB.Items.AddRange(sessions);
+
                         Ticket[] tickets = (Ticket[])ERM.getAll("tickets");
                         ticketsGrid.RowCount = tickets.Length;
                         for (int i = 0; i < tickets.Length; i++)
@@ -37,6 +51,20 @@ namespace Cinemaster
 
                 case "Сеансы":
                     {
+                        sessionsAddFilmCB.Items.Clear();
+                        sessionsAddRoomCB.Items.Clear();
+                        sessionsEditFilmCB.Items.Clear();
+                        sessionsEditRoomCB.Items.Clear();
+
+                        Film[] films = (Film[])ERM.getAll("films");
+                        sessionsAddFilmCB.Items.AddRange(films);
+                        sessionsEditFilmCB.Items.AddRange(films);
+
+                        Room[] rooms = (Room[])ERM.getAll("rooms");
+                        sessionsAddRoomCB.Items.AddRange(rooms);
+                        sessionsEditRoomCB.Items.AddRange(rooms);
+
+
                         Session[] sessions = (Session[])ERM.getAll("sessions");
                         sessionsGrid.RowCount = sessions.Length;
                         for (int i = 0; i < sessions.Length; i++)
@@ -53,6 +81,14 @@ namespace Cinemaster
 
                 case "Фильмы":
                     {
+                        filmsAddGenreCB.Items.Clear();
+                        filmsEditGenreCB.Items.Clear();
+
+                        Genre[] genres = (Genre[])ERM.getAll("genres");
+
+                        filmsAddGenreCB.Items.AddRange(genres);
+                        filmsEditGenreCB.Items.AddRange(genres);
+
                         Film[] films = (Film[])ERM.getAll("films");
                         filmsGrid.RowCount = films.Length;
                         for (int i = 0; i < films.Length; i++)

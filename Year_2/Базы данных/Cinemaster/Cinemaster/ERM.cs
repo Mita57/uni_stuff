@@ -25,7 +25,7 @@ namespace Cinemaster
 
         public string serialize()
         {
-            return this.day + "." + this.month + "." + this.year;
+            return this.id + "#: " + this.day + "." + this.month + "." + this.year;
         }
     }
 
@@ -58,7 +58,7 @@ namespace Cinemaster
 
         public int cashierID { get; set; }
 
-        public string cashier { get; set }
+        public string cashier { get; set; }
 
         public int row { get; set; }
 
@@ -73,7 +73,6 @@ namespace Cinemaster
             this.row = row;
             this.seat = seat;
         }
-
     }
 
     public class Session
@@ -86,11 +85,11 @@ namespace Cinemaster
 
         public int filmID { get; set; }
 
-        public string film { get; set }
+        public string film { get; set; }
 
         public int roomID { get; set; }
 
-        public string room { get; set }
+        public string room { get; set; }
 
         public string type { get; set; }
 
@@ -106,6 +105,10 @@ namespace Cinemaster
             this.type = type;
         }
 
+        public string serialize()
+        {
+            return (this.id + "#:" + this.date.serialize() + ", " + this.time.serialze() + "; " + this.room);
+        }
       
     }
 
@@ -118,7 +121,7 @@ namespace Cinemaster
 
         public int genreID { get; set; }
 
-        public string genre { get; set }
+        public string genre { get; set; }
 
         public int ageRest { get; set; }
 
@@ -129,6 +132,11 @@ namespace Cinemaster
             this.genreID = genreID;
             this.genre = genre;
             this.ageRest = ageRest;
+        }
+
+        public string serialize()
+        {
+            return (this.id + "#: " + this.name);
         }
 
     }
@@ -144,6 +152,11 @@ namespace Cinemaster
             this.id = id;
             this.name = name;
         }
+
+        public string serialize()
+        {
+            return (this.id + "#: " + this.name);
+        }
     }
 
     public class Room
@@ -157,6 +170,11 @@ namespace Cinemaster
             this.id = id;
             this.name = name;
         }
+
+        public string serialize()
+        {
+            return (this.id + "#: " + this.name);
+        }
     }
 
     public class Genre
@@ -169,6 +187,11 @@ namespace Cinemaster
         {
             this.id = id;
             this.name = name;
+        }
+
+        public string serialize()
+        {
+            return (this.id + "#: " + this.name);
         }
     }
 
