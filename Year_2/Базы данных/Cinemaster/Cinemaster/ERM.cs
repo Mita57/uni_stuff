@@ -310,7 +310,7 @@ namespace Cinemaster
         static List<Session> getSessions()
         {
             List<Session> list = new List<Session>();
-            String query = String.Format("SELECT films.name, rooms.name, * FROM sessions INNER JOIN films ON sessions.filmID = films.ID INNER JOIN rooms ON sessions.roomID = room.ID");
+            String query = String.Format("SELECT films.name, rooms.name, * FROM sessions INNER JOIN films ON sessions.filmID = films.ID INNER JOIN rooms ON sessions.roomID = room.ID GROUP BY sessions.id");
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
@@ -338,16 +338,17 @@ namespace Cinemaster
         static List<Film> getFilms()
         {
             List<Film> list = new List<Film>();
-            String query = String.Format("SELECT sessions.id, cashier.id, * FROM ");
+            String query = String.Format("SELECT genres.name, * FROM films INNER JOIN genres ON films.genreID = genres.ID GROUP BY films.ID");
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
             {
-                int id = (int)dataReader.GetValue(0);
-                string name = (string)dataReader.GetValue(1);
-                int genreID = (int)dataReader.GetValue(2);
-                int ageRest = (int)dataReader.GetValue(3);
-                Film film = new Film(id, name, genreID, ageRest);
+                string genreName = (string)dataReader.GetValue(0);
+                int id = (int)dataReader.GetValue(1);
+                string name = (string)dataReader.GetValue(2);
+                int genreID = (int)dataReader.GetValue(3);
+                int ageRest = (int)dataReader.GetValue(4);
+                Film film = new Film(id, name, genreID, genreName, ageRest);
                 list.Add(film);
             }
             return list;
