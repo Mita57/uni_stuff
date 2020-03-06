@@ -25,7 +25,7 @@ namespace Cinemaster
 
         public string serialize()
         {
-            return this.id + "#: " + this.day + "." + this.month + "." + this.year;
+            return this.day + "." + this.month + "." + this.year;
         }
     }
 
@@ -201,8 +201,9 @@ namespace Cinemaster
 
         public static void connect()
         {
-            String connectString = @"Data Source = LALTOP Initial Catalog = cinema";
+            String connectString = @"Data Source = DESKTOP-AEKQ1GD\SQLEXPRESS; Initial Catalog = cinema;User ID = sa; password = 1234; MultipleActiveResultSets=true";
             connection = new SqlConnection(connectString);
+            connection.Open();
         }
 
         public static void disconnect()
