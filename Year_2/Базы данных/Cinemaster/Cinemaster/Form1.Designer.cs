@@ -167,17 +167,17 @@
             this.roomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genres = new System.Windows.Forms.TabPage();
             this.genresNoEntriesLabel = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.deleteGenreButton = new System.Windows.Forms.Button();
             this.editGenreGroup = new System.Windows.Forms.GroupBox();
             this.genresEditNameField = new System.Windows.Forms.TextBox();
             this.genresEditIDField = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.changeGenreButton = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.genresAddGroup = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.genresAddNameField = new System.Windows.Forms.TextBox();
             this.genresAddIDField = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addGenreButton = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.genresGrid = new System.Windows.Forms.DataGridView();
@@ -1557,6 +1557,7 @@
             this.roomsAddNameField.Name = "roomsAddNameField";
             this.roomsAddNameField.Size = new System.Drawing.Size(186, 20);
             this.roomsAddNameField.TabIndex = 13;
+            this.roomsAddNameField.TextChanged += new System.EventHandler(this.roomsAddNameField_TextChanged);
             // 
             // roomsAddIDField
             // 
@@ -1623,7 +1624,7 @@
             // genres
             // 
             this.genres.Controls.Add(this.genresNoEntriesLabel);
-            this.genres.Controls.Add(this.button3);
+            this.genres.Controls.Add(this.deleteGenreButton);
             this.genres.Controls.Add(this.editGenreGroup);
             this.genres.Controls.Add(this.genresAddGroup);
             this.genres.Controls.Add(this.genresGrid);
@@ -1644,22 +1645,22 @@
             this.genresNoEntriesLabel.Text = "Нет записей";
             this.genresNoEntriesLabel.Visible = false;
             // 
-            // button3
+            // deleteGenreButton
             // 
-            this.button3.BackColor = System.Drawing.Color.Tomato;
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(772, 471);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(247, 34);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Удалить жанр";
-            this.button3.UseVisualStyleBackColor = false;
+            this.deleteGenreButton.BackColor = System.Drawing.Color.Tomato;
+            this.deleteGenreButton.Enabled = false;
+            this.deleteGenreButton.Location = new System.Drawing.Point(772, 471);
+            this.deleteGenreButton.Name = "deleteGenreButton";
+            this.deleteGenreButton.Size = new System.Drawing.Size(247, 34);
+            this.deleteGenreButton.TabIndex = 17;
+            this.deleteGenreButton.Text = "Удалить жанр";
+            this.deleteGenreButton.UseVisualStyleBackColor = false;
             // 
             // editGenreGroup
             // 
             this.editGenreGroup.Controls.Add(this.genresEditNameField);
             this.editGenreGroup.Controls.Add(this.genresEditIDField);
-            this.editGenreGroup.Controls.Add(this.button2);
+            this.editGenreGroup.Controls.Add(this.changeGenreButton);
             this.editGenreGroup.Controls.Add(this.label37);
             this.editGenreGroup.Controls.Add(this.label38);
             this.editGenreGroup.Enabled = false;
@@ -1685,15 +1686,15 @@
             this.genresEditIDField.Size = new System.Drawing.Size(186, 20);
             this.genresEditIDField.TabIndex = 7;
             // 
-            // button2
+            // changeGenreButton
             // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(6, 71);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(247, 34);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Изменить жанр";
-            this.button2.UseVisualStyleBackColor = true;
+            this.changeGenreButton.Enabled = false;
+            this.changeGenreButton.Location = new System.Drawing.Point(6, 71);
+            this.changeGenreButton.Name = "changeGenreButton";
+            this.changeGenreButton.Size = new System.Drawing.Size(247, 34);
+            this.changeGenreButton.TabIndex = 6;
+            this.changeGenreButton.Text = "Изменить жанр";
+            this.changeGenreButton.UseVisualStyleBackColor = true;
             // 
             // label37
             // 
@@ -1715,9 +1716,9 @@
             // 
             // genresAddGroup
             // 
-            this.genresAddGroup.Controls.Add(this.textBox3);
+            this.genresAddGroup.Controls.Add(this.genresAddNameField);
             this.genresAddGroup.Controls.Add(this.genresAddIDField);
-            this.genresAddGroup.Controls.Add(this.button1);
+            this.genresAddGroup.Controls.Add(this.addGenreButton);
             this.genresAddGroup.Controls.Add(this.label35);
             this.genresAddGroup.Controls.Add(this.label36);
             this.genresAddGroup.Location = new System.Drawing.Point(762, 10);
@@ -1727,12 +1728,13 @@
             this.genresAddGroup.TabStop = false;
             this.genresAddGroup.Text = "Добавить жанр";
             // 
-            // textBox3
+            // genresAddNameField
             // 
-            this.textBox3.Location = new System.Drawing.Point(67, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(186, 20);
-            this.textBox3.TabIndex = 13;
+            this.genresAddNameField.Location = new System.Drawing.Point(67, 45);
+            this.genresAddNameField.Name = "genresAddNameField";
+            this.genresAddNameField.Size = new System.Drawing.Size(186, 20);
+            this.genresAddNameField.TabIndex = 13;
+            this.genresAddNameField.TextChanged += new System.EventHandler(this.genresAddNameField_TextChanged);
             // 
             // genresAddIDField
             // 
@@ -1742,15 +1744,15 @@
             this.genresAddIDField.Size = new System.Drawing.Size(186, 20);
             this.genresAddIDField.TabIndex = 7;
             // 
-            // button1
+            // addGenreButton
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(6, 71);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(247, 34);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Добавить жанр";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addGenreButton.Enabled = false;
+            this.addGenreButton.Location = new System.Drawing.Point(6, 71);
+            this.addGenreButton.Name = "addGenreButton";
+            this.addGenreButton.Size = new System.Drawing.Size(247, 34);
+            this.addGenreButton.TabIndex = 6;
+            this.addGenreButton.Text = "Добавить жанр";
+            this.addGenreButton.UseVisualStyleBackColor = true;
             // 
             // label35
             // 
@@ -1969,16 +1971,16 @@
         private System.Windows.Forms.GroupBox editGenreGroup;
         private System.Windows.Forms.TextBox genresEditNameField;
         private System.Windows.Forms.TextBox genresEditIDField;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button changeGenreButton;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.GroupBox genresAddGroup;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox genresAddNameField;
         private System.Windows.Forms.TextBox genresAddIDField;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addGenreButton;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button deleteGenreButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketID;
         private System.Windows.Forms.DataGridViewTextBoxColumn session;
         private System.Windows.Forms.DataGridViewTextBoxColumn cashier;

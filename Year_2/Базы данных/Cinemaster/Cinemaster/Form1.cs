@@ -292,5 +292,29 @@ namespace Cinemaster
             }
         }
 
+        private void roomsAddNameField_TextChanged(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(roomsAddNameField.Text))
+            {
+                addRoomButton.Enabled = false;
+            }
+            else
+            {
+                addRoomButton.Enabled = true;
+            }
+        }
+
+
+        private void genresAddNameField_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(genresAddNameField.Text))
+            {
+                addFilmButton.Enabled = false;
+            }
+            else
+            {
+                addFilmButton.Enabled = true;
+            }
+        }
     }
 }
