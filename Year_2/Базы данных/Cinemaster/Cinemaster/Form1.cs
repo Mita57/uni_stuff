@@ -46,6 +46,16 @@ namespace Cinemaster
                             ticketsGrid.Rows[i].Cells[3].Value = tickets[i].seat;
                             ticketsGrid.Rows[i].Cells[4].Value = tickets[i].row;
                         }
+
+                        try
+                        {
+                            ticketsAddIDField.Text = (tickets[tickets.Length - 1].id + 1).ToString();
+                        }
+                        catch
+                        {
+                            ticketsAddIDField.Text = "1";
+                        }
+
                         break;
                     }
 
@@ -76,6 +86,16 @@ namespace Cinemaster
                             sessionsGrid.Rows[i].Cells[4].Value = sessions[i].room;
                             sessionsGrid.Rows[i].Cells[5].Value = sessions[i].type;
                         }
+
+                        try
+                        {
+                            sessionsAddIDField.Text = (sessions[sessions.Length - 1].id + 1).ToString();
+                        }
+                        catch
+                        {
+                            sessionsAddIDField.Text = "1";
+                        }
+
                         break;
                     }
 
@@ -98,6 +118,16 @@ namespace Cinemaster
                             filmsGrid.Rows[i].Cells[2].Value = films[i].genre;
                             filmsGrid.Rows[i].Cells[3].Value = films[i].ageRest;
                         }
+
+                        try
+                        {
+                            filmsAddIDField.Text = (films[films.Length - 1].id + 1).ToString();
+                        }
+                        catch
+                        {
+                            filmsAddIDField.Text = "1";
+                        }
+
                         break;
                     }
 
@@ -110,6 +140,16 @@ namespace Cinemaster
                             filmsGrid.Rows[i].Cells[0].Value = cashiers[i].id;
                             filmsGrid.Rows[i].Cells[0].Value = cashiers[i].name;
                         }
+
+                        try
+                        {
+                            cashierAddIDField.Text = (cashiers[cashiers.Length - 1].id + 1).ToString();
+                        }
+                        catch
+                        {
+                            cashierAddIDField.Text = "1";
+                        }
+
                         break;
                     }
                 case "Кинозалы":
@@ -121,6 +161,16 @@ namespace Cinemaster
                             roomsGrid.Rows[i].Cells[0].Value = rooms[i].id;
                             roomsGrid.Rows[i].Cells[1].Value = rooms[i].name;
                         }
+
+                        try
+                        {
+                            roomsAddIDField.Text = (rooms[rooms.Length - 1].id + 1).ToString();
+                        }
+                        catch
+                        {
+                            roomsAddIDField.Text = "1";
+                        }
+
                         break;
                     }
                 case "Жанры":
@@ -132,11 +182,139 @@ namespace Cinemaster
                             genresGrid.Rows[i].Cells[0].Value = genres[i].id;
                             genresGrid.Rows[i].Cells[1].Value = genres[i].name;
                         }
+
+                        try
+                        {
+                            genresAddIDField.Text = (genres[genres.Length - 1].id + 1).ToString();
+                        }
+                        catch
+                        {
+                            genresAddIDField.Text = "1";
+                        }
+
                         break;
                     }
             }
         }
+    
+
+        private void ticketsAddValidation(object sender, EventArgs e)
+        {
+            bool cashierFlag = false;
+            bool sessionsFlag = false;
+
+            if(ticketsAddCashierCB.SelectedIndex != -1)
+            {
+                cashierFlag = true;
+            }
+
+            if(ticketsAddSessionCB.SelectedIndex != -1)
+            {
+                sessionsFlag = true;
+            }
+
+            if(cashierFlag && sessionsFlag)
+            {
+                addTicketButton.Enabled = true;
+            }
+            else
+            {
+                addTicketButton.Enabled = false;
+            }
+
+        }
+
+        private void sessionsAddValidation(object sender, EventArgs e)
+        {
+            bool filmFlag = false;
+            bool roomFlag = false;
+            bool typeFlag = false;
+
+            if(sessionsAddFilmCB.SelectedIndex != -1)
+            {
+                filmFlag = true;
+            }
+
+            if(sessionsAddRoomCB.SelectedIndex != -1)
+            {
+                roomFlag = true;
+            }
+
+            if(sessionsAddTypeCB.SelectedIndex != -1)
+            {
+                typeFlag = true;
+            }
+
+            if(filmFlag && roomFlag && typeFlag)
+            {
+                addSessionButton.Enabled = true;
+            }
+            else
+            {
+                addSessionButton.Enabled = false;
+            }
+        }
+
+        private void filmsAddGenreCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool nameFlag = false;
+            bool genreFlag = false;
+
+            if (!String.IsNullOrEmpty(filmsAddNameField.Text))
+            {
+                nameFlag = true;
+            }
+
+            if(filmsAddGenreCB.SelectedIndex != -1)
+            {
+                genreFlag = true;
+            }
+
+            if(nameFlag && genreFlag)
+            {
+                addFilmButton.Enabled = true;
+            }
+            else
+            {
+                addFilmButton.Enabled = false;
+            }
+        }
+
+        private void cashierAddNameField_TextChanged(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(cashierAddNameField.Text))
+            {
+                addCashierButton.Enabled = false;
+            }
+            else
+            {
+                addCashierButton.Enabled = true;
+            }
+        }
+
+        private void roomsAddNameField_TextChanged(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(roomsAddNameField.Text))
+            {
+                addRoomButton.Enabled = false;
+            }
+            else
+            {
+                addRoomButton.Enabled = true;
+            }
+        }
 
 
+        private void genresAddNameField_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(genresAddNameField.Text))
+            {
+                addFilmButton.Enabled = false;
+            }
+            else
+            {
+                addFilmButton.Enabled = true;
+            }
+        }
     }
 }
