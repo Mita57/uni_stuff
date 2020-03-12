@@ -314,7 +314,7 @@ namespace Cinemaster
         static List<Ticket> getTickets()
         {
             List<Ticket> list = new List<Ticket>();
-            String query = String.Format("SELECT cashier.name, * FROM tickets INNER JOIN cashiers ON ticket.cashierID = cashier.cashierID GROUP BY tickets.ticketID");
+            String query = String.Format("SELECT cashiers.cashier, * FROM tickets INNER JOIN cashiers ON tickets.cashierID = cashiers.cashierID");
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
@@ -334,7 +334,7 @@ namespace Cinemaster
         static List<Session> getSessions()
         {
             List<Session> list = new List<Session>();
-            String query = String.Format("SELECT films.name, rooms.room, * FROM sessions INNER JOIN films ON sessions.filmID = films.filmID INNER JOIN rooms ON sessions.roomID = rooms.roomID GROUP BY sessions.sessionid");
+            String query = String.Format("SELECT films.name, rooms.room, * FROM sessions INNER JOIN films ON sessions.filmID = films.filmID INNER JOIN rooms ON sessions.roomID = rooms.roomID");
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
