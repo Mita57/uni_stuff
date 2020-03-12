@@ -196,5 +196,63 @@ namespace Cinemaster
                     }
             }
         }
+    
+
+        private void ticketsAddValidation(object sender, EventArgs e)
+        {
+            bool cashierFlag = false;
+            bool sessionsFlag = false;
+
+            if(ticketsAddCashierCB.SelectedIndex != -1)
+            {
+                cashierFlag = true;
+            }
+
+            if(ticketsAddSessionCB.SelectedIndex != -1)
+            {
+                sessionsFlag = true;
+            }
+
+            if(cashierFlag && sessionsFlag)
+            {
+                addTicketButton.Enabled = true;
+            }
+            else
+            {
+                addTicketButton.Enabled = false;
+            }
+
+        }
+
+        private void sessionsAddValidation(object sender, EventArgs e)
+        {
+            bool filmFlag = false;
+            bool roomFlag = false;
+            bool typeFlag = false;
+
+            if(sessionsAddFilmCB.SelectedIndex != -1)
+            {
+                filmFlag = true;
+            }
+
+            if(sessionsAddRoomCB.SelectedIndex != -1)
+            {
+                roomFlag = true;
+            }
+
+            if(sessionsAddTypeCB.SelectedIndex != -1)
+            {
+                typeFlag = true;
+            }
+
+            if(filmFlag && roomFlag && typeFlag)
+            {
+                addSessionButton.Enabled = true;
+            }
+            else
+            {
+                addSessionButton.Enabled = false;
+            }
+        }
     }
 }
