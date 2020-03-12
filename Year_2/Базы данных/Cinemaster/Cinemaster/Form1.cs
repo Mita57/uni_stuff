@@ -254,5 +254,43 @@ namespace Cinemaster
                 addSessionButton.Enabled = false;
             }
         }
+
+        private void filmsAddGenreCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool nameFlag = false;
+            bool genreFlag = false;
+
+            if (!String.IsNullOrEmpty(filmsAddNameField.Text))
+            {
+                nameFlag = true;
+            }
+
+            if(filmsAddGenreCB.SelectedIndex != -1)
+            {
+                genreFlag = true;
+            }
+
+            if(nameFlag && genreFlag)
+            {
+                addFilmButton.Enabled = true;
+            }
+            else
+            {
+                addFilmButton.Enabled = false;
+            }
+        }
+
+        private void cashierAddNameField_TextChanged(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(cashierAddNameField.Text))
+            {
+                addCashierButton.Enabled = false;
+            }
+            else
+            {
+                addCashierButton.Enabled = true;
+            }
+        }
+
     }
 }

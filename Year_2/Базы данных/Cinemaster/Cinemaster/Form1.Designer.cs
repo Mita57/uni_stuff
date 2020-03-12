@@ -1180,6 +1180,7 @@
             this.filmsAddGenreCB.Name = "filmsAddGenreCB";
             this.filmsAddGenreCB.Size = new System.Drawing.Size(186, 21);
             this.filmsAddGenreCB.TabIndex = 9;
+            this.filmsAddGenreCB.SelectedIndexChanged += new System.EventHandler(this.filmsAddGenreCB_SelectedIndexChanged);
             // 
             // label20
             // 
@@ -1379,6 +1380,7 @@
             this.cashierAddNameField.Name = "cashierAddNameField";
             this.cashierAddNameField.Size = new System.Drawing.Size(186, 20);
             this.cashierAddNameField.TabIndex = 13;
+            this.cashierAddNameField.TextChanged += new System.EventHandler(this.cashierAddNameField_TextChanged);
             // 
             // cashierAddIDField
             // 
