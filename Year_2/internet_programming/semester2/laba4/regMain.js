@@ -7,7 +7,7 @@ function checkInputs() {
         loginCheck = true;
     }
 
-    if (document.getElementsById('email').value) {
+    if (document.getElementById('email').value) {
         emailCheck = true;
     }
 
@@ -17,8 +17,7 @@ function checkInputs() {
 
     if (loginCheck && emailCheck && pwrdCheck) {
         document.getElementById('registrationBtn').disabled = false;
-    }
-    else {
+    } else {
         document.getElementById('registrationBtn').disabled = true;
     }
 }
@@ -27,19 +26,19 @@ function register() {
     var email = document.getElementById('email').value;
     var login = document.getElementById('login').value;
     var pwrd = document.getElementById('pwrd').value;
-    var params = 'login=' + login + "&pwrd=" + pwrd + "email" + email;
+    var params = 'login=' + login + "&pwrd=" + pwrd + "&email=" + email;
     var xmlHTTP = new XMLHttpRequest();
-    xmlHTTP.open('post', 'registerAJAX.php');
+    xmlHTTP.open('post', '/registerAJAX.php/', true);
+    xmlHTTP.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlHTTP.send(params);
     xmlHTTP.onreadystatechange = function () {
         if (xmlHTTP.readyState == 4 && xmlHTTP.status == 200) {
             var resp = xmlHTTP.responseText;
             if (resp == 'good') {
-                localStorage.setItem('user', login);
-                location.href = '/';
-            }
-            else {
-                alert('Lol ceque chebureque');
+                window.location = '/';
+
+            } else {
+                alert('lol ceque, vous assez des problemes');
             }
         }
     }

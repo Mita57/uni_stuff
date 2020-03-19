@@ -7,11 +7,11 @@
 </head>
 <body>
     <div id='form'>
-        <input type='text' id='login' placeholder='Логин' onchange="checkInputs()"><br>
-        <input type='text' id='email' placeholder='Email'onchange="checkInputs()"><br>
-        <input type='text' id='pwrd' placeholder='Пароль'onchange="checkInputs()"><br>
+        <input type='text' id='login' placeholder='Логин' onkeypress="checkInputs()"><br>
+        <input type='text' id='email' placeholder='Email' onkeypress="checkInputs()"><br>
+        <input type='password' id='pwrd' placeholder='Пароль' onkeypress="checkInputs()"><br>
         <button id='registrationBtn' onclick="register()" disabled>Зарегаца</button>
+        <button id='registrationBtn' onclick="window.location = '/'" >Абратна</button>
     </div>
 </body>
 </html>
-        

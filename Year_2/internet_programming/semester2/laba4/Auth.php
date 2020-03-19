@@ -2,11 +2,10 @@
 
 
 class Auth {
-    function register($login, $email, $password) {
+    function register($login, $email, $pwrd) {
         $db_conn = pg_connect('host=localhost dbname=tents user=postgres password=MOORMOOR port=5432');
-        $query = "INSERT INTO users VALUES ($login, $email, $pwrd)";
+        $query = "INSERT INTO users VALUES ('$login', '$email', '$pwrd')";
         $resource = pg_query($db_conn, $query);
-
         if($resource) {
             return "good";
         }

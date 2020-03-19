@@ -11,7 +11,7 @@ function login() {
     var pwrd = document.getElementById('pwrdInput').value;
     var params = 'login=' + login + "&pwrd=" + pwrd;
     var xmlHTTP = new XMLHttpRequest();
-    xmlHTTP.open('post', 'auth_check.php');
+    xmlHTTP.open('post', 'authAJAX.php');
     xmlHTTP.send(params);
     xmlHTTP.onreadystatechange = function () {
         if (xmlHTTP.readyState == 4 && xmlHTTP.status == 200) {
@@ -24,5 +24,5 @@ function login() {
                 alert('Lol ceque chebureque');
             }
         }
-    }
+    };
 }

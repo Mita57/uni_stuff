@@ -12,9 +12,9 @@ function login(): void {
     let pwrd: string = (document.getElementById('pwrdInput') as HTMLInputElement).value;
     let params: string = 'login=' + login + "&pwrd=" + pwrd;
     let xmlHTTP: XMLHttpRequest = new XMLHttpRequest();
-    xmlHTTP.open('post', 'auth_check.php');
+    xmlHTTP.open('post', 'authAJAX.php');
     xmlHTTP.send(params);
-    xmlHTTP.onreadystatechange = function () {//Call a function when the state changes.
+    xmlHTTP.onreadystatechange = function () {
         if (xmlHTTP.readyState == 4 && xmlHTTP.status == 200) {
             let resp: String = xmlHTTP.responseText;
             if (resp == 'good') {
