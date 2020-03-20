@@ -36,10 +36,14 @@ table, th, td {
     padding: 10px;
 }
 
-#cart {
+#cartUL {
     height: 70%;
     border: black solid 1px;
     background-color: white;
     overflow-y: scroll;
+}
+#logoutBtn {
+    display: none;
+
 }
 

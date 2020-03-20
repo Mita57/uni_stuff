@@ -35,10 +35,11 @@ function register() {
         if (xmlHTTP.readyState == 4 && xmlHTTP.status == 200) {
             var resp = xmlHTTP.responseText;
             if (resp == 'good') {
+                localStorage.getItem('user', login);
                 window.location = '/';
 
             } else {
-                alert('lol ceque, vous assez des problemes');
+                alert('lol ceque, vous avez des problemes');
             }
         }
     }

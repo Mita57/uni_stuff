@@ -4,9 +4,8 @@ $auth = new Auth();
 
 $login = $_POST['login'];
 $pwrd = $_POST['pwrd'];
-$email = $_POST['email'];
 
-$result = $auth->register($login, $email, $pwrd);
+$result = $auth->login($login, $pwrd);
 echo $result;
 
 

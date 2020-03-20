@@ -16,13 +16,13 @@ class Auth {
 
     function login($name, $password) {
         $db_conn = pg_connect('host=localhost dbname=tents user=postgres password=MOORMOOR port=5432');
-        $query = "SELECT * FROM users";
+        $query = "SELECT * FROM users WHERE login = '$name'";
         $resource = pg_query($db_conn, $query);
         $result = pg_fetch_all($resource);
         if(!$result) {
             return 'bad';
         }
-        if($password == $result[0]['result']) {
+        if($password == $result[0]['pwrd']) {
             return 'good';
         }
         return 'bad';
