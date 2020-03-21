@@ -1,4 +1,4 @@
-var set = new Set();
+var cart = new Object();
 function verifyInputs() {
     if (document.getElementById('loginInput').value && (document.getElementById('pwrdInput').value)) {
         document.getElementById('loginBtn').disabled = false;
@@ -25,7 +25,7 @@ function login() {
                 document.getElementById('loginBtn').style.display = 'none';
                 document.getElementById('registerBtn').style.display = 'none';
                 document.getElementById('logoutBtn').style.display = 'block';
-                document.getElementById('login.Input').readOnly = true;
+                document.getElementById('loginInput').readOnly = true;
             }
             else {
                 alert('Lol ceque chebureque');
@@ -52,8 +52,6 @@ function checkAuth() {
         loadCart();
     }
 }
-function loadCart() {
-}
 function addToCart(id) {
     if (document.getElementById("amount_" + id).innerText != '0') {
         if (document.getElementById('am_' + id).innerText == '0') {
@@ -61,8 +59,8 @@ function addToCart(id) {
             // @ts-ignore
             document.getElementById('am_' + id).innerText++;
             updatePrice(id, '+');
-            set.add({ id: document.getElementById('am_' + id).innerText });
-            console.log(set);
+            cart[id] = document.getElementById('entryAm' + id).innerHTML;
+            console.log(cart);
         }
         else {
             if (document.getElementById("amount_" + id).innerText !=
@@ -72,8 +70,8 @@ function addToCart(id) {
                 // @ts-ignore
                 document.getElementById('entryAm' + id).innerHTML++;
                 updatePrice(id, '+');
-                set.add({ id: document.getElementById('am_' + id).innerText });
-                console.log(set);
+                cart[id] = document.getElementById('entryAm' + id).innerHTML;
+                console.log(cart);
             }
             else {
                 alert("Wait, it's illegal");
@@ -89,15 +87,15 @@ function removeFromCart(id) {
             document.getElementById('am_' + id).innerText--;
             // @ts-ignore
             document.getElementById('entryAm' + id).innerHTML--;
-            set.add({ id: document.getElementById('am_' + id).innerText });
-            console.log(set);
+            cart[id] = document.getElementById('entryAm' + id).innerHTML;
+            console.log(cart);
         }
         else {
             // @ts-ignore
             document.getElementById('am_' + id).innerText--;
             document.getElementById("entry_" + id).outerHTML = '';
-            set.add({ id: document.getElementById('am_' + id).innerText });
-            console.log(set);
+            cart[id] = document.getElementById('entryAm' + id).innerHTML;
+            console.log(cart);
         }
         updatePrice(id, '-');
     }
@@ -107,13 +105,42 @@ function updatePrice(id, action) {
     switch (action) {
         case '+': {
             // @ts-ignore
-            document.getElementById('price').innerText -= -price;
+            document.getElementById('result').innerText -= -price;
             break;
         }
         case '-': {
             // @ts-ignore
-            document.getElementById('price').innerText -= price;
+            document.getElementById('result').innerText -= price;
             break;
         }
     }
+    writeCart();
+}
+function writeCart() {
+    var login = localStorage.user;
+    var cartJSON = JSON.stringify(cart);
+    var xmlHTTP = new XMLHttpRequest();
+    xmlHTTP.open('post', 'updateCartAJAX.php');
+    xmlHTTP.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlHTTP.send('login=' + login + '&cart=' + cartJSON);
+    xmlHTTP.onreadystatechange = function () {
+        console.log(xmlHTTP.responseText);
+    };
+}
+function loadCart() {
+    var xmlHTTP = new XMLHttpRequest();
+    xmlHTTP.open('post', 'getCartAJAX.php');
+    xmlHTTP.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlHTTP.send("login=" + localStorage.user);
+    xmlHTTP.onreadystatechange = function () {
+        if (xmlHTTP.readyState == 4 && xmlHTTP.status == 200) {
+            cart = JSON.parse(xmlHTTP.responseText);
+        }
+    };
+    var innerHTML = "";
+    Object.keys(cart).forEach(function (key) {
+        innerHTML += "<li id='entry_>" + key + "'>" + key + "; " +
+            "<span id='entryAm>" + key + "'>" + cart[key] + "</span>" + "</li>";
+    });
+    document.getElementById('cartUL').innerHTML = innerHTML;
 }

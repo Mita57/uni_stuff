@@ -1,4 +1,4 @@
-let set: Set = new Set();
+let cart: Object = new Object();
 
 
 function verifyInputs(): void {
@@ -28,7 +28,7 @@ function login(): void {
                 document.getElementById('loginBtn').style.display = 'none';
                 document.getElementById('registerBtn').style.display = 'none';
                 document.getElementById('logoutBtn').style.display = 'block';
-                (document.getElementById('login.Input') as HTMLInputElement).readOnly = true;
+                (document.getElementById('loginInput') as HTMLInputElement).readOnly = true;
             } else {
                 alert('Lol ceque chebureque');
             }
@@ -57,9 +57,6 @@ function checkAuth(): void {
     }
 }
 
-function loadCart(): void {
-
-}
 
 function addToCart(id: String): void {
     if (document.getElementById("amount_" + id).innerText != '0') {
@@ -68,8 +65,8 @@ function addToCart(id: String): void {
             // @ts-ignore
             document.getElementById('am_' + id).innerText++;
             updatePrice(id, '+');
-            set.add({id: document.getElementById('am_' + id).innerText});
-            console.log(set);
+            cart[id] = document.getElementById('entryAm' + id).innerHTML;
+            console.log(cart);
         } else {
             if (document.getElementById("amount_" + id).innerText !=
                 document.getElementById('am_' + id).innerText) {
@@ -78,8 +75,8 @@ function addToCart(id: String): void {
                 // @ts-ignore
                 document.getElementById('entryAm' + id).innerHTML++;
                 updatePrice(id, '+');
-                set.add({id: document.getElementById('am_' + id).innerText});
-                console.log(set);
+                cart[id] = document.getElementById('entryAm' + id).innerHTML;
+                console.log(cart);
             } else {
                 alert("Wait, it's illegal");
             }
@@ -95,14 +92,14 @@ function removeFromCart(id: String): void {
             document.getElementById('am_' + id).innerText--;
             // @ts-ignore
             document.getElementById('entryAm' + id).innerHTML--;
-            set.add({id: document.getElementById('am_' + id).innerText});
-            console.log(set);
+            cart[id] = document.getElementById('entryAm' + id).innerHTML;
+            console.log(cart);
         } else {
             // @ts-ignore
             document.getElementById('am_' + id).innerText--;
             document.getElementById("entry_" + id).outerHTML = '';
-            set.add({id: document.getElementById('am_' + id).innerText});
-            console.log(set);
+            cart[id] = document.getElementById('entryAm' + id).innerHTML;
+            console.log(cart);
         }
         updatePrice(id, '-');
     }
@@ -113,14 +110,46 @@ function updatePrice(id: String, action: String): void {
     switch (action) {
         case '+': {
             // @ts-ignore
-            document.getElementById('price').innerText -= -price;
+            document.getElementById('result').innerText -= -price;
             break;
         }
         case '-': {
             // @ts-ignore
-            document.getElementById('price').innerText -= price;
+            document.getElementById('result').innerText -= price;
             break;
         }
     }
+    writeCart();
+}
+
+function writeCart() {
+    let login: String = localStorage.user;
+    let cartJSON: String = JSON.stringify(cart);
+    let xmlHTTP: XMLHttpRequest = new XMLHttpRequest();
+    xmlHTTP.open('post', 'updateCartAJAX.php');
+    xmlHTTP.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlHTTP.send('login=' + login + '&cart=' + cartJSON);
+    xmlHTTP.onreadystatechange = function () {
+        console.log(xmlHTTP.responseText);
+    }
+}
+
+function loadCart(): void {
+    let xmlHTTP: XMLHttpRequest = new XMLHttpRequest();
+    xmlHTTP.open('post', 'getCartAJAX.php');
+    xmlHTTP.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlHTTP.send("login=" + localStorage.user);
+    xmlHTTP.onreadystatechange = function () {
+        if (xmlHTTP.readyState == 4 && xmlHTTP.status == 200) {
+            cart = JSON.parse(xmlHTTP.responseText);
+        }
+    }
+
+    let innerHTML: string = "";
+    Object.keys(cart).forEach(function(key) {
+        innerHTML += "<li id='entry_>" + key + "'>" + key +"; " +
+            "<span id='entryAm>" + key + "'>" + cart[key] + "</span>" + "</li>";
+    });
+    document.getElementById('cartUL').innerHTML = innerHTML;
 }
 
