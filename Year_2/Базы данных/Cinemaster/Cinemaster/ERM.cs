@@ -358,7 +358,7 @@ namespace Cinemaster
         static List<Film> GetFilms()
         {
             List<Film> list = new List<Film>();
-            String query = String.Format("SELECT genres.name, * FROM films INNER JOIN genres ON films.genreID = genres.ID GROUP BY films.ID");
+            String query = String.Format("SELECT genres.name, * FROM films INNER JOIN genres ON films.genreID = genres.genreID ");
             SqlCommand command = new SqlCommand(query, _connection);
             SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
