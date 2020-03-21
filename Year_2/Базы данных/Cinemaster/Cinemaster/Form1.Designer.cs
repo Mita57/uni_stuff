@@ -415,7 +415,7 @@
             this.ticketsAddSeat.Size = new System.Drawing.Size(217, 23);
             this.ticketsAddSeat.TabIndex = 12;
             this.ticketsAddSeat.Value = new decimal(new int[] {1, 0, 0, 0});
-            this.ticketsAddSeat.ValueChanged += new System.EventHandler(this.ticketsAddValidation);
+            this.ticketsAddSeat.ValueChanged += new System.EventHandler(this.TicketsAddValidation);
             // 
             // label39
             // 
@@ -434,7 +434,7 @@
             this.ticketsAddRow.Size = new System.Drawing.Size(217, 23);
             this.ticketsAddRow.TabIndex = 10;
             this.ticketsAddRow.Value = new decimal(new int[] {1, 0, 0, 0});
-            this.ticketsAddRow.ValueChanged += new System.EventHandler(this.ticketsAddValidation);
+            this.ticketsAddRow.ValueChanged += new System.EventHandler(this.TicketsAddValidation);
             // 
             // ticketsAddSessionCB
             // 
@@ -444,7 +444,7 @@
             this.ticketsAddSessionCB.Name = "ticketsAddSessionCB";
             this.ticketsAddSessionCB.Size = new System.Drawing.Size(216, 23);
             this.ticketsAddSessionCB.TabIndex = 9;
-            this.ticketsAddSessionCB.SelectedIndexChanged += new System.EventHandler(this.ticketsAddValidation);
+            this.ticketsAddSessionCB.SelectedIndexChanged += new System.EventHandler(this.TicketsAddValidation);
             // 
             // label8
             // 
@@ -462,7 +462,7 @@
             this.ticketsAddIDField.ReadOnly = true;
             this.ticketsAddIDField.Size = new System.Drawing.Size(216, 23);
             this.ticketsAddIDField.TabIndex = 7;
-            this.ticketsAddIDField.TextChanged += new System.EventHandler(this.ticketsAddValidation);
+            this.ticketsAddIDField.TextChanged += new System.EventHandler(this.TicketsAddValidation);
             // 
             // addTicketButton
             // 
@@ -481,7 +481,7 @@
             this.ticketsAddCashierCB.Name = "ticketsAddCashierCB";
             this.ticketsAddCashierCB.Size = new System.Drawing.Size(216, 23);
             this.ticketsAddCashierCB.TabIndex = 4;
-            this.ticketsAddCashierCB.SelectedIndexChanged += new System.EventHandler(this.ticketsAddValidation);
+            this.ticketsAddCashierCB.SelectedIndexChanged += new System.EventHandler(this.TicketsAddValidation);
             // 
             // label3
             // 
@@ -748,7 +748,7 @@
             this.sessionsAddTypeCB.Name = "sessionsAddTypeCB";
             this.sessionsAddTypeCB.Size = new System.Drawing.Size(216, 23);
             this.sessionsAddTypeCB.TabIndex = 14;
-            this.sessionsAddTypeCB.SelectedIndexChanged += new System.EventHandler(this.sessionsAddValidation);
+            this.sessionsAddTypeCB.SelectedIndexChanged += new System.EventHandler(this.SessionsAddValidation);
             // 
             // label41
             // 
@@ -768,7 +768,7 @@
             this.sessionsAddTimePicker.ShowUpDown = true;
             this.sessionsAddTimePicker.Size = new System.Drawing.Size(216, 23);
             this.sessionsAddTimePicker.TabIndex = 12;
-            this.sessionsAddTimePicker.ValueChanged += new System.EventHandler(this.sessionsAddValidation);
+            this.sessionsAddTimePicker.ValueChanged += new System.EventHandler(this.SessionsAddValidation);
             // 
             // label17
             // 
@@ -785,7 +785,7 @@
             this.sessionsAddDatePicker.Name = "sessionsAddDatePicker";
             this.sessionsAddDatePicker.Size = new System.Drawing.Size(216, 23);
             this.sessionsAddDatePicker.TabIndex = 10;
-            this.sessionsAddDatePicker.ValueChanged += new System.EventHandler(this.sessionsAddValidation);
+            this.sessionsAddDatePicker.ValueChanged += new System.EventHandler(this.SessionsAddValidation);
             // 
             // sessionsAddFilmCB
             // 
@@ -795,7 +795,7 @@
             this.sessionsAddFilmCB.Name = "sessionsAddFilmCB";
             this.sessionsAddFilmCB.Size = new System.Drawing.Size(216, 23);
             this.sessionsAddFilmCB.TabIndex = 9;
-            this.sessionsAddFilmCB.SelectedIndexChanged += new System.EventHandler(this.sessionsAddValidation);
+            this.sessionsAddFilmCB.SelectedIndexChanged += new System.EventHandler(this.SessionsAddValidation);
             // 
             // label9
             // 
@@ -832,7 +832,7 @@
             this.sessionsAddRoomCB.Name = "sessionsAddRoomCB";
             this.sessionsAddRoomCB.Size = new System.Drawing.Size(216, 23);
             this.sessionsAddRoomCB.TabIndex = 5;
-            this.sessionsAddRoomCB.SelectedIndexChanged += new System.EventHandler(this.sessionsAddValidation);
+            this.sessionsAddRoomCB.SelectedIndexChanged += new System.EventHandler(this.SessionsAddValidation);
             // 
             // label10
             // 

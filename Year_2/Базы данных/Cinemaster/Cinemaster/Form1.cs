@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+// ReSharper disable LocalVariableHidesMember
+// ReSharper disable All
 
 namespace Cinemaster
 {
@@ -28,28 +30,28 @@ namespace Cinemaster
                     ticketsAddCashierCB.Items.Clear();
                     ticketsAddSessionCB.Items.Clear();
 
-                    Cashier[] cashiers = (Cashier[]) ERM.getAll("cashiers");
+                    Cashier[] cashiers = (Cashier[]) Erm.GetAll("cashiers");
                     ticketsAddCashierCB.Items.AddRange(cashiers);
                     ticketsEditCashierCB.Items.AddRange(cashiers);
 
-                    Session[] sessions = (Session[]) ERM.getAll("sessions");
+                    Session[] sessions = (Session[]) Erm.GetAll("sessions");
                     ticketsAddSessionCB.Items.AddRange(sessions);
                     ticketsEditSessionCB.Items.AddRange(sessions);
 
-                    Ticket[] tickets = (Ticket[]) ERM.getAll("tickets");
+                    Ticket[] tickets = (Ticket[]) Erm.GetAll("tickets");
                     ticketsNoEntriesLabel.Visible = false;
                     try
                     {
                         ticketsGrid.RowCount = tickets.Length;
                         for (int i = 0; i < tickets.Length; i++)
                         {
-                            ticketsGrid.Rows[i].Cells[0].Value = tickets[i].id;
-                            ticketsGrid.Rows[i].Cells[1].Value = tickets[i].sessionID;
-                            ticketsGrid.Rows[i].Cells[2].Value = tickets[i].cashier;
-                            ticketsGrid.Rows[i].Cells[3].Value = tickets[i].seat;
-                            ticketsGrid.Rows[i].Cells[4].Value = tickets[i].row;
+                            ticketsGrid.Rows[i].Cells[0].Value = tickets[i].Id;
+                            ticketsGrid.Rows[i].Cells[1].Value = tickets[i].SessionId;
+                            ticketsGrid.Rows[i].Cells[2].Value = tickets[i].Cashier;
+                            ticketsGrid.Rows[i].Cells[3].Value = tickets[i].Seat;
+                            ticketsGrid.Rows[i].Cells[4].Value = tickets[i].Row;
                         }
-                        ticketsAddIDField.Text = (tickets[tickets.Length - 1].id + 1).ToString();
+                        ticketsAddIDField.Text = (tickets[tickets.Length - 1].Id + 1).ToString();
                     }
                     catch
                     {
@@ -67,30 +69,30 @@ namespace Cinemaster
                     sessionsEditFilmCB.Items.Clear();
                     sessionsEditRoomCB.Items.Clear();
 
-                    Film[] films = (Film[]) ERM.getAll("films");
+                    Film[] films = (Film[]) Erm.GetAll("films");
                     sessionsAddFilmCB.Items.AddRange(films);
                     sessionsEditFilmCB.Items.AddRange(films);
 
-                    Room[] rooms = (Room[]) ERM.getAll("rooms");
+                    Room[] rooms = (Room[]) Erm.GetAll("rooms");
                     sessionsAddRoomCB.Items.AddRange(rooms);
                     sessionsEditRoomCB.Items.AddRange(rooms);
 
 
-                    Session[] sessions = (Session[]) ERM.getAll("sessions");
+                    Session[] sessions = (Session[]) Erm.GetAll("sessions");
                     sessionsNoEntriesLabel.Visible = false;
                     try
                     {
                         sessionsGrid.RowCount = sessions.Length;
                         for (int i = 0; i < sessions.Length; i++)
                         {
-                            sessionsGrid.Rows[i].Cells[0].Value = sessions[i].id;
-                            sessionsGrid.Rows[i].Cells[1].Value = sessions[i].date.serialize();
-                            sessionsGrid.Rows[i].Cells[2].Value = sessions[i].time.serialze();
-                            sessionsGrid.Rows[i].Cells[3].Value = sessions[i].film;
-                            sessionsGrid.Rows[i].Cells[4].Value = sessions[i].room;
-                            sessionsGrid.Rows[i].Cells[5].Value = sessions[i].type;
+                            sessionsGrid.Rows[i].Cells[0].Value = sessions[i].Id;
+                            sessionsGrid.Rows[i].Cells[1].Value = sessions[i].Date.ToString();
+                            sessionsGrid.Rows[i].Cells[2].Value = sessions[i].Time.ToString();
+                            sessionsGrid.Rows[i].Cells[3].Value = sessions[i].Film;
+                            sessionsGrid.Rows[i].Cells[4].Value = sessions[i].Room;
+                            sessionsGrid.Rows[i].Cells[5].Value = sessions[i].Type;
                         }
-                        sessionsAddIDField.Text = (sessions[sessions.Length - 1].id + 1).ToString();
+                        sessionsAddIDField.Text = (sessions[sessions.Length - 1].Id + 1).ToString();
                     }
                     catch
                     {
@@ -106,24 +108,24 @@ namespace Cinemaster
                     filmsAddGenreCB.Items.Clear();
                     filmsEditGenreCB.Items.Clear();
 
-                    Genre[] genres = (Genre[]) ERM.getAll("genres");
+                    Genre[] genres = (Genre[]) Erm.GetAll("genres");
 
                     filmsAddGenreCB.Items.AddRange(genres);
                     filmsEditGenreCB.Items.AddRange(genres);
 
                     filmsNoEntriesLabel.Visible = false;
-                    Film[] films = (Film[]) ERM.getAll("films");
+                    Film[] films = (Film[]) Erm.GetAll("films");
                     try
                     {
                         filmsGrid.RowCount = films.Length;
                         for (int i = 0; i < films.Length; i++)
                         {
-                            filmsGrid.Rows[i].Cells[0].Value = films[i].id;
-                            filmsGrid.Rows[i].Cells[1].Value = films[i].name;
-                            filmsGrid.Rows[i].Cells[2].Value = films[i].genre;
-                            filmsGrid.Rows[i].Cells[3].Value = films[i].ageRest;
+                            filmsGrid.Rows[i].Cells[0].Value = films[i].Id;
+                            filmsGrid.Rows[i].Cells[1].Value = films[i].Name;
+                            filmsGrid.Rows[i].Cells[2].Value = films[i].Genre;
+                            filmsGrid.Rows[i].Cells[3].Value = films[i].AgeRest;
                         }
-                        filmsAddIDField.Text = (films[films.Length - 1].id + 1).ToString();
+                        filmsAddIDField.Text = (films[films.Length - 1].Id + 1).ToString();
                     }
                     catch
                     {
@@ -136,17 +138,17 @@ namespace Cinemaster
 
                 case "Кассиры":
                 {
-                    Cashier[] cashiers = (Cashier[]) ERM.getAll("cashiers");
+                    Cashier[] cashiers = (Cashier[]) Erm.GetAll("cashiers");
                     cashiersNoEntriesLabel.Visible = false;
                     try
                     {
                         cashiersGrid.RowCount = cashiers.Length;
                         for (int i = 0; i < cashiers.Length; i++)
                         {
-                            filmsGrid.Rows[i].Cells[0].Value = cashiers[i].id;
-                            filmsGrid.Rows[i].Cells[0].Value = cashiers[i].name;
+                            filmsGrid.Rows[i].Cells[0].Value = cashiers[i].Id;
+                            filmsGrid.Rows[i].Cells[0].Value = cashiers[i].Name;
                         }
-                        cashierAddIDField.Text = (cashiers[cashiers.Length - 1].id + 1).ToString();
+                        cashierAddIDField.Text = (cashiers[cashiers.Length - 1].Id + 1).ToString();
                     }
                     catch
                     {
@@ -159,16 +161,16 @@ namespace Cinemaster
                 case "Кинозалы":
                 {
                     roomsNoEntriesLabel.Visible = false;
-                    Room[] rooms = (Room[]) ERM.getAll("rooms");
+                    Room[] rooms = (Room[]) Erm.GetAll("rooms");
                     try
                     {
                         roomsGrid.RowCount = rooms.Length;
                         for (int i = 0; i < rooms.Length; i++)
                         {
-                            roomsGrid.Rows[i].Cells[0].Value = rooms[i].id;
-                            roomsGrid.Rows[i].Cells[1].Value = rooms[i].name;
+                            roomsGrid.Rows[i].Cells[0].Value = rooms[i].Id;
+                            roomsGrid.Rows[i].Cells[1].Value = rooms[i].Name;
                         }
-                        roomsAddIDField.Text = (rooms[rooms.Length - 1].id + 1).ToString();
+                        roomsAddIDField.Text = (rooms[rooms.Length - 1].Id + 1).ToString();
                     }
                     catch
                     {
@@ -181,16 +183,16 @@ namespace Cinemaster
                 case "Жанры":
                 {
                     genresNoEntriesLabel.Visible = false;
-                    Genre[] genres = (Genre[]) ERM.getAll("genres");
+                    Genre[] genres = (Genre[]) Erm.GetAll("genres");
                     try
                     {
                         genresGrid.RowCount = genres.Length;
                         for (int i = 0; i < genres.Length; i++)
                         {
-                            genresGrid.Rows[i].Cells[0].Value = genres[i].id;
-                            genresGrid.Rows[i].Cells[1].Value = genres[i].name;
+                            genresGrid.Rows[i].Cells[0].Value = genres[i].Id;
+                            genresGrid.Rows[i].Cells[1].Value = genres[i].Name;
                         }
-                        genresAddIDField.Text = (genres[genres.Length - 1].id + 1).ToString();
+                        genresAddIDField.Text = (genres[genres.Length - 1].Id + 1).ToString();
                     }
                     catch
                     {
@@ -204,7 +206,7 @@ namespace Cinemaster
         }
 
 
-        private void ticketsAddValidation(object sender, EventArgs e)
+        private void TicketsAddValidation(object sender, EventArgs e)
         {
             bool cashierFlag = false;
             bool sessionsFlag = false;
@@ -229,7 +231,7 @@ namespace Cinemaster
             }
         }
 
-        private void sessionsAddValidation(object sender, EventArgs e)
+        private void SessionsAddValidation(object sender, EventArgs e)
         {
             bool filmFlag = false;
             bool roomFlag = false;
