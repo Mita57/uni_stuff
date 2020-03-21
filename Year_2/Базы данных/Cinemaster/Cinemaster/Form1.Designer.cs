@@ -33,13 +33,13 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tickets = new System.Windows.Forms.TabPage();
             this.ticketsNoEntriesLabel = new System.Windows.Forms.Label();
-            this.ticetsEditGroup = new System.Windows.Forms.GroupBox();
-            this.ticketsEditSear = new System.Windows.Forms.NumericUpDown();
+            this.ticketsEditGroup = new System.Windows.Forms.GroupBox();
+            this.ticketsEditSeat = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.ticketsEditRow = new System.Windows.Forms.NumericUpDown();
             this.ticketsEditSessionCB = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.ticetsEditField = new System.Windows.Forms.TextBox();
+            this.ticketsEditField = new System.Windows.Forms.TextBox();
             this.updateTicketButton = new System.Windows.Forms.Button();
             this.ticketsEditCashierCB = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -186,8 +186,8 @@
             this.genreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tickets.SuspendLayout();
-            this.ticetsEditGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditSear)).BeginInit();
+            this.ticketsEditGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditSeat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.ticketsEditRow)).BeginInit();
             this.ticketsAddGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.ticketsAddSeat)).BeginInit();
@@ -235,7 +235,7 @@
             // tickets
             // 
             this.tickets.Controls.Add(this.ticketsNoEntriesLabel);
-            this.tickets.Controls.Add(this.ticetsEditGroup);
+            this.tickets.Controls.Add(this.ticketsEditGroup);
             this.tickets.Controls.Add(this.ticketsDeleteButton);
             this.tickets.Controls.Add(this.ticketsAddGroup);
             this.tickets.Controls.Add(this.ticketsGrid);
@@ -257,35 +257,35 @@
             this.ticketsNoEntriesLabel.Text = "Нет записей";
             this.ticketsNoEntriesLabel.Visible = false;
             // 
-            // ticetsEditGroup
+            // ticketsEditGroup
             // 
-            this.ticetsEditGroup.Controls.Add(this.ticketsEditSear);
-            this.ticetsEditGroup.Controls.Add(this.label4);
-            this.ticetsEditGroup.Controls.Add(this.ticketsEditRow);
-            this.ticetsEditGroup.Controls.Add(this.ticketsEditSessionCB);
-            this.ticetsEditGroup.Controls.Add(this.label5);
-            this.ticetsEditGroup.Controls.Add(this.ticetsEditField);
-            this.ticetsEditGroup.Controls.Add(this.updateTicketButton);
-            this.ticetsEditGroup.Controls.Add(this.ticketsEditCashierCB);
-            this.ticetsEditGroup.Controls.Add(this.label6);
-            this.ticetsEditGroup.Controls.Add(this.label7);
-            this.ticetsEditGroup.Controls.Add(this.label40);
-            this.ticetsEditGroup.Enabled = false;
-            this.ticetsEditGroup.Location = new System.Drawing.Point(889, 264);
-            this.ticetsEditGroup.Name = "ticetsEditGroup";
-            this.ticetsEditGroup.Size = new System.Drawing.Size(307, 246);
-            this.ticetsEditGroup.TabIndex = 13;
-            this.ticetsEditGroup.TabStop = false;
-            this.ticetsEditGroup.Text = "Изменить билет";
+            this.ticketsEditGroup.Controls.Add(this.ticketsEditSeat);
+            this.ticketsEditGroup.Controls.Add(this.label4);
+            this.ticketsEditGroup.Controls.Add(this.ticketsEditRow);
+            this.ticketsEditGroup.Controls.Add(this.ticketsEditSessionCB);
+            this.ticketsEditGroup.Controls.Add(this.label5);
+            this.ticketsEditGroup.Controls.Add(this.ticketsEditField);
+            this.ticketsEditGroup.Controls.Add(this.updateTicketButton);
+            this.ticketsEditGroup.Controls.Add(this.ticketsEditCashierCB);
+            this.ticketsEditGroup.Controls.Add(this.label6);
+            this.ticketsEditGroup.Controls.Add(this.label7);
+            this.ticketsEditGroup.Controls.Add(this.label40);
+            this.ticketsEditGroup.Enabled = false;
+            this.ticketsEditGroup.Location = new System.Drawing.Point(889, 264);
+            this.ticketsEditGroup.Name = "ticketsEditGroup";
+            this.ticketsEditGroup.Size = new System.Drawing.Size(307, 246);
+            this.ticketsEditGroup.TabIndex = 13;
+            this.ticketsEditGroup.TabStop = false;
+            this.ticketsEditGroup.Text = "Изменить билет";
             // 
-            // ticketsEditSear
+            // ticketsEditSeat
             // 
-            this.ticketsEditSear.Location = new System.Drawing.Point(78, 140);
-            this.ticketsEditSear.Minimum = new decimal(new int[] {1, 0, 0, 0});
-            this.ticketsEditSear.Name = "ticketsEditSear";
-            this.ticketsEditSear.Size = new System.Drawing.Size(217, 23);
-            this.ticketsEditSear.TabIndex = 12;
-            this.ticketsEditSear.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsEditSeat.Location = new System.Drawing.Point(78, 140);
+            this.ticketsEditSeat.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsEditSeat.Name = "ticketsEditSeat";
+            this.ticketsEditSeat.Size = new System.Drawing.Size(217, 23);
+            this.ticketsEditSeat.TabIndex = 12;
+            this.ticketsEditSeat.Value = new decimal(new int[] {1, 0, 0, 0});
             // 
             // label4
             // 
@@ -323,13 +323,13 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Сеанс:";
             // 
-            // ticetsEditField
+            // ticketsEditField
             // 
-            this.ticetsEditField.Location = new System.Drawing.Point(78, 22);
-            this.ticetsEditField.Name = "ticetsEditField";
-            this.ticetsEditField.ReadOnly = true;
-            this.ticetsEditField.Size = new System.Drawing.Size(216, 23);
-            this.ticetsEditField.TabIndex = 7;
+            this.ticketsEditField.Location = new System.Drawing.Point(78, 22);
+            this.ticketsEditField.Name = "ticketsEditField";
+            this.ticketsEditField.ReadOnly = true;
+            this.ticketsEditField.Size = new System.Drawing.Size(216, 23);
+            this.ticketsEditField.TabIndex = 7;
             // 
             // updateTicketButton
             // 
@@ -523,6 +523,8 @@
             this.ticketsGrid.RowHeadersVisible = false;
             this.ticketsGrid.Size = new System.Drawing.Size(873, 594);
             this.ticketsGrid.TabIndex = 0;
+            this.ticketsGrid.CellClick +=
+                new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketsGrid_CellClick);
             // 
             // ticketID
             // 
@@ -561,10 +563,10 @@
             this.sessions.Controls.Add(this.sessionsAddGroup);
             this.sessions.Controls.Add(this.sessionsDeleteButton);
             this.sessions.Controls.Add(this.sessionsGrid);
-            this.sessions.Location = new System.Drawing.Point(4, 24);
+            this.sessions.Location = new System.Drawing.Point(4, 22);
             this.sessions.Name = "sessions";
             this.sessions.Padding = new System.Windows.Forms.Padding(3);
-            this.sessions.Size = new System.Drawing.Size(1205, 607);
+            this.sessions.Size = new System.Drawing.Size(1205, 609);
             this.sessions.TabIndex = 1;
             this.sessions.Text = "Сеансы";
             this.sessions.UseVisualStyleBackColor = true;
@@ -1372,9 +1374,9 @@
             this.rooms.Controls.Add(this.editRoomGroup);
             this.rooms.Controls.Add(this.addRoomGroup);
             this.rooms.Controls.Add(this.roomsGrid);
-            this.rooms.Location = new System.Drawing.Point(4, 24);
+            this.rooms.Location = new System.Drawing.Point(4, 22);
             this.rooms.Name = "rooms";
-            this.rooms.Size = new System.Drawing.Size(1205, 607);
+            this.rooms.Size = new System.Drawing.Size(1205, 609);
             this.rooms.TabIndex = 4;
             this.rooms.Text = "Кинозалы";
             this.rooms.UseVisualStyleBackColor = true;
@@ -1731,9 +1733,9 @@
             this.tabControl.ResumeLayout(false);
             this.tickets.ResumeLayout(false);
             this.tickets.PerformLayout();
-            this.ticetsEditGroup.ResumeLayout(false);
-            this.ticetsEditGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditSear)).EndInit();
+            this.ticketsEditGroup.ResumeLayout(false);
+            this.ticketsEditGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditSeat)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.ticketsEditRow)).EndInit();
             this.ticketsAddGroup.ResumeLayout(false);
             this.ticketsAddGroup.PerformLayout();
@@ -1908,13 +1910,10 @@
         private System.Windows.Forms.NumericUpDown ticketsAddSeat;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.NumericUpDown ticketsAddRow;
-        private System.Windows.Forms.GroupBox ticetsEditGroup;
-        private System.Windows.Forms.NumericUpDown ticketsEditSear;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown ticketsEditRow;
         private System.Windows.Forms.ComboBox ticketsEditSessionCB;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox ticetsEditField;
         private System.Windows.Forms.Button updateTicketButton;
         private System.Windows.Forms.ComboBox ticketsEditCashierCB;
         private System.Windows.Forms.Label label6;
@@ -1936,6 +1935,9 @@
         private System.Windows.Forms.Label cashiersNoEntriesLabel;
         private System.Windows.Forms.Label genresNoEntriesLabel;
         private System.Windows.Forms.Label roomsNoEntriesLabel;
+        private System.Windows.Forms.GroupBox ticketsEditGroup;
+        private System.Windows.Forms.TextBox ticketsEditField;
+        private System.Windows.Forms.NumericUpDown ticketsEditSeat;
     }
 }
 

@@ -103,7 +103,7 @@ namespace Cinemaster
 
         public override string ToString()
         {
-            return (this.Id + "#:" + this.Date.ToString() + ", " + this.Time.ToString() + "; " + this.Room);
+            return (this.Id + "#:" + this.Date + ", " + this.Time + "; " + this.Room) + "; " + this.Film;
         }
       
     }
@@ -310,7 +310,7 @@ namespace Cinemaster
         static List<Ticket> GetTickets()
         {
             List<Ticket> list = new List<Ticket>();
-            String query = String.Format("SELECT cashiers.cashier, * FROM tickets INNER JOIN cashiers ON tickets.cashierID = cashiers.cashierID");
+            String query =("SELECT cashiers.cashier, * FROM tickets INNER JOIN cashiers ON tickets.cashierID = cashiers.cashierID");
             SqlCommand command = new SqlCommand(query, _connection);
             SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
@@ -358,7 +358,7 @@ namespace Cinemaster
         static List<Film> GetFilms()
         {
             List<Film> list = new List<Film>();
-            String query = String.Format("SELECT genres.name, * FROM films INNER JOIN genres ON films.genreID = genres.genreID ");
+            String query = ("SELECT genres.name, * FROM films INNER JOIN genres ON films.genreID = genres.genreID ");
             SqlCommand command = new SqlCommand(query, _connection);
             SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
@@ -380,7 +380,7 @@ namespace Cinemaster
             while (dataReader.Read())
             {
                 int id = (int)dataReader.GetValue(0);
-                string name = (string)dataReader.GetValue(1).ToString();
+                string name = dataReader.GetValue(1).ToString();
                 Cashier cashier = new Cashier(id, name);
                 list.Add(cashier);
             }

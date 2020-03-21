@@ -46,7 +46,15 @@ namespace Cinemaster
                         for (int i = 0; i < tickets.Length; i++)
                         {
                             ticketsGrid.Rows[i].Cells[0].Value = tickets[i].Id;
-                            ticketsGrid.Rows[i].Cells[1].Value = tickets[i].SessionId;
+                            //search for the session to have a proper display
+                            for (int j = 0; j < sessions.Length; i++)
+                            {
+                                if (tickets[i].SessionId == sessions[i].Id)
+                                {
+                                    ticketsGrid.Rows[i].Cells[1].Value = sessions[i].ToString();
+                                    break;
+                                }
+                            }
                             ticketsGrid.Rows[i].Cells[2].Value = tickets[i].Cashier;
                             ticketsGrid.Rows[i].Cells[3].Value = tickets[i].Seat;
                             ticketsGrid.Rows[i].Cells[4].Value = tickets[i].Row;
@@ -145,8 +153,8 @@ namespace Cinemaster
                         cashiersGrid.RowCount = cashiers.Length;
                         for (int i = 0; i < cashiers.Length; i++)
                         {
-                            filmsGrid.Rows[i].Cells[0].Value = cashiers[i].Id;
-                            filmsGrid.Rows[i].Cells[0].Value = cashiers[i].Name;
+                            cashiersGrid.Rows[i].Cells[0].Value = cashiers[i].Id;
+                            cashiersGrid.Rows[i].Cells[1].Value = cashiers[i].Name;
                         }
                         cashierAddIDField.Text = (cashiers[cashiers.Length - 1].Id + 1).ToString();
                     }
@@ -322,6 +330,23 @@ namespace Cinemaster
             {
                 addFilmButton.Enabled = true;
             }
+        }
+
+
+        private void ticketsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ticketsEditGroup.Enabled = true;
+            ticketsEditField.Text = ticketsGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            for (int j = 0; j < ticketsEditCashierCB.Items.Count; j++)
+            {
+                if (ticketsEditCashierCB.Items[j].ToString().Split(':') == ticketsGrid.Rows[e.RowIndex].Cells[2].Value)
+                {
+                    ticketsEditCashierCB.SelectedIndex = j;
+                }
+            }
+            ticketsEditSessionCB.SelectedText = ticketsGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            ticketsEditRow.Value = (int) ticketsGrid.Rows[e.RowIndex].Cells[4].Value;
+            ticketsEditSeat.Value = (int) ticketsGrid.Rows[e.RowIndex].Cells[3].Value;
         }
     }
 }
