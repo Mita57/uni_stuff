@@ -1,0 +1,73 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: "Comic Sans MS";
+    margin: 0;
+    padding: 0;
+    background-image: url("bg.jpg");
+}
+
+#top {
+    width: 100%;
+    height: 10%;
+    background-color: rgba(0, 75, 255, 0.56);
+    text-align: center;
+    padding: 0;
+}
+
+#globalSelect {
+    margin-top: 15px;
+    height: 40px;
+    padding: 0;
+}
+
+#bottom {
+    background-color: rgba(250, 255, 0, 0.56);
+    width: 100%;
+    height: 81.5%;
+    padding-top: 4%;
+}
+
+
+.textCock {
+    height: 90%;
+    width: 80%;
+    border-radius: 20px;
+    background-color: rgba(230, 231, 0, 0.26);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15px;
+}
+
+.divCock {
+    text-align: center;
+    width: 80%;
+    height: 70%;
+    background-color: white;
+    border-radius: 20px;
+    margin: auto;
+    padding: 20px;
+    display: none;
+}
+
+
+.manyFields {
+    height: 60%;
+    width: 80%;
+    border-radius: 20px;
+    background-color: rgba(230, 231, 0, 0.26);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15px;
+}
+
+#addNewsDiv input[type=text] {
+    width: 80%;
+}
+
+#editByIdEdit input[type=text] {
+    width: 80%;
+}
+
+
+
