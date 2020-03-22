@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>МАГАЗ 228</title>
+    <title>LA FETE DES FOUS</title>
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
 </head>
@@ -32,13 +32,13 @@
             <div id="getByDatesDivTextArea" class="textCock"></div>
         </div>
 
-        <div id="addNewsDiv" class="divCock" onkeypress="validation(add)">
-            <input type="text" id="addNewsDivHeader" placeholder="Заголовок"><br>
-            <input type="text" id="addNewsDivKindaHeader" placeholder="Что-то типа заголовка""><br>
-            <input type="text" id="addNewsDivTopic" placeholder="Тема"><br>
-            <input type="date" id="addNewsDivDate" placeholder="Дата"><br>
-            <textarea id="addNewsDivText" class="manyFields" placeholder="Содержание"></textarea><br>
-            <button onclick="submitNews()" disabled>Опубликоватб</button>
+        <div id="addNewsDiv" class="divCock" onkeypress="validation('add')">
+            <input type="text" id="addNewsHeader" placeholder="Заголовок"><br>
+            <input type="text" id="addNewsKindaHeader" placeholder="Что-то типа заголовка""><br>
+            <input type="text" id="addNewsTopic" placeholder="Тема"><br>
+            <input type="date" id="addNewsDate" placeholder="Дата"><br>
+            <textarea id="addNewsText" class="manyFields" placeholder="Содержание"></textarea><br>
+            <button onclick="submitNews()" id="addNewsButton" disabled>Опубликоватб</button>
         </div>
 
         <div id="deleteByIdDiv" class="divCock">
@@ -51,13 +51,14 @@
             <button onclick="editByIdGet()">Изменить новость</button>
         </div>
 
-        <div id="editByIdEditDiv" class="divCock" onkeypress="validation(edit)">
-            <input type="text" id="editNewsDivHeader" placeholder="Заголовок"><br>
-            <input type="text" id="editNewsDivKindaHeader" placeholder="Что-то типа заголовка"><br>
-            <input type="text" id="editNewsDivTopic" placeholder="Тема"> <br>
-            <input type="date" id="editNewsDivDate" placeholder="Дата"><br>
-            <textarea id="editNewsDivText" class="manyFields" placeholder="Содержание"></textarea><br>
-            <button onclick="editNewsSubmit()" disabled>Опубликоватб</button>
+        <div id="editByIdEditDiv" class="divCock" onkeypress="validation('edit')">
+            <input type="text" id="editNewsId" placeholder="Заголовок" readonly><br>
+            <input type="text" id="editNewsHeader" placeholder="Заголовок"><br>
+            <input type="text" id="editNewsKindaHeader" placeholder="Что-то типа заголовка"><br>
+            <input type="text" id="editNewsTopic" placeholder="Тема"> <br>
+            <input type="date" id="editNewsDate" placeholder="Дата"><br>
+            <textarea id="editNewsText" class="manyFields" placeholder="Содержание"></textarea><br>
+            <button onclick="editNewsSubmit()" id="editNewsButton" disabled>Поменять</button>
         </div>
     </div>
 </body>

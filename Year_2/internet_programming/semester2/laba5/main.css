@@ -37,6 +37,7 @@ body, html {
     margin-right: auto;
     margin-left: auto;
     margin-top: 15px;
+    overflow-y: scroll;
 }
 
 .divCock {
@@ -67,6 +68,10 @@ body, html {
 
 #editByIdEdit input[type=text] {
     width: 80%;
+}
+
+textarea {
+    padding: 10px;
 }
 
 
