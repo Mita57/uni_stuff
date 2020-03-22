@@ -26,6 +26,7 @@ function login() {
                 document.getElementById('registerBtn').style.display = 'none';
                 document.getElementById('logoutBtn').style.display = 'block';
                 document.getElementById('loginInput').readOnly = true;
+                loadCart();
             }
             else {
                 alert('Lol ceque chebureque');
@@ -40,6 +41,7 @@ function logout() {
     document.getElementById('loginBtn').style.display = 'inline-block';
     document.getElementById('registerBtn').style.display = 'inline-block';
     document.getElementById('pwrdInput').style.display = 'inline-block';
+    document.getElementById('cartUL').innerText = '';
 }
 function checkAuth() {
     if (localStorage.getItem('user')) {
@@ -58,9 +60,9 @@ function addToCart(id) {
             document.getElementById('cartUL').innerHTML += "<li id='entry_" + id + "'>" + id + "; <span id='entryAm" + id + "'>" + 1 + "</li>";
             // @ts-ignore
             document.getElementById('am_' + id).innerText++;
-            updatePrice(id, '+');
+            updatePrice();
             cart[id] = document.getElementById('entryAm' + id).innerHTML;
-            console.log(cart);
+            writeCart();
         }
         else {
             if (document.getElementById("amount_" + id).innerText !=
@@ -69,9 +71,10 @@ function addToCart(id) {
                 document.getElementById('am_' + id).innerText++;
                 // @ts-ignore
                 document.getElementById('entryAm' + id).innerHTML++;
-                updatePrice(id, '+');
+                updatePrice();
                 cart[id] = document.getElementById('entryAm' + id).innerHTML;
                 console.log(cart);
+                writeCart();
             }
             else {
                 alert("Wait, it's illegal");
@@ -89,32 +92,27 @@ function removeFromCart(id) {
             document.getElementById('entryAm' + id).innerHTML--;
             cart[id] = document.getElementById('entryAm' + id).innerHTML;
             console.log(cart);
+            writeCart();
         }
         else {
             // @ts-ignore
             document.getElementById('am_' + id).innerText--;
             document.getElementById("entry_" + id).outerHTML = '';
-            cart[id] = document.getElementById('entryAm' + id).innerHTML;
+            delete cart[id];
             console.log(cart);
+            writeCart();
         }
-        updatePrice(id, '-');
+        updatePrice();
     }
 }
-function updatePrice(id, action) {
-    var price = parseInt(document.getElementById('price_' + id).innerText);
-    switch (action) {
-        case '+': {
-            // @ts-ignore
-            document.getElementById('result').innerText -= -price;
-            break;
-        }
-        case '-': {
-            // @ts-ignore
-            document.getElementById('result').innerText -= price;
-            break;
-        }
-    }
-    writeCart();
+function updatePrice() {
+    var price = 0;
+    Object.keys(cart).forEach(function (key) {
+        var tag = parseInt(document.getElementById('price_' + key).innerText);
+        var amount = parseInt(document.getElementById('am_' + key).innerText);
+        price += tag * amount;
+    });
+    document.getElementById('result').innerText = price.toString();
 }
 function writeCart() {
     var login = localStorage.user;
@@ -124,7 +122,6 @@ function writeCart() {
     xmlHTTP.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlHTTP.send('login=' + login + '&cart=' + cartJSON);
     xmlHTTP.onreadystatechange = function () {
-        console.log(xmlHTTP.responseText);
     };
 }
 function loadCart() {
@@ -136,11 +133,13 @@ function loadCart() {
         if (xmlHTTP.readyState == 4 && xmlHTTP.status == 200) {
             cart = JSON.parse(xmlHTTP.responseText);
         }
+        var innerHTML = "";
+        Object.keys(cart).forEach(function (key) {
+            document.getElementById('am_' + key).innerHTML = cart[key];
+            innerHTML += "<li id='entry_" + key + "'>" + key + "; " +
+                "<span id='entryAm" + key + "'>" + cart[key] + "</span>" + "</li>";
+        });
+        document.getElementById('cartUL').innerHTML = innerHTML;
+        updatePrice();
     };
-    var innerHTML = "";
-    Object.keys(cart).forEach(function (key) {
-        innerHTML += "<li id='entry_>" + key + "'>" + key + "; " +
-            "<span id='entryAm>" + key + "'>" + cart[key] + "</span>" + "</li>";
-    });
-    document.getElementById('cartUL').innerHTML = innerHTML;
 }
