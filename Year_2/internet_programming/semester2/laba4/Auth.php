@@ -29,7 +29,11 @@ class Auth {
     }
 
     function isAuth($name) {
-
+        $db_conn = pg_connect('host=localhost dbname=tents user=postgres password=MOORMOOR port=5432');
+        $query = "SELECT cart FROM users WHERE login = '$name'";
+        $resource = pg_query($db_conn, $query);
+        $result = pg_fetch_all($resource);
+        return $result[0]['authorized'];
     }
 
     function updateCart($name, $cart) {
