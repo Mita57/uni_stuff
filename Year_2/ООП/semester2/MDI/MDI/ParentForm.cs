@@ -51,5 +51,28 @@ namespace MDI
         {
             this.Close();
         }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                this.newToolStripMenuItem_Click(sender, e);
+            }
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            foreach (ChildForm form in MdiChildren)
+            {
+                if (String.IsNullOrEmpty((string)form.Tag))
+                {
+                    form.toolStripMenuItem3_Click(null, null);
+                }
+                else
+                {
+                    form.toolStripMenuItem1_Click(null, null);
+                }
+            }
+        }
     }
 }

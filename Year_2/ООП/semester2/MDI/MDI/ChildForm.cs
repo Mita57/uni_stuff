@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace MDI
@@ -16,16 +10,30 @@ namespace MDI
         {
             InitializeComponent();
         }
+        
+        
 
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        public void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            FrameForm frame = (FrameForm)MdiParent;
-            frame.newToolStripMenuItem_Click(MdiParent, e);
+            DialogResult = saveFileDialog1.ShowDialog();
+            if (DialogResult == DialogResult.OK)
+            {
+                string path = saveFileDialog1.FileName;
+                File.WriteAllText(path, textBox1.Text);
+                this.Tag = path;
+                this.toolStripMenuItem1.Enabled = true;
+                this.label1.Text = path;
+            }
         }
 
-        private void fIleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            this.Close();
+        }
+
+        public void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText((string)this.Tag, textBox1.Text);
         }
     }
 }
