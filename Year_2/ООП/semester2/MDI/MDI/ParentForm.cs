@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,6 +74,23 @@ namespace MDI
                     form.toolStripMenuItem1_Click(null, null);
                 }
             }
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult = openFileDialog1.ShowDialog();
+            if (DialogResult == DialogResult.OK)
+            {
+                string path = openFileDialog1.FileName;
+                ChildForm child = new ChildForm();
+                child.MdiParent = this;
+                child.Text += " " + MdiChildren.Length.ToString();
+                child.Controls["textBox1"].Text = File.ReadAllText(path);
+                child.Controls["label1"].Text = path;
+                child.Tag = path;
+                child.Show();
+            }
+            
         }
     }
 }
