@@ -60,7 +60,7 @@
             this.menuStrip1.MdiWindowListItem = this.windowsToolStripMenuItem;
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(933, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1012, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -172,30 +172,37 @@
             this.setPinkColorToolStripMenuItem.Name = "setPinkColorToolStripMenuItem";
             this.setPinkColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.setPinkColorToolStripMenuItem.Text = "Set Pink Color";
+            this.setPinkColorToolStripMenuItem.Click +=
+                new System.EventHandler(this.setPinkColorToolStripMenuItem_Click);
             // 
             // setRandomColorToolStripMenuItem
             // 
             this.setRandomColorToolStripMenuItem.Name = "setRandomColorToolStripMenuItem";
             this.setRandomColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.setRandomColorToolStripMenuItem.Text = "Set Random Color";
+            this.setRandomColorToolStripMenuItem.Click +=
+                new System.EventHandler(this.setRandomColorToolStripMenuItem_Click);
             // 
             // restoreAllToolStripMenuItem
             // 
             this.restoreAllToolStripMenuItem.Name = "restoreAllToolStripMenuItem";
             this.restoreAllToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.restoreAllToolStripMenuItem.Text = "Restore All";
+            this.restoreAllToolStripMenuItem.Click += new System.EventHandler(this.restoreAllToolStripMenuItem_Click);
             // 
             // ckiseAllToolStripMenuItem
             // 
             this.ckiseAllToolStripMenuItem.Name = "ckiseAllToolStripMenuItem";
             this.ckiseAllToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.ckiseAllToolStripMenuItem.Text = "Close all";
+            this.ckiseAllToolStripMenuItem.Click += new System.EventHandler(this.ckiseAllToolStripMenuItem_Click);
             // 
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
             this.infoToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.infoToolStripMenuItem.Text = "Info";
+            this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -205,7 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 519);
+            this.ClientSize = new System.Drawing.Size(1012, 672);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

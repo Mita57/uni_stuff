@@ -22,7 +22,7 @@ namespace MDI
                 File.WriteAllText(path, textBox1.Text);
                 this.Tag = path;
                 this.toolStripMenuItem1.Enabled = true;
-                this.label1.Text = path;
+                this.label1.Text = path.Split('/')[path.Split('/').Length - 1];
             }
         }
 
@@ -35,5 +35,7 @@ namespace MDI
         {
             File.WriteAllText((string)this.Tag, textBox1.Text);
         }
+
+
     }
 }

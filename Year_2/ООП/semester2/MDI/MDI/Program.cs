@@ -18,5 +18,9 @@ namespace MDI
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrameForm());
         }
+
+        public static Auxillary auxForm = null;
+        
+        public static int forms = 0;
     }
 }

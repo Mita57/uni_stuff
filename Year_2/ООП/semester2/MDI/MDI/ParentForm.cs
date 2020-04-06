@@ -22,8 +22,14 @@ namespace MDI
         {
             ChildForm child = new ChildForm();
             child.MdiParent = this;
-            child.Text += " " + MdiChildren.Length.ToString();
+            child.Text += " " + Program.forms;
+            Program.forms++;
             child.Show();
+            try
+            {
+                Program.auxForm.updateCB();
+            }
+            catch { }
         }
 
         private void casccToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,13 +90,68 @@ namespace MDI
                 string path = openFileDialog1.FileName;
                 ChildForm child = new ChildForm();
                 child.MdiParent = this;
-                child.Text += " " + MdiChildren.Length.ToString();
+                child.Text += " " + Program.forms;
+                Program.forms++;
                 child.Controls["textBox1"].Text = File.ReadAllText(path);
                 child.Controls["label1"].Text = path;
                 child.Tag = path;
                 child.Show();
+                try
+                {
+                    Program.auxForm.updateCB();
+                }
+                catch { }
             }
             
+        }
+
+        private void restoreAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ChildForm child in MdiChildren)
+            {
+                child.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void ckiseAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ChildForm child in MdiChildren)
+            {
+                child.Close();
+            }
+            try
+            {
+                Program.auxForm.updateCB();
+            }
+            catch { }
+        }
+
+        private void setRandomColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            foreach (ChildForm child in MdiChildren)
+            {
+                child.BackColor = Color.FromArgb(rnd.Next(127, 256), rnd.Next(127, 256), rnd.Next(127, 256));
+            }
+        }
+
+        private void setPinkColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.ActiveMdiChild.BackColor = Color.Magenta;
+        }
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Program.auxForm == null)
+            {
+                Program.auxForm = new Auxillary();
+                Program.auxForm.Show();
+            }
+            else
+            {
+                Program.auxForm.Show();
+                Program.auxForm.Focus();
+            }
         }
     }
 }
