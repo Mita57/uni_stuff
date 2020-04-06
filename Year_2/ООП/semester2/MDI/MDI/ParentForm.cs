@@ -39,6 +39,12 @@ namespace MDI
         {
             this.LayoutMdi(MdiLayout.TileVertical);
         }
-        //TODO: 12+
+        private void mnimizeAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ChildForm child in MdiChildren)
+            {
+                child.WindowState = FormWindowState.Minimized;
+            }
+        }
     }
 }
