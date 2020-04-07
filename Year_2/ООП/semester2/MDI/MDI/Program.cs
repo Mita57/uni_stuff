@@ -22,5 +22,7 @@ namespace MDI
         public static Auxillary auxForm = null;
         
         public static int forms = 0;
+
+        public static FrameForm parentForm = null;
     }
 }

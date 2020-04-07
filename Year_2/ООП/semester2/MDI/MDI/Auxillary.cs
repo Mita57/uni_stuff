@@ -14,7 +14,7 @@ namespace MDI
         public void updateCB()
         {
             comboBox1.Items.Clear();
-            foreach (ChildForm child in ParentForm.MdiChildren)
+            foreach (ChildForm child in Program.parentForm.MdiChildren)
             {
                 comboBox1.Items.Add(child.Text);
             }
@@ -22,7 +22,7 @@ namespace MDI
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (ChildForm child in ParentForm.MdiChildren)
+            foreach (ChildForm child in Program.parentForm.MdiChildren)
             {
                 if (child.Name == comboBox1.SelectedText)
                 {

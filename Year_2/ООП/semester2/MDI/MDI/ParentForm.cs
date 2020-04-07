@@ -16,6 +16,7 @@ namespace MDI
         public FrameForm()
         {
             InitializeComponent();
+            Program.parentForm = this;
         }
 
         public void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -29,7 +30,9 @@ namespace MDI
             {
                 Program.auxForm.updateCB();
             }
-            catch { }
+            catch
+            {
+            }
         }
 
         private void casccToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,7 +103,9 @@ namespace MDI
                 {
                     Program.auxForm.updateCB();
                 }
-                catch { }
+                catch
+                {
+                }
             }
             
         }
@@ -123,7 +128,9 @@ namespace MDI
             {
                 Program.auxForm.updateCB();
             }
-            catch { }
+            catch
+            {
+            }
         }
 
         private void setRandomColorToolStripMenuItem_Click(object sender, EventArgs e)
