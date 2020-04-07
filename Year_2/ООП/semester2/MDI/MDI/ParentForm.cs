@@ -153,11 +153,13 @@ namespace MDI
             {
                 Program.auxForm = new Auxillary();
                 Program.auxForm.Show();
+                Program.auxForm.updateCB();
             }
             else
             {
                 Program.auxForm.Show();
                 Program.auxForm.Focus();
+                Program.auxForm.updateCB();
             }
         }
     }

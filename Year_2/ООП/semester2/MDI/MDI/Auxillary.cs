@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace MDI
@@ -22,17 +23,19 @@ namespace MDI
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (ChildForm child in Program.parentForm.MdiChildren)
+            for (int i = 0; i < Program.parentForm.MdiChildren.Length; i++)
             {
-                if (child.Name == comboBox1.SelectedText)
+                if (Program.parentForm.MdiChildren[i].Text == comboBox1.SelectedItem.ToString())
                 {
-                    nameTB.Text = child.Text;
-                    sizeTB.Text = child.Size.Height + "; " + child.Size.Width;
-                    MDICoordsTB.Text = child.Location.X + "; " + child.Location.Y;
-                    string cock = (string) child.Tag;
-                    this.fileTB.Text = cock.Split('/')[cock.Split('/').Length - 1];
+                    nameTB.Text = Program.parentForm.MdiChildren[i].Text;
+                    sizeTB.Text = Program.parentForm.MdiChildren[i].Size.Height + "; " + Program.parentForm.MdiChildren[i].Size.Width;
+                    // MDICoordsTB.Text = Program.parentForm.MdiChildren[i].Location.X + "; " + Program.parentForm.MdiChildren[i].Location.Y;
+                    // string cock = (string) Program.parentForm.MdiChildren[i].Tag;
+                    // fileTB.Text = cock.Split('/')[cock.Split('/').Length - 1];
+                    break;
                 }
             }
+            
         }
 
         private void Auxillary_FormClosing(object sender, FormClosingEventArgs e)
