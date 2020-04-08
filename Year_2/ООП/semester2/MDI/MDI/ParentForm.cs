@@ -33,6 +33,14 @@ namespace MDI
             catch
             {
             }
+
+            try
+            {
+                Program.list.ListFromOrder_Load(null, null);
+            }
+            catch 
+            {
+            }
         }
 
         private void casccToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,6 +114,14 @@ namespace MDI
                 catch
                 {
                 }
+
+                try
+                {
+                    Program.list.ListFromOrder_Load(null, null);
+                }
+                catch
+                {
+                }
             }
             
         }
@@ -127,6 +143,14 @@ namespace MDI
             try
             {
                 Program.auxForm.updateCB();
+            }
+            catch
+            {
+            }
+
+            try
+            {
+                Program.list.ListFromOrder_Load(null, null);
             }
             catch
             {
@@ -171,6 +195,21 @@ namespace MDI
             }
             catch (Exception exception)
             {
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (Program.list == null)
+            {
+                ListFromOrder sas = new ListFromOrder();
+                sas.Show();
+                Program.list = sas;
+            }
+            else
+            {
+                Program.list.Show();
+                Program.list.Focus();
             }
         }
     }

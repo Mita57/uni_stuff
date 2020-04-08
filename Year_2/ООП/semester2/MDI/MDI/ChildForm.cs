@@ -6,9 +6,14 @@ namespace MDI
 {
     public partial class ChildForm : Form
     {
+        
+        public readonly DateTime created;
+        public  DateTime changed;
+        
         public ChildForm()
         {
             InitializeComponent();
+            created = DateTime.Now;
         }
         
         
@@ -24,17 +29,34 @@ namespace MDI
                 this.toolStripMenuItem1.Enabled = true;
                 this.label1.Text = path.Split('\\')[path.Split('\\').Length - 1];
                 ChildForm_ResizeEnd(null, null);
+                changed = DateTime.Now;
             }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            try
+            {
+                Program.auxForm.updateCB();
+            }
+            catch
+            {
+            }
+
+            try
+            {
+                Program.list.ListFromOrder_Load(null, null);
+            }
+            catch
+            {
+            }
         }
 
         public void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             File.WriteAllText((string)this.Tag, textBox1.Text);
+            changed = DateTime.Now;
         }
 
 
@@ -47,7 +69,27 @@ namespace MDI
             catch (Exception exception)
             {
             }
+            textBox1.Height = this.Height - 90;
+            textBox1.Width = this.Width - 16;
         }
-        
+
+        private void ChildForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                Program.auxForm.updateCB();
+            }
+            catch
+            {
+            }
+
+            try
+            {
+                Program.list.ListFromOrder_Load(null, null);
+            }
+            catch
+            {
+            }
+        }
     }
 }
