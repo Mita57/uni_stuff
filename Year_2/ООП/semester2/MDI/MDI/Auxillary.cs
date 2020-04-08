@@ -80,5 +80,10 @@ namespace MDI
             e.Cancel = true;
             this.Hide();
         }
+
+        public void childClosed(string name)
+        {
+            this.comboBox1.Items.Remove(name);
+        }
     }
 }

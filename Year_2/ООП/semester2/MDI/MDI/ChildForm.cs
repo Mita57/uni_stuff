@@ -78,6 +78,12 @@ namespace MDI
             catch
             {
             }
+
+            try
+            {
+                Program.auxForm.childClosed(this.Text);
+            }
+            catch{}
         }
 
         private void textBox1_SizeChanged(object sender, EventArgs e)
