@@ -22,7 +22,8 @@ namespace MDI
                 File.WriteAllText(path, textBox1.Text);
                 this.Tag = path;
                 this.toolStripMenuItem1.Enabled = true;
-                this.label1.Text = path.Split('/')[path.Split('/').Length - 1];
+                this.label1.Text = path.Split('\\')[path.Split('\\').Length - 1];
+                ChildForm_ResizeEnd(null, null);
             }
         }
 
@@ -37,5 +38,16 @@ namespace MDI
         }
 
 
+        private void ChildForm_ResizeEnd(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.auxForm.comboBox1_SelectedIndexChanged(null, null);
+            }
+            catch (Exception exception)
+            {
+            }
+        }
+        
     }
 }

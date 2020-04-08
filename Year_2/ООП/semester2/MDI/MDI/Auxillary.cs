@@ -21,7 +21,7 @@ namespace MDI
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             for (int i = 0; i < Program.parentForm.MdiChildren.Length; i++)
             {
@@ -29,9 +29,18 @@ namespace MDI
                 {
                     nameTB.Text = Program.parentForm.MdiChildren[i].Text;
                     sizeTB.Text = Program.parentForm.MdiChildren[i].Size.Height + "; " + Program.parentForm.MdiChildren[i].Size.Width;
-                    // MDICoordsTB.Text = Program.parentForm.MdiChildren[i].Location.X + "; " + Program.parentForm.MdiChildren[i].Location.Y;
-                    // string cock = (string) Program.parentForm.MdiChildren[i].Tag;
-                    // fileTB.Text = cock.Split('/')[cock.Split('/').Length - 1];
+                    MDICoordsTB.Text = Program.parentForm.MdiChildren[i].Location.X + "; " + Program.parentForm.MdiChildren[i].Location.Y;
+                    scrSizeTB.Text = (Program.parentForm.Location.X + Program.parentForm.MdiChildren[i].Location.X) + "; " 
+                        + (Program.parentForm.Location.Y + Program.parentForm.MdiChildren[i].Location.Y); 
+                    string cock = (string) Program.parentForm.MdiChildren[i].Tag;
+                    try
+                    {
+                        fileTB.Text = cock.Split('\\')[cock.Split('\\').Length - 1];
+                    }
+                    catch
+                    {
+                        fileTB.Text = "Ничего";
+                    }
                     break;
                 }
             }

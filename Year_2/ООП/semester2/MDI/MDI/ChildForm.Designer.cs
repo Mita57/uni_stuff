@@ -108,6 +108,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(407, 174);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.ChildForm_ResizeEnd);
             // 
             // label1
             // 
@@ -132,6 +133,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ChildForm";
             this.Text = "MDIChild";
+            this.ResizeEnd += new System.EventHandler(this.ChildForm_ResizeEnd);
+            this.LocationChanged += new System.EventHandler(this.ChildForm_ResizeEnd);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
