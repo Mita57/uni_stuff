@@ -35,6 +35,13 @@ namespace MDI
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            try
+            {
+                Program.list.ListFromOrder_Load(null, null);
+            }
+            catch
+            {
+            }
         }
 
         public void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -53,7 +60,30 @@ namespace MDI
             catch 
             {
             }
+            try
+            {
+                Program.list.ListFromOrder_Load(null, null);
+            }
+            catch
+            {
+            }
         }
-        
+
+        private void ChildForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                Program.list.ListFromOrder_Load(null, null);
+            }
+            catch
+            {
+            }
+        }
+
+        private void textBox1_SizeChanged(object sender, EventArgs e)
+        {
+            this.textBox1.Width = this.Width - 16;
+            this.textBox1.Height = this.Height - 90;
+        }
     }
 }

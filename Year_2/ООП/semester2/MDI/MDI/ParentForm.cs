@@ -131,6 +131,13 @@ namespace MDI
             catch
             {
             }
+            try
+            {
+                Program.list.ListFromOrder_Load(null, null);
+            }
+            catch
+            {
+            }
         }
 
         private void setRandomColorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -171,6 +178,21 @@ namespace MDI
             }
             catch (Exception exception)
             {
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (Program.list == null)
+            {
+                ListFromOrder list = new ListFromOrder();
+                list.Show();
+                Program.list = list;
+            }
+            else
+            {
+                Program.list.Show();
+                Program.list.Focus();
             }
         }
     }
