@@ -12,15 +12,19 @@ namespace MDI
 
         public void ListFromOrder_Load(object sender, EventArgs e)
         {
+            string newLine = Environment.NewLine;
             foreach (ChildForm child in Program.parentForm.MdiChildren)
             {
-                textBox1.Text += "Название" + child.Text + "\n";
-                textBox1.Text += "Создана" + child.created + "\n";
+                textBox1.Text += "Название" + child.Text + newLine;
+                textBox1.Text += "Создана" + child.created + newLine;
                 try
                 {
-                    textBox1.Text += "Последнее сохранение" + child.changed + "\n";
+                    textBox1.Text += "Последнее сохранение" + child.changed + newLine;
                 }
-                catch{}
+                catch
+                {
+                    
+                }
                 
                 int stringCounter = 0;
                 string strings = "1. ";
@@ -31,7 +35,7 @@ namespace MDI
                         stringCounter++;
                         if (stringCounter <= 4)
                         {
-                            strings += "\n" + (stringCounter + 1);
+                            strings += newLine + (stringCounter + 1);
                         }
                     }
                     else
@@ -41,7 +45,7 @@ namespace MDI
                     }
                 }
 
-                textBox1.Text += "Кол-во строк:" + "\n";
+                textBox1.Text += "Кол-во строк:" + newLine;
                 if (strings == "1. ")
                 {
                     strings = "";
@@ -50,6 +54,8 @@ namespace MDI
                 {
                     textBox1.Text += strings;
                 }
+
+                textBox1.Text += "_________________________________________" + newLine;
             }
         }
 
