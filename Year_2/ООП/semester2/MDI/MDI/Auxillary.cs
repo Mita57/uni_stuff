@@ -41,6 +41,17 @@ namespace MDI
                     {
                         fileTB.Text = "Ничего";
                     }
+
+                    int stringCounter = 0;
+                    foreach (char rar in Program.parentForm.MdiChildren[i].Controls["textBox1"].Text)
+                    {
+                        if (rar == '\n')
+                        {
+                            stringCounter++;
+                        }
+                    }
+
+                    stringsTB.Text = stringCounter.ToString();
                     break;
                 }
             }

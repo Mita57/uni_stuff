@@ -162,5 +162,16 @@ namespace MDI
                 Program.auxForm.updateCB();
             }
         }
+
+        private void FrameForm_LocationChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.auxForm.comboBox1_SelectedIndexChanged(null, null);
+            }
+            catch (Exception exception)
+            {
+            }
+        }
     }
 }
