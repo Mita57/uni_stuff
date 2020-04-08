@@ -6,15 +6,14 @@ namespace MDI
 {
     public partial class ChildForm : Form
     {
-        
-        public readonly DateTime created;
-        public  DateTime changed;
-        
         public ChildForm()
         {
             InitializeComponent();
             created = DateTime.Now;
         }
+
+        public DateTime created;
+        public DateTime changed;
         
         
 
@@ -36,21 +35,6 @@ namespace MDI
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-            try
-            {
-                Program.auxForm.updateCB();
-            }
-            catch
-            {
-            }
-
-            try
-            {
-                Program.list.ListFromOrder_Load(null, null);
-            }
-            catch
-            {
-            }
         }
 
         public void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -66,30 +50,10 @@ namespace MDI
             {
                 Program.auxForm.comboBox1_SelectedIndexChanged(null, null);
             }
-            catch (Exception exception)
-            {
-            }
-            textBox1.Height = this.Height - 90;
-            textBox1.Width = this.Width - 16;
-        }
-
-        private void ChildForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            try
-            {
-                Program.auxForm.updateCB();
-            }
-            catch
-            {
-            }
-
-            try
-            {
-                Program.list.ListFromOrder_Load(null, null);
-            }
-            catch
+            catch 
             {
             }
         }
+        
     }
 }

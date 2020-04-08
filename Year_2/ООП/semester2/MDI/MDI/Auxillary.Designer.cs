@@ -169,8 +169,6 @@ namespace MDI
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.MaximumSize = new System.Drawing.Size(500, 250);
-            this.MinimumSize = new System.Drawing.Size(500, 250);
             this.Name = "Auxillary";
             this.Text = "Auxillary";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Auxillary_FormClosing);

@@ -24,7 +24,5 @@ namespace MDI
         public static int forms = 0;
 
         public static FrameForm parentForm = null;
-
-        public static ListFromOrder list = null;
     }
 }

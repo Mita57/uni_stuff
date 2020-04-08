@@ -23,39 +23,56 @@ namespace MDI
 
         public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < Program.parentForm.MdiChildren.Length; i++)
+            try
             {
-                if (Program.parentForm.MdiChildren[i].Text == comboBox1.SelectedItem.ToString())
+                for (int i = 0; i < Program.parentForm.MdiChildren.Length; i++)
                 {
-                    nameTB.Text = Program.parentForm.MdiChildren[i].Text;
-                    sizeTB.Text = Program.parentForm.MdiChildren[i].Size.Height + "; " + Program.parentForm.MdiChildren[i].Size.Width;
-                    MDICoordsTB.Text = Program.parentForm.MdiChildren[i].Location.X + "; " + Program.parentForm.MdiChildren[i].Location.Y;
-                    scrSizeTB.Text = (Program.parentForm.Location.X + Program.parentForm.MdiChildren[i].Location.X) + "; " 
-                        + (Program.parentForm.Location.Y + Program.parentForm.MdiChildren[i].Location.Y); 
-                    string cock = (string) Program.parentForm.MdiChildren[i].Tag;
-                    try
+                    if (Program.parentForm.MdiChildren[i].Text == comboBox1.SelectedItem.ToString())
                     {
-                        fileTB.Text = cock.Split('\\')[cock.Split('\\').Length - 1];
-                    }
-                    catch
-                    {
-                        fileTB.Text = "Ничего";
-                    }
-
-                    int stringCounter = 0;
-                    foreach (char rar in Program.parentForm.MdiChildren[i].Controls["textBox1"].Text)
-                    {
-                        if (rar == '\n')
+                        nameTB.Text = Program.parentForm.MdiChildren[i].Text;
+                        sizeTB.Text = Program.parentForm.MdiChildren[i].Size.Height + "; " +
+                                      Program.parentForm.MdiChildren[i].Size.Width;
+                        MDICoordsTB.Text = Program.parentForm.MdiChildren[i].Location.X + "; " +
+                                           Program.parentForm.MdiChildren[i].Location.Y;
+                        scrSizeTB.Text =
+                            (Program.parentForm.Location.X + Program.parentForm.MdiChildren[i].Location.X) + "; "
+                                                                                                           + (Program
+                                                                                                                  .parentForm
+                                                                                                                  .Location
+                                                                                                                  .Y +
+                                                                                                              Program
+                                                                                                                  .parentForm
+                                                                                                                  .MdiChildren
+                                                                                                                      [i]
+                                                                                                                  .Location
+                                                                                                                  .Y);
+                        string cock = (string) Program.parentForm.MdiChildren[i].Tag;
+                        try
                         {
-                            stringCounter++;
+                            fileTB.Text = cock.Split('\\')[cock.Split('\\').Length - 1];
                         }
-                    }
+                        catch
+                        {
+                            fileTB.Text = "Ничего";
+                        }
 
-                    stringsTB.Text = stringCounter.ToString();
-                    break;
+                        int stringCounter = 0;
+                        foreach (char rar in Program.parentForm.MdiChildren[i].Controls["textBox1"].Text)
+                        {
+                            if (rar == '\n')
+                            {
+                                stringCounter++;
+                            }
+                        }
+
+                        stringsTB.Text = stringCounter.ToString();
+                        break;
+                    }
                 }
             }
-            
+            catch
+            {
+            }
         }
 
         private void Auxillary_FormClosing(object sender, FormClosingEventArgs e)

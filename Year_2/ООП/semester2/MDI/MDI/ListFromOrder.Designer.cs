@@ -40,15 +40,14 @@ namespace MDI
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(696, 404);
+            this.textBox1.Size = new System.Drawing.Size(933, 519);
             this.textBox1.TabIndex = 0;
             // 
             // ListFromOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 404);
+            this.ClientSize = new System.Drawing.Size(933, 519);
             this.Controls.Add(this.textBox1);
             this.Name = "ListFromOrder";
             this.Text = "ListFromOrder";

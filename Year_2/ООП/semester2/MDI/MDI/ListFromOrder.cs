@@ -58,5 +58,6 @@ namespace MDI
             e.Cancel = true;
             this.Hide();
         }
+        
     }
 }
