@@ -5,11 +5,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{BBDF13B2-74EC-4CB3-9A3D-BDEF5EB60AB8}</ProjectGuid>
+        <ProjectGuid>{ED84FD0C-BA9C-4464-8DA2-3770D9A5108E}</ProjectGuid>
         <OutputType>Exe</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>ConsoleApplication1</RootNamespace>
-        <AssemblyName>ConsoleApplication1</AssemblyName>
+        <RootNamespace>laba12</RootNamespace>
+        <AssemblyName>laba12</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
