@@ -46,6 +46,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.yearLabel = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +84,7 @@
             // 
             this.nameTB.Location = new System.Drawing.Point(100, 10);
             this.nameTB.Name = "nameTB";
+            this.nameTB.ReadOnly = true;
             this.nameTB.Size = new System.Drawing.Size(329, 23);
             this.nameTB.TabIndex = 3;
             // 
@@ -85,6 +92,7 @@
             // 
             this.progCafTB.Location = new System.Drawing.Point(100, 97);
             this.progCafTB.Name = "progCafTB";
+            this.progCafTB.ReadOnly = true;
             this.progCafTB.Size = new System.Drawing.Size(329, 23);
             this.progCafTB.TabIndex = 4;
             // 
@@ -92,6 +100,7 @@
             // 
             this.groupTB.Location = new System.Drawing.Point(100, 126);
             this.groupTB.Name = "groupTB";
+            this.groupTB.ReadOnly = true;
             this.groupTB.Size = new System.Drawing.Size(329, 23);
             this.groupTB.TabIndex = 5;
             // 
@@ -121,7 +130,7 @@
             // 
             this.groupBox1.Controls.Add(this.studentRB);
             this.groupBox1.Controls.Add(this.tutorRB);
-            this.groupBox1.Location = new System.Drawing.Point(8, 347);
+            this.groupBox1.Location = new System.Drawing.Point(12, 203);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(140, 87);
             this.groupBox1.TabIndex = 8;
@@ -130,7 +139,7 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(154, 384);
+            this.addButton.Location = new System.Drawing.Point(182, 240);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(114, 23);
             this.addButton.TabIndex = 9;
@@ -139,17 +148,18 @@
             // 
             // listButton
             // 
-            this.listButton.Location = new System.Drawing.Point(311, 384);
+            this.listButton.Location = new System.Drawing.Point(315, 240);
             this.listButton.Name = "listButton";
             this.listButton.Size = new System.Drawing.Size(114, 23);
             this.listButton.TabIndex = 10;
-            this.listButton.Text = "Список";
+            this.listButton.Text = "Список студентов";
             this.listButton.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(100, 68);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(329, 23);
             this.textBox1.TabIndex = 14;
             // 
@@ -157,6 +167,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(100, 39);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(329, 23);
             this.textBox2.TabIndex = 13;
             // 
@@ -182,20 +193,82 @@
             this.yearLabel.Name = "yearLabel";
             this.yearLabel.Size = new System.Drawing.Size(90, 18);
             this.yearLabel.TabIndex = 15;
-            this.yearLabel.Text = "Группа: ";
+            this.yearLabel.Text = "Год обучения:";
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(100, 155);
             this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.ReadOnly = true;
             this.numericUpDown1.Size = new System.Drawing.Size(63, 23);
             this.numericUpDown1.TabIndex = 16;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(315, 211);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Список всех";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(315, 267);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(114, 23);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Список преподов";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(182, 211);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(114, 23);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Изменить";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Tomato;
+            this.button4.Location = new System.Drawing.Point(182, 269);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(114, 23);
+            this.button4.TabIndex = 20;
+            this.button4.Text = "Удалить";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(182, 158);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(114, 23);
+            this.button5.TabIndex = 22;
+            this.button5.Text = "Сохранить";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(315, 158);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(114, 23);
+            this.button6.TabIndex = 21;
+            this.button6.Text = "Загрузить";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 447);
+            this.ClientSize = new System.Drawing.Size(441, 297);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.yearLabel);
             this.Controls.Add(this.textBox1);
@@ -238,5 +311,11 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label yearLabel;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
     }
 }

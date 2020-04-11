@@ -78,6 +78,7 @@ namespace Персоналии
                 groupLabel.Visible = true;
                 groupTB.Text = "";
                 groupTB.Visible = true;
+                yearLabel.Text = "Год обучения";
             }
         }
 
@@ -88,6 +89,7 @@ namespace Персоналии
                 progCafLabel.Text = "Кафедра";
                 groupLabel.Visible = false;
                 groupTB.Visible = false;
+                yearLabel.Text = "Стаж";
             }
         }
     }
