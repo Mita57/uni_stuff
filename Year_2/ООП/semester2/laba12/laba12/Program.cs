@@ -66,7 +66,7 @@ namespace laba12
             list[4] = new Prof("Ланской Д.Т.", "Программного обеспечения");
             for (int i = 0; i < list.Length; i++)
             {
-                Console.WriteLine("{0, 3}.{1} {2}", i+1, List[i], List[i]);
+                Console.WriteLine("{0, 3}.{1}", i+1, list[i]);
             }
 
             Console.ReadKey();
