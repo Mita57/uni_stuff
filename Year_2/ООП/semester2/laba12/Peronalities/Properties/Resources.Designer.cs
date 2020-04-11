@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Персоналии.Properties
+namespace Peronalities.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -45,7 +45,7 @@ namespace Персоналии.Properties
                 if ((resourceMan == null))
                 {
                     global::System.Resources.ResourceManager temp =
-                        new global::System.Resources.ResourceManager("Персоналии.Properties.Resources",
+                        new global::System.Resources.ResourceManager("Peronalities.Properties.Resources",
                             typeof(Resources).Assembly);
                     resourceMan = temp;
                 }

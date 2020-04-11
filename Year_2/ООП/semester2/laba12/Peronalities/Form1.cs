@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Персоналии
+namespace Peronalities
 {
     public partial class Form1 : Form
     {
@@ -63,6 +63,10 @@ namespace Персоналии
         }
 
         List <Person> list = new List<Person>();
+
+        private AddPerson addForm = null;
+        
+        
         
         public Form1()
         {
