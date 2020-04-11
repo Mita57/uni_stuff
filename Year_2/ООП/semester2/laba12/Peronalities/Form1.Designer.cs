@@ -165,6 +165,7 @@
             this.listStudents.TabIndex = 10;
             this.listStudents.Text = "Список студентов";
             this.listStudents.UseVisualStyleBackColor = true;
+            this.listStudents.Click += new System.EventHandler(this.listStudents_Click);
             // 
             // textBox1
             // 
@@ -222,6 +223,7 @@
             this.listAll.TabIndex = 17;
             this.listAll.Text = "Список всех";
             this.listAll.UseVisualStyleBackColor = true;
+            this.listAll.Click += new System.EventHandler(this.listAll_Click);
             // 
             // listTutors
             // 
@@ -231,6 +233,7 @@
             this.listTutors.TabIndex = 18;
             this.listTutors.Text = "Список преподов";
             this.listTutors.UseVisualStyleBackColor = true;
+            this.listTutors.Click += new System.EventHandler(this.listTutors_Click);
             // 
             // updateButton
             // 

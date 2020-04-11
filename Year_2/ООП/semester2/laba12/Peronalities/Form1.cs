@@ -50,7 +50,8 @@ namespace Peronalities
 
             private List<string> Uncomms { get; set; }
 
-            public Stud(string nam, string surname, int year, string par, string sp, string gr, List<string> uncomms) : base(nam, surname,par, year)
+            public Stud(string nam, string surname, int year, string par, string sp, string gr, List<string> uncomms) :
+                base(nam, surname, par, year)
             {
                 Spec = sp;
                 Group = gr;
@@ -59,16 +60,20 @@ namespace Peronalities
 
             public override string BriefInfo()
             {
-                return string.Format("Студент: {0}, специальность: \"{1}\", группа {2}, долги: {3}", Name + " "+Surname, Spec, Group, Uncomms.Length);
+                return string.Format("Студент: {0}, специальность: \"{1}\", группа {2}, долги: {3}",
+                    Name + " " + Surname, Spec, Group, Uncomms.Count);
             }
 
             public override string FullInfo()
             {
-                foreach (var VARIABLE in COLLECTION)
+                string cock = "";
+                foreach (string meme in Uncomms)
                 {
-                    
+                    cock += meme + "; ";
                 }
-                return string.Format("{0} {1} {2}, студент {3} курса специальности {4}, долги: {5}", Name, Surname, Patronymic, Year, Spec, );
+
+                return string.Format("{0} {1} {2}, студент {3} курса специальности {4}, долги: {5}", Name, Surname,
+                    Patronymic, Year, Spec, cock);
             }
 
             public override void NextYear()
@@ -80,10 +85,11 @@ namespace Peronalities
         class Prof : Person
         {
             private string Dep { get; set; }
-            
+
             public List<string> Disciplines { get; set; }
 
-            public Prof(string nam, string dp, string surname, string papa, int year, List<string> discs) : base(nam, surname, papa, year)
+            public Prof(string nam, string dp, string surname, string papa, int year, List<string> discs) : base(nam,
+                surname, papa, year)
             {
                 Dep = dp;
                 Disciplines = discs;
@@ -91,12 +97,20 @@ namespace Peronalities
 
             public override string BriefInfo()
             {
-                return String.Format("Преподователь:{0}, кафедра \"{1}\", читает {2} предметов", Name, Dep, Disciplines.Length);
+                return String.Format("Преподователь:{0}, кафедра \"{1}\", читает {2} предметов", Name + " " + Surname,
+                    Dep, Disciplines.Count);
             }
 
             public override string FullInfo()
             {
-                
+                string cock = "";
+                foreach (string meme in Disciplines)
+                {
+                    cock += meme + ", ";
+                }
+
+                return String.Format("Преподователь:{0}, кафедра \"{1}\", стаж работы: {2}, читает предметы: {3}",
+                    Name + " " + Surname + "" + Patronymic, Dep, Year, cock);
             }
 
             public override void NextYear()
@@ -172,6 +186,45 @@ namespace Peronalities
         private void Form1_Load(object sender, EventArgs e)
         {
             throw new System.NotImplementedException();
+        }
+
+        private void listAll_Click(object sender, EventArgs e)
+        {
+            string meme = "";
+            foreach (Person succ in this.list)
+            {
+                meme += succ.BriefInfo() + "; ";
+            }
+
+            MessageBox.Show(meme);
+        }
+
+        private void listStudents_Click(object sender, EventArgs e)
+        {
+            string meme = "";
+            foreach (Person succ in this.list)
+            {
+                if (succ is Stud)
+                {
+                    meme += succ.BriefInfo() + "; ";
+                }
+            }
+
+            MessageBox.Show(meme);
+        }
+
+        private void listTutors_Click(object sender, EventArgs e)
+        {
+            string meme = "";
+            foreach (Person succ in this.list)
+            {
+                if (succ is Prof)
+                {
+                    meme += succ.BriefInfo() + "; ";
+                }
+            }
+
+            MessageBox.Show(meme);
         }
     }
 }
