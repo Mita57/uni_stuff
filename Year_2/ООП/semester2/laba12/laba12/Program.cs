@@ -14,6 +14,11 @@ namespace laba12
         }
 
         public abstract string Info();
+
+        public override string ToString()
+        {
+            return Info();
+        }
     }
 
     class Stud : Person
@@ -53,6 +58,18 @@ namespace laba12
     {
         public static void Main(string[] args)
         {
+            Person[] list = new Person[5];
+            list[0] = new Stud("Петров Сергей", "МЯСО", "134");
+            list[1] = new Prof("Азаров В.Н.", "Математики");
+            list[2] = new Stud("Иванов Игорь", "Мясо", "134");
+            list[3] = new Stud("Кашина Оксана", "ПИ", "165");
+            list[4] = new Prof("Ланской Д.Т.", "Программного обеспечения");
+            for (int i = 0; i < list.Length; i++)
+            {
+                Console.WriteLine("{0, 3}.{1} {2}", i+1, List[i], List[i]);
+            }
+
+            Console.ReadKey();
         }
     }
 }
