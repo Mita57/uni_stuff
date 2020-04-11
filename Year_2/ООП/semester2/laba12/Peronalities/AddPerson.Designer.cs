@@ -54,7 +54,7 @@ namespace Peronalities
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(319, 236);
+            this.button6.Location = new System.Drawing.Point(318, 237);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(114, 23);
             this.button6.TabIndex = 41;
@@ -63,7 +63,7 @@ namespace Peronalities
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(104, 161);
+            this.numericUpDown1.Location = new System.Drawing.Point(104, 162);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.ReadOnly = true;
             this.numericUpDown1.Size = new System.Drawing.Size(63, 23);
@@ -103,7 +103,7 @@ namespace Peronalities
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(12, 49);
+            this.label3.Location = new System.Drawing.Point(12, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 18);
             this.label3.TabIndex = 31;
@@ -190,7 +190,7 @@ namespace Peronalities
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(175, 236);
+            this.button1.Location = new System.Drawing.Point(175, 237);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 23);
             this.button1.TabIndex = 42;
@@ -219,6 +219,7 @@ namespace Peronalities
             this.Controls.Add(this.label1);
             this.Name = "AddPerson";
             this.Text = "AddPerson";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPerson_FormClosing);
             ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

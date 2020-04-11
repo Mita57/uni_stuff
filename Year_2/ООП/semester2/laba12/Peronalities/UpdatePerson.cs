@@ -8,5 +8,11 @@ namespace Peronalities
         {
             InitializeComponent();
         }
+
+        private void UpdatePerson_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
+        }
     }
 }

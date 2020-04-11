@@ -183,6 +183,7 @@ namespace Peronalities
             this.Controls.Add(this.label1);
             this.Name = "UpdatePerson";
             this.Text = "UpdatePerson";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdatePerson_FormClosing);
             ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
