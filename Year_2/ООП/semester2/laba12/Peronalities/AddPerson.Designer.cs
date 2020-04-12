@@ -35,7 +35,7 @@ namespace Peronalities
             this.yearNum = new System.Windows.Forms.NumericUpDown();
             this.yearLabel = new System.Windows.Forms.Label();
             this.parTB = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nameTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -48,16 +48,16 @@ namespace Peronalities
             this.progCafLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
             this.debtsProgsTB = new System.Windows.Forms.TextBox();
             this.debtsProgsLabel = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize) (this.yearNum)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(319, 283);
+            this.cancelButton.Location = new System.Drawing.Point(318, 283);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(114, 23);
             this.cancelButton.TabIndex = 41;
@@ -67,7 +67,7 @@ namespace Peronalities
             // 
             // yearNum
             // 
-            this.yearNum.Location = new System.Drawing.Point(104, 191);
+            this.yearNum.Location = new System.Drawing.Point(104, 192);
             this.yearNum.Name = "yearNum";
             this.yearNum.Size = new System.Drawing.Size(63, 23);
             this.yearNum.TabIndex = 36;
@@ -87,12 +87,12 @@ namespace Peronalities
             this.parTB.Size = new System.Drawing.Size(329, 23);
             this.parTB.TabIndex = 34;
             // 
-            // textBox2
+            // nameTB
             // 
-            this.textBox2.Location = new System.Drawing.Point(104, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(329, 23);
-            this.textBox2.TabIndex = 33;
+            this.nameTB.Location = new System.Drawing.Point(104, 45);
+            this.nameTB.Name = "nameTB";
+            this.nameTB.Size = new System.Drawing.Size(329, 23);
+            this.nameTB.TabIndex = 33;
             // 
             // label2
             // 
@@ -190,7 +190,8 @@ namespace Peronalities
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(319, 225);
+            this.addButton.Enabled = false;
+            this.addButton.Location = new System.Drawing.Point(318, 254);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(114, 23);
             this.addButton.TabIndex = 42;
@@ -198,19 +199,9 @@ namespace Peronalities
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(319, 254);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(114, 23);
-            this.saveButton.TabIndex = 43;
-            this.saveButton.Text = "Сохранить";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
             // debtsProgsTB
             // 
-            this.debtsProgsTB.Location = new System.Drawing.Point(104, 161);
+            this.debtsProgsTB.Location = new System.Drawing.Point(104, 162);
             this.debtsProgsTB.Name = "debtsProgsTB";
             this.debtsProgsTB.Size = new System.Drawing.Size(329, 23);
             this.debtsProgsTB.TabIndex = 45;
@@ -221,7 +212,11 @@ namespace Peronalities
             this.debtsProgsLabel.Name = "debtsProgsLabel";
             this.debtsProgsLabel.Size = new System.Drawing.Size(90, 18);
             this.debtsProgsLabel.TabIndex = 44;
-            this.debtsProgsLabel.Text = "Группа: ";
+            this.debtsProgsLabel.Text = "Долги:";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Text File | *.txt";
             // 
             // AddPerson
             // 
@@ -230,13 +225,12 @@ namespace Peronalities
             this.ClientSize = new System.Drawing.Size(451, 330);
             this.Controls.Add(this.debtsProgsTB);
             this.Controls.Add(this.debtsProgsLabel);
-            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.yearNum);
             this.Controls.Add(this.yearLabel);
             this.Controls.Add(this.parTB);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.nameTB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
@@ -267,15 +261,15 @@ namespace Peronalities
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label yearLabel;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.TextBox parTB;
         private System.Windows.Forms.TextBox surnameTB;
         private System.Windows.Forms.Label debtsProgsLabel;
         private System.Windows.Forms.TextBox debtsProgsTB;
         private System.Windows.Forms.NumericUpDown yearNum;
+        private System.Windows.Forms.TextBox nameTB;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

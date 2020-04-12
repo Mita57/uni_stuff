@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Peronalities
@@ -18,16 +20,95 @@ namespace Peronalities
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            
+            if (studentRB.Checked)
+            {
+                List<string> sas = new List<string>(debtsProgsTB.Text.Split(','));
+                Program.list.Add(new Stud(nameTB.Text, surnameTB.Text, Convert.ToInt32(yearNum.Value), parTB.Text, progCafTB.Text, groupTB.Text, sas));
+            }
+            else
+            {
+                List<string> sas = new List<string>(debtsProgsLabel.Text.Split(','));
+                Program.list.Add(new Prof(nameTB.Text, progCafTB.Text, surnameTB.Text, parTB.Text, Convert.ToInt32(yearNum.Value), sas));
+            }
         }
 
-        private void saveButton_Click(object sender, EventArgs e)
+        private void save()
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrEmpty(Program.form.path))
+            {
+                DialogResult = saveFileDialog1.ShowDialog();
+                if (DialogResult == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog1.FileName;
+
+                    string serialze = "";
+                    foreach (Person per in Program.list)
+                    {
+                        if (per is Prof)
+                        {
+                            Prof perPr = (Prof) per;
+                            string progs = "";
+                            foreach (string dis in perPr.Disciplines)
+                            {
+                                progs += dis + "&";
+                            }
+                            serialze += String.Format("prof%{0}%{1}%{2}%{3}%{4}%{5}~", perPr.Name, perPr.Dep, perPr.Surname, perPr.Patronymic, perPr.Year, progs);
+                        }
+                        else
+                        {
+                            Stud perSt = (Stud) per;
+                            string debts = "";
+                            foreach (string debt in perSt.Uncomms)
+                            {
+                                debts += debs + "&";
+                            }
+                            
+                            serialze += String.Format("stud%{0}%{1}%{2}%{3}%{4}%{5}%{6}~", perSt.Name, perSt.Surname, perSt.Year, perSt.Patronymic, perSt.Spec, perSt.Group, debts);
+                        }
+                    }
+                    File.WriteAllText(filePath, serialze);
+                }
+            }
+            else
+            {
+                string serialze = "";
+                foreach (Person per in Program.list)
+                {
+                    if (per is Prof)
+                    {
+                        Prof perPr = (Prof) per;
+                        string progs = "";
+                        foreach (string dis in perPr.Disciplines)
+                        {
+                            progs += dis + "&";
+                        }
+                        serialze += String.Format("prof%{0}%{1}%{2}%{3}%{4}%{5}~", perPr.Name, perPr.Dep, perPr.Surname, perPr.Patronymic, perPr.Year, progs);
+                    }
+                    else
+                    {
+                        Stud perSt = (Stud) per;
+                        string debts = "";
+                        foreach (string debt in perSt.Uncomms)
+                        {
+                            debts += debs + "&";
+                        }
+                            
+                        serialze += String.Format("stud%{0}%{1}%{2}%{3}%{4}%{5}%{6}~", perSt.Name, perSt.Surname, perSt.Year, perSt.Patronymic, perSt.Spec, perSt.Group, debts);
+                    }
+                }
+                File.WriteAllText(Program.form.path, serialze);
+            }
         }
+        
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            surnameTB.Text = "";
+            nameTB.Text = "";
+            parTB.Text = "";
+            progCafLabel.Text = "";
+            groupTB.Text = "";
+            yearNum.Value = 0;
             this.Hide();
         }
 
@@ -36,7 +117,42 @@ namespace Peronalities
             bool nameFlag = false;
             bool surnameFlag = false;
             bool parFlag = false;
-            
+            bool progCafFlag = false;
+            bool groupFlag = false;
+
+            if (!String.IsNullOrEmpty(surnameTB.Text))
+            {
+                surnameFlag = true;
+            }
+
+            if (!string.IsNullOrEmpty(nameTB.Text))
+            {
+                nameFlag = true;
+            }
+
+            if (!string.IsNullOrEmpty(parTB.Text))
+            {
+                parFlag = true;
+            }
+
+            if (!string.IsNullOrEmpty(progCafTB.Text))
+            {
+                progCafFlag = true;
+            }
+
+            if (!string.IsNullOrEmpty(groupTB.Text))
+            {
+                groupFlag = true;
+            }
+
+            if (nameFlag && surnameFlag && parFlag && progCafFlag && groupFlag)
+            {
+                addButton.Enabled = true;
+            }
+            else
+            {
+                addButton.Enabled = false;
+            }
         }
 
         private void studentRB_CheckedChanged(object sender, EventArgs e)
@@ -62,7 +178,7 @@ namespace Peronalities
                 groupTB.Visible = false;
                 yearLabel.Text = "Стаж";
                 debtsProgsLabel.Text = "Предметы";
-                
+                groupTB.Text = "cock";
             }
         }
     }

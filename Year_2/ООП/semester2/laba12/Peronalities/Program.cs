@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,6 +21,8 @@ namespace Peronalities
         }
         
         public static List<Person> list = new List<Person>();
+
+        public static  Form1 form = null;
     }
     
      abstract class Person
@@ -55,10 +58,10 @@ namespace Peronalities
 
         class Stud : Person
         {
-            string Spec { get; set; }
-            private string Group { get; set; }
+            public string Spec { get; set; }
+            public string Group { get; set; }
 
-            private List<string> Uncomms { get; set; }
+            public List<string> Uncomms { get; set; }
 
             public Stud(string nam, string surname, int year, string par, string sp, string gr, List<string> uncomms) :
                 base(nam, surname, par, year)
@@ -94,7 +97,7 @@ namespace Peronalities
 
         class Prof : Person
         {
-            private string Dep { get; set; }
+            public string Dep { get; set; }
 
             public List<string> Disciplines { get; set; }
 

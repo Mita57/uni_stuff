@@ -23,6 +23,7 @@ namespace Peronalities
         public Form1()
         {
             InitializeComponent();
+            Program.form = this;
         }
 
         private void studentRB_CheckedChanged(object sender, EventArgs e)
