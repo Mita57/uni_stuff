@@ -67,6 +67,8 @@ namespace Peronalities
                 this.updateForm.Show();
                 this.updateForm.Focus();
             }
+            this.updateForm.fillFields();
+            
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -153,6 +155,13 @@ namespace Peronalities
                     }
                 }
             }
+
+            try
+            {
+                this.index = 0;
+                render();
+            }
+            catch{}
         }
 
         private void render()
@@ -216,7 +225,6 @@ namespace Peronalities
                 {
                     debtsProgsTB.Text += prog + ", ";
                 }
-
                 yearNum.Value = persProf.Year;
             }
         }
@@ -247,7 +255,11 @@ namespace Peronalities
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            Program.list.RemoveAt(index);
+            try
+            {
+                Program.list.RemoveAt(index);
+            }
+            catch{}
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -288,7 +300,7 @@ namespace Peronalities
                         }
                     }
 
-                    File.WriteAllText(filePath, serialze);
+                    File.WriteAllText(filePath, serialze.Substring(0, serialze.Length - 1));
                 }
             }
             else

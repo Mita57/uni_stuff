@@ -30,6 +30,14 @@ namespace Peronalities
                 List<string> sas = new List<string>(debtsProgsLabel.Text.Split(','));
                 Program.list.Add(new Prof(nameTB.Text, progCafTB.Text, surnameTB.Text, parTB.Text, Convert.ToInt32(yearNum.Value), sas));
             }
+
+            surnameTB.Text = "";
+            nameTB.Text = "";
+            parTB.Text = "";
+            progCafTB.Text = "";
+            groupTB.Text = "";
+            debtsProgsTB.Text = "";
+            yearNum.Value = 0;
         }
         
         private void cancelButton_Click(object sender, EventArgs e)

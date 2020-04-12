@@ -22,7 +22,8 @@ namespace Peronalities
         
         public static List<Person> list = new List<Person>();
 
-        public static  Form1 form = null;
+        public static Form1 form = null;
+        
     }
     
      abstract class Person

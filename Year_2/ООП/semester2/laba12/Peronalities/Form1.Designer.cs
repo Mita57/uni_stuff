@@ -151,7 +151,7 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(179, 301);
+            this.addButton.Location = new System.Drawing.Point(178, 301);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(114, 23);
             this.addButton.TabIndex = 9;
@@ -161,11 +161,11 @@
             // 
             // listStudents
             // 
-            this.listStudents.Location = new System.Drawing.Point(312, 301);
+            this.listStudents.Location = new System.Drawing.Point(311, 301);
             this.listStudents.Name = "listStudents";
             this.listStudents.Size = new System.Drawing.Size(114, 23);
             this.listStudents.TabIndex = 10;
-            this.listStudents.Text = "Список студентов";
+            this.listStudents.Text = "Студенты";
             this.listStudents.UseVisualStyleBackColor = true;
             this.listStudents.Click += new System.EventHandler(this.listStudents_Click);
             // 
@@ -219,7 +219,7 @@
             // 
             // listAll
             // 
-            this.listAll.Location = new System.Drawing.Point(312, 272);
+            this.listAll.Location = new System.Drawing.Point(311, 272);
             this.listAll.Name = "listAll";
             this.listAll.Size = new System.Drawing.Size(114, 23);
             this.listAll.TabIndex = 17;
@@ -229,17 +229,17 @@
             // 
             // listTutors
             // 
-            this.listTutors.Location = new System.Drawing.Point(312, 328);
+            this.listTutors.Location = new System.Drawing.Point(311, 328);
             this.listTutors.Name = "listTutors";
             this.listTutors.Size = new System.Drawing.Size(114, 23);
             this.listTutors.TabIndex = 18;
-            this.listTutors.Text = "Список преподов";
+            this.listTutors.Text = "Преподы";
             this.listTutors.UseVisualStyleBackColor = true;
             this.listTutors.Click += new System.EventHandler(this.listTutors_Click);
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(179, 272);
+            this.updateButton.Location = new System.Drawing.Point(178, 272);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(114, 23);
             this.updateButton.TabIndex = 19;
@@ -250,8 +250,7 @@
             // removeButton
             // 
             this.removeButton.BackColor = System.Drawing.Color.Tomato;
-            this.removeButton.Enabled = false;
-            this.removeButton.Location = new System.Drawing.Point(179, 330);
+            this.removeButton.Location = new System.Drawing.Point(178, 330);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(114, 23);
             this.removeButton.TabIndex = 20;
@@ -261,7 +260,7 @@
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(179, 243);
+            this.loadButton.Location = new System.Drawing.Point(178, 243);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(114, 23);
             this.loadButton.TabIndex = 21;
@@ -281,7 +280,7 @@
             // 
             // prevButton
             // 
-            this.prevButton.Location = new System.Drawing.Point(347, 243);
+            this.prevButton.Location = new System.Drawing.Point(346, 243);
             this.prevButton.Name = "prevButton";
             this.prevButton.Size = new System.Drawing.Size(21, 21);
             this.prevButton.TabIndex = 23;
@@ -291,7 +290,7 @@
             // 
             // lastButton
             // 
-            this.lastButton.Location = new System.Drawing.Point(399, 242);
+            this.lastButton.Location = new System.Drawing.Point(399, 243);
             this.lastButton.Name = "lastButton";
             this.lastButton.Size = new System.Drawing.Size(31, 21);
             this.lastButton.TabIndex = 25;
@@ -332,7 +331,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(179, 214);
+            this.saveButton.Location = new System.Drawing.Point(178, 213);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(114, 23);
             this.saveButton.TabIndex = 31;
