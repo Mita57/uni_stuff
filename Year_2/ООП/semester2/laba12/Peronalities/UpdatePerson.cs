@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Peronalities
@@ -96,7 +97,7 @@ namespace Peronalities
                 if (DialogResult == DialogResult.OK)
                 {
                     string filePath = saveFileDialog1.FileName;
-
+                    Program.form.path = filePath;
                     string serialze = "";
                     foreach (Person per in Program.list)
                     {

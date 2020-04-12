@@ -71,6 +71,7 @@ namespace Peronalities
             this.yearNum.Name = "yearNum";
             this.yearNum.Size = new System.Drawing.Size(63, 23);
             this.yearNum.TabIndex = 36;
+            this.yearNum.Layout += new System.Windows.Forms.LayoutEventHandler(this.validateInputs);
             // 
             // yearLabel
             // 
@@ -86,6 +87,7 @@ namespace Peronalities
             this.parTB.Name = "parTB";
             this.parTB.Size = new System.Drawing.Size(329, 23);
             this.parTB.TabIndex = 34;
+            this.parTB.TextChanged += new System.EventHandler(this.validateInputs);
             // 
             // nameTB
             // 
@@ -93,6 +95,7 @@ namespace Peronalities
             this.nameTB.Name = "nameTB";
             this.nameTB.Size = new System.Drawing.Size(329, 23);
             this.nameTB.TabIndex = 33;
+            this.nameTB.TextChanged += new System.EventHandler(this.validateInputs);
             // 
             // label2
             // 
@@ -149,6 +152,7 @@ namespace Peronalities
             this.groupTB.Name = "groupTB";
             this.groupTB.Size = new System.Drawing.Size(329, 23);
             this.groupTB.TabIndex = 27;
+            this.groupTB.TextChanged += new System.EventHandler(this.validateInputs);
             // 
             // surnameTB
             // 
@@ -156,6 +160,7 @@ namespace Peronalities
             this.surnameTB.Name = "surnameTB";
             this.surnameTB.Size = new System.Drawing.Size(329, 23);
             this.surnameTB.TabIndex = 25;
+            this.surnameTB.TextChanged += new System.EventHandler(this.validateInputs);
             // 
             // groupLabel
             // 
@@ -171,6 +176,7 @@ namespace Peronalities
             this.progCafTB.Name = "progCafTB";
             this.progCafTB.Size = new System.Drawing.Size(329, 23);
             this.progCafTB.TabIndex = 26;
+            this.progCafTB.TextChanged += new System.EventHandler(this.validateInputs);
             // 
             // progCafLabel
             // 
@@ -205,6 +211,7 @@ namespace Peronalities
             this.debtsProgsTB.Name = "debtsProgsTB";
             this.debtsProgsTB.Size = new System.Drawing.Size(329, 23);
             this.debtsProgsTB.TabIndex = 45;
+            this.debtsProgsTB.TextChanged += new System.EventHandler(this.validateInputs);
             // 
             // debtsProgsLabel
             // 

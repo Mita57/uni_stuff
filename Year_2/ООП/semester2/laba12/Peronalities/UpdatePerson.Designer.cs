@@ -50,6 +50,7 @@ namespace Peronalities
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.studentRB = new System.Windows.Forms.RadioButton();
             this.tutorRB = new System.Windows.Forms.RadioButton();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize) (this.yearNum)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -222,6 +223,10 @@ namespace Peronalities
             this.tutorRB.UseVisualStyleBackColor = true;
             this.tutorRB.CheckedChanged += new System.EventHandler(this.tutorRB_CheckedChanged);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Text File | *.txt";
+            // 
             // UpdatePerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -274,5 +279,6 @@ namespace Peronalities
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox debtsProgsTB;
         private System.Windows.Forms.Label debtsProgsLabel;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

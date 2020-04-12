@@ -82,11 +82,7 @@ namespace Peronalities
                 this.addForm.Focus();
             }
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
         private void listAll_Click(object sender, EventArgs e)
         {
