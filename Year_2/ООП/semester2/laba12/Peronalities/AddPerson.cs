@@ -182,5 +182,10 @@ namespace Peronalities
                 groupTB.Text = "cock";
             }
         }
+
+        private void surnameTB_TextChanged(object sender, EventArgs e)
+        {
+            validateInputs();
+        }
     }
 }
