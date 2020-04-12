@@ -58,6 +58,9 @@
             this.debtsProgsTB = new System.Windows.Forms.TextBox();
             this.debtsProgsLabel = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.addYear = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.yearNum)).BeginInit();
             this.SuspendLayout();
@@ -148,7 +151,7 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(178, 253);
+            this.addButton.Location = new System.Drawing.Point(179, 301);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(114, 23);
             this.addButton.TabIndex = 9;
@@ -158,7 +161,7 @@
             // 
             // listStudents
             // 
-            this.listStudents.Location = new System.Drawing.Point(311, 253);
+            this.listStudents.Location = new System.Drawing.Point(312, 301);
             this.listStudents.Name = "listStudents";
             this.listStudents.Size = new System.Drawing.Size(114, 23);
             this.listStudents.TabIndex = 10;
@@ -216,7 +219,7 @@
             // 
             // listAll
             // 
-            this.listAll.Location = new System.Drawing.Point(311, 224);
+            this.listAll.Location = new System.Drawing.Point(312, 272);
             this.listAll.Name = "listAll";
             this.listAll.Size = new System.Drawing.Size(114, 23);
             this.listAll.TabIndex = 17;
@@ -226,7 +229,7 @@
             // 
             // listTutors
             // 
-            this.listTutors.Location = new System.Drawing.Point(311, 280);
+            this.listTutors.Location = new System.Drawing.Point(312, 328);
             this.listTutors.Name = "listTutors";
             this.listTutors.Size = new System.Drawing.Size(114, 23);
             this.listTutors.TabIndex = 18;
@@ -236,7 +239,7 @@
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(178, 224);
+            this.updateButton.Location = new System.Drawing.Point(179, 272);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(114, 23);
             this.updateButton.TabIndex = 19;
@@ -248,7 +251,7 @@
             // 
             this.removeButton.BackColor = System.Drawing.Color.Tomato;
             this.removeButton.Enabled = false;
-            this.removeButton.Location = new System.Drawing.Point(178, 282);
+            this.removeButton.Location = new System.Drawing.Point(179, 330);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(114, 23);
             this.removeButton.TabIndex = 20;
@@ -258,7 +261,7 @@
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(178, 195);
+            this.loadButton.Location = new System.Drawing.Point(179, 243);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(114, 23);
             this.loadButton.TabIndex = 21;
@@ -268,7 +271,7 @@
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(310, 195);
+            this.startButton.Location = new System.Drawing.Point(311, 243);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(31, 21);
             this.startButton.TabIndex = 22;
@@ -278,7 +281,7 @@
             // 
             // prevButton
             // 
-            this.prevButton.Location = new System.Drawing.Point(346, 195);
+            this.prevButton.Location = new System.Drawing.Point(347, 243);
             this.prevButton.Name = "prevButton";
             this.prevButton.Size = new System.Drawing.Size(21, 21);
             this.prevButton.TabIndex = 23;
@@ -288,7 +291,7 @@
             // 
             // lastButton
             // 
-            this.lastButton.Location = new System.Drawing.Point(398, 195);
+            this.lastButton.Location = new System.Drawing.Point(399, 242);
             this.lastButton.Name = "lastButton";
             this.lastButton.Size = new System.Drawing.Size(31, 21);
             this.lastButton.TabIndex = 25;
@@ -298,7 +301,7 @@
             // 
             // nextButton
             // 
-            this.nextButton.Location = new System.Drawing.Point(371, 195);
+            this.nextButton.Location = new System.Drawing.Point(372, 243);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(21, 21);
             this.nextButton.TabIndex = 26;
@@ -327,11 +330,36 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "Text File | *.txt";
             // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(179, 214);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(114, 23);
+            this.saveButton.TabIndex = 31;
+            this.saveButton.Text = "Сохранить";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // addYear
+            // 
+            this.addYear.Location = new System.Drawing.Point(311, 213);
+            this.addYear.Name = "addYear";
+            this.addYear.Size = new System.Drawing.Size(114, 23);
+            this.addYear.TabIndex = 30;
+            this.addYear.Text = "Плюс ГодЪ";
+            this.addYear.UseVisualStyleBackColor = true;
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Text File | *.txt";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 315);
+            this.ClientSize = new System.Drawing.Size(441, 361);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.addYear);
             this.Controls.Add(this.debtsProgsTB);
             this.Controls.Add(this.debtsProgsLabel);
             this.Controls.Add(this.nextButton);
@@ -397,5 +425,8 @@
         private System.Windows.Forms.Label debtsProgsLabel;
         private System.Windows.Forms.TextBox debtsProgsTB;
         private System.Windows.Forms.NumericUpDown yearNum;
+        private System.Windows.Forms.Button addYear;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
