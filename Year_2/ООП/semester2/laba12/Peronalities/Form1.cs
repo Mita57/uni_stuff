@@ -20,6 +20,8 @@ namespace Peronalities
 
         public string path = "";
 
+        public int index = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -155,6 +157,94 @@ namespace Peronalities
                     }
                 }
             }
+        }
+
+        private void render()
+        {
+            if (index == 0)
+            {
+                prevButton.Enabled = false;
+                startButton.Enabled = false;
+                nextButton.Enabled = true;
+                lastButton.Enabled = true;
+            }
+            else
+            {
+                if (index == Program.list.Count - 1)
+                {
+                    prevButton.Enabled = true;
+                    startButton.Enabled = true;
+                    nextButton.Enabled = false;
+                    lastButton.Enabled = false;
+                }
+
+                else
+                {
+                    prevButton.Enabled = true;
+                    startButton.Enabled = true;
+                    nextButton.Enabled = true;
+                    lastButton.Enabled = true;
+                }
+            }
+
+            Person pers = Program.list[index];
+
+            if (pers is Stud)
+            {
+                studentRB.Checked = true;
+                Stud persStud = (Stud) pers;
+                surnameTB.Text = persStud.Surname;
+                nameTB.Text = persStud.Name;
+                patTB.Text = persStud.Patronymic;
+                progCafTB.Text = persStud.Spec;
+                groupTB.Text = persStud.Group;
+                debtsProgsTB.Text = "";
+                foreach (string debt in persStud.Uncomms)
+                {
+                    debtsProgsTB.Text += debt + ", ";
+                }
+                yearNum.Value = pers.Year;
+            }
+
+            else
+            {
+                Prof persProf = (Prof) pers;
+                tutorRB.Checked = true;
+                surnameTB.Text = persProf.Surname;
+                nameTB.Text = persProf.Name;
+                patTB.Text = persProf.Patronymic;
+                progCafTB.Text = persProf.Dep;
+                debtsProgsTB.Text = "";
+                foreach (string prog in persProf.Disciplines)
+                {
+                    debtsProgsTB.Text += prog + ", ";
+                }
+                yearNum.Value = persProf.Year;
+            }
+        }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            this.index = 0;
+            render();
+        }
+
+        private void prevButton_Click(object sender, EventArgs e)
+        {
+            index--;
+            render();
+        }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            index++;
+            render();
+        }
+
+        private void lastButton_Click(object sender, EventArgs e)
+        {
+            index = Program.list.Count - 1;
+            render();
         }
     }
 }

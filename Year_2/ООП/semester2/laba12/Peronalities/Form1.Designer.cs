@@ -273,6 +273,7 @@
             this.startButton.TabIndex = 22;
             this.startButton.Text = "<<";
             this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // prevButton
             // 
@@ -282,6 +283,7 @@
             this.prevButton.TabIndex = 23;
             this.prevButton.Text = "<";
             this.prevButton.UseVisualStyleBackColor = true;
+            this.prevButton.Click += new System.EventHandler(this.prevButton_Click);
             // 
             // lastButton
             // 
@@ -291,6 +293,7 @@
             this.lastButton.TabIndex = 25;
             this.lastButton.Text = ">>";
             this.lastButton.UseVisualStyleBackColor = true;
+            this.lastButton.Click += new System.EventHandler(this.lastButton_Click);
             // 
             // nextButton
             // 
@@ -300,6 +303,7 @@
             this.nextButton.TabIndex = 26;
             this.nextButton.Text = ">";
             this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
             // debtsProgsTB
             // 

@@ -60,7 +60,7 @@ namespace Peronalities
                             string debts = "";
                             foreach (string debt in perSt.Uncomms)
                             {
-                                debts += debs + "&";
+                                debts += debts + "&";
                             }
                             
                             serialze += String.Format("stud%{0}%{1}%{2}%{3}%{4}%{5}%{6}~", perSt.Name, perSt.Surname, perSt.Year, perSt.Patronymic, perSt.Spec, perSt.Group, debts);
@@ -90,7 +90,7 @@ namespace Peronalities
                         string debts = "";
                         foreach (string debt in perSt.Uncomms)
                         {
-                            debts += debs + "&";
+                            debts += debts + "&";
                         }
                             
                         serialze += String.Format("stud%{0}%{1}%{2}%{3}%{4}%{5}%{6}~", perSt.Name, perSt.Surname, perSt.Year, perSt.Patronymic, perSt.Spec, perSt.Group, debts);
