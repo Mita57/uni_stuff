@@ -124,7 +124,7 @@ namespace Peronalities
             // 
             // nameTB
             // 
-            this.nameTB.Location = new System.Drawing.Point(104, 11);
+            this.nameTB.Location = new System.Drawing.Point(104, 12);
             this.nameTB.Name = "nameTB";
             this.nameTB.ReadOnly = true;
             this.nameTB.Size = new System.Drawing.Size(329, 23);

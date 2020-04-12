@@ -31,10 +31,10 @@ namespace Peronalities
         /// </summary>
         private void InitializeComponent()
         {
-            this.button6 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.yearNum = new System.Windows.Forms.NumericUpDown();
             this.yearLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.parTB = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,54 +42,55 @@ namespace Peronalities
             this.studentRB = new System.Windows.Forms.RadioButton();
             this.tutorRB = new System.Windows.Forms.RadioButton();
             this.groupTB = new System.Windows.Forms.TextBox();
-            this.nameTB = new System.Windows.Forms.TextBox();
+            this.surnameTB = new System.Windows.Forms.TextBox();
             this.groupLabel = new System.Windows.Forms.Label();
             this.progCafTB = new System.Windows.Forms.TextBox();
             this.progCafLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).BeginInit();
+            this.addButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.debtsProgsTB = new System.Windows.Forms.TextBox();
+            this.debtsProgsLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize) (this.yearNum)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button6
+            // cancelButton
             // 
-            this.button6.Location = new System.Drawing.Point(318, 237);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(114, 23);
-            this.button6.TabIndex = 41;
-            this.button6.Text = "Отменить";
-            this.button6.UseVisualStyleBackColor = true;
+            this.cancelButton.Location = new System.Drawing.Point(319, 283);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(114, 23);
+            this.cancelButton.TabIndex = 41;
+            this.cancelButton.Text = "Отменить";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // numericUpDown1
+            // yearNum
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(104, 162);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.ReadOnly = true;
-            this.numericUpDown1.Size = new System.Drawing.Size(63, 23);
-            this.numericUpDown1.TabIndex = 36;
+            this.yearNum.Location = new System.Drawing.Point(104, 191);
+            this.yearNum.Name = "yearNum";
+            this.yearNum.Size = new System.Drawing.Size(63, 23);
+            this.yearNum.TabIndex = 36;
             // 
             // yearLabel
             // 
-            this.yearLabel.Location = new System.Drawing.Point(12, 164);
+            this.yearLabel.Location = new System.Drawing.Point(12, 193);
             this.yearLabel.Name = "yearLabel";
             this.yearLabel.Size = new System.Drawing.Size(90, 18);
             this.yearLabel.TabIndex = 35;
             this.yearLabel.Text = "Год обучения:";
             // 
-            // textBox1
+            // parTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(329, 23);
-            this.textBox1.TabIndex = 34;
+            this.parTB.Location = new System.Drawing.Point(104, 74);
+            this.parTB.Name = "parTB";
+            this.parTB.Size = new System.Drawing.Size(329, 23);
+            this.parTB.TabIndex = 34;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(104, 45);
             this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(329, 23);
             this.textBox2.TabIndex = 33;
             // 
@@ -113,7 +114,7 @@ namespace Peronalities
             // 
             this.groupBox1.Controls.Add(this.studentRB);
             this.groupBox1.Controls.Add(this.tutorRB);
-            this.groupBox1.Location = new System.Drawing.Point(16, 209);
+            this.groupBox1.Location = new System.Drawing.Point(17, 225);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(140, 87);
             this.groupBox1.TabIndex = 28;
@@ -130,6 +131,7 @@ namespace Peronalities
             this.studentRB.TabStop = true;
             this.studentRB.Text = "Студент";
             this.studentRB.UseVisualStyleBackColor = true;
+            this.studentRB.CheckedChanged += new System.EventHandler(this.studentRB_CheckedChanged);
             // 
             // tutorRB
             // 
@@ -139,22 +141,21 @@ namespace Peronalities
             this.tutorRB.TabIndex = 7;
             this.tutorRB.Text = "Преподаватель";
             this.tutorRB.UseVisualStyleBackColor = true;
+            this.tutorRB.CheckedChanged += new System.EventHandler(this.tutorRB_CheckedChanged);
             // 
             // groupTB
             // 
             this.groupTB.Location = new System.Drawing.Point(104, 132);
             this.groupTB.Name = "groupTB";
-            this.groupTB.ReadOnly = true;
             this.groupTB.Size = new System.Drawing.Size(329, 23);
             this.groupTB.TabIndex = 27;
             // 
-            // nameTB
+            // surnameTB
             // 
-            this.nameTB.Location = new System.Drawing.Point(104, 16);
-            this.nameTB.Name = "nameTB";
-            this.nameTB.ReadOnly = true;
-            this.nameTB.Size = new System.Drawing.Size(329, 23);
-            this.nameTB.TabIndex = 25;
+            this.surnameTB.Location = new System.Drawing.Point(104, 16);
+            this.surnameTB.Name = "surnameTB";
+            this.surnameTB.Size = new System.Drawing.Size(329, 23);
+            this.surnameTB.TabIndex = 25;
             // 
             // groupLabel
             // 
@@ -168,7 +169,6 @@ namespace Peronalities
             // 
             this.progCafTB.Location = new System.Drawing.Point(104, 103);
             this.progCafTB.Name = "progCafTB";
-            this.progCafTB.ReadOnly = true;
             this.progCafTB.Size = new System.Drawing.Size(329, 23);
             this.progCafTB.TabIndex = 26;
             // 
@@ -188,31 +188,60 @@ namespace Peronalities
             this.label1.TabIndex = 22;
             this.label1.Text = "Фамилия: ";
             // 
-            // button1
+            // addButton
             // 
-            this.button1.Location = new System.Drawing.Point(175, 237);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 23);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Сохранить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addButton.Location = new System.Drawing.Point(319, 225);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(114, 23);
+            this.addButton.TabIndex = 42;
+            this.addButton.Text = "Добавить";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(319, 254);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(114, 23);
+            this.saveButton.TabIndex = 43;
+            this.saveButton.Text = "Сохранить";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // debtsProgsTB
+            // 
+            this.debtsProgsTB.Location = new System.Drawing.Point(104, 161);
+            this.debtsProgsTB.Name = "debtsProgsTB";
+            this.debtsProgsTB.Size = new System.Drawing.Size(329, 23);
+            this.debtsProgsTB.TabIndex = 45;
+            // 
+            // debtsProgsLabel
+            // 
+            this.debtsProgsLabel.Location = new System.Drawing.Point(12, 164);
+            this.debtsProgsLabel.Name = "debtsProgsLabel";
+            this.debtsProgsLabel.Size = new System.Drawing.Size(90, 18);
+            this.debtsProgsLabel.TabIndex = 44;
+            this.debtsProgsLabel.Text = "Группа: ";
             // 
             // AddPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 309);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.numericUpDown1);
+            this.ClientSize = new System.Drawing.Size(451, 330);
+            this.Controls.Add(this.debtsProgsTB);
+            this.Controls.Add(this.debtsProgsLabel);
+            this.Controls.Add(this.saveButton);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.yearNum);
             this.Controls.Add(this.yearLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.parTB);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupTB);
-            this.Controls.Add(this.nameTB);
+            this.Controls.Add(this.surnameTB);
             this.Controls.Add(this.groupLabel);
             this.Controls.Add(this.progCafTB);
             this.Controls.Add(this.progCafLabel);
@@ -220,7 +249,7 @@ namespace Peronalities
             this.Name = "AddPerson";
             this.Text = "AddPerson";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPerson_FormClosing);
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.yearNum)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -232,7 +261,6 @@ namespace Peronalities
         private System.Windows.Forms.Label progCafLabel;
         private System.Windows.Forms.TextBox progCafTB;
         private System.Windows.Forms.Label groupLabel;
-        private System.Windows.Forms.TextBox nameTB;
         private System.Windows.Forms.TextBox groupTB;
         private System.Windows.Forms.RadioButton tutorRB;
         private System.Windows.Forms.RadioButton studentRB;
@@ -240,10 +268,14 @@ namespace Peronalities
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label yearLabel;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.TextBox parTB;
+        private System.Windows.Forms.TextBox surnameTB;
+        private System.Windows.Forms.Label debtsProgsLabel;
+        private System.Windows.Forms.TextBox debtsProgsTB;
+        private System.Windows.Forms.NumericUpDown yearNum;
     }
 }

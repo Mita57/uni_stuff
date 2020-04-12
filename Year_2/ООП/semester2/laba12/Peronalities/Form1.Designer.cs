@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.progCafLabel = new System.Windows.Forms.Label();
             this.groupLabel = new System.Windows.Forms.Label();
-            this.nameTB = new System.Windows.Forms.TextBox();
+            this.surnameTB = new System.Windows.Forms.TextBox();
             this.progCafTB = new System.Windows.Forms.TextBox();
             this.groupTB = new System.Windows.Forms.TextBox();
             this.studentRB = new System.Windows.Forms.RadioButton();
@@ -40,12 +40,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.addButton = new System.Windows.Forms.Button();
             this.listStudents = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.patTB = new System.Windows.Forms.TextBox();
+            this.nameTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.yearLabel = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.yearNum = new System.Windows.Forms.NumericUpDown();
             this.listAll = new System.Windows.Forms.Button();
             this.listTutors = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
@@ -55,12 +55,11 @@
             this.prevButton = new System.Windows.Forms.Button();
             this.lastButton = new System.Windows.Forms.Button();
             this.nextButton = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.debtsProgsTB = new System.Windows.Forms.TextBox();
+            this.debtsProgsLabel = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.yearNum)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -87,13 +86,13 @@
             this.groupLabel.TabIndex = 2;
             this.groupLabel.Text = "Группа: ";
             // 
-            // nameTB
+            // surnameTB
             // 
-            this.nameTB.Location = new System.Drawing.Point(100, 10);
-            this.nameTB.Name = "nameTB";
-            this.nameTB.ReadOnly = true;
-            this.nameTB.Size = new System.Drawing.Size(329, 23);
-            this.nameTB.TabIndex = 3;
+            this.surnameTB.Location = new System.Drawing.Point(100, 10);
+            this.surnameTB.Name = "surnameTB";
+            this.surnameTB.ReadOnly = true;
+            this.surnameTB.Size = new System.Drawing.Size(329, 23);
+            this.surnameTB.TabIndex = 3;
             // 
             // progCafTB
             // 
@@ -140,7 +139,7 @@
             this.groupBox1.Controls.Add(this.studentRB);
             this.groupBox1.Controls.Add(this.tutorRB);
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(8, 265);
+            this.groupBox1.Location = new System.Drawing.Point(8, 216);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(140, 87);
             this.groupBox1.TabIndex = 8;
@@ -149,7 +148,7 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(178, 302);
+            this.addButton.Location = new System.Drawing.Point(178, 253);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(114, 23);
             this.addButton.TabIndex = 9;
@@ -159,7 +158,7 @@
             // 
             // listStudents
             // 
-            this.listStudents.Location = new System.Drawing.Point(311, 302);
+            this.listStudents.Location = new System.Drawing.Point(311, 253);
             this.listStudents.Name = "listStudents";
             this.listStudents.Size = new System.Drawing.Size(114, 23);
             this.listStudents.TabIndex = 10;
@@ -167,21 +166,21 @@
             this.listStudents.UseVisualStyleBackColor = true;
             this.listStudents.Click += new System.EventHandler(this.listStudents_Click);
             // 
-            // textBox1
+            // patTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(329, 23);
-            this.textBox1.TabIndex = 14;
+            this.patTB.Location = new System.Drawing.Point(100, 68);
+            this.patTB.Name = "patTB";
+            this.patTB.ReadOnly = true;
+            this.patTB.Size = new System.Drawing.Size(329, 23);
+            this.patTB.TabIndex = 14;
             // 
-            // textBox2
+            // nameTB
             // 
-            this.textBox2.Location = new System.Drawing.Point(100, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(329, 23);
-            this.textBox2.TabIndex = 13;
+            this.nameTB.Location = new System.Drawing.Point(100, 39);
+            this.nameTB.Name = "nameTB";
+            this.nameTB.ReadOnly = true;
+            this.nameTB.Size = new System.Drawing.Size(329, 23);
+            this.nameTB.TabIndex = 13;
             // 
             // label2
             // 
@@ -201,23 +200,23 @@
             // 
             // yearLabel
             // 
-            this.yearLabel.Location = new System.Drawing.Point(8, 219);
+            this.yearLabel.Location = new System.Drawing.Point(8, 190);
             this.yearLabel.Name = "yearLabel";
             this.yearLabel.Size = new System.Drawing.Size(90, 18);
             this.yearLabel.TabIndex = 15;
             this.yearLabel.Text = "Год обучения:";
             // 
-            // numericUpDown1
+            // yearNum
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(100, 216);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.ReadOnly = true;
-            this.numericUpDown1.Size = new System.Drawing.Size(63, 23);
-            this.numericUpDown1.TabIndex = 16;
+            this.yearNum.Location = new System.Drawing.Point(100, 187);
+            this.yearNum.Name = "yearNum";
+            this.yearNum.ReadOnly = true;
+            this.yearNum.Size = new System.Drawing.Size(63, 23);
+            this.yearNum.TabIndex = 16;
             // 
             // listAll
             // 
-            this.listAll.Location = new System.Drawing.Point(311, 273);
+            this.listAll.Location = new System.Drawing.Point(311, 224);
             this.listAll.Name = "listAll";
             this.listAll.Size = new System.Drawing.Size(114, 23);
             this.listAll.TabIndex = 17;
@@ -227,7 +226,7 @@
             // 
             // listTutors
             // 
-            this.listTutors.Location = new System.Drawing.Point(311, 329);
+            this.listTutors.Location = new System.Drawing.Point(311, 280);
             this.listTutors.Name = "listTutors";
             this.listTutors.Size = new System.Drawing.Size(114, 23);
             this.listTutors.TabIndex = 18;
@@ -237,7 +236,7 @@
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(178, 273);
+            this.updateButton.Location = new System.Drawing.Point(178, 224);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(114, 23);
             this.updateButton.TabIndex = 19;
@@ -249,7 +248,7 @@
             // 
             this.removeButton.BackColor = System.Drawing.Color.Tomato;
             this.removeButton.Enabled = false;
-            this.removeButton.Location = new System.Drawing.Point(178, 331);
+            this.removeButton.Location = new System.Drawing.Point(178, 282);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(114, 23);
             this.removeButton.TabIndex = 20;
@@ -258,16 +257,17 @@
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(178, 244);
+            this.loadButton.Location = new System.Drawing.Point(178, 195);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(114, 23);
             this.loadButton.TabIndex = 21;
             this.loadButton.Text = "Загрузить";
             this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(310, 244);
+            this.startButton.Location = new System.Drawing.Point(310, 195);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(31, 21);
             this.startButton.TabIndex = 22;
@@ -276,7 +276,7 @@
             // 
             // prevButton
             // 
-            this.prevButton.Location = new System.Drawing.Point(347, 244);
+            this.prevButton.Location = new System.Drawing.Point(346, 195);
             this.prevButton.Name = "prevButton";
             this.prevButton.Size = new System.Drawing.Size(21, 21);
             this.prevButton.TabIndex = 23;
@@ -285,7 +285,7 @@
             // 
             // lastButton
             // 
-            this.lastButton.Location = new System.Drawing.Point(398, 244);
+            this.lastButton.Location = new System.Drawing.Point(398, 195);
             this.lastButton.Name = "lastButton";
             this.lastButton.Size = new System.Drawing.Size(31, 21);
             this.lastButton.TabIndex = 25;
@@ -294,54 +294,41 @@
             // 
             // nextButton
             // 
-            this.nextButton.Location = new System.Drawing.Point(371, 244);
+            this.nextButton.Location = new System.Drawing.Point(371, 195);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(21, 21);
             this.nextButton.TabIndex = 26;
             this.nextButton.Text = ">";
             this.nextButton.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // debtsProgsTB
             // 
-            this.textBox3.Location = new System.Drawing.Point(100, 184);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(329, 23);
-            this.textBox3.TabIndex = 30;
+            this.debtsProgsTB.Location = new System.Drawing.Point(100, 155);
+            this.debtsProgsTB.Name = "debtsProgsTB";
+            this.debtsProgsTB.ReadOnly = true;
+            this.debtsProgsTB.Size = new System.Drawing.Size(329, 23);
+            this.debtsProgsTB.TabIndex = 29;
             // 
-            // textBox4
+            // debtsProgsLabel
             // 
-            this.textBox4.Location = new System.Drawing.Point(100, 155);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(329, 23);
-            this.textBox4.TabIndex = 29;
+            this.debtsProgsLabel.Location = new System.Drawing.Point(8, 160);
+            this.debtsProgsLabel.Name = "debtsProgsLabel";
+            this.debtsProgsLabel.Size = new System.Drawing.Size(90, 18);
+            this.debtsProgsLabel.TabIndex = 27;
+            this.debtsProgsLabel.Text = "Долги";
             // 
-            // label4
+            // openFileDialog1
             // 
-            this.label4.Location = new System.Drawing.Point(8, 187);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 18);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Группа: ";
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(8, 160);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 18);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Направление: ";
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Text File | *.txt";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 368);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(441, 315);
+            this.Controls.Add(this.debtsProgsTB);
+            this.Controls.Add(this.debtsProgsLabel);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.lastButton);
             this.Controls.Add(this.prevButton);
@@ -351,10 +338,10 @@
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.listTutors);
             this.Controls.Add(this.listAll);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.yearNum);
             this.Controls.Add(this.yearLabel);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.patTB);
+            this.Controls.Add(this.nameTB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listStudents);
@@ -362,7 +349,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupTB);
             this.Controls.Add(this.progCafTB);
-            this.Controls.Add(this.nameTB);
+            this.Controls.Add(this.surnameTB);
             this.Controls.Add(this.groupLabel);
             this.Controls.Add(this.progCafLabel);
             this.Controls.Add(this.label1);
@@ -370,7 +357,7 @@
             this.Text = "Peronalities";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.yearNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -389,10 +376,7 @@
         private System.Windows.Forms.Label progCafLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label yearLabel;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.Button nextButton;
@@ -403,9 +387,11 @@
         private System.Windows.Forms.Button listAll;
         private System.Windows.Forms.Button listTutors;
         private System.Windows.Forms.Button listStudents;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox patTB;
+        private System.Windows.Forms.TextBox surnameTB;
+        private System.Windows.Forms.Label debtsProgsLabel;
+        private System.Windows.Forms.TextBox debtsProgsTB;
+        private System.Windows.Forms.NumericUpDown yearNum;
     }
 }
