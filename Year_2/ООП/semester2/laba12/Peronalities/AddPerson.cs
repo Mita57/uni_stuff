@@ -30,6 +30,7 @@ namespace Peronalities
                 List<string> sas = new List<string>(debtsProgsLabel.Text.Split(','));
                 Program.list.Add(new Prof(nameTB.Text, progCafTB.Text, surnameTB.Text, parTB.Text, Convert.ToInt32(yearNum.Value), sas));
             }
+            save();
         }
 
         private void save()

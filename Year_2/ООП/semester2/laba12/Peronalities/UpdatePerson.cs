@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Peronalities
@@ -60,7 +61,104 @@ namespace Peronalities
 
         private void button3_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            if (studentRB.Checked)
+            {
+
+                Program.list[Program.form.index].Name = nameTB.Text;
+                Program.list[Program.form.index].Patronymic = papaTB.Text;
+                Program.list[Program.form.index].Surname = surnameTB.Text;
+                Program.list[Program.form.index].Year = (int) yearNum.Value;
+                ((Stud) Program.list[Program.form.index]).Spec = progCafTB.Text;
+                ((Stud) Program.list[Program.form.index]).Group = groupTB.Text;
+
+                string[] debts = debtsProgsTB.Text.Split(',');
+                ((Stud) Program.list[Program.form.index]).Uncomms = new List<string>(debts);
+            }
+            else
+            {
+                Program.list[Program.form.index].Name = nameTB.Text;
+                Program.list[Program.form.index].Patronymic = papaTB.Text;
+                Program.list[Program.form.index].Surname = surnameTB.Text;
+                Program.list[Program.form.index].Year = (int) yearNum.Value;
+                ((Prof) Program.list[Program.form.index]).Dep = progCafTB.Text;
+                
+                string[] debts = debtsProgsTB.Text.Split(',');
+                ((Prof) Program.list[Program.form.index]).Disciplines = new List<string>(debts);
+            }
+            save();
+        }
+        
+          private void save()
+        {
+            if (string.IsNullOrEmpty(Program.form.path))
+            {
+                DialogResult = saveFileDialog1.ShowDialog();
+                if (DialogResult == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog1.FileName;
+
+                    string serialze = "";
+                    foreach (Person per in Program.list)
+                    {
+                        if (per is Prof)
+                        {
+                            Prof perPr = (Prof) per;
+                            string progs = "";
+                            foreach (string dis in perPr.Disciplines)
+                            {
+                                progs += dis + "&";
+                            }
+                            serialze += String.Format("prof%{0}%{1}%{2}%{3}%{4}%{5}~", perPr.Name, perPr.Dep, perPr.Surname, perPr.Patronymic, perPr.Year, progs);
+                        }
+                        else
+                        {
+                            Stud perSt = (Stud) per;
+                            string debts = "";
+                            foreach (string debt in perSt.Uncomms)
+                            {
+                                debts += debts + "&";
+                            }
+                            
+                            serialze += String.Format("stud%{0}%{1}%{2}%{3}%{4}%{5}%{6}~", perSt.Name, perSt.Surname, perSt.Year, perSt.Patronymic, perSt.Spec, perSt.Group, debts);
+                        }
+                    }
+                    File.WriteAllText(filePath, serialze);
+                }
+            }
+            else
+            {
+                string serialze = "";
+                foreach (Person per in Program.list)
+                {
+                    if (per is Prof)
+                    {
+                        Prof perPr = (Prof) per;
+                        string progs = "";
+                        foreach (string dis in perPr.Disciplines)
+                        {
+                            progs += dis + "&";
+                        }
+                        serialze += String.Format("prof%{0}%{1}%{2}%{3}%{4}%{5}~", perPr.Name, perPr.Dep, perPr.Surname, perPr.Patronymic, perPr.Year, progs);
+                    }
+                    else
+                    {
+                        Stud perSt = (Stud) per;
+                        string debts = "";
+                        foreach (string debt in perSt.Uncomms)
+                        {
+                            debts += debts + "&";
+                        }
+                            
+                        serialze += String.Format("stud%{0}%{1}%{2}%{3}%{4}%{5}%{6}~", perSt.Name, perSt.Surname, perSt.Year, perSt.Patronymic, perSt.Spec, perSt.Group, debts);
+                    }
+                }
+                File.WriteAllText(Program.form.path, serialze);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }
