@@ -246,5 +246,10 @@ namespace Peronalities
             index = Program.list.Count - 1;
             render();
         }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            Program.list.RemoveAt(index);
+        }
     }
 }

@@ -254,6 +254,7 @@
             this.removeButton.TabIndex = 20;
             this.removeButton.Text = "Удалить";
             this.removeButton.UseVisualStyleBackColor = false;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // loadButton
             // 
