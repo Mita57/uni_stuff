@@ -69,7 +69,14 @@ namespace Peronalities
                 this.updateForm.Focus();
             }
 
-            this.updateForm.fillFields();
+            if (studentRB.Checked)
+            {
+                this.updateForm.fillFieldsStud(surnameTB.Text, nameTB.Text, patTB.Text, progCafTB.Text, groupTB.Text, debtsProgsTB.Text);
+            }
+            else
+            {
+                this.updateForm.fillFieldsProf(surnameTB.Text, nameTB.Text, patTB.Text, progCafTB.Text, debtsProgsTB.Text);
+            }
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -167,7 +174,7 @@ namespace Peronalities
             }
         }
 
-        private void render()
+        public void render()
         {
             if (index == 0)
             {
@@ -366,5 +373,7 @@ namespace Peronalities
             {
             }
         }
+
+
     }
 }

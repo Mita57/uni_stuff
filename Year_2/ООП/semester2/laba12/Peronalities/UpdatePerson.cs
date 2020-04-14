@@ -18,22 +18,25 @@ namespace Peronalities
             this.Hide();
         }
 
-        public void fillFields()
+        public void fillFieldsStud(string surname, string name, string papa, string prog, string group, string debts)
         {
-            RadioButton sas =  (RadioButton)Program.form.Controls["studentRB"];
-            if (sas.Checked)
-            {
-                studentRB.Checked = true;
-            }
-            else
-            {
-                tutorRB.Checked = true;
-            }
-            surnameTB.Text = Program.form.Controls["surnameTB"].Text;
-            nameTB.Text = Program.form.Controls["nameTB"].Text;
-            papaTB.Text = Program.form.Controls["patTB"].Text;
-            progCafTB.Text = Program.form.Controls["progCafTB"].Text;
-            groupTB.Text = Program.form.Controls["groupTB"].Text;
+            studentRB.Checked = true;
+            surnameTB.Text = surname;
+            nameTB.Text = name;
+            papaTB.Text = papa;
+            progCafTB.Text = prog;
+            groupTB.Text = group;
+            debtsProgsTB.Text = debts;
+        }
+
+        public void fillFieldsProf(string surname, string name, string papa, string caf, string progs)
+        {
+            tutorRB.Checked = true;
+            surnameTB.Text = surname;
+            nameTB.Text = name;
+            papaTB.Text = papa;
+            progCafTB.Text = caf;
+            debtsProgsTB.Text = progs;
         }
 
         private void studentRB_CheckedChanged(object sender, EventArgs e)
@@ -86,6 +89,8 @@ namespace Peronalities
                 string[] debts = debtsProgsTB.Text.Split(',');
                 ((Prof) Program.list[Program.form.index]).Disciplines = new List<string>(debts);
             }
+
+            Program.form.render();
         }
         
 
