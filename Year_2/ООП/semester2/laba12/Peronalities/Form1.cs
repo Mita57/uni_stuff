@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -67,8 +68,8 @@ namespace Peronalities
                 this.updateForm.Show();
                 this.updateForm.Focus();
             }
+
             this.updateForm.fillFields();
-            
         }
 
         private void addButton_Click(object sender, EventArgs e)
@@ -161,7 +162,9 @@ namespace Peronalities
                 this.index = 0;
                 render();
             }
-            catch{}
+            catch
+            {
+            }
         }
 
         private void render()
@@ -192,40 +195,47 @@ namespace Peronalities
                 }
             }
 
-            Person pers = Program.list[index];
-
-            if (pers is Stud)
+            try
             {
-                studentRB.Checked = true;
-                Stud persStud = (Stud) pers;
-                surnameTB.Text = persStud.Surname;
-                nameTB.Text = persStud.Name;
-                patTB.Text = persStud.Patronymic;
-                progCafTB.Text = persStud.Spec;
-                groupTB.Text = persStud.Group;
-                debtsProgsTB.Text = "";
-                foreach (string debt in persStud.Uncomms)
+                Person pers = Program.list[index];
+
+                if (pers is Stud)
                 {
-                    debtsProgsTB.Text += debt + ", ";
+                    studentRB.Checked = true;
+                    Stud persStud = (Stud) pers;
+                    surnameTB.Text = persStud.Surname;
+                    nameTB.Text = persStud.Name;
+                    patTB.Text = persStud.Patronymic;
+                    progCafTB.Text = persStud.Spec;
+                    groupTB.Text = persStud.Group;
+                    debtsProgsTB.Text = "";
+                    foreach (string debt in persStud.Uncomms)
+                    {
+                        debtsProgsTB.Text += debt + ", ";
+                    }
+
+                    yearNum.Value = pers.Year;
                 }
 
-                yearNum.Value = pers.Year;
+                else
+                {
+                    Prof persProf = (Prof) pers;
+                    tutorRB.Checked = true;
+                    surnameTB.Text = persProf.Surname;
+                    nameTB.Text = persProf.Name;
+                    patTB.Text = persProf.Patronymic;
+                    progCafTB.Text = persProf.Dep;
+                    debtsProgsTB.Text = "";
+                    foreach (string prog in persProf.Disciplines)
+                    {
+                        debtsProgsTB.Text += prog + ", ";
+                    }
+
+                    yearNum.Value = persProf.Year;
+                }
             }
-
-            else
+            catch
             {
-                Prof persProf = (Prof) pers;
-                tutorRB.Checked = true;
-                surnameTB.Text = persProf.Surname;
-                nameTB.Text = persProf.Name;
-                patTB.Text = persProf.Patronymic;
-                progCafTB.Text = persProf.Dep;
-                debtsProgsTB.Text = "";
-                foreach (string prog in persProf.Disciplines)
-                {
-                    debtsProgsTB.Text += prog + ", ";
-                }
-                yearNum.Value = persProf.Year;
             }
         }
 
@@ -258,8 +268,12 @@ namespace Peronalities
             try
             {
                 Program.list.RemoveAt(index);
+                render();
             }
-            catch{}
+            catch
+            {
+                
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -283,6 +297,7 @@ namespace Peronalities
                                 progs += dis + "&";
                             }
 
+                            progs = progs.Substring(0, progs.Length - 1);
                             serialze += String.Format("prof%{0}%{1}%{2}%{3}%{4}%{5}~", perPr.Name, perPr.Dep,
                                 perPr.Surname, perPr.Patronymic, perPr.Year, progs);
                         }
@@ -292,8 +307,10 @@ namespace Peronalities
                             string debts = "";
                             foreach (string debt in perSt.Uncomms)
                             {
-                                debts += debts + "&";
+                                debts += debt + "&";
                             }
+
+                            debts = debts.Substring(0, debts.Length - 1);
 
                             serialze += String.Format("stud%{0}%{1}%{2}%{3}%{4}%{5}%{6}~", perSt.Name, perSt.Surname,
                                 perSt.Year, perSt.Patronymic, perSt.Spec, perSt.Group, debts);
@@ -335,6 +352,18 @@ namespace Peronalities
                 }
 
                 File.WriteAllText(Program.form.path, serialze);
+            }
+        }
+
+        private void addYear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.list[index].NextYear();
+                render();
+            }
+            catch
+            {
             }
         }
     }

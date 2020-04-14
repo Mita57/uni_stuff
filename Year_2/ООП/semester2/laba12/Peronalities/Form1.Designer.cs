@@ -347,6 +347,7 @@
             this.addYear.TabIndex = 30;
             this.addYear.Text = "Плюс ГодЪ";
             this.addYear.UseVisualStyleBackColor = true;
+            this.addYear.Click += new System.EventHandler(this.addYear_Click);
             // 
             // saveFileDialog1
             // 

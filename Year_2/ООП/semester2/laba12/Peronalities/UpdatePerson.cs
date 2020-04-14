@@ -20,7 +20,6 @@ namespace Peronalities
 
         public void fillFields()
         {
-            MessageBox.Show(Program.form.Controls.ToString());
             RadioButton sas =  (RadioButton)Program.form.Controls["studentRB"];
             if (sas.Checked)
             {
