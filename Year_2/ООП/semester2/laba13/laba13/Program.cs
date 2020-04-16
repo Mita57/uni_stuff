@@ -91,6 +91,8 @@ namespace laba13
                 this.X = x;
                 this.Y = y;
             }
+
+            abstract public bool Crossing { get; };
         }
 
       public class Point : Figure
@@ -99,10 +101,12 @@ namespace laba13
           {
               
           }
-          
+
+          public override bool Crossing { get; }
+
           public override bool ZeroIn()
           {
-              if (x == 0 && y == 0)
+              if (X == 0 && Y == 0)
               {
                   return true;
               }
@@ -112,13 +116,83 @@ namespace laba13
 
           public override string Dimensions()
           {
-              throw new NotImplementedException();
+              return "";
           }
 
           public override double S
           {
               get { return 0; }
           }
+      }
+
+      public class Square : Figure
+      {
+          public Square(int x, int y, int side = 1) : base(x, y)
+          {
+              this.Side = side;
+          }
+
+          public int Side
+          {
+              get { return Side; }
+              set
+              {
+                  if (value < 0)
+                  {
+                      return;
+                  }
+                  else
+                  {
+                      Side = value;
+                  }
+              }
+          }
+
+          public override double S
+          {
+              get { return (Side * Side); }
+          }
+
+          public override bool ZeroIn()
+          {
+              if (X <= 0 && Y <= 0 && X + Side > 0 && Y + Side > 0)
+              {
+                  return true;
+              }
+
+              return false;
+          }
+
+          public override string Dimensions()
+          {
+              return "L = " +  this.Side.ToString();
+          }
+      }
+
+      public class Circle : Figure
+      {
+          public Circle(int x, int y) : base(x, y)
+          {
+          }
+
+          public override double S
+          {
+              get { return 3.14 * R * R; };
+          }
+
+          public override bool ZeroIn()
+          {
+              throw new NotImplementedException();
+          }
+
+          public int R { get; set; }
+          
+          public override string Dimensions()
+          {
+              return "R = " + R;
+          }
+
+          public override bool Crossing { get; }
       }
         
             
