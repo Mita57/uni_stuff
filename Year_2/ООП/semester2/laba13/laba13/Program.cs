@@ -91,8 +91,8 @@ namespace laba13
                 this.X = x;
                 this.Y = y;
             }
-
-            abstract public bool Crossing { get; };
+            //TODO
+            abstract public bool Crossing { get; }
         }
 
       public class Point : Figure
@@ -167,6 +167,9 @@ namespace laba13
           {
               return "L = " +  this.Side.ToString();
           }
+
+          //TODO
+          public override bool Crossing { get; }
       }
 
       public class Circle : Figure
@@ -177,7 +180,7 @@ namespace laba13
 
           public override double S
           {
-              get { return 3.14 * R * R; };
+              get { return 3.14 * R * R; }
           }
 
           public override bool ZeroIn()
@@ -185,8 +188,17 @@ namespace laba13
               throw new NotImplementedException();
           }
 
-          public int R { get; set; }
-          
+          public int R
+          {
+              get { return R; }; set
+              {
+                  if (value >= 0)
+                  {
+                      R = value;
+                  }
+              };
+          }
+
           public override string Dimensions()
           {
               return "R = " + R;
