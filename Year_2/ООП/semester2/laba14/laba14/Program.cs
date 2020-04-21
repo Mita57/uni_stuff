@@ -8,14 +8,18 @@ namespace laba14
         public int ID;
         public int Course;
         public string Name;
+        public string Surname;
+        public string Papa;
         public string Spec;
 
-        public Student(int aID, string aName, string aSpec, int aCourse)
+        public Student(int aID, string aName, string aSpec, int aCourse, string aSurname, string aPapa)
         {
             ID = aID;
             Name = aName;
             Spec = aSpec;
-            aCourse = aCourse;
+            Course = aCourse;
+            Surname = aSurname;
+            Papa = aPapa;
         }
     }
 
