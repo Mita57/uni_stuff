@@ -51,7 +51,7 @@
             // 
             // amountNumeric
             // 
-            this.amountNumeric.Location = new System.Drawing.Point(15, 11);
+            this.amountNumeric.Location = new System.Drawing.Point(15, 12);
             this.amountNumeric.Name = "amountNumeric";
             this.amountNumeric.Size = new System.Drawing.Size(155, 23);
             this.amountNumeric.TabIndex = 0;
@@ -60,7 +60,7 @@
             // 
             this.createButton.Location = new System.Drawing.Point(15, 40);
             this.createButton.Name = "createButton";
-            this.createButton.Size = new System.Drawing.Size(155, 26);
+            this.createButton.Size = new System.Drawing.Size(155, 27);
             this.createButton.TabIndex = 1;
             this.createButton.Text = "Создать";
             this.createButton.UseVisualStyleBackColor = true;
@@ -79,7 +79,7 @@
             // 
             this.label1.Location = new System.Drawing.Point(15, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 23);
+            this.label1.Size = new System.Drawing.Size(150, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "Метод";
             // 
@@ -87,7 +87,7 @@
             // 
             this.label2.Location = new System.Drawing.Point(15, 190);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 23);
+            this.label2.Size = new System.Drawing.Size(150, 23);
             this.label2.TabIndex = 5;
             this.label2.Text = "Параметры";
             // 
@@ -112,7 +112,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(720, 40);
+            this.richTextBox1.Location = new System.Drawing.Point(641, 39);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(272, 106);
@@ -121,7 +121,7 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(720, 173);
+            this.richTextBox2.Location = new System.Drawing.Point(641, 172);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
             this.richTextBox2.Size = new System.Drawing.Size(272, 106);
@@ -130,7 +130,7 @@
             // 
             // richTextBox3
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(720, 304);
+            this.richTextBox3.Location = new System.Drawing.Point(641, 302);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
             this.richTextBox3.Size = new System.Drawing.Size(272, 106);
@@ -139,7 +139,7 @@
             // 
             // figuresLabels
             // 
-            this.figuresLabels.Location = new System.Drawing.Point(720, 15);
+            this.figuresLabels.Location = new System.Drawing.Point(641, 14);
             this.figuresLabels.Name = "figuresLabels";
             this.figuresLabels.Size = new System.Drawing.Size(196, 22);
             this.figuresLabels.TabIndex = 10;
@@ -147,7 +147,7 @@
             // 
             // Equal
             // 
-            this.Equal.Location = new System.Drawing.Point(720, 149);
+            this.Equal.Location = new System.Drawing.Point(641, 148);
             this.Equal.Name = "Equal";
             this.Equal.Size = new System.Drawing.Size(205, 23);
             this.Equal.TabIndex = 11;
@@ -155,7 +155,7 @@
             // 
             // crossLabel
             // 
-            this.crossLabel.Location = new System.Drawing.Point(720, 278);
+            this.crossLabel.Location = new System.Drawing.Point(641, 277);
             this.crossLabel.Name = "crossLabel";
             this.crossLabel.Size = new System.Drawing.Size(205, 23);
             this.crossLabel.TabIndex = 12;
@@ -164,9 +164,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.pictureBox1.Location = new System.Drawing.Point(186, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(185, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(521, 449);
+            this.pictureBox1.Size = new System.Drawing.Size(400, 400);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
@@ -182,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 471);
+            this.ClientSize = new System.Drawing.Size(924, 431);
             this.Controls.Add(this.paramNumber);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.crossLabel);
@@ -198,6 +198,8 @@
             this.Controls.Add(this.methodsCB);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.amountNumeric);
+            this.MaximumSize = new System.Drawing.Size(940, 470);
+            this.MinimumSize = new System.Drawing.Size(940, 470);
             this.Name = "Form1";
             this.Text = "Les figures";
             ((System.ComponentModel.ISupportInitialize) (this.amountNumeric)).EndInit();

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Figures
@@ -44,6 +45,8 @@ namespace Figures
                     list.Add(new Square(x, y, a));
                 }
             }
+            
+            drawStuff();
         }
 
         private void paramsCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -56,6 +59,34 @@ namespace Figures
             {
                 paramNumber.Visible = true;
             }
+        }
+
+        private Bitmap DrawArea;
+        
+        private void drawStuff()
+        {
+            DrawArea = new Bitmap(pictureBox1.Size.Width, pictureBox1.Size.Height);
+            pictureBox1.Image = DrawArea;
+            
+            Graphics g;
+            g = Graphics.FromImage(DrawArea);
+                
+            Pen mypen = new Pen(Color.Black);
+
+            g.DrawLine(mypen, new System.Drawing.Point(DrawArea.Width/2,0), new System.Drawing.Point(DrawArea.Width/2, DrawArea.Height));
+            g.DrawLine(mypen, new System.Drawing.Point(0,DrawArea.Height/2), new System.Drawing.Point(DrawArea.Width, DrawArea.Height / 2));
+
+            int x = -20;
+            int y = -10;
+
+            int A = 40;
+            g.DrawRectangle(mypen, (x - A / 2) + DrawArea.Width/2 , (y - A/2) + DrawArea.Height / 2,A,A);
+
+            pictureBox1.Image = DrawArea;
+            
+            g.DrawEllipse(mypen, new System.Drawing.Rectangle((x - A / 2) + DrawArea.Width/2 , (y - A/2) + DrawArea.Height / 2, A, A));
+
+            g.Dispose();
         }
     }
 }

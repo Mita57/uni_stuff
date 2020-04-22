@@ -161,19 +161,18 @@ namespace Figures
             this.A = side;
         }
 
+        private int _A;
+        
         public int A
         {
-            get { return A; }
+            get { return _A; }
             set
             {
                 if (value < 0)
                 {
                     return;
                 }
-                else
-                {
-                    A = value;
-                }
+                _A = value;
             }
         }
 
@@ -248,15 +247,18 @@ namespace Figures
             return (Math.Sqrt(Math.Pow(X / 2, 2) + Math.Pow(Y / 2, 2))) <= R;
         }
 
+        private int _r;
+        
         public int R
         {
-            get { return R; }
+            get { return _r; }
             set
             {
                 if (value >= 0)
                 {
-                    R = value;
+                    _r = value;
                 }
+                return;
             }
         }
 
@@ -281,5 +283,6 @@ namespace Figures
                 return this.Crossing(this);
             }
         }
+        
     }
 }
