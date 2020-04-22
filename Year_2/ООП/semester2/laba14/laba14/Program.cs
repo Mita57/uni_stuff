@@ -19,7 +19,7 @@ namespace laba14
             Spec = aSpec;
             Course = aCourse;
             Surname = aSurname;
-            Papa = aPapa;
+            Papa = a00Papa;
         }
     }
 
