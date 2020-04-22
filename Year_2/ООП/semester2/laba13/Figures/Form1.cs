@@ -127,17 +127,17 @@ namespace Figures
                 i++;
                 if(fig is Point)
                 {
-                    figs += i + ". Point" + fig.X + "; " + fig.Y + ";" + fig.S + "; " + fig.ZeroIn();
+                    figs += i + ". Point " + fig.X + "; " + fig.Y + ";" + fig.S + "; " + fig.ZeroIn();
                     figs += "\n";
                 }
                 else if (fig is Square)
                 {
-                    figs += i + ". Square" + fig.X + "; " + fig.Y + ";" + fig.S + "; " + fig.ZeroIn() + ((Square)fig).A;
+                    figs += i + ". Square " + fig.X + "; " + fig.Y + ";" + fig.S + "; " + fig.ZeroIn() + ((Square)fig).A;
                     figs += "\n";
                 }
                 else if (fig is Circle)
                 {
-                    figs += i + ". Circle" + fig.X + "; " + fig.Y + ";" + fig.S + "; " + fig.ZeroIn() + ((Circle)fig).R;
+                    figs += i + ". Circle " + fig.X + "; " + fig.Y + ";" + fig.S + "; " + fig.ZeroIn() + ((Circle)fig).R;
                     figs += "\n";
                 }
             }
