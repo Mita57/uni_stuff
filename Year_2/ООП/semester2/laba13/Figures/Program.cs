@@ -19,8 +19,8 @@ namespace Figures
             Application.Run(new Form1());
         }
     }
-    
-        public abstract class Figure
+
+    public abstract class Figure
     {
         public int X
         {
@@ -184,7 +184,7 @@ namespace Figures
 
         public override bool ZeroIn()
         {
-            if (X <= 0 && Y <= 0 && X + A > 0 && Y + A > 0)
+            if (X / 2 <= 0 && Y / 2 <= 0 && (X + A) / 2 > 0 && (Y + A) / 2 > 0)
             {
                 return true;
             }
@@ -202,14 +202,16 @@ namespace Figures
         {
             if (anotherFigure is Point)
             {
-                return (anotherFigure.Y <= Y + A / 2) && (anotherFigure.X <= X + A / 2) 
-                     && (anotherFigure.Y >= Y - A / 2) && (anotherFigure.X >= X - A / 2);
+                return (anotherFigure.Y <= Y + A / 2) && (anotherFigure.X <= X + A / 2)
+                                                      && (anotherFigure.Y >= Y - A / 2) &&
+                                                      (anotherFigure.X >= X - A / 2);
             }
             else if (anotherFigure is Circle)
             {
                 Circle circle = (Circle) anotherFigure;
                 return (circle.Y - circle.R <= Y + A / 2) && (circle.Y + circle.R >= Y - A / 2)
-                    && (circle.X - circle.R <= X + A / 2) && (circle.X + circle.R >= X - A / 2);
+                                                          && (circle.X - circle.R <= X + A / 2) &&
+                                                          (circle.X + circle.R >= X - A / 2);
             }
             else if (anotherFigure is Square)
             {
@@ -224,6 +226,7 @@ namespace Figures
                 double B2 = square.Y - square.A / 2;
                 return !(T1 < T2 || B1 > T2 || B1 < L2 || L1 > B2);
             }
+
             return false;
         }
     }
@@ -242,7 +245,7 @@ namespace Figures
 
         public override bool ZeroIn()
         {
-            return Math.Pow(X, 2) + Math.Pow(Y, 2) <= R;
+            return (Math.Sqrt(Math.Pow(X / 2, 2) + Math.Pow(Y / 2, 2))) <= R;
         }
 
         public int R
@@ -279,5 +282,4 @@ namespace Figures
             }
         }
     }
-
 }
