@@ -22,15 +22,17 @@ namespace Figures
 
     public abstract class Figure
     {
+
+        private int _x;
         public int X
         {
-            get { return X; }
+            get { return _x; }
 
             set
             {
                 if (Math.Abs(value) > 8)
                 {
-                    X = value;
+                    _x = value;
                 }
                 else
                 {
@@ -39,15 +41,16 @@ namespace Figures
             }
         }
 
+        private int _y;
         public int Y
         {
-            get { return Y; }
+            get { return _y; }
 
             set
             {
                 if (Math.Abs(value) > 8)
                 {
-                    Y = value;
+                    _y = value;
                 }
                 else
                 {

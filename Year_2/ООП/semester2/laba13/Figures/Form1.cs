@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Figures
@@ -26,28 +27,30 @@ namespace Figures
                 int figure = rnd.Next(0, 2);
                 if (figure == 0)
                 {
-                    int x = rnd.Next(0, 8);
-                    int y = rnd.Next(0, 8);
+                    int x = rnd.Next(-8, 8);
+                    int y = rnd.Next(-8, 8);
                     int r = rnd.Next(0, 5);
                     list.Add(new Circle(x, y, r));
                 }
 
                 if (figure == 1)
                 {
-                    int x = rnd.Next(0, 8);
-                    int y = rnd.Next(0, 8);
+                    int x = rnd.Next(-8, 8);
+                    int y = rnd.Next(-8, 8);
                     list.Add(new Point(x, y));
                 }
                 else
                 {
-                    int x = rnd.Next(0, 8);
-                    int y = rnd.Next(0, 8);
-                    int a = rnd.Next(0, 5);
+                    int x = rnd.Next(-8, 8);
+                    int y = rnd.Next(-8, 8);
+                    int a = rnd.Next(0, 10);
                     list.Add(new Square(x, y, a));
                 }
             }
-            
+
             drawStuff();
+
+            fillFields();
         }
 
         private void paramsCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,16 +66,20 @@ namespace Figures
         }
 
         private Bitmap DrawArea;
-        
+
         private void drawStuff()
         {
             DrawArea = new Bitmap(pictureBox1.Size.Width, pictureBox1.Size.Height);
-            pictureBox1.Image = DrawArea;
             Random rnd = new Random();
             Graphics g;
             g = Graphics.FromImage(DrawArea);
-                
-            Pen mypen = new Pen(Color.FromArgb(rnd.Next(0,255), rnd.Next(0,255), rnd.Next(0,255)));
+
+            Pen mypen = new Pen(Color.FromArgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255)));
+            mypen.Color = Color.Black;
+            g.DrawLine(mypen, new System.Drawing.Point(DrawArea.Width / 2, 0),
+                new System.Drawing.Point(DrawArea.Width / 2, DrawArea.Height));
+            g.DrawLine(mypen, new System.Drawing.Point(0, DrawArea.Height / 2),
+                new System.Drawing.Point(DrawArea.Width, DrawArea.Height / 2));
 
             foreach (Figure fig in list)
             {
@@ -83,8 +90,8 @@ namespace Figures
                     int x = sqr.X * 10;
                     int y = sqr.Y * 10;
                     int a = sqr.A * 10;
-                    
-                    g.DrawRectangle(mypen, (x - a / 2) + DrawArea.Width/2 , (y - a/2) + DrawArea.Height / 2,a,a);
+
+                    g.DrawRectangle(mypen, (x - a / 2), (y - a / 2), a, a);
                 }
                 else if (fig is Circle)
                 {
@@ -92,18 +99,50 @@ namespace Figures
                     int x = crq.X * 10;
                     int y = crq.Y * 10;
                     int a = crq.R * 10 / 2;
-                    
-                    g.DrawEllipse(mypen, new System.Drawing.Rectangle((x - a / 2) + DrawArea.Width/2 , (y - a/2) + DrawArea.Height / 2, a, a));
+
+                    g.DrawEllipse(mypen,
+                        new System.Drawing.Rectangle((x - a / 2),
+                            (y - a / 2), a, a));
                 }
                 else
                 {
-                    
+                    int x = fig.X * 10;
+                    int y = fig.Y * 10;
+                    g.DrawEllipse(mypen,
+                        new System.Drawing.Rectangle((x / 2), (y / 2), 5,
+                            5));
                 }
-                
-                mypen.Color = new Color();
             }
+
             pictureBox1.Image = DrawArea;
             g.Dispose();
+        }
+
+        private void fillFields()
+        {
+            string figs = "";
+            int i = 0;
+            foreach (Figure fig in list)
+            {
+                i++;
+                if(fig is Point)
+                {
+                    figs += i + ". Point" + fig.X + "; " + fig.Y + ";" + fig.S + "; " + fig.ZeroIn();
+                    figs += "\n";
+                }
+                else if (fig is Square)
+                {
+                    figs += i + ". Square" + fig.X + "; " + fig.Y + ";" + fig.S + "; " + fig.ZeroIn() + ((Square)fig).A;
+                    figs += "\n";
+                }
+                else if (fig is Circle)
+                {
+                    figs += i + ". Circle" + fig.X + "; " + fig.Y + ";" + fig.S + "; " + fig.ZeroIn() + ((Circle)fig).R;
+                    figs += "\n";
+                }
+            }
+
+            figsTB.Text = figs;
         }
     }
 }

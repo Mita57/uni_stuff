@@ -36,9 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.paramsCB = new System.Windows.Forms.ComboBox();
             this.chagneButton = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.figsTB = new System.Windows.Forms.RichTextBox();
+            this.equalTB = new System.Windows.Forms.RichTextBox();
+            this.crossTB = new System.Windows.Forms.RichTextBox();
             this.figuresLabels = new System.Windows.Forms.Label();
             this.Equal = new System.Windows.Forms.Label();
             this.crossLabel = new System.Windows.Forms.Label();
@@ -110,36 +110,36 @@
             this.chagneButton.Text = "Изменить";
             this.chagneButton.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // figsTB
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(641, 39);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(272, 106);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.figsTB.Location = new System.Drawing.Point(640, 39);
+            this.figsTB.Name = "figsTB";
+            this.figsTB.ReadOnly = true;
+            this.figsTB.Size = new System.Drawing.Size(272, 106);
+            this.figsTB.TabIndex = 7;
+            this.figsTB.Text = "";
             // 
-            // richTextBox2
+            // equalTB
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(641, 172);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(272, 106);
-            this.richTextBox2.TabIndex = 8;
-            this.richTextBox2.Text = "";
+            this.equalTB.Location = new System.Drawing.Point(640, 172);
+            this.equalTB.Name = "equalTB";
+            this.equalTB.ReadOnly = true;
+            this.equalTB.Size = new System.Drawing.Size(272, 106);
+            this.equalTB.TabIndex = 8;
+            this.equalTB.Text = "";
             // 
-            // richTextBox3
+            // crossTB
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(641, 302);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(272, 106);
-            this.richTextBox3.TabIndex = 9;
-            this.richTextBox3.Text = "";
+            this.crossTB.Location = new System.Drawing.Point(640, 302);
+            this.crossTB.Name = "crossTB";
+            this.crossTB.ReadOnly = true;
+            this.crossTB.Size = new System.Drawing.Size(272, 106);
+            this.crossTB.TabIndex = 9;
+            this.crossTB.Text = "";
             // 
             // figuresLabels
             // 
-            this.figuresLabels.Location = new System.Drawing.Point(641, 14);
+            this.figuresLabels.Location = new System.Drawing.Point(640, 14);
             this.figuresLabels.Name = "figuresLabels";
             this.figuresLabels.Size = new System.Drawing.Size(196, 22);
             this.figuresLabels.TabIndex = 10;
@@ -147,7 +147,7 @@
             // 
             // Equal
             // 
-            this.Equal.Location = new System.Drawing.Point(641, 148);
+            this.Equal.Location = new System.Drawing.Point(640, 148);
             this.Equal.Name = "Equal";
             this.Equal.Size = new System.Drawing.Size(205, 23);
             this.Equal.TabIndex = 11;
@@ -155,7 +155,7 @@
             // 
             // crossLabel
             // 
-            this.crossLabel.Location = new System.Drawing.Point(641, 277);
+            this.crossLabel.Location = new System.Drawing.Point(640, 277);
             this.crossLabel.Name = "crossLabel";
             this.crossLabel.Size = new System.Drawing.Size(205, 23);
             this.crossLabel.TabIndex = 12;
@@ -182,15 +182,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 431);
+            this.ClientSize = new System.Drawing.Size(924, 432);
             this.Controls.Add(this.paramNumber);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.crossLabel);
             this.Controls.Add(this.Equal);
             this.Controls.Add(this.figuresLabels);
-            this.Controls.Add(this.richTextBox3);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.crossTB);
+            this.Controls.Add(this.equalTB);
+            this.Controls.Add(this.figsTB);
             this.Controls.Add(this.chagneButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.paramsCB);
@@ -198,8 +198,8 @@
             this.Controls.Add(this.methodsCB);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.amountNumeric);
-            this.MaximumSize = new System.Drawing.Size(940, 470);
-            this.MinimumSize = new System.Drawing.Size(940, 470);
+            this.MaximumSize = new System.Drawing.Size(940, 471);
+            this.MinimumSize = new System.Drawing.Size(940, 471);
             this.Name = "Form1";
             this.Text = "Les figures";
             ((System.ComponentModel.ISupportInitialize) (this.amountNumeric)).EndInit();
@@ -217,13 +217,13 @@
         private System.Windows.Forms.Label crossLabel;
         private System.Windows.Forms.Label Equal;
         private System.Windows.Forms.Label figuresLabels;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown amountNumeric;
         private System.Windows.Forms.NumericUpDown paramNumber;
         private System.Windows.Forms.ComboBox paramsCB;
         private System.Windows.Forms.ComboBox methodsCB;
+        private System.Windows.Forms.RichTextBox figsTB;
+        private System.Windows.Forms.RichTextBox equalTB;
+        private System.Windows.Forms.RichTextBox crossTB;
     }
 }
