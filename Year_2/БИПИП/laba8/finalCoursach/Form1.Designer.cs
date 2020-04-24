@@ -379,6 +379,7 @@
             this.новыйToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.новыйToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.новыйToolStripMenuItem.Text = "Новый";
+            this.новыйToolStripMenuItem.Click += new System.EventHandler(this.новыйToolStripMenuItem_Click);
             // 
             // открытьToolStripMenuItem
             // 
@@ -386,6 +387,7 @@
             this.открытьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.открытьToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
+            this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click_1);
             // 
             // сохранитьToolStripMenuItem
             // 
@@ -393,6 +395,7 @@
             this.сохранитьToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem
             // 
@@ -405,6 +408,11 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "XML Files|*.xml";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "XML Files|*.xml";
             // 
             // Form1
             // 

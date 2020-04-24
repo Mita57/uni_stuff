@@ -96,6 +96,7 @@ namespace finalCoursach
                     totalProds++;
                 }
             }
+            renderGoods();
         }
 
         private void renderGoods()
@@ -108,7 +109,7 @@ namespace finalCoursach
                 grid1.RowCount = prods.Length - removedProds;
                 removeKebab.Enabled = false;
                 removeKebab.Visible = true;
-                grid1.ColumnCount = 3;
+                grid1.ColumnCount = 4;
                 int counter = 0;
                 for (int i = 0; i < prods.Length; i++)
                 {
@@ -122,22 +123,15 @@ namespace finalCoursach
                     }
                 }
 
-                grid1.Columns[0].HeaderCell.Value = "Название";
+                grid1.Columns[0].HeaderCell.Value = "ID";
                 grid1.Columns[0].Width = 70;
-                grid1.Columns[1].HeaderCell.Value = "Цена";
+                grid1.Columns[1].HeaderCell.Value = "Название";
                 grid1.Columns[1].Width = 300;
                 grid1.Columns[2].Width = 150;
-                grid1.Columns[2].HeaderCell.Value = "Кол-во";
+                grid1.Columns[2].HeaderCell.Value = "Цена";
                 grid1.Columns[2].Width = 70;
+                grid1.Columns[3].HeaderCell.Value = "Кол-во";
                 appear();
-                label1.Text = "Код водителя";
-                label2.Text = "Имя водителя";
-                label3.Text = "Категория";
-                label4.Text = "Дата рождения";
-                label8.Text = "Код водителя";
-                label7.Text = "Имя водителя";
-                label6.Text = "Категория";
-                label5.Text = "Дата рождения";
                 renderAddDriver();
             }
             else
@@ -147,10 +141,6 @@ namespace finalCoursach
                 removeKebab.Visible = false;
                 tabPage2.Focus();
                 tabPage1.Enabled = false;
-                label8.Text = "Код водителя";
-                label7.Text = "Имя водителя";
-                label6.Text = "Категория";
-                label5.Text = "Дата рождения";
                 label8.Visible = true;
                 label7.Visible = true;
                 label6.Visible = true;
@@ -188,6 +178,7 @@ namespace finalCoursach
             label6.Visible = true;
             addTB2.Text = "";
             addTB4.Text = "";
+            amounTB.Text = "";
             label5.Visible = true;
             addTB2.Visible = true;
             addTB4.Visible = true;
@@ -201,10 +192,10 @@ namespace finalCoursach
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            saveDrivers();
+            save();
         }
 
-        private void saveDrivers()
+        private void save()
         {
             if (path == null)
             {
@@ -375,14 +366,25 @@ namespace finalCoursach
         }
 
 
-        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void новыйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.prods = new Prods[0];
+            this.allprods = new Prods[0];
+        }
+
+        private void открытьToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             loadProds();
         }
 
-        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            save();
         }
     }
 }
