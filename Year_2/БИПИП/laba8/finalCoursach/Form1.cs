@@ -14,7 +14,9 @@ namespace finalCoursach
         private void Form1_Load(object sender, EventArgs e)
         {
             loadDrivers();
+            tables.SelectedIndex = 0;
             tabControl1.Visible = false;
+            appear();
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -31,8 +33,7 @@ namespace finalCoursach
         int removedDrivers = 0;
 
 
-
-        //drivers
+        
         private void loadDrivers()
         {
             //building the DGW
@@ -118,8 +119,6 @@ namespace finalCoursach
                 grid1.Columns[3].HeaderCell.Value = "Дата рождения";
                 grid1.Columns[3].Width = 150;
                 appear();
-                editCB1.Visible = false;
-                editCB2.Visible = false;
                 addCB1.Visible = false;
                 addCB3.Visible = false;
                 saveButton.Enabled = true;
@@ -179,8 +178,6 @@ namespace finalCoursach
             editTB2.Text = "";
             editTB3.Text = "";
             editCodeTB.Visible = true;
-            editCB1.Visible = true;
-            editCB2.Visible = true;
             editDTP1.Visible = true;
             editTB2.Visible = true;
             tabPage1.Enabled = true;
@@ -259,11 +256,6 @@ namespace finalCoursach
             {
                 editTB2.Text = grid1.Rows[row].Cells[1].Value.ToString();
                 editTB3.Text = grid1.Rows[row].Cells[2].Value.ToString();
-            }
-            else
-            {
-                editCB1.SelectedIndex = (Convert.ToInt32(grid1.Rows[row].Cells[1].Value) - 1);
-                editCB2.SelectedIndex = (Convert.ToInt32(grid1.Rows[row].Cells[2].Value) - 1);
             }
 
         }

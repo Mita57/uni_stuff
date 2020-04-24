@@ -37,9 +37,7 @@
             this.editTB2 = new System.Windows.Forms.TextBox();
             this.editDTP1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.editCB2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.editCB1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.editCodeTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,7 +72,7 @@
             this.grid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid1.Location = new System.Drawing.Point(14, 7);
             this.grid1.Name = "grid1";
-            this.grid1.Size = new System.Drawing.Size(906, 529);
+            this.grid1.Size = new System.Drawing.Size(906, 499);
             this.grid1.TabIndex = 0;
             this.grid1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid1_CellClick);
             // 
@@ -92,6 +90,7 @@
             this.tables.Name = "tables";
             this.tables.Size = new System.Drawing.Size(218, 21);
             this.tables.TabIndex = 1;
+            this.tables.Visible = false;
             this.tables.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // grids
@@ -102,6 +101,7 @@
             this.grids.Size = new System.Drawing.Size(52, 13);
             this.grids.TabIndex = 2;
             this.grids.Text = "Таблицы";
+            this.grids.Visible = false;
             // 
             // groupBox2
             // 
@@ -110,9 +110,7 @@
             this.groupBox2.Controls.Add(this.editTB2);
             this.groupBox2.Controls.Add(this.editDTP1);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.editCB2);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.editCB1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.editCodeTB);
             this.groupBox2.Controls.Add(this.label1);
@@ -135,7 +133,7 @@
             // 
             // editTB3
             // 
-            this.editTB3.Location = new System.Drawing.Point(298, 54);
+            this.editTB3.Location = new System.Drawing.Point(307, 56);
             this.editTB3.Name = "editTB3";
             this.editTB3.Size = new System.Drawing.Size(125, 20);
             this.editTB3.TabIndex = 9;
@@ -143,7 +141,7 @@
             // 
             // editTB2
             // 
-            this.editTB2.Location = new System.Drawing.Point(146, 54);
+            this.editTB2.Location = new System.Drawing.Point(139, 54);
             this.editTB2.Name = "editTB2";
             this.editTB2.Size = new System.Drawing.Size(125, 20);
             this.editTB2.TabIndex = 8;
@@ -167,16 +165,6 @@
             this.label4.Text = "Дата нарушения";
             this.label4.Visible = false;
             // 
-            // editCB2
-            // 
-            this.editCB2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.editCB2.FormattingEnabled = true;
-            this.editCB2.Location = new System.Drawing.Point(296, 53);
-            this.editCB2.Name = "editCB2";
-            this.editCB2.Size = new System.Drawing.Size(127, 21);
-            this.editCB2.TabIndex = 5;
-            this.editCB2.Visible = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -186,16 +174,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Код нарушения";
             this.label3.Visible = false;
-            // 
-            // editCB1
-            // 
-            this.editCB1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.editCB1.FormattingEnabled = true;
-            this.editCB1.Location = new System.Drawing.Point(144, 53);
-            this.editCB1.Name = "editCB1";
-            this.editCB1.Size = new System.Drawing.Size(127, 21);
-            this.editCB1.TabIndex = 3;
-            this.editCB1.Visible = false;
             // 
             // label2
             // 
@@ -239,7 +217,7 @@
             // saveButton
             // 
             this.saveButton.Enabled = false;
-            this.saveButton.Location = new System.Drawing.Point(970, 633);
+            this.saveButton.Location = new System.Drawing.Point(522, 518);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(163, 25);
             this.saveButton.TabIndex = 6;
@@ -252,7 +230,7 @@
             // 
             this.removeKebab.BackColor = System.Drawing.Color.IndianRed;
             this.removeKebab.Enabled = false;
-            this.removeKebab.Location = new System.Drawing.Point(949, 576);
+            this.removeKebab.Location = new System.Drawing.Point(716, 512);
             this.removeKebab.Name = "removeKebab";
             this.removeKebab.Size = new System.Drawing.Size(204, 31);
             this.removeKebab.TabIndex = 7;
@@ -420,7 +398,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1170, 671);
+            this.ClientSize = new System.Drawing.Size(931, 671);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.emptyLabel);
             this.Controls.Add(this.removeKebab);
@@ -453,8 +431,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox editCodeTB;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox editCB1;
-        private System.Windows.Forms.ComboBox editCB2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker editDTP1;
         private System.Windows.Forms.Label label4;
