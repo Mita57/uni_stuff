@@ -108,7 +108,7 @@
             // 
             this.removeKebab.BackColor = System.Drawing.Color.IndianRed;
             this.removeKebab.Enabled = false;
-            this.removeKebab.Location = new System.Drawing.Point(716, 512);
+            this.removeKebab.Location = new System.Drawing.Point(653, 13);
             this.removeKebab.Name = "removeKebab";
             this.removeKebab.Size = new System.Drawing.Size(204, 31);
             this.removeKebab.TabIndex = 7;
@@ -162,7 +162,6 @@
             this.amounTB.Name = "amounTB";
             this.amounTB.Size = new System.Drawing.Size(125, 20);
             this.amounTB.TabIndex = 14;
-            this.amounTB.Visible = false;
             // 
             // label4
             // 
@@ -172,7 +171,6 @@
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 13;
             this.label4.Text = "Количество";
-            this.label4.Visible = false;
             // 
             // addTB4
             // 
@@ -253,6 +251,7 @@
             // 
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.removeKebab);
             this.groupBox2.Controls.Add(this.changeButton);
             this.groupBox2.Controls.Add(this.editTB3);
             this.groupBox2.Controls.Add(this.editTB2);
@@ -273,7 +272,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(125, 20);
             this.textBox1.TabIndex = 12;
-            this.textBox1.Visible = false;
             // 
             // label5
             // 
@@ -283,13 +281,12 @@
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "Количество";
-            this.label5.Visible = false;
             // 
             // changeButton
             // 
-            this.changeButton.Location = new System.Drawing.Point(653, 31);
+            this.changeButton.Location = new System.Drawing.Point(653, 50);
             this.changeButton.Name = "changeButton";
-            this.changeButton.Size = new System.Drawing.Size(205, 39);
+            this.changeButton.Size = new System.Drawing.Size(205, 26);
             this.changeButton.TabIndex = 10;
             this.changeButton.Text = "Изменить элемент";
             this.changeButton.UseVisualStyleBackColor = true;
@@ -417,7 +414,6 @@
             this.ClientSize = new System.Drawing.Size(931, 671);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.emptyLabel);
-            this.Controls.Add(this.removeKebab);
             this.Controls.Add(this.grids);
             this.Controls.Add(this.tables);
             this.Controls.Add(this.grid1);
