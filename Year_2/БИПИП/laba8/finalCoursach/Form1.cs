@@ -13,7 +13,6 @@ namespace finalCoursach
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            loadDrivers();
             tables.SelectedIndex = 0;
             tabControl1.Visible = false;
             appear();
@@ -27,100 +26,107 @@ namespace finalCoursach
             }
         }
 
-        driver[] drivers = new driver[0];
-        driver[] allDrivers = new driver[0];
-        int totalDrivers = 0;
-        int removedDrivers = 0;
+        Prods[] prods = new Prods[0];
+        Prods[] allprods = new Prods[0];
+        int totalProds = 0;
+        int removedProds = 0;
 
 
-        
-        private void loadDrivers()
+        private void loadProds()
         {
             //building the DGW
-            Array.Resize(ref drivers, 0);
-            Array.Resize(ref allDrivers, 0);
-            totalDrivers = 0;
+            Array.Resize(ref prods, 0);
+            Array.Resize(ref allprods, 0);
+            totalProds = 0;
             //loading from XML
             XmlDocument xDoc = new XmlDocument();
-            xDoc.Load("drivers.xml");
-            int counter = 0;
-            XmlElement xRoot = xDoc.DocumentElement;
-            foreach (XmlElement xnode in xRoot)
+            DialogResult = openFileDialog1.ShowDialog();
+            if (DialogResult == DialogResult.OK)
             {
-                int driverCode = 0;
-                string driverName = "";
-                string category = "";
-                string bDay = "";
-                bool removed = false;
-                foreach (XmlNode childnode in xnode.ChildNodes)
+                xDoc.Load(openFileDialog1.FileName);
+                int counter = 0;
+                XmlElement xRoot = xDoc.DocumentElement;
+                foreach (XmlElement xnode in xRoot)
                 {
-                    if (childnode.Name == "driverCode")
+                    int driverCode = 0;
+                    string driverName = "";
+                    string category = "";
+                    string bDay = "";
+                    bool removed = false;
+                    foreach (XmlNode childnode in xnode.ChildNodes)
                     {
-                        driverCode = Convert.ToInt32(childnode.InnerText);
+                        if (childnode.Name == "driverCode")
+                        {
+                            driverCode = Convert.ToInt32(childnode.InnerText);
+                        }
+
+                        if (childnode.Name == "driverName")
+                        {
+                            driverName = childnode.InnerText;
+                        }
+
+                        if (childnode.Name == "category")
+                        {
+                            category = childnode.InnerText;
+                        }
+
+                        if (childnode.Name == "bDay")
+                        {
+                            bDay = childnode.InnerText;
+                        }
+
+                        if (childnode.Name == "removed")
+                        {
+                            removed = Convert.ToBoolean(childnode.InnerText);
+                        }
                     }
-                    if (childnode.Name == "driverName")
+
+                    if (!removed)
                     {
-                        driverName = childnode.InnerText;
+                        Array.Resize(ref prods, prods.Length + 1);
+                        prods[counter] = new Prods(driverCode, driverName, category, bDay, removed);
+                        counter++;
                     }
-                    if (childnode.Name == "category")
-                    {
-                        category = childnode.InnerText;
-                    }
-                    if (childnode.Name == "bDay")
-                    {
-                        bDay = childnode.InnerText;
-                    }
-                    if (childnode.Name == "removed")
-                    {
-                        removed = Convert.ToBoolean(childnode.InnerText);
-                    }
+
+                    Array.Resize(ref allprods, allprods.Length + 1);
+                    allprods[totalProds] = new Prods(driverCode, driverName, category, bDay, removed);
+                    totalProds++;
                 }
-                if (!removed)
-                {
-                    Array.Resize(ref drivers, drivers.Length + 1);
-                    drivers[counter] = new driver(driverCode, driverName, category, bDay, removed);
-                    counter++;
-                }
-                Array.Resize(ref allDrivers, allDrivers.Length + 1);
-                allDrivers[totalDrivers] = new driver(driverCode, driverName, category, bDay, removed);
-                totalDrivers++;
             }
         }
+
         private void renderDrivers()
         {
             editTB3.Width = 125;
             emptyLabel.Visible = false;
             grid1.ColumnCount = 0;
-            if (drivers.Length > 0)
+            if (prods.Length > 0)
             {
-                grid1.RowCount = drivers.Length - removedDrivers;
+                grid1.RowCount = prods.Length - removedProds;
                 removeKebab.Enabled = false;
                 removeKebab.Visible = true;
-                grid1.ColumnCount = 4;
+                grid1.ColumnCount = 3;
                 int counter = 0;
-                for (int i = 0; i < drivers.Length; i++)
+                for (int i = 0; i < prods.Length; i++)
                 {
-                    if (!drivers[i].removed)
+                    if (!prods[i].removed)
                     {
-                        grid1.Rows[counter].Cells[0].Value = drivers[i].driverCode.ToString();
-                        grid1.Rows[counter].Cells[1].Value = drivers[i].driverName;
-                        grid1.Rows[counter].Cells[2].Value = drivers[i].category;
-                        grid1.Rows[counter].Cells[3].Value = drivers[i].bDay;
+                        grid1.Rows[counter].Cells[0].Value = prods[i].driverCode.ToString();
+                        grid1.Rows[counter].Cells[1].Value = prods[i].driverName;
+                        grid1.Rows[counter].Cells[2].Value = prods[i].category;
+                        grid1.Rows[counter].Cells[3].Value = prods[i].bDay;
                         counter++;
                     }
                 }
-                grid1.Columns[0].HeaderCell.Value = "Код водителя";
+
+                grid1.Columns[0].HeaderCell.Value = "Название";
                 grid1.Columns[0].Width = 70;
-                grid1.Columns[1].HeaderCell.Value = "Имя водителя";
+                grid1.Columns[1].HeaderCell.Value = "Цена";
                 grid1.Columns[1].Width = 300;
                 grid1.Columns[2].Width = 150;
-                grid1.Columns[2].HeaderCell.Value = "Категория";
+                grid1.Columns[2].HeaderCell.Value = "Кол-во";
                 grid1.Columns[2].Width = 70;
-                grid1.Columns[3].HeaderCell.Value = "Дата рождения";
-                grid1.Columns[3].Width = 150;
                 appear();
-                addCB1.Visible = false;
-                addCB3.Visible = false;
                 saveButton.Enabled = true;
                 saveButton.Visible = true;
                 label1.Text = "Код водителя";
@@ -150,13 +156,9 @@ namespace finalCoursach
                 label5.Visible = true;
                 addTB2.Visible = true;
                 addTB4.Visible = true;
-                addCB1.Visible = false;
-                addCB3.Visible = false;
-                addDTP2.Visible = true;
-                addCodeTB.Text = (allDrivers.Length + 1).ToString();
+                addCodeTB.Text = (allprods.Length + 1).ToString();
             }
         }
-
 
 
         //make the add elements visible when loading grids
@@ -190,10 +192,7 @@ namespace finalCoursach
             addTB4.Text = "";
             label5.Visible = true;
             addTB2.Visible = true;
-            addCB1.Visible = true;
             addTB4.Visible = true;
-            addCB3.Visible = true;
-            addDTP2.Visible = true;
             editTB3.Left = 296;
             addTB4.Left = 296;
             addTB2.Width = 125;
@@ -217,7 +216,7 @@ namespace finalCoursach
             XmlElement xRoot = xDoc.DocumentElement;
             xRoot.RemoveAll();
             xDoc.Save("drivers.xml");
-            foreach (driver obj in allDrivers)
+            foreach (Prods obj in allprods)
             {
                 XmlElement driverElem = xDoc.CreateElement("driver");
                 XmlElement driverCode = xDoc.CreateElement("driverCode");
@@ -242,8 +241,8 @@ namespace finalCoursach
                 driverElem.AppendChild(driverRemoved);
                 xRoot.AppendChild(driverElem);
             }
-            xDoc.Save("drivers.xml");
 
+            xDoc.Save("drivers.xml");
         }
 
         //enables the remove button when the grid cell is clicked and some other shit, idk
@@ -257,16 +256,14 @@ namespace finalCoursach
                 editTB2.Text = grid1.Rows[row].Cells[1].Value.ToString();
                 editTB3.Text = grid1.Rows[row].Cells[2].Value.ToString();
             }
-
         }
 
         //add tab render ffs
 
         private void renderAddDriver()
         {
-            addCodeTB.Text = (allDrivers.Length + 1).ToString();
+            addCodeTB.Text = (allprods.Length + 1).ToString();
         }
-
 
 
         private void RemoveKebab_Click(object sender, EventArgs e)
@@ -274,9 +271,9 @@ namespace finalCoursach
             int selected = grid1.CurrentCell.RowIndex;
             if (Convert.ToString(tables.SelectedItem) == "Водители")
             {
-                allDrivers[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value) - 1].removeKebab();
-                drivers[selected].removeKebab();
-                removedDrivers++;
+                allprods[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value) - 1].removeKebab();
+                prods[selected].removeKebab();
+                removedProds++;
                 renderDrivers();
             }
         }
@@ -288,13 +285,14 @@ namespace finalCoursach
             int selected = grid1.CurrentCell.RowIndex;
             if (Convert.ToString(tables.SelectedItem) == "Водители")
             {
-                if (!string.IsNullOrWhiteSpace(editTB2.Text) && !string.IsNullOrWhiteSpace(editTB3.Text))
+                if (!string.IsNullOrWhiteSpace(editTB2.Text) && !string.IsNullOrWhiteSpace(editTB3.Text) && !string.IsNullOrWhiteSpace(textBox1.Text))
                 {
-                    string newDriverName = editTB2.Text;
-                    string newCategory = editTB3.Text;
-                    string newBDay = editDTP1.Value.ToShortDateString();
-                    drivers[selected].change(newDriverName, newCategory, newBDay);
-                    allDrivers[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1].change(newDriverName, newCategory, newBDay);
+                    string newName = editTB2.Text;
+                    int newPrice = int.Parse(editTB3.Text);
+                    int newAmount = int.Parse(textBox1.Text);
+                    prods[selected].change(newName, newPrice, newAmount, prods[selected].removed);
+                    allprods[Convert.ToInt32(grid1.Rows[selected].Cells[0].Value.ToString()) - 1]
+                        .change(newName, newPrice, newAmount, prods[selected].removed);
                     renderDrivers();
                 }
                 else
@@ -316,14 +314,14 @@ namespace finalCoursach
         {
             if (!string.IsNullOrWhiteSpace(addTB2.Text) && !string.IsNullOrWhiteSpace(addTB4.Text))
             {
-                Array.Resize(ref drivers, drivers.Length + 1);
-                Array.Resize(ref allDrivers, allDrivers.Length + 1);
-                int driverCode = Convert.ToInt32(addCodeTB.Text);
-                string driverName = addTB2.Text;
-                string category = addTB4.Text;
-                string bDay = addDTP2.Value.ToShortDateString();
-                drivers[drivers.Length - 1] = new driver(driverCode, driverName, category, bDay, false);
-                allDrivers[driverCode - 1] = new driver(driverCode, driverName, category, bDay, false);
+                Array.Resize(ref prods, prods.Length + 1);
+                Array.Resize(ref allprods, allprods.Length + 1);
+                int code = Convert.ToInt32(addCodeTB.Text);
+                string name = addTB2.Text;
+                int price = int.Parse(addTB4.Text);
+                int amount = int.Parse(amounTB.Text);
+                prods[prods.Length - 1] = new Prods(code, name, price, amount, false);
+                allprods[code - 1] = new Prods(code, name, price, amount, false);
                 renderDrivers();
             }
             else
@@ -333,45 +331,51 @@ namespace finalCoursach
         }
 
 
-
-
-
-        class driver
+        class Prods
         {
             //props
 
-            public int driverCode;
-            public string driverName;
-            public string category;
-            public string bDay;
+            public int code;
+            public string name;
+            public int price;
+            public int amount;
             public bool removed;
 
             //builder
 
-            public driver(int driverCode, string name, string category, string bDay, bool removed)
+            public Prods(int code, string name, int price, int amount, bool removed)
             {
-                this.driverCode = driverCode;
-                this.driverName = name;
-                this.category = category;
-                this.bDay = bDay;
+                this.code = code;
+                this.name = name;
+                this.price = price;
+                this.amount = amount;
                 this.removed = removed;
             }
             //methods
 
-            public void change(string newDriverName, string newCategory, string newBDay)
+            public void change(string name, int price, int amount, bool removed)
             {
-                this.driverName = newDriverName;
-                this.category = newCategory;
-                this.bDay = newBDay;
+                this.name = name;
+                this.price = price;
+                this.amount = amount;
+                this.removed = removed;
             }
 
             public void removeKebab()
             {
                 this.removed = true;
             }
-
         }
 
 
+        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loadProds();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
