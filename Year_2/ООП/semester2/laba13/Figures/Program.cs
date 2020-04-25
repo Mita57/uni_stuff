@@ -51,7 +51,7 @@ namespace Figures
             }
         }
 
-        abstract public double S { get; }
+        abstract public double S { get; set; }
 
         public void MoveTo(int x, int y)
         {
@@ -134,6 +134,7 @@ namespace Figures
         public override double S
         {
             get { return 0; }
+            set{return;}
         }
 
         public override bool Crossing(Figure anotherFigure)
@@ -156,9 +157,9 @@ namespace Figures
             this.A = side;
         }
 
-        private int _A;
+        private double _A;
 
-        public int A
+        public double A
         {
             get { return _A; }
             set
@@ -175,6 +176,10 @@ namespace Figures
         public override double S
         {
             get { return (A * A); }
+            set
+            {
+                this.A = Math.Sqrt(value);
+            }
         }
 
         public override bool ZeroIn()
@@ -236,6 +241,10 @@ namespace Figures
         public override double S
         {
             get { return 3.14 * R * R; }
+            set
+            {
+                this.R = Math.Sqrt(value / Math.PI);
+            }
         }
 
         public override bool ZeroIn()
@@ -243,9 +252,9 @@ namespace Figures
             return (Math.Sqrt(Math.Pow(X / 2, 2) + Math.Pow(Y / 2, 2))) <= R;
         }
 
-        private int _r;
+        private double _r;
 
-        public int R
+        public double R
         {
             get { return _r; }
             set
@@ -254,8 +263,6 @@ namespace Figures
                 {
                     _r = value;
                 }
-
-                return;
             }
         }
 

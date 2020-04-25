@@ -26,25 +26,25 @@ namespace Figures
                 {
                     case 0:
                     {
-                        int x = rnd.Next(-8, 8);
-                        int y = rnd.Next(-8, 8);
-                        int r = rnd.Next(1, 5);
+                        int x = rnd.Next(-8, 9);
+                        int y = rnd.Next(-8, 9);
+                        int r = rnd.Next(1, 6);
                         list.Add(new Circle(x, y, r));
                         break;
                     }
                     case 1:
                     {
-                        int x = rnd.Next(-8, 8);
-                        int y = rnd.Next(-8, 8);
+                        int x = rnd.Next(-8, 9);
+                        int y = rnd.Next(-8, 9);
                         list.Add(new Point(x, y));
                         break;
                     }
 
                     case 2:
                     {
-                        int x = rnd.Next(-8, 8);
-                        int y = rnd.Next(-8, 8);
-                        int a = rnd.Next(1, 10);
+                        int x = rnd.Next(-8, 9);
+                        int y = rnd.Next(-8, 9);
+                        int a = rnd.Next(1, 11);
                         list.Add(new Square(x, y, a));
                         break;
                     }
@@ -82,16 +82,6 @@ namespace Figures
                         paramNumber.Maximum = 100;
                         break;
                     }
-                    case 3:
-                    {
-                        moveTo();
-                        break;
-                    }
-                    case 4:
-                    {
-                        moveRel();
-                        break;
-                    }
                 }
             }
         }
@@ -112,18 +102,23 @@ namespace Figures
             g.DrawLine(mypen, new System.Drawing.Point(0, DrawArea.Height / 2),
                 new System.Drawing.Point(DrawArea.Width, DrawArea.Height / 2));
 
+            Font font = new Font(FontFamily.GenericSerif, 10);
 
+            int i = 1;
+            SolidBrush myBrush = new SolidBrush(Color.Blue);
             foreach (Figure fig in list)
             {
                 mypen.Color = Color.FromArgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255));
+                myBrush.Color = mypen.Color;
                 if (fig is Square)
                 {
                     Square sqr = (Square) fig;
                     int x = sqr.X * 10;
                     int y = -sqr.Y * 10;
-                    int a = sqr.A * 10 / 2;
+                    int a = (int) Math.Round(sqr.A) * 10;
 
-
+                    g.DrawString(i.ToString(), font, myBrush, new PointF(pictureBox1.Width / 2 + (x - a / 2), pictureBox1.Width / 2 + (y - a / 2)));
+                    
                     g.DrawRectangle(mypen, pictureBox1.Width / 2 + (x - a / 2), pictureBox1.Width / 2 + (y - a / 2), a,
                         a);
                 }
@@ -132,8 +127,10 @@ namespace Figures
                     Circle crq = (Circle) fig;
                     int x = crq.X * 10;
                     int y = -crq.Y * 10;
-                    int a = crq.R * 10 / 2;
+                    int a = (int) Math.Round(crq.R / 2) * 10;
 
+                    g.DrawString(i.ToString(), font, myBrush,
+                        new PointF(pictureBox1.Width / 2 + (x - a / 2), pictureBox1.Width / 2 + (y - a / 2)));
                     g.DrawEllipse(mypen,
                         new System.Drawing.Rectangle(pictureBox1.Width / 2 + (x - a / 2),
                             pictureBox1.Width / 2 + (y - a / 2), a, a));
@@ -142,11 +139,15 @@ namespace Figures
                 {
                     int x = fig.X * 10;
                     int y = -fig.Y * 10;
+                    g.DrawString(i.ToString(), font, myBrush,
+                        new PointF(pictureBox1.Width / 2 + (x / 2), pictureBox1.Width / 2 + (y / 2)));
                     g.DrawEllipse(mypen,
                         new System.Drawing.Rectangle(pictureBox1.Width / 2 + (x / 2), pictureBox1.Width / 2 + (y / 2),
                             5,
                             5));
                 }
+
+                i++;
             }
 
             pictureBox1.Image = DrawArea;
@@ -212,18 +213,63 @@ namespace Figures
                     break;
                 }
             }
+
+            fillFields();
+            drawStuff();
         }
 
         private void aEquals()
         {
+            foreach (Figure fig in list)
+            {
+                if (fig is Square)
+                {
+                    if (paramsCB.SelectedIndex == 0)
+                    {
+                        (fig as Square).A = rnd.Next(0, 11);
+                    }
+                    else
+                    {
+                        (fig as Square).A = (int) paramNumber.Value;
+                    }
+                }
+            }
         }
 
         private void rEquals()
         {
+            foreach (Figure fig in list)
+            {
+                if (fig is Circle)
+                {
+                    if (paramsCB.SelectedIndex == 0)
+                    {
+                        (fig as Circle).R = rnd.Next(0, 6);
+                    }
+                    else
+                    {
+                        (fig as Circle).R = (int) paramNumber.Value;
+                    }
+                }
+            }
         }
 
         private void sEquals()
         {
+            if (paramsCB.SelectedIndex == 0)
+            {
+                foreach (Figure fig in list)
+                {
+                    fig.S = rnd.Next(0, 101);
+                }
+            }
+            else
+            {
+                foreach (Figure fig in list)
+                {
+                    fig.S = (double) paramNumber.Value;
+                }
+            }
         }
 
         private void moveTo()
