@@ -249,7 +249,7 @@ namespace Figures
 
         public override bool ZeroIn()
         {
-            return (Math.Sqrt(Math.Pow(X / 2, 2) + Math.Pow(Y / 2, 2))) <= R;
+            return (Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2))) <= R;
         }
 
         private double _r;

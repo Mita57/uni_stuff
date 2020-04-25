@@ -145,13 +145,13 @@ namespace Figures
                     Circle crq = (Circle) fig;
                     int x = crq.X * 10;
                     int y = -crq.Y * 10;
-                    int r = (int) Math.Round(crq.R / 2) * 10;
+                    int r = (int) Math.Round(crq.R) * 10;
 
                     g.DrawString(i.ToString(), font, myBrush,
                         new PointF(pictureBox1.Width / 2 + (x - r / 2), pictureBox1.Width / 2 + (y - r / 2)));
                     g.DrawEllipse(mypen,
-                        new System.Drawing.Rectangle(pictureBox1.Width / 2 + (x - r / 2) - r,
-                            pictureBox1.Width / 2 + (y - r / 2) -r, r * 2, r * 2));
+                        new System.Drawing.Rectangle(pictureBox1.Width / 2 + (x - r),
+                            pictureBox1.Width / 2 + (y - r), r * 2, r * 2));
                 }
                 else
                 {
@@ -160,7 +160,7 @@ namespace Figures
                     g.DrawString(i.ToString(), font, myBrush,
                         new PointF(pictureBox1.Width / 2 + (x / 2) + 5, pictureBox1.Width / 2 + (y / 2) + 5));
                     g.FillEllipse(myBrush,
-                        new System.Drawing.Rectangle(pictureBox1.Width / 2 + (x / 2), pictureBox1.Width / 2 + (y / 2),
+                        new System.Drawing.Rectangle(pictureBox1.Width / 2 + x, pictureBox1.Width / 2 + y,
                             5,
                             5));
                 }
