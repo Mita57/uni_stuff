@@ -22,39 +22,31 @@ namespace Figures
 
     public abstract class Figure
     {
-
         private int _x;
+
         public int X
         {
             get { return _x; }
-
             set
             {
-                if (Math.Abs(value) > 8)
+                if (Math.Abs(value) <= 8)
                 {
                     _x = value;
-                }
-                else
-                {
-                    return;
                 }
             }
         }
 
         private int _y;
+
         public int Y
         {
             get { return _y; }
 
             set
             {
-                if (Math.Abs(value) > 8)
+                if (Math.Abs(value) <= 8)
                 {
                     _y = value;
-                }
-                else
-                {
-                    return;
                 }
             }
         }
@@ -165,7 +157,7 @@ namespace Figures
         }
 
         private int _A;
-        
+
         public int A
         {
             get { return _A; }
@@ -175,6 +167,7 @@ namespace Figures
                 {
                     return;
                 }
+
                 _A = value;
             }
         }
@@ -251,7 +244,7 @@ namespace Figures
         }
 
         private int _r;
-        
+
         public int R
         {
             get { return _r; }
@@ -261,6 +254,7 @@ namespace Figures
                 {
                     _r = value;
                 }
+
                 return;
             }
         }
@@ -286,6 +280,5 @@ namespace Figures
                 return this.Crossing(this);
             }
         }
-        
     }
 }

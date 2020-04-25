@@ -91,7 +91,8 @@ namespace Figures
                     int y = sqr.Y * 10;
                     int a = sqr.A * 10;
 
-                    g.DrawRectangle(mypen, (x - a / 2), (y - a / 2), a, a);
+                    g.DrawRectangle(mypen, (x - a / 2) + pictureBox1.Width / 2, (y - a / 2) + pictureBox1.Width / 2, a,
+                        a);
                 }
                 else if (fig is Circle)
                 {
@@ -101,15 +102,16 @@ namespace Figures
                     int a = crq.R * 10 / 2;
 
                     g.DrawEllipse(mypen,
-                        new System.Drawing.Rectangle((x - a / 2),
-                            (y - a / 2), a, a));
+                        new System.Drawing.Rectangle((x - a / 2) + pictureBox1.Width / 2,
+                            (y - a / 2) + pictureBox1.Width / 2, a, a));
                 }
                 else
                 {
                     int x = fig.X * 10;
                     int y = fig.Y * 10;
                     g.DrawEllipse(mypen,
-                        new System.Drawing.Rectangle((x / 2), (y / 2), 5,
+                        new System.Drawing.Rectangle((x / 2) + pictureBox1.Width / 2, (y / 2) + pictureBox1.Width / 2,
+                            5,
                             5));
                 }
             }
@@ -125,19 +127,21 @@ namespace Figures
             foreach (Figure fig in list)
             {
                 i++;
-                if(fig is Point)
+                if (fig is Point)
                 {
-                    figs += i + ". Point " + fig.X + "; " + fig.Y + ";" + fig.S + "; " + fig.ZeroIn();
+                    figs += i + ". Point;x=" + fig.X + "; y=" + fig.Y + "; S=" + fig.S + "; zeroIn " + fig.ZeroIn();
                     figs += "\n";
                 }
                 else if (fig is Square)
                 {
-                    figs += i + ". Square " + fig.X + "; " + fig.Y + ";" + fig.S + "; " + fig.ZeroIn() + ((Square)fig).A;
+                    figs += i + ". Square; x=" + fig.X + "; y=" + fig.Y + "; s=" + fig.S + "; zeroIn " + fig.ZeroIn() +
+                            "; A=" + ((Square) fig).A;
                     figs += "\n";
                 }
                 else if (fig is Circle)
                 {
-                    figs += i + ". Circle " + fig.X + "; " + fig.Y + ";" + fig.S + "; " + fig.ZeroIn() + ((Circle)fig).R;
+                    figs += i + ". Circle; x=" + fig.X + "; y=" + fig.Y + "; s=" + fig.S + "; zeroIn " + fig.ZeroIn() +
+                            "; R=" + ((Circle) fig).R;
                     figs += "\n";
                 }
             }
