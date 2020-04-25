@@ -65,6 +65,34 @@ namespace Figures
             else
             {
                 paramNumber.Visible = true;
+                switch (methodsCB.SelectedIndex)
+                {
+                    case 0:
+                    {
+                        paramNumber.Maximum = 10;
+                        break;
+                    }
+                    case 1:
+                    {
+                        paramNumber.Maximum = 5;
+                        break;
+                    }
+                    case 2:
+                    {
+                        paramNumber.Maximum = 100;
+                        break;
+                    }
+                    case 3:
+                    {
+                        moveTo();
+                        break;
+                    }
+                    case 4:
+                    {
+                        moveRel();
+                        break;
+                    }
+                }
             }
         }
 
@@ -83,8 +111,7 @@ namespace Figures
                 new System.Drawing.Point(DrawArea.Width / 2, DrawArea.Height));
             g.DrawLine(mypen, new System.Drawing.Point(0, DrawArea.Height / 2),
                 new System.Drawing.Point(DrawArea.Width, DrawArea.Height / 2));
-            
-            
+
 
             foreach (Figure fig in list)
             {
@@ -95,9 +122,9 @@ namespace Figures
                     int x = sqr.X * 10;
                     int y = -sqr.Y * 10;
                     int a = sqr.A * 10 / 2;
-                    
-                    
-                    g.DrawRectangle(mypen, pictureBox1.Width / 2 + (x - a / 2) , pictureBox1.Width / 2 + (y - a / 2), a,
+
+
+                    g.DrawRectangle(mypen, pictureBox1.Width / 2 + (x - a / 2), pictureBox1.Width / 2 + (y - a / 2), a,
                         a);
                 }
                 else if (fig is Circle)
@@ -153,6 +180,58 @@ namespace Figures
             }
 
             figsTB.Text = figs;
+        }
+
+        private void chagneButton_Click(object sender, EventArgs e)
+        {
+            switch (methodsCB.SelectedIndex)
+            {
+                case 0:
+                {
+                    aEquals();
+                    break;
+                }
+                case 1:
+                {
+                    rEquals();
+                    break;
+                }
+                case 2:
+                {
+                    sEquals();
+                    break;
+                }
+                case 3:
+                {
+                    moveTo();
+                    break;
+                }
+                case 4:
+                {
+                    moveRel();
+                    break;
+                }
+            }
+        }
+
+        private void aEquals()
+        {
+        }
+
+        private void rEquals()
+        {
+        }
+
+        private void sEquals()
+        {
+        }
+
+        private void moveTo()
+        {
+        }
+
+        private void moveRel()
+        {
         }
     }
 }

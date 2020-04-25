@@ -109,6 +109,7 @@
             this.chagneButton.TabIndex = 6;
             this.chagneButton.Text = "Изменить";
             this.chagneButton.UseVisualStyleBackColor = true;
+            this.chagneButton.Click += new System.EventHandler(this.chagneButton_Click);
             // 
             // figsTB
             // 
@@ -182,6 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(792, 374);
             this.Controls.Add(this.paramNumber);
             this.Controls.Add(this.pictureBox1);
@@ -198,10 +200,10 @@
             this.Controls.Add(this.methodsCB);
             this.Controls.Add(this.createButton);
             this.Controls.Add(this.amountNumeric);
+            this.Location = new System.Drawing.Point(15, 15);
             this.MaximumSize = new System.Drawing.Size(808, 413);
             this.MinimumSize = new System.Drawing.Size(808, 413);
             this.Name = "Form1";
-            this.Text = "Les figures";
             ((System.ComponentModel.ISupportInitialize) (this.amountNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.paramNumber)).EndInit();
