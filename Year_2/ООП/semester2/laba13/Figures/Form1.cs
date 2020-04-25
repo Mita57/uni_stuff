@@ -97,15 +97,33 @@ namespace Figures
 
             Pen mypen = new Pen(Color.FromArgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255)));
             mypen.Color = Color.Black;
+            
+            SolidBrush myBrush = new SolidBrush(Color.Blue);
+            
+            SolidBrush pointBrish = new SolidBrush(Color.Black);
+            
             g.DrawLine(mypen, new System.Drawing.Point(DrawArea.Width / 2, 0),
                 new System.Drawing.Point(DrawArea.Width / 2, DrawArea.Height));
             g.DrawLine(mypen, new System.Drawing.Point(0, DrawArea.Height / 2),
                 new System.Drawing.Point(DrawArea.Width, DrawArea.Height / 2));
 
+            for (int y = 0; y <= 400; y += 10)
+            {
+                g.FillEllipse(pointBrish,
+                    new System.Drawing.Rectangle((pictureBox1.Width / 2) - 2, y,
+                        4,
+                        4));
+                
+                g.FillEllipse(pointBrish, new System.Drawing.Rectangle(y, pictureBox1.Width / 2,
+                    4,
+                    4));
+            }
+            
+            
+            
             Font font = new Font(FontFamily.GenericSerif, 10);
 
             int i = 1;
-            SolidBrush myBrush = new SolidBrush(Color.Blue);
             foreach (Figure fig in list)
             {
                 mypen.Color = Color.FromArgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255));
@@ -127,21 +145,21 @@ namespace Figures
                     Circle crq = (Circle) fig;
                     int x = crq.X * 10;
                     int y = -crq.Y * 10;
-                    int a = (int) Math.Round(crq.R / 2) * 10;
+                    int r = (int) Math.Round(crq.R / 2) * 10;
 
                     g.DrawString(i.ToString(), font, myBrush,
-                        new PointF(pictureBox1.Width / 2 + (x - a / 2), pictureBox1.Width / 2 + (y - a / 2)));
+                        new PointF(pictureBox1.Width / 2 + (x - r / 2), pictureBox1.Width / 2 + (y - r / 2)));
                     g.DrawEllipse(mypen,
-                        new System.Drawing.Rectangle(pictureBox1.Width / 2 + (x - a / 2),
-                            pictureBox1.Width / 2 + (y - a / 2), a, a));
+                        new System.Drawing.Rectangle(pictureBox1.Width / 2 + (x - r / 2) - r,
+                            pictureBox1.Width / 2 + (y - r / 2) -r, r * 2, r * 2));
                 }
                 else
                 {
                     int x = fig.X * 10;
                     int y = -fig.Y * 10;
                     g.DrawString(i.ToString(), font, myBrush,
-                        new PointF(pictureBox1.Width / 2 + (x / 2), pictureBox1.Width / 2 + (y / 2)));
-                    g.DrawEllipse(mypen,
+                        new PointF(pictureBox1.Width / 2 + (x / 2) + 5, pictureBox1.Width / 2 + (y / 2) + 5));
+                    g.FillEllipse(myBrush,
                         new System.Drawing.Rectangle(pictureBox1.Width / 2 + (x / 2), pictureBox1.Width / 2 + (y / 2),
                             5,
                             5));
