@@ -174,31 +174,63 @@ namespace Figures
 
         private void fillFields()
         {
+            // brief info
             string figs = "";
-            int i = 0;
+            int eee = 0;
             foreach (Figure fig in list)
             {
-                i++;
+                eee++;
                 if (fig is Point)
                 {
-                    figs += i + ". Point;x=" + fig.X + "; y=" + fig.Y + "; S=" + fig.S + "; zeroIn " + fig.ZeroIn();
+                    figs += eee + ". Point;x=" + fig.X + "; y=" + fig.Y + "; S=" + fig.S + "; zeroIn " + fig.ZeroIn();
                     figs += "\n";
                 }
                 else if (fig is Square)
                 {
-                    figs += i + ". Square; x=" + fig.X + "; y=" + fig.Y + "; s=" + fig.S + "; zeroIn " + fig.ZeroIn() +
+                    figs += eee + ". Square; x=" + fig.X + "; y=" + fig.Y + "; s=" + fig.S + "; zeroIn " + fig.ZeroIn() +
                             "; A=" + ((Square) fig).A;
                     figs += "\n";
                 }
                 else if (fig is Circle)
                 {
-                    figs += i + ". Circle; x=" + fig.X + "; y=" + fig.Y + "; s=" + fig.S + "; zeroIn " + fig.ZeroIn() +
+                    figs += eee + ". Circle; x=" + fig.X + "; y=" + fig.Y + "; s=" + fig.S + "; zeroIn " + fig.ZeroIn() +
                             "; R=" + ((Circle) fig).R;
                     figs += "\n";
                 }
             }
 
             figsTB.Text = figs;
+            
+            // equal
+
+            string eqs = "      ";
+            string crs = "      ";
+            int row = 0;
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                eqs += (i + 1).ToString().PadLeft(6);
+            }
+
+            eqs += "\n";
+            crs = eqs;
+            
+            for (int i = 0; i < list.Count; i++)
+            {
+                eqs += (i + 1).ToString().PadLeft(6);
+                crs += (i + 1).ToString().PadLeft(6);
+                foreach (Figure fig in list)
+                {
+                    eqs += list[i].Equal(fig).ToString().PadLeft(6);
+                    crs += list[i].Crossing(fig).ToString().PadLeft(6);
+                }
+
+                crs += "\n";
+                eqs += "\n";
+            }
+
+            equalTB.Text = eqs;
+            crossTB.Text = crs;
         }
 
         private void chagneButton_Click(object sender, EventArgs e)
