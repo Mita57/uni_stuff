@@ -56,24 +56,7 @@
                 </v-menu>
             </v-toolbar-items>
         </v-app-bar>
-
-        <!-- Sidebar -->
-        <v-navigation-drawer app id="side">
-            <v-list two-line subheader>
-                <v-subheader inset style="height: 56px">Сейчас в эфире:</v-subheader>
-                <v-divider></v-divider>
-                <v-list-item v-for="i in 20">
-                        <v-list-item-avatar class="sas" tile>
-                            <v-img src="./assets/moorava.jpg"></v-img>
-                        </v-list-item-avatar>
-                        <v-list-item-content>
-                            <v-list-item-title>MoorPK</v-list-item-title>
-                            <v-list-item-subtitle>Майн форек гетленч</v-list-item-subtitle>
-                            <v-list-item-subtitle>Подкасты</v-list-item-subtitle>
-                        </v-list-item-content>
-                </v-list-item>
-            </v-list>
-        </v-navigation-drawer>
+        
         <v-content>
             <router-view/>
         </v-content>
