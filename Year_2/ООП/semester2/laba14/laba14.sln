@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "laba14", "laba14\laba14.csproj", "{9A8716F9-4730-476E-9092-26E8621A1641}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyShit", "MyShit\MyShit.csproj", "{CF8DCF28-813A-4770-8E0E-81958FD0F0EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A8716F9-4730-476E-9092-26E8621A1641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A8716F9-4730-476E-9092-26E8621A1641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A8716F9-4730-476E-9092-26E8621A1641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A8716F9-4730-476E-9092-26E8621A1641}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF8DCF28-813A-4770-8E0E-81958FD0F0EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF8DCF28-813A-4770-8E0E-81958FD0F0EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF8DCF28-813A-4770-8E0E-81958FD0F0EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF8DCF28-813A-4770-8E0E-81958FD0F0EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "laba13", "laba13\laba13.csproj", "{7624FED8-2690-4D9A-AA63-BF412294816F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Figures", "Figures\Figures.csproj", "{BADB43D8-E459-4054-B16F-9F10532FB42A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7624FED8-2690-4D9A-AA63-BF412294816F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7624FED8-2690-4D9A-AA63-BF412294816F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7624FED8-2690-4D9A-AA63-BF412294816F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7624FED8-2690-4D9A-AA63-BF412294816F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BADB43D8-E459-4054-B16F-9F10532FB42A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BADB43D8-E459-4054-B16F-9F10532FB42A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BADB43D8-E459-4054-B16F-9F10532FB42A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BADB43D8-E459-4054-B16F-9F10532FB42A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
