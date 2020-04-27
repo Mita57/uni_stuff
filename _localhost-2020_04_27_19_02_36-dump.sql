@@ -17,6 +17,28 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- Name: bakery; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE bakery WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'Russian_Russia.1251' LC_CTYPE = 'Russian_Russia.1251';
+
+
+ALTER DATABASE bakery OWNER TO postgres;
+
+\connect bakery
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
 -- Name: dough_types; Type: TYPE; Schema: public; Owner: postgres
 --
 
