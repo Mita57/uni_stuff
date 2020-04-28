@@ -360,8 +360,8 @@ namespace Cinemaster
 
         private void addTicketButton_Click(object sender, EventArgs e)
         {
-            int cashierId = int.Parse(ticketsAddCashierCB.SelectedText.Split('#')[0]);
-            int sessionId = int.Parse(ticketsAddSessionCB.SelectedText.Split('#')[0]);
+            int cashierId = int.Parse(ticketsAddCashierCB.Text.Split('#')[0]);
+            int sessionId = int.Parse(ticketsAddSessionCB.Text.Split('#')[0]);
             int row = (int)ticketsAddRow.Value;
             int seat = (int)ticketsAddSeat.Value;
             ticketsAddSeat.Value++;
@@ -396,13 +396,32 @@ namespace Cinemaster
         private void addFilmButton_Click(object sender, EventArgs e)
         {
             string name = filmsAddNameField.Text;
-            MessageBox.Show(filmsAddGenreCB.SelectedText);
-            int genreId = int.Parse(filmsAddGenreCB.SelectedText.Split('#')[0]);
+            int genreId = int.Parse(filmsAddGenreCB.Text.Split('#')[0]);
             int ageRestr = (int)filmsAddAgeRestr.Value;
             filmsAddNameField.Text = "";
 
             Erm.Insert("films", new[] { "name", "genreID", "ageRest" }, new[] { name , genreId.ToString(), ageRestr.ToString()});
             TabControl1_Selected(null, null);
+        }
+
+        private void addSessionButton_Click(object sender, EventArgs e)
+        {
+            int year = sessionsAddDatePicker.Value.Year;
+            int month = sessionsAddDatePicker.Value.Month;
+            int day = sessionsAddDatePicker.Value.Day;
+            int hours = sessionsAddTimePicker.Value.Hour;
+            int minutes = sessionsAddTimePicker.Value.Minute;
+
+            int filmId = int.Parse(sessionsAddFilmCB.Text.Split('#')[0]);
+            int roomId = int.Parse(sessionsAddRoomCB.Text.Split('#')[0]);
+            string type = sessionsAddTypeCB.Text;
+
+            Date date = new Date(day, month, year);
+            Time time = new Time(hours, minutes);
+
+            Erm.Insert("sessions", new[]{"roomID", "time", "date", "filmID", "type"}, new[] {roomID.ToString(), time.ToString(), date.ToString(), filmID.ToString(), type});
+
+            //TODO: it's possible to add same things overall
         }
     }
 }

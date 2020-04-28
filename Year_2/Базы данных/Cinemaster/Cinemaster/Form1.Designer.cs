@@ -887,6 +887,7 @@
             this.addSessionButton.TabIndex = 6;
             this.addSessionButton.Text = "Добавить сеанс";
             this.addSessionButton.UseVisualStyleBackColor = true;
+            this.addSessionButton.Click += new System.EventHandler(this.addSessionButton_Click);
             // 
             // sessionsAddRoomCB
             // 
