@@ -197,7 +197,7 @@ namespace Cinemaster
 
         public static void Connect()
         {
-            String connectString = @"Data Source = DESKTOP-AEKQ1GD\SQLEXPRESS; Initial Catalog = cinema;User ID = sa; password = 1234; MultipleActiveResultSets=true";
+            String connectString = @"Data Source = DESKTOP-L0CODJ9\SQLEXPRESS; Initial Catalog = cinema;User ID = sa; password = 1234; MultipleActiveResultSets=true";
             _connection = new SqlConnection(connectString);
             _connection.Open();
         }
@@ -207,7 +207,7 @@ namespace Cinemaster
             _connection.Close();
         }
 
-        public static void Insert(String table, String[] values)
+        public static void Insert(String table, string[] cols,String[] values)
         {
             Connect();
             String newValues = "(";
@@ -215,8 +215,18 @@ namespace Cinemaster
             {
                 newValues += "'" + str + "', ";
             }
+
             newValues += ")";
-            String query = String.Format("INSERT INTO {0} VALUES {1}", table, newValues);
+
+            string newCols = "(";
+
+            foreach (string str in cols)
+            {
+                newCols += "'" + str + "', ";
+            }
+            
+            newValues += ")";
+            String query = String.Format("INSERT INTO {0}({1}) VALUES {2}", table, newCols, newValues);
 
             SqlCommand command = new SqlCommand(query, _connection);
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -358,7 +368,7 @@ namespace Cinemaster
         static List<Film> GetFilms()
         {
             List<Film> list = new List<Film>();
-            String query = ("SELECT genres.name, * FROM films INNER JOIN genres ON films.genreID = genres.genreID ");
+            String query = ("SELECT genres.genre, * FROM films INNER JOIN genres ON films.genreID = genres.genreID ");
             SqlCommand command = new SqlCommand(query, _connection);
             SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
