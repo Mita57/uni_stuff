@@ -133,7 +133,7 @@
             this.cashiersNoEntriesLabel = new System.Windows.Forms.Label();
             this.removeCashierButton = new System.Windows.Forms.Button();
             this.editCashierGroup = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cashierEditNameTB = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.updateCashierButton = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
@@ -332,6 +332,7 @@
             this.ticketsEditSessionCB.Name = "ticketsEditSessionCB";
             this.ticketsEditSessionCB.Size = new System.Drawing.Size(186, 21);
             this.ticketsEditSessionCB.TabIndex = 9;
+            this.ticketsEditSessionCB.SelectedIndexChanged += new System.EventHandler(this.ticketsEditCashierCB_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -367,6 +368,7 @@
             this.ticketsEditCashierCB.Name = "ticketsEditCashierCB";
             this.ticketsEditCashierCB.Size = new System.Drawing.Size(186, 21);
             this.ticketsEditCashierCB.TabIndex = 4;
+            this.ticketsEditCashierCB.SelectedIndexChanged += new System.EventHandler(this.ticketsEditCashierCB_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -658,6 +660,7 @@
             this.sessionsEditCB.Name = "sessionsEditCB";
             this.sessionsEditCB.Size = new System.Drawing.Size(186, 21);
             this.sessionsEditCB.TabIndex = 14;
+            this.sessionsEditCB.SelectedIndexChanged += new System.EventHandler(this.sessionsEditFilmCB_SelectedIndexChanged);
             // 
             // label42
             // 
@@ -706,6 +709,7 @@
             this.sessionsEditFilmCB.Name = "sessionsEditFilmCB";
             this.sessionsEditFilmCB.Size = new System.Drawing.Size(186, 21);
             this.sessionsEditFilmCB.TabIndex = 9;
+            this.sessionsEditFilmCB.SelectedIndexChanged += new System.EventHandler(this.sessionsEditFilmCB_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -746,6 +750,7 @@
             this.sessionsEditRoomCB.Name = "sessionsEditRoomCB";
             this.sessionsEditRoomCB.Size = new System.Drawing.Size(186, 21);
             this.sessionsEditRoomCB.TabIndex = 5;
+            this.sessionsEditRoomCB.SelectedIndexChanged += new System.EventHandler(this.sessionsEditFilmCB_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -1071,6 +1076,7 @@
             this.filmsEditNameField.Name = "filmsEditNameField";
             this.filmsEditNameField.Size = new System.Drawing.Size(186, 20);
             this.filmsEditNameField.TabIndex = 13;
+            this.filmsEditNameField.TextChanged += new System.EventHandler(this.filmsEditNameField_TextChanged);
             // 
             // filmsEditGenreCB
             // 
@@ -1084,6 +1090,7 @@
             this.filmsEditGenreCB.Name = "filmsEditGenreCB";
             this.filmsEditGenreCB.Size = new System.Drawing.Size(186, 21);
             this.filmsEditGenreCB.TabIndex = 9;
+            this.filmsEditGenreCB.TextChanged += new System.EventHandler(this.filmsEditNameField_TextChanged);
             // 
             // label24
             // 
@@ -1308,7 +1315,7 @@
             // 
             // editCashierGroup
             // 
-            this.editCashierGroup.Controls.Add(this.textBox1);
+            this.editCashierGroup.Controls.Add(this.cashierEditNameTB);
             this.editCashierGroup.Controls.Add(this.textBox2);
             this.editCashierGroup.Controls.Add(this.updateCashierButton);
             this.editCashierGroup.Controls.Add(this.label27);
@@ -1321,12 +1328,13 @@
             this.editCashierGroup.TabStop = false;
             this.editCashierGroup.Text = "Изменить кассира";
             // 
-            // textBox1
+            // cashierEditNameTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 20);
-            this.textBox1.TabIndex = 13;
+            this.cashierEditNameTB.Location = new System.Drawing.Point(67, 45);
+            this.cashierEditNameTB.Name = "cashierEditNameTB";
+            this.cashierEditNameTB.Size = new System.Drawing.Size(186, 20);
+            this.cashierEditNameTB.TabIndex = 13;
+            this.cashierEditNameTB.TextChanged += new System.EventHandler(this.updateCashierTB_TextChanged);
             // 
             // textBox2
             // 
@@ -1505,6 +1513,7 @@
             this.roomsEditNameField.Name = "roomsEditNameField";
             this.roomsEditNameField.Size = new System.Drawing.Size(186, 20);
             this.roomsEditNameField.TabIndex = 13;
+            this.roomsEditNameField.TextChanged += new System.EventHandler(this.roomsEditNameField_TextChanged);
             // 
             // roomsEditIDField
             // 
@@ -1683,6 +1692,7 @@
             this.genresEditNameField.Name = "genresEditNameField";
             this.genresEditNameField.Size = new System.Drawing.Size(186, 20);
             this.genresEditNameField.TabIndex = 13;
+            this.genresEditNameField.TextChanged += new System.EventHandler(this.genresEditNameField_TextChanged);
             // 
             // genresEditIDField
             // 
@@ -1998,7 +2008,7 @@
         private System.Windows.Forms.DataGridView sessionsGrid;
         private System.Windows.Forms.Label sessionsNoEntriesLabel;
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox cashierEditNameTB;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketID;
         private System.Windows.Forms.TabPage tickets;

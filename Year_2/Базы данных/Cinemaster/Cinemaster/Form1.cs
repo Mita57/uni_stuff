@@ -18,6 +18,7 @@ namespace Cinemaster
             TabControl1_Selected(sender, null);
         }
 
+        //selected tab processing
 
         private void TabControl1_Selected(object sender, TabControlEventArgs e)
         {
@@ -221,6 +222,7 @@ namespace Cinemaster
             }
         }
 
+        //adding input validators
 
         private void TicketsAddValidation(object sender, EventArgs e)
         {
@@ -327,7 +329,6 @@ namespace Cinemaster
             }
         }
 
-
         private void genresAddNameField_TextChanged(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(genresAddNameField.Text))
@@ -340,6 +341,7 @@ namespace Cinemaster
             }
         }
 
+        //enable editing
 
         private void ticketsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -357,6 +359,8 @@ namespace Cinemaster
             ticketsEditRow.Value = (int)ticketsGrid.Rows[e.RowIndex].Cells[4].Value;
             ticketsEditSeat.Value = (int)ticketsGrid.Rows[e.RowIndex].Cells[3].Value;
         }
+
+        //adding stuff
 
         private void addTicketButton_Click(object sender, EventArgs e)
         {
@@ -423,6 +427,80 @@ namespace Cinemaster
             TabControl1_Selected(null, null);
 
             //TODO: it's possible to add same things overall
+        }
+
+        //validating update input
+
+        private void ticketsEditCashierCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(ticketsEditCashierCB.Text) || String.IsNullOrEmpty(ticketsEditSessionCB.Text))
+            {
+                updateTicketButton.Enabled = false;
+            }
+            else
+            {
+                updateTicketButton.Enabled = true;
+            }
+        }
+
+        private void sessionsEditFilmCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(sessionsEditFilmCB.Text) || String.IsNullOrEmpty(sessionsEditRoomCB.Text) || String.IsNullOrEmpty(sessionsEditCB.Text))
+            {
+                sessionEditButton.Enabled = false;
+            }
+            else
+            {
+                sessionEditButton.Enabled = true;
+            }
+        }
+
+        private void filmsEditNameField_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(filmsEditNameField.Text) || string.IsNullOrEmpty(filmsEditGenreCB.Text))
+            {
+                changeFilmButton.Enabled = false;
+            }
+            else
+            {
+                changeFilmButton.Enabled = true;
+            }
+        }
+
+        private void updateCashierTB_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(cashierEditNameTB.Text))
+            {
+                updateCashierButton.Enabled = false;
+            }
+            else
+            {
+                updateCashierButton.Enabled = true;
+            }
+        }
+
+        private void roomsEditNameField_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(roomsEditNameField.Text))
+            {
+                updateRoomButton.Enabled = false;
+            }
+            else
+            {
+                updateRoomButton.Enabled = true;
+            }
+        }
+
+        private void genresEditNameField_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(genresEditNameField.Text))
+            {
+                changeGenreButton.Enabled = false;
+            }
+            else
+            {
+                changeGenreButton.Enabled = true;
+            }
         }
     }
 }
