@@ -25,199 +25,199 @@ namespace Cinemaster
             switch (tab)
             {
                 case "Билеты":
-                {
-                    ticketsEditCashierCB.Items.Clear();
-                    ticketsEditSessionCB.Items.Clear();
-                    ticketsAddCashierCB.Items.Clear();
-                    ticketsAddSessionCB.Items.Clear();
-
-                    Cashier[] cashiers = (Cashier[]) Erm.GetAll("cashiers");
-                    ticketsAddCashierCB.Items.AddRange(cashiers);
-                    ticketsEditCashierCB.Items.AddRange(cashiers);
-
-                    Session[] sessions = (Session[]) Erm.GetAll("sessions");
-                    ticketsAddSessionCB.Items.AddRange(sessions);
-                    ticketsEditSessionCB.Items.AddRange(sessions);
-
-                    Ticket[] tickets = (Ticket[]) Erm.GetAll("tickets");
-                    ticketsNoEntriesLabel.Visible = false;
-                    try
                     {
-                        ticketsGrid.RowCount = tickets.Length;
-                        for (int i = 0; i < tickets.Length; i++)
+                        ticketsEditCashierCB.Items.Clear();
+                        ticketsEditSessionCB.Items.Clear();
+                        ticketsAddCashierCB.Items.Clear();
+                        ticketsAddSessionCB.Items.Clear();
+
+                        Cashier[] cashiers = (Cashier[])Erm.GetAll("cashiers");
+                        ticketsAddCashierCB.Items.AddRange(cashiers);
+                        ticketsEditCashierCB.Items.AddRange(cashiers);
+
+                        Session[] sessions = (Session[])Erm.GetAll("sessions");
+                        ticketsAddSessionCB.Items.AddRange(sessions);
+                        ticketsEditSessionCB.Items.AddRange(sessions);
+
+                        Ticket[] tickets = (Ticket[])Erm.GetAll("tickets");
+                        ticketsNoEntriesLabel.Visible = false;
+                        try
                         {
-                            ticketsGrid.Rows[i].Cells[0].Value = tickets[i].Id;
-                            //search for the session to have a proper display
-                            for (int j = 0; j < sessions.Length; j++)
+                            ticketsGrid.RowCount = tickets.Length;
+                            for (int i = 0; i < tickets.Length; i++)
                             {
-                                if (tickets[i].SessionId == sessions[j].Id)
+                                ticketsGrid.Rows[i].Cells[0].Value = tickets[i].Id;
+                                //search for the session to have a proper display
+                                for (int j = 0; j < sessions.Length; j++)
                                 {
-                                    ticketsGrid.Rows[i].Cells[1].Value = sessions[j].ToString();
-                                    break;
+                                    if (tickets[i].SessionId == sessions[j].Id)
+                                    {
+                                        ticketsGrid.Rows[i].Cells[1].Value = sessions[j].ToString();
+                                        break;
+                                    }
                                 }
+
+                                ticketsGrid.Rows[i].Cells[2].Value = tickets[i].Cashier;
+                                ticketsGrid.Rows[i].Cells[3].Value = tickets[i].Seat;
+                                ticketsGrid.Rows[i].Cells[4].Value = tickets[i].Row;
                             }
 
-                            ticketsGrid.Rows[i].Cells[2].Value = tickets[i].Cashier;
-                            ticketsGrid.Rows[i].Cells[3].Value = tickets[i].Seat;
-                            ticketsGrid.Rows[i].Cells[4].Value = tickets[i].Row;
+                            ticketsAddIDField.Text = (tickets[tickets.Length - 1].Id + 1).ToString();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
                         }
 
-                        ticketsAddIDField.Text = (tickets[tickets.Length - 1].Id + 1).ToString();
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
 
-
-                    break;
-                }
+                        break;
+                    }
 
                 case "Сеансы":
-                {
-                    sessionsAddFilmCB.Items.Clear();
-                    sessionsAddRoomCB.Items.Clear();
-                    sessionsEditFilmCB.Items.Clear();
-                    sessionsEditRoomCB.Items.Clear();
-
-                    Film[] films = (Film[]) Erm.GetAll("films");
-                    sessionsAddFilmCB.Items.AddRange(films);
-                    sessionsEditFilmCB.Items.AddRange(films);
-
-                    Room[] rooms = (Room[]) Erm.GetAll("rooms");
-                    sessionsAddRoomCB.Items.AddRange(rooms);
-                    sessionsEditRoomCB.Items.AddRange(rooms);
-
-
-                    Session[] sessions = (Session[]) Erm.GetAll("sessions");
-                    sessionsNoEntriesLabel.Visible = false;
-                    try
                     {
-                        sessionsGrid.RowCount = sessions.Length;
-                        for (int i = 0; i < sessions.Length; i++)
+                        sessionsAddFilmCB.Items.Clear();
+                        sessionsAddRoomCB.Items.Clear();
+                        sessionsEditFilmCB.Items.Clear();
+                        sessionsEditRoomCB.Items.Clear();
+
+                        Film[] films = (Film[])Erm.GetAll("films");
+                        sessionsAddFilmCB.Items.AddRange(films);
+                        sessionsEditFilmCB.Items.AddRange(films);
+
+                        Room[] rooms = (Room[])Erm.GetAll("rooms");
+                        sessionsAddRoomCB.Items.AddRange(rooms);
+                        sessionsEditRoomCB.Items.AddRange(rooms);
+
+
+                        Session[] sessions = (Session[])Erm.GetAll("sessions");
+                        sessionsNoEntriesLabel.Visible = false;
+                        try
                         {
-                            sessionsGrid.Rows[i].Cells[0].Value = sessions[i].Id;
-                            sessionsGrid.Rows[i].Cells[1].Value = sessions[i].Date.ToString();
-                            sessionsGrid.Rows[i].Cells[2].Value = sessions[i].Time.ToString();
-                            sessionsGrid.Rows[i].Cells[3].Value = sessions[i].Film;
-                            sessionsGrid.Rows[i].Cells[4].Value = sessions[i].Room;
-                            sessionsGrid.Rows[i].Cells[5].Value = sessions[i].Type;
+                            sessionsGrid.RowCount = sessions.Length;
+                            for (int i = 0; i < sessions.Length; i++)
+                            {
+                                sessionsGrid.Rows[i].Cells[0].Value = sessions[i].Id;
+                                sessionsGrid.Rows[i].Cells[1].Value = sessions[i].Date.ToString();
+                                sessionsGrid.Rows[i].Cells[2].Value = sessions[i].Time.ToString();
+                                sessionsGrid.Rows[i].Cells[3].Value = sessions[i].Film;
+                                sessionsGrid.Rows[i].Cells[4].Value = sessions[i].Room;
+                                sessionsGrid.Rows[i].Cells[5].Value = sessions[i].Type;
+                            }
+
+                            sessionsAddIDField.Text = (sessions[sessions.Length - 1].Id + 1).ToString();
+                        }
+                        catch
+                        {
+                            sessionsNoEntriesLabel.Visible = true;
+                            sessionsAddIDField.Text = "1";
                         }
 
-                        sessionsAddIDField.Text = (sessions[sessions.Length - 1].Id + 1).ToString();
+                        break;
                     }
-                    catch
-                    {
-                        sessionsNoEntriesLabel.Visible = true;
-                        sessionsAddIDField.Text = "1";
-                    }
-
-                    break;
-                }
 
                 case "Фильмы":
-                {
-                    filmsAddGenreCB.Items.Clear();
-                    filmsEditGenreCB.Items.Clear();
-
-                    Genre[] genres = (Genre[]) Erm.GetAll("genres");
-
-                    filmsAddGenreCB.Items.AddRange(genres);
-                    filmsEditGenreCB.Items.AddRange(genres);
-
-                    filmsNoEntriesLabel.Visible = false;
-                    Film[] films = (Film[]) Erm.GetAll("films");
-                    try
                     {
-                        filmsGrid.RowCount = films.Length;
-                        for (int i = 0; i < films.Length; i++)
+                        filmsAddGenreCB.Items.Clear();
+                        filmsEditGenreCB.Items.Clear();
+
+                        Genre[] genres = (Genre[])Erm.GetAll("genres");
+
+                        filmsAddGenreCB.Items.AddRange(genres);
+                        filmsEditGenreCB.Items.AddRange(genres);
+
+                        filmsNoEntriesLabel.Visible = false;
+                        Film[] films = (Film[])Erm.GetAll("films");
+                        try
                         {
-                            filmsGrid.Rows[i].Cells[0].Value = films[i].Id;
-                            filmsGrid.Rows[i].Cells[1].Value = films[i].Name;
-                            filmsGrid.Rows[i].Cells[2].Value = films[i].Genre;
-                            filmsGrid.Rows[i].Cells[3].Value = films[i].AgeRest;
+                            filmsGrid.RowCount = films.Length;
+                            for (int i = 0; i < films.Length; i++)
+                            {
+                                filmsGrid.Rows[i].Cells[0].Value = films[i].Id;
+                                filmsGrid.Rows[i].Cells[1].Value = films[i].Name;
+                                filmsGrid.Rows[i].Cells[2].Value = films[i].Genre;
+                                filmsGrid.Rows[i].Cells[3].Value = films[i].AgeRest;
+                            }
+
+                            filmsAddIDField.Text = (films[films.Length - 1].Id + 1).ToString();
+                        }
+                        catch
+                        {
+                            filmsNoEntriesLabel.Visible = true;
+                            filmsAddIDField.Text = "1";
                         }
 
-                        filmsAddIDField.Text = (films[films.Length - 1].Id + 1).ToString();
+                        break;
                     }
-                    catch
-                    {
-                        filmsNoEntriesLabel.Visible = true;
-                        filmsAddIDField.Text = "1";
-                    }
-
-                    break;
-                }
 
                 case "Кассиры":
-                {
-                    Cashier[] cashiers = (Cashier[]) Erm.GetAll("cashiers");
-                    cashiersNoEntriesLabel.Visible = false;
-                    try
                     {
-                        cashiersGrid.RowCount = cashiers.Length;
-                        for (int i = 0; i < cashiers.Length; i++)
+                        Cashier[] cashiers = (Cashier[])Erm.GetAll("cashiers");
+                        cashiersNoEntriesLabel.Visible = false;
+                        try
                         {
-                            cashiersGrid.Rows[i].Cells[0].Value = cashiers[i].Id;
-                            cashiersGrid.Rows[i].Cells[1].Value = cashiers[i].Name;
+                            cashiersGrid.RowCount = cashiers.Length;
+                            for (int i = 0; i < cashiers.Length; i++)
+                            {
+                                cashiersGrid.Rows[i].Cells[0].Value = cashiers[i].Id;
+                                cashiersGrid.Rows[i].Cells[1].Value = cashiers[i].Name;
+                            }
+
+                            cashierAddIDField.Text = (cashiers[cashiers.Length - 1].Id + 1).ToString();
+                        }
+                        catch
+                        {
+                            cashiersNoEntriesLabel.Visible = true;
+                            cashierAddIDField.Text = "1";
                         }
 
-                        cashierAddIDField.Text = (cashiers[cashiers.Length - 1].Id + 1).ToString();
+                        break;
                     }
-                    catch
-                    {
-                        cashiersNoEntriesLabel.Visible = true;
-                        cashierAddIDField.Text = "1";
-                    }
-
-                    break;
-                }
                 case "Кинозалы":
-                {
-                    roomsNoEntriesLabel.Visible = false;
-                    Room[] rooms = (Room[]) Erm.GetAll("rooms");
-                    try
                     {
-                        roomsGrid.RowCount = rooms.Length;
-                        for (int i = 0; i < rooms.Length; i++)
+                        roomsNoEntriesLabel.Visible = false;
+                        Room[] rooms = (Room[])Erm.GetAll("rooms");
+                        try
                         {
-                            roomsGrid.Rows[i].Cells[0].Value = rooms[i].Id;
-                            roomsGrid.Rows[i].Cells[1].Value = rooms[i].Name;
+                            roomsGrid.RowCount = rooms.Length;
+                            for (int i = 0; i < rooms.Length; i++)
+                            {
+                                roomsGrid.Rows[i].Cells[0].Value = rooms[i].Id;
+                                roomsGrid.Rows[i].Cells[1].Value = rooms[i].Name;
+                            }
+
+                            roomsAddIDField.Text = (rooms[rooms.Length - 1].Id + 1).ToString();
+                        }
+                        catch
+                        {
+                            roomsNoEntriesLabel.Visible = true;
+                            roomsAddIDField.Text = "1";
                         }
 
-                        roomsAddIDField.Text = (rooms[rooms.Length - 1].Id + 1).ToString();
+                        break;
                     }
-                    catch
-                    {
-                        roomsNoEntriesLabel.Visible = true;
-                        roomsAddIDField.Text = "1";
-                    }
-
-                    break;
-                }
                 case "Жанры":
-                {
-                    genresNoEntriesLabel.Visible = false;
-                    Genre[] genres = (Genre[]) Erm.GetAll("genres");
-                    try
                     {
-                        genresGrid.RowCount = genres.Length;
-                        for (int i = 0; i < genres.Length; i++)
+                        genresNoEntriesLabel.Visible = false;
+                        Genre[] genres = (Genre[])Erm.GetAll("genres");
+                        try
                         {
-                            genresGrid.Rows[i].Cells[0].Value = genres[i].Id;
-                            genresGrid.Rows[i].Cells[1].Value = genres[i].Name;
+                            genresGrid.RowCount = genres.Length;
+                            for (int i = 0; i < genres.Length; i++)
+                            {
+                                genresGrid.Rows[i].Cells[0].Value = genres[i].Id;
+                                genresGrid.Rows[i].Cells[1].Value = genres[i].Name;
+                            }
+
+                            genresAddIDField.Text = (genres[genres.Length - 1].Id + 1).ToString();
+                        }
+                        catch
+                        {
+                            genresNoEntriesLabel.Visible = true;
+                            genresAddIDField.Text = "1";
                         }
 
-                        genresAddIDField.Text = (genres[genres.Length - 1].Id + 1).ToString();
+                        break;
                     }
-                    catch
-                    {
-                        genresNoEntriesLabel.Visible = true;
-                        genresAddIDField.Text = "1";
-                    }
-
-                    break;
-                }
             }
         }
 
@@ -354,8 +354,8 @@ namespace Cinemaster
             }
 
             ticketsEditSessionCB.SelectedText = ticketsGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-            ticketsEditRow.Value = (int) ticketsGrid.Rows[e.RowIndex].Cells[4].Value;
-            ticketsEditSeat.Value = (int) ticketsGrid.Rows[e.RowIndex].Cells[3].Value;
+            ticketsEditRow.Value = (int)ticketsGrid.Rows[e.RowIndex].Cells[4].Value;
+            ticketsEditSeat.Value = (int)ticketsGrid.Rows[e.RowIndex].Cells[3].Value;
         }
 
         private void addTicketButton_Click(object sender, EventArgs e)
@@ -373,7 +373,7 @@ namespace Cinemaster
         {
             string name = genresAddNameField.Text;
             genresAddNameField.Text = "";
-            Erm.Insert("genres", new[] {"genre"}, new [] {name});
+            Erm.Insert("genres", new[] { "genre" }, new[] { name });
             TabControl1_Selected(null, null);
         }
 
@@ -400,7 +400,7 @@ namespace Cinemaster
             int ageRestr = (int)filmsAddAgeRestr.Value;
             filmsAddNameField.Text = "";
 
-            Erm.Insert("films", new[] { "name", "genreID", "ageRest" }, new[] { name , genreId.ToString(), ageRestr.ToString()});
+            Erm.Insert("films", new[] { "name", "genreID", "ageRest" }, new[] { name, genreId.ToString(), ageRestr.ToString() });
             TabControl1_Selected(null, null);
         }
 
@@ -419,7 +419,8 @@ namespace Cinemaster
             Date date = new Date(day, month, year);
             Time time = new Time(hours, minutes);
 
-            Erm.Insert("sessions", new[]{"roomID", "time", "date", "filmID", "type"}, new[] {roomID.ToString(), time.ToString(), date.ToString(), filmID.ToString(), type});
+            Erm.Insert("sessions", new[] { "roomID", "time", "date", "filmID", "type" }, new[] { roomId.ToString(), time.ToString(), date.ToString(), filmId.ToString(), type });
+            TabControl1_Selected(null, null);
 
             //TODO: it's possible to add same things overall
         }
