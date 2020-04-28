@@ -39,6 +39,10 @@ namespace Cinemaster
 
         public override string ToString()
         {
+            if(this.Minutes == 0)
+            {
+                return this.Hours + ":" + this.Minutes + "0";
+            }
             return this.Hours + ":" + this.Minutes;
         }
     }
@@ -210,23 +214,25 @@ namespace Cinemaster
         public static void Insert(String table, string[] cols,String[] values)
         {
             Connect();
-            String newValues = "(";
+            String newValues = "";
             foreach (String str in values)
             {
                 newValues += "'" + str + "', ";
             }
+            newValues = newValues.Substring(0, newValues.Length - 2);
 
-            newValues += ")";
 
-            string newCols = "(";
+            string newCols = "";
 
             foreach (string str in cols)
             {
-                newCols += "'" + str + "', ";
+                newCols += "" + str + ", ";
             }
+
+            newCols = newCols.Substring(0, newCols.Length - 2);
             
-            newValues += ")";
-            String query = String.Format("INSERT INTO {0}({1}) VALUES {2}", table, newCols, newValues);
+
+            String query = String.Format("INSERT INTO {0}({1}) VALUES ({2})", table, newCols, newValues);
 
             SqlCommand command = new SqlCommand(query, _connection);
             SqlDataAdapter adapter = new SqlDataAdapter();

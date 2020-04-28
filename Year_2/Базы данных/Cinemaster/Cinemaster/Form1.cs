@@ -332,11 +332,11 @@ namespace Cinemaster
         {
             if (String.IsNullOrEmpty(genresAddNameField.Text))
             {
-                addFilmButton.Enabled = false;
+                addGenreButton.Enabled = false;
             }
             else
             {
-                addFilmButton.Enabled = true;
+                addGenreButton.Enabled = true;
             }
         }
 
@@ -356,6 +356,53 @@ namespace Cinemaster
             ticketsEditSessionCB.SelectedText = ticketsGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
             ticketsEditRow.Value = (int) ticketsGrid.Rows[e.RowIndex].Cells[4].Value;
             ticketsEditSeat.Value = (int) ticketsGrid.Rows[e.RowIndex].Cells[3].Value;
+        }
+
+        private void addTicketButton_Click(object sender, EventArgs e)
+        {
+            int cashierId = int.Parse(ticketsAddCashierCB.SelectedText.Split('#')[0]);
+            int sessionId = int.Parse(ticketsAddSessionCB.SelectedText.Split('#')[0]);
+            int row = (int)ticketsAddRow.Value;
+            int seat = (int)ticketsAddSeat.Value;
+            ticketsAddSeat.Value++;
+            Erm.Insert("tickets", new[] { "sessionID", "cashierID", "row", "seat" }, new[] { cashierId.ToString(), sessionId.ToString(), row.ToString(), seat.ToString() });
+            TabControl1_Selected(null, null);
+        }
+
+        private void addGenreButton_Click(object sender, EventArgs e)
+        {
+            string name = genresAddNameField.Text;
+            genresAddNameField.Text = "";
+            Erm.Insert("genres", new[] {"genre"}, new [] {name});
+            TabControl1_Selected(null, null);
+        }
+
+        private void addRoomButton_Click(object sender, EventArgs e)
+        {
+            string name = roomsAddNameField.Text;
+            roomsAddNameField.Text = "";
+            Erm.Insert("rooms", new[] { "room" }, new[] { name });
+            TabControl1_Selected(null, null);
+        }
+
+        private void addCashierButton_Click(object sender, EventArgs e)
+        {
+            string name = cashierAddNameField.Text;
+            cashierAddNameField.Text = "";
+            Erm.Insert("cashiers", new[] { "cashier" }, new[] { name });
+            TabControl1_Selected(null, null);
+        }
+
+        private void addFilmButton_Click(object sender, EventArgs e)
+        {
+            string name = filmsAddNameField.Text;
+            MessageBox.Show(filmsAddGenreCB.SelectedText);
+            int genreId = int.Parse(filmsAddGenreCB.SelectedText.Split('#')[0]);
+            int ageRestr = (int)filmsAddAgeRestr.Value;
+            filmsAddNameField.Text = "";
+
+            Erm.Insert("films", new[] { "name", "genreID", "ageRest" }, new[] { name , genreId.ToString(), ageRestr.ToString()});
+            TabControl1_Selected(null, null);
         }
     }
 }

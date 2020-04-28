@@ -186,34 +186,34 @@
             this.tabControl.SuspendLayout();
             this.tickets.SuspendLayout();
             this.ticketsEditGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditSeat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditSeat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditRow)).BeginInit();
             this.ticketsAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddSeat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddSeat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).BeginInit();
             this.sessions.SuspendLayout();
             this.sessionsEditGroup.SuspendLayout();
             this.sessionsAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.sessionsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionsGrid)).BeginInit();
             this.films.SuspendLayout();
             this.filmsEditGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsEditAgeRestr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsEditAgeRestr)).BeginInit();
             this.filmsAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsAddAgeRestr)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsAddAgeRestr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsGrid)).BeginInit();
             this.cashiers.SuspendLayout();
             this.editCashierGroup.SuspendLayout();
             this.addCashierGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.cashiersGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cashiersGrid)).BeginInit();
             this.rooms.SuspendLayout();
             this.editRoomGroup.SuspendLayout();
             this.addRoomGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.roomsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsGrid)).BeginInit();
             this.genres.SuspendLayout();
             this.editGenreGroup.SuspendLayout();
             this.genresAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.genresGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genresGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -280,11 +280,19 @@
             // ticketsEditSeat
             // 
             this.ticketsEditSeat.Location = new System.Drawing.Point(67, 121);
-            this.ticketsEditSeat.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsEditSeat.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ticketsEditSeat.Name = "ticketsEditSeat";
             this.ticketsEditSeat.Size = new System.Drawing.Size(186, 20);
             this.ticketsEditSeat.TabIndex = 12;
-            this.ticketsEditSeat.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsEditSeat.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label4
             // 
@@ -298,16 +306,28 @@
             // ticketsEditRow
             // 
             this.ticketsEditRow.Location = new System.Drawing.Point(67, 96);
-            this.ticketsEditRow.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsEditRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ticketsEditRow.Name = "ticketsEditRow";
             this.ticketsEditRow.Size = new System.Drawing.Size(186, 20);
             this.ticketsEditRow.TabIndex = 10;
-            this.ticketsEditRow.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsEditRow.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // ticketsEditSessionCB
             // 
             this.ticketsEditSessionCB.FormattingEnabled = true;
-            this.ticketsEditSessionCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.ticketsEditSessionCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.ticketsEditSessionCB.Location = new System.Drawing.Point(67, 70);
             this.ticketsEditSessionCB.Name = "ticketsEditSessionCB";
             this.ticketsEditSessionCB.Size = new System.Drawing.Size(186, 21);
@@ -409,11 +429,19 @@
             // ticketsAddSeat
             // 
             this.ticketsAddSeat.Location = new System.Drawing.Point(67, 121);
-            this.ticketsAddSeat.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsAddSeat.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ticketsAddSeat.Name = "ticketsAddSeat";
             this.ticketsAddSeat.Size = new System.Drawing.Size(186, 20);
             this.ticketsAddSeat.TabIndex = 12;
-            this.ticketsAddSeat.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsAddSeat.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ticketsAddSeat.ValueChanged += new System.EventHandler(this.TicketsAddValidation);
             // 
             // label39
@@ -428,17 +456,29 @@
             // ticketsAddRow
             // 
             this.ticketsAddRow.Location = new System.Drawing.Point(67, 96);
-            this.ticketsAddRow.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsAddRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ticketsAddRow.Name = "ticketsAddRow";
             this.ticketsAddRow.Size = new System.Drawing.Size(186, 20);
             this.ticketsAddRow.TabIndex = 10;
-            this.ticketsAddRow.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsAddRow.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ticketsAddRow.ValueChanged += new System.EventHandler(this.TicketsAddValidation);
             // 
             // ticketsAddSessionCB
             // 
             this.ticketsAddSessionCB.FormattingEnabled = true;
-            this.ticketsAddSessionCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.ticketsAddSessionCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.ticketsAddSessionCB.Location = new System.Drawing.Point(67, 70);
             this.ticketsAddSessionCB.Name = "ticketsAddSessionCB";
             this.ticketsAddSessionCB.Size = new System.Drawing.Size(186, 21);
@@ -472,6 +512,7 @@
             this.addTicketButton.TabIndex = 6;
             this.addTicketButton.Text = "Добавить билет";
             this.addTicketButton.UseVisualStyleBackColor = true;
+            this.addTicketButton.Click += new System.EventHandler(this.addTicketButton_Click);
             // 
             // ticketsAddCashierCB
             // 
@@ -514,7 +555,12 @@
             this.ticketsGrid.AllowUserToAddRows = false;
             this.ticketsGrid.AllowUserToDeleteRows = false;
             this.ticketsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ticketsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.ticketID, this.session, this.cashier, this.seat, this.row});
+            this.ticketsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ticketID,
+            this.session,
+            this.cashier,
+            this.seat,
+            this.row});
             this.ticketsGrid.Location = new System.Drawing.Point(6, 5);
             this.ticketsGrid.Name = "ticketsGrid";
             this.ticketsGrid.RowHeadersVisible = false;
@@ -603,7 +649,11 @@
             // sessionsEditCB
             // 
             this.sessionsEditCB.FormattingEnabled = true;
-            this.sessionsEditCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsEditCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.sessionsEditCB.Location = new System.Drawing.Point(67, 151);
             this.sessionsEditCB.Name = "sessionsEditCB";
             this.sessionsEditCB.Size = new System.Drawing.Size(186, 21);
@@ -647,7 +697,11 @@
             // sessionsEditFilmCB
             // 
             this.sessionsEditFilmCB.FormattingEnabled = true;
-            this.sessionsEditFilmCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsEditFilmCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.sessionsEditFilmCB.Location = new System.Drawing.Point(67, 97);
             this.sessionsEditFilmCB.Name = "sessionsEditFilmCB";
             this.sessionsEditFilmCB.Size = new System.Drawing.Size(186, 21);
@@ -683,7 +737,11 @@
             // sessionsEditRoomCB
             // 
             this.sessionsEditRoomCB.FormattingEnabled = true;
-            this.sessionsEditRoomCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsEditRoomCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.sessionsEditRoomCB.Location = new System.Drawing.Point(67, 124);
             this.sessionsEditRoomCB.Name = "sessionsEditRoomCB";
             this.sessionsEditRoomCB.Size = new System.Drawing.Size(186, 21);
@@ -741,7 +799,11 @@
             // sessionsAddTypeCB
             // 
             this.sessionsAddTypeCB.FormattingEnabled = true;
-            this.sessionsAddTypeCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsAddTypeCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.sessionsAddTypeCB.Location = new System.Drawing.Point(67, 151);
             this.sessionsAddTypeCB.Name = "sessionsAddTypeCB";
             this.sessionsAddTypeCB.Size = new System.Drawing.Size(186, 21);
@@ -788,7 +850,11 @@
             // sessionsAddFilmCB
             // 
             this.sessionsAddFilmCB.FormattingEnabled = true;
-            this.sessionsAddFilmCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsAddFilmCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.sessionsAddFilmCB.Location = new System.Drawing.Point(67, 97);
             this.sessionsAddFilmCB.Name = "sessionsAddFilmCB";
             this.sessionsAddFilmCB.Size = new System.Drawing.Size(186, 21);
@@ -825,7 +891,11 @@
             // sessionsAddRoomCB
             // 
             this.sessionsAddRoomCB.FormattingEnabled = true;
-            this.sessionsAddRoomCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsAddRoomCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.sessionsAddRoomCB.Location = new System.Drawing.Point(67, 124);
             this.sessionsAddRoomCB.Name = "sessionsAddRoomCB";
             this.sessionsAddRoomCB.Size = new System.Drawing.Size(186, 21);
@@ -875,7 +945,13 @@
             this.sessionsGrid.AllowUserToAddRows = false;
             this.sessionsGrid.AllowUserToDeleteRows = false;
             this.sessionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.sessionID, this.date, this.time, this.film, this.room, this.type});
+            this.sessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sessionID,
+            this.date,
+            this.time,
+            this.film,
+            this.room,
+            this.type});
             this.sessionsGrid.Location = new System.Drawing.Point(6, 5);
             this.sessionsGrid.Name = "sessionsGrid";
             this.sessionsGrid.RowHeadersVisible = false;
@@ -998,7 +1074,11 @@
             // filmsEditGenreCB
             // 
             this.filmsEditGenreCB.FormattingEnabled = true;
-            this.filmsEditGenreCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.filmsEditGenreCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.filmsEditGenreCB.Location = new System.Drawing.Point(67, 71);
             this.filmsEditGenreCB.Name = "filmsEditGenreCB";
             this.filmsEditGenreCB.Size = new System.Drawing.Size(186, 21);
@@ -1093,7 +1173,11 @@
             // filmsAddGenreCB
             // 
             this.filmsAddGenreCB.FormattingEnabled = true;
-            this.filmsAddGenreCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.filmsAddGenreCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.filmsAddGenreCB.Location = new System.Drawing.Point(67, 71);
             this.filmsAddGenreCB.Name = "filmsAddGenreCB";
             this.filmsAddGenreCB.Size = new System.Drawing.Size(186, 21);
@@ -1126,6 +1210,7 @@
             this.addFilmButton.TabIndex = 6;
             this.addFilmButton.Text = "Добавить фильм";
             this.addFilmButton.UseVisualStyleBackColor = true;
+            this.addFilmButton.Click += new System.EventHandler(this.addFilmButton_Click);
             // 
             // label22
             // 
@@ -1150,7 +1235,11 @@
             this.filmsGrid.AllowUserToAddRows = false;
             this.filmsGrid.AllowUserToDeleteRows = false;
             this.filmsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.filmsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.filmID, this.name, this.genre, this.ageRestr});
+            this.filmsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.filmID,
+            this.name,
+            this.genre,
+            this.ageRestr});
             this.filmsGrid.Location = new System.Drawing.Point(6, 5);
             this.filmsGrid.Name = "filmsGrid";
             this.filmsGrid.RowHeadersVisible = false;
@@ -1313,6 +1402,7 @@
             this.addCashierButton.TabIndex = 6;
             this.addCashierButton.Text = "Добавить кассира";
             this.addCashierButton.UseVisualStyleBackColor = true;
+            this.addCashierButton.Click += new System.EventHandler(this.addCashierButton_Click);
             // 
             // label29
             // 
@@ -1337,7 +1427,9 @@
             this.cashiersGrid.AllowUserToAddRows = false;
             this.cashiersGrid.AllowUserToDeleteRows = false;
             this.cashiersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cashiersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.ID, this.cashierName});
+            this.cashiersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.cashierName});
             this.cashiersGrid.Location = new System.Drawing.Point(6, 5);
             this.cashiersGrid.Name = "cashiersGrid";
             this.cashiersGrid.RowHeadersVisible = false;
@@ -1488,6 +1580,7 @@
             this.addRoomButton.TabIndex = 6;
             this.addRoomButton.Text = "Добавить зал";
             this.addRoomButton.UseVisualStyleBackColor = true;
+            this.addRoomButton.Click += new System.EventHandler(this.addRoomButton_Click);
             // 
             // label31
             // 
@@ -1512,7 +1605,9 @@
             this.roomsGrid.AllowUserToAddRows = false;
             this.roomsGrid.AllowUserToDeleteRows = false;
             this.roomsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.roomsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.roomID, this.roomName});
+            this.roomsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.roomID,
+            this.roomName});
             this.roomsGrid.Location = new System.Drawing.Point(6, 5);
             this.roomsGrid.Name = "roomsGrid";
             this.roomsGrid.RowHeadersVisible = false;
@@ -1663,6 +1758,7 @@
             this.addGenreButton.TabIndex = 6;
             this.addGenreButton.Text = "Добавить жанр";
             this.addGenreButton.UseVisualStyleBackColor = true;
+            this.addGenreButton.Click += new System.EventHandler(this.addGenreButton_Click);
             // 
             // label35
             // 
@@ -1687,7 +1783,9 @@
             this.genresGrid.AllowUserToAddRows = false;
             this.genresGrid.AllowUserToDeleteRows = false;
             this.genresGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.genresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.genreID, this.genreName});
+            this.genresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.genreID,
+            this.genreName});
             this.genresGrid.Location = new System.Drawing.Point(6, 5);
             this.genresGrid.Name = "genresGrid";
             this.genresGrid.RowHeadersVisible = false;
@@ -1712,7 +1810,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 551);
             this.Controls.Add(this.tabControl);
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Cinemaster";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1721,51 +1819,52 @@
             this.tickets.PerformLayout();
             this.ticketsEditGroup.ResumeLayout(false);
             this.ticketsEditGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditSeat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditSeat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditRow)).EndInit();
             this.ticketsAddGroup.ResumeLayout(false);
             this.ticketsAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddSeat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddSeat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).EndInit();
             this.sessions.ResumeLayout(false);
             this.sessions.PerformLayout();
             this.sessionsEditGroup.ResumeLayout(false);
             this.sessionsEditGroup.PerformLayout();
             this.sessionsAddGroup.ResumeLayout(false);
             this.sessionsAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.sessionsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionsGrid)).EndInit();
             this.films.ResumeLayout(false);
             this.films.PerformLayout();
             this.filmsEditGroup.ResumeLayout(false);
             this.filmsEditGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsEditAgeRestr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsEditAgeRestr)).EndInit();
             this.filmsAddGroup.ResumeLayout(false);
             this.filmsAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsAddAgeRestr)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsAddAgeRestr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsGrid)).EndInit();
             this.cashiers.ResumeLayout(false);
             this.cashiers.PerformLayout();
             this.editCashierGroup.ResumeLayout(false);
             this.editCashierGroup.PerformLayout();
             this.addCashierGroup.ResumeLayout(false);
             this.addCashierGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.cashiersGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cashiersGrid)).EndInit();
             this.rooms.ResumeLayout(false);
             this.rooms.PerformLayout();
             this.editRoomGroup.ResumeLayout(false);
             this.editRoomGroup.PerformLayout();
             this.addRoomGroup.ResumeLayout(false);
             this.addRoomGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.roomsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsGrid)).EndInit();
             this.genres.ResumeLayout(false);
             this.genres.PerformLayout();
             this.editGenreGroup.ResumeLayout(false);
             this.editGenreGroup.PerformLayout();
             this.genresAddGroup.ResumeLayout(false);
             this.genresAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.genresGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genresGrid)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Button addCashierButton;
