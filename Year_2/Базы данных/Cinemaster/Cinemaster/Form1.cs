@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+
 // ReSharper disable LocalVariableHidesMember
 // ReSharper disable All
 
@@ -47,25 +48,27 @@ namespace Cinemaster
                         {
                             ticketsGrid.Rows[i].Cells[0].Value = tickets[i].Id;
                             //search for the session to have a proper display
-                            for (int j = 0; j < sessions.Length; i++)
+                            for (int j = 0; j < sessions.Length; j++)
                             {
-                                if (tickets[i].SessionId == sessions[i].Id)
+                                if (tickets[i].SessionId == sessions[j].Id)
                                 {
-                                    ticketsGrid.Rows[i].Cells[1].Value = sessions[i].ToString();
+                                    ticketsGrid.Rows[i].Cells[1].Value = sessions[j].ToString();
                                     break;
                                 }
                             }
+
                             ticketsGrid.Rows[i].Cells[2].Value = tickets[i].Cashier;
                             ticketsGrid.Rows[i].Cells[3].Value = tickets[i].Seat;
                             ticketsGrid.Rows[i].Cells[4].Value = tickets[i].Row;
                         }
+
                         ticketsAddIDField.Text = (tickets[tickets.Length - 1].Id + 1).ToString();
                     }
-                    catch
+                    catch(Exception ex)
                     {
-                        ticketsNoEntriesLabel.Visible = true;
-                        ticketsAddIDField.Text = "1";
+                        MessageBox.Show(ex.Message);
                     }
+
 
                     break;
                 }
@@ -100,6 +103,7 @@ namespace Cinemaster
                             sessionsGrid.Rows[i].Cells[4].Value = sessions[i].Room;
                             sessionsGrid.Rows[i].Cells[5].Value = sessions[i].Type;
                         }
+
                         sessionsAddIDField.Text = (sessions[sessions.Length - 1].Id + 1).ToString();
                     }
                     catch
@@ -133,6 +137,7 @@ namespace Cinemaster
                             filmsGrid.Rows[i].Cells[2].Value = films[i].Genre;
                             filmsGrid.Rows[i].Cells[3].Value = films[i].AgeRest;
                         }
+
                         filmsAddIDField.Text = (films[films.Length - 1].Id + 1).ToString();
                     }
                     catch
@@ -156,6 +161,7 @@ namespace Cinemaster
                             cashiersGrid.Rows[i].Cells[0].Value = cashiers[i].Id;
                             cashiersGrid.Rows[i].Cells[1].Value = cashiers[i].Name;
                         }
+
                         cashierAddIDField.Text = (cashiers[cashiers.Length - 1].Id + 1).ToString();
                     }
                     catch
@@ -178,6 +184,7 @@ namespace Cinemaster
                             roomsGrid.Rows[i].Cells[0].Value = rooms[i].Id;
                             roomsGrid.Rows[i].Cells[1].Value = rooms[i].Name;
                         }
+
                         roomsAddIDField.Text = (rooms[rooms.Length - 1].Id + 1).ToString();
                     }
                     catch
@@ -200,6 +207,7 @@ namespace Cinemaster
                             genresGrid.Rows[i].Cells[0].Value = genres[i].Id;
                             genresGrid.Rows[i].Cells[1].Value = genres[i].Name;
                         }
+
                         genresAddIDField.Text = (genres[genres.Length - 1].Id + 1).ToString();
                     }
                     catch
@@ -344,6 +352,7 @@ namespace Cinemaster
                     ticketsEditCashierCB.SelectedIndex = j;
                 }
             }
+
             ticketsEditSessionCB.SelectedText = ticketsGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
             ticketsEditRow.Value = (int) ticketsGrid.Rows[e.RowIndex].Cells[4].Value;
             ticketsEditSeat.Value = (int) ticketsGrid.Rows[e.RowIndex].Cells[3].Value;
