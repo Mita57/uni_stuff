@@ -648,7 +648,7 @@ namespace Cinemaster
 
             for(int i = 0; i < sessionsEditFilmCB.Items.Count; i++)
             {
-                if(sessionsEditFilmCB.Items[i].ToString().Substring(1) == sessionsGrid.Rows[e.RowIndex].Cells[3].Value.ToString())
+                if(sessionsEditFilmCB.Items[i].ToString().Split(':')[1].Substring(1) == sessionsGrid.Rows[e.RowIndex].Cells[3].Value.ToString())
                 {
                     sessionsEditFilmCB.SelectedIndex = i;
                     break;
@@ -657,9 +657,18 @@ namespace Cinemaster
 
             for(int i = 0; i < sessionsEditRoomCB.Items.Count; i++)
             {
-                if(sessionsEditRoomCB.Items[i].ToString().Substring(1) == sessionsGrid.Rows[e.RowIndex].Cells[4].Value.ToString())
+                if(sessionsEditRoomCB.Items[i].ToString().Split(':')[1].Substring(1) == sessionsGrid.Rows[e.RowIndex].Cells[4].Value.ToString())
                 {
                     sessionsEditRoomCB.SelectedIndex = i;
+                    break;
+                }
+            }
+
+            for(int i = 0; i < sessionsEditCB.Items.Count; i++)
+            {
+                if(sessionsEditCB.Items[i].ToString() == sessionsGrid.Rows[e.RowIndex].Cells[5].Value.ToString())
+                {
+                    sessionsEditCB.SelectedIndex = i;
                     break;
                 }
             }
