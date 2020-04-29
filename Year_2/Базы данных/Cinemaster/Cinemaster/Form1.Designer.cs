@@ -149,7 +149,7 @@
             this.cashierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rooms = new System.Windows.Forms.TabPage();
             this.roomsNoEntriesLabel = new System.Windows.Forms.Label();
-            this.deleteCashierButton = new System.Windows.Forms.Button();
+            this.deleteRoomButton = new System.Windows.Forms.Button();
             this.editRoomGroup = new System.Windows.Forms.GroupBox();
             this.roomsEditNameField = new System.Windows.Forms.TextBox();
             this.roomsEditIDField = new System.Windows.Forms.TextBox();
@@ -407,6 +407,7 @@
             this.ticketsDeleteButton.TabIndex = 9;
             this.ticketsDeleteButton.Text = "Удалить билет";
             this.ticketsDeleteButton.UseVisualStyleBackColor = false;
+            this.ticketsDeleteButton.Click += new System.EventHandler(this.ticketsDeleteButton_Click);
             // 
             // ticketsAddGroup
             // 
@@ -946,6 +947,7 @@
             this.sessionsDeleteButton.TabIndex = 10;
             this.sessionsDeleteButton.Text = "Удалить сеанс";
             this.sessionsDeleteButton.UseVisualStyleBackColor = false;
+            this.sessionsDeleteButton.Click += new System.EventHandler(this.sessionsDeleteButton_Click);
             // 
             // sessionsGrid
             // 
@@ -1036,6 +1038,7 @@
             this.filmsDeleteButton.TabIndex = 14;
             this.filmsDeleteButton.Text = "Удалить фильм";
             this.filmsDeleteButton.UseVisualStyleBackColor = false;
+            this.filmsDeleteButton.Click += new System.EventHandler(this.filmsDeleteButton_Click);
             // 
             // filmsEditGroup
             // 
@@ -1316,6 +1319,7 @@
             this.removeCashierButton.TabIndex = 15;
             this.removeCashierButton.Text = "Удалить кассира";
             this.removeCashierButton.UseVisualStyleBackColor = false;
+            this.removeCashierButton.Click += new System.EventHandler(this.removeCashierButton_Click);
             // 
             // editCashierGroup
             // 
@@ -1466,7 +1470,7 @@
             // rooms
             // 
             this.rooms.Controls.Add(this.roomsNoEntriesLabel);
-            this.rooms.Controls.Add(this.deleteCashierButton);
+            this.rooms.Controls.Add(this.deleteRoomButton);
             this.rooms.Controls.Add(this.editRoomGroup);
             this.rooms.Controls.Add(this.addRoomGroup);
             this.rooms.Controls.Add(this.roomsGrid);
@@ -1487,16 +1491,17 @@
             this.roomsNoEntriesLabel.Text = "Нет записей";
             this.roomsNoEntriesLabel.Visible = false;
             // 
-            // deleteCashierButton
+            // deleteRoomButton
             // 
-            this.deleteCashierButton.BackColor = System.Drawing.Color.Tomato;
-            this.deleteCashierButton.Enabled = false;
-            this.deleteCashierButton.Location = new System.Drawing.Point(772, 471);
-            this.deleteCashierButton.Name = "deleteCashierButton";
-            this.deleteCashierButton.Size = new System.Drawing.Size(247, 34);
-            this.deleteCashierButton.TabIndex = 16;
-            this.deleteCashierButton.Text = "Удалить зал";
-            this.deleteCashierButton.UseVisualStyleBackColor = false;
+            this.deleteRoomButton.BackColor = System.Drawing.Color.Tomato;
+            this.deleteRoomButton.Enabled = false;
+            this.deleteRoomButton.Location = new System.Drawing.Point(772, 471);
+            this.deleteRoomButton.Name = "deleteRoomButton";
+            this.deleteRoomButton.Size = new System.Drawing.Size(247, 34);
+            this.deleteRoomButton.TabIndex = 16;
+            this.deleteRoomButton.Text = "Удалить зал";
+            this.deleteRoomButton.UseVisualStyleBackColor = false;
+            this.deleteRoomButton.Click += new System.EventHandler(this.deleteRoomButton_Click);
             // 
             // editRoomGroup
             // 
@@ -1678,6 +1683,7 @@
             this.deleteGenreButton.TabIndex = 17;
             this.deleteGenreButton.Text = "Удалить жанр";
             this.deleteGenreButton.UseVisualStyleBackColor = false;
+            this.deleteGenreButton.Click += new System.EventHandler(this.deleteGenreButton_Click);
             // 
             // editGenreGroup
             // 
@@ -1906,7 +1912,7 @@
         private System.Windows.Forms.Button changeFilmButton;
         private System.Windows.Forms.Button changeGenreButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.Button deleteCashierButton;
+        private System.Windows.Forms.Button deleteRoomButton;
         private System.Windows.Forms.Button deleteGenreButton;
         private System.Windows.Forms.GroupBox editCashierGroup;
         private System.Windows.Forms.GroupBox editGenreGroup;

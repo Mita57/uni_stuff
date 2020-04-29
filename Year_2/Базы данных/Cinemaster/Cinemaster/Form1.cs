@@ -578,6 +578,8 @@ namespace Cinemaster
         {
             ticketsEditGroup.Enabled = true;
 
+            ticketsDeleteButton.Enabled = true;
+
             ticketsEditField.Text = ticketsGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
             ticketsEditRow.Value = (int)ticketsGrid.Rows[e.RowIndex].Cells[3].Value;
             ticketsEditSeat.Value = (int)ticketsGrid.Rows[e.RowIndex].Cells[4].Value;
@@ -604,6 +606,8 @@ namespace Cinemaster
         private void genresGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             editGenreGroup.Enabled = true;
+            deleteGenreButton.Enabled = true;
+
             genresEditIDField.Text = genresGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
             genresEditNameField.Text = genresGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
@@ -611,6 +615,8 @@ namespace Cinemaster
         private void roomsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             editRoomGroup.Enabled = true;
+            deleteRoomButton.Enabled = true;
+
             roomsEditIDField.Text = roomsGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
             roomsEditNameField.Text = roomsGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
@@ -618,6 +624,8 @@ namespace Cinemaster
         private void cashiersGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             editCashierGroup.Enabled = true;
+            removeCashierButton.Enabled = true;
+
             cashierEditIdField.Text = cashiersGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
             cashierEditNameTB.Text = cashiersGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
@@ -625,6 +633,9 @@ namespace Cinemaster
         private void filmsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             filmsEditGroup.Enabled = true;
+            filmsDeleteButton.Enabled = true;
+
+
             filmsEditIDField.Text = filmsGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
             filmsEditNameField.Text = filmsGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
             for(int i = 0; i < filmsEditGenreCB.Items.Count; i++)
@@ -640,6 +651,8 @@ namespace Cinemaster
         private void sessionsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             sessionsEditGroup.Enabled = true;
+            sessionsDeleteButton.Enabled = true;
+
             sessionsEditField.Text = sessionsGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
             
             string[] date = sessionsGrid.Rows[e.RowIndex].Cells[1].Value.ToString().Split('.');
@@ -674,6 +687,74 @@ namespace Cinemaster
             }
 
             sessionEditTimePicker.Value = new DateTime(1800, 1, 1, int.Parse(time[0]), int.Parse(time[1]), 0);
+        }
+
+        //deleting stuff
+
+        private void ticketsDeleteButton_Click(object sender, EventArgs e)
+        {
+            string id = ticketsGrid.CurrentRow.Cells[0].Value.ToString();
+            DialogResult confirmResult = MessageBox.Show("Удалить билет " + id + "?", "Подтвердите действие", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                Erm.Delete("tickets", "ticketID", id);
+            }
+            TabControl1_Selected(null, null);
+        }
+
+        private void sessionsDeleteButton_Click(object sender, EventArgs e)
+        {
+            string id = sessionsGrid.CurrentRow.Cells[0].Value.ToString();
+            DialogResult confirmResult = MessageBox.Show("Удалить сеанс " + id + "?", "Подтвердите действие", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                Erm.Delete("sessions", "sessionID", id);
+            }
+            TabControl1_Selected(null, null);
+        }
+
+        private void filmsDeleteButton_Click(object sender, EventArgs e)
+        {
+            string id = filmsGrid.CurrentRow.Cells[0].Value.ToString();
+            DialogResult confirmResult = MessageBox.Show("Удалить фильм " + id + ": " + filmsGrid.CurrentRow.Cells[1].Value.ToString() + "?", "Подтвердите действие", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                Erm.Delete("films", "filmID", id);
+            }
+            TabControl1_Selected(null, null);
+        }
+
+        private void removeCashierButton_Click(object sender, EventArgs e)
+        {
+            string id = cashiersGrid.CurrentRow.Cells[0].Value.ToString();
+            DialogResult confirmResult = MessageBox.Show("Удалить кассира " + id + ": " + cashiersGrid.CurrentRow.Cells[1].Value.ToString() + "?", "Подтвердите действие", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                Erm.Delete("cashiers", "cashierID", id);
+            }
+            TabControl1_Selected(null, null);
+        }
+
+        private void deleteRoomButton_Click(object sender, EventArgs e)
+        {
+            string id = roomsGrid.CurrentRow.Cells[0].Value.ToString();
+            DialogResult confirmResult = MessageBox.Show("Удалить зал " + id + ": " + roomsGrid.CurrentRow.Cells[1].Value.ToString() + "?", "Подтвердите действие", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                Erm.Delete("rooms", "roomID", id);
+            }
+            TabControl1_Selected(null, null);
+        }
+
+        private void deleteGenreButton_Click(object sender, EventArgs e)
+        {
+            string id = genresGrid.CurrentRow.Cells[0].Value.ToString();
+            DialogResult confirmResult = MessageBox.Show("Удалить кассира " + id + ": " + genresGrid.CurrentRow.Cells[1].Value.ToString() + "?", "Подтвердите действие", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                Erm.Delete("genres", "genreID", id);
+            }
+            TabControl1_Selected(null, null);
         }
     }
 }

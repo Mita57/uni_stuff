@@ -413,22 +413,9 @@ namespace Cinemaster
 
 
 
-        public static void Delete(String table, String[] cols, String[] vals)
+        public static void Delete(String table, string col, string val)
         {
-            String newCols = "(";
-            foreach (String col in cols)
-            {
-                newCols += col + ", ";
-            }
-            newCols += ")";
-
-            String newVals = "(";
-            foreach (String val in vals)
-            {
-                newVals += "'" + val + "',";
-            }
-            newVals += ")";
-            String query = String.Format("DELETE FROM {0} WHERE {1} = {2}", table, newCols, newVals);
+            String query = String.Format("DELETE FROM {0} WHERE {1} = {2}", table, col, val);
 
             SqlCommand command = new SqlCommand(query, _connection);
             SqlDataAdapter adapter = new SqlDataAdapter();
