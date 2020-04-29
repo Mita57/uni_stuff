@@ -279,7 +279,7 @@
             // 
             // ticketsEditSeat
             // 
-            this.ticketsEditSeat.Location = new System.Drawing.Point(67, 121);
+            this.ticketsEditSeat.Location = new System.Drawing.Point(67, 96);
             this.ticketsEditSeat.Minimum = new decimal(new int[] {
             1,
             0,
@@ -297,7 +297,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 126);
+            this.label4.Location = new System.Drawing.Point(9, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 11;
@@ -305,7 +305,7 @@
             // 
             // ticketsEditRow
             // 
-            this.ticketsEditRow.Location = new System.Drawing.Point(67, 96);
+            this.ticketsEditRow.Location = new System.Drawing.Point(67, 121);
             this.ticketsEditRow.Minimum = new decimal(new int[] {
             1,
             0,
@@ -353,7 +353,6 @@
             // 
             // updateTicketButton
             // 
-            this.updateTicketButton.Enabled = false;
             this.updateTicketButton.Location = new System.Drawing.Point(8, 163);
             this.updateTicketButton.Name = "updateTicketButton";
             this.updateTicketButton.Size = new System.Drawing.Size(247, 34);
@@ -374,7 +373,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 100);
+            this.label6.Location = new System.Drawing.Point(8, 123);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 2;
@@ -431,7 +430,7 @@
             // 
             // ticketsAddSeat
             // 
-            this.ticketsAddSeat.Location = new System.Drawing.Point(67, 121);
+            this.ticketsAddSeat.Location = new System.Drawing.Point(67, 96);
             this.ticketsAddSeat.Minimum = new decimal(new int[] {
             1,
             0,
@@ -450,7 +449,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(8, 126);
+            this.label39.Location = new System.Drawing.Point(7, 98);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(42, 13);
             this.label39.TabIndex = 11;
@@ -458,7 +457,7 @@
             // 
             // ticketsAddRow
             // 
-            this.ticketsAddRow.Location = new System.Drawing.Point(67, 96);
+            this.ticketsAddRow.Location = new System.Drawing.Point(67, 121);
             this.ticketsAddRow.Minimum = new decimal(new int[] {
             1,
             0,
@@ -529,7 +528,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 100);
+            this.label3.Location = new System.Drawing.Point(8, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 2;
@@ -569,7 +568,7 @@
             this.ticketsGrid.RowHeadersVisible = false;
             this.ticketsGrid.Size = new System.Drawing.Size(748, 515);
             this.ticketsGrid.TabIndex = 0;
-            this.ticketsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.enableEditAndRemove);
+            this.ticketsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketsGrid_CellContentClick);
             // 
             // ticketID
             // 
@@ -965,6 +964,7 @@
             this.sessionsGrid.RowHeadersVisible = false;
             this.sessionsGrid.Size = new System.Drawing.Size(748, 515);
             this.sessionsGrid.TabIndex = 1;
+            this.sessionsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sessionsGrid_CellClick);
             // 
             // sessionID
             // 
@@ -1256,6 +1256,7 @@
             this.filmsGrid.RowHeadersVisible = false;
             this.filmsGrid.Size = new System.Drawing.Size(748, 515);
             this.filmsGrid.TabIndex = 2;
+            this.filmsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.filmsGrid_CellClick);
             // 
             // filmID
             // 
@@ -1448,6 +1449,7 @@
             this.cashiersGrid.RowHeadersVisible = false;
             this.cashiersGrid.Size = new System.Drawing.Size(748, 515);
             this.cashiersGrid.TabIndex = 3;
+            this.cashiersGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cashiersGrid_CellClick);
             // 
             // ID
             // 
@@ -1628,6 +1630,7 @@
             this.roomsGrid.RowHeadersVisible = false;
             this.roomsGrid.Size = new System.Drawing.Size(748, 515);
             this.roomsGrid.TabIndex = 4;
+            this.roomsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomsGrid_CellClick);
             // 
             // roomID
             // 
@@ -1709,7 +1712,6 @@
             // 
             // changeGenreButton
             // 
-            this.changeGenreButton.Enabled = false;
             this.changeGenreButton.Location = new System.Drawing.Point(6, 71);
             this.changeGenreButton.Name = "changeGenreButton";
             this.changeGenreButton.Size = new System.Drawing.Size(247, 34);
@@ -1808,6 +1810,7 @@
             this.genresGrid.RowHeadersVisible = false;
             this.genresGrid.Size = new System.Drawing.Size(748, 515);
             this.genresGrid.TabIndex = 5;
+            this.genresGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.genresGrid_CellClick);
             // 
             // genreID
             // 

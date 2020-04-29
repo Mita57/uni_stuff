@@ -513,7 +513,7 @@ namespace Cinemaster
             string newSeat = ticketsEditSeat.Value.ToString();
 
             Erm.Update("tickets", new[] { "sessionID", "cashierID", "row", "seat" }, new[] { newCashierId, newSessionId, newRow, newSeat },
-                new [] {"ticketID"}, new[] { ticketsEditField.Text});
+               "ticketID", ticketsEditField.Text);
             TabControl1_Selected(null, null);
         }
 
@@ -533,7 +533,7 @@ namespace Cinemaster
             String time = new Time(hours, minutes).ToString();
 
             Erm.Update("sessions", new[] {"roomID", "time", "date", "filmID", "type"}, new[] {roomId, time, date, filmId, type},
-                new[] {"sessionID"}, new[] {sessionsEditField.Text} );
+                "sessionID", sessionsEditField.Text );
             TabControl1_Selected(null, null);
         }
 
@@ -543,7 +543,7 @@ namespace Cinemaster
             string newGenreId = filmsEditGenreCB.Text.Split('#')[0];
             string newAgeRest = filmsEditAgeRestr.Value.ToString();
             Erm.Update("films", new[] { "name", "genreID", "ageRest" }, new[] { newName, newGenreId, newAgeRest },
-                new[] { "filmID" }, new[] { filmsEditIDField.Text });
+                "filmID" ,  filmsEditIDField.Text );
             TabControl1_Selected(null, null);
         }
 
@@ -552,7 +552,7 @@ namespace Cinemaster
             string newName = cashierEditNameTB.Text;
 
             Erm.Update("cashiers", new[] { "cashier" }, new[] { newName },
-                new[] { "cashierID" }, new[] { cashierEditIdField.Text });
+                 "cashierID" ,  cashierEditIdField.Text );
             TabControl1_Selected(null, null);
         }
 
@@ -560,7 +560,7 @@ namespace Cinemaster
         {
             string newName = roomsEditNameField.Text;
 
-            Erm.Update("rooms", new[] { "room" }, new[] { newName }, new[] { "roomID" }, new[] { roomsEditIDField.Text });
+            Erm.Update("rooms", new[] { "room" }, new[] { newName }, "roomID" , roomsEditIDField.Text );
             TabControl1_Selected(null, null);
         }
 
@@ -568,8 +568,103 @@ namespace Cinemaster
         {
             string newName = genresEditNameField.Text;
 
-            Erm.Update("genres", new[] { "genre" }, new[] { newName }, new[] { "genreID" }, new[] { roomsEditIDField.Text });
+            Erm.Update("genres", new[] { "genre" }, new[] { newName }, "genreID" , genresEditIDField.Text );
             TabControl1_Selected(null, null);
+        }
+
+        //enable delete and chagne buttons and filling fields
+
+        private void ticketsGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ticketsEditGroup.Enabled = true;
+
+            ticketsEditField.Text = ticketsGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            ticketsEditRow.Value = (int)ticketsGrid.Rows[e.RowIndex].Cells[3].Value;
+            ticketsEditSeat.Value = (int)ticketsGrid.Rows[e.RowIndex].Cells[4].Value;
+
+            for(int i = 0; i < ticketsEditCashierCB.Items.Count; i++)
+            {
+                if(ticketsGrid.Rows[e.RowIndex].Cells[2].Value.ToString() == ticketsEditCashierCB.Items[i].ToString().Split(':')[1].Substring(1))
+                {
+                    ticketsEditCashierCB.SelectedIndex = i;
+                    break;
+                }
+            }
+
+            for (int i = 0; i < ticketsEditSessionCB.Items.Count; i++)
+            {
+                if (ticketsGrid.Rows[e.RowIndex].Cells[1].Value.ToString() == ticketsEditSessionCB.Items[i].ToString())
+                {
+                    ticketsEditSessionCB.SelectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        private void genresGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            editGenreGroup.Enabled = true;
+            genresEditIDField.Text = genresGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            genresEditNameField.Text = genresGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void roomsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            editRoomGroup.Enabled = true;
+            roomsEditIDField.Text = roomsGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            roomsEditNameField.Text = roomsGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void cashiersGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            editCashierGroup.Enabled = true;
+            cashierEditIdField.Text = cashiersGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            cashierEditNameTB.Text = cashiersGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void filmsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            filmsEditGroup.Enabled = true;
+            filmsEditIDField.Text = filmsGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            filmsEditNameField.Text = filmsGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            for(int i = 0; i < filmsEditGenreCB.Items.Count; i++)
+            {
+                if(filmsEditGenreCB.Items[i].ToString().Split(':')[1].Substring(1) == filmsGrid.Rows[e.RowIndex].Cells[2].Value.ToString())
+                {
+                    filmsEditGenreCB.SelectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        private void sessionsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            sessionsEditGroup.Enabled = true;
+            sessionsEditField.Text = sessionsGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            
+            string[] date = sessionsGrid.Rows[e.RowIndex].Cells[1].Value.ToString().Split('.');
+            sessionsEditDatePicker.Value = new DateTime(int.Parse(date[2]), int.Parse(date[1]), int.Parse(date[0]));
+            string[] time = sessionsGrid.Rows[e.RowIndex].Cells[2].Value.ToString().Split(':');
+
+            for(int i = 0; i < sessionsEditFilmCB.Items.Count; i++)
+            {
+                if(sessionsEditFilmCB.Items[i].ToString().Substring(1) == sessionsGrid.Rows[e.RowIndex].Cells[3].Value.ToString())
+                {
+                    sessionsEditFilmCB.SelectedIndex = i;
+                    break;
+                }
+            }
+
+            for(int i = 0; i < sessionsEditRoomCB.Items.Count; i++)
+            {
+                if(sessionsEditRoomCB.Items[i].ToString().Substring(1) == sessionsGrid.Rows[e.RowIndex].Cells[4].Value.ToString())
+                {
+                    sessionsEditRoomCB.SelectedIndex = i;
+                    break;
+                }
+            }
+
+            sessionEditTimePicker.Value = new DateTime(1800, 1, 1, int.Parse(time[0]), int.Parse(time[1]), 0);
         }
     }
 }

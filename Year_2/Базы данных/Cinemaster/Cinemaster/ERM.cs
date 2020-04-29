@@ -242,38 +242,19 @@ namespace Cinemaster
             Disconnect();
         }
 
-        public static void Update(String table, String[] cols, String[] values, String[] attrCols, String[] attrVals)
+        public static void Update(String table, String[] cols, String[] values, string attrCol, string attrVal)
         {
             Connect();
-            String newCols = "(";
-            foreach (String col in cols)
-            {
-                newCols += col + ", ";
-            }
-            newCols += ")";
 
-            String newValues = "(";
-            foreach (String str in values)
-            {
-                newValues += "'" + str + "', ";
-            }
-            newValues += ")";
+            string qr = "";
 
-            String newAttrCols = "(";
-            foreach (String col in attrCols)
+            for(int i = 0; i < cols.Length; i++)
             {
-                newValues += col + ",";
+                qr += cols[i] + "= '" + values[i] + "'" + ",";
             }
-            newAttrCols += ")";
+            qr = qr.Substring(0, qr.Length - 1);
 
-            String newAttrVals = "(";
-            foreach (String val in attrVals)
-            {
-                newAttrVals += "'" + val + "', ";
-            }
-            newAttrCols += ")";
-
-            String query = String.Format("UPDATE {0} SET {1} = {2} WHERE {3} = {4}", table, newCols, newValues, newAttrVals, newAttrCols);
+            String query = String.Format("UPDATE {0} SET {1} WHERE {2} = {3}", table, qr, attrCol, attrVal);
 
             SqlCommand command = new SqlCommand(query, _connection);
             SqlDataAdapter adapter = new SqlDataAdapter();
