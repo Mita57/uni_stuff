@@ -343,7 +343,7 @@ namespace Cinemaster
 
         //enable editing
 
-        private void ticketsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void enableEditAndRemove(object sender, DataGridViewCellEventArgs e)
         {
             ticketsEditGroup.Enabled = true;
             ticketsEditField.Text = ticketsGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -364,12 +364,12 @@ namespace Cinemaster
 
         private void addTicketButton_Click(object sender, EventArgs e)
         {
-            int cashierId = int.Parse(ticketsAddCashierCB.Text.Split('#')[0]);
-            int sessionId = int.Parse(ticketsAddSessionCB.Text.Split('#')[0]);
-            int row = (int)ticketsAddRow.Value;
-            int seat = (int)ticketsAddSeat.Value;
+            string cashierId = ticketsAddCashierCB.Text.Split('#')[0];
+            string sessionId = ticketsAddSessionCB.Text.Split('#')[0];
+            string row = ticketsAddRow.Value.ToString();
+            string seat = ticketsAddSeat.Value.ToString();
             ticketsAddSeat.Value++;
-            Erm.Insert("tickets", new[] { "sessionID", "cashierID", "row", "seat" }, new[] { cashierId.ToString(), sessionId.ToString(), row.ToString(), seat.ToString() });
+            Erm.Insert("tickets", new[] { "sessionID", "cashierID", "row", "seat" }, new[] { cashierId, sessionId, row, seat});
             TabControl1_Selected(null, null);
         }
 
@@ -400,11 +400,11 @@ namespace Cinemaster
         private void addFilmButton_Click(object sender, EventArgs e)
         {
             string name = filmsAddNameField.Text;
-            int genreId = int.Parse(filmsAddGenreCB.Text.Split('#')[0]);
-            int ageRestr = (int)filmsAddAgeRestr.Value;
+            string genreId = filmsAddGenreCB.Text.Split('#')[0];
+            string ageRestr = filmsAddAgeRestr.Value.ToString();
             filmsAddNameField.Text = "";
 
-            Erm.Insert("films", new[] { "name", "genreID", "ageRest" }, new[] { name, genreId.ToString(), ageRestr.ToString() });
+            Erm.Insert("films", new[] { "name", "genreID", "ageRest" }, new[] { name, genreId, ageRestr});
             TabControl1_Selected(null, null);
         }
 
@@ -416,14 +416,14 @@ namespace Cinemaster
             int hours = sessionsAddTimePicker.Value.Hour;
             int minutes = sessionsAddTimePicker.Value.Minute;
 
-            int filmId = int.Parse(sessionsAddFilmCB.Text.Split('#')[0]);
-            int roomId = int.Parse(sessionsAddRoomCB.Text.Split('#')[0]);
+            string filmId = sessionsAddFilmCB.Text.Split('#')[0];
+            string roomId = sessionsAddRoomCB.Text.Split('#')[0];
             string type = sessionsAddTypeCB.Text;
 
-            Date date = new Date(day, month, year);
-            Time time = new Time(hours, minutes);
+            String date = new Date(day, month, year).ToString();
+            String time = new Time(hours, minutes).ToString();
 
-            Erm.Insert("sessions", new[] { "roomID", "time", "date", "filmID", "type" }, new[] { roomId.ToString(), time.ToString(), date.ToString(), filmId.ToString(), type });
+            Erm.Insert("sessions", new[] { "roomID", "time", "date", "filmID", "type" }, new[] { roomId, time, date, filmId, type });
             TabControl1_Selected(null, null);
 
             //TODO: it's possible to add same things overall
@@ -501,6 +501,75 @@ namespace Cinemaster
             {
                 changeGenreButton.Enabled = true;
             }
+        }
+
+        //updating stuff 
+
+        private void updateTicketButton_Click(object sender, EventArgs e)
+        {
+            string newCashierId = ticketsEditCashierCB.Text.Split('#')[0];
+            string newSessionId = ticketsEditSessionCB.Text.Split('#')[0];
+            string newRow = ticketsEditRow.Value.ToString();
+            string newSeat = ticketsEditSeat.Value.ToString();
+
+            Erm.Update("tickets", new[] { "sessionID", "cashierID", "row", "seat" }, new[] { newCashierId, newSessionId, newRow, newSeat },
+                new [] {"ticketID"}, new[] { ticketsEditField.Text});
+            TabControl1_Selected(null, null);
+        }
+
+        private void sessionEditButton_Click(object sender, EventArgs e)
+        {
+            int year = sessionsEditDatePicker.Value.Year;
+            int month = sessionsEditDatePicker.Value.Month;
+            int day = sessionsEditDatePicker.Value.Day;
+            int hours = sessionsEditDatePicker.Value.Hour;
+            int minutes = sessionsEditDatePicker.Value.Minute;
+
+            string filmId = sessionsEditFilmCB.Text.Split('#')[0];
+            string roomId = sessionsEditRoomCB.Text.Split('#')[0];
+            string type = sessionsEditCB.Text;
+
+            String date = new Date(day, month, year).ToString();
+            String time = new Time(hours, minutes).ToString();
+
+            Erm.Update("sessions", new[] {"roomID", "time", "date", "filmID", "type"}, new[] {roomId, time, date, filmId, type},
+                new[] {"sessionID"}, new[] {sessionsEditField.Text} );
+            TabControl1_Selected(null, null);
+        }
+
+        private void changeFilmButton_Click(object sender, EventArgs e)
+        {
+            string newName = filmsEditNameField.Text;
+            string newGenreId = filmsEditGenreCB.Text.Split('#')[0];
+            string newAgeRest = filmsEditAgeRestr.Value.ToString();
+            Erm.Update("films", new[] { "name", "genreID", "ageRest" }, new[] { newName, newGenreId, newAgeRest },
+                new[] { "filmID" }, new[] { filmsEditIDField.Text });
+            TabControl1_Selected(null, null);
+        }
+
+        private void updateCashierButton_Click(object sender, EventArgs e)
+        {
+            string newName = cashierEditNameTB.Text;
+
+            Erm.Update("cashiers", new[] { "cashier" }, new[] { newName },
+                new[] { "cashierID" }, new[] { cashierEditIdField.Text });
+            TabControl1_Selected(null, null);
+        }
+
+        private void updateRoomButton_Click(object sender, EventArgs e)
+        {
+            string newName = roomsEditNameField.Text;
+
+            Erm.Update("rooms", new[] { "room" }, new[] { newName }, new[] { "roomID" }, new[] { roomsEditIDField.Text });
+            TabControl1_Selected(null, null);
+        }
+
+        private void changeGenreButton_Click(object sender, EventArgs e)
+        {
+            string newName = genresEditNameField.Text;
+
+            Erm.Update("genres", new[] { "genre" }, new[] { newName }, new[] { "genreID" }, new[] { roomsEditIDField.Text });
+            TabControl1_Selected(null, null);
         }
     }
 }

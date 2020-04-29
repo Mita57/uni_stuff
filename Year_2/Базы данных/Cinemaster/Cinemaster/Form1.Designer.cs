@@ -134,7 +134,7 @@
             this.removeCashierButton = new System.Windows.Forms.Button();
             this.editCashierGroup = new System.Windows.Forms.GroupBox();
             this.cashierEditNameTB = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cashierEditIdField = new System.Windows.Forms.TextBox();
             this.updateCashierButton = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -360,6 +360,7 @@
             this.updateTicketButton.TabIndex = 6;
             this.updateTicketButton.Text = "Изменить билет";
             this.updateTicketButton.UseVisualStyleBackColor = true;
+            this.updateTicketButton.Click += new System.EventHandler(this.updateTicketButton_Click);
             // 
             // ticketsEditCashierCB
             // 
@@ -568,7 +569,7 @@
             this.ticketsGrid.RowHeadersVisible = false;
             this.ticketsGrid.Size = new System.Drawing.Size(748, 515);
             this.ticketsGrid.TabIndex = 0;
-            this.ticketsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketsGrid_CellClick);
+            this.ticketsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.enableEditAndRemove);
             // 
             // ticketID
             // 
@@ -737,6 +738,7 @@
             this.sessionEditButton.TabIndex = 6;
             this.sessionEditButton.Text = "Изменить сеанс";
             this.sessionEditButton.UseVisualStyleBackColor = true;
+            this.sessionEditButton.Click += new System.EventHandler(this.sessionEditButton_Click);
             // 
             // sessionsEditRoomCB
             // 
@@ -1118,6 +1120,7 @@
             this.changeFilmButton.TabIndex = 6;
             this.changeFilmButton.Text = "Изменить фильм";
             this.changeFilmButton.UseVisualStyleBackColor = true;
+            this.changeFilmButton.Click += new System.EventHandler(this.changeFilmButton_Click);
             // 
             // label25
             // 
@@ -1316,7 +1319,7 @@
             // editCashierGroup
             // 
             this.editCashierGroup.Controls.Add(this.cashierEditNameTB);
-            this.editCashierGroup.Controls.Add(this.textBox2);
+            this.editCashierGroup.Controls.Add(this.cashierEditIdField);
             this.editCashierGroup.Controls.Add(this.updateCashierButton);
             this.editCashierGroup.Controls.Add(this.label27);
             this.editCashierGroup.Controls.Add(this.label28);
@@ -1336,13 +1339,13 @@
             this.cashierEditNameTB.TabIndex = 13;
             this.cashierEditNameTB.TextChanged += new System.EventHandler(this.updateCashierTB_TextChanged);
             // 
-            // textBox2
+            // cashierEditIdField
             // 
-            this.textBox2.Location = new System.Drawing.Point(67, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(186, 20);
-            this.textBox2.TabIndex = 7;
+            this.cashierEditIdField.Location = new System.Drawing.Point(67, 19);
+            this.cashierEditIdField.Name = "cashierEditIdField";
+            this.cashierEditIdField.ReadOnly = true;
+            this.cashierEditIdField.Size = new System.Drawing.Size(186, 20);
+            this.cashierEditIdField.TabIndex = 7;
             // 
             // updateCashierButton
             // 
@@ -1353,6 +1356,7 @@
             this.updateCashierButton.TabIndex = 6;
             this.updateCashierButton.Text = "Изменить кассира";
             this.updateCashierButton.UseVisualStyleBackColor = true;
+            this.updateCashierButton.Click += new System.EventHandler(this.updateCashierButton_Click);
             // 
             // label27
             // 
@@ -1532,6 +1536,7 @@
             this.updateRoomButton.TabIndex = 6;
             this.updateRoomButton.Text = "Изменить зал";
             this.updateRoomButton.UseVisualStyleBackColor = true;
+            this.updateRoomButton.Click += new System.EventHandler(this.updateRoomButton_Click);
             // 
             // label33
             // 
@@ -1711,6 +1716,7 @@
             this.changeGenreButton.TabIndex = 6;
             this.changeGenreButton.Text = "Изменить жанр";
             this.changeGenreButton.UseVisualStyleBackColor = true;
+            this.changeGenreButton.Click += new System.EventHandler(this.changeGenreButton_Click);
             // 
             // label37
             // 
@@ -2009,7 +2015,7 @@
         private System.Windows.Forms.Label sessionsNoEntriesLabel;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TextBox cashierEditNameTB;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox cashierEditIdField;
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketID;
         private System.Windows.Forms.TabPage tickets;
         private System.Windows.Forms.ComboBox ticketsAddCashierCB;
