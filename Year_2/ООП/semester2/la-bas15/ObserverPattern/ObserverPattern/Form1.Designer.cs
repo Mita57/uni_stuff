@@ -29,29 +29,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.eventABtn = new System.Windows.Forms.Button();
+            this.eventBBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.addObserverBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // eventABtn
             // 
-            this.button1.Location = new System.Drawing.Point(14, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Событие A";
-            this.button1.UseVisualStyleBackColor = true;
+            this.eventABtn.Location = new System.Drawing.Point(14, 18);
+            this.eventABtn.Name = "eventABtn";
+            this.eventABtn.Size = new System.Drawing.Size(135, 30);
+            this.eventABtn.TabIndex = 0;
+            this.eventABtn.Text = "Событие A";
+            this.eventABtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // eventBBtn
             // 
-            this.button2.Location = new System.Drawing.Point(14, 81);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Событие B";
-            this.button2.UseVisualStyleBackColor = true;
+            this.eventBBtn.Location = new System.Drawing.Point(14, 81);
+            this.eventBBtn.Name = "eventBBtn";
+            this.eventBBtn.Size = new System.Drawing.Size(135, 30);
+            this.eventBBtn.TabIndex = 1;
+            this.eventBBtn.Text = "Событие B";
+            this.eventBBtn.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -69,22 +70,33 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Подписчиков:";
             // 
+            // addObserverBtn
+            // 
+            this.addObserverBtn.Location = new System.Drawing.Point(14, 176);
+            this.addObserverBtn.Name = "addObserverBtn";
+            this.addObserverBtn.Size = new System.Drawing.Size(154, 29);
+            this.addObserverBtn.TabIndex = 4;
+            this.addObserverBtn.Text = "Добавить наблюдателя";
+            this.addObserverBtn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 273);
+            this.Controls.Add(this.addObserverBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.eventBBtn);
+            this.Controls.Add(this.eventABtn);
             this.Name = "Form1";
             this.Text = "Источник";
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button addObserverBtn;
+        private System.Windows.Forms.Button eventABtn;
+        private System.Windows.Forms.Button eventBBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
 
