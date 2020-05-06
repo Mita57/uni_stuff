@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.addObserverBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // eventABtn
@@ -66,7 +67,7 @@
             // 
             this.label2.Location = new System.Drawing.Point(184, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 25);
+            this.label2.Size = new System.Drawing.Size(82, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Подписчиков:";
             // 
@@ -78,19 +79,30 @@
             this.addObserverBtn.TabIndex = 4;
             this.addObserverBtn.Text = "Добавить наблюдателя";
             this.addObserverBtn.UseVisualStyleBackColor = true;
+            this.addObserverBtn.Click += new System.EventHandler(this.addObserverBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(14, 226);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 25);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Всего наблюдателей:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(350, 273);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.addObserverBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.eventBBtn);
             this.Controls.Add(this.eventABtn);
+            this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
-            this.Text = "Источник";
             this.ResumeLayout(false);
         }
 
@@ -99,6 +111,7 @@
         private System.Windows.Forms.Button eventBBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
 
         #endregion
     }
