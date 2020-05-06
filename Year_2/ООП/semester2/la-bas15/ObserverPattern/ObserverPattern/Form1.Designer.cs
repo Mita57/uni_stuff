@@ -29,31 +29,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.eventABtn = new System.Windows.Forms.Button();
-            this.eventBBtn = new System.Windows.Forms.Button();
+            this.Button1 = new System.Windows.Forms.Button();
+            this.Button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.addObserverBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // eventABtn
+            // Button1
             // 
-            this.eventABtn.Location = new System.Drawing.Point(14, 18);
-            this.eventABtn.Name = "eventABtn";
-            this.eventABtn.Size = new System.Drawing.Size(135, 30);
-            this.eventABtn.TabIndex = 0;
-            this.eventABtn.Text = "Событие A";
-            this.eventABtn.UseVisualStyleBackColor = true;
+            this.Button1.Location = new System.Drawing.Point(14, 18);
+            this.Button1.Name = "Button1";
+            this.Button1.Size = new System.Drawing.Size(135, 30);
+            this.Button1.TabIndex = 0;
+            this.Button1.Text = "Событие A";
+            this.Button1.UseVisualStyleBackColor = true;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // eventBBtn
+            // Button2
             // 
-            this.eventBBtn.Location = new System.Drawing.Point(14, 81);
-            this.eventBBtn.Name = "eventBBtn";
-            this.eventBBtn.Size = new System.Drawing.Size(135, 30);
-            this.eventBBtn.TabIndex = 1;
-            this.eventBBtn.Text = "Событие B";
-            this.eventBBtn.UseVisualStyleBackColor = true;
+            this.Button2.Location = new System.Drawing.Point(14, 81);
+            this.Button2.Name = "Button2";
+            this.Button2.Size = new System.Drawing.Size(135, 30);
+            this.Button2.TabIndex = 1;
+            this.Button2.Text = "Событие B";
+            this.Button2.UseVisualStyleBackColor = true;
+            this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label1
             // 
@@ -99,16 +101,16 @@
             this.Controls.Add(this.addObserverBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.eventBBtn);
-            this.Controls.Add(this.eventABtn);
+            this.Controls.Add(this.Button2);
+            this.Controls.Add(this.Button1);
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
             this.ResumeLayout(false);
         }
 
         private System.Windows.Forms.Button addObserverBtn;
-        private System.Windows.Forms.Button eventABtn;
-        private System.Windows.Forms.Button eventBBtn;
+        private System.Windows.Forms.Button Button1;
+        private System.Windows.Forms.Button Button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

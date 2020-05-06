@@ -37,5 +37,80 @@ namespace ObserverPattern
             label2.Text = "Подписчиков " + countB;
             label3.Text = "Подписчиков " + obsCount;
         }
+
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (eventA != null)
+            {
+                eventA();
+            }
+        }
+
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            if(eventB != null
+            {
+                eventB();
+            }
+        }
+
+        public void register(string name, object o, Action method)
+        {
+            bool done = false;
+
+            switch (name)
+            {
+                case "A":
+                {
+                    eventA += method;
+                    countA++;
+                    done = true;
+                    break;
+                }
+                case "B":
+                {
+                    eventB += method;
+                    countB++;
+                    done = true;
+                    break;
+                }
+            }
+
+            if (done)
+            {
+                MessageBox.Show(string.Format("Объект {0} подписался на событие {1}", o, name));
+                showInfo();
+            }
+        }
+
+        public void unRegister(string name, object o, Action method)
+        {
+            bool done = false;
+            switch (name)
+            {
+                case "A":
+                {
+                    eventA -= method;
+                    countA--;
+                    done = true;
+                    break;
+                }
+                case "B":
+                {
+                    eventB -= method;
+                    countB--;
+                    done = true;
+                    break;
+                }
+            }
+
+            if (done)
+            {
+                MessageBox.Show(string.Format("Объект {0} отписался от события {1}", o, name));
+                showInfo();
+            }
+        }
     }
 }
