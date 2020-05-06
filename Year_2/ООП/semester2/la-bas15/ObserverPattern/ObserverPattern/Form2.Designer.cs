@@ -32,11 +32,11 @@ namespace ObserverPattern
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,15 +54,34 @@ namespace ObserverPattern
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Панель управления";
             // 
-            // radioButton1
+            // button2
             // 
-            this.radioButton1.Location = new System.Drawing.Point(9, 30);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(150, 33);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Событие A";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(257, 274);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(149, 38);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Отписать";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(16, 274);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(149, 38);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Подписать";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {"Временно окрасить", "Переставить влево", "Временно обезглавить"});
+            this.listBox1.Location = new System.Drawing.Point(34, 69);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(350, 186);
+            this.listBox1.TabIndex = 2;
             // 
             // radioButton2
             // 
@@ -74,32 +93,15 @@ namespace ObserverPattern
             this.radioButton2.Text = "Событие Б";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // radioButton1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {"Временно окрасить", "Переставить влево", "Временно обезглавить"});
-            this.listBox1.Location = new System.Drawing.Point(34, 69);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(350, 186);
-            this.listBox1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(16, 274);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 38);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Подписать";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(257, 274);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 38);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Отписать";
-            this.button2.UseVisualStyleBackColor = true;
+            this.radioButton1.Location = new System.Drawing.Point(9, 30);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(150, 33);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Событие A";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // Form2
             // 
