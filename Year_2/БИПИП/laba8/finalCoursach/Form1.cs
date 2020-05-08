@@ -375,6 +375,7 @@ namespace finalCoursach
         {
             this.prods = new Prods[0];
             this.allprods = new Prods[0];
+            this.grid1.Rows.Clear();
         }
 
         private void открытьToolStripMenuItem_Click_1(object sender, EventArgs e)

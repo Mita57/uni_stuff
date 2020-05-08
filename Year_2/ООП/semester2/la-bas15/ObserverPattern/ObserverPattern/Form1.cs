@@ -50,7 +50,7 @@ namespace ObserverPattern
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            if(eventB != null
+            if(eventB != null)
             {
                 eventB();
             }

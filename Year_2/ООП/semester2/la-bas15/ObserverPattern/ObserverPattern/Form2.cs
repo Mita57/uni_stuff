@@ -79,22 +79,22 @@ namespace ObserverPattern
             {
                 case 0:
                 {
-                    act = Action1;
+                    act = action1;
                     break;
                 }
                 case 1:
                 {
-                    act = Action2;
+                    act = action2;
                     break;
                 }
                 case 2:
                 {
-                    act = Action3;
+                    act = action3;
                     break;
                 }
             }
 
-            mainF.UnRegister(name, this, act);
+            mainf.unRegister(name, this, act);
         }
     }
 }
