@@ -89,7 +89,10 @@ namespace ObserverPattern
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {"Временно окрасить", "Переставить влево", "Временно обезглавить"});
+            this.listBox1.Items.AddRange(new object[] {
+            "Временно окрасить",
+            "Переставить влево",
+            "Временно обезглавить"});
             this.listBox1.Location = new System.Drawing.Point(34, 69);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(350, 186);
@@ -123,8 +126,10 @@ namespace ObserverPattern
             this.Controls.Add(this.groupBox1);
             this.Name = "Form2";
             this.Text = "Наблюдатор228";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Button button1;

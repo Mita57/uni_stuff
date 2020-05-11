@@ -12,7 +12,7 @@ namespace ObserverPattern
         public Form2(Form f)
         {
             InitializeComponent();
-            mainf = (Form1) f;
+            mainf = (Form1)f;
         }
 
         public void action1()
@@ -52,20 +52,20 @@ namespace ObserverPattern
             switch (listBox1.SelectedIndex)
             {
                 case 0:
-                {
-                    act = action1;
-                    break;
-                }
+                    {
+                        act = action1;
+                        break;
+                    }
                 case 1:
-                {
-                    act = action2;
-                    break;
-                }
+                    {
+                        act = action2;
+                        break;
+                    }
                 case 2:
-                {
-                    act = action3;
-                    break;
-                }
+                    {
+                        act = action3;
+                        break;
+                    }
             }
 
             mainf.register(name, this, act);
@@ -80,22 +80,49 @@ namespace ObserverPattern
             switch (listBox1.SelectedIndex)
             {
                 case 0:
-                {
-                    act = action1;
-                    break;
-                }
+                    {
+                        act = action1;
+                        break;
+                    }
                 case 1:
-                {
-                    act = action2;
-                    break;
-                }
+                    {
+                        act = action2;
+                        break;
+                    }
                 case 2:
-                {
-                    act = action3;
-                    break;
-                }
+                    {
+                        act = action3;
+                        break;
+                    }
             }
 
+            mainf.unRegister(name, this, act);
+        }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string name = "A";
+            if (radioButton2.Checked) name = "B";
+            if (radioButton3.Checked) name = "C";
+            Action act = null;
+            switch (listBox1.SelectedIndex)
+            {
+                case 0:
+                    {
+                        act = action1;
+                        break;
+                    }
+                case 1:
+                    {
+                        act = action2;
+                        break;
+                    }
+                case 2:
+                    {
+                        act = action3;
+                        break;
+                    }
+            }
             mainf.unRegister(name, this, act);
         }
     }
