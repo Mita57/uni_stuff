@@ -83,8 +83,9 @@ namespace ObserverPattern
                         countA++;
                         aList.Add(new Sub(o.ToString().Split(new[] { "Наблюдатель" }, StringSplitOptions.None)[1].Split(',')[0], name));
                         string meme = "";
-                        foreach (Sub sus in aList)
+                        for (int i = 0; i < aList.Count; i++)
                         {
+                            Sub sus = aList[i];
                             meme += sus.name + ":" + sus.action;
                         }
                         toolTip1.SetToolTip(Button1, meme);
@@ -97,8 +98,9 @@ namespace ObserverPattern
                         countB++;
                         bList.Add(new Sub(o.ToString().Split(new[] { "Наблюдатель" }, StringSplitOptions.None)[1].Split(',')[0], name));
                         string meme = "";
-                        foreach (Sub sus in bList)
+                        for (int i = 0; i < bList.Count; i++)
                         {
+                            Sub sus = bList[i];
                             meme += sus.name + ":" + sus.action;
                         }
                         toolTip1.SetToolTip(Button2, meme);
@@ -111,8 +113,9 @@ namespace ObserverPattern
                         countС++;
                         cList.Add(new Sub(o.ToString().Split(new[] { "Наблюдатель" }, StringSplitOptions.None)[1].Split(',')[0], name));
                         string meme = "";
-                        foreach (Sub sus in cList)
+                        for (int i = 0; i < cList.Count; i++)
                         {
+                            Sub sus = cList[i];
                             meme += sus.name + ":" + sus.action;
                         }
                         toolTip1.SetToolTip(Button3, meme);
@@ -137,16 +140,18 @@ namespace ObserverPattern
                     {
                         eventA -= method;
                         countA--;
-                        foreach(Sub sus in aList)
+                        for (int i = 0; i < aList.Count; i++)
                         {
-                            if(sus.name == o.ToString().Split(new[] { "Наблюдатель" }, StringSplitOptions.None)[1].Split(',')[0])
+                            Sub sus = aList[i];
+                            if (sus.name == o.ToString().Split(new[] { "Наблюдатель" }, StringSplitOptions.None)[1].Split(',')[0])
                             {
                                 aList.Remove(sus);
                             }
                         }
                         string meme = "";
-                        foreach (Sub sus in aList)
+                        for (int i = 0; i < aList.Count; i++)
                         {
+                            Sub sus = aList[i];
                             meme += sus.name + ":" + sus.action;
                         }
                         toolTip1.SetToolTip(Button1, meme);
@@ -157,16 +162,18 @@ namespace ObserverPattern
                     {
                         eventB -= method;
                         countB--;
-                        foreach (Sub sus in bList)
+                        for (int i = 0; i < bList.Count; i++)
                         {
+                            Sub sus = bList[i];
                             if (sus.name == o.ToString().Split(new[] { "Наблюдатель" }, StringSplitOptions.None)[1].Split(',')[0])
                             {
                                 bList.Remove(sus);
                             }
                         }
                         string meme = "";
-                        foreach (Sub sus in bList)
+                        for (int i = 0; i < bList.Count; i++)
                         {
+                            Sub sus = bList[i];
                             meme += sus.name + ":" + sus.action;
                         }
                         done = true;
@@ -176,16 +183,18 @@ namespace ObserverPattern
                     {
                         eventC -= method;
                         countС--;
-                        foreach (Sub sus in cList)
+                        for (int i = 0; i < cList.Count; i++)
                         {
+                            Sub sus = cList[i];
                             if (sus.name == o.ToString().Split(new[] { "Наблюдатель" }, StringSplitOptions.None)[1].Split(',')[0])
                             {
                                 cList.Remove(sus);
                             }
                         }
                         string meme = "";
-                        foreach (Sub sus in cList)
+                        for (int i = 0; i < cList.Count; i++)
                         {
+                            Sub sus = cList[i];
                             meme += sus.name + ":" + sus.action;
                         }
                         done = true;
