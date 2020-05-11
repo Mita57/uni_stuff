@@ -47,6 +47,7 @@ namespace ObserverPattern
         {
             string name = "A";
             if (radioButton2.Checked) name = "B";
+            if (radioButton3.Checked) name = "C";
             Action act = null;
             switch (listBox1.SelectedIndex)
             {
@@ -74,6 +75,7 @@ namespace ObserverPattern
         {
             string name = "A";
             if (radioButton2.Checked) name = "B";
+            if (radioButton3.Checked) name = "C";
             Action act = null;
             switch (listBox1.SelectedIndex)
             {

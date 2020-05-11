@@ -32,6 +32,7 @@ namespace ObserverPattern
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -42,6 +43,7 @@ namespace ObserverPattern
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.listBox1);
@@ -53,6 +55,16 @@ namespace ObserverPattern
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Панель управления";
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.Location = new System.Drawing.Point(234, 30);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(150, 33);
+            this.radioButton3.TabIndex = 5;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Событие С";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -85,7 +97,7 @@ namespace ObserverPattern
             // 
             // radioButton2
             // 
-            this.radioButton2.Location = new System.Drawing.Point(257, 30);
+            this.radioButton2.Location = new System.Drawing.Point(119, 30);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(150, 33);
             this.radioButton2.TabIndex = 1;
@@ -121,6 +133,7 @@ namespace ObserverPattern
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
 
         #endregion
     }

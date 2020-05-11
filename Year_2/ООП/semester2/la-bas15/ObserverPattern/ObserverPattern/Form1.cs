@@ -20,6 +20,9 @@ namespace ObserverPattern
         public Action eventB;
         private int countB = 0;
 
+        public Action eventC;
+        private int countС = 0;
+
 
         private void addObserverBtn_Click(object sender, EventArgs e)
         {
@@ -35,6 +38,7 @@ namespace ObserverPattern
         {
             label1.Text = "Подписчиков " + countA;
             label2.Text = "Подписчиков " + countB;
+            label4.Text = "Подписчиков " + countС;
             label3.Text = "Подписчиков " + obsCount;
         }
 
@@ -55,6 +59,14 @@ namespace ObserverPattern
                 eventB();
             }
         }
+        
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            if(eventC != null) 
+            {
+                eventC();
+            }
+        }
 
         public void register(string name, object o, Action method)
         {
@@ -73,6 +85,13 @@ namespace ObserverPattern
                 {
                     eventB += method;
                     countB++;
+                    done = true;
+                    break;
+                }
+                case "C":
+                {
+                    eventC += method;
+                    countС++;
                     done = true;
                     break;
                 }
@@ -104,6 +123,13 @@ namespace ObserverPattern
                     done = true;
                     break;
                 }
+                case "C":
+                {
+                    eventC -= method;
+                    countС--;
+                    done = true;
+                    break;
+                }
             }
 
             if (done)
@@ -112,5 +138,6 @@ namespace ObserverPattern
                 showInfo();
             }
         }
+        
     }
 }
