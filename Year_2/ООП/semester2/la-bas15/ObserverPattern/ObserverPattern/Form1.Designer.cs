@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Button1 = new System.Windows.Forms.Button();
             this.Button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Button3 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // Button1
@@ -63,7 +65,7 @@
             // 
             this.label1.Location = new System.Drawing.Point(184, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 25);
+            this.label1.Size = new System.Drawing.Size(94, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Подписчиков:";
             // 
@@ -71,7 +73,7 @@
             // 
             this.label2.Location = new System.Drawing.Point(184, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 25);
+            this.label2.Size = new System.Drawing.Size(94, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Подписчиков:";
             // 
@@ -97,7 +99,7 @@
             // 
             this.label4.Location = new System.Drawing.Point(184, 140);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 25);
+            this.label4.Size = new System.Drawing.Size(110, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "Подписчиков:";
             // 
@@ -128,6 +130,7 @@
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Button addObserverBtn;
@@ -140,5 +143,7 @@
         private System.Windows.Forms.Label label4;
 
         #endregion
+
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

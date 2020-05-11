@@ -3,25 +3,28 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ObserverPattern
-{
+{ 
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
         }
-        
+
         List<Form2> Observers = new List<Form2>();
         private int obsCount = 0;
 
         public Action eventA;
         private int countA = 0;
+        private List<Sub> aList = new List<Sub>();
 
         public Action eventB;
         private int countB = 0;
+        private List<Sub> bList = new List<Sub>();
 
         public Action eventC;
         private int countС = 0;
+        private List<Sub> cList = new List<Sub>();
 
 
         private void addObserverBtn_Click(object sender, EventArgs e)
@@ -54,15 +57,15 @@ namespace ObserverPattern
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            if(eventB != null) 
+            if (eventB != null)
             {
                 eventB();
             }
         }
-        
+
         private void Button3_Click(object sender, EventArgs e)
         {
-            if(eventC != null) 
+            if (eventC != null)
             {
                 eventC();
             }
@@ -75,26 +78,47 @@ namespace ObserverPattern
             switch (name)
             {
                 case "A":
-                {
-                    eventA += method;
-                    countA++;
-                    done = true;
-                    break;
-                }
+                    {
+                        eventA += method;
+                        countA++;
+                        aList.Add(new Sub(o.ToString().Split(new[] { "Наблюдатель" }, StringSplitOptions.None)[1].Split(',')[0], name));
+                        string meme = "";
+                        foreach (Sub sus in aList)
+                        {
+                            meme += sus.name + ":" + sus.action;
+                        }
+                        toolTip1.SetToolTip(Button1, meme);
+                        done = true;
+                        break;
+                    }
                 case "B":
-                {
-                    eventB += method;
-                    countB++;
-                    done = true;
-                    break;
-                }
+                    {
+                        eventB += method;
+                        countB++;
+                        bList.Add(new Sub(o.ToString().Split(new[] { "Наблюдатель" }, StringSplitOptions.None)[1].Split(',')[0], name));
+                        string meme = "";
+                        foreach (Sub sus in bList)
+                        {
+                            meme += sus.name + ":" + sus.action;
+                        }
+                        toolTip1.SetToolTip(Button2, meme);
+                        done = true;
+                        break;
+                    }
                 case "C":
-                {
-                    eventC += method;
-                    countС++;
-                    done = true;
-                    break;
-                }
+                    {
+                        eventC += method;
+                        countС++;
+                        cList.Add(new Sub(o.ToString().Split(new[] { "Наблюдатель" }, StringSplitOptions.None)[1].Split(',')[0], name));
+                        string meme = "";
+                        foreach (Sub sus in cList)
+                        {
+                            meme += sus.name + ":" + sus.action;
+                        }
+                        toolTip1.SetToolTip(Button3, meme);
+                        done = true;
+                        break;
+                    }
             }
 
             if (done)
@@ -110,26 +134,63 @@ namespace ObserverPattern
             switch (name)
             {
                 case "A":
-                {
-                    eventA -= method;
-                    countA--;
-                    done = true;
-                    break;
-                }
+                    {
+                        eventA -= method;
+                        countA--;
+                        foreach(Sub sus in aList)
+                        {
+                            if(sus.name == o.ToString().Split(new[] { "Наблюдатель" }, StringSplitOptions.None)[1].Split(',')[0])
+                            {
+                                aList.Remove(sus);
+                            }
+                        }
+                        string meme = "";
+                        foreach (Sub sus in aList)
+                        {
+                            meme += sus.name + ":" + sus.action;
+                        }
+                        toolTip1.SetToolTip(Button1, meme);
+                        done = true;
+                        break;
+                    }
                 case "B":
-                {
-                    eventB -= method;
-                    countB--;
-                    done = true;
-                    break;
-                }
+                    {
+                        eventB -= method;
+                        countB--;
+                        foreach (Sub sus in bList)
+                        {
+                            if (sus.name == o.ToString().Split(new[] { "Наблюдатель" }, StringSplitOptions.None)[1].Split(',')[0])
+                            {
+                                bList.Remove(sus);
+                            }
+                        }
+                        string meme = "";
+                        foreach (Sub sus in bList)
+                        {
+                            meme += sus.name + ":" + sus.action;
+                        }
+                        done = true;
+                        break;
+                    }
                 case "C":
-                {
-                    eventC -= method;
-                    countС--;
-                    done = true;
-                    break;
-                }
+                    {
+                        eventC -= method;
+                        countС--;
+                        foreach (Sub sus in cList)
+                        {
+                            if (sus.name == o.ToString().Split(new[] { "Наблюдатель" }, StringSplitOptions.None)[1].Split(',')[0])
+                            {
+                                cList.Remove(sus);
+                            }
+                        }
+                        string meme = "";
+                        foreach (Sub sus in cList)
+                        {
+                            meme += sus.name + ":" + sus.action;
+                        }
+                        done = true;
+                        break;
+                    }
             }
 
             if (done)
@@ -138,6 +199,20 @@ namespace ObserverPattern
                 showInfo();
             }
         }
-        
+
+
     }
+
+    class Sub
+    {
+        public string name;
+        public string action;
+
+        public Sub(string name, string action)
+        {
+            this.name = name;
+            this.action = action;
+        }
+    }
+
 }
