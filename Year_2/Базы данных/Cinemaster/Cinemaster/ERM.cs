@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Cinemaster
 {
@@ -39,7 +43,7 @@ namespace Cinemaster
 
         public override string ToString()
         {
-            if(this.Minutes == 0)
+            if (this.Minutes == 0)
             {
                 return this.Hours + ":" + this.Minutes + "0";
             }
@@ -109,7 +113,7 @@ namespace Cinemaster
         {
             return (this.Id + "#:" + this.Date + ", " + this.Time + "; " + this.Room) + "; " + this.Film;
         }
-      
+
     }
 
 
@@ -195,6 +199,36 @@ namespace Cinemaster
         }
     }
 
+    public class CoolTicket
+    {
+        public int ID { get; set; }
+        public string sessionID { get; set; }
+        public string date { get; set; }
+        public string time { get; set; }
+        public string film { get; set; }
+        public string type { get; set; }
+        public string cashier { get; set; }
+        public string genre { get; set; }
+        public string room { get; set; }
+        public int place { get; set; }
+        public int row { get; set; }
+
+        public CoolTicket(int id, string sessionID, string date, string time, string type, string cashier, string genre, string room, int place, int row)
+        {
+            this.ID = id;
+            this.sessionID = sessionID;
+            this.date = date;
+            this.time = time;
+            this.type = type;
+            this.cashier = cashier;
+            this.genre = genre;
+            this.room = room;
+            this.place = place;
+            this.row = row;
+        }
+
+    }
+
     public class Erm
     {
         static SqlConnection _connection;
@@ -211,7 +245,7 @@ namespace Cinemaster
             _connection.Close();
         }
 
-        public static void Insert(String table, string[] cols,String[] values)
+        public static void Insert(String table, string[] cols, String[] values)
         {
             Connect();
             String newValues = "";
@@ -230,7 +264,7 @@ namespace Cinemaster
             }
 
             newCols = newCols.Substring(0, newCols.Length - 2);
-            
+
 
             String query = String.Format("INSERT INTO {0}({1}) VALUES ({2})", table, newCols, newValues);
 
@@ -248,7 +282,7 @@ namespace Cinemaster
 
             string qr = "";
 
-            for(int i = 0; i < cols.Length; i++)
+            for (int i = 0; i < cols.Length; i++)
             {
                 qr += cols[i] + "= '" + values[i] + "'" + ",";
             }
@@ -264,7 +298,7 @@ namespace Cinemaster
             Disconnect();
         }
 
-        
+
 
 
         public static object[] GetAll(String table)
@@ -287,6 +321,10 @@ namespace Cinemaster
                     {
                         return GetFilms().ToArray();
                     }
+                case ("coolTickets"):
+                    {
+                        return GetCoolTickets().ToArray();
+                    }
                 case ("cashiers"):
                     {
                         return GetCashiers(dataReader).ToArray();
@@ -307,7 +345,7 @@ namespace Cinemaster
         static List<Ticket> GetTickets()
         {
             List<Ticket> list = new List<Ticket>();
-            String query =("SELECT cashiers.cashier, * FROM tickets INNER JOIN cashiers ON tickets.cashierID = cashiers.cashierID");
+            String query = ("SELECT cashiers.cashier, * FROM tickets INNER JOIN cashiers ON tickets.cashierID = cashiers.cashierID");
             SqlCommand command = new SqlCommand(query, _connection);
             SqlDataReader dataReader = command.ExecuteReader();
             while (dataReader.Read())
@@ -387,7 +425,7 @@ namespace Cinemaster
         static List<Room> GetRooms(SqlDataReader dataReader)
         {
             List<Room> list = new List<Room>();
-            while(dataReader.Read())
+            while (dataReader.Read())
             {
                 int id = (int)dataReader.GetValue(0);
                 string name = dataReader.GetValue(1).ToString();
@@ -400,7 +438,7 @@ namespace Cinemaster
         static List<Genre> GetGenres(SqlDataReader dataReader)
         {
             List<Genre> list = new List<Genre>();
-            while(dataReader.Read())
+            while (dataReader.Read())
             {
                 int id = (int)dataReader.GetValue(0);
                 string name = dataReader.GetValue(1).ToString();
@@ -410,8 +448,88 @@ namespace Cinemaster
             return list;
         }
 
+        public static List<CoolTicket> GetCoolTickets()
+        {
+            List<CoolTicket> list = new List<CoolTicket>();
+            List<Ticket> ticketList = GetTickets();
+            if(ticketList.Count == 0)
+            {
+                return list;
+            }
 
+            foreach (Ticket tick in ticketList)
+            {
+                int filmID = 0;
+                int roomID = 0;
+                int genreID = 0;
+                int sessionID = 0;
 
+                int ticketID = tick.Id;
+                int seat = tick.Seat;
+                int row = tick.Row;
+                string type = "";
+                string session = "";
+                string film = "";
+                int ageRestr = 0;
+                string genre = "";
+                string cashier = "";
+                string room = "";
+                string time = "";
+                string date = "";
+
+                string queryCashier = "SELECT cashier FROM cashiers WHERE cashierID = '" + tick.Id + "'";
+                SqlCommand command = new SqlCommand(queryCashier, _connection);
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    cashier = dataReader.GetValue(0).ToString();
+                }
+
+                string querySession = "SELECT * FROM sessions WHERE sessionID = '" + tick.SessionId + "'";
+                command = new SqlCommand(queryCashier, _connection);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    sessionID = (int)dataReader.GetValue(0);
+                    time = dataReader.GetValue(2).ToString();
+                    date = dataReader.GetValue(3).ToString();
+                    roomID = (int)dataReader.GetValue(1);
+                    filmID = (int)dataReader.GetValue(4);
+                    type = dataReader.GetValue(5).ToString();
+                    session = sessionID + ": " + date + " " + time;
+                }
+
+                string queryFilm = "SELECT * FROM films WHERE filmID = '" + filmID + "'";
+                command = new SqlCommand(queryFilm, _connection);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    film = dataReader.GetValue(1).ToString();
+                    genreID = (int)dataReader.GetValue(2);
+                    ageRestr = (int)dataReader.GetValue(3);
+                }
+
+                string queryGenre = "SELECT genre FROM genres WHERE genreID = '" + genreID +  "'";
+                command = new SqlCommand(queryGenre, _connection);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    genre = dataReader.GetValue(1).ToString();
+                }
+
+                string queryRoom = "SELECT room FROM rooms WHERE roomID = '" + roomID + "'";
+                command = new SqlCommand(queryRoom, _connection);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    room = dataReader.GetValue(1).ToString();
+                }
+
+                CoolTicket dick = new CoolTicket(ticketID, session, date, time, type, cashier, genre, room, seat, row);
+                list.Add(dick);
+            }
+            return list;
+        }
 
         public static void Delete(String table, string col, string val)
         {

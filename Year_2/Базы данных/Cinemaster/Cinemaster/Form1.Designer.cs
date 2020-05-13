@@ -29,40 +29,70 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tickets = new System.Windows.Forms.TabPage();
-            this.ticketsNoEntriesLabel = new System.Windows.Forms.Label();
-            this.ticketsEditGroup = new System.Windows.Forms.GroupBox();
-            this.ticketsEditSeat = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ticketsEditRow = new System.Windows.Forms.NumericUpDown();
-            this.ticketsEditSessionCB = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ticketsEditField = new System.Windows.Forms.TextBox();
-            this.updateTicketButton = new System.Windows.Forms.Button();
-            this.ticketsEditCashierCB = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.ticketsDeleteButton = new System.Windows.Forms.Button();
-            this.ticketsAddGroup = new System.Windows.Forms.GroupBox();
-            this.ticketsAddSeat = new System.Windows.Forms.NumericUpDown();
-            this.label39 = new System.Windows.Forms.Label();
-            this.ticketsAddRow = new System.Windows.Forms.NumericUpDown();
-            this.ticketsAddSessionCB = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.ticketsAddIDField = new System.Windows.Forms.TextBox();
-            this.addTicketButton = new System.Windows.Forms.Button();
-            this.ticketsAddCashierCB = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ticketsGrid = new System.Windows.Forms.DataGridView();
-            this.ticketID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.session = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cashier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.row = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rooms = new System.Windows.Forms.TabPage();
+            this.roomsNoEntriesLabel = new System.Windows.Forms.Label();
+            this.deleteRoomButton = new System.Windows.Forms.Button();
+            this.editRoomGroup = new System.Windows.Forms.GroupBox();
+            this.roomsEditNameField = new System.Windows.Forms.TextBox();
+            this.roomsEditIDField = new System.Windows.Forms.TextBox();
+            this.updateRoomButton = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.addRoomGroup = new System.Windows.Forms.GroupBox();
+            this.roomsAddNameField = new System.Windows.Forms.TextBox();
+            this.roomsAddIDField = new System.Windows.Forms.TextBox();
+            this.addRoomButton = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.roomsGrid = new System.Windows.Forms.DataGridView();
+            this.roomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cashiers = new System.Windows.Forms.TabPage();
+            this.cashiersNoEntriesLabel = new System.Windows.Forms.Label();
+            this.removeCashierButton = new System.Windows.Forms.Button();
+            this.editCashierGroup = new System.Windows.Forms.GroupBox();
+            this.cashierEditNameTB = new System.Windows.Forms.TextBox();
+            this.cashierEditIdField = new System.Windows.Forms.TextBox();
+            this.updateCashierButton = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.addCashierGroup = new System.Windows.Forms.GroupBox();
+            this.cashierAddNameField = new System.Windows.Forms.TextBox();
+            this.cashierAddIDField = new System.Windows.Forms.TextBox();
+            this.addCashierButton = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.cashiersGrid = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cashierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.films = new System.Windows.Forms.TabPage();
+            this.filmsNoEntriesLabel = new System.Windows.Forms.Label();
+            this.filmsDeleteButton = new System.Windows.Forms.Button();
+            this.filmsEditGroup = new System.Windows.Forms.GroupBox();
+            this.filmsEditAgeRestr = new System.Windows.Forms.NumericUpDown();
+            this.label21 = new System.Windows.Forms.Label();
+            this.filmsEditNameField = new System.Windows.Forms.TextBox();
+            this.filmsEditGenreCB = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.filmsEditIDField = new System.Windows.Forms.TextBox();
+            this.changeFilmButton = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.filmsAddGroup = new System.Windows.Forms.GroupBox();
+            this.filmsAddAgeRestr = new System.Windows.Forms.NumericUpDown();
+            this.label19 = new System.Windows.Forms.Label();
+            this.filmsAddNameField = new System.Windows.Forms.TextBox();
+            this.filmsAddGenreCB = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.filmsAddIDField = new System.Windows.Forms.TextBox();
+            this.addFilmButton = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.filmsGrid = new System.Windows.Forms.DataGridView();
+            this.filmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageRestr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sessions = new System.Windows.Forms.TabPage();
             this.sessionsNoEntriesLabel = new System.Windows.Forms.Label();
             this.sessionsEditGroup = new System.Windows.Forms.GroupBox();
@@ -101,70 +131,40 @@
             this.film = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.films = new System.Windows.Forms.TabPage();
-            this.filmsNoEntriesLabel = new System.Windows.Forms.Label();
-            this.filmsDeleteButton = new System.Windows.Forms.Button();
-            this.filmsEditGroup = new System.Windows.Forms.GroupBox();
-            this.filmsEditAgeRestr = new System.Windows.Forms.NumericUpDown();
-            this.label21 = new System.Windows.Forms.Label();
-            this.filmsEditNameField = new System.Windows.Forms.TextBox();
-            this.filmsEditGenreCB = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.filmsEditIDField = new System.Windows.Forms.TextBox();
-            this.changeFilmButton = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.filmsAddGroup = new System.Windows.Forms.GroupBox();
-            this.filmsAddAgeRestr = new System.Windows.Forms.NumericUpDown();
-            this.label19 = new System.Windows.Forms.Label();
-            this.filmsAddNameField = new System.Windows.Forms.TextBox();
-            this.filmsAddGenreCB = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.filmsAddIDField = new System.Windows.Forms.TextBox();
-            this.addFilmButton = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.filmsGrid = new System.Windows.Forms.DataGridView();
-            this.filmID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageRestr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cashiers = new System.Windows.Forms.TabPage();
-            this.cashiersNoEntriesLabel = new System.Windows.Forms.Label();
-            this.removeCashierButton = new System.Windows.Forms.Button();
-            this.editCashierGroup = new System.Windows.Forms.GroupBox();
-            this.cashierEditNameTB = new System.Windows.Forms.TextBox();
-            this.cashierEditIdField = new System.Windows.Forms.TextBox();
-            this.updateCashierButton = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.addCashierGroup = new System.Windows.Forms.GroupBox();
-            this.cashierAddNameField = new System.Windows.Forms.TextBox();
-            this.cashierAddIDField = new System.Windows.Forms.TextBox();
-            this.addCashierButton = new System.Windows.Forms.Button();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.cashiersGrid = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cashierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rooms = new System.Windows.Forms.TabPage();
-            this.roomsNoEntriesLabel = new System.Windows.Forms.Label();
-            this.deleteRoomButton = new System.Windows.Forms.Button();
-            this.editRoomGroup = new System.Windows.Forms.GroupBox();
-            this.roomsEditNameField = new System.Windows.Forms.TextBox();
-            this.roomsEditIDField = new System.Windows.Forms.TextBox();
-            this.updateRoomButton = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.addRoomGroup = new System.Windows.Forms.GroupBox();
-            this.roomsAddNameField = new System.Windows.Forms.TextBox();
-            this.roomsAddIDField = new System.Windows.Forms.TextBox();
-            this.addRoomButton = new System.Windows.Forms.Button();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.roomsGrid = new System.Windows.Forms.DataGridView();
-            this.roomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tickets = new System.Windows.Forms.TabPage();
+            this.ticketsNoEntriesLabel = new System.Windows.Forms.Label();
+            this.ticketsEditGroup = new System.Windows.Forms.GroupBox();
+            this.ticketsEditSeat = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ticketsEditRow = new System.Windows.Forms.NumericUpDown();
+            this.ticketsEditSessionCB = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ticketsEditField = new System.Windows.Forms.TextBox();
+            this.updateTicketButton = new System.Windows.Forms.Button();
+            this.ticketsEditCashierCB = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.ticketsDeleteButton = new System.Windows.Forms.Button();
+            this.ticketsAddGroup = new System.Windows.Forms.GroupBox();
+            this.ticketsAddSeat = new System.Windows.Forms.NumericUpDown();
+            this.label39 = new System.Windows.Forms.Label();
+            this.ticketsAddRow = new System.Windows.Forms.NumericUpDown();
+            this.ticketsAddSessionCB = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.ticketsAddIDField = new System.Windows.Forms.TextBox();
+            this.addTicketButton = new System.Windows.Forms.Button();
+            this.ticketsAddCashierCB = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ticketsGrid = new System.Windows.Forms.DataGridView();
+            this.ticketID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.session = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cashier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.row = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.genres = new System.Windows.Forms.TabPage();
             this.genresNoEntriesLabel = new System.Windows.Forms.Label();
             this.deleteGenreButton = new System.Windows.Forms.Button();
@@ -183,1289 +183,53 @@
             this.genresGrid = new System.Windows.Forms.DataGridView();
             this.genreID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl.SuspendLayout();
-            this.tickets.SuspendLayout();
-            this.ticketsEditGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditSeat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditRow)).BeginInit();
-            this.ticketsAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddSeat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).BeginInit();
-            this.sessions.SuspendLayout();
-            this.sessionsEditGroup.SuspendLayout();
-            this.sessionsAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionsGrid)).BeginInit();
-            this.films.SuspendLayout();
-            this.filmsEditGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsEditAgeRestr)).BeginInit();
-            this.filmsAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsAddAgeRestr)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsGrid)).BeginInit();
-            this.cashiers.SuspendLayout();
-            this.editCashierGroup.SuspendLayout();
-            this.addCashierGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cashiersGrid)).BeginInit();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.coolId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coolSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coolDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coolTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coolType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coolCashier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coolAgeRestr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coolGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coolRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coolPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coolRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rooms.SuspendLayout();
             this.editRoomGroup.SuspendLayout();
             this.addRoomGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.roomsGrid)).BeginInit();
+            this.cashiers.SuspendLayout();
+            this.editCashierGroup.SuspendLayout();
+            this.addCashierGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.cashiersGrid)).BeginInit();
+            this.films.SuspendLayout();
+            this.filmsEditGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsEditAgeRestr)).BeginInit();
+            this.filmsAddGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsAddAgeRestr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsGrid)).BeginInit();
+            this.sessions.SuspendLayout();
+            this.sessionsEditGroup.SuspendLayout();
+            this.sessionsAddGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.sessionsGrid)).BeginInit();
+            this.tickets.SuspendLayout();
+            this.ticketsEditGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditSeat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditRow)).BeginInit();
+            this.ticketsAddGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddSeat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsGrid)).BeginInit();
+            this.tabControl.SuspendLayout();
             this.genres.SuspendLayout();
             this.editGenreGroup.SuspendLayout();
             this.genresAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.genresGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.genresGrid)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tabControl
-            // 
-            this.tabControl.Controls.Add(this.tickets);
-            this.tabControl.Controls.Add(this.sessions);
-            this.tabControl.Controls.Add(this.films);
-            this.tabControl.Controls.Add(this.cashiers);
-            this.tabControl.Controls.Add(this.rooms);
-            this.tabControl.Controls.Add(this.genres);
-            this.tabControl.Location = new System.Drawing.Point(1, 4);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1040, 550);
-            this.tabControl.TabIndex = 0;
-            this.tabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabControl1_Selected);
-            // 
-            // tickets
-            // 
-            this.tickets.Controls.Add(this.ticketsNoEntriesLabel);
-            this.tickets.Controls.Add(this.ticketsEditGroup);
-            this.tickets.Controls.Add(this.ticketsDeleteButton);
-            this.tickets.Controls.Add(this.ticketsAddGroup);
-            this.tickets.Controls.Add(this.ticketsGrid);
-            this.tickets.Location = new System.Drawing.Point(4, 22);
-            this.tickets.Name = "tickets";
-            this.tickets.Padding = new System.Windows.Forms.Padding(3);
-            this.tickets.Size = new System.Drawing.Size(1032, 524);
-            this.tickets.TabIndex = 0;
-            this.tickets.Text = "Билеты";
-            this.tickets.UseVisualStyleBackColor = true;
-            // 
-            // ticketsNoEntriesLabel
-            // 
-            this.ticketsNoEntriesLabel.AutoSize = true;
-            this.ticketsNoEntriesLabel.Location = new System.Drawing.Point(345, 282);
-            this.ticketsNoEntriesLabel.Name = "ticketsNoEntriesLabel";
-            this.ticketsNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
-            this.ticketsNoEntriesLabel.TabIndex = 14;
-            this.ticketsNoEntriesLabel.Text = "Нет записей";
-            this.ticketsNoEntriesLabel.Visible = false;
-            // 
-            // ticketsEditGroup
-            // 
-            this.ticketsEditGroup.Controls.Add(this.ticketsEditSeat);
-            this.ticketsEditGroup.Controls.Add(this.label4);
-            this.ticketsEditGroup.Controls.Add(this.ticketsEditRow);
-            this.ticketsEditGroup.Controls.Add(this.ticketsEditSessionCB);
-            this.ticketsEditGroup.Controls.Add(this.label5);
-            this.ticketsEditGroup.Controls.Add(this.ticketsEditField);
-            this.ticketsEditGroup.Controls.Add(this.updateTicketButton);
-            this.ticketsEditGroup.Controls.Add(this.ticketsEditCashierCB);
-            this.ticketsEditGroup.Controls.Add(this.label6);
-            this.ticketsEditGroup.Controls.Add(this.label7);
-            this.ticketsEditGroup.Controls.Add(this.label40);
-            this.ticketsEditGroup.Enabled = false;
-            this.ticketsEditGroup.Location = new System.Drawing.Point(762, 229);
-            this.ticketsEditGroup.Name = "ticketsEditGroup";
-            this.ticketsEditGroup.Size = new System.Drawing.Size(263, 213);
-            this.ticketsEditGroup.TabIndex = 13;
-            this.ticketsEditGroup.TabStop = false;
-            this.ticketsEditGroup.Text = "Изменить билет";
-            // 
-            // ticketsEditSeat
-            // 
-            this.ticketsEditSeat.Location = new System.Drawing.Point(67, 96);
-            this.ticketsEditSeat.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ticketsEditSeat.Name = "ticketsEditSeat";
-            this.ticketsEditSeat.Size = new System.Drawing.Size(186, 20);
-            this.ticketsEditSeat.TabIndex = 12;
-            this.ticketsEditSeat.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Место:";
-            // 
-            // ticketsEditRow
-            // 
-            this.ticketsEditRow.Location = new System.Drawing.Point(67, 121);
-            this.ticketsEditRow.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ticketsEditRow.Name = "ticketsEditRow";
-            this.ticketsEditRow.Size = new System.Drawing.Size(186, 20);
-            this.ticketsEditRow.TabIndex = 10;
-            this.ticketsEditRow.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // ticketsEditSessionCB
-            // 
-            this.ticketsEditSessionCB.FormattingEnabled = true;
-            this.ticketsEditSessionCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
-            this.ticketsEditSessionCB.Location = new System.Drawing.Point(67, 70);
-            this.ticketsEditSessionCB.Name = "ticketsEditSessionCB";
-            this.ticketsEditSessionCB.Size = new System.Drawing.Size(186, 21);
-            this.ticketsEditSessionCB.TabIndex = 9;
-            this.ticketsEditSessionCB.SelectedIndexChanged += new System.EventHandler(this.ticketsEditCashierCB_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Сеанс:";
-            // 
-            // ticketsEditField
-            // 
-            this.ticketsEditField.Location = new System.Drawing.Point(67, 19);
-            this.ticketsEditField.Name = "ticketsEditField";
-            this.ticketsEditField.ReadOnly = true;
-            this.ticketsEditField.Size = new System.Drawing.Size(186, 20);
-            this.ticketsEditField.TabIndex = 7;
-            // 
-            // updateTicketButton
-            // 
-            this.updateTicketButton.Location = new System.Drawing.Point(8, 163);
-            this.updateTicketButton.Name = "updateTicketButton";
-            this.updateTicketButton.Size = new System.Drawing.Size(247, 34);
-            this.updateTicketButton.TabIndex = 6;
-            this.updateTicketButton.Text = "Изменить билет";
-            this.updateTicketButton.UseVisualStyleBackColor = true;
-            this.updateTicketButton.Click += new System.EventHandler(this.updateTicketButton_Click);
-            // 
-            // ticketsEditCashierCB
-            // 
-            this.ticketsEditCashierCB.FormattingEnabled = true;
-            this.ticketsEditCashierCB.Location = new System.Drawing.Point(67, 45);
-            this.ticketsEditCashierCB.Name = "ticketsEditCashierCB";
-            this.ticketsEditCashierCB.Size = new System.Drawing.Size(186, 21);
-            this.ticketsEditCashierCB.TabIndex = 4;
-            this.ticketsEditCashierCB.SelectedIndexChanged += new System.EventHandler(this.ticketsEditCashierCB_SelectedIndexChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 123);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Ряд:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Кассир:";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(7, 22);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(44, 13);
-            this.label40.TabIndex = 0;
-            this.label40.Text = "Номер:";
-            // 
-            // ticketsDeleteButton
-            // 
-            this.ticketsDeleteButton.BackColor = System.Drawing.Color.Tomato;
-            this.ticketsDeleteButton.Enabled = false;
-            this.ticketsDeleteButton.Location = new System.Drawing.Point(772, 471);
-            this.ticketsDeleteButton.Name = "ticketsDeleteButton";
-            this.ticketsDeleteButton.Size = new System.Drawing.Size(247, 34);
-            this.ticketsDeleteButton.TabIndex = 9;
-            this.ticketsDeleteButton.Text = "Удалить билет";
-            this.ticketsDeleteButton.UseVisualStyleBackColor = false;
-            this.ticketsDeleteButton.Click += new System.EventHandler(this.ticketsDeleteButton_Click);
-            // 
-            // ticketsAddGroup
-            // 
-            this.ticketsAddGroup.Controls.Add(this.ticketsAddSeat);
-            this.ticketsAddGroup.Controls.Add(this.label39);
-            this.ticketsAddGroup.Controls.Add(this.ticketsAddRow);
-            this.ticketsAddGroup.Controls.Add(this.ticketsAddSessionCB);
-            this.ticketsAddGroup.Controls.Add(this.label8);
-            this.ticketsAddGroup.Controls.Add(this.ticketsAddIDField);
-            this.ticketsAddGroup.Controls.Add(this.addTicketButton);
-            this.ticketsAddGroup.Controls.Add(this.ticketsAddCashierCB);
-            this.ticketsAddGroup.Controls.Add(this.label3);
-            this.ticketsAddGroup.Controls.Add(this.label2);
-            this.ticketsAddGroup.Controls.Add(this.label1);
-            this.ticketsAddGroup.Location = new System.Drawing.Point(762, 10);
-            this.ticketsAddGroup.Name = "ticketsAddGroup";
-            this.ticketsAddGroup.Size = new System.Drawing.Size(263, 213);
-            this.ticketsAddGroup.TabIndex = 1;
-            this.ticketsAddGroup.TabStop = false;
-            this.ticketsAddGroup.Text = "Добавить билет";
-            // 
-            // ticketsAddSeat
-            // 
-            this.ticketsAddSeat.Location = new System.Drawing.Point(67, 96);
-            this.ticketsAddSeat.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ticketsAddSeat.Name = "ticketsAddSeat";
-            this.ticketsAddSeat.Size = new System.Drawing.Size(186, 20);
-            this.ticketsAddSeat.TabIndex = 12;
-            this.ticketsAddSeat.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ticketsAddSeat.ValueChanged += new System.EventHandler(this.TicketsAddValidation);
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(7, 98);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(42, 13);
-            this.label39.TabIndex = 11;
-            this.label39.Text = "Место:";
-            // 
-            // ticketsAddRow
-            // 
-            this.ticketsAddRow.Location = new System.Drawing.Point(67, 121);
-            this.ticketsAddRow.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ticketsAddRow.Name = "ticketsAddRow";
-            this.ticketsAddRow.Size = new System.Drawing.Size(186, 20);
-            this.ticketsAddRow.TabIndex = 10;
-            this.ticketsAddRow.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.ticketsAddRow.ValueChanged += new System.EventHandler(this.TicketsAddValidation);
-            // 
-            // ticketsAddSessionCB
-            // 
-            this.ticketsAddSessionCB.FormattingEnabled = true;
-            this.ticketsAddSessionCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
-            this.ticketsAddSessionCB.Location = new System.Drawing.Point(67, 70);
-            this.ticketsAddSessionCB.Name = "ticketsAddSessionCB";
-            this.ticketsAddSessionCB.Size = new System.Drawing.Size(186, 21);
-            this.ticketsAddSessionCB.TabIndex = 9;
-            this.ticketsAddSessionCB.SelectedIndexChanged += new System.EventHandler(this.TicketsAddValidation);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 74);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Сеанс:";
-            // 
-            // ticketsAddIDField
-            // 
-            this.ticketsAddIDField.Location = new System.Drawing.Point(67, 19);
-            this.ticketsAddIDField.Name = "ticketsAddIDField";
-            this.ticketsAddIDField.ReadOnly = true;
-            this.ticketsAddIDField.Size = new System.Drawing.Size(186, 20);
-            this.ticketsAddIDField.TabIndex = 7;
-            this.ticketsAddIDField.TextChanged += new System.EventHandler(this.TicketsAddValidation);
-            // 
-            // addTicketButton
-            // 
-            this.addTicketButton.Enabled = false;
-            this.addTicketButton.Location = new System.Drawing.Point(8, 163);
-            this.addTicketButton.Name = "addTicketButton";
-            this.addTicketButton.Size = new System.Drawing.Size(247, 34);
-            this.addTicketButton.TabIndex = 6;
-            this.addTicketButton.Text = "Добавить билет";
-            this.addTicketButton.UseVisualStyleBackColor = true;
-            this.addTicketButton.Click += new System.EventHandler(this.addTicketButton_Click);
-            // 
-            // ticketsAddCashierCB
-            // 
-            this.ticketsAddCashierCB.FormattingEnabled = true;
-            this.ticketsAddCashierCB.Location = new System.Drawing.Point(67, 44);
-            this.ticketsAddCashierCB.Name = "ticketsAddCashierCB";
-            this.ticketsAddCashierCB.Size = new System.Drawing.Size(186, 21);
-            this.ticketsAddCashierCB.TabIndex = 4;
-            this.ticketsAddCashierCB.SelectedIndexChanged += new System.EventHandler(this.TicketsAddValidation);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 123);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Ряд:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Кассир:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Номер:";
-            // 
-            // ticketsGrid
-            // 
-            this.ticketsGrid.AllowUserToAddRows = false;
-            this.ticketsGrid.AllowUserToDeleteRows = false;
-            this.ticketsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ticketsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ticketID,
-            this.session,
-            this.cashier,
-            this.seat,
-            this.row});
-            this.ticketsGrid.Location = new System.Drawing.Point(6, 5);
-            this.ticketsGrid.Name = "ticketsGrid";
-            this.ticketsGrid.RowHeadersVisible = false;
-            this.ticketsGrid.Size = new System.Drawing.Size(748, 515);
-            this.ticketsGrid.TabIndex = 0;
-            this.ticketsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketsGrid_CellContentClick);
-            // 
-            // ticketID
-            // 
-            this.ticketID.HeaderText = "ID";
-            this.ticketID.Name = "ticketID";
-            this.ticketID.Width = 89;
-            // 
-            // session
-            // 
-            this.session.HeaderText = "Сеанс";
-            this.session.Name = "session";
-            this.session.Width = 164;
-            // 
-            // cashier
-            // 
-            this.cashier.HeaderText = "Кассир";
-            this.cashier.Name = "cashier";
-            this.cashier.Width = 164;
-            // 
-            // seat
-            // 
-            this.seat.HeaderText = "Место";
-            this.seat.Name = "seat";
-            this.seat.Width = 164;
-            // 
-            // row
-            // 
-            this.row.HeaderText = "Ряд";
-            this.row.Name = "row";
-            this.row.Width = 164;
-            // 
-            // sessions
-            // 
-            this.sessions.Controls.Add(this.sessionsNoEntriesLabel);
-            this.sessions.Controls.Add(this.sessionsEditGroup);
-            this.sessions.Controls.Add(this.sessionsAddGroup);
-            this.sessions.Controls.Add(this.sessionsDeleteButton);
-            this.sessions.Controls.Add(this.sessionsGrid);
-            this.sessions.Location = new System.Drawing.Point(4, 22);
-            this.sessions.Name = "sessions";
-            this.sessions.Padding = new System.Windows.Forms.Padding(3);
-            this.sessions.Size = new System.Drawing.Size(1032, 524);
-            this.sessions.TabIndex = 1;
-            this.sessions.Text = "Сеансы";
-            this.sessions.UseVisualStyleBackColor = true;
-            // 
-            // sessionsNoEntriesLabel
-            // 
-            this.sessionsNoEntriesLabel.AutoSize = true;
-            this.sessionsNoEntriesLabel.Location = new System.Drawing.Point(345, 282);
-            this.sessionsNoEntriesLabel.Name = "sessionsNoEntriesLabel";
-            this.sessionsNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
-            this.sessionsNoEntriesLabel.TabIndex = 15;
-            this.sessionsNoEntriesLabel.Text = "Нет записей";
-            this.sessionsNoEntriesLabel.Visible = false;
-            // 
-            // sessionsEditGroup
-            // 
-            this.sessionsEditGroup.Controls.Add(this.sessionsEditCB);
-            this.sessionsEditGroup.Controls.Add(this.label42);
-            this.sessionsEditGroup.Controls.Add(this.sessionEditTimePicker);
-            this.sessionsEditGroup.Controls.Add(this.label13);
-            this.sessionsEditGroup.Controls.Add(this.sessionsEditDatePicker);
-            this.sessionsEditGroup.Controls.Add(this.sessionsEditFilmCB);
-            this.sessionsEditGroup.Controls.Add(this.label14);
-            this.sessionsEditGroup.Controls.Add(this.sessionsEditField);
-            this.sessionsEditGroup.Controls.Add(this.sessionEditButton);
-            this.sessionsEditGroup.Controls.Add(this.sessionsEditRoomCB);
-            this.sessionsEditGroup.Controls.Add(this.label15);
-            this.sessionsEditGroup.Controls.Add(this.label16);
-            this.sessionsEditGroup.Controls.Add(this.label18);
-            this.sessionsEditGroup.Enabled = false;
-            this.sessionsEditGroup.Location = new System.Drawing.Point(762, 229);
-            this.sessionsEditGroup.Name = "sessionsEditGroup";
-            this.sessionsEditGroup.Size = new System.Drawing.Size(263, 223);
-            this.sessionsEditGroup.TabIndex = 13;
-            this.sessionsEditGroup.TabStop = false;
-            this.sessionsEditGroup.Text = "Изменить сеанс";
-            // 
-            // sessionsEditCB
-            // 
-            this.sessionsEditCB.FormattingEnabled = true;
-            this.sessionsEditCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
-            this.sessionsEditCB.Location = new System.Drawing.Point(67, 151);
-            this.sessionsEditCB.Name = "sessionsEditCB";
-            this.sessionsEditCB.Size = new System.Drawing.Size(186, 21);
-            this.sessionsEditCB.TabIndex = 14;
-            this.sessionsEditCB.SelectedIndexChanged += new System.EventHandler(this.sessionsEditFilmCB_SelectedIndexChanged);
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(8, 157);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(29, 13);
-            this.label42.TabIndex = 13;
-            this.label42.Text = "Тип:";
-            // 
-            // sessionEditTimePicker
-            // 
-            this.sessionEditTimePicker.CustomFormat = "HH:mm";
-            this.sessionEditTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.sessionEditTimePicker.Location = new System.Drawing.Point(67, 71);
-            this.sessionEditTimePicker.Name = "sessionEditTimePicker";
-            this.sessionEditTimePicker.ShowUpDown = true;
-            this.sessionEditTimePicker.Size = new System.Drawing.Size(186, 20);
-            this.sessionEditTimePicker.TabIndex = 12;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(7, 76);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(43, 13);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "Время:";
-            // 
-            // sessionsEditDatePicker
-            // 
-            this.sessionsEditDatePicker.Location = new System.Drawing.Point(67, 45);
-            this.sessionsEditDatePicker.Name = "sessionsEditDatePicker";
-            this.sessionsEditDatePicker.Size = new System.Drawing.Size(186, 20);
-            this.sessionsEditDatePicker.TabIndex = 10;
-            // 
-            // sessionsEditFilmCB
-            // 
-            this.sessionsEditFilmCB.FormattingEnabled = true;
-            this.sessionsEditFilmCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
-            this.sessionsEditFilmCB.Location = new System.Drawing.Point(67, 97);
-            this.sessionsEditFilmCB.Name = "sessionsEditFilmCB";
-            this.sessionsEditFilmCB.Size = new System.Drawing.Size(186, 21);
-            this.sessionsEditFilmCB.TabIndex = 9;
-            this.sessionsEditFilmCB.SelectedIndexChanged += new System.EventHandler(this.sessionsEditFilmCB_SelectedIndexChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(8, 103);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 13);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "Фильм:";
-            // 
-            // sessionsEditField
-            // 
-            this.sessionsEditField.Location = new System.Drawing.Point(67, 19);
-            this.sessionsEditField.Name = "sessionsEditField";
-            this.sessionsEditField.ReadOnly = true;
-            this.sessionsEditField.Size = new System.Drawing.Size(186, 20);
-            this.sessionsEditField.TabIndex = 7;
-            // 
-            // sessionEditButton
-            // 
-            this.sessionEditButton.Enabled = false;
-            this.sessionEditButton.Location = new System.Drawing.Point(6, 183);
-            this.sessionEditButton.Name = "sessionEditButton";
-            this.sessionEditButton.Size = new System.Drawing.Size(247, 34);
-            this.sessionEditButton.TabIndex = 6;
-            this.sessionEditButton.Text = "Изменить сеанс";
-            this.sessionEditButton.UseVisualStyleBackColor = true;
-            this.sessionEditButton.Click += new System.EventHandler(this.sessionEditButton_Click);
-            // 
-            // sessionsEditRoomCB
-            // 
-            this.sessionsEditRoomCB.FormattingEnabled = true;
-            this.sessionsEditRoomCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
-            this.sessionsEditRoomCB.Location = new System.Drawing.Point(67, 124);
-            this.sessionsEditRoomCB.Name = "sessionsEditRoomCB";
-            this.sessionsEditRoomCB.Size = new System.Drawing.Size(186, 21);
-            this.sessionsEditRoomCB.TabIndex = 5;
-            this.sessionsEditRoomCB.SelectedIndexChanged += new System.EventHandler(this.sessionsEditFilmCB_SelectedIndexChanged);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(8, 130);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(29, 13);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "Зал:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(7, 49);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(36, 13);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "Дата:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(7, 22);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(44, 13);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Номер:";
-            // 
-            // sessionsAddGroup
-            // 
-            this.sessionsAddGroup.Controls.Add(this.sessionsAddTypeCB);
-            this.sessionsAddGroup.Controls.Add(this.label41);
-            this.sessionsAddGroup.Controls.Add(this.sessionsAddTimePicker);
-            this.sessionsAddGroup.Controls.Add(this.label17);
-            this.sessionsAddGroup.Controls.Add(this.sessionsAddDatePicker);
-            this.sessionsAddGroup.Controls.Add(this.sessionsAddFilmCB);
-            this.sessionsAddGroup.Controls.Add(this.label9);
-            this.sessionsAddGroup.Controls.Add(this.sessionsAddIDField);
-            this.sessionsAddGroup.Controls.Add(this.addSessionButton);
-            this.sessionsAddGroup.Controls.Add(this.sessionsAddRoomCB);
-            this.sessionsAddGroup.Controls.Add(this.label10);
-            this.sessionsAddGroup.Controls.Add(this.label11);
-            this.sessionsAddGroup.Controls.Add(this.label12);
-            this.sessionsAddGroup.Location = new System.Drawing.Point(762, 10);
-            this.sessionsAddGroup.Name = "sessionsAddGroup";
-            this.sessionsAddGroup.Size = new System.Drawing.Size(263, 213);
-            this.sessionsAddGroup.TabIndex = 11;
-            this.sessionsAddGroup.TabStop = false;
-            this.sessionsAddGroup.Text = "Добавить сеанс";
-            // 
-            // sessionsAddTypeCB
-            // 
-            this.sessionsAddTypeCB.FormattingEnabled = true;
-            this.sessionsAddTypeCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
-            this.sessionsAddTypeCB.Location = new System.Drawing.Point(67, 151);
-            this.sessionsAddTypeCB.Name = "sessionsAddTypeCB";
-            this.sessionsAddTypeCB.Size = new System.Drawing.Size(186, 21);
-            this.sessionsAddTypeCB.TabIndex = 14;
-            this.sessionsAddTypeCB.SelectedIndexChanged += new System.EventHandler(this.SessionsAddValidation);
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(8, 157);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(29, 13);
-            this.label41.TabIndex = 13;
-            this.label41.Text = "Тип:";
-            // 
-            // sessionsAddTimePicker
-            // 
-            this.sessionsAddTimePicker.CustomFormat = "HH:mm";
-            this.sessionsAddTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.sessionsAddTimePicker.Location = new System.Drawing.Point(67, 71);
-            this.sessionsAddTimePicker.Name = "sessionsAddTimePicker";
-            this.sessionsAddTimePicker.ShowUpDown = true;
-            this.sessionsAddTimePicker.Size = new System.Drawing.Size(186, 20);
-            this.sessionsAddTimePicker.TabIndex = 12;
-            this.sessionsAddTimePicker.ValueChanged += new System.EventHandler(this.SessionsAddValidation);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(7, 76);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(43, 13);
-            this.label17.TabIndex = 11;
-            this.label17.Text = "Время:";
-            // 
-            // sessionsAddDatePicker
-            // 
-            this.sessionsAddDatePicker.Location = new System.Drawing.Point(67, 45);
-            this.sessionsAddDatePicker.Name = "sessionsAddDatePicker";
-            this.sessionsAddDatePicker.Size = new System.Drawing.Size(186, 20);
-            this.sessionsAddDatePicker.TabIndex = 10;
-            this.sessionsAddDatePicker.ValueChanged += new System.EventHandler(this.SessionsAddValidation);
-            // 
-            // sessionsAddFilmCB
-            // 
-            this.sessionsAddFilmCB.FormattingEnabled = true;
-            this.sessionsAddFilmCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
-            this.sessionsAddFilmCB.Location = new System.Drawing.Point(67, 97);
-            this.sessionsAddFilmCB.Name = "sessionsAddFilmCB";
-            this.sessionsAddFilmCB.Size = new System.Drawing.Size(186, 21);
-            this.sessionsAddFilmCB.TabIndex = 9;
-            this.sessionsAddFilmCB.SelectedIndexChanged += new System.EventHandler(this.SessionsAddValidation);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 103);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Фильм:";
-            // 
-            // sessionsAddIDField
-            // 
-            this.sessionsAddIDField.Location = new System.Drawing.Point(67, 19);
-            this.sessionsAddIDField.Name = "sessionsAddIDField";
-            this.sessionsAddIDField.ReadOnly = true;
-            this.sessionsAddIDField.Size = new System.Drawing.Size(186, 20);
-            this.sessionsAddIDField.TabIndex = 7;
-            // 
-            // addSessionButton
-            // 
-            this.addSessionButton.Enabled = false;
-            this.addSessionButton.Location = new System.Drawing.Point(6, 175);
-            this.addSessionButton.Name = "addSessionButton";
-            this.addSessionButton.Size = new System.Drawing.Size(247, 34);
-            this.addSessionButton.TabIndex = 6;
-            this.addSessionButton.Text = "Добавить сеанс";
-            this.addSessionButton.UseVisualStyleBackColor = true;
-            this.addSessionButton.Click += new System.EventHandler(this.addSessionButton_Click);
-            // 
-            // sessionsAddRoomCB
-            // 
-            this.sessionsAddRoomCB.FormattingEnabled = true;
-            this.sessionsAddRoomCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
-            this.sessionsAddRoomCB.Location = new System.Drawing.Point(67, 124);
-            this.sessionsAddRoomCB.Name = "sessionsAddRoomCB";
-            this.sessionsAddRoomCB.Size = new System.Drawing.Size(186, 21);
-            this.sessionsAddRoomCB.TabIndex = 5;
-            this.sessionsAddRoomCB.SelectedIndexChanged += new System.EventHandler(this.SessionsAddValidation);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 130);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Зал:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 49);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(36, 13);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Дата:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(7, 22);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(44, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Номер:";
-            // 
-            // sessionsDeleteButton
-            // 
-            this.sessionsDeleteButton.BackColor = System.Drawing.Color.Tomato;
-            this.sessionsDeleteButton.Enabled = false;
-            this.sessionsDeleteButton.Location = new System.Drawing.Point(772, 471);
-            this.sessionsDeleteButton.Name = "sessionsDeleteButton";
-            this.sessionsDeleteButton.Size = new System.Drawing.Size(247, 34);
-            this.sessionsDeleteButton.TabIndex = 10;
-            this.sessionsDeleteButton.Text = "Удалить сеанс";
-            this.sessionsDeleteButton.UseVisualStyleBackColor = false;
-            this.sessionsDeleteButton.Click += new System.EventHandler(this.sessionsDeleteButton_Click);
-            // 
-            // sessionsGrid
-            // 
-            this.sessionsGrid.AllowUserToAddRows = false;
-            this.sessionsGrid.AllowUserToDeleteRows = false;
-            this.sessionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sessionID,
-            this.date,
-            this.time,
-            this.film,
-            this.room,
-            this.type});
-            this.sessionsGrid.Location = new System.Drawing.Point(6, 5);
-            this.sessionsGrid.Name = "sessionsGrid";
-            this.sessionsGrid.RowHeadersVisible = false;
-            this.sessionsGrid.Size = new System.Drawing.Size(748, 515);
-            this.sessionsGrid.TabIndex = 1;
-            this.sessionsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sessionsGrid_CellClick);
-            // 
-            // sessionID
-            // 
-            this.sessionID.HeaderText = "ID";
-            this.sessionID.Name = "sessionID";
-            this.sessionID.Width = 95;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Дата";
-            this.date.Name = "date";
-            this.date.Width = 130;
-            // 
-            // time
-            // 
-            this.time.HeaderText = "Время";
-            this.time.Name = "time";
-            this.time.Width = 130;
-            // 
-            // film
-            // 
-            this.film.HeaderText = "Фильм";
-            this.film.Name = "film";
-            this.film.Width = 130;
-            // 
-            // room
-            // 
-            this.room.HeaderText = "Зал";
-            this.room.Name = "room";
-            this.room.Width = 130;
-            // 
-            // type
-            // 
-            this.type.HeaderText = "Тип";
-            this.type.Name = "type";
-            this.type.Width = 130;
-            // 
-            // films
-            // 
-            this.films.Controls.Add(this.filmsNoEntriesLabel);
-            this.films.Controls.Add(this.filmsDeleteButton);
-            this.films.Controls.Add(this.filmsEditGroup);
-            this.films.Controls.Add(this.filmsAddGroup);
-            this.films.Controls.Add(this.filmsGrid);
-            this.films.Location = new System.Drawing.Point(4, 22);
-            this.films.Name = "films";
-            this.films.Size = new System.Drawing.Size(1032, 524);
-            this.films.TabIndex = 2;
-            this.films.Text = "Фильмы";
-            this.films.UseVisualStyleBackColor = true;
-            // 
-            // filmsNoEntriesLabel
-            // 
-            this.filmsNoEntriesLabel.AutoSize = true;
-            this.filmsNoEntriesLabel.Location = new System.Drawing.Point(345, 282);
-            this.filmsNoEntriesLabel.Name = "filmsNoEntriesLabel";
-            this.filmsNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
-            this.filmsNoEntriesLabel.TabIndex = 15;
-            this.filmsNoEntriesLabel.Text = "Нет записей";
-            this.filmsNoEntriesLabel.Visible = false;
-            // 
-            // filmsDeleteButton
-            // 
-            this.filmsDeleteButton.BackColor = System.Drawing.Color.Tomato;
-            this.filmsDeleteButton.Enabled = false;
-            this.filmsDeleteButton.Location = new System.Drawing.Point(772, 471);
-            this.filmsDeleteButton.Name = "filmsDeleteButton";
-            this.filmsDeleteButton.Size = new System.Drawing.Size(247, 34);
-            this.filmsDeleteButton.TabIndex = 14;
-            this.filmsDeleteButton.Text = "Удалить фильм";
-            this.filmsDeleteButton.UseVisualStyleBackColor = false;
-            this.filmsDeleteButton.Click += new System.EventHandler(this.filmsDeleteButton_Click);
-            // 
-            // filmsEditGroup
-            // 
-            this.filmsEditGroup.Controls.Add(this.filmsEditAgeRestr);
-            this.filmsEditGroup.Controls.Add(this.label21);
-            this.filmsEditGroup.Controls.Add(this.filmsEditNameField);
-            this.filmsEditGroup.Controls.Add(this.filmsEditGenreCB);
-            this.filmsEditGroup.Controls.Add(this.label24);
-            this.filmsEditGroup.Controls.Add(this.filmsEditIDField);
-            this.filmsEditGroup.Controls.Add(this.changeFilmButton);
-            this.filmsEditGroup.Controls.Add(this.label25);
-            this.filmsEditGroup.Controls.Add(this.label26);
-            this.filmsEditGroup.Enabled = false;
-            this.filmsEditGroup.Location = new System.Drawing.Point(762, 229);
-            this.filmsEditGroup.Name = "filmsEditGroup";
-            this.filmsEditGroup.Size = new System.Drawing.Size(263, 168);
-            this.filmsEditGroup.TabIndex = 13;
-            this.filmsEditGroup.TabStop = false;
-            this.filmsEditGroup.Text = "Изменить фильм";
-            // 
-            // filmsEditAgeRestr
-            // 
-            this.filmsEditAgeRestr.Location = new System.Drawing.Point(67, 98);
-            this.filmsEditAgeRestr.Name = "filmsEditAgeRestr";
-            this.filmsEditAgeRestr.Size = new System.Drawing.Size(186, 20);
-            this.filmsEditAgeRestr.TabIndex = 15;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(7, 102);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(32, 13);
-            this.label21.TabIndex = 14;
-            this.label21.Text = "Огр.:";
-            // 
-            // filmsEditNameField
-            // 
-            this.filmsEditNameField.Location = new System.Drawing.Point(67, 45);
-            this.filmsEditNameField.Name = "filmsEditNameField";
-            this.filmsEditNameField.Size = new System.Drawing.Size(186, 20);
-            this.filmsEditNameField.TabIndex = 13;
-            this.filmsEditNameField.TextChanged += new System.EventHandler(this.filmsEditNameField_TextChanged);
-            // 
-            // filmsEditGenreCB
-            // 
-            this.filmsEditGenreCB.FormattingEnabled = true;
-            this.filmsEditGenreCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
-            this.filmsEditGenreCB.Location = new System.Drawing.Point(67, 71);
-            this.filmsEditGenreCB.Name = "filmsEditGenreCB";
-            this.filmsEditGenreCB.Size = new System.Drawing.Size(186, 21);
-            this.filmsEditGenreCB.TabIndex = 9;
-            this.filmsEditGenreCB.TextChanged += new System.EventHandler(this.filmsEditNameField_TextChanged);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(7, 75);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(39, 13);
-            this.label24.TabIndex = 8;
-            this.label24.Text = "Жанр:";
-            // 
-            // filmsEditIDField
-            // 
-            this.filmsEditIDField.Location = new System.Drawing.Point(67, 19);
-            this.filmsEditIDField.Name = "filmsEditIDField";
-            this.filmsEditIDField.ReadOnly = true;
-            this.filmsEditIDField.Size = new System.Drawing.Size(186, 20);
-            this.filmsEditIDField.TabIndex = 7;
-            // 
-            // changeFilmButton
-            // 
-            this.changeFilmButton.Enabled = false;
-            this.changeFilmButton.Location = new System.Drawing.Point(6, 124);
-            this.changeFilmButton.Name = "changeFilmButton";
-            this.changeFilmButton.Size = new System.Drawing.Size(247, 34);
-            this.changeFilmButton.TabIndex = 6;
-            this.changeFilmButton.Text = "Изменить фильм";
-            this.changeFilmButton.UseVisualStyleBackColor = true;
-            this.changeFilmButton.Click += new System.EventHandler(this.changeFilmButton_Click);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(7, 49);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(60, 13);
-            this.label25.TabIndex = 1;
-            this.label25.Text = "Название:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(7, 22);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(44, 13);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Номер:";
-            // 
-            // filmsAddGroup
-            // 
-            this.filmsAddGroup.Controls.Add(this.filmsAddAgeRestr);
-            this.filmsAddGroup.Controls.Add(this.label19);
-            this.filmsAddGroup.Controls.Add(this.filmsAddNameField);
-            this.filmsAddGroup.Controls.Add(this.filmsAddGenreCB);
-            this.filmsAddGroup.Controls.Add(this.label20);
-            this.filmsAddGroup.Controls.Add(this.filmsAddIDField);
-            this.filmsAddGroup.Controls.Add(this.addFilmButton);
-            this.filmsAddGroup.Controls.Add(this.label22);
-            this.filmsAddGroup.Controls.Add(this.label23);
-            this.filmsAddGroup.Location = new System.Drawing.Point(762, 10);
-            this.filmsAddGroup.Name = "filmsAddGroup";
-            this.filmsAddGroup.Size = new System.Drawing.Size(263, 168);
-            this.filmsAddGroup.TabIndex = 12;
-            this.filmsAddGroup.TabStop = false;
-            this.filmsAddGroup.Text = "Добавить фильм";
-            // 
-            // filmsAddAgeRestr
-            // 
-            this.filmsAddAgeRestr.Location = new System.Drawing.Point(67, 98);
-            this.filmsAddAgeRestr.Name = "filmsAddAgeRestr";
-            this.filmsAddAgeRestr.Size = new System.Drawing.Size(186, 20);
-            this.filmsAddAgeRestr.TabIndex = 15;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(7, 102);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(32, 13);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "Огр.:";
-            // 
-            // filmsAddNameField
-            // 
-            this.filmsAddNameField.Location = new System.Drawing.Point(67, 45);
-            this.filmsAddNameField.Name = "filmsAddNameField";
-            this.filmsAddNameField.Size = new System.Drawing.Size(186, 20);
-            this.filmsAddNameField.TabIndex = 13;
-            // 
-            // filmsAddGenreCB
-            // 
-            this.filmsAddGenreCB.FormattingEnabled = true;
-            this.filmsAddGenreCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
-            this.filmsAddGenreCB.Location = new System.Drawing.Point(67, 71);
-            this.filmsAddGenreCB.Name = "filmsAddGenreCB";
-            this.filmsAddGenreCB.Size = new System.Drawing.Size(186, 21);
-            this.filmsAddGenreCB.TabIndex = 9;
-            this.filmsAddGenreCB.SelectedIndexChanged += new System.EventHandler(this.filmsAddGenreCB_SelectedIndexChanged);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(7, 75);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(39, 13);
-            this.label20.TabIndex = 8;
-            this.label20.Text = "Жанр:";
-            // 
-            // filmsAddIDField
-            // 
-            this.filmsAddIDField.Location = new System.Drawing.Point(67, 19);
-            this.filmsAddIDField.Name = "filmsAddIDField";
-            this.filmsAddIDField.ReadOnly = true;
-            this.filmsAddIDField.Size = new System.Drawing.Size(186, 20);
-            this.filmsAddIDField.TabIndex = 7;
-            // 
-            // addFilmButton
-            // 
-            this.addFilmButton.Enabled = false;
-            this.addFilmButton.Location = new System.Drawing.Point(6, 124);
-            this.addFilmButton.Name = "addFilmButton";
-            this.addFilmButton.Size = new System.Drawing.Size(247, 34);
-            this.addFilmButton.TabIndex = 6;
-            this.addFilmButton.Text = "Добавить фильм";
-            this.addFilmButton.UseVisualStyleBackColor = true;
-            this.addFilmButton.Click += new System.EventHandler(this.addFilmButton_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(7, 49);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(60, 13);
-            this.label22.TabIndex = 1;
-            this.label22.Text = "Название:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(7, 22);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(44, 13);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Номер:";
-            // 
-            // filmsGrid
-            // 
-            this.filmsGrid.AllowUserToAddRows = false;
-            this.filmsGrid.AllowUserToDeleteRows = false;
-            this.filmsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.filmsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.filmID,
-            this.name,
-            this.genre,
-            this.ageRestr});
-            this.filmsGrid.Location = new System.Drawing.Point(6, 5);
-            this.filmsGrid.Name = "filmsGrid";
-            this.filmsGrid.RowHeadersVisible = false;
-            this.filmsGrid.Size = new System.Drawing.Size(748, 515);
-            this.filmsGrid.TabIndex = 2;
-            this.filmsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.filmsGrid_CellClick);
-            // 
-            // filmID
-            // 
-            this.filmID.HeaderText = "ID";
-            this.filmID.Name = "filmID";
-            this.filmID.Width = 97;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Название";
-            this.name.Name = "name";
-            this.name.Width = 216;
-            // 
-            // genre
-            // 
-            this.genre.HeaderText = "Жанр";
-            this.genre.Name = "genre";
-            this.genre.Width = 216;
-            // 
-            // ageRestr
-            // 
-            this.ageRestr.HeaderText = "Огр";
-            this.ageRestr.Name = "ageRestr";
-            this.ageRestr.Width = 216;
-            // 
-            // cashiers
-            // 
-            this.cashiers.Controls.Add(this.cashiersNoEntriesLabel);
-            this.cashiers.Controls.Add(this.removeCashierButton);
-            this.cashiers.Controls.Add(this.editCashierGroup);
-            this.cashiers.Controls.Add(this.addCashierGroup);
-            this.cashiers.Controls.Add(this.cashiersGrid);
-            this.cashiers.Location = new System.Drawing.Point(4, 22);
-            this.cashiers.Name = "cashiers";
-            this.cashiers.Size = new System.Drawing.Size(1032, 524);
-            this.cashiers.TabIndex = 3;
-            this.cashiers.Text = "Кассиры";
-            this.cashiers.UseVisualStyleBackColor = true;
-            // 
-            // cashiersNoEntriesLabel
-            // 
-            this.cashiersNoEntriesLabel.AutoSize = true;
-            this.cashiersNoEntriesLabel.Location = new System.Drawing.Point(345, 282);
-            this.cashiersNoEntriesLabel.Name = "cashiersNoEntriesLabel";
-            this.cashiersNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
-            this.cashiersNoEntriesLabel.TabIndex = 16;
-            this.cashiersNoEntriesLabel.Text = "Нет записей";
-            this.cashiersNoEntriesLabel.Visible = false;
-            // 
-            // removeCashierButton
-            // 
-            this.removeCashierButton.BackColor = System.Drawing.Color.Tomato;
-            this.removeCashierButton.Enabled = false;
-            this.removeCashierButton.Location = new System.Drawing.Point(772, 471);
-            this.removeCashierButton.Name = "removeCashierButton";
-            this.removeCashierButton.Size = new System.Drawing.Size(247, 34);
-            this.removeCashierButton.TabIndex = 15;
-            this.removeCashierButton.Text = "Удалить кассира";
-            this.removeCashierButton.UseVisualStyleBackColor = false;
-            this.removeCashierButton.Click += new System.EventHandler(this.removeCashierButton_Click);
-            // 
-            // editCashierGroup
-            // 
-            this.editCashierGroup.Controls.Add(this.cashierEditNameTB);
-            this.editCashierGroup.Controls.Add(this.cashierEditIdField);
-            this.editCashierGroup.Controls.Add(this.updateCashierButton);
-            this.editCashierGroup.Controls.Add(this.label27);
-            this.editCashierGroup.Controls.Add(this.label28);
-            this.editCashierGroup.Enabled = false;
-            this.editCashierGroup.Location = new System.Drawing.Point(762, 229);
-            this.editCashierGroup.Name = "editCashierGroup";
-            this.editCashierGroup.Size = new System.Drawing.Size(263, 114);
-            this.editCashierGroup.TabIndex = 14;
-            this.editCashierGroup.TabStop = false;
-            this.editCashierGroup.Text = "Изменить кассира";
-            // 
-            // cashierEditNameTB
-            // 
-            this.cashierEditNameTB.Location = new System.Drawing.Point(67, 45);
-            this.cashierEditNameTB.Name = "cashierEditNameTB";
-            this.cashierEditNameTB.Size = new System.Drawing.Size(186, 20);
-            this.cashierEditNameTB.TabIndex = 13;
-            this.cashierEditNameTB.TextChanged += new System.EventHandler(this.updateCashierTB_TextChanged);
-            // 
-            // cashierEditIdField
-            // 
-            this.cashierEditIdField.Location = new System.Drawing.Point(67, 19);
-            this.cashierEditIdField.Name = "cashierEditIdField";
-            this.cashierEditIdField.ReadOnly = true;
-            this.cashierEditIdField.Size = new System.Drawing.Size(186, 20);
-            this.cashierEditIdField.TabIndex = 7;
-            // 
-            // updateCashierButton
-            // 
-            this.updateCashierButton.Enabled = false;
-            this.updateCashierButton.Location = new System.Drawing.Point(6, 71);
-            this.updateCashierButton.Name = "updateCashierButton";
-            this.updateCashierButton.Size = new System.Drawing.Size(247, 34);
-            this.updateCashierButton.TabIndex = 6;
-            this.updateCashierButton.Text = "Изменить кассира";
-            this.updateCashierButton.UseVisualStyleBackColor = true;
-            this.updateCashierButton.Click += new System.EventHandler(this.updateCashierButton_Click);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(7, 49);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(32, 13);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "Имя:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(7, 22);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(44, 13);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Номер:";
-            // 
-            // addCashierGroup
-            // 
-            this.addCashierGroup.Controls.Add(this.cashierAddNameField);
-            this.addCashierGroup.Controls.Add(this.cashierAddIDField);
-            this.addCashierGroup.Controls.Add(this.addCashierButton);
-            this.addCashierGroup.Controls.Add(this.label29);
-            this.addCashierGroup.Controls.Add(this.label30);
-            this.addCashierGroup.Location = new System.Drawing.Point(762, 10);
-            this.addCashierGroup.Name = "addCashierGroup";
-            this.addCashierGroup.Size = new System.Drawing.Size(263, 114);
-            this.addCashierGroup.TabIndex = 13;
-            this.addCashierGroup.TabStop = false;
-            this.addCashierGroup.Text = "Добавить кассира";
-            // 
-            // cashierAddNameField
-            // 
-            this.cashierAddNameField.Location = new System.Drawing.Point(67, 45);
-            this.cashierAddNameField.Name = "cashierAddNameField";
-            this.cashierAddNameField.Size = new System.Drawing.Size(186, 20);
-            this.cashierAddNameField.TabIndex = 13;
-            this.cashierAddNameField.TextChanged += new System.EventHandler(this.cashierAddNameField_TextChanged);
-            // 
-            // cashierAddIDField
-            // 
-            this.cashierAddIDField.Location = new System.Drawing.Point(67, 19);
-            this.cashierAddIDField.Name = "cashierAddIDField";
-            this.cashierAddIDField.ReadOnly = true;
-            this.cashierAddIDField.Size = new System.Drawing.Size(186, 20);
-            this.cashierAddIDField.TabIndex = 7;
-            // 
-            // addCashierButton
-            // 
-            this.addCashierButton.Enabled = false;
-            this.addCashierButton.Location = new System.Drawing.Point(6, 71);
-            this.addCashierButton.Name = "addCashierButton";
-            this.addCashierButton.Size = new System.Drawing.Size(247, 34);
-            this.addCashierButton.TabIndex = 6;
-            this.addCashierButton.Text = "Добавить кассира";
-            this.addCashierButton.UseVisualStyleBackColor = true;
-            this.addCashierButton.Click += new System.EventHandler(this.addCashierButton_Click);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(7, 49);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(32, 13);
-            this.label29.TabIndex = 1;
-            this.label29.Text = "Имя:";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(7, 22);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(44, 13);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "Номер:";
-            // 
-            // cashiersGrid
-            // 
-            this.cashiersGrid.AllowUserToAddRows = false;
-            this.cashiersGrid.AllowUserToDeleteRows = false;
-            this.cashiersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cashiersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.cashierName});
-            this.cashiersGrid.Location = new System.Drawing.Point(6, 5);
-            this.cashiersGrid.Name = "cashiersGrid";
-            this.cashiersGrid.RowHeadersVisible = false;
-            this.cashiersGrid.Size = new System.Drawing.Size(748, 515);
-            this.cashiersGrid.TabIndex = 3;
-            this.cashiersGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cashiersGrid_CellClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 50;
-            // 
-            // cashierName
-            // 
-            this.cashierName.HeaderText = "Имя";
-            this.cashierName.Name = "cashierName";
-            this.cashierName.Width = 694;
             // 
             // rooms
             // 
@@ -1627,9 +391,7 @@
             this.roomsGrid.AllowUserToAddRows = false;
             this.roomsGrid.AllowUserToDeleteRows = false;
             this.roomsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.roomsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.roomID,
-            this.roomName});
+            this.roomsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.roomID, this.roomName});
             this.roomsGrid.Location = new System.Drawing.Point(6, 5);
             this.roomsGrid.Name = "roomsGrid";
             this.roomsGrid.RowHeadersVisible = false;
@@ -1648,6 +410,1169 @@
             this.roomName.HeaderText = "Имя";
             this.roomName.Name = "roomName";
             this.roomName.Width = 694;
+            // 
+            // cashiers
+            // 
+            this.cashiers.Controls.Add(this.cashiersNoEntriesLabel);
+            this.cashiers.Controls.Add(this.removeCashierButton);
+            this.cashiers.Controls.Add(this.editCashierGroup);
+            this.cashiers.Controls.Add(this.addCashierGroup);
+            this.cashiers.Controls.Add(this.cashiersGrid);
+            this.cashiers.Location = new System.Drawing.Point(4, 22);
+            this.cashiers.Name = "cashiers";
+            this.cashiers.Size = new System.Drawing.Size(1032, 524);
+            this.cashiers.TabIndex = 3;
+            this.cashiers.Text = "Кассиры";
+            this.cashiers.UseVisualStyleBackColor = true;
+            // 
+            // cashiersNoEntriesLabel
+            // 
+            this.cashiersNoEntriesLabel.AutoSize = true;
+            this.cashiersNoEntriesLabel.Location = new System.Drawing.Point(345, 282);
+            this.cashiersNoEntriesLabel.Name = "cashiersNoEntriesLabel";
+            this.cashiersNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
+            this.cashiersNoEntriesLabel.TabIndex = 16;
+            this.cashiersNoEntriesLabel.Text = "Нет записей";
+            this.cashiersNoEntriesLabel.Visible = false;
+            // 
+            // removeCashierButton
+            // 
+            this.removeCashierButton.BackColor = System.Drawing.Color.Tomato;
+            this.removeCashierButton.Enabled = false;
+            this.removeCashierButton.Location = new System.Drawing.Point(772, 471);
+            this.removeCashierButton.Name = "removeCashierButton";
+            this.removeCashierButton.Size = new System.Drawing.Size(247, 34);
+            this.removeCashierButton.TabIndex = 15;
+            this.removeCashierButton.Text = "Удалить кассира";
+            this.removeCashierButton.UseVisualStyleBackColor = false;
+            this.removeCashierButton.Click += new System.EventHandler(this.removeCashierButton_Click);
+            // 
+            // editCashierGroup
+            // 
+            this.editCashierGroup.Controls.Add(this.cashierEditNameTB);
+            this.editCashierGroup.Controls.Add(this.cashierEditIdField);
+            this.editCashierGroup.Controls.Add(this.updateCashierButton);
+            this.editCashierGroup.Controls.Add(this.label27);
+            this.editCashierGroup.Controls.Add(this.label28);
+            this.editCashierGroup.Enabled = false;
+            this.editCashierGroup.Location = new System.Drawing.Point(762, 229);
+            this.editCashierGroup.Name = "editCashierGroup";
+            this.editCashierGroup.Size = new System.Drawing.Size(263, 114);
+            this.editCashierGroup.TabIndex = 14;
+            this.editCashierGroup.TabStop = false;
+            this.editCashierGroup.Text = "Изменить кассира";
+            // 
+            // cashierEditNameTB
+            // 
+            this.cashierEditNameTB.Location = new System.Drawing.Point(67, 45);
+            this.cashierEditNameTB.Name = "cashierEditNameTB";
+            this.cashierEditNameTB.Size = new System.Drawing.Size(186, 20);
+            this.cashierEditNameTB.TabIndex = 13;
+            this.cashierEditNameTB.TextChanged += new System.EventHandler(this.updateCashierTB_TextChanged);
+            // 
+            // cashierEditIdField
+            // 
+            this.cashierEditIdField.Location = new System.Drawing.Point(67, 19);
+            this.cashierEditIdField.Name = "cashierEditIdField";
+            this.cashierEditIdField.ReadOnly = true;
+            this.cashierEditIdField.Size = new System.Drawing.Size(186, 20);
+            this.cashierEditIdField.TabIndex = 7;
+            // 
+            // updateCashierButton
+            // 
+            this.updateCashierButton.Enabled = false;
+            this.updateCashierButton.Location = new System.Drawing.Point(6, 71);
+            this.updateCashierButton.Name = "updateCashierButton";
+            this.updateCashierButton.Size = new System.Drawing.Size(247, 34);
+            this.updateCashierButton.TabIndex = 6;
+            this.updateCashierButton.Text = "Изменить кассира";
+            this.updateCashierButton.UseVisualStyleBackColor = true;
+            this.updateCashierButton.Click += new System.EventHandler(this.updateCashierButton_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(7, 49);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(32, 13);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "Имя:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(7, 22);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(44, 13);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Номер:";
+            // 
+            // addCashierGroup
+            // 
+            this.addCashierGroup.Controls.Add(this.cashierAddNameField);
+            this.addCashierGroup.Controls.Add(this.cashierAddIDField);
+            this.addCashierGroup.Controls.Add(this.addCashierButton);
+            this.addCashierGroup.Controls.Add(this.label29);
+            this.addCashierGroup.Controls.Add(this.label30);
+            this.addCashierGroup.Location = new System.Drawing.Point(762, 10);
+            this.addCashierGroup.Name = "addCashierGroup";
+            this.addCashierGroup.Size = new System.Drawing.Size(263, 114);
+            this.addCashierGroup.TabIndex = 13;
+            this.addCashierGroup.TabStop = false;
+            this.addCashierGroup.Text = "Добавить кассира";
+            // 
+            // cashierAddNameField
+            // 
+            this.cashierAddNameField.Location = new System.Drawing.Point(67, 45);
+            this.cashierAddNameField.Name = "cashierAddNameField";
+            this.cashierAddNameField.Size = new System.Drawing.Size(186, 20);
+            this.cashierAddNameField.TabIndex = 13;
+            this.cashierAddNameField.TextChanged += new System.EventHandler(this.cashierAddNameField_TextChanged);
+            // 
+            // cashierAddIDField
+            // 
+            this.cashierAddIDField.Location = new System.Drawing.Point(67, 19);
+            this.cashierAddIDField.Name = "cashierAddIDField";
+            this.cashierAddIDField.ReadOnly = true;
+            this.cashierAddIDField.Size = new System.Drawing.Size(186, 20);
+            this.cashierAddIDField.TabIndex = 7;
+            // 
+            // addCashierButton
+            // 
+            this.addCashierButton.Enabled = false;
+            this.addCashierButton.Location = new System.Drawing.Point(6, 71);
+            this.addCashierButton.Name = "addCashierButton";
+            this.addCashierButton.Size = new System.Drawing.Size(247, 34);
+            this.addCashierButton.TabIndex = 6;
+            this.addCashierButton.Text = "Добавить кассира";
+            this.addCashierButton.UseVisualStyleBackColor = true;
+            this.addCashierButton.Click += new System.EventHandler(this.addCashierButton_Click);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(7, 49);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(32, 13);
+            this.label29.TabIndex = 1;
+            this.label29.Text = "Имя:";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(7, 22);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(44, 13);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "Номер:";
+            // 
+            // cashiersGrid
+            // 
+            this.cashiersGrid.AllowUserToAddRows = false;
+            this.cashiersGrid.AllowUserToDeleteRows = false;
+            this.cashiersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cashiersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.ID, this.cashierName});
+            this.cashiersGrid.Location = new System.Drawing.Point(6, 5);
+            this.cashiersGrid.Name = "cashiersGrid";
+            this.cashiersGrid.RowHeadersVisible = false;
+            this.cashiersGrid.Size = new System.Drawing.Size(748, 515);
+            this.cashiersGrid.TabIndex = 3;
+            this.cashiersGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cashiersGrid_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 50;
+            // 
+            // cashierName
+            // 
+            this.cashierName.HeaderText = "Имя";
+            this.cashierName.Name = "cashierName";
+            this.cashierName.Width = 694;
+            // 
+            // films
+            // 
+            this.films.Controls.Add(this.filmsNoEntriesLabel);
+            this.films.Controls.Add(this.filmsDeleteButton);
+            this.films.Controls.Add(this.filmsEditGroup);
+            this.films.Controls.Add(this.filmsAddGroup);
+            this.films.Controls.Add(this.filmsGrid);
+            this.films.Location = new System.Drawing.Point(4, 22);
+            this.films.Name = "films";
+            this.films.Size = new System.Drawing.Size(1032, 524);
+            this.films.TabIndex = 2;
+            this.films.Text = "Фильмы";
+            this.films.UseVisualStyleBackColor = true;
+            // 
+            // filmsNoEntriesLabel
+            // 
+            this.filmsNoEntriesLabel.AutoSize = true;
+            this.filmsNoEntriesLabel.Location = new System.Drawing.Point(345, 282);
+            this.filmsNoEntriesLabel.Name = "filmsNoEntriesLabel";
+            this.filmsNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
+            this.filmsNoEntriesLabel.TabIndex = 15;
+            this.filmsNoEntriesLabel.Text = "Нет записей";
+            this.filmsNoEntriesLabel.Visible = false;
+            // 
+            // filmsDeleteButton
+            // 
+            this.filmsDeleteButton.BackColor = System.Drawing.Color.Tomato;
+            this.filmsDeleteButton.Enabled = false;
+            this.filmsDeleteButton.Location = new System.Drawing.Point(772, 471);
+            this.filmsDeleteButton.Name = "filmsDeleteButton";
+            this.filmsDeleteButton.Size = new System.Drawing.Size(247, 34);
+            this.filmsDeleteButton.TabIndex = 14;
+            this.filmsDeleteButton.Text = "Удалить фильм";
+            this.filmsDeleteButton.UseVisualStyleBackColor = false;
+            this.filmsDeleteButton.Click += new System.EventHandler(this.filmsDeleteButton_Click);
+            // 
+            // filmsEditGroup
+            // 
+            this.filmsEditGroup.Controls.Add(this.filmsEditAgeRestr);
+            this.filmsEditGroup.Controls.Add(this.label21);
+            this.filmsEditGroup.Controls.Add(this.filmsEditNameField);
+            this.filmsEditGroup.Controls.Add(this.filmsEditGenreCB);
+            this.filmsEditGroup.Controls.Add(this.label24);
+            this.filmsEditGroup.Controls.Add(this.filmsEditIDField);
+            this.filmsEditGroup.Controls.Add(this.changeFilmButton);
+            this.filmsEditGroup.Controls.Add(this.label25);
+            this.filmsEditGroup.Controls.Add(this.label26);
+            this.filmsEditGroup.Enabled = false;
+            this.filmsEditGroup.Location = new System.Drawing.Point(762, 229);
+            this.filmsEditGroup.Name = "filmsEditGroup";
+            this.filmsEditGroup.Size = new System.Drawing.Size(263, 168);
+            this.filmsEditGroup.TabIndex = 13;
+            this.filmsEditGroup.TabStop = false;
+            this.filmsEditGroup.Text = "Изменить фильм";
+            // 
+            // filmsEditAgeRestr
+            // 
+            this.filmsEditAgeRestr.Location = new System.Drawing.Point(67, 98);
+            this.filmsEditAgeRestr.Name = "filmsEditAgeRestr";
+            this.filmsEditAgeRestr.Size = new System.Drawing.Size(186, 20);
+            this.filmsEditAgeRestr.TabIndex = 15;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(7, 102);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(32, 13);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Огр.:";
+            // 
+            // filmsEditNameField
+            // 
+            this.filmsEditNameField.Location = new System.Drawing.Point(67, 45);
+            this.filmsEditNameField.Name = "filmsEditNameField";
+            this.filmsEditNameField.Size = new System.Drawing.Size(186, 20);
+            this.filmsEditNameField.TabIndex = 13;
+            this.filmsEditNameField.TextChanged += new System.EventHandler(this.filmsEditNameField_TextChanged);
+            // 
+            // filmsEditGenreCB
+            // 
+            this.filmsEditGenreCB.FormattingEnabled = true;
+            this.filmsEditGenreCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.filmsEditGenreCB.Location = new System.Drawing.Point(67, 71);
+            this.filmsEditGenreCB.Name = "filmsEditGenreCB";
+            this.filmsEditGenreCB.Size = new System.Drawing.Size(186, 21);
+            this.filmsEditGenreCB.TabIndex = 9;
+            this.filmsEditGenreCB.TextChanged += new System.EventHandler(this.filmsEditNameField_TextChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(7, 75);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(39, 13);
+            this.label24.TabIndex = 8;
+            this.label24.Text = "Жанр:";
+            // 
+            // filmsEditIDField
+            // 
+            this.filmsEditIDField.Location = new System.Drawing.Point(67, 19);
+            this.filmsEditIDField.Name = "filmsEditIDField";
+            this.filmsEditIDField.ReadOnly = true;
+            this.filmsEditIDField.Size = new System.Drawing.Size(186, 20);
+            this.filmsEditIDField.TabIndex = 7;
+            // 
+            // changeFilmButton
+            // 
+            this.changeFilmButton.Enabled = false;
+            this.changeFilmButton.Location = new System.Drawing.Point(6, 124);
+            this.changeFilmButton.Name = "changeFilmButton";
+            this.changeFilmButton.Size = new System.Drawing.Size(247, 34);
+            this.changeFilmButton.TabIndex = 6;
+            this.changeFilmButton.Text = "Изменить фильм";
+            this.changeFilmButton.UseVisualStyleBackColor = true;
+            this.changeFilmButton.Click += new System.EventHandler(this.changeFilmButton_Click);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(7, 49);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(60, 13);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "Название:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(7, 22);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(44, 13);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Номер:";
+            // 
+            // filmsAddGroup
+            // 
+            this.filmsAddGroup.Controls.Add(this.filmsAddAgeRestr);
+            this.filmsAddGroup.Controls.Add(this.label19);
+            this.filmsAddGroup.Controls.Add(this.filmsAddNameField);
+            this.filmsAddGroup.Controls.Add(this.filmsAddGenreCB);
+            this.filmsAddGroup.Controls.Add(this.label20);
+            this.filmsAddGroup.Controls.Add(this.filmsAddIDField);
+            this.filmsAddGroup.Controls.Add(this.addFilmButton);
+            this.filmsAddGroup.Controls.Add(this.label22);
+            this.filmsAddGroup.Controls.Add(this.label23);
+            this.filmsAddGroup.Location = new System.Drawing.Point(762, 10);
+            this.filmsAddGroup.Name = "filmsAddGroup";
+            this.filmsAddGroup.Size = new System.Drawing.Size(263, 168);
+            this.filmsAddGroup.TabIndex = 12;
+            this.filmsAddGroup.TabStop = false;
+            this.filmsAddGroup.Text = "Добавить фильм";
+            // 
+            // filmsAddAgeRestr
+            // 
+            this.filmsAddAgeRestr.Location = new System.Drawing.Point(67, 98);
+            this.filmsAddAgeRestr.Name = "filmsAddAgeRestr";
+            this.filmsAddAgeRestr.Size = new System.Drawing.Size(186, 20);
+            this.filmsAddAgeRestr.TabIndex = 15;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(7, 102);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(32, 13);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "Огр.:";
+            // 
+            // filmsAddNameField
+            // 
+            this.filmsAddNameField.Location = new System.Drawing.Point(67, 45);
+            this.filmsAddNameField.Name = "filmsAddNameField";
+            this.filmsAddNameField.Size = new System.Drawing.Size(186, 20);
+            this.filmsAddNameField.TabIndex = 13;
+            // 
+            // filmsAddGenreCB
+            // 
+            this.filmsAddGenreCB.FormattingEnabled = true;
+            this.filmsAddGenreCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.filmsAddGenreCB.Location = new System.Drawing.Point(67, 71);
+            this.filmsAddGenreCB.Name = "filmsAddGenreCB";
+            this.filmsAddGenreCB.Size = new System.Drawing.Size(186, 21);
+            this.filmsAddGenreCB.TabIndex = 9;
+            this.filmsAddGenreCB.SelectedIndexChanged += new System.EventHandler(this.filmsAddGenreCB_SelectedIndexChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(7, 75);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(39, 13);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "Жанр:";
+            // 
+            // filmsAddIDField
+            // 
+            this.filmsAddIDField.Location = new System.Drawing.Point(67, 19);
+            this.filmsAddIDField.Name = "filmsAddIDField";
+            this.filmsAddIDField.ReadOnly = true;
+            this.filmsAddIDField.Size = new System.Drawing.Size(186, 20);
+            this.filmsAddIDField.TabIndex = 7;
+            // 
+            // addFilmButton
+            // 
+            this.addFilmButton.Enabled = false;
+            this.addFilmButton.Location = new System.Drawing.Point(6, 124);
+            this.addFilmButton.Name = "addFilmButton";
+            this.addFilmButton.Size = new System.Drawing.Size(247, 34);
+            this.addFilmButton.TabIndex = 6;
+            this.addFilmButton.Text = "Добавить фильм";
+            this.addFilmButton.UseVisualStyleBackColor = true;
+            this.addFilmButton.Click += new System.EventHandler(this.addFilmButton_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(7, 49);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(60, 13);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Название:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(7, 22);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(44, 13);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Номер:";
+            // 
+            // filmsGrid
+            // 
+            this.filmsGrid.AllowUserToAddRows = false;
+            this.filmsGrid.AllowUserToDeleteRows = false;
+            this.filmsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.filmsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.filmID, this.name, this.genre, this.ageRestr});
+            this.filmsGrid.Location = new System.Drawing.Point(6, 5);
+            this.filmsGrid.Name = "filmsGrid";
+            this.filmsGrid.RowHeadersVisible = false;
+            this.filmsGrid.Size = new System.Drawing.Size(748, 515);
+            this.filmsGrid.TabIndex = 2;
+            this.filmsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.filmsGrid_CellClick);
+            // 
+            // filmID
+            // 
+            this.filmID.HeaderText = "ID";
+            this.filmID.Name = "filmID";
+            this.filmID.Width = 97;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Название";
+            this.name.Name = "name";
+            this.name.Width = 216;
+            // 
+            // genre
+            // 
+            this.genre.HeaderText = "Жанр";
+            this.genre.Name = "genre";
+            this.genre.Width = 216;
+            // 
+            // ageRestr
+            // 
+            this.ageRestr.HeaderText = "Огр";
+            this.ageRestr.Name = "ageRestr";
+            this.ageRestr.Width = 216;
+            // 
+            // sessions
+            // 
+            this.sessions.Controls.Add(this.sessionsNoEntriesLabel);
+            this.sessions.Controls.Add(this.sessionsEditGroup);
+            this.sessions.Controls.Add(this.sessionsAddGroup);
+            this.sessions.Controls.Add(this.sessionsDeleteButton);
+            this.sessions.Controls.Add(this.sessionsGrid);
+            this.sessions.Location = new System.Drawing.Point(4, 22);
+            this.sessions.Name = "sessions";
+            this.sessions.Padding = new System.Windows.Forms.Padding(3);
+            this.sessions.Size = new System.Drawing.Size(1032, 524);
+            this.sessions.TabIndex = 1;
+            this.sessions.Text = "Сеансы";
+            this.sessions.UseVisualStyleBackColor = true;
+            // 
+            // sessionsNoEntriesLabel
+            // 
+            this.sessionsNoEntriesLabel.AutoSize = true;
+            this.sessionsNoEntriesLabel.Location = new System.Drawing.Point(345, 282);
+            this.sessionsNoEntriesLabel.Name = "sessionsNoEntriesLabel";
+            this.sessionsNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
+            this.sessionsNoEntriesLabel.TabIndex = 15;
+            this.sessionsNoEntriesLabel.Text = "Нет записей";
+            this.sessionsNoEntriesLabel.Visible = false;
+            // 
+            // sessionsEditGroup
+            // 
+            this.sessionsEditGroup.Controls.Add(this.sessionsEditCB);
+            this.sessionsEditGroup.Controls.Add(this.label42);
+            this.sessionsEditGroup.Controls.Add(this.sessionEditTimePicker);
+            this.sessionsEditGroup.Controls.Add(this.label13);
+            this.sessionsEditGroup.Controls.Add(this.sessionsEditDatePicker);
+            this.sessionsEditGroup.Controls.Add(this.sessionsEditFilmCB);
+            this.sessionsEditGroup.Controls.Add(this.label14);
+            this.sessionsEditGroup.Controls.Add(this.sessionsEditField);
+            this.sessionsEditGroup.Controls.Add(this.sessionEditButton);
+            this.sessionsEditGroup.Controls.Add(this.sessionsEditRoomCB);
+            this.sessionsEditGroup.Controls.Add(this.label15);
+            this.sessionsEditGroup.Controls.Add(this.label16);
+            this.sessionsEditGroup.Controls.Add(this.label18);
+            this.sessionsEditGroup.Enabled = false;
+            this.sessionsEditGroup.Location = new System.Drawing.Point(762, 229);
+            this.sessionsEditGroup.Name = "sessionsEditGroup";
+            this.sessionsEditGroup.Size = new System.Drawing.Size(263, 223);
+            this.sessionsEditGroup.TabIndex = 13;
+            this.sessionsEditGroup.TabStop = false;
+            this.sessionsEditGroup.Text = "Изменить сеанс";
+            // 
+            // sessionsEditCB
+            // 
+            this.sessionsEditCB.FormattingEnabled = true;
+            this.sessionsEditCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsEditCB.Location = new System.Drawing.Point(67, 151);
+            this.sessionsEditCB.Name = "sessionsEditCB";
+            this.sessionsEditCB.Size = new System.Drawing.Size(186, 21);
+            this.sessionsEditCB.TabIndex = 14;
+            this.sessionsEditCB.SelectedIndexChanged += new System.EventHandler(this.sessionsEditFilmCB_SelectedIndexChanged);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(8, 157);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(29, 13);
+            this.label42.TabIndex = 13;
+            this.label42.Text = "Тип:";
+            // 
+            // sessionEditTimePicker
+            // 
+            this.sessionEditTimePicker.CustomFormat = "HH:mm";
+            this.sessionEditTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.sessionEditTimePicker.Location = new System.Drawing.Point(67, 71);
+            this.sessionEditTimePicker.Name = "sessionEditTimePicker";
+            this.sessionEditTimePicker.ShowUpDown = true;
+            this.sessionEditTimePicker.Size = new System.Drawing.Size(186, 20);
+            this.sessionEditTimePicker.TabIndex = 12;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 76);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 13);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Время:";
+            // 
+            // sessionsEditDatePicker
+            // 
+            this.sessionsEditDatePicker.Location = new System.Drawing.Point(67, 45);
+            this.sessionsEditDatePicker.Name = "sessionsEditDatePicker";
+            this.sessionsEditDatePicker.Size = new System.Drawing.Size(186, 20);
+            this.sessionsEditDatePicker.TabIndex = 10;
+            // 
+            // sessionsEditFilmCB
+            // 
+            this.sessionsEditFilmCB.FormattingEnabled = true;
+            this.sessionsEditFilmCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsEditFilmCB.Location = new System.Drawing.Point(67, 97);
+            this.sessionsEditFilmCB.Name = "sessionsEditFilmCB";
+            this.sessionsEditFilmCB.Size = new System.Drawing.Size(186, 21);
+            this.sessionsEditFilmCB.TabIndex = 9;
+            this.sessionsEditFilmCB.SelectedIndexChanged += new System.EventHandler(this.sessionsEditFilmCB_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(8, 103);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 13);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Фильм:";
+            // 
+            // sessionsEditField
+            // 
+            this.sessionsEditField.Location = new System.Drawing.Point(67, 19);
+            this.sessionsEditField.Name = "sessionsEditField";
+            this.sessionsEditField.ReadOnly = true;
+            this.sessionsEditField.Size = new System.Drawing.Size(186, 20);
+            this.sessionsEditField.TabIndex = 7;
+            // 
+            // sessionEditButton
+            // 
+            this.sessionEditButton.Enabled = false;
+            this.sessionEditButton.Location = new System.Drawing.Point(6, 183);
+            this.sessionEditButton.Name = "sessionEditButton";
+            this.sessionEditButton.Size = new System.Drawing.Size(247, 34);
+            this.sessionEditButton.TabIndex = 6;
+            this.sessionEditButton.Text = "Изменить сеанс";
+            this.sessionEditButton.UseVisualStyleBackColor = true;
+            this.sessionEditButton.Click += new System.EventHandler(this.sessionEditButton_Click);
+            // 
+            // sessionsEditRoomCB
+            // 
+            this.sessionsEditRoomCB.FormattingEnabled = true;
+            this.sessionsEditRoomCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsEditRoomCB.Location = new System.Drawing.Point(67, 124);
+            this.sessionsEditRoomCB.Name = "sessionsEditRoomCB";
+            this.sessionsEditRoomCB.Size = new System.Drawing.Size(186, 21);
+            this.sessionsEditRoomCB.TabIndex = 5;
+            this.sessionsEditRoomCB.SelectedIndexChanged += new System.EventHandler(this.sessionsEditFilmCB_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(8, 130);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(29, 13);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Зал:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(7, 49);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(36, 13);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Дата:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(7, 22);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(44, 13);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Номер:";
+            // 
+            // sessionsAddGroup
+            // 
+            this.sessionsAddGroup.Controls.Add(this.sessionsAddTypeCB);
+            this.sessionsAddGroup.Controls.Add(this.label41);
+            this.sessionsAddGroup.Controls.Add(this.sessionsAddTimePicker);
+            this.sessionsAddGroup.Controls.Add(this.label17);
+            this.sessionsAddGroup.Controls.Add(this.sessionsAddDatePicker);
+            this.sessionsAddGroup.Controls.Add(this.sessionsAddFilmCB);
+            this.sessionsAddGroup.Controls.Add(this.label9);
+            this.sessionsAddGroup.Controls.Add(this.sessionsAddIDField);
+            this.sessionsAddGroup.Controls.Add(this.addSessionButton);
+            this.sessionsAddGroup.Controls.Add(this.sessionsAddRoomCB);
+            this.sessionsAddGroup.Controls.Add(this.label10);
+            this.sessionsAddGroup.Controls.Add(this.label11);
+            this.sessionsAddGroup.Controls.Add(this.label12);
+            this.sessionsAddGroup.Location = new System.Drawing.Point(762, 10);
+            this.sessionsAddGroup.Name = "sessionsAddGroup";
+            this.sessionsAddGroup.Size = new System.Drawing.Size(263, 213);
+            this.sessionsAddGroup.TabIndex = 11;
+            this.sessionsAddGroup.TabStop = false;
+            this.sessionsAddGroup.Text = "Добавить сеанс";
+            // 
+            // sessionsAddTypeCB
+            // 
+            this.sessionsAddTypeCB.FormattingEnabled = true;
+            this.sessionsAddTypeCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsAddTypeCB.Location = new System.Drawing.Point(67, 151);
+            this.sessionsAddTypeCB.Name = "sessionsAddTypeCB";
+            this.sessionsAddTypeCB.Size = new System.Drawing.Size(186, 21);
+            this.sessionsAddTypeCB.TabIndex = 14;
+            this.sessionsAddTypeCB.SelectedIndexChanged += new System.EventHandler(this.SessionsAddValidation);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(8, 157);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(29, 13);
+            this.label41.TabIndex = 13;
+            this.label41.Text = "Тип:";
+            // 
+            // sessionsAddTimePicker
+            // 
+            this.sessionsAddTimePicker.CustomFormat = "HH:mm";
+            this.sessionsAddTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.sessionsAddTimePicker.Location = new System.Drawing.Point(67, 71);
+            this.sessionsAddTimePicker.Name = "sessionsAddTimePicker";
+            this.sessionsAddTimePicker.ShowUpDown = true;
+            this.sessionsAddTimePicker.Size = new System.Drawing.Size(186, 20);
+            this.sessionsAddTimePicker.TabIndex = 12;
+            this.sessionsAddTimePicker.ValueChanged += new System.EventHandler(this.SessionsAddValidation);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(7, 76);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(43, 13);
+            this.label17.TabIndex = 11;
+            this.label17.Text = "Время:";
+            // 
+            // sessionsAddDatePicker
+            // 
+            this.sessionsAddDatePicker.Location = new System.Drawing.Point(67, 45);
+            this.sessionsAddDatePicker.Name = "sessionsAddDatePicker";
+            this.sessionsAddDatePicker.Size = new System.Drawing.Size(186, 20);
+            this.sessionsAddDatePicker.TabIndex = 10;
+            this.sessionsAddDatePicker.ValueChanged += new System.EventHandler(this.SessionsAddValidation);
+            // 
+            // sessionsAddFilmCB
+            // 
+            this.sessionsAddFilmCB.FormattingEnabled = true;
+            this.sessionsAddFilmCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsAddFilmCB.Location = new System.Drawing.Point(67, 97);
+            this.sessionsAddFilmCB.Name = "sessionsAddFilmCB";
+            this.sessionsAddFilmCB.Size = new System.Drawing.Size(186, 21);
+            this.sessionsAddFilmCB.TabIndex = 9;
+            this.sessionsAddFilmCB.SelectedIndexChanged += new System.EventHandler(this.SessionsAddValidation);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 103);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Фильм:";
+            // 
+            // sessionsAddIDField
+            // 
+            this.sessionsAddIDField.Location = new System.Drawing.Point(67, 19);
+            this.sessionsAddIDField.Name = "sessionsAddIDField";
+            this.sessionsAddIDField.ReadOnly = true;
+            this.sessionsAddIDField.Size = new System.Drawing.Size(186, 20);
+            this.sessionsAddIDField.TabIndex = 7;
+            // 
+            // addSessionButton
+            // 
+            this.addSessionButton.Enabled = false;
+            this.addSessionButton.Location = new System.Drawing.Point(6, 175);
+            this.addSessionButton.Name = "addSessionButton";
+            this.addSessionButton.Size = new System.Drawing.Size(247, 34);
+            this.addSessionButton.TabIndex = 6;
+            this.addSessionButton.Text = "Добавить сеанс";
+            this.addSessionButton.UseVisualStyleBackColor = true;
+            this.addSessionButton.Click += new System.EventHandler(this.addSessionButton_Click);
+            // 
+            // sessionsAddRoomCB
+            // 
+            this.sessionsAddRoomCB.FormattingEnabled = true;
+            this.sessionsAddRoomCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsAddRoomCB.Location = new System.Drawing.Point(67, 124);
+            this.sessionsAddRoomCB.Name = "sessionsAddRoomCB";
+            this.sessionsAddRoomCB.Size = new System.Drawing.Size(186, 21);
+            this.sessionsAddRoomCB.TabIndex = 5;
+            this.sessionsAddRoomCB.SelectedIndexChanged += new System.EventHandler(this.SessionsAddValidation);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(8, 130);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Зал:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 49);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Дата:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(7, 22);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Номер:";
+            // 
+            // sessionsDeleteButton
+            // 
+            this.sessionsDeleteButton.BackColor = System.Drawing.Color.Tomato;
+            this.sessionsDeleteButton.Enabled = false;
+            this.sessionsDeleteButton.Location = new System.Drawing.Point(772, 471);
+            this.sessionsDeleteButton.Name = "sessionsDeleteButton";
+            this.sessionsDeleteButton.Size = new System.Drawing.Size(247, 34);
+            this.sessionsDeleteButton.TabIndex = 10;
+            this.sessionsDeleteButton.Text = "Удалить сеанс";
+            this.sessionsDeleteButton.UseVisualStyleBackColor = false;
+            this.sessionsDeleteButton.Click += new System.EventHandler(this.sessionsDeleteButton_Click);
+            // 
+            // sessionsGrid
+            // 
+            this.sessionsGrid.AllowUserToAddRows = false;
+            this.sessionsGrid.AllowUserToDeleteRows = false;
+            this.sessionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.sessionID, this.date, this.time, this.film, this.room, this.type});
+            this.sessionsGrid.Location = new System.Drawing.Point(6, 5);
+            this.sessionsGrid.Name = "sessionsGrid";
+            this.sessionsGrid.RowHeadersVisible = false;
+            this.sessionsGrid.Size = new System.Drawing.Size(748, 515);
+            this.sessionsGrid.TabIndex = 1;
+            this.sessionsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sessionsGrid_CellClick);
+            // 
+            // sessionID
+            // 
+            this.sessionID.HeaderText = "ID";
+            this.sessionID.Name = "sessionID";
+            this.sessionID.Width = 95;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Дата";
+            this.date.Name = "date";
+            this.date.Width = 130;
+            // 
+            // time
+            // 
+            this.time.HeaderText = "Время";
+            this.time.Name = "time";
+            this.time.Width = 130;
+            // 
+            // film
+            // 
+            this.film.HeaderText = "Фильм";
+            this.film.Name = "film";
+            this.film.Width = 130;
+            // 
+            // room
+            // 
+            this.room.HeaderText = "Зал";
+            this.room.Name = "room";
+            this.room.Width = 130;
+            // 
+            // type
+            // 
+            this.type.HeaderText = "Тип";
+            this.type.Name = "type";
+            this.type.Width = 130;
+            // 
+            // tickets
+            // 
+            this.tickets.Controls.Add(this.ticketsNoEntriesLabel);
+            this.tickets.Controls.Add(this.ticketsEditGroup);
+            this.tickets.Controls.Add(this.ticketsDeleteButton);
+            this.tickets.Controls.Add(this.ticketsAddGroup);
+            this.tickets.Controls.Add(this.ticketsGrid);
+            this.tickets.Location = new System.Drawing.Point(4, 22);
+            this.tickets.Name = "tickets";
+            this.tickets.Padding = new System.Windows.Forms.Padding(3);
+            this.tickets.Size = new System.Drawing.Size(1032, 524);
+            this.tickets.TabIndex = 0;
+            this.tickets.Text = "Билеты";
+            this.tickets.UseVisualStyleBackColor = true;
+            // 
+            // ticketsNoEntriesLabel
+            // 
+            this.ticketsNoEntriesLabel.AutoSize = true;
+            this.ticketsNoEntriesLabel.Location = new System.Drawing.Point(345, 282);
+            this.ticketsNoEntriesLabel.Name = "ticketsNoEntriesLabel";
+            this.ticketsNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
+            this.ticketsNoEntriesLabel.TabIndex = 14;
+            this.ticketsNoEntriesLabel.Text = "Нет записей";
+            this.ticketsNoEntriesLabel.Visible = false;
+            // 
+            // ticketsEditGroup
+            // 
+            this.ticketsEditGroup.Controls.Add(this.ticketsEditSeat);
+            this.ticketsEditGroup.Controls.Add(this.label4);
+            this.ticketsEditGroup.Controls.Add(this.ticketsEditRow);
+            this.ticketsEditGroup.Controls.Add(this.ticketsEditSessionCB);
+            this.ticketsEditGroup.Controls.Add(this.label5);
+            this.ticketsEditGroup.Controls.Add(this.ticketsEditField);
+            this.ticketsEditGroup.Controls.Add(this.updateTicketButton);
+            this.ticketsEditGroup.Controls.Add(this.ticketsEditCashierCB);
+            this.ticketsEditGroup.Controls.Add(this.label6);
+            this.ticketsEditGroup.Controls.Add(this.label7);
+            this.ticketsEditGroup.Controls.Add(this.label40);
+            this.ticketsEditGroup.Enabled = false;
+            this.ticketsEditGroup.Location = new System.Drawing.Point(762, 229);
+            this.ticketsEditGroup.Name = "ticketsEditGroup";
+            this.ticketsEditGroup.Size = new System.Drawing.Size(263, 213);
+            this.ticketsEditGroup.TabIndex = 13;
+            this.ticketsEditGroup.TabStop = false;
+            this.ticketsEditGroup.Text = "Изменить билет";
+            // 
+            // ticketsEditSeat
+            // 
+            this.ticketsEditSeat.Location = new System.Drawing.Point(67, 96);
+            this.ticketsEditSeat.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsEditSeat.Name = "ticketsEditSeat";
+            this.ticketsEditSeat.Size = new System.Drawing.Size(186, 20);
+            this.ticketsEditSeat.TabIndex = 12;
+            this.ticketsEditSeat.Value = new decimal(new int[] {1, 0, 0, 0});
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Место:";
+            // 
+            // ticketsEditRow
+            // 
+            this.ticketsEditRow.Location = new System.Drawing.Point(67, 121);
+            this.ticketsEditRow.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsEditRow.Name = "ticketsEditRow";
+            this.ticketsEditRow.Size = new System.Drawing.Size(186, 20);
+            this.ticketsEditRow.TabIndex = 10;
+            this.ticketsEditRow.Value = new decimal(new int[] {1, 0, 0, 0});
+            // 
+            // ticketsEditSessionCB
+            // 
+            this.ticketsEditSessionCB.FormattingEnabled = true;
+            this.ticketsEditSessionCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.ticketsEditSessionCB.Location = new System.Drawing.Point(67, 70);
+            this.ticketsEditSessionCB.Name = "ticketsEditSessionCB";
+            this.ticketsEditSessionCB.Size = new System.Drawing.Size(186, 21);
+            this.ticketsEditSessionCB.TabIndex = 9;
+            this.ticketsEditSessionCB.SelectedIndexChanged += new System.EventHandler(this.ticketsEditCashierCB_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Сеанс:";
+            // 
+            // ticketsEditField
+            // 
+            this.ticketsEditField.Location = new System.Drawing.Point(67, 19);
+            this.ticketsEditField.Name = "ticketsEditField";
+            this.ticketsEditField.ReadOnly = true;
+            this.ticketsEditField.Size = new System.Drawing.Size(186, 20);
+            this.ticketsEditField.TabIndex = 7;
+            // 
+            // updateTicketButton
+            // 
+            this.updateTicketButton.Location = new System.Drawing.Point(8, 163);
+            this.updateTicketButton.Name = "updateTicketButton";
+            this.updateTicketButton.Size = new System.Drawing.Size(247, 34);
+            this.updateTicketButton.TabIndex = 6;
+            this.updateTicketButton.Text = "Изменить билет";
+            this.updateTicketButton.UseVisualStyleBackColor = true;
+            this.updateTicketButton.Click += new System.EventHandler(this.updateTicketButton_Click);
+            // 
+            // ticketsEditCashierCB
+            // 
+            this.ticketsEditCashierCB.FormattingEnabled = true;
+            this.ticketsEditCashierCB.Location = new System.Drawing.Point(67, 45);
+            this.ticketsEditCashierCB.Name = "ticketsEditCashierCB";
+            this.ticketsEditCashierCB.Size = new System.Drawing.Size(186, 21);
+            this.ticketsEditCashierCB.TabIndex = 4;
+            this.ticketsEditCashierCB.SelectedIndexChanged += new System.EventHandler(this.ticketsEditCashierCB_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 123);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Ряд:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Кассир:";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(7, 22);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(44, 13);
+            this.label40.TabIndex = 0;
+            this.label40.Text = "Номер:";
+            // 
+            // ticketsDeleteButton
+            // 
+            this.ticketsDeleteButton.BackColor = System.Drawing.Color.Tomato;
+            this.ticketsDeleteButton.Enabled = false;
+            this.ticketsDeleteButton.Location = new System.Drawing.Point(772, 471);
+            this.ticketsDeleteButton.Name = "ticketsDeleteButton";
+            this.ticketsDeleteButton.Size = new System.Drawing.Size(247, 34);
+            this.ticketsDeleteButton.TabIndex = 9;
+            this.ticketsDeleteButton.Text = "Удалить билет";
+            this.ticketsDeleteButton.UseVisualStyleBackColor = false;
+            this.ticketsDeleteButton.Click += new System.EventHandler(this.ticketsDeleteButton_Click);
+            // 
+            // ticketsAddGroup
+            // 
+            this.ticketsAddGroup.Controls.Add(this.ticketsAddSeat);
+            this.ticketsAddGroup.Controls.Add(this.label39);
+            this.ticketsAddGroup.Controls.Add(this.ticketsAddRow);
+            this.ticketsAddGroup.Controls.Add(this.ticketsAddSessionCB);
+            this.ticketsAddGroup.Controls.Add(this.label8);
+            this.ticketsAddGroup.Controls.Add(this.ticketsAddIDField);
+            this.ticketsAddGroup.Controls.Add(this.addTicketButton);
+            this.ticketsAddGroup.Controls.Add(this.ticketsAddCashierCB);
+            this.ticketsAddGroup.Controls.Add(this.label3);
+            this.ticketsAddGroup.Controls.Add(this.label2);
+            this.ticketsAddGroup.Controls.Add(this.label1);
+            this.ticketsAddGroup.Location = new System.Drawing.Point(762, 10);
+            this.ticketsAddGroup.Name = "ticketsAddGroup";
+            this.ticketsAddGroup.Size = new System.Drawing.Size(263, 213);
+            this.ticketsAddGroup.TabIndex = 1;
+            this.ticketsAddGroup.TabStop = false;
+            this.ticketsAddGroup.Text = "Добавить билет";
+            // 
+            // ticketsAddSeat
+            // 
+            this.ticketsAddSeat.Location = new System.Drawing.Point(67, 96);
+            this.ticketsAddSeat.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsAddSeat.Name = "ticketsAddSeat";
+            this.ticketsAddSeat.Size = new System.Drawing.Size(186, 20);
+            this.ticketsAddSeat.TabIndex = 12;
+            this.ticketsAddSeat.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsAddSeat.ValueChanged += new System.EventHandler(this.TicketsAddValidation);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(7, 98);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(42, 13);
+            this.label39.TabIndex = 11;
+            this.label39.Text = "Место:";
+            // 
+            // ticketsAddRow
+            // 
+            this.ticketsAddRow.Location = new System.Drawing.Point(67, 121);
+            this.ticketsAddRow.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsAddRow.Name = "ticketsAddRow";
+            this.ticketsAddRow.Size = new System.Drawing.Size(186, 20);
+            this.ticketsAddRow.TabIndex = 10;
+            this.ticketsAddRow.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsAddRow.ValueChanged += new System.EventHandler(this.TicketsAddValidation);
+            // 
+            // ticketsAddSessionCB
+            // 
+            this.ticketsAddSessionCB.FormattingEnabled = true;
+            this.ticketsAddSessionCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.ticketsAddSessionCB.Location = new System.Drawing.Point(67, 70);
+            this.ticketsAddSessionCB.Name = "ticketsAddSessionCB";
+            this.ticketsAddSessionCB.Size = new System.Drawing.Size(186, 21);
+            this.ticketsAddSessionCB.TabIndex = 9;
+            this.ticketsAddSessionCB.SelectedIndexChanged += new System.EventHandler(this.TicketsAddValidation);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 74);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Сеанс:";
+            // 
+            // ticketsAddIDField
+            // 
+            this.ticketsAddIDField.Location = new System.Drawing.Point(67, 19);
+            this.ticketsAddIDField.Name = "ticketsAddIDField";
+            this.ticketsAddIDField.ReadOnly = true;
+            this.ticketsAddIDField.Size = new System.Drawing.Size(186, 20);
+            this.ticketsAddIDField.TabIndex = 7;
+            this.ticketsAddIDField.TextChanged += new System.EventHandler(this.TicketsAddValidation);
+            // 
+            // addTicketButton
+            // 
+            this.addTicketButton.Enabled = false;
+            this.addTicketButton.Location = new System.Drawing.Point(8, 163);
+            this.addTicketButton.Name = "addTicketButton";
+            this.addTicketButton.Size = new System.Drawing.Size(247, 34);
+            this.addTicketButton.TabIndex = 6;
+            this.addTicketButton.Text = "Добавить билет";
+            this.addTicketButton.UseVisualStyleBackColor = true;
+            this.addTicketButton.Click += new System.EventHandler(this.addTicketButton_Click);
+            // 
+            // ticketsAddCashierCB
+            // 
+            this.ticketsAddCashierCB.FormattingEnabled = true;
+            this.ticketsAddCashierCB.Location = new System.Drawing.Point(67, 44);
+            this.ticketsAddCashierCB.Name = "ticketsAddCashierCB";
+            this.ticketsAddCashierCB.Size = new System.Drawing.Size(186, 21);
+            this.ticketsAddCashierCB.TabIndex = 4;
+            this.ticketsAddCashierCB.SelectedIndexChanged += new System.EventHandler(this.TicketsAddValidation);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 123);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Ряд:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Кассир:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Номер:";
+            // 
+            // ticketsGrid
+            // 
+            this.ticketsGrid.AllowUserToAddRows = false;
+            this.ticketsGrid.AllowUserToDeleteRows = false;
+            this.ticketsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ticketsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.ticketID, this.session, this.cashier, this.seat, this.row});
+            this.ticketsGrid.Location = new System.Drawing.Point(6, 5);
+            this.ticketsGrid.Name = "ticketsGrid";
+            this.ticketsGrid.RowHeadersVisible = false;
+            this.ticketsGrid.Size = new System.Drawing.Size(748, 515);
+            this.ticketsGrid.TabIndex = 0;
+            this.ticketsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketsGrid_CellContentClick);
+            // 
+            // ticketID
+            // 
+            this.ticketID.HeaderText = "ID";
+            this.ticketID.Name = "ticketID";
+            this.ticketID.Width = 89;
+            // 
+            // session
+            // 
+            this.session.HeaderText = "Сеанс";
+            this.session.Name = "session";
+            this.session.Width = 164;
+            // 
+            // cashier
+            // 
+            this.cashier.HeaderText = "Кассир";
+            this.cashier.Name = "cashier";
+            this.cashier.Width = 164;
+            // 
+            // seat
+            // 
+            this.seat.HeaderText = "Место";
+            this.seat.Name = "seat";
+            this.seat.Width = 164;
+            // 
+            // row
+            // 
+            this.row.HeaderText = "Ряд";
+            this.row.Name = "row";
+            this.row.Width = 164;
+            // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tickets);
+            this.tabControl.Controls.Add(this.sessions);
+            this.tabControl.Controls.Add(this.films);
+            this.tabControl.Controls.Add(this.cashiers);
+            this.tabControl.Controls.Add(this.rooms);
+            this.tabControl.Controls.Add(this.genres);
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Location = new System.Drawing.Point(1, 4);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1040, 550);
+            this.tabControl.TabIndex = 0;
+            this.tabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabControl1_Selected);
             // 
             // genres
             // 
@@ -1808,9 +1733,7 @@
             this.genresGrid.AllowUserToAddRows = false;
             this.genresGrid.AllowUserToDeleteRows = false;
             this.genresGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.genresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.genreID,
-            this.genreName});
+            this.genresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.genreID, this.genreName});
             this.genresGrid.Location = new System.Drawing.Point(6, 5);
             this.genresGrid.Name = "genresGrid";
             this.genresGrid.RowHeadersVisible = false;
@@ -1830,67 +1753,144 @@
             this.genreName.Name = "genreName";
             this.genreName.Width = 694;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1032, 524);
+            this.tabPage1.TabIndex = 6;
+            this.tabPage1.Text = "Билеты Общ";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.coolId, this.coolSession, this.coolDate, this.coolTime, this.coolType, this.coolCashier, this.coolAgeRestr, this.coolGenre, this.coolRoom, this.coolPlace, this.coolRow});
+            this.dataGridView1.Location = new System.Drawing.Point(-4, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(1039, 523);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // coolId
+            // 
+            this.coolId.HeaderText = "ID";
+            this.coolId.Name = "coolId";
+            this.coolId.Width = 35;
+            // 
+            // coolSession
+            // 
+            this.coolSession.HeaderText = "Сеанс";
+            this.coolSession.Name = "coolSession";
+            // 
+            // coolDate
+            // 
+            this.coolDate.HeaderText = "Дата";
+            this.coolDate.Name = "coolDate";
+            // 
+            // coolTime
+            // 
+            this.coolTime.HeaderText = "Время";
+            this.coolTime.Name = "coolTime";
+            // 
+            // coolType
+            // 
+            this.coolType.HeaderText = "Тип";
+            this.coolType.Name = "coolType";
+            // 
+            // coolCashier
+            // 
+            this.coolCashier.HeaderText = "Кассир";
+            this.coolCashier.Name = "coolCashier";
+            // 
+            // coolAgeRestr
+            // 
+            this.coolAgeRestr.HeaderText = "Возр. Огр";
+            this.coolAgeRestr.Name = "coolAgeRestr";
+            // 
+            // coolGenre
+            // 
+            this.coolGenre.HeaderText = "Жанр";
+            this.coolGenre.Name = "coolGenre";
+            // 
+            // coolRoom
+            // 
+            this.coolRoom.HeaderText = "Зал";
+            this.coolRoom.Name = "coolRoom";
+            // 
+            // coolPlace
+            // 
+            this.coolPlace.HeaderText = "Место";
+            this.coolPlace.Name = "coolPlace";
+            // 
+            // coolRow
+            // 
+            this.coolRow.HeaderText = "Ряд";
+            this.coolRow.Name = "coolRow";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 551);
             this.Controls.Add(this.tabControl);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Cinemaster";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tabControl.ResumeLayout(false);
-            this.tickets.ResumeLayout(false);
-            this.tickets.PerformLayout();
-            this.ticketsEditGroup.ResumeLayout(false);
-            this.ticketsEditGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditSeat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditRow)).EndInit();
-            this.ticketsAddGroup.ResumeLayout(false);
-            this.ticketsAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddSeat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).EndInit();
-            this.sessions.ResumeLayout(false);
-            this.sessions.PerformLayout();
-            this.sessionsEditGroup.ResumeLayout(false);
-            this.sessionsEditGroup.PerformLayout();
-            this.sessionsAddGroup.ResumeLayout(false);
-            this.sessionsAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionsGrid)).EndInit();
-            this.films.ResumeLayout(false);
-            this.films.PerformLayout();
-            this.filmsEditGroup.ResumeLayout(false);
-            this.filmsEditGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsEditAgeRestr)).EndInit();
-            this.filmsAddGroup.ResumeLayout(false);
-            this.filmsAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsAddAgeRestr)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsGrid)).EndInit();
-            this.cashiers.ResumeLayout(false);
-            this.cashiers.PerformLayout();
-            this.editCashierGroup.ResumeLayout(false);
-            this.editCashierGroup.PerformLayout();
-            this.addCashierGroup.ResumeLayout(false);
-            this.addCashierGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cashiersGrid)).EndInit();
             this.rooms.ResumeLayout(false);
             this.rooms.PerformLayout();
             this.editRoomGroup.ResumeLayout(false);
             this.editRoomGroup.PerformLayout();
             this.addRoomGroup.ResumeLayout(false);
             this.addRoomGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.roomsGrid)).EndInit();
+            this.cashiers.ResumeLayout(false);
+            this.cashiers.PerformLayout();
+            this.editCashierGroup.ResumeLayout(false);
+            this.editCashierGroup.PerformLayout();
+            this.addCashierGroup.ResumeLayout(false);
+            this.addCashierGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.cashiersGrid)).EndInit();
+            this.films.ResumeLayout(false);
+            this.films.PerformLayout();
+            this.filmsEditGroup.ResumeLayout(false);
+            this.filmsEditGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsEditAgeRestr)).EndInit();
+            this.filmsAddGroup.ResumeLayout(false);
+            this.filmsAddGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsAddAgeRestr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsGrid)).EndInit();
+            this.sessions.ResumeLayout(false);
+            this.sessions.PerformLayout();
+            this.sessionsEditGroup.ResumeLayout(false);
+            this.sessionsEditGroup.PerformLayout();
+            this.sessionsAddGroup.ResumeLayout(false);
+            this.sessionsAddGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.sessionsGrid)).EndInit();
+            this.tickets.ResumeLayout(false);
+            this.tickets.PerformLayout();
+            this.ticketsEditGroup.ResumeLayout(false);
+            this.ticketsEditGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditSeat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditRow)).EndInit();
+            this.ticketsAddGroup.ResumeLayout(false);
+            this.ticketsAddGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddSeat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsGrid)).EndInit();
+            this.tabControl.ResumeLayout(false);
             this.genres.ResumeLayout(false);
             this.genres.PerformLayout();
             this.editGenreGroup.ResumeLayout(false);
             this.editGenreGroup.PerformLayout();
             this.genresAddGroup.ResumeLayout(false);
             this.genresAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.genresGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.genresGrid)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         private System.Windows.Forms.Button addCashierButton;
@@ -1905,15 +1905,29 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cashier;
         private System.Windows.Forms.TextBox cashierAddIDField;
         private System.Windows.Forms.TextBox cashierAddNameField;
+        private System.Windows.Forms.TextBox cashierEditIdField;
+        private System.Windows.Forms.TextBox cashierEditNameTB;
         private System.Windows.Forms.DataGridViewTextBoxColumn cashierName;
         private System.Windows.Forms.TabPage cashiers;
         private System.Windows.Forms.DataGridView cashiersGrid;
         private System.Windows.Forms.Label cashiersNoEntriesLabel;
         private System.Windows.Forms.Button changeFilmButton;
         private System.Windows.Forms.Button changeGenreButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolAgeRestr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolCashier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolGenre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolPlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolRoom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolSession;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolType;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.Button deleteRoomButton;
         private System.Windows.Forms.Button deleteGenreButton;
+        private System.Windows.Forms.Button deleteRoomButton;
         private System.Windows.Forms.GroupBox editCashierGroup;
         private System.Windows.Forms.GroupBox editGenreGroup;
         private System.Windows.Forms.GroupBox editRoomGroup;
@@ -2023,8 +2037,7 @@
         private System.Windows.Forms.DataGridView sessionsGrid;
         private System.Windows.Forms.Label sessionsNoEntriesLabel;
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TextBox cashierEditNameTB;
-        private System.Windows.Forms.TextBox cashierEditIdField;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketID;
         private System.Windows.Forms.TabPage tickets;
         private System.Windows.Forms.ComboBox ticketsAddCashierCB;
