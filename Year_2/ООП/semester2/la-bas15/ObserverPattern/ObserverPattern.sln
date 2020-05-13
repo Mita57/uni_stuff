@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverPattern", "ObserverPattern\ObserverPattern.csproj", "{122709E8-D413-48D0-ABE0-AEF636ED90BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publisher", "Publisher\Publisher.csproj", "{C1921F63-6C03-4D6F-8C90-761D4670F2F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{122709E8-D413-48D0-ABE0-AEF636ED90BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{122709E8-D413-48D0-ABE0-AEF636ED90BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{122709E8-D413-48D0-ABE0-AEF636ED90BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1921F63-6C03-4D6F-8C90-761D4670F2F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1921F63-6C03-4D6F-8C90-761D4670F2F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1921F63-6C03-4D6F-8C90-761D4670F2F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1921F63-6C03-4D6F-8C90-761D4670F2F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
