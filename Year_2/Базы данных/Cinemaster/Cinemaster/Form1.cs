@@ -219,6 +219,37 @@ namespace Cinemaster
 
                         break;
                     }
+
+                case "Билеты Общ":
+                    {
+                        genresNoEntriesLabel.Visible = false;
+                        CoolTicket[] tickets = (CoolTicket[])Erm.GetCoolTickets().ToArray();
+                        try
+                        {
+                            coolGrid.RowCount = tickets.Length;
+                            for (int i = 0; i < tickets.Length; i++)
+                            {
+                                coolGrid.Rows[i].Cells[0].Value = tickets[i].ID;
+                                coolGrid.Rows[i].Cells[1].Value = tickets[i].film;
+                                coolGrid.Rows[i].Cells[2].Value = tickets[i].sessionID;
+                                coolGrid.Rows[i].Cells[3].Value = tickets[i].date;
+                                coolGrid.Rows[i].Cells[4].Value = tickets[i].time;
+                                coolGrid.Rows[i].Cells[5].Value = tickets[i].type;
+                                coolGrid.Rows[i].Cells[6].Value = tickets[i].cashier;
+                                coolGrid.Rows[i].Cells[7].Value = tickets[i].ageRest;
+                                coolGrid.Rows[i].Cells[8].Value = tickets[i].genre;
+                                coolGrid.Rows[i].Cells[9].Value = tickets[i].room;
+                                coolGrid.Rows[i].Cells[10].Value = tickets[i].seat;
+                                coolGrid.Rows[i].Cells[11].Value = tickets[i].row;
+                            }
+                        }
+                        catch
+                        {
+                            coolTicketsNoEntriesLabel.Visible = true;
+                        }
+
+                        break;
+                    }
             }
         }
 

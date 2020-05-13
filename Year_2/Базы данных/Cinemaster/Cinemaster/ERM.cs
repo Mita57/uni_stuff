@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using System.Windows.Forms;
 
 namespace Cinemaster
 {
@@ -210,10 +211,11 @@ namespace Cinemaster
         public string cashier { get; set; }
         public string genre { get; set; }
         public string room { get; set; }
-        public int place { get; set; }
+        public int seat { get; set; }
         public int row { get; set; }
+        public int ageRest { get; set; }
 
-        public CoolTicket(int id, string sessionID, string date, string time, string type, string cashier, string genre, string room, int place, int row)
+        public CoolTicket(int id, string sessionID, string date, string time, string type, string cashier, string genre, string room, int seat, int row, int ageRest, string film)
         {
             this.ID = id;
             this.sessionID = sessionID;
@@ -223,13 +225,15 @@ namespace Cinemaster
             this.cashier = cashier;
             this.genre = genre;
             this.room = room;
-            this.place = place;
+            this.seat = seat;
             this.row = row;
+            this.ageRest = ageRest;
+            this.film = film;
         }
 
     }
 
-    public class Erm
+    public static class Erm
     {
         static SqlConnection _connection;
 
@@ -462,7 +466,7 @@ namespace Cinemaster
                 int filmID = 0;
                 int roomID = 0;
                 int genreID = 0;
-                int sessionID = 0;
+                int sessionID;
 
                 int ticketID = tick.Id;
                 int seat = tick.Seat;
@@ -477,7 +481,7 @@ namespace Cinemaster
                 string time = "";
                 string date = "";
 
-                string queryCashier = "SELECT cashier FROM cashiers WHERE cashierID = '" + tick.Id + "'";
+                string queryCashier = "SELECT cashier FROM cashiers WHERE cashierID = '" + tick.CashierId+ "'";
                 SqlCommand command = new SqlCommand(queryCashier, _connection);
                 SqlDataReader dataReader = command.ExecuteReader();
                 while (dataReader.Read())
@@ -486,7 +490,7 @@ namespace Cinemaster
                 }
 
                 string querySession = "SELECT * FROM sessions WHERE sessionID = '" + tick.SessionId + "'";
-                command = new SqlCommand(queryCashier, _connection);
+                command = new SqlCommand(querySession, _connection);
                 dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
@@ -514,7 +518,7 @@ namespace Cinemaster
                 dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    genre = dataReader.GetValue(1).ToString();
+                    genre = dataReader.GetValue(0).ToString();
                 }
 
                 string queryRoom = "SELECT room FROM rooms WHERE roomID = '" + roomID + "'";
@@ -522,12 +526,13 @@ namespace Cinemaster
                 dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    room = dataReader.GetValue(1).ToString();
+                    room = dataReader.GetValue(0).ToString();
                 }
 
-                CoolTicket dick = new CoolTicket(ticketID, session, date, time, type, cashier, genre, room, seat, row);
+                CoolTicket dick = new CoolTicket(ticketID, session, date, time, type, cashier, genre, room, seat, row, ageRestr, film);
                 list.Add(dick);
             }
+
             return list;
         }
 
