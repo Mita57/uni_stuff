@@ -130,7 +130,6 @@
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
             this.ResumeLayout(false);
-
         }
 
         private System.Windows.Forms.Button addObserverBtn;
@@ -141,9 +140,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolTip toolTip1;
 
         #endregion
-
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
