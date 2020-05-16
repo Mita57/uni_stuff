@@ -24,5 +24,10 @@ namespace Publisher
                 pubsListBox.Items.Add(pub.ToString());
             }
         }
+
+        public void getStuff(Publication pub)
+        {
+            textBox1.Text += "Получено: " + pub;
+        }
     }
 }

@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Publisher
@@ -88,6 +82,30 @@ namespace Publisher
                 if (pub.ToString() == pubsListBox.SelectedItem.ToString())
                 {
                     Program.pubs.Remove(pub);
+                    break;
+                }
+            }
+        }
+
+        private void pauseProdBtn_Click(object sender, EventArgs e)
+        {
+            foreach (Publication pub in Program.pubs)
+            {
+                if (pub.ToString() == pubsListBox.SelectedItem.ToString())
+                {
+                    pub.stop();
+                    break;
+                }
+            }
+        }
+
+        private void resumeBtn_Click(object sender, EventArgs e)
+        {
+            foreach (Publication pub in Program.pubs)
+            {
+                if (pub.ToString() == pubsListBox.SelectedItem.ToString())
+                {
+                    pub.start();
                     break;
                 }
             }

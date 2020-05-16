@@ -44,6 +44,7 @@
             this.pauseProdBtn = new System.Windows.Forms.Button();
             this.cancelProdBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.resumeBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,16 +166,17 @@
             // 
             this.pauseProdBtn.Location = new System.Drawing.Point(15, 578);
             this.pauseProdBtn.Name = "pauseProdBtn";
-            this.pauseProdBtn.Size = new System.Drawing.Size(125, 27);
+            this.pauseProdBtn.Size = new System.Drawing.Size(94, 27);
             this.pauseProdBtn.TabIndex = 7;
             this.pauseProdBtn.Text = "Астанавитесь";
             this.pauseProdBtn.UseVisualStyleBackColor = true;
+            this.pauseProdBtn.Click += new System.EventHandler(this.pauseProdBtn_Click);
             // 
             // cancelProdBtn
             // 
-            this.cancelProdBtn.Location = new System.Drawing.Point(168, 578);
+            this.cancelProdBtn.Location = new System.Drawing.Point(210, 578);
             this.cancelProdBtn.Name = "cancelProdBtn";
-            this.cancelProdBtn.Size = new System.Drawing.Size(125, 27);
+            this.cancelProdBtn.Size = new System.Drawing.Size(107, 27);
             this.cancelProdBtn.TabIndex = 8;
             this.cancelProdBtn.Text = "РофланПоминки";
             this.cancelProdBtn.UseVisualStyleBackColor = true;
@@ -190,12 +192,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // resumeBtn
+            // 
+            this.resumeBtn.Location = new System.Drawing.Point(115, 578);
+            this.resumeBtn.Name = "resumeBtn";
+            this.resumeBtn.Size = new System.Drawing.Size(89, 27);
+            this.resumeBtn.TabIndex = 10;
+            this.resumeBtn.Text = "Возобновить";
+            this.resumeBtn.UseVisualStyleBackColor = true;
+            this.resumeBtn.Click += new System.EventHandler(this.resumeBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 609);
+            this.Controls.Add(this.resumeBtn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.cancelProdBtn);
             this.Controls.Add(this.pauseProdBtn);
@@ -225,6 +238,7 @@
         private System.Windows.Forms.Button pauseProdBtn;
         private System.Windows.Forms.TextBox pubNameTB;
         private System.Windows.Forms.ListBox pubsListBox;
+        private System.Windows.Forms.Button resumeBtn;
         private System.Windows.Forms.Button subButton;
         private System.Windows.Forms.ListBox subsListBox;
         private System.Windows.Forms.TextBox textBox1;

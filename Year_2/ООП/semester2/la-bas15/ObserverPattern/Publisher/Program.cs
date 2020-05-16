@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,6 +27,7 @@ namespace Publisher
     public class Publication
     {
         private string type = "";
+        private List<SubForm> subs = new List<SubForm>();
         private string name = "";
         private bool enabled = true;
 
@@ -48,6 +50,27 @@ namespace Publisher
         public override string ToString()
         {
             return this.name;
+        }
+
+        public void subscribe(SubForm form)
+        {
+            this.subs.Add(form);
+        }
+
+        public void unsubscribe(SubForm form)
+        {
+            this.subs.Remove(form);
+        }
+
+        public void release()
+        {
+            foreach (SubForm sub in subs)
+            {
+                if (enabled)
+                {
+                    sub.getStuff(this);
+                }
+            }
         }
     }
 }
