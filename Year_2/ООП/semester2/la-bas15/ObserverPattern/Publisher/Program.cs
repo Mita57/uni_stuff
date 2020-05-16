@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Publisher
 {
@@ -62,15 +63,36 @@ namespace Publisher
             this.subs.Remove(form);
         }
 
-        public void release()
+        public string releaseNewspaper()
         {
+            string res = "";
             foreach (SubForm sub in subs)
             {
-                if (enabled)
+                if (enabled && this.type == "newspaper")
                 {
                     sub.getStuff(this);
                 }
+
+                res += this.name;
             }
+
+            return res;
+        }
+
+        public string releaseMagazine()
+        {
+            string res = "";
+            foreach (SubForm sub in subs)
+            {
+                if (enabled && this.type == "magazine")
+                {
+                    sub.getStuff(this);
+                }
+
+                res += this.name;
+            }
+
+            return res;
         }
     }
 }

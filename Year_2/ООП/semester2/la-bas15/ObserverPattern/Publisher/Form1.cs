@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Timers;
+using Timer = System.Timers.Timer;
 
 namespace Publisher
 {
@@ -9,10 +11,40 @@ namespace Publisher
         List<SubForm> forms = new List<SubForm>();
         private int subsCount = 0;
 
+        public void printMagazines(Object source, System.Timers.ElapsedEventArgs e)
+        {
+            string res = "";
+            foreach (Publication pub in Program.pubs)
+            {
+                res += pub.releaseMagazine();
+            }
+
+            this.textBox1.Text += res;
+        }
+
+        public void printNewspapers(Object source, System.Timers.ElapsedEventArgs e)
+        {
+            string res = "";
+            foreach (Publication pub in Program.pubs)
+            {
+                pub.releaseNewspaper();
+            }
+
+            this.textBox1.Text += res;
+        }
+
 
         public Form1()
         {
             InitializeComponent();
+            Timer magTimer = new Timer();
+            magTimer.Elapsed += printMagazines;
+            magTimer.Interval = 2000;
+            magTimer.Enabled = true;
+            Timer newsTimer = new Timer();
+            newsTimer.Elapsed += printNewspapers;
+            newsTimer.Interval = 14000;
+            newsTimer.Enabled = true;
         }
 
         private void createSubBtn_Click(object sender, EventArgs e)
@@ -56,9 +88,12 @@ namespace Publisher
                 string type = newspaperRB.Checked ? "newspaper" : "magazine";
                 Publication pub = new Publication(type, pubNameTB.Text);
                 Program.pubs.Add(pub);
+                fillPubsListBox();
             }
-
-            fillPubsListBox();
+            else
+            {
+                MessageBox.Show("Fill the field");
+            }
         }
 
         private void fillPubsListBox()

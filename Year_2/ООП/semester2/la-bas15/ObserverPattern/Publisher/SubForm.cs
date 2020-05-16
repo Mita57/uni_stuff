@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Publisher
 {
@@ -28,6 +29,28 @@ namespace Publisher
         public void getStuff(Publication pub)
         {
             textBox1.Text += "Получено: " + pub;
+        }
+
+        private void subBtn_Click(object sender, EventArgs e)
+        {
+            foreach (Publication pub in Program.pubs)
+            {
+                if (pub.ToString() == pubsListBox.SelectedItem.ToString())
+                {
+                    pub.subscribe(this);
+                }
+            }
+        }
+
+        private void unsubBtn_Click(object sender, EventArgs e)
+        {
+            foreach (Publication pub in Program.pubs)
+            {
+                if (pub.ToString() == pubsListBox.SelectedItem.ToString())
+                {
+                    pub.unsubscribe(this);
+                }
+            }
         }
     }
 }
