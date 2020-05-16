@@ -15,5 +15,14 @@ namespace Publisher
         {
             return "Подписчек " + this.Tag;
         }
+
+        public void fillPubsListBox()
+        {
+            this.pubsListBox.Items.Clear();
+            foreach (Publication pub in Program.pubs)
+            {
+                pubsListBox.Items.Add(pub.ToString());
+            }
+        }
     }
 }

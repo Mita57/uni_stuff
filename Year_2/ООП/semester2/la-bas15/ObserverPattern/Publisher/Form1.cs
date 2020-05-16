@@ -14,8 +14,8 @@ namespace Publisher
     {
         List<SubForm> forms = new List<SubForm>();
         private int subsCount = 0;
-        
-        
+
+
         public Form1()
         {
             InitializeComponent();
@@ -51,7 +51,46 @@ namespace Publisher
                     break;
                 }
             }
+
             fillSubsListBox();
+        }
+
+        private void createPubBtn_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(pubNameTB.Text))
+            {
+                string type = newspaperRB.Checked ? "newspaper" : "magazine";
+                Publication pub = new Publication(type, pubNameTB.Text);
+                Program.pubs.Add(pub);
+            }
+
+            fillPubsListBox();
+        }
+
+        private void fillPubsListBox()
+        {
+            this.pubsListBox.Items.Clear();
+            foreach (Publication pub in Program.pubs)
+            {
+                pubsListBox.Items.Add(pub.ToString());
+            }
+
+            foreach (SubForm sub in forms)
+            {
+                sub.fillPubsListBox();
+            }
+        }
+
+        private void cancelProdBtn_Click(object sender, EventArgs e)
+        {
+            foreach (Publication pub in Program.pubs)
+            {
+                if (pub.ToString() == pubsListBox.SelectedItem.ToString())
+                {
+                    Program.pubs.Remove(pub);
+                    break;
+                }
+            }
         }
     }
 }
