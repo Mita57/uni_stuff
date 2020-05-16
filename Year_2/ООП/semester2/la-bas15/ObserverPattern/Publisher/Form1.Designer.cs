@@ -31,15 +31,16 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.newspaperRB = new System.Windows.Forms.RadioButton();
-            this.magazineRB = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
+            this.magazineRB = new System.Windows.Forms.RadioButton();
+            this.newspaperRB = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.pubsListBox = new System.Windows.Forms.ListBox();
             this.subsListBox = new System.Windows.Forms.ListBox();
             this.subButton = new System.Windows.Forms.Button();
             this.unsubBtn = new System.Windows.Forms.Button();
+            this.createSubBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,30 +66,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Новое издание";
             // 
-            // textBox2
+            // button1
             // 
-            this.textBox2.Location = new System.Drawing.Point(71, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(202, 20);
-            this.textBox2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(6, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 22);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Назание";
-            // 
-            // newspaperRB
-            // 
-            this.newspaperRB.Location = new System.Drawing.Point(6, 52);
-            this.newspaperRB.Name = "newspaperRB";
-            this.newspaperRB.Size = new System.Drawing.Size(104, 24);
-            this.newspaperRB.TabIndex = 2;
-            this.newspaperRB.TabStop = true;
-            this.newspaperRB.Text = "Газета";
-            this.newspaperRB.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(88, 80);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Запилить";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // magazineRB
             // 
@@ -100,14 +85,30 @@
             this.magazineRB.Text = "Журналъ";
             this.magazineRB.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // newspaperRB
             // 
-            this.button1.Location = new System.Drawing.Point(88, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Запилить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.newspaperRB.Location = new System.Drawing.Point(6, 52);
+            this.newspaperRB.Name = "newspaperRB";
+            this.newspaperRB.Size = new System.Drawing.Size(104, 24);
+            this.newspaperRB.TabIndex = 2;
+            this.newspaperRB.TabStop = true;
+            this.newspaperRB.Text = "Газета";
+            this.newspaperRB.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(6, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 22);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Назание";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(71, 24);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(202, 20);
+            this.textBox2.TabIndex = 0;
             // 
             // pubsListBox
             // 
@@ -145,11 +146,21 @@
             this.unsubBtn.Text = "Дизлайк отписка";
             this.unsubBtn.UseVisualStyleBackColor = true;
             // 
+            // createSubBtn
+            // 
+            this.createSubBtn.Location = new System.Drawing.Point(502, 269);
+            this.createSubBtn.Name = "createSubBtn";
+            this.createSubBtn.Size = new System.Drawing.Size(285, 30);
+            this.createSubBtn.TabIndex = 6;
+            this.createSubBtn.Text = "Создать подиписчека";
+            this.createSubBtn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 609);
+            this.Controls.Add(this.createSubBtn);
             this.Controls.Add(this.unsubBtn);
             this.Controls.Add(this.subButton);
             this.Controls.Add(this.subsListBox);
@@ -165,6 +176,7 @@
         }
 
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button createSubBtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton magazineRB;

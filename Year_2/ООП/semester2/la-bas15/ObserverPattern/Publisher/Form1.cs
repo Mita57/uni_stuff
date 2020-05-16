@@ -12,6 +12,8 @@ namespace Publisher
 {
     public partial class Form1 : Form
     {
+        List<SubForm> forms = new List<SubForm>();
+        
         public Form1()
         {
             InitializeComponent();
