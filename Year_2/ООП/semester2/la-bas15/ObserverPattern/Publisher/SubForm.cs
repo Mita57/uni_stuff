@@ -28,7 +28,7 @@ namespace Publisher
 
         public void getStuff(Publication pub)
         {
-            textBox1.Text += "Получено: " + pub;
+            textBox1.Text += "Получено: " + pub + Environment.NewLine;;
         }
 
         private void subBtn_Click(object sender, EventArgs e)

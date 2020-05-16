@@ -1,0 +1,157 @@
+﻿body {
+    font-family: "Comic Sans MS";
+    background-image: url("images/fetchimage.jpg");
+}
+
+table {
+    float: left;
+    margin: 10px;
+    padding: 0;
+    width: 200px;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px dotted blue;
+    margin: 0;
+    padding: 0;
+    height: 5px;
+    min-width: 20px;
+}
+
+.pic {
+    width: 160px;
+    height: 120px;
+}
+
+h1 {
+    font-size: 20pt;
+}
+
+#logo {
+    width: 150px;
+    height: 30px;
+    margin-left: 20px;
+    margin-bottom: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header {
+    font-size: 2em;
+    width: 99%;
+    text-align: center;
+}
+
+.footer {
+    clear: both;
+    text-align: center;
+    width: 99%;
+}
+
+div {
+    margin: 2px;
+    text-align: left;
+    padding: 5px;
+    background-color: hsl(100, 50%, 50%);
+}
+
+.menu {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+.menu > li {
+    background-color: hsl(100, 50%, 50%);
+    display: block;
+    font-size: 16px;
+    border: 0px solid;
+    padding: 20px;
+    margin: 10px;
+}
+
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.first {
+    font: 10pt Arial;
+    font-style: italic;
+}
+
+.second {
+    font: 16pt Georgia;
+}
+
+.third {
+    font: 12pt Georgia;
+    font-weight: bold;
+    color: #008000;
+}
+
+.entry {
+    background-color: lime;
+
+}
+
+@media (min-width: 700px) {
+
+
+    .leftcol {
+        float: right;
+        width: 72%;
+        min-height: 200px;
+        background-color: lime;
+
+    }
+
+    .rightcol {
+        float: left;
+        text-align: right;
+        width: 22%;
+        height: 100%;
+
+        min-height: 300px;
+
+    }
+
+    .pinline {
+        display: inline-block;
+        width: 33%;
+        vertical-align: top;
+    }
+
+    .pinline1 {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 700px) {
+    .rightcol {
+        display: none;
+    }
+
+
+    .leftcol {
+        width: 98%;
+        min-height: 200px;
+
+        background-color: #ffffff;
+    }
+
+
+    #logo {
+        display: none;
+    }
+
+
+    .pinline {
+        display: inline-block;
+        width: 90%;
+    }
