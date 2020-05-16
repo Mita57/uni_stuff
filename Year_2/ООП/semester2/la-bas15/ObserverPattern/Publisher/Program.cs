@@ -18,5 +18,19 @@ namespace Publisher
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        
+        
+    }
+
+    public class Publication
+    {
+        private string type = "";
+        private string name = "";
+
+        public Publication(string type, string name)
+        {
+            this.type = type;
+            this.name = name;
+        }
     }
 }

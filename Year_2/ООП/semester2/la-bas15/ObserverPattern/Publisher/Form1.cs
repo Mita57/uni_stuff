@@ -15,6 +15,7 @@ namespace Publisher
         List<SubForm> forms = new List<SubForm>();
         private int subsCount = 0;
         
+        
         public Form1()
         {
             InitializeComponent();
