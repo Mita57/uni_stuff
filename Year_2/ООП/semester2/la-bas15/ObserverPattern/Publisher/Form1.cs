@@ -13,24 +13,29 @@ namespace Publisher
 
         public void printMagazines(Object source, System.Timers.ElapsedEventArgs e)
         {
-            string res = "";
-            foreach (Publication pub in Program.pubs)
+            if (Program.pubs.Count != 0 && forms.Count != 0)
             {
-                res += pub.releaseMagazine();
+                string res = Program.day + ": ";
+                foreach (Publication pub in Program.pubs)
+                {
+                    res += pub.releaseMagazine();
+                }
+                this.textBox1.Text += res + Environment.NewLine;
             }
-
-            this.textBox1.Text += res;
         }
 
         public void printNewspapers(Object source, System.Timers.ElapsedEventArgs e)
         {
             string res = "";
-            foreach (Publication pub in Program.pubs)
+            if (Program.pubs.Count != 0 && forms.Count != 0)
             {
-                pub.releaseNewspaper();
+                foreach (Publication pub in Program.pubs)
+                {
+                    res += pub.releaseNewspaper();
+                }
+                Program.day++;
+                this.textBox1.Text += res + Environment.NewLine;
             }
-
-            this.textBox1.Text += res;
         }
 
 
@@ -38,18 +43,18 @@ namespace Publisher
         {
             InitializeComponent();
             Timer magTimer = new Timer();
-            magTimer.Elapsed += printMagazines;
+            magTimer.Elapsed += printNewspapers;
             magTimer.Interval = 2000;
             magTimer.Enabled = true;
             Timer newsTimer = new Timer();
-            newsTimer.Elapsed += printNewspapers;
+            newsTimer.Elapsed += printMagazines;
             newsTimer.Interval = 14000;
             newsTimer.Enabled = true;
         }
 
         private void createSubBtn_Click(object sender, EventArgs e)
         {
-            SubForm sub = new SubForm(this);
+            SubForm sub = new SubForm();
             subsCount++;
             sub.Text = "Подписчек " + subsCount;
             sub.Tag = subsCount;
@@ -142,6 +147,42 @@ namespace Publisher
                 {
                     pub.start();
                     break;
+                }
+            }
+        }
+
+        private void subButton_Click(object sender, EventArgs e)
+        {
+            foreach (SubForm form in forms)
+            {
+                if (form.ToString() == subsListBox.SelectedItem.ToString())
+                {
+                    foreach (Publication pub in Program.pubs)
+                    {
+                        if (pub.ToString() == pubsListBox.SelectedItem.ToString())
+                        {
+                            pub.subscribe(form);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void unsubBtn_Click(object sender, EventArgs e)
+        {
+            foreach (SubForm form in forms)
+            {
+                if (form.ToString() == subsListBox.SelectedItem.ToString())
+                {
+                    foreach (Publication pub in Program.pubs)
+                    {
+                        if (pub.ToString() == pubsListBox.SelectedItem.ToString())
+                        {
+                            pub.unsubscribe(form);
+                            break;
+                        }
+                    }
                 }
             }
         }

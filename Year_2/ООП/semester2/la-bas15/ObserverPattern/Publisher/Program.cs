@@ -22,6 +22,7 @@ namespace Publisher
         }
 
         public static List<Publication> pubs = new List<Publication>();
+        public static int day = 0;
 
     }
 

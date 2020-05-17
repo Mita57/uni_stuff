@@ -141,6 +141,7 @@
             this.subButton.TabIndex = 4;
             this.subButton.Text = "Подписать";
             this.subButton.UseVisualStyleBackColor = true;
+            this.subButton.Click += new System.EventHandler(this.subButton_Click);
             // 
             // unsubBtn
             // 
@@ -151,6 +152,7 @@
             this.unsubBtn.TabIndex = 5;
             this.unsubBtn.Text = "Дизлайк отписка";
             this.unsubBtn.UseVisualStyleBackColor = true;
+            this.unsubBtn.Click += new System.EventHandler(this.unsubBtn_Click);
             // 
             // createSubBtn
             // 

@@ -5,11 +5,10 @@ namespace Publisher
 {
     public partial class SubForm : Form
     {
-        private Form1 parentForm = null;
-        public SubForm(Form1 parentForm)
+        public SubForm()
         {
             InitializeComponent();
-            this.parentForm = parentForm;
+            fillPubsListBox();
         }
 
         public override string ToString()
@@ -28,7 +27,7 @@ namespace Publisher
 
         public void getStuff(Publication pub)
         {
-            textBox1.Text += "Получено: " + pub + Environment.NewLine;;
+            textBox1.Text += Program.day + ": Получено: " + pub + Environment.NewLine;
         }
 
         private void subBtn_Click(object sender, EventArgs e)
