@@ -15,7 +15,7 @@ namespace Publisher
         {
             if (Program.pubs.Count != 0 && forms.Count != 0)
             {
-                string res = Program.day + ": ";
+                string res = "";
                 foreach (Publication pub in Program.pubs)
                 {
                     res += pub.releaseMagazine();
@@ -26,7 +26,7 @@ namespace Publisher
 
         public void printNewspapers(Object source, System.Timers.ElapsedEventArgs e)
         {
-            string res = "";
+            string res = Program.day + ": ";
             if (Program.pubs.Count != 0 && forms.Count != 0)
             {
                 foreach (Publication pub in Program.pubs)
@@ -79,6 +79,10 @@ namespace Publisher
                 if (subF.Tag.ToString() == subsListBox.SelectedItem.ToString().Split(' ')[1])
                 {
                     forms.Remove(subF);
+                    foreach (Publication pub in Program.pubs)
+                    {
+                        pub.unsubscribe(subF);
+                    }
                     break;
                 }
             }
@@ -125,6 +129,8 @@ namespace Publisher
                     break;
                 }
             }
+            fillPubsListBox();
+            fillSubsListBox();
         }
 
         private void pauseProdBtn_Click(object sender, EventArgs e)

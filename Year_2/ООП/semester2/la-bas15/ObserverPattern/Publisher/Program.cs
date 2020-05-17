@@ -72,9 +72,8 @@ namespace Publisher
                 if (enabled && this.type == "newspaper")
                 {
                     sub.getStuff(this);
+                    res += sub.ToString() + " : " + this.name ;
                 }
-
-                res += this.name;
             }
 
             return res;
@@ -88,9 +87,8 @@ namespace Publisher
                 if (enabled && this.type == "magazine")
                 {
                     sub.getStuff(this);
+                    res += this.name;
                 }
-
-                res += this.name;
             }
 
             return res;
