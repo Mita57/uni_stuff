@@ -41,7 +41,7 @@ namespace Cinemaster
                         ticketsEditSessionCB.Items.AddRange(sessions);
 
                         Ticket[] tickets = (Ticket[])Erm.GetAll("tickets");
-                        ticketsNoEntriesLabel.Visible = false;
+                        ticketsAmount.Text = tickets.Length.ToString();
                         try
                         {
                             ticketsGrid.RowCount = tickets.Length;
@@ -65,9 +65,10 @@ namespace Cinemaster
 
                             ticketsAddIDField.Text = (tickets[tickets.Length - 1].Id + 1).ToString();
                         }
-                        catch (Exception ex)
+                        catch
                         {
-                            MessageBox.Show(ex.Message);
+                            ticketsNoEntriesLabel.Visible = true;
+                            ticketsAddIDField.Text = "1";
                         }
 
 
@@ -91,6 +92,7 @@ namespace Cinemaster
 
 
                         Session[] sessions = (Session[])Erm.GetAll("sessions");
+                        sessionsAmount.Text = sessions.Length.ToString();
                         sessionsNoEntriesLabel.Visible = false;
                         try
                         {
@@ -128,6 +130,7 @@ namespace Cinemaster
 
                         filmsNoEntriesLabel.Visible = false;
                         Film[] films = (Film[])Erm.GetAll("films");
+                        filmsAmount.Text = films.Length.ToString();
                         try
                         {
                             filmsGrid.RowCount = films.Length;
@@ -153,6 +156,7 @@ namespace Cinemaster
                 case "Кассиры":
                     {
                         Cashier[] cashiers = (Cashier[])Erm.GetAll("cashiers");
+                        cashiersAmount.Text = cashiers.Length.ToString();
                         cashiersNoEntriesLabel.Visible = false;
                         try
                         {
@@ -177,6 +181,7 @@ namespace Cinemaster
                     {
                         roomsNoEntriesLabel.Visible = false;
                         Room[] rooms = (Room[])Erm.GetAll("rooms");
+                        roomsAmount.Text = rooms.Length.ToString();
                         try
                         {
                             roomsGrid.RowCount = rooms.Length;
@@ -200,6 +205,7 @@ namespace Cinemaster
                     {
                         genresNoEntriesLabel.Visible = false;
                         Genre[] genres = (Genre[])Erm.GetAll("genres");
+                        genreAmount.Text = genres.Length.ToString();
                         try
                         {
                             genresGrid.RowCount = genres.Length;
@@ -224,6 +230,7 @@ namespace Cinemaster
                     {
                         genresNoEntriesLabel.Visible = false;
                         CoolTicket[] tickets = (CoolTicket[])Erm.GetCoolTickets().ToArray();
+                        totalAmount.Text = tickets.Length.ToString();
                         try
                         {
                             coolGrid.RowCount = tickets.Length;

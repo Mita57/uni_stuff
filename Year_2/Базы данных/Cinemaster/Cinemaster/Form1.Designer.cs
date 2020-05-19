@@ -219,6 +219,13 @@
             this.slaveTicketsSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slaveTicketPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slaveTicketRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ticketsAmount = new System.Windows.Forms.Label();
+            this.sessionsAmount = new System.Windows.Forms.Label();
+            this.filmsAmount = new System.Windows.Forms.Label();
+            this.cashiersAmount = new System.Windows.Forms.Label();
+            this.roomsAmount = new System.Windows.Forms.Label();
+            this.genreAmount = new System.Windows.Forms.Label();
+            this.totalAmount = new System.Windows.Forms.Label();
             this.rooms.SuspendLayout();
             this.editRoomGroup.SuspendLayout();
             this.addRoomGroup.SuspendLayout();
@@ -263,6 +270,7 @@
             // 
             // rooms
             // 
+            this.rooms.Controls.Add(this.roomsAmount);
             this.rooms.Controls.Add(this.roomsNoEntriesLabel);
             this.rooms.Controls.Add(this.deleteRoomButton);
             this.rooms.Controls.Add(this.editRoomGroup);
@@ -445,6 +453,7 @@
             // 
             // cashiers
             // 
+            this.cashiers.Controls.Add(this.cashiersAmount);
             this.cashiers.Controls.Add(this.cashiersNoEntriesLabel);
             this.cashiers.Controls.Add(this.removeCashierButton);
             this.cashiers.Controls.Add(this.editCashierGroup);
@@ -627,6 +636,7 @@
             // 
             // films
             // 
+            this.films.Controls.Add(this.filmsAmount);
             this.films.Controls.Add(this.filmsNoEntriesLabel);
             this.films.Controls.Add(this.filmsDeleteButton);
             this.films.Controls.Add(this.filmsEditGroup);
@@ -908,6 +918,7 @@
             // 
             // sessions
             // 
+            this.sessions.Controls.Add(this.sessionsAmount);
             this.sessions.Controls.Add(this.sessionsNoEntriesLabel);
             this.sessions.Controls.Add(this.sessionsEditGroup);
             this.sessions.Controls.Add(this.sessionsAddGroup);
@@ -1311,6 +1322,7 @@
             // 
             // tickets
             // 
+            this.tickets.Controls.Add(this.ticketsAmount);
             this.tickets.Controls.Add(this.ticketsNoEntriesLabel);
             this.tickets.Controls.Add(this.ticketsEditGroup);
             this.tickets.Controls.Add(this.ticketsDeleteButton);
@@ -1698,6 +1710,7 @@
             // 
             // genres
             // 
+            this.genres.Controls.Add(this.genreAmount);
             this.genres.Controls.Add(this.genresNoEntriesLabel);
             this.genres.Controls.Add(this.deleteGenreButton);
             this.genres.Controls.Add(this.editGenreGroup);
@@ -1879,6 +1892,7 @@
             // 
             // coolTickets
             // 
+            this.coolTickets.Controls.Add(this.totalAmount);
             this.coolTickets.Controls.Add(this.coolTicketsNoEntriesLabel);
             this.coolTickets.Controls.Add(this.coolGrid);
             this.coolTickets.Location = new System.Drawing.Point(4, 22);
@@ -2156,24 +2170,84 @@
             this.slaveTicketsID.HeaderText = "ID";
             this.slaveTicketsID.Name = "slaveTicketsID";
             this.slaveTicketsID.ReadOnly = true;
+            this.slaveTicketsID.Width = 50;
             // 
             // slaveTicketsSession
             // 
             this.slaveTicketsSession.HeaderText = "Сеанс";
             this.slaveTicketsSession.Name = "slaveTicketsSession";
             this.slaveTicketsSession.ReadOnly = true;
+            this.slaveTicketsSession.Width = 149;
             // 
             // slaveTicketPlace
             // 
             this.slaveTicketPlace.HeaderText = "Место";
             this.slaveTicketPlace.Name = "slaveTicketPlace";
             this.slaveTicketPlace.ReadOnly = true;
+            this.slaveTicketPlace.Width = 50;
             // 
             // slaveTicketRow
             // 
             this.slaveTicketRow.HeaderText = "Ряд";
             this.slaveTicketRow.Name = "slaveTicketRow";
             this.slaveTicketRow.ReadOnly = true;
+            this.slaveTicketRow.Width = 50;
+            // 
+            // ticketsAmount
+            // 
+            this.ticketsAmount.AutoSize = true;
+            this.ticketsAmount.Location = new System.Drawing.Point(668, 492);
+            this.ticketsAmount.Name = "ticketsAmount";
+            this.ticketsAmount.Size = new System.Drawing.Size(0, 13);
+            this.ticketsAmount.TabIndex = 15;
+            // 
+            // sessionsAmount
+            // 
+            this.sessionsAmount.AutoSize = true;
+            this.sessionsAmount.Location = new System.Drawing.Point(668, 492);
+            this.sessionsAmount.Name = "sessionsAmount";
+            this.sessionsAmount.Size = new System.Drawing.Size(0, 13);
+            this.sessionsAmount.TabIndex = 16;
+            // 
+            // filmsAmount
+            // 
+            this.filmsAmount.AutoSize = true;
+            this.filmsAmount.Location = new System.Drawing.Point(668, 492);
+            this.filmsAmount.Name = "filmsAmount";
+            this.filmsAmount.Size = new System.Drawing.Size(0, 13);
+            this.filmsAmount.TabIndex = 16;
+            // 
+            // cashiersAmount
+            // 
+            this.cashiersAmount.AutoSize = true;
+            this.cashiersAmount.Location = new System.Drawing.Point(668, 492);
+            this.cashiersAmount.Name = "cashiersAmount";
+            this.cashiersAmount.Size = new System.Drawing.Size(0, 13);
+            this.cashiersAmount.TabIndex = 17;
+            // 
+            // roomsAmount
+            // 
+            this.roomsAmount.AutoSize = true;
+            this.roomsAmount.Location = new System.Drawing.Point(668, 492);
+            this.roomsAmount.Name = "roomsAmount";
+            this.roomsAmount.Size = new System.Drawing.Size(0, 13);
+            this.roomsAmount.TabIndex = 18;
+            // 
+            // genreAmount
+            // 
+            this.genreAmount.AutoSize = true;
+            this.genreAmount.Location = new System.Drawing.Point(668, 492);
+            this.genreAmount.Name = "genreAmount";
+            this.genreAmount.Size = new System.Drawing.Size(0, 13);
+            this.genreAmount.TabIndex = 19;
+            // 
+            // totalAmount
+            // 
+            this.totalAmount.AutoSize = true;
+            this.totalAmount.Location = new System.Drawing.Point(953, 492);
+            this.totalAmount.Name = "totalAmount";
+            this.totalAmount.Size = new System.Drawing.Size(0, 13);
+            this.totalAmount.TabIndex = 20;
             // 
             // Form1
             // 
@@ -2437,10 +2511,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsID;
         private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsSessions;
         private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsRestr;
+        private System.Windows.Forms.Label ticketsAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketsID;
         private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketsSession;
         private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketPlace;
         private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketRow;
+        private System.Windows.Forms.Label sessionsAmount;
+        private System.Windows.Forms.Label filmsAmount;
+        private System.Windows.Forms.Label cashiersAmount;
+        private System.Windows.Forms.Label roomsAmount;
+        private System.Windows.Forms.Label genreAmount;
+        private System.Windows.Forms.Label totalAmount;
     }
 }
 
