@@ -78,6 +78,8 @@ namespace Cinemaster
             this.Row = row;
             this.Seat = seat;
         }
+
+
     }
 
     public class Session

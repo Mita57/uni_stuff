@@ -271,18 +271,18 @@ namespace Cinemaster
                     // genres
                     Genre[] genres = (Genre[]) Erm.GetAll("genres");
                     filmsGenresCB.Items.Clear();
-                    for (int i = 0; i < films.Length; i++)
+                    for (int i = 0; i < genres.Length; i++)
                     {
-                        filmsGenresCB.Items.Add(films[i]);
+                        filmsGenresCB.Items.Add(genres[i]);
                     }
 
-                    // tickets
+                    // sessions
 
-                    Ticket[] tickets = (Ticket[]) Erm.GetAll("tickets");
+                    Session[] sessions = (Session[]) Erm.GetAll("sessions");
                     ticketsSessionsCB.Items.Clear();
-                    for (int i = 0; i < tickets.Length; i++)
+                    for (int i = 0; i < sessions.Length; i++)
                     {
-                        ticketsSessionsCB.Items.Add(films[i]);
+                        ticketsSessionsCB.Items.Add(sessions[i]);
                     }
                     break;
                 }
