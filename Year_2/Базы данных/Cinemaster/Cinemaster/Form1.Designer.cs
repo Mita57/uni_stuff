@@ -208,6 +208,17 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.slaveID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slavePlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveFilmsID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveFilmsSessions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveFilmsRestr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveTicketsID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveTicketsSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveTicketPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveTicketRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rooms.SuspendLayout();
             this.editRoomGroup.SuspendLayout();
             this.addRoomGroup.SuspendLayout();
@@ -2010,7 +2021,7 @@
             this.groupBox2.Size = new System.Drawing.Size(330, 514);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Билеты по фильмам";
+            this.groupBox2.Text = "Фильмы по жанрам";
             // 
             // groupBox3
             // 
@@ -2021,7 +2032,7 @@
             this.groupBox3.Size = new System.Drawing.Size(330, 514);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Билеты по фильмам";
+            this.groupBox3.Text = "Билеты по сеансам";
             // 
             // comboBox1
             // 
@@ -2050,26 +2061,119 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.slaveID,
+            this.slaveSession,
+            this.slavePlace,
+            this.slaveRow});
             this.dataGridView1.Location = new System.Drawing.Point(12, 54);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(302, 448);
             this.dataGridView1.TabIndex = 1;
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.slaveFilmsID,
+            this.slaveFilmsSessions,
+            this.slaveFilmsRestr});
             this.dataGridView2.Location = new System.Drawing.Point(12, 54);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(302, 448);
             this.dataGridView2.TabIndex = 2;
             // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.slaveTicketsID,
+            this.slaveTicketsSession,
+            this.slaveTicketPlace,
+            this.slaveTicketRow});
             this.dataGridView3.Location = new System.Drawing.Point(12, 54);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.Size = new System.Drawing.Size(302, 448);
             this.dataGridView3.TabIndex = 3;
+            // 
+            // slaveID
+            // 
+            this.slaveID.HeaderText = "ID";
+            this.slaveID.Name = "slaveID";
+            this.slaveID.ReadOnly = true;
+            this.slaveID.Width = 50;
+            // 
+            // slaveSession
+            // 
+            this.slaveSession.HeaderText = "Сеанс";
+            this.slaveSession.Name = "slaveSession";
+            this.slaveSession.ReadOnly = true;
+            this.slaveSession.Width = 149;
+            // 
+            // slavePlace
+            // 
+            this.slavePlace.HeaderText = "Место";
+            this.slavePlace.Name = "slavePlace";
+            this.slavePlace.ReadOnly = true;
+            this.slavePlace.Width = 50;
+            // 
+            // slaveRow
+            // 
+            this.slaveRow.HeaderText = "Ряд";
+            this.slaveRow.Name = "slaveRow";
+            this.slaveRow.ReadOnly = true;
+            this.slaveRow.Width = 50;
+            // 
+            // slaveFilmsID
+            // 
+            this.slaveFilmsID.HeaderText = "ID";
+            this.slaveFilmsID.Name = "slaveFilmsID";
+            this.slaveFilmsID.ReadOnly = true;
+            this.slaveFilmsID.Width = 50;
+            // 
+            // slaveFilmsSessions
+            // 
+            this.slaveFilmsSessions.HeaderText = "Название";
+            this.slaveFilmsSessions.Name = "slaveFilmsSessions";
+            this.slaveFilmsSessions.ReadOnly = true;
+            this.slaveFilmsSessions.Width = 200;
+            // 
+            // slaveFilmsRestr
+            // 
+            this.slaveFilmsRestr.HeaderText = "Возр";
+            this.slaveFilmsRestr.Name = "slaveFilmsRestr";
+            this.slaveFilmsRestr.ReadOnly = true;
+            this.slaveFilmsRestr.Width = 49;
+            // 
+            // slaveTicketsID
+            // 
+            this.slaveTicketsID.HeaderText = "ID";
+            this.slaveTicketsID.Name = "slaveTicketsID";
+            this.slaveTicketsID.ReadOnly = true;
+            // 
+            // slaveTicketsSession
+            // 
+            this.slaveTicketsSession.HeaderText = "Сеанс";
+            this.slaveTicketsSession.Name = "slaveTicketsSession";
+            this.slaveTicketsSession.ReadOnly = true;
+            // 
+            // slaveTicketPlace
+            // 
+            this.slaveTicketPlace.HeaderText = "Место";
+            this.slaveTicketPlace.Name = "slaveTicketPlace";
+            this.slaveTicketPlace.ReadOnly = true;
+            // 
+            // slaveTicketRow
+            // 
+            this.slaveTicketRow.HeaderText = "Ряд";
+            this.slaveTicketRow.Name = "slaveTicketRow";
+            this.slaveTicketRow.ReadOnly = true;
             // 
             // Form1
             // 
@@ -2326,6 +2430,17 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveSession;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slavePlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsSessions;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsRestr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketsID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketsSession;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketPlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketRow;
     }
 }
 
