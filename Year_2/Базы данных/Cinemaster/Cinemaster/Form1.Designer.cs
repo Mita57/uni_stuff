@@ -202,12 +202,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.filmsTicksCB = new System.Windows.Forms.ComboBox();
+            this.filmsGenresCB = new System.Windows.Forms.ComboBox();
+            this.ticketsSessionsCB = new System.Windows.Forms.ComboBox();
+            this.filmsTicksGrid = new System.Windows.Forms.DataGridView();
+            this.filmsGenresGrid = new System.Windows.Forms.DataGridView();
+            this.ticketsSessiosGrid = new System.Windows.Forms.DataGridView();
             this.slaveID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slaveSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slavePlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -263,9 +263,9 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsTicksGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsGenresGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsSessiosGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // rooms
@@ -2017,8 +2017,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.filmsTicksGrid);
+            this.groupBox1.Controls.Add(this.filmsTicksCB);
             this.groupBox1.Location = new System.Drawing.Point(7, 10);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(330, 514);
@@ -2028,8 +2028,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.filmsGenresGrid);
+            this.groupBox2.Controls.Add(this.filmsGenresCB);
             this.groupBox2.Location = new System.Drawing.Point(349, 10);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(330, 514);
@@ -2039,8 +2039,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView3);
-            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.ticketsSessiosGrid);
+            this.groupBox3.Controls.Add(this.ticketsSessionsCB);
             this.groupBox3.Location = new System.Drawing.Point(689, 10);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(330, 514);
@@ -2048,73 +2048,73 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Билеты по сеансам";
             // 
-            // comboBox1
+            // filmsTicksCB
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(302, 21);
-            this.comboBox1.TabIndex = 0;
+            this.filmsTicksCB.FormattingEnabled = true;
+            this.filmsTicksCB.Location = new System.Drawing.Point(12, 23);
+            this.filmsTicksCB.Name = "filmsTicksCB";
+            this.filmsTicksCB.Size = new System.Drawing.Size(302, 21);
+            this.filmsTicksCB.TabIndex = 0;
             // 
-            // comboBox2
+            // filmsGenresCB
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(12, 23);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(302, 21);
-            this.comboBox2.TabIndex = 1;
+            this.filmsGenresCB.FormattingEnabled = true;
+            this.filmsGenresCB.Location = new System.Drawing.Point(12, 23);
+            this.filmsGenresCB.Name = "filmsGenresCB";
+            this.filmsGenresCB.Size = new System.Drawing.Size(302, 21);
+            this.filmsGenresCB.TabIndex = 1;
             // 
-            // comboBox3
+            // ticketsSessionsCB
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(12, 23);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(302, 21);
-            this.comboBox3.TabIndex = 2;
+            this.ticketsSessionsCB.FormattingEnabled = true;
+            this.ticketsSessionsCB.Location = new System.Drawing.Point(12, 23);
+            this.ticketsSessionsCB.Name = "ticketsSessionsCB";
+            this.ticketsSessionsCB.Size = new System.Drawing.Size(302, 21);
+            this.ticketsSessionsCB.TabIndex = 2;
             // 
-            // dataGridView1
+            // filmsTicksGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.filmsTicksGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.filmsTicksGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.slaveID,
             this.slaveSession,
             this.slavePlace,
             this.slaveRow});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(302, 448);
-            this.dataGridView1.TabIndex = 1;
+            this.filmsTicksGrid.Location = new System.Drawing.Point(12, 54);
+            this.filmsTicksGrid.Name = "filmsTicksGrid";
+            this.filmsTicksGrid.ReadOnly = true;
+            this.filmsTicksGrid.RowHeadersVisible = false;
+            this.filmsTicksGrid.Size = new System.Drawing.Size(302, 448);
+            this.filmsTicksGrid.TabIndex = 1;
             // 
-            // dataGridView2
+            // filmsGenresGrid
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.filmsGenresGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.filmsGenresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.slaveFilmsID,
             this.slaveFilmsSessions,
             this.slaveFilmsRestr});
-            this.dataGridView2.Location = new System.Drawing.Point(12, 54);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(302, 448);
-            this.dataGridView2.TabIndex = 2;
+            this.filmsGenresGrid.Location = new System.Drawing.Point(12, 54);
+            this.filmsGenresGrid.Name = "filmsGenresGrid";
+            this.filmsGenresGrid.ReadOnly = true;
+            this.filmsGenresGrid.RowHeadersVisible = false;
+            this.filmsGenresGrid.Size = new System.Drawing.Size(302, 448);
+            this.filmsGenresGrid.TabIndex = 2;
             // 
-            // dataGridView3
+            // ticketsSessiosGrid
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ticketsSessiosGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ticketsSessiosGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.slaveTicketsID,
             this.slaveTicketsSession,
             this.slaveTicketPlace,
             this.slaveTicketRow});
-            this.dataGridView3.Location = new System.Drawing.Point(12, 54);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(302, 448);
-            this.dataGridView3.TabIndex = 3;
+            this.ticketsSessiosGrid.Location = new System.Drawing.Point(12, 54);
+            this.ticketsSessiosGrid.Name = "ticketsSessiosGrid";
+            this.ticketsSessiosGrid.ReadOnly = true;
+            this.ticketsSessiosGrid.RowHeadersVisible = false;
+            this.ticketsSessiosGrid.Size = new System.Drawing.Size(302, 448);
+            this.ticketsSessiosGrid.TabIndex = 3;
             // 
             // slaveID
             // 
@@ -2315,9 +2315,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsTicksGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsGenresGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsSessiosGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2498,12 +2498,12 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox ticketsSessionsCB;
+        private System.Windows.Forms.ComboBox filmsGenresCB;
+        private System.Windows.Forms.ComboBox filmsTicksCB;
+        private System.Windows.Forms.DataGridView ticketsSessiosGrid;
+        private System.Windows.Forms.DataGridView filmsGenresGrid;
+        private System.Windows.Forms.DataGridView filmsTicksGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn slaveID;
         private System.Windows.Forms.DataGridViewTextBoxColumn slaveSession;
         private System.Windows.Forms.DataGridViewTextBoxColumn slavePlace;
