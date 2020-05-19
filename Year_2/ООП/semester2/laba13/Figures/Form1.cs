@@ -97,11 +97,11 @@ namespace Figures
 
             Pen mypen = new Pen(Color.FromArgb(rnd.Next(0, 255), rnd.Next(0, 255), rnd.Next(0, 255)));
             mypen.Color = Color.Black;
-            
+
             SolidBrush myBrush = new SolidBrush(Color.Blue);
-            
+
             SolidBrush pointBrish = new SolidBrush(Color.Black);
-            
+
             g.DrawLine(mypen, new System.Drawing.Point(DrawArea.Width / 2, 0),
                 new System.Drawing.Point(DrawArea.Width / 2, DrawArea.Height));
             g.DrawLine(mypen, new System.Drawing.Point(0, DrawArea.Height / 2),
@@ -113,14 +113,13 @@ namespace Figures
                     new System.Drawing.Rectangle((pictureBox1.Width / 2) - 2, y,
                         4,
                         4));
-                
+
                 g.FillEllipse(pointBrish, new System.Drawing.Rectangle(y, pictureBox1.Width / 2,
                     4,
                     4));
             }
-            
-            
-            
+
+
             Font font = new Font(FontFamily.GenericSerif, 10);
 
             int i = 1;
@@ -135,8 +134,9 @@ namespace Figures
                     int y = -sqr.Y * 10;
                     int a = (int) Math.Round(sqr.A) * 10;
 
-                    g.DrawString(i.ToString(), font, myBrush, new PointF(pictureBox1.Width / 2 + (x - a / 2), pictureBox1.Width / 2 + (y - a / 2)));
-                    
+                    g.DrawString(i.ToString(), font, myBrush,
+                        new PointF(pictureBox1.Width / 2 + (x - a / 2), pictureBox1.Width / 2 + (y - a / 2)));
+
                     g.DrawRectangle(mypen, pictureBox1.Width / 2 + (x - a / 2), pictureBox1.Width / 2 + (y - a / 2), a,
                         a);
                 }
@@ -187,20 +187,22 @@ namespace Figures
                 }
                 else if (fig is Square)
                 {
-                    figs += eee + ". Square; x=" + fig.X + "; y=" + fig.Y + "; s=" + fig.S + "; zeroIn " + fig.ZeroIn() +
+                    figs += eee + ". Square; x=" + fig.X + "; y=" + fig.Y + "; s=" + fig.S + "; zeroIn " +
+                            fig.ZeroIn() +
                             "; A=" + ((Square) fig).A;
                     figs += "\n";
                 }
                 else if (fig is Circle)
                 {
-                    figs += eee + ". Circle; x=" + fig.X + "; y=" + fig.Y + "; s=" + fig.S + "; zeroIn " + fig.ZeroIn() +
+                    figs += eee + ". Circle; x=" + fig.X + "; y=" + fig.Y + "; s=" + fig.S + "; zeroIn " +
+                            fig.ZeroIn() +
                             "; R=" + ((Circle) fig).R;
                     figs += "\n";
                 }
             }
 
             figsTB.Text = figs;
-            
+
             // equal
 
             string eqs = "      ";
@@ -214,7 +216,7 @@ namespace Figures
 
             eqs += "\n";
             crs = eqs;
-            
+
             for (int i = 0; i < list.Count; i++)
             {
                 eqs += (i + 1).ToString().PadLeft(6);
@@ -324,10 +326,36 @@ namespace Figures
 
         private void moveTo()
         {
+            foreach (Figure fig in list)
+            {
+                if (paramsCB.SelectedIndex == 0)
+                {
+                    fig.X = rnd.Next(-16, 16);
+                    fig.Y = rnd.Next(-16, 16);
+                }
+                else
+                {
+                    fig.X = (int) paramNumber.Value;
+                    fig.Y = (int) paramNumber.Value;
+                }
+            }
         }
 
         private void moveRel()
         {
+            foreach (Figure fig in list)
+            {
+                if (paramsCB.SelectedIndex == 0)
+                {
+                    fig.X += rnd.Next(-16, 16);
+                    fig.Y += rnd.Next(-16, 16);
+                }
+                else
+                {
+                    fig.X += (int) paramNumber.Value;
+                    fig.Y += (int) paramNumber.Value;
+                }
+            }
         }
     }
 }

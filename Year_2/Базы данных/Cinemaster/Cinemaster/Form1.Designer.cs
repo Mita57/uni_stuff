@@ -184,8 +184,8 @@
             this.genreID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coolTickets = new System.Windows.Forms.TabPage();
-            this.coolGrid = new System.Windows.Forms.DataGridView();
             this.coolTicketsNoEntriesLabel = new System.Windows.Forms.Label();
+            this.coolGrid = new System.Windows.Forms.DataGridView();
             this.coolId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coolFilm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coolSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -198,6 +198,16 @@
             this.coolRoom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coolPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coolRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.rooms.SuspendLayout();
             this.editRoomGroup.SuspendLayout();
             this.addRoomGroup.SuspendLayout();
@@ -231,6 +241,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.genresGrid)).BeginInit();
             this.coolTickets.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.coolGrid)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // rooms
@@ -1660,6 +1677,7 @@
             this.tabControl.Controls.Add(this.rooms);
             this.tabControl.Controls.Add(this.genres);
             this.tabControl.Controls.Add(this.coolTickets);
+            this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Location = new System.Drawing.Point(1, 4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -1859,6 +1877,16 @@
             this.coolTickets.Text = "Билеты Общ";
             this.coolTickets.UseVisualStyleBackColor = true;
             // 
+            // coolTicketsNoEntriesLabel
+            // 
+            this.coolTicketsNoEntriesLabel.AutoSize = true;
+            this.coolTicketsNoEntriesLabel.Location = new System.Drawing.Point(463, 282);
+            this.coolTicketsNoEntriesLabel.Name = "coolTicketsNoEntriesLabel";
+            this.coolTicketsNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
+            this.coolTicketsNoEntriesLabel.TabIndex = 19;
+            this.coolTicketsNoEntriesLabel.Text = "Нет записей";
+            this.coolTicketsNoEntriesLabel.Visible = false;
+            // 
             // coolGrid
             // 
             this.coolGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1880,16 +1908,6 @@
             this.coolGrid.RowHeadersVisible = false;
             this.coolGrid.Size = new System.Drawing.Size(1039, 523);
             this.coolGrid.TabIndex = 0;
-            // 
-            // coolTicketsNoEntriesLabel
-            // 
-            this.coolTicketsNoEntriesLabel.AutoSize = true;
-            this.coolTicketsNoEntriesLabel.Location = new System.Drawing.Point(463, 282);
-            this.coolTicketsNoEntriesLabel.Name = "coolTicketsNoEntriesLabel";
-            this.coolTicketsNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
-            this.coolTicketsNoEntriesLabel.TabIndex = 19;
-            this.coolTicketsNoEntriesLabel.Text = "Нет записей";
-            this.coolTicketsNoEntriesLabel.Visible = false;
             // 
             // coolId
             // 
@@ -1959,6 +1977,100 @@
             this.coolRow.Name = "coolRow";
             this.coolRow.Width = 50;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1032, 524);
+            this.tabPage1.TabIndex = 7;
+            this.tabPage1.Text = "Подчиненные";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Location = new System.Drawing.Point(7, 10);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(330, 514);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Билеты по фильмам";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Location = new System.Drawing.Point(349, 10);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(330, 514);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Билеты по фильмам";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dataGridView3);
+            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Location = new System.Drawing.Point(689, 10);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(330, 514);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Билеты по фильмам";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 23);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(302, 21);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(12, 23);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(302, 21);
+            this.comboBox2.TabIndex = 1;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(12, 23);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(302, 21);
+            this.comboBox3.TabIndex = 2;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 54);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(302, 448);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(12, 54);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(302, 448);
+            this.dataGridView2.TabIndex = 2;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(12, 54);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(302, 448);
+            this.dataGridView3.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2021,6 +2133,13 @@
             this.coolTickets.ResumeLayout(false);
             this.coolTickets.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.coolGrid)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2197,6 +2316,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn coolRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn coolPlace;
         private System.Windows.Forms.DataGridViewTextBoxColumn coolRow;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

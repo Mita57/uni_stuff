@@ -156,10 +156,15 @@ namespace Peronalities
                     }
                     else
                     {
-                        string[] debts = parts[7].Split('&');
-                        List<string> sas = new List<string>(debts);
-                        Program.list.Add(new Stud(parts[1], parts[2], int.Parse(parts[3]), parts[4], parts[5], parts[6],
-                            sas));
+                        try
+                        {
+                            string[] debts = parts[7].Split('&');
+                            List<string> sas = new List<string>(debts);
+                            Program.list.Add(new Stud(parts[1], parts[2], int.Parse(parts[3]), parts[4], parts[5],
+                                parts[6],
+                                sas));
+                        }
+                        catch{}
                     }
                 }
             }
