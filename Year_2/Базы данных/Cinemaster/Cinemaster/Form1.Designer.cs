@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.rooms = new System.Windows.Forms.TabPage();
+            this.roomsAmount = new System.Windows.Forms.Label();
             this.roomsNoEntriesLabel = new System.Windows.Forms.Label();
             this.deleteRoomButton = new System.Windows.Forms.Button();
             this.editRoomGroup = new System.Windows.Forms.GroupBox();
@@ -48,6 +49,7 @@
             this.roomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cashiers = new System.Windows.Forms.TabPage();
+            this.cashiersAmount = new System.Windows.Forms.Label();
             this.cashiersNoEntriesLabel = new System.Windows.Forms.Label();
             this.removeCashierButton = new System.Windows.Forms.Button();
             this.editCashierGroup = new System.Windows.Forms.GroupBox();
@@ -66,6 +68,7 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cashierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.films = new System.Windows.Forms.TabPage();
+            this.filmsAmount = new System.Windows.Forms.Label();
             this.filmsNoEntriesLabel = new System.Windows.Forms.Label();
             this.filmsDeleteButton = new System.Windows.Forms.Button();
             this.filmsEditGroup = new System.Windows.Forms.GroupBox();
@@ -94,6 +97,7 @@
             this.genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ageRestr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sessions = new System.Windows.Forms.TabPage();
+            this.sessionsAmount = new System.Windows.Forms.Label();
             this.sessionsNoEntriesLabel = new System.Windows.Forms.Label();
             this.sessionsEditGroup = new System.Windows.Forms.GroupBox();
             this.sessionsEditCB = new System.Windows.Forms.ComboBox();
@@ -132,6 +136,7 @@
             this.room = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tickets = new System.Windows.Forms.TabPage();
+            this.ticketsAmount = new System.Windows.Forms.Label();
             this.ticketsNoEntriesLabel = new System.Windows.Forms.Label();
             this.ticketsEditGroup = new System.Windows.Forms.GroupBox();
             this.ticketsEditSeat = new System.Windows.Forms.NumericUpDown();
@@ -166,6 +171,7 @@
             this.row = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.genres = new System.Windows.Forms.TabPage();
+            this.genreAmount = new System.Windows.Forms.Label();
             this.genresNoEntriesLabel = new System.Windows.Forms.Label();
             this.deleteGenreButton = new System.Windows.Forms.Button();
             this.editGenreGroup = new System.Windows.Forms.GroupBox();
@@ -184,6 +190,7 @@
             this.genreID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coolTickets = new System.Windows.Forms.TabPage();
+            this.totalAmount = new System.Windows.Forms.Label();
             this.coolTicketsNoEntriesLabel = new System.Windows.Forms.Label();
             this.coolGrid = new System.Windows.Forms.DataGridView();
             this.coolId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -199,33 +206,31 @@
             this.coolPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coolRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.filmsTicksCB = new System.Windows.Forms.ComboBox();
-            this.filmsGenresCB = new System.Windows.Forms.ComboBox();
-            this.ticketsSessionsCB = new System.Windows.Forms.ComboBox();
-            this.filmsTicksGrid = new System.Windows.Forms.DataGridView();
-            this.filmsGenresGrid = new System.Windows.Forms.DataGridView();
             this.ticketsSessiosGrid = new System.Windows.Forms.DataGridView();
-            this.slaveID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slaveSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slavePlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slaveRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slaveFilmsID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slaveFilmsSessions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slaveFilmsRestr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slaveTicketsID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slaveTicketsSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slaveTicketPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slaveTicketRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ticketsAmount = new System.Windows.Forms.Label();
-            this.sessionsAmount = new System.Windows.Forms.Label();
-            this.filmsAmount = new System.Windows.Forms.Label();
-            this.cashiersAmount = new System.Windows.Forms.Label();
-            this.roomsAmount = new System.Windows.Forms.Label();
-            this.genreAmount = new System.Windows.Forms.Label();
-            this.totalAmount = new System.Windows.Forms.Label();
+            this.ticketsSessionsCB = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.filmsGenresGrid = new System.Windows.Forms.DataGridView();
+            this.slaveFilmsID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveFilmsSessions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveFilmsRestr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filmsGenresCB = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.filmsTicksGrid = new System.Windows.Forms.DataGridView();
+            this.slaveID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slavePlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filmsTicksCB = new System.Windows.Forms.ComboBox();
+            this.filmsTicksNoEntriesLabel = new System.Windows.Forms.Label();
+            this.filmsGenresNoEntriesLabel = new System.Windows.Forms.Label();
+            this.ticketsSessionsNoEntriesLabel = new System.Windows.Forms.Label();
+            this.filmsTicksAmount = new System.Windows.Forms.Label();
+            this.filmsGenresAmount = new System.Windows.Forms.Label();
             this.rooms.SuspendLayout();
             this.editRoomGroup.SuspendLayout();
             this.addRoomGroup.SuspendLayout();
@@ -260,12 +265,12 @@
             this.coolTickets.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.coolGrid)).BeginInit();
             this.tabPage1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsTicksGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsGenresGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsSessiosGrid)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsGenresGrid)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsTicksGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // rooms
@@ -282,6 +287,14 @@
             this.rooms.TabIndex = 4;
             this.rooms.Text = "Кинозалы";
             this.rooms.UseVisualStyleBackColor = true;
+            // 
+            // roomsAmount
+            // 
+            this.roomsAmount.AutoSize = true;
+            this.roomsAmount.Location = new System.Drawing.Point(668, 492);
+            this.roomsAmount.Name = "roomsAmount";
+            this.roomsAmount.Size = new System.Drawing.Size(0, 13);
+            this.roomsAmount.TabIndex = 18;
             // 
             // roomsNoEntriesLabel
             // 
@@ -466,6 +479,14 @@
             this.cashiers.Text = "Кассиры";
             this.cashiers.UseVisualStyleBackColor = true;
             // 
+            // cashiersAmount
+            // 
+            this.cashiersAmount.AutoSize = true;
+            this.cashiersAmount.Location = new System.Drawing.Point(668, 492);
+            this.cashiersAmount.Name = "cashiersAmount";
+            this.cashiersAmount.Size = new System.Drawing.Size(0, 13);
+            this.cashiersAmount.TabIndex = 17;
+            // 
             // cashiersNoEntriesLabel
             // 
             this.cashiersNoEntriesLabel.AutoSize = true;
@@ -648,6 +669,14 @@
             this.films.TabIndex = 2;
             this.films.Text = "Фильмы";
             this.films.UseVisualStyleBackColor = true;
+            // 
+            // filmsAmount
+            // 
+            this.filmsAmount.AutoSize = true;
+            this.filmsAmount.Location = new System.Drawing.Point(668, 492);
+            this.filmsAmount.Name = "filmsAmount";
+            this.filmsAmount.Size = new System.Drawing.Size(0, 13);
+            this.filmsAmount.TabIndex = 16;
             // 
             // filmsNoEntriesLabel
             // 
@@ -931,6 +960,14 @@
             this.sessions.TabIndex = 1;
             this.sessions.Text = "Сеансы";
             this.sessions.UseVisualStyleBackColor = true;
+            // 
+            // sessionsAmount
+            // 
+            this.sessionsAmount.AutoSize = true;
+            this.sessionsAmount.Location = new System.Drawing.Point(668, 492);
+            this.sessionsAmount.Name = "sessionsAmount";
+            this.sessionsAmount.Size = new System.Drawing.Size(0, 13);
+            this.sessionsAmount.TabIndex = 16;
             // 
             // sessionsNoEntriesLabel
             // 
@@ -1336,6 +1373,14 @@
             this.tickets.Text = "Билеты";
             this.tickets.UseVisualStyleBackColor = true;
             // 
+            // ticketsAmount
+            // 
+            this.ticketsAmount.AutoSize = true;
+            this.ticketsAmount.Location = new System.Drawing.Point(668, 492);
+            this.ticketsAmount.Name = "ticketsAmount";
+            this.ticketsAmount.Size = new System.Drawing.Size(0, 13);
+            this.ticketsAmount.TabIndex = 15;
+            // 
             // ticketsNoEntriesLabel
             // 
             this.ticketsNoEntriesLabel.AutoSize = true;
@@ -1723,6 +1768,14 @@
             this.genres.Text = "Жанры";
             this.genres.UseVisualStyleBackColor = true;
             // 
+            // genreAmount
+            // 
+            this.genreAmount.AutoSize = true;
+            this.genreAmount.Location = new System.Drawing.Point(668, 492);
+            this.genreAmount.Name = "genreAmount";
+            this.genreAmount.Size = new System.Drawing.Size(0, 13);
+            this.genreAmount.TabIndex = 19;
+            // 
             // genresNoEntriesLabel
             // 
             this.genresNoEntriesLabel.AutoSize = true;
@@ -1902,6 +1955,14 @@
             this.coolTickets.Text = "Билеты Общ";
             this.coolTickets.UseVisualStyleBackColor = true;
             // 
+            // totalAmount
+            // 
+            this.totalAmount.AutoSize = true;
+            this.totalAmount.Location = new System.Drawing.Point(953, 492);
+            this.totalAmount.Name = "totalAmount";
+            this.totalAmount.Size = new System.Drawing.Size(0, 13);
+            this.totalAmount.TabIndex = 20;
+            // 
             // coolTicketsNoEntriesLabel
             // 
             this.coolTicketsNoEntriesLabel.AutoSize = true;
@@ -2015,30 +2076,9 @@
             this.tabPage1.Text = "Подчиненные";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.filmsTicksGrid);
-            this.groupBox1.Controls.Add(this.filmsTicksCB);
-            this.groupBox1.Location = new System.Drawing.Point(7, 10);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(330, 514);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Билеты по фильмам";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.filmsGenresGrid);
-            this.groupBox2.Controls.Add(this.filmsGenresCB);
-            this.groupBox2.Location = new System.Drawing.Point(349, 10);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(330, 514);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Фильмы по жанрам";
-            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.ticketsSessionsNoEntriesLabel);
             this.groupBox3.Controls.Add(this.ticketsSessiosGrid);
             this.groupBox3.Controls.Add(this.ticketsSessionsCB);
             this.groupBox3.Location = new System.Drawing.Point(689, 10);
@@ -2047,59 +2087,6 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Билеты по сеансам";
-            // 
-            // filmsTicksCB
-            // 
-            this.filmsTicksCB.FormattingEnabled = true;
-            this.filmsTicksCB.Location = new System.Drawing.Point(12, 23);
-            this.filmsTicksCB.Name = "filmsTicksCB";
-            this.filmsTicksCB.Size = new System.Drawing.Size(302, 21);
-            this.filmsTicksCB.TabIndex = 0;
-            // 
-            // filmsGenresCB
-            // 
-            this.filmsGenresCB.FormattingEnabled = true;
-            this.filmsGenresCB.Location = new System.Drawing.Point(12, 23);
-            this.filmsGenresCB.Name = "filmsGenresCB";
-            this.filmsGenresCB.Size = new System.Drawing.Size(302, 21);
-            this.filmsGenresCB.TabIndex = 1;
-            // 
-            // ticketsSessionsCB
-            // 
-            this.ticketsSessionsCB.FormattingEnabled = true;
-            this.ticketsSessionsCB.Location = new System.Drawing.Point(12, 23);
-            this.ticketsSessionsCB.Name = "ticketsSessionsCB";
-            this.ticketsSessionsCB.Size = new System.Drawing.Size(302, 21);
-            this.ticketsSessionsCB.TabIndex = 2;
-            // 
-            // filmsTicksGrid
-            // 
-            this.filmsTicksGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.filmsTicksGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.slaveID,
-            this.slaveSession,
-            this.slavePlace,
-            this.slaveRow});
-            this.filmsTicksGrid.Location = new System.Drawing.Point(12, 54);
-            this.filmsTicksGrid.Name = "filmsTicksGrid";
-            this.filmsTicksGrid.ReadOnly = true;
-            this.filmsTicksGrid.RowHeadersVisible = false;
-            this.filmsTicksGrid.Size = new System.Drawing.Size(302, 448);
-            this.filmsTicksGrid.TabIndex = 1;
-            // 
-            // filmsGenresGrid
-            // 
-            this.filmsGenresGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.filmsGenresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.slaveFilmsID,
-            this.slaveFilmsSessions,
-            this.slaveFilmsRestr});
-            this.filmsGenresGrid.Location = new System.Drawing.Point(12, 54);
-            this.filmsGenresGrid.Name = "filmsGenresGrid";
-            this.filmsGenresGrid.ReadOnly = true;
-            this.filmsGenresGrid.RowHeadersVisible = false;
-            this.filmsGenresGrid.Size = new System.Drawing.Size(302, 448);
-            this.filmsGenresGrid.TabIndex = 2;
             // 
             // ticketsSessiosGrid
             // 
@@ -2115,55 +2102,6 @@
             this.ticketsSessiosGrid.RowHeadersVisible = false;
             this.ticketsSessiosGrid.Size = new System.Drawing.Size(302, 448);
             this.ticketsSessiosGrid.TabIndex = 3;
-            // 
-            // slaveID
-            // 
-            this.slaveID.HeaderText = "ID";
-            this.slaveID.Name = "slaveID";
-            this.slaveID.ReadOnly = true;
-            this.slaveID.Width = 50;
-            // 
-            // slaveSession
-            // 
-            this.slaveSession.HeaderText = "Сеанс";
-            this.slaveSession.Name = "slaveSession";
-            this.slaveSession.ReadOnly = true;
-            this.slaveSession.Width = 149;
-            // 
-            // slavePlace
-            // 
-            this.slavePlace.HeaderText = "Место";
-            this.slavePlace.Name = "slavePlace";
-            this.slavePlace.ReadOnly = true;
-            this.slavePlace.Width = 50;
-            // 
-            // slaveRow
-            // 
-            this.slaveRow.HeaderText = "Ряд";
-            this.slaveRow.Name = "slaveRow";
-            this.slaveRow.ReadOnly = true;
-            this.slaveRow.Width = 50;
-            // 
-            // slaveFilmsID
-            // 
-            this.slaveFilmsID.HeaderText = "ID";
-            this.slaveFilmsID.Name = "slaveFilmsID";
-            this.slaveFilmsID.ReadOnly = true;
-            this.slaveFilmsID.Width = 50;
-            // 
-            // slaveFilmsSessions
-            // 
-            this.slaveFilmsSessions.HeaderText = "Название";
-            this.slaveFilmsSessions.Name = "slaveFilmsSessions";
-            this.slaveFilmsSessions.ReadOnly = true;
-            this.slaveFilmsSessions.Width = 200;
-            // 
-            // slaveFilmsRestr
-            // 
-            this.slaveFilmsRestr.HeaderText = "Возр";
-            this.slaveFilmsRestr.Name = "slaveFilmsRestr";
-            this.slaveFilmsRestr.ReadOnly = true;
-            this.slaveFilmsRestr.Width = 49;
             // 
             // slaveTicketsID
             // 
@@ -2193,61 +2131,180 @@
             this.slaveTicketRow.ReadOnly = true;
             this.slaveTicketRow.Width = 50;
             // 
-            // ticketsAmount
+            // ticketsSessionsCB
             // 
-            this.ticketsAmount.AutoSize = true;
-            this.ticketsAmount.Location = new System.Drawing.Point(668, 492);
-            this.ticketsAmount.Name = "ticketsAmount";
-            this.ticketsAmount.Size = new System.Drawing.Size(0, 13);
-            this.ticketsAmount.TabIndex = 15;
+            this.ticketsSessionsCB.FormattingEnabled = true;
+            this.ticketsSessionsCB.Location = new System.Drawing.Point(12, 23);
+            this.ticketsSessionsCB.Name = "ticketsSessionsCB";
+            this.ticketsSessionsCB.Size = new System.Drawing.Size(302, 21);
+            this.ticketsSessionsCB.TabIndex = 2;
+            this.ticketsSessionsCB.SelectedIndexChanged += new System.EventHandler(this.ticketsSessionsCB_SelectedIndexChanged);
             // 
-            // sessionsAmount
+            // groupBox2
             // 
-            this.sessionsAmount.AutoSize = true;
-            this.sessionsAmount.Location = new System.Drawing.Point(668, 492);
-            this.sessionsAmount.Name = "sessionsAmount";
-            this.sessionsAmount.Size = new System.Drawing.Size(0, 13);
-            this.sessionsAmount.TabIndex = 16;
+            this.groupBox2.Controls.Add(this.filmsGenresAmount);
+            this.groupBox2.Controls.Add(this.filmsGenresNoEntriesLabel);
+            this.groupBox2.Controls.Add(this.filmsGenresGrid);
+            this.groupBox2.Controls.Add(this.filmsGenresCB);
+            this.groupBox2.Location = new System.Drawing.Point(349, 10);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(330, 514);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Фильмы по жанрам";
             // 
-            // filmsAmount
+            // filmsGenresGrid
             // 
-            this.filmsAmount.AutoSize = true;
-            this.filmsAmount.Location = new System.Drawing.Point(668, 492);
-            this.filmsAmount.Name = "filmsAmount";
-            this.filmsAmount.Size = new System.Drawing.Size(0, 13);
-            this.filmsAmount.TabIndex = 16;
+            this.filmsGenresGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.filmsGenresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.slaveFilmsID,
+            this.slaveFilmsSessions,
+            this.slaveFilmsRestr});
+            this.filmsGenresGrid.Location = new System.Drawing.Point(12, 54);
+            this.filmsGenresGrid.Name = "filmsGenresGrid";
+            this.filmsGenresGrid.ReadOnly = true;
+            this.filmsGenresGrid.RowHeadersVisible = false;
+            this.filmsGenresGrid.Size = new System.Drawing.Size(302, 448);
+            this.filmsGenresGrid.TabIndex = 2;
             // 
-            // cashiersAmount
+            // slaveFilmsID
             // 
-            this.cashiersAmount.AutoSize = true;
-            this.cashiersAmount.Location = new System.Drawing.Point(668, 492);
-            this.cashiersAmount.Name = "cashiersAmount";
-            this.cashiersAmount.Size = new System.Drawing.Size(0, 13);
-            this.cashiersAmount.TabIndex = 17;
+            this.slaveFilmsID.HeaderText = "ID";
+            this.slaveFilmsID.Name = "slaveFilmsID";
+            this.slaveFilmsID.ReadOnly = true;
+            this.slaveFilmsID.Width = 50;
             // 
-            // roomsAmount
+            // slaveFilmsSessions
             // 
-            this.roomsAmount.AutoSize = true;
-            this.roomsAmount.Location = new System.Drawing.Point(668, 492);
-            this.roomsAmount.Name = "roomsAmount";
-            this.roomsAmount.Size = new System.Drawing.Size(0, 13);
-            this.roomsAmount.TabIndex = 18;
+            this.slaveFilmsSessions.HeaderText = "Название";
+            this.slaveFilmsSessions.Name = "slaveFilmsSessions";
+            this.slaveFilmsSessions.ReadOnly = true;
+            this.slaveFilmsSessions.Width = 200;
             // 
-            // genreAmount
+            // slaveFilmsRestr
             // 
-            this.genreAmount.AutoSize = true;
-            this.genreAmount.Location = new System.Drawing.Point(668, 492);
-            this.genreAmount.Name = "genreAmount";
-            this.genreAmount.Size = new System.Drawing.Size(0, 13);
-            this.genreAmount.TabIndex = 19;
+            this.slaveFilmsRestr.HeaderText = "Возр";
+            this.slaveFilmsRestr.Name = "slaveFilmsRestr";
+            this.slaveFilmsRestr.ReadOnly = true;
+            this.slaveFilmsRestr.Width = 49;
             // 
-            // totalAmount
+            // filmsGenresCB
             // 
-            this.totalAmount.AutoSize = true;
-            this.totalAmount.Location = new System.Drawing.Point(953, 492);
-            this.totalAmount.Name = "totalAmount";
-            this.totalAmount.Size = new System.Drawing.Size(0, 13);
-            this.totalAmount.TabIndex = 20;
+            this.filmsGenresCB.FormattingEnabled = true;
+            this.filmsGenresCB.Location = new System.Drawing.Point(12, 23);
+            this.filmsGenresCB.Name = "filmsGenresCB";
+            this.filmsGenresCB.Size = new System.Drawing.Size(302, 21);
+            this.filmsGenresCB.TabIndex = 1;
+            this.filmsGenresCB.SelectedIndexChanged += new System.EventHandler(this.filmsGenresCB_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.filmsTicksAmount);
+            this.groupBox1.Controls.Add(this.filmsTicksNoEntriesLabel);
+            this.groupBox1.Controls.Add(this.filmsTicksGrid);
+            this.groupBox1.Controls.Add(this.filmsTicksCB);
+            this.groupBox1.Location = new System.Drawing.Point(7, 10);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(330, 514);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Билеты по фильмам";
+            // 
+            // filmsTicksGrid
+            // 
+            this.filmsTicksGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.filmsTicksGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.slaveID,
+            this.slaveSession,
+            this.slavePlace,
+            this.slaveRow});
+            this.filmsTicksGrid.Location = new System.Drawing.Point(12, 54);
+            this.filmsTicksGrid.Name = "filmsTicksGrid";
+            this.filmsTicksGrid.ReadOnly = true;
+            this.filmsTicksGrid.RowHeadersVisible = false;
+            this.filmsTicksGrid.Size = new System.Drawing.Size(302, 448);
+            this.filmsTicksGrid.TabIndex = 1;
+            // 
+            // slaveID
+            // 
+            this.slaveID.HeaderText = "ID";
+            this.slaveID.Name = "slaveID";
+            this.slaveID.ReadOnly = true;
+            this.slaveID.Width = 50;
+            // 
+            // slaveSession
+            // 
+            this.slaveSession.HeaderText = "Сеанс";
+            this.slaveSession.Name = "slaveSession";
+            this.slaveSession.ReadOnly = true;
+            this.slaveSession.Width = 149;
+            // 
+            // slavePlace
+            // 
+            this.slavePlace.HeaderText = "Место";
+            this.slavePlace.Name = "slavePlace";
+            this.slavePlace.ReadOnly = true;
+            this.slavePlace.Width = 50;
+            // 
+            // slaveRow
+            // 
+            this.slaveRow.HeaderText = "Ряд";
+            this.slaveRow.Name = "slaveRow";
+            this.slaveRow.ReadOnly = true;
+            this.slaveRow.Width = 50;
+            // 
+            // filmsTicksCB
+            // 
+            this.filmsTicksCB.FormattingEnabled = true;
+            this.filmsTicksCB.Location = new System.Drawing.Point(12, 23);
+            this.filmsTicksCB.Name = "filmsTicksCB";
+            this.filmsTicksCB.Size = new System.Drawing.Size(302, 21);
+            this.filmsTicksCB.TabIndex = 0;
+            this.filmsTicksCB.SelectedIndexChanged += new System.EventHandler(this.filmsTicksCB_SelectedIndexChanged);
+            // 
+            // filmsTicksNoEntriesLabel
+            // 
+            this.filmsTicksNoEntriesLabel.AutoSize = true;
+            this.filmsTicksNoEntriesLabel.Location = new System.Drawing.Point(117, 278);
+            this.filmsTicksNoEntriesLabel.Name = "filmsTicksNoEntriesLabel";
+            this.filmsTicksNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
+            this.filmsTicksNoEntriesLabel.TabIndex = 2;
+            this.filmsTicksNoEntriesLabel.Text = "Нет записей";
+            // 
+            // filmsGenresNoEntriesLabel
+            // 
+            this.filmsGenresNoEntriesLabel.AutoSize = true;
+            this.filmsGenresNoEntriesLabel.Location = new System.Drawing.Point(121, 278);
+            this.filmsGenresNoEntriesLabel.Name = "filmsGenresNoEntriesLabel";
+            this.filmsGenresNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
+            this.filmsGenresNoEntriesLabel.TabIndex = 3;
+            this.filmsGenresNoEntriesLabel.Text = "Нет записей";
+            // 
+            // ticketsSessionsNoEntriesLabel
+            // 
+            this.ticketsSessionsNoEntriesLabel.AutoSize = true;
+            this.ticketsSessionsNoEntriesLabel.Location = new System.Drawing.Point(125, 278);
+            this.ticketsSessionsNoEntriesLabel.Name = "ticketsSessionsNoEntriesLabel";
+            this.ticketsSessionsNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
+            this.ticketsSessionsNoEntriesLabel.TabIndex = 4;
+            this.ticketsSessionsNoEntriesLabel.Text = "Нет записей";
+            // 
+            // filmsTicksAmount
+            // 
+            this.filmsTicksAmount.AutoSize = true;
+            this.filmsTicksAmount.Location = new System.Drawing.Point(270, 472);
+            this.filmsTicksAmount.Name = "filmsTicksAmount";
+            this.filmsTicksAmount.Size = new System.Drawing.Size(0, 13);
+            this.filmsTicksAmount.TabIndex = 3;
+            // 
+            // filmsGenresAmount
+            // 
+            this.filmsGenresAmount.AutoSize = true;
+            this.filmsGenresAmount.Location = new System.Drawing.Point(270, 472);
+            this.filmsGenresAmount.Name = "filmsGenresAmount";
+            this.filmsGenresAmount.Size = new System.Drawing.Size(71, 13);
+            this.filmsGenresAmount.TabIndex = 4;
+            this.filmsGenresAmount.Text = "Нет записей";
             // 
             // Form1
             // 
@@ -2312,12 +2369,15 @@
             this.coolTickets.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.coolGrid)).EndInit();
             this.tabPage1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.filmsTicksGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsGenresGrid)).EndInit();
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsSessiosGrid)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsGenresGrid)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsTicksGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2522,6 +2582,11 @@
         private System.Windows.Forms.Label roomsAmount;
         private System.Windows.Forms.Label genreAmount;
         private System.Windows.Forms.Label totalAmount;
+        private System.Windows.Forms.Label ticketsSessionsNoEntriesLabel;
+        private System.Windows.Forms.Label filmsGenresNoEntriesLabel;
+        private System.Windows.Forms.Label filmsTicksNoEntriesLabel;
+        private System.Windows.Forms.Label filmsTicksAmount;
+        private System.Windows.Forms.Label filmsGenresAmount;
     }
 }
 

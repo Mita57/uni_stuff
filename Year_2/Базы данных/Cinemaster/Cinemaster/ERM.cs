@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -52,7 +53,24 @@ namespace Cinemaster
         }
     }
 
+    public class SimpleTicket
+    {
+        public int Id { get; set;  }
 
+        public string Session { get; set; }
+
+        public int Row { get; set; }
+
+        public int Seat { get; set; }
+
+        public SimpleTicket(int id, string session, int row, int seat)
+        {
+            Id = id;
+            Session = session;
+            Row = row;
+            Seat = seat;
+        }
+    }
 
     public class Ticket
     {
@@ -146,6 +164,22 @@ namespace Cinemaster
             return (this.Id + "#: " + this.Name);
         }
 
+    }
+
+    public class SimpleFilm
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public int Rest { get; set; }
+
+        public SimpleFilm(int id, string name, int rest)
+        {
+            Id = id;
+            Name = name;
+            Rest = rest;
+        }
     }
 
     public class Cashier
@@ -548,6 +582,44 @@ namespace Cinemaster
             adapter.DeleteCommand.ExecuteNonQuery();
             command.Dispose();
 
+        }
+
+        public static List<SimpleTicket> GetSimpleTickets(string idParam)
+        {
+            String query = "SELECT tickets.ticketID, tickets.sessionID, sessions.time, sessions.date, tickets.row, tickets.seat FROM tickets INNER JOIN sessions on tickets.sessionID = sessions.sessionID INNER JOIN films on sessions.filmID = films.filmID WHERE films.filmID = '" + idParam + "'";
+            SqlCommand command = new SqlCommand(query, _connection);
+            List<SimpleTicket> list = new List<SimpleTicket>();
+            SqlDataReader dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                int id = (int)dataReader.GetValue(0);
+                int sessionID = (int)dataReader.GetValue(1);
+                string time = dataReader.GetValue(2).ToString();
+                string date = dataReader.GetValue(3).ToString();
+                string session = sessionID + "# " + time + ", " + date;
+                int  row = (int)dataReader.GetValue(4);
+                int seat = (int)dataReader.GetValue(5);
+
+                list.Add(new SimpleTicket(id, session, row, seat));
+            }
+            return list;
+        }
+
+        public static List<SimpleFilm> GetSimpleFilms(string idParam)
+        {
+            String query = "SELECT films.filmID, films.name, films.ageRest from films WHERE films.genreID =  '" + idParam + "'";
+            SqlCommand command = new SqlCommand(query, _connection);
+            List<SimpleFilm> list = new List<SimpleFilm>();
+            SqlDataReader dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                int id = (int)dataReader.GetValue(0);
+                string name = dataReader.GetValue(1).ToString();
+                int ageRestr = (int)dataReader.GetValue(2);
+
+                list.Add(new SimpleFilm(id, name, ageRestr));
+            }
+            return list;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 // ReSharper disable LocalVariableHidesMember
@@ -848,6 +849,61 @@ namespace Cinemaster
             }
 
             TabControl1_Selected(null, null);
+        }
+
+        private void filmsTicksCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filmsTicksGrid.Rows.Clear();
+            List<SimpleTicket> ticks = Erm.GetSimpleTickets(filmsTicksCB.SelectedItem.ToString().Split('#')[0]);
+            try
+            {
+                filmsTicksGrid.RowCount = ticks.Count;
+                for (int i = 0; i < ticks.Count; i++)
+                {
+                    filmsTicksGrid.Rows[i].Cells[0].Value = ticks[i].Id;
+                    filmsTicksGrid.Rows[i].Cells[1].Value = ticks[i].Session;
+                    filmsTicksGrid.Rows[i].Cells[2].Value = ticks[i].Seat;
+                    filmsTicksGrid.Rows[i].Cells[3].Value = ticks[i].Row;
+                }
+                filmsTicksNoEntriesLabel.Visible = false;
+                filmsTicksAmount.Visible = true;
+                filmsTicksAmount.Text = ticks.Count.ToString();
+            }
+            catch
+            {
+                filmsTicksNoEntriesLabel.Visible = true;
+                filmsTicksAmount.Visible = false;
+            }
+
+        }
+
+        private void filmsGenresCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filmsGenresGrid.Rows.Clear();
+            List<SimpleFilm> films = Erm.GetSimpleFilms(filmsGenresCB.SelectedItem.ToString().Split('#')[0]);
+            try
+            {
+                filmsGenresGrid.RowCount = films.Count;
+                for(int i = 0; i < films.Count; i++)
+                {
+                    filmsGenresGrid.Rows[i].Cells[0].Value = films[i].Id;
+                    filmsGenresGrid.Rows[i].Cells[1].Value = films[i].Name;
+                    filmsGenresGrid.Rows[i].Cells[2].Value = films[i].Rest;
+                }
+                filmsGenresNoEntriesLabel.Visible = false;
+                filmsGenresAmount.Visible = true;
+                filmsGenresAmount.Text = films.Count.ToString();
+            }
+            catch
+            {
+                filmsGenresNoEntriesLabel.Visible = true;
+                filmsGenresAmount.Visible = false;
+            }
+        }
+
+        private void ticketsSessionsCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
