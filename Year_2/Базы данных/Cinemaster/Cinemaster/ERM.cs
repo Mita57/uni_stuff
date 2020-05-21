@@ -584,7 +584,7 @@ namespace Cinemaster
 
         }
 
-        public static List<SimpleTicket> GetSimpleTickets(string idParam)
+        public static List<SimpleTicket> GetSimpleTicketsOne(string idParam)
         {
             String query = "SELECT tickets.ticketID, tickets.sessionID, sessions.time, sessions.date, tickets.row, tickets.seat FROM tickets INNER JOIN sessions on tickets.sessionID = sessions.sessionID INNER JOIN films on sessions.filmID = films.filmID WHERE films.filmID = '" + idParam + "'";
             SqlCommand command = new SqlCommand(query, _connection);
@@ -618,6 +618,24 @@ namespace Cinemaster
                 int ageRestr = (int)dataReader.GetValue(2);
 
                 list.Add(new SimpleFilm(id, name, ageRestr));
+            }
+            return list;
+        }
+
+        public static List<SimpleTicket> GetSimpleTicketsTwo(string idParam)
+        {
+            String query = "SELECT tickets.ticketID, films.name, tickets.row, tickets.seat FROM tickets INNER JOIN sessions on tickets.sessionID = sessions.sessionID INNER JOIN films on sessions.filmID = films.filmID WHERE tickets.sessionID = '" + idParam + "'";
+            SqlCommand command = new SqlCommand(query, _connection);
+            List<SimpleTicket> list = new List<SimpleTicket>();
+            SqlDataReader dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                int id = (int)dataReader.GetValue(0);
+                string session = dataReader.GetValue(1).ToString();
+                int row = (int)dataReader.GetValue(2);
+                int seat = (int)dataReader.GetValue(3);
+
+                list.Add(new SimpleTicket(id, session, row, seat));
             }
             return list;
         }

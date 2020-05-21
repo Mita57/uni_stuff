@@ -841,7 +841,7 @@ namespace Cinemaster
         {
             string id = genresGrid.CurrentRow.Cells[0].Value.ToString();
             DialogResult confirmResult =
-                MessageBox.Show("Удалить кассира " + id + ": " + genresGrid.CurrentRow.Cells[1].Value.ToString() + "?",
+                MessageBox.Show("Удалить жанр " + id + ": " + genresGrid.CurrentRow.Cells[1].Value.ToString() + "?",
                     "Подтвердите действие", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
             {
@@ -854,7 +854,7 @@ namespace Cinemaster
         private void filmsTicksCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             filmsTicksGrid.Rows.Clear();
-            List<SimpleTicket> ticks = Erm.GetSimpleTickets(filmsTicksCB.SelectedItem.ToString().Split('#')[0]);
+            List<SimpleTicket> ticks = Erm.GetSimpleTicketsOne(filmsTicksCB.SelectedItem.ToString().Split('#')[0]);
             try
             {
                 filmsTicksGrid.RowCount = ticks.Count;
@@ -903,7 +903,27 @@ namespace Cinemaster
 
         private void ticketsSessionsCB_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ticketsSessionsGrid.Rows.Clear();
+            List<SimpleTicket> ticks = Erm.GetSimpleTicketsTwo(ticketsSessionsCB.SelectedItem.ToString().Split('#')[0]);
+            try
+            {
+                ticketsSessionsGrid.RowCount = ticks.Count;
+                for (int i = 0; i < ticks.Count; i++)
+                {
+                    ticketsSessionsGrid.Rows[i].Cells[0].Value = ticks[i].Id;
+                    ticketsSessionsGrid.Rows[i].Cells[1].Value = ticks[i].Session;
+                    ticketsSessionsGrid.Rows[i].Cells[2].Value = ticks[i].Seat;
+                    ticketsSessionsGrid.Rows[i].Cells[3].Value = ticks[i].Row;
+                }
+                ticketsSessionsNoEntriesLabel.Visible = false;
+                ticketsSessionsAmount.Visible = true;
+                ticketsSessionsAmount.Text = ticks.Count.ToString();
+            }
+            catch
+            {
+                ticketsSessionsNoEntriesLabel.Visible = true;
+                ticketsSessionsAmount.Visible = false;
+            }
         }
     }
 }

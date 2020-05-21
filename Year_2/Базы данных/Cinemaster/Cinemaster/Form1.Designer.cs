@@ -207,11 +207,7 @@
             this.coolRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.ticketsSessiosGrid = new System.Windows.Forms.DataGridView();
-            this.slaveTicketsID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slaveTicketsSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slaveTicketPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slaveTicketRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ticketsSessionsGrid = new System.Windows.Forms.DataGridView();
             this.ticketsSessionsCB = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.filmsGenresGrid = new System.Windows.Forms.DataGridView();
@@ -231,6 +227,11 @@
             this.ticketsSessionsNoEntriesLabel = new System.Windows.Forms.Label();
             this.filmsTicksAmount = new System.Windows.Forms.Label();
             this.filmsGenresAmount = new System.Windows.Forms.Label();
+            this.ticketsSessionsAmount = new System.Windows.Forms.Label();
+            this.slaveTicketsID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveTicketsSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveTicketPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveTicketRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rooms.SuspendLayout();
             this.editRoomGroup.SuspendLayout();
             this.addRoomGroup.SuspendLayout();
@@ -266,7 +267,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.coolGrid)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsSessiosGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsSessionsGrid)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.filmsGenresGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -2078,8 +2079,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.ticketsSessionsAmount);
             this.groupBox3.Controls.Add(this.ticketsSessionsNoEntriesLabel);
-            this.groupBox3.Controls.Add(this.ticketsSessiosGrid);
+            this.groupBox3.Controls.Add(this.ticketsSessionsGrid);
             this.groupBox3.Controls.Add(this.ticketsSessionsCB);
             this.groupBox3.Location = new System.Drawing.Point(689, 10);
             this.groupBox3.Name = "groupBox3";
@@ -2088,48 +2090,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Билеты по сеансам";
             // 
-            // ticketsSessiosGrid
+            // ticketsSessionsGrid
             // 
-            this.ticketsSessiosGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ticketsSessiosGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ticketsSessionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ticketsSessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.slaveTicketsID,
             this.slaveTicketsSession,
             this.slaveTicketPlace,
             this.slaveTicketRow});
-            this.ticketsSessiosGrid.Location = new System.Drawing.Point(12, 54);
-            this.ticketsSessiosGrid.Name = "ticketsSessiosGrid";
-            this.ticketsSessiosGrid.ReadOnly = true;
-            this.ticketsSessiosGrid.RowHeadersVisible = false;
-            this.ticketsSessiosGrid.Size = new System.Drawing.Size(302, 448);
-            this.ticketsSessiosGrid.TabIndex = 3;
-            // 
-            // slaveTicketsID
-            // 
-            this.slaveTicketsID.HeaderText = "ID";
-            this.slaveTicketsID.Name = "slaveTicketsID";
-            this.slaveTicketsID.ReadOnly = true;
-            this.slaveTicketsID.Width = 50;
-            // 
-            // slaveTicketsSession
-            // 
-            this.slaveTicketsSession.HeaderText = "Сеанс";
-            this.slaveTicketsSession.Name = "slaveTicketsSession";
-            this.slaveTicketsSession.ReadOnly = true;
-            this.slaveTicketsSession.Width = 149;
-            // 
-            // slaveTicketPlace
-            // 
-            this.slaveTicketPlace.HeaderText = "Место";
-            this.slaveTicketPlace.Name = "slaveTicketPlace";
-            this.slaveTicketPlace.ReadOnly = true;
-            this.slaveTicketPlace.Width = 50;
-            // 
-            // slaveTicketRow
-            // 
-            this.slaveTicketRow.HeaderText = "Ряд";
-            this.slaveTicketRow.Name = "slaveTicketRow";
-            this.slaveTicketRow.ReadOnly = true;
-            this.slaveTicketRow.Width = 50;
+            this.ticketsSessionsGrid.Location = new System.Drawing.Point(12, 54);
+            this.ticketsSessionsGrid.Name = "ticketsSessionsGrid";
+            this.ticketsSessionsGrid.ReadOnly = true;
+            this.ticketsSessionsGrid.RowHeadersVisible = false;
+            this.ticketsSessionsGrid.Size = new System.Drawing.Size(302, 448);
+            this.ticketsSessionsGrid.TabIndex = 3;
             // 
             // ticketsSessionsCB
             // 
@@ -2302,9 +2276,44 @@
             this.filmsGenresAmount.AutoSize = true;
             this.filmsGenresAmount.Location = new System.Drawing.Point(270, 472);
             this.filmsGenresAmount.Name = "filmsGenresAmount";
-            this.filmsGenresAmount.Size = new System.Drawing.Size(71, 13);
+            this.filmsGenresAmount.Size = new System.Drawing.Size(0, 13);
             this.filmsGenresAmount.TabIndex = 4;
-            this.filmsGenresAmount.Text = "Нет записей";
+            // 
+            // ticketsSessionsAmount
+            // 
+            this.ticketsSessionsAmount.AutoSize = true;
+            this.ticketsSessionsAmount.Location = new System.Drawing.Point(270, 472);
+            this.ticketsSessionsAmount.Name = "ticketsSessionsAmount";
+            this.ticketsSessionsAmount.Size = new System.Drawing.Size(0, 13);
+            this.ticketsSessionsAmount.TabIndex = 5;
+            // 
+            // slaveTicketsID
+            // 
+            this.slaveTicketsID.HeaderText = "ID";
+            this.slaveTicketsID.Name = "slaveTicketsID";
+            this.slaveTicketsID.ReadOnly = true;
+            this.slaveTicketsID.Width = 50;
+            // 
+            // slaveTicketsSession
+            // 
+            this.slaveTicketsSession.HeaderText = "Фильм";
+            this.slaveTicketsSession.Name = "slaveTicketsSession";
+            this.slaveTicketsSession.ReadOnly = true;
+            this.slaveTicketsSession.Width = 149;
+            // 
+            // slaveTicketPlace
+            // 
+            this.slaveTicketPlace.HeaderText = "Место";
+            this.slaveTicketPlace.Name = "slaveTicketPlace";
+            this.slaveTicketPlace.ReadOnly = true;
+            this.slaveTicketPlace.Width = 50;
+            // 
+            // slaveTicketRow
+            // 
+            this.slaveTicketRow.HeaderText = "Ряд";
+            this.slaveTicketRow.Name = "slaveTicketRow";
+            this.slaveTicketRow.ReadOnly = true;
+            this.slaveTicketRow.Width = 50;
             // 
             // Form1
             // 
@@ -2371,7 +2380,7 @@
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsSessiosGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsSessionsGrid)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.filmsGenresGrid)).EndInit();
@@ -2561,7 +2570,7 @@
         private System.Windows.Forms.ComboBox ticketsSessionsCB;
         private System.Windows.Forms.ComboBox filmsGenresCB;
         private System.Windows.Forms.ComboBox filmsTicksCB;
-        private System.Windows.Forms.DataGridView ticketsSessiosGrid;
+        private System.Windows.Forms.DataGridView ticketsSessionsGrid;
         private System.Windows.Forms.DataGridView filmsGenresGrid;
         private System.Windows.Forms.DataGridView filmsTicksGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn slaveID;
@@ -2572,10 +2581,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsSessions;
         private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsRestr;
         private System.Windows.Forms.Label ticketsAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketsID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketsSession;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketPlace;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketRow;
         private System.Windows.Forms.Label sessionsAmount;
         private System.Windows.Forms.Label filmsAmount;
         private System.Windows.Forms.Label cashiersAmount;
@@ -2587,6 +2592,11 @@
         private System.Windows.Forms.Label filmsTicksNoEntriesLabel;
         private System.Windows.Forms.Label filmsTicksAmount;
         private System.Windows.Forms.Label filmsGenresAmount;
+        private System.Windows.Forms.Label ticketsSessionsAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketsID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketsSession;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketPlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketRow;
     }
 }
 
