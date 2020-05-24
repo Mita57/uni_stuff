@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<drivers>
+    <driver>
+        <code>1</code>
+        <name>Штаны</name>
+        <price>123</price>
+        <amount>2</amount>
+        <removed>False</removed>
+    </driver>
+    <driver>
+        <code>2</code>
+        <name>Стена</name>
+        <price>312</price>
+        <amount>3</amount>
+        <removed>False</removed>
+    </driver>
+    <driver>
+        <code>3</code>
+        <name>Мышь</name>
+        <price>2</price>
+        <amount>123</amount>
+        <removed>False</removed>
+    </driver>
+    <driver>
+        <code>3</code>
+        <name>Потолок</name>
+        <price>2</price>
+        <amount>123</amount>
+        <removed>False</removed>
+    </driver>
+    <driver>
+        <code>3</code>
+        <name>Руки</name>
+        <price>2</price>
+        <amount>123</amount>
+        <removed>False</removed>
+    </driver>
+    <driver>
+        <code>3</code>
+        <name>Мемесы</name>
+        <price>2</price>
+        <amount>123</amount>
+        <removed>False</removed>
+    </driver>
+</drivers>
