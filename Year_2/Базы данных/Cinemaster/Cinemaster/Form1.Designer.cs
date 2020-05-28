@@ -207,71 +207,71 @@
             this.coolRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ticketsSessionsAmount = new System.Windows.Forms.Label();
+            this.ticketsSessionsNoEntriesLabel = new System.Windows.Forms.Label();
             this.ticketsSessionsGrid = new System.Windows.Forms.DataGridView();
+            this.slaveTicketsID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveTicketsSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveTicketPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.slaveTicketRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ticketsSessionsCB = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.filmsGenresAmount = new System.Windows.Forms.Label();
+            this.filmsGenresNoEntriesLabel = new System.Windows.Forms.Label();
             this.filmsGenresGrid = new System.Windows.Forms.DataGridView();
             this.slaveFilmsID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slaveFilmsSessions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slaveFilmsRestr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filmsGenresCB = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.filmsTicksAmount = new System.Windows.Forms.Label();
+            this.filmsTicksNoEntriesLabel = new System.Windows.Forms.Label();
             this.filmsTicksGrid = new System.Windows.Forms.DataGridView();
             this.slaveID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slaveSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slavePlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slaveRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filmsTicksCB = new System.Windows.Forms.ComboBox();
-            this.filmsTicksNoEntriesLabel = new System.Windows.Forms.Label();
-            this.filmsGenresNoEntriesLabel = new System.Windows.Forms.Label();
-            this.ticketsSessionsNoEntriesLabel = new System.Windows.Forms.Label();
-            this.filmsTicksAmount = new System.Windows.Forms.Label();
-            this.filmsGenresAmount = new System.Windows.Forms.Label();
-            this.ticketsSessionsAmount = new System.Windows.Forms.Label();
-            this.slaveTicketsID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slaveTicketsSession = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slaveTicketPlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slaveTicketRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rooms.SuspendLayout();
             this.editRoomGroup.SuspendLayout();
             this.addRoomGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.roomsGrid)).BeginInit();
             this.cashiers.SuspendLayout();
             this.editCashierGroup.SuspendLayout();
             this.addCashierGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cashiersGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.cashiersGrid)).BeginInit();
             this.films.SuspendLayout();
             this.filmsEditGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsEditAgeRestr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsEditAgeRestr)).BeginInit();
             this.filmsAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsAddAgeRestr)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsAddAgeRestr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsGrid)).BeginInit();
             this.sessions.SuspendLayout();
             this.sessionsEditGroup.SuspendLayout();
             this.sessionsAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.sessionsGrid)).BeginInit();
             this.tickets.SuspendLayout();
             this.ticketsEditGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditSeat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditSeat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditRow)).BeginInit();
             this.ticketsAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddSeat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddSeat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsGrid)).BeginInit();
             this.tabControl.SuspendLayout();
             this.genres.SuspendLayout();
             this.editGenreGroup.SuspendLayout();
             this.genresAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.genresGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.genresGrid)).BeginInit();
             this.coolTickets.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.coolGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.coolGrid)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsSessionsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsSessionsGrid)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsGenresGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsGenresGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsTicksGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsTicksGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // rooms
@@ -443,9 +443,7 @@
             this.roomsGrid.AllowUserToAddRows = false;
             this.roomsGrid.AllowUserToDeleteRows = false;
             this.roomsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.roomsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.roomID,
-            this.roomName});
+            this.roomsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.roomID, this.roomName});
             this.roomsGrid.Location = new System.Drawing.Point(6, 5);
             this.roomsGrid.Name = "roomsGrid";
             this.roomsGrid.RowHeadersVisible = false;
@@ -634,11 +632,10 @@
             this.cashiersGrid.AllowUserToAddRows = false;
             this.cashiersGrid.AllowUserToDeleteRows = false;
             this.cashiersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cashiersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.cashierName});
+            this.cashiersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.ID, this.cashierName});
             this.cashiersGrid.Location = new System.Drawing.Point(6, 5);
             this.cashiersGrid.Name = "cashiersGrid";
+            this.cashiersGrid.ReadOnly = true;
             this.cashiersGrid.RowHeadersVisible = false;
             this.cashiersGrid.Size = new System.Drawing.Size(748, 515);
             this.cashiersGrid.TabIndex = 3;
@@ -648,12 +645,14 @@
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Width = 50;
             // 
             // cashierName
             // 
             this.cashierName.HeaderText = "Имя";
             this.cashierName.Name = "cashierName";
+            this.cashierName.ReadOnly = true;
             this.cashierName.Width = 694;
             // 
             // films
@@ -747,11 +746,7 @@
             // filmsEditGenreCB
             // 
             this.filmsEditGenreCB.FormattingEnabled = true;
-            this.filmsEditGenreCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
+            this.filmsEditGenreCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
             this.filmsEditGenreCB.Location = new System.Drawing.Point(67, 71);
             this.filmsEditGenreCB.Name = "filmsEditGenreCB";
             this.filmsEditGenreCB.Size = new System.Drawing.Size(186, 21);
@@ -848,11 +843,7 @@
             // filmsAddGenreCB
             // 
             this.filmsAddGenreCB.FormattingEnabled = true;
-            this.filmsAddGenreCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
+            this.filmsAddGenreCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
             this.filmsAddGenreCB.Location = new System.Drawing.Point(67, 71);
             this.filmsAddGenreCB.Name = "filmsAddGenreCB";
             this.filmsAddGenreCB.Size = new System.Drawing.Size(186, 21);
@@ -910,13 +901,10 @@
             this.filmsGrid.AllowUserToAddRows = false;
             this.filmsGrid.AllowUserToDeleteRows = false;
             this.filmsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.filmsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.filmID,
-            this.name,
-            this.genre,
-            this.ageRestr});
+            this.filmsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.filmID, this.name, this.genre, this.ageRestr});
             this.filmsGrid.Location = new System.Drawing.Point(6, 5);
             this.filmsGrid.Name = "filmsGrid";
+            this.filmsGrid.ReadOnly = true;
             this.filmsGrid.RowHeadersVisible = false;
             this.filmsGrid.Size = new System.Drawing.Size(748, 515);
             this.filmsGrid.TabIndex = 2;
@@ -926,24 +914,28 @@
             // 
             this.filmID.HeaderText = "ID";
             this.filmID.Name = "filmID";
+            this.filmID.ReadOnly = true;
             this.filmID.Width = 97;
             // 
             // name
             // 
             this.name.HeaderText = "Название";
             this.name.Name = "name";
+            this.name.ReadOnly = true;
             this.name.Width = 216;
             // 
             // genre
             // 
             this.genre.HeaderText = "Жанр";
             this.genre.Name = "genre";
+            this.genre.ReadOnly = true;
             this.genre.Width = 216;
             // 
             // ageRestr
             // 
             this.ageRestr.HeaderText = "Огр";
             this.ageRestr.Name = "ageRestr";
+            this.ageRestr.ReadOnly = true;
             this.ageRestr.Width = 216;
             // 
             // sessions
@@ -1006,11 +998,7 @@
             // sessionsEditCB
             // 
             this.sessionsEditCB.FormattingEnabled = true;
-            this.sessionsEditCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
+            this.sessionsEditCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
             this.sessionsEditCB.Location = new System.Drawing.Point(67, 151);
             this.sessionsEditCB.Name = "sessionsEditCB";
             this.sessionsEditCB.Size = new System.Drawing.Size(186, 21);
@@ -1055,11 +1043,7 @@
             // sessionsEditFilmCB
             // 
             this.sessionsEditFilmCB.FormattingEnabled = true;
-            this.sessionsEditFilmCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
+            this.sessionsEditFilmCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
             this.sessionsEditFilmCB.Location = new System.Drawing.Point(67, 97);
             this.sessionsEditFilmCB.Name = "sessionsEditFilmCB";
             this.sessionsEditFilmCB.Size = new System.Drawing.Size(186, 21);
@@ -1097,11 +1081,7 @@
             // sessionsEditRoomCB
             // 
             this.sessionsEditRoomCB.FormattingEnabled = true;
-            this.sessionsEditRoomCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
+            this.sessionsEditRoomCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
             this.sessionsEditRoomCB.Location = new System.Drawing.Point(67, 124);
             this.sessionsEditRoomCB.Name = "sessionsEditRoomCB";
             this.sessionsEditRoomCB.Size = new System.Drawing.Size(186, 21);
@@ -1160,11 +1140,7 @@
             // sessionsAddTypeCB
             // 
             this.sessionsAddTypeCB.FormattingEnabled = true;
-            this.sessionsAddTypeCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
+            this.sessionsAddTypeCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
             this.sessionsAddTypeCB.Location = new System.Drawing.Point(67, 151);
             this.sessionsAddTypeCB.Name = "sessionsAddTypeCB";
             this.sessionsAddTypeCB.Size = new System.Drawing.Size(186, 21);
@@ -1211,11 +1187,7 @@
             // sessionsAddFilmCB
             // 
             this.sessionsAddFilmCB.FormattingEnabled = true;
-            this.sessionsAddFilmCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
+            this.sessionsAddFilmCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
             this.sessionsAddFilmCB.Location = new System.Drawing.Point(67, 97);
             this.sessionsAddFilmCB.Name = "sessionsAddFilmCB";
             this.sessionsAddFilmCB.Size = new System.Drawing.Size(186, 21);
@@ -1253,11 +1225,7 @@
             // sessionsAddRoomCB
             // 
             this.sessionsAddRoomCB.FormattingEnabled = true;
-            this.sessionsAddRoomCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
+            this.sessionsAddRoomCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
             this.sessionsAddRoomCB.Location = new System.Drawing.Point(67, 124);
             this.sessionsAddRoomCB.Name = "sessionsAddRoomCB";
             this.sessionsAddRoomCB.Size = new System.Drawing.Size(186, 21);
@@ -1308,15 +1276,10 @@
             this.sessionsGrid.AllowUserToAddRows = false;
             this.sessionsGrid.AllowUserToDeleteRows = false;
             this.sessionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sessionID,
-            this.date,
-            this.time,
-            this.film,
-            this.room,
-            this.type});
+            this.sessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.sessionID, this.date, this.time, this.film, this.room, this.type});
             this.sessionsGrid.Location = new System.Drawing.Point(6, 5);
             this.sessionsGrid.Name = "sessionsGrid";
+            this.sessionsGrid.ReadOnly = true;
             this.sessionsGrid.RowHeadersVisible = false;
             this.sessionsGrid.Size = new System.Drawing.Size(748, 515);
             this.sessionsGrid.TabIndex = 1;
@@ -1326,36 +1289,42 @@
             // 
             this.sessionID.HeaderText = "ID";
             this.sessionID.Name = "sessionID";
+            this.sessionID.ReadOnly = true;
             this.sessionID.Width = 95;
             // 
             // date
             // 
             this.date.HeaderText = "Дата";
             this.date.Name = "date";
+            this.date.ReadOnly = true;
             this.date.Width = 130;
             // 
             // time
             // 
             this.time.HeaderText = "Время";
             this.time.Name = "time";
+            this.time.ReadOnly = true;
             this.time.Width = 130;
             // 
             // film
             // 
             this.film.HeaderText = "Фильм";
             this.film.Name = "film";
+            this.film.ReadOnly = true;
             this.film.Width = 130;
             // 
             // room
             // 
             this.room.HeaderText = "Зал";
             this.room.Name = "room";
+            this.room.ReadOnly = true;
             this.room.Width = 130;
             // 
             // type
             // 
             this.type.HeaderText = "Тип";
             this.type.Name = "type";
+            this.type.ReadOnly = true;
             this.type.Width = 130;
             // 
             // tickets
@@ -1416,19 +1385,11 @@
             // ticketsEditSeat
             // 
             this.ticketsEditSeat.Location = new System.Drawing.Point(67, 96);
-            this.ticketsEditSeat.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.ticketsEditSeat.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.ticketsEditSeat.Name = "ticketsEditSeat";
             this.ticketsEditSeat.Size = new System.Drawing.Size(186, 20);
             this.ticketsEditSeat.TabIndex = 12;
-            this.ticketsEditSeat.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.ticketsEditSeat.Value = new decimal(new int[] {1, 0, 0, 0});
             // 
             // label4
             // 
@@ -1442,28 +1403,16 @@
             // ticketsEditRow
             // 
             this.ticketsEditRow.Location = new System.Drawing.Point(67, 121);
-            this.ticketsEditRow.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.ticketsEditRow.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.ticketsEditRow.Name = "ticketsEditRow";
             this.ticketsEditRow.Size = new System.Drawing.Size(186, 20);
             this.ticketsEditRow.TabIndex = 10;
-            this.ticketsEditRow.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.ticketsEditRow.Value = new decimal(new int[] {1, 0, 0, 0});
             // 
             // ticketsEditSessionCB
             // 
             this.ticketsEditSessionCB.FormattingEnabled = true;
-            this.ticketsEditSessionCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
+            this.ticketsEditSessionCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
             this.ticketsEditSessionCB.Location = new System.Drawing.Point(67, 70);
             this.ticketsEditSessionCB.Name = "ticketsEditSessionCB";
             this.ticketsEditSessionCB.Size = new System.Drawing.Size(186, 21);
@@ -1568,19 +1517,11 @@
             // ticketsAddSeat
             // 
             this.ticketsAddSeat.Location = new System.Drawing.Point(67, 96);
-            this.ticketsAddSeat.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.ticketsAddSeat.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.ticketsAddSeat.Name = "ticketsAddSeat";
             this.ticketsAddSeat.Size = new System.Drawing.Size(186, 20);
             this.ticketsAddSeat.TabIndex = 12;
-            this.ticketsAddSeat.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.ticketsAddSeat.Value = new decimal(new int[] {1, 0, 0, 0});
             this.ticketsAddSeat.ValueChanged += new System.EventHandler(this.TicketsAddValidation);
             // 
             // label39
@@ -1595,29 +1536,17 @@
             // ticketsAddRow
             // 
             this.ticketsAddRow.Location = new System.Drawing.Point(67, 121);
-            this.ticketsAddRow.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.ticketsAddRow.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.ticketsAddRow.Name = "ticketsAddRow";
             this.ticketsAddRow.Size = new System.Drawing.Size(186, 20);
             this.ticketsAddRow.TabIndex = 10;
-            this.ticketsAddRow.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.ticketsAddRow.Value = new decimal(new int[] {1, 0, 0, 0});
             this.ticketsAddRow.ValueChanged += new System.EventHandler(this.TicketsAddValidation);
             // 
             // ticketsAddSessionCB
             // 
             this.ticketsAddSessionCB.FormattingEnabled = true;
-            this.ticketsAddSessionCB.Items.AddRange(new object[] {
-            "2D",
-            "3D",
-            "IMAX 2D",
-            "IMAX 3D"});
+            this.ticketsAddSessionCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
             this.ticketsAddSessionCB.Location = new System.Drawing.Point(67, 70);
             this.ticketsAddSessionCB.Name = "ticketsAddSessionCB";
             this.ticketsAddSessionCB.Size = new System.Drawing.Size(186, 21);
@@ -1694,12 +1623,7 @@
             this.ticketsGrid.AllowUserToAddRows = false;
             this.ticketsGrid.AllowUserToDeleteRows = false;
             this.ticketsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ticketsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ticketID,
-            this.session,
-            this.cashier,
-            this.seat,
-            this.row});
+            this.ticketsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.ticketID, this.session, this.cashier, this.seat, this.row});
             this.ticketsGrid.Location = new System.Drawing.Point(6, 5);
             this.ticketsGrid.Name = "ticketsGrid";
             this.ticketsGrid.RowHeadersVisible = false;
@@ -1922,9 +1846,7 @@
             this.genresGrid.AllowUserToAddRows = false;
             this.genresGrid.AllowUserToDeleteRows = false;
             this.genresGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.genresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.genreID,
-            this.genreName});
+            this.genresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.genreID, this.genreName});
             this.genresGrid.Location = new System.Drawing.Point(6, 5);
             this.genresGrid.Name = "genresGrid";
             this.genresGrid.RowHeadersVisible = false;
@@ -1977,19 +1899,7 @@
             // coolGrid
             // 
             this.coolGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.coolGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.coolId,
-            this.coolFilm,
-            this.coolSession,
-            this.coolDate,
-            this.coolTime,
-            this.coolType,
-            this.coolCashier,
-            this.coolAgeRestr,
-            this.coolGenre,
-            this.coolRoom,
-            this.coolPlace,
-            this.coolRow});
+            this.coolGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.coolId, this.coolFilm, this.coolSession, this.coolDate, this.coolTime, this.coolType, this.coolCashier, this.coolAgeRestr, this.coolGenre, this.coolRoom, this.coolPlace, this.coolRow});
             this.coolGrid.Location = new System.Drawing.Point(-4, 0);
             this.coolGrid.Name = "coolGrid";
             this.coolGrid.RowHeadersVisible = false;
@@ -2090,20 +2000,61 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Билеты по сеансам";
             // 
+            // ticketsSessionsAmount
+            // 
+            this.ticketsSessionsAmount.AutoSize = true;
+            this.ticketsSessionsAmount.Location = new System.Drawing.Point(270, 472);
+            this.ticketsSessionsAmount.Name = "ticketsSessionsAmount";
+            this.ticketsSessionsAmount.Size = new System.Drawing.Size(0, 13);
+            this.ticketsSessionsAmount.TabIndex = 5;
+            // 
+            // ticketsSessionsNoEntriesLabel
+            // 
+            this.ticketsSessionsNoEntriesLabel.AutoSize = true;
+            this.ticketsSessionsNoEntriesLabel.Location = new System.Drawing.Point(125, 278);
+            this.ticketsSessionsNoEntriesLabel.Name = "ticketsSessionsNoEntriesLabel";
+            this.ticketsSessionsNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
+            this.ticketsSessionsNoEntriesLabel.TabIndex = 4;
+            this.ticketsSessionsNoEntriesLabel.Text = "Нет записей";
+            // 
             // ticketsSessionsGrid
             // 
             this.ticketsSessionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ticketsSessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.slaveTicketsID,
-            this.slaveTicketsSession,
-            this.slaveTicketPlace,
-            this.slaveTicketRow});
+            this.ticketsSessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.slaveTicketsID, this.slaveTicketsSession, this.slaveTicketPlace, this.slaveTicketRow});
             this.ticketsSessionsGrid.Location = new System.Drawing.Point(12, 54);
             this.ticketsSessionsGrid.Name = "ticketsSessionsGrid";
             this.ticketsSessionsGrid.ReadOnly = true;
             this.ticketsSessionsGrid.RowHeadersVisible = false;
             this.ticketsSessionsGrid.Size = new System.Drawing.Size(302, 448);
             this.ticketsSessionsGrid.TabIndex = 3;
+            // 
+            // slaveTicketsID
+            // 
+            this.slaveTicketsID.HeaderText = "ID";
+            this.slaveTicketsID.Name = "slaveTicketsID";
+            this.slaveTicketsID.ReadOnly = true;
+            this.slaveTicketsID.Width = 50;
+            // 
+            // slaveTicketsSession
+            // 
+            this.slaveTicketsSession.HeaderText = "Фильм";
+            this.slaveTicketsSession.Name = "slaveTicketsSession";
+            this.slaveTicketsSession.ReadOnly = true;
+            this.slaveTicketsSession.Width = 149;
+            // 
+            // slaveTicketPlace
+            // 
+            this.slaveTicketPlace.HeaderText = "Место";
+            this.slaveTicketPlace.Name = "slaveTicketPlace";
+            this.slaveTicketPlace.ReadOnly = true;
+            this.slaveTicketPlace.Width = 50;
+            // 
+            // slaveTicketRow
+            // 
+            this.slaveTicketRow.HeaderText = "Ряд";
+            this.slaveTicketRow.Name = "slaveTicketRow";
+            this.slaveTicketRow.ReadOnly = true;
+            this.slaveTicketRow.Width = 50;
             // 
             // ticketsSessionsCB
             // 
@@ -2127,13 +2078,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Фильмы по жанрам";
             // 
+            // filmsGenresAmount
+            // 
+            this.filmsGenresAmount.AutoSize = true;
+            this.filmsGenresAmount.Location = new System.Drawing.Point(270, 472);
+            this.filmsGenresAmount.Name = "filmsGenresAmount";
+            this.filmsGenresAmount.Size = new System.Drawing.Size(0, 13);
+            this.filmsGenresAmount.TabIndex = 4;
+            // 
+            // filmsGenresNoEntriesLabel
+            // 
+            this.filmsGenresNoEntriesLabel.AutoSize = true;
+            this.filmsGenresNoEntriesLabel.Location = new System.Drawing.Point(121, 278);
+            this.filmsGenresNoEntriesLabel.Name = "filmsGenresNoEntriesLabel";
+            this.filmsGenresNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
+            this.filmsGenresNoEntriesLabel.TabIndex = 3;
+            this.filmsGenresNoEntriesLabel.Text = "Нет записей";
+            // 
             // filmsGenresGrid
             // 
             this.filmsGenresGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.filmsGenresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.slaveFilmsID,
-            this.slaveFilmsSessions,
-            this.slaveFilmsRestr});
+            this.filmsGenresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.slaveFilmsID, this.slaveFilmsSessions, this.slaveFilmsRestr});
             this.filmsGenresGrid.Location = new System.Drawing.Point(12, 54);
             this.filmsGenresGrid.Name = "filmsGenresGrid";
             this.filmsGenresGrid.ReadOnly = true;
@@ -2184,14 +2149,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Билеты по фильмам";
             // 
+            // filmsTicksAmount
+            // 
+            this.filmsTicksAmount.AutoSize = true;
+            this.filmsTicksAmount.Location = new System.Drawing.Point(270, 472);
+            this.filmsTicksAmount.Name = "filmsTicksAmount";
+            this.filmsTicksAmount.Size = new System.Drawing.Size(0, 13);
+            this.filmsTicksAmount.TabIndex = 3;
+            // 
+            // filmsTicksNoEntriesLabel
+            // 
+            this.filmsTicksNoEntriesLabel.AutoSize = true;
+            this.filmsTicksNoEntriesLabel.Location = new System.Drawing.Point(117, 278);
+            this.filmsTicksNoEntriesLabel.Name = "filmsTicksNoEntriesLabel";
+            this.filmsTicksNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
+            this.filmsTicksNoEntriesLabel.TabIndex = 2;
+            this.filmsTicksNoEntriesLabel.Text = "Нет записей";
+            // 
             // filmsTicksGrid
             // 
             this.filmsTicksGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.filmsTicksGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.slaveID,
-            this.slaveSession,
-            this.slavePlace,
-            this.slaveRow});
+            this.filmsTicksGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.slaveID, this.slaveSession, this.slavePlace, this.slaveRow});
             this.filmsTicksGrid.Location = new System.Drawing.Point(12, 54);
             this.filmsTicksGrid.Name = "filmsTicksGrid";
             this.filmsTicksGrid.ReadOnly = true;
@@ -2236,92 +2214,13 @@
             this.filmsTicksCB.TabIndex = 0;
             this.filmsTicksCB.SelectedIndexChanged += new System.EventHandler(this.filmsTicksCB_SelectedIndexChanged);
             // 
-            // filmsTicksNoEntriesLabel
-            // 
-            this.filmsTicksNoEntriesLabel.AutoSize = true;
-            this.filmsTicksNoEntriesLabel.Location = new System.Drawing.Point(117, 278);
-            this.filmsTicksNoEntriesLabel.Name = "filmsTicksNoEntriesLabel";
-            this.filmsTicksNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
-            this.filmsTicksNoEntriesLabel.TabIndex = 2;
-            this.filmsTicksNoEntriesLabel.Text = "Нет записей";
-            // 
-            // filmsGenresNoEntriesLabel
-            // 
-            this.filmsGenresNoEntriesLabel.AutoSize = true;
-            this.filmsGenresNoEntriesLabel.Location = new System.Drawing.Point(121, 278);
-            this.filmsGenresNoEntriesLabel.Name = "filmsGenresNoEntriesLabel";
-            this.filmsGenresNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
-            this.filmsGenresNoEntriesLabel.TabIndex = 3;
-            this.filmsGenresNoEntriesLabel.Text = "Нет записей";
-            // 
-            // ticketsSessionsNoEntriesLabel
-            // 
-            this.ticketsSessionsNoEntriesLabel.AutoSize = true;
-            this.ticketsSessionsNoEntriesLabel.Location = new System.Drawing.Point(125, 278);
-            this.ticketsSessionsNoEntriesLabel.Name = "ticketsSessionsNoEntriesLabel";
-            this.ticketsSessionsNoEntriesLabel.Size = new System.Drawing.Size(71, 13);
-            this.ticketsSessionsNoEntriesLabel.TabIndex = 4;
-            this.ticketsSessionsNoEntriesLabel.Text = "Нет записей";
-            // 
-            // filmsTicksAmount
-            // 
-            this.filmsTicksAmount.AutoSize = true;
-            this.filmsTicksAmount.Location = new System.Drawing.Point(270, 472);
-            this.filmsTicksAmount.Name = "filmsTicksAmount";
-            this.filmsTicksAmount.Size = new System.Drawing.Size(0, 13);
-            this.filmsTicksAmount.TabIndex = 3;
-            // 
-            // filmsGenresAmount
-            // 
-            this.filmsGenresAmount.AutoSize = true;
-            this.filmsGenresAmount.Location = new System.Drawing.Point(270, 472);
-            this.filmsGenresAmount.Name = "filmsGenresAmount";
-            this.filmsGenresAmount.Size = new System.Drawing.Size(0, 13);
-            this.filmsGenresAmount.TabIndex = 4;
-            // 
-            // ticketsSessionsAmount
-            // 
-            this.ticketsSessionsAmount.AutoSize = true;
-            this.ticketsSessionsAmount.Location = new System.Drawing.Point(270, 472);
-            this.ticketsSessionsAmount.Name = "ticketsSessionsAmount";
-            this.ticketsSessionsAmount.Size = new System.Drawing.Size(0, 13);
-            this.ticketsSessionsAmount.TabIndex = 5;
-            // 
-            // slaveTicketsID
-            // 
-            this.slaveTicketsID.HeaderText = "ID";
-            this.slaveTicketsID.Name = "slaveTicketsID";
-            this.slaveTicketsID.ReadOnly = true;
-            this.slaveTicketsID.Width = 50;
-            // 
-            // slaveTicketsSession
-            // 
-            this.slaveTicketsSession.HeaderText = "Фильм";
-            this.slaveTicketsSession.Name = "slaveTicketsSession";
-            this.slaveTicketsSession.ReadOnly = true;
-            this.slaveTicketsSession.Width = 149;
-            // 
-            // slaveTicketPlace
-            // 
-            this.slaveTicketPlace.HeaderText = "Место";
-            this.slaveTicketPlace.Name = "slaveTicketPlace";
-            this.slaveTicketPlace.ReadOnly = true;
-            this.slaveTicketPlace.Width = 50;
-            // 
-            // slaveTicketRow
-            // 
-            this.slaveTicketRow.HeaderText = "Ряд";
-            this.slaveTicketRow.Name = "slaveTicketRow";
-            this.slaveTicketRow.ReadOnly = true;
-            this.slaveTicketRow.Width = 50;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 551);
             this.Controls.Add(this.tabControl);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Cinemaster";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -2331,41 +2230,41 @@
             this.editRoomGroup.PerformLayout();
             this.addRoomGroup.ResumeLayout(false);
             this.addRoomGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.roomsGrid)).EndInit();
             this.cashiers.ResumeLayout(false);
             this.cashiers.PerformLayout();
             this.editCashierGroup.ResumeLayout(false);
             this.editCashierGroup.PerformLayout();
             this.addCashierGroup.ResumeLayout(false);
             this.addCashierGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cashiersGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.cashiersGrid)).EndInit();
             this.films.ResumeLayout(false);
             this.films.PerformLayout();
             this.filmsEditGroup.ResumeLayout(false);
             this.filmsEditGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsEditAgeRestr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsEditAgeRestr)).EndInit();
             this.filmsAddGroup.ResumeLayout(false);
             this.filmsAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsAddAgeRestr)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsAddAgeRestr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsGrid)).EndInit();
             this.sessions.ResumeLayout(false);
             this.sessions.PerformLayout();
             this.sessionsEditGroup.ResumeLayout(false);
             this.sessionsEditGroup.PerformLayout();
             this.sessionsAddGroup.ResumeLayout(false);
             this.sessionsAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sessionsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.sessionsGrid)).EndInit();
             this.tickets.ResumeLayout(false);
             this.tickets.PerformLayout();
             this.ticketsEditGroup.ResumeLayout(false);
             this.ticketsEditGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditSeat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditSeat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditRow)).EndInit();
             this.ticketsAddGroup.ResumeLayout(false);
             this.ticketsAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddSeat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddSeat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsGrid)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.genres.ResumeLayout(false);
             this.genres.PerformLayout();
@@ -2373,22 +2272,21 @@
             this.editGenreGroup.PerformLayout();
             this.genresAddGroup.ResumeLayout(false);
             this.genresAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.genresGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.genresGrid)).EndInit();
             this.coolTickets.ResumeLayout(false);
             this.coolTickets.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.coolGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.coolGrid)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsSessionsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.ticketsSessionsGrid)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsGenresGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsGenresGrid)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.filmsTicksGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.filmsTicksGrid)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         private System.Windows.Forms.Button addCashierButton;
@@ -2407,10 +2305,26 @@
         private System.Windows.Forms.TextBox cashierEditNameTB;
         private System.Windows.Forms.DataGridViewTextBoxColumn cashierName;
         private System.Windows.Forms.TabPage cashiers;
+        private System.Windows.Forms.Label cashiersAmount;
         private System.Windows.Forms.DataGridView cashiersGrid;
         private System.Windows.Forms.Label cashiersNoEntriesLabel;
         private System.Windows.Forms.Button changeFilmButton;
         private System.Windows.Forms.Button changeGenreButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolAgeRestr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolCashier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolFilm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolGenre;
+        private System.Windows.Forms.DataGridView coolGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolPlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolRoom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolSession;
+        private System.Windows.Forms.TabPage coolTickets;
+        private System.Windows.Forms.Label coolTicketsNoEntriesLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coolType;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.Button deleteGenreButton;
         private System.Windows.Forms.Button deleteRoomButton;
@@ -2425,15 +2339,25 @@
         private System.Windows.Forms.GroupBox filmsAddGroup;
         private System.Windows.Forms.TextBox filmsAddIDField;
         private System.Windows.Forms.TextBox filmsAddNameField;
+        private System.Windows.Forms.Label filmsAmount;
         private System.Windows.Forms.Button filmsDeleteButton;
         private System.Windows.Forms.NumericUpDown filmsEditAgeRestr;
         private System.Windows.Forms.ComboBox filmsEditGenreCB;
         private System.Windows.Forms.GroupBox filmsEditGroup;
         private System.Windows.Forms.TextBox filmsEditIDField;
         private System.Windows.Forms.TextBox filmsEditNameField;
+        private System.Windows.Forms.Label filmsGenresAmount;
+        private System.Windows.Forms.ComboBox filmsGenresCB;
+        private System.Windows.Forms.DataGridView filmsGenresGrid;
+        private System.Windows.Forms.Label filmsGenresNoEntriesLabel;
         private System.Windows.Forms.DataGridView filmsGrid;
         private System.Windows.Forms.Label filmsNoEntriesLabel;
+        private System.Windows.Forms.Label filmsTicksAmount;
+        private System.Windows.Forms.ComboBox filmsTicksCB;
+        private System.Windows.Forms.DataGridView filmsTicksGrid;
+        private System.Windows.Forms.Label filmsTicksNoEntriesLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn genre;
+        private System.Windows.Forms.Label genreAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn genreID;
         private System.Windows.Forms.DataGridViewTextBoxColumn genreName;
         private System.Windows.Forms.TabPage genres;
@@ -2444,6 +2368,9 @@
         private System.Windows.Forms.TextBox genresEditNameField;
         private System.Windows.Forms.DataGridView genresGrid;
         private System.Windows.Forms.Label genresNoEntriesLabel;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
@@ -2495,6 +2422,7 @@
         private System.Windows.Forms.TabPage rooms;
         private System.Windows.Forms.TextBox roomsAddIDField;
         private System.Windows.Forms.TextBox roomsAddNameField;
+        private System.Windows.Forms.Label roomsAmount;
         private System.Windows.Forms.TextBox roomsEditIDField;
         private System.Windows.Forms.TextBox roomsEditNameField;
         private System.Windows.Forms.DataGridView roomsGrid;
@@ -2513,6 +2441,7 @@
         private System.Windows.Forms.ComboBox sessionsAddRoomCB;
         private System.Windows.Forms.DateTimePicker sessionsAddTimePicker;
         private System.Windows.Forms.ComboBox sessionsAddTypeCB;
+        private System.Windows.Forms.Label sessionsAmount;
         private System.Windows.Forms.Button sessionsDeleteButton;
         private System.Windows.Forms.ComboBox sessionsEditCB;
         private System.Windows.Forms.DateTimePicker sessionsEditDatePicker;
@@ -2522,8 +2451,19 @@
         private System.Windows.Forms.ComboBox sessionsEditRoomCB;
         private System.Windows.Forms.DataGridView sessionsGrid;
         private System.Windows.Forms.Label sessionsNoEntriesLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsRestr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsSessions;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slavePlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveSession;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketPlace;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketRow;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketsID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketsSession;
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage coolTickets;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ticketID;
         private System.Windows.Forms.TabPage tickets;
         private System.Windows.Forms.ComboBox ticketsAddCashierCB;
@@ -2532,6 +2472,7 @@
         private System.Windows.Forms.NumericUpDown ticketsAddRow;
         private System.Windows.Forms.NumericUpDown ticketsAddSeat;
         private System.Windows.Forms.ComboBox ticketsAddSessionCB;
+        private System.Windows.Forms.Label ticketsAmount;
         private System.Windows.Forms.Button ticketsDeleteButton;
         private System.Windows.Forms.ComboBox ticketsEditCashierCB;
         private System.Windows.Forms.TextBox ticketsEditField;
@@ -2541,62 +2482,18 @@
         private System.Windows.Forms.ComboBox ticketsEditSessionCB;
         private System.Windows.Forms.DataGridView ticketsGrid;
         private System.Windows.Forms.Label ticketsNoEntriesLabel;
+        private System.Windows.Forms.Label ticketsSessionsAmount;
+        private System.Windows.Forms.ComboBox ticketsSessionsCB;
+        private System.Windows.Forms.DataGridView ticketsSessionsGrid;
+        private System.Windows.Forms.Label ticketsSessionsNoEntriesLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
+        private System.Windows.Forms.Label totalAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
         private System.Windows.Forms.Button updateCashierButton;
         private System.Windows.Forms.Button updateRoomButton;
         private System.Windows.Forms.Button updateTicketButton;
 
         #endregion
-
-        private System.Windows.Forms.DataGridView coolGrid;
-        private System.Windows.Forms.Label coolTicketsNoEntriesLabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coolId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coolFilm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coolSession;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coolDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coolTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coolType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coolCashier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coolAgeRestr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coolGenre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coolRoom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coolPlace;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coolRow;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox ticketsSessionsCB;
-        private System.Windows.Forms.ComboBox filmsGenresCB;
-        private System.Windows.Forms.ComboBox filmsTicksCB;
-        private System.Windows.Forms.DataGridView ticketsSessionsGrid;
-        private System.Windows.Forms.DataGridView filmsGenresGrid;
-        private System.Windows.Forms.DataGridView filmsTicksGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveSession;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slavePlace;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveRow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsSessions;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveFilmsRestr;
-        private System.Windows.Forms.Label ticketsAmount;
-        private System.Windows.Forms.Label sessionsAmount;
-        private System.Windows.Forms.Label filmsAmount;
-        private System.Windows.Forms.Label cashiersAmount;
-        private System.Windows.Forms.Label roomsAmount;
-        private System.Windows.Forms.Label genreAmount;
-        private System.Windows.Forms.Label totalAmount;
-        private System.Windows.Forms.Label ticketsSessionsNoEntriesLabel;
-        private System.Windows.Forms.Label filmsGenresNoEntriesLabel;
-        private System.Windows.Forms.Label filmsTicksNoEntriesLabel;
-        private System.Windows.Forms.Label filmsTicksAmount;
-        private System.Windows.Forms.Label filmsGenresAmount;
-        private System.Windows.Forms.Label ticketsSessionsAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketsID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketsSession;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketPlace;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slaveTicketRow;
     }
 }
 
