@@ -877,6 +877,8 @@ namespace Cinemaster
 
         }
 
+        // slaaaves
+
         private void filmsGenresCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             filmsGenresGrid.Rows.Clear();
@@ -926,15 +928,17 @@ namespace Cinemaster
             }
         }
 
+        // searching stuff
+
         private void searchTicketsButton_Click(object sender, EventArgs e)
         {
             Ticket[] tickets = (Ticket[])Erm.GetAll("tickets");
             List<Ticket> newTicks = new List<Ticket>();
-            string query = searchTicketsTB.Text;
+            string query = searchTicketsTB.Text.ToUpper();
             foreach (Ticket tick in tickets)
             {
-                if (tick.Cashier.Contains(query) || tick.CashierId.ToString().Contains(query) || tick.Id.ToString().Contains(query)
-                    || tick.Row.ToString().Contains(query) || tick.Seat.ToString().Contains(query) || tick.SessionId.ToString().Contains(query))
+                if (tick.Cashier.ToUpper().Contains(query) || tick.CashierId.ToString().ToUpper().Contains(query) || tick.Id.ToString().ToUpper().Contains(query)
+                    || tick.Row.ToString().ToUpper().Contains(query) || tick.Seat.ToString().ToUpper().Contains(query) || tick.SessionId.ToString().Contains(query))
                 {
                     newTicks.Add(tick);
                 }
@@ -943,6 +947,7 @@ namespace Cinemaster
             Session[] sessions = (Session[])Erm.GetAll("sessions");
             ticketsGrid.Rows.Clear();
             ticketsGrid.RowCount = newTicks.Count;
+            ticketsAmount.Text = newTicks.Count.ToString();
 
             for (int i = 0; i < newTicks.Count; i++)
             {
@@ -976,13 +981,13 @@ namespace Cinemaster
         private void searchSessionsBtn_Click(object sender, EventArgs e)
         {
             Session[] sessions = (Session[])Erm.GetAll("sessions");
-            string query = searchSessionsTB.Text;
+            string query = searchSessionsTB.Text.ToUpper();
             List<Session> newSessions = new List<Session>();
 
             foreach(Session ses in sessions)
             {
-                if (ses.Id.ToString().Contains(query) || ses.Date.ToString().Contains(query) || ses.Time.ToString().Contains(query)
-                    || ses.Film.Contains(query) || ses.Room.Contains(query) || ses.Type.Contains(query))
+                if (ses.Id.ToString().Contains(query) || ses.Date.ToString().ToUpper().Contains(query) || ses.Time.ToString().ToUpper().Contains(query)
+                    || ses.Film.ToUpper().Contains(query) || ses.Room.ToUpper().Contains(query) || ses.Type.ToUpper().Contains(query))
                 {
                     newSessions.Add(ses);
                 }
@@ -990,6 +995,7 @@ namespace Cinemaster
 
             sessionsGrid.Rows.Clear();
             sessionsGrid.RowCount = newSessions.Count;
+            sessionsAmount.Text = newSessions.Count.ToString();
 
             for(int i = 0; i < newSessions.Count; i++)
             {
@@ -1007,6 +1013,135 @@ namespace Cinemaster
             if(string.IsNullOrEmpty(searchSessionsTB.Text))
             {
                 this.TabControl1_Selected(null, null);
+            }
+        }
+
+        private void searchFilmsBtn_Click(object sender, EventArgs e)
+        {
+            Film[] films = (Film[])Erm.GetAll("films");
+            string query = searchFilmsTB.Text.ToUpper();
+            List<Film> newFilms = new List<Film>();
+
+            foreach(Film f in films)
+            {
+                if(f.Id.ToString().ToUpper().Contains(query) || f.Name.ToUpper().Contains(query)
+                    || f.Genre.ToUpper().Contains(query) || f.AgeRest.ToString().ToUpper().Contains(query))
+                {
+                    newFilms.Add(f);
+                }
+            }
+
+            filmsGrid.Rows.Clear();
+            filmsGrid.RowCount = newFilms.Count;
+
+            for(int i = 0; i < newFilms.Count; i++)
+            {
+                filmsGrid.Rows[i].Cells[0].Value = newFilms[i].Id;
+                filmsGrid.Rows[i].Cells[1].Value = newFilms[i].Name;
+                filmsGrid.Rows[i].Cells[2].Value = newFilms[i].Genre;
+                filmsGrid.Rows[i].Cells[3].Value = newFilms[i].AgeRest;
+            }
+
+            filmsAmount.Text = newFilms.Count.ToString();
+
+        }
+
+        private void searchFilmsTB_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(searchFilmsTB.Text))
+            {
+                this.TabControl1_Selected(null, null);
+            }
+        }
+
+        private void searchCashiersBtn_Click(object sender, EventArgs e)
+        {
+            Cashier[] cashiers = (Cashier[])Erm.GetAll("cashiers");
+            List<Cashier> newCashiers = new List<Cashier>();
+            string query = searchCashiersTB.Text.ToUpper();
+
+            foreach(Cashier cas in cashiers)
+            {
+                if(cas.Id.ToString().ToUpper().Contains(query) || cas.Name.ToUpper().Contains(query))
+                {
+                    newCashiers.Add(cas);
+                }
+            }
+
+            cashiersGrid.Rows.Clear();
+            cashiersAmount.Text = newCashiers.Count.ToString();
+            cashiersGrid.RowCount = newCashiers.Count;
+
+            for(int i = 0; i < newCashiers.Count; i++)
+            {
+                cashiersGrid.Rows[i].Cells[0].Value = newCashiers[i].Id;
+                cashiersGrid.Rows[i].Cells[1].Value = newCashiers[i].Name;
+            }
+        }
+
+        private void searchCashiersTB_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(searchCashiersTB.Text))
+            {
+                TabControl1_Selected(null, null);
+            }
+        }
+
+        private void searchRoomsBtn_Click(object sender, EventArgs e)
+        {
+            Room[] rooms = (Room[])Erm.GetAll("rooms");
+            List<Room> newRooms = new List<Room>();
+            string query = searchRoomsTB.Text.ToUpper();
+
+            foreach (Room ror in rooms)
+            {
+                if (ror.Id.ToString().ToUpper().Contains(query) || ror.Name.ToUpper().Contains(query))
+                {
+                    newRooms.Add(ror);
+                }
+            }
+
+            roomsGrid.Rows.Clear();
+            roomsAmount.Text = newRooms.Count.ToString();
+            roomsGrid.RowCount = newRooms.Count;
+
+            for (int i = 0; i < newRooms.Count; i++)
+            {
+                roomsGrid.Rows[i].Cells[0].Value = newRooms[i].Id;
+                roomsGrid.Rows[i].Cells[1].Value = newRooms[i].Name;
+            }
+        }
+
+        private void searchRoomsTB_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(searchCashiersTB.Text))
+            {
+                this.TabControl1_Selected(null, null);
+            }
+        }
+
+        private void searchGenresBtn_Click(object sender, EventArgs e)
+        {
+            Genre[] genres= (Genre[])Erm.GetAll("genres");
+            List<Genre> newGenres = new List<Genre>();
+            string query = searchGenresTB.Text.ToUpper();
+
+            foreach (Genre gen in genres)
+            {
+                if (gen.Id.ToString().ToUpper().Contains(query) || gen.Name.ToUpper().Contains(query))
+                {
+                    newGenres.Add(gen);
+                }
+            }
+
+            genresGrid.Rows.Clear();
+            genreAmount.Text = newGenres.Count.ToString();
+            genresGrid.RowCount = newGenres.Count;
+
+            for (int i = 0; i < newGenres.Count; i++)
+            {
+                genresGrid.Rows[i].Cells[0].Value = newGenres[i].Id;
+                genresGrid.Rows[i].Cells[1].Value = newGenres[i].Name;
             }
         }
     }

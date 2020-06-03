@@ -239,17 +239,17 @@
             this.searchSessionsBtn = new System.Windows.Forms.Button();
             this.searchSessionsTB = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.searchFilmsBtn = new System.Windows.Forms.Button();
+            this.searchFilmsTB = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.searchCashiersBtn = new System.Windows.Forms.Button();
+            this.searchCashiersTB = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.searchRoomsBtn = new System.Windows.Forms.Button();
+            this.searchRoomsTB = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.searchGenresBtn = new System.Windows.Forms.Button();
+            this.searchGenresTB = new System.Windows.Forms.TextBox();
             this.rooms.SuspendLayout();
             this.editRoomGroup.SuspendLayout();
             this.addRoomGroup.SuspendLayout();
@@ -2420,8 +2420,8 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button3);
-            this.groupBox5.Controls.Add(this.textBox3);
+            this.groupBox5.Controls.Add(this.searchFilmsBtn);
+            this.groupBox5.Controls.Add(this.searchFilmsTB);
             this.groupBox5.Location = new System.Drawing.Point(762, 451);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(262, 82);
@@ -2429,26 +2429,28 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Поиск";
             // 
-            // button3
+            // searchFilmsBtn
             // 
-            this.button3.Location = new System.Drawing.Point(6, 45);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(246, 26);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Поиск";
-            this.button3.UseVisualStyleBackColor = true;
+            this.searchFilmsBtn.Location = new System.Drawing.Point(6, 45);
+            this.searchFilmsBtn.Name = "searchFilmsBtn";
+            this.searchFilmsBtn.Size = new System.Drawing.Size(246, 26);
+            this.searchFilmsBtn.TabIndex = 14;
+            this.searchFilmsBtn.Text = "Поиск";
+            this.searchFilmsBtn.UseVisualStyleBackColor = true;
+            this.searchFilmsBtn.Click += new System.EventHandler(this.searchFilmsBtn_Click);
             // 
-            // textBox3
+            // searchFilmsTB
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(247, 20);
-            this.textBox3.TabIndex = 13;
+            this.searchFilmsTB.Location = new System.Drawing.Point(6, 19);
+            this.searchFilmsTB.Name = "searchFilmsTB";
+            this.searchFilmsTB.Size = new System.Drawing.Size(247, 20);
+            this.searchFilmsTB.TabIndex = 13;
+            this.searchFilmsTB.TextChanged += new System.EventHandler(this.searchFilmsTB_TextChanged);
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button4);
-            this.groupBox6.Controls.Add(this.textBox4);
+            this.groupBox6.Controls.Add(this.searchCashiersBtn);
+            this.groupBox6.Controls.Add(this.searchCashiersTB);
             this.groupBox6.Location = new System.Drawing.Point(762, 451);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(262, 82);
@@ -2456,26 +2458,28 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Поиск";
             // 
-            // button4
+            // searchCashiersBtn
             // 
-            this.button4.Location = new System.Drawing.Point(6, 45);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(246, 26);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Поиск";
-            this.button4.UseVisualStyleBackColor = true;
+            this.searchCashiersBtn.Location = new System.Drawing.Point(6, 45);
+            this.searchCashiersBtn.Name = "searchCashiersBtn";
+            this.searchCashiersBtn.Size = new System.Drawing.Size(246, 26);
+            this.searchCashiersBtn.TabIndex = 14;
+            this.searchCashiersBtn.Text = "Поиск";
+            this.searchCashiersBtn.UseVisualStyleBackColor = true;
+            this.searchCashiersBtn.Click += new System.EventHandler(this.searchCashiersBtn_Click);
             // 
-            // textBox4
+            // searchCashiersTB
             // 
-            this.textBox4.Location = new System.Drawing.Point(6, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(247, 20);
-            this.textBox4.TabIndex = 13;
+            this.searchCashiersTB.Location = new System.Drawing.Point(6, 19);
+            this.searchCashiersTB.Name = "searchCashiersTB";
+            this.searchCashiersTB.Size = new System.Drawing.Size(247, 20);
+            this.searchCashiersTB.TabIndex = 13;
+            this.searchCashiersTB.TextChanged += new System.EventHandler(this.searchCashiersTB_TextChanged);
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button5);
-            this.groupBox7.Controls.Add(this.textBox5);
+            this.groupBox7.Controls.Add(this.searchRoomsBtn);
+            this.groupBox7.Controls.Add(this.searchRoomsTB);
             this.groupBox7.Location = new System.Drawing.Point(762, 451);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(262, 82);
@@ -2483,26 +2487,28 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Поиск";
             // 
-            // button5
+            // searchRoomsBtn
             // 
-            this.button5.Location = new System.Drawing.Point(6, 45);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(246, 26);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Поиск";
-            this.button5.UseVisualStyleBackColor = true;
+            this.searchRoomsBtn.Location = new System.Drawing.Point(6, 45);
+            this.searchRoomsBtn.Name = "searchRoomsBtn";
+            this.searchRoomsBtn.Size = new System.Drawing.Size(246, 26);
+            this.searchRoomsBtn.TabIndex = 14;
+            this.searchRoomsBtn.Text = "Поиск";
+            this.searchRoomsBtn.UseVisualStyleBackColor = true;
+            this.searchRoomsBtn.Click += new System.EventHandler(this.searchRoomsBtn_Click);
             // 
-            // textBox5
+            // searchRoomsTB
             // 
-            this.textBox5.Location = new System.Drawing.Point(6, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(247, 20);
-            this.textBox5.TabIndex = 13;
+            this.searchRoomsTB.Location = new System.Drawing.Point(6, 19);
+            this.searchRoomsTB.Name = "searchRoomsTB";
+            this.searchRoomsTB.Size = new System.Drawing.Size(247, 20);
+            this.searchRoomsTB.TabIndex = 13;
+            this.searchRoomsTB.TextChanged += new System.EventHandler(this.searchRoomsTB_TextChanged);
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.button6);
-            this.groupBox8.Controls.Add(this.textBox6);
+            this.groupBox8.Controls.Add(this.searchGenresBtn);
+            this.groupBox8.Controls.Add(this.searchGenresTB);
             this.groupBox8.Location = new System.Drawing.Point(762, 451);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(262, 82);
@@ -2510,21 +2516,22 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Поиск";
             // 
-            // button6
+            // searchGenresBtn
             // 
-            this.button6.Location = new System.Drawing.Point(6, 45);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(246, 26);
-            this.button6.TabIndex = 14;
-            this.button6.Text = "Поиск";
-            this.button6.UseVisualStyleBackColor = true;
+            this.searchGenresBtn.Location = new System.Drawing.Point(6, 45);
+            this.searchGenresBtn.Name = "searchGenresBtn";
+            this.searchGenresBtn.Size = new System.Drawing.Size(246, 26);
+            this.searchGenresBtn.TabIndex = 14;
+            this.searchGenresBtn.Text = "Поиск";
+            this.searchGenresBtn.UseVisualStyleBackColor = true;
+            this.searchGenresBtn.Click += new System.EventHandler(this.searchGenresBtn_Click);
             // 
-            // textBox6
+            // searchGenresTB
             // 
-            this.textBox6.Location = new System.Drawing.Point(6, 19);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(247, 20);
-            this.textBox6.TabIndex = 13;
+            this.searchGenresTB.Location = new System.Drawing.Point(6, 19);
+            this.searchGenresTB.Name = "searchGenresTB";
+            this.searchGenresTB.Size = new System.Drawing.Size(247, 20);
+            this.searchGenresTB.TabIndex = 13;
             // 
             // Form1
             // 
@@ -2824,20 +2831,20 @@
         private System.Windows.Forms.Button searchTicketsButton;
         private System.Windows.Forms.TextBox searchTicketsTB;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button searchRoomsBtn;
+        private System.Windows.Forms.TextBox searchRoomsTB;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button searchCashiersBtn;
+        private System.Windows.Forms.TextBox searchCashiersTB;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button searchFilmsBtn;
+        private System.Windows.Forms.TextBox searchFilmsTB;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button searchSessionsBtn;
         private System.Windows.Forms.TextBox searchSessionsTB;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button searchGenresBtn;
+        private System.Windows.Forms.TextBox searchGenresTB;
     }
 }
 
