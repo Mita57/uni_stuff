@@ -232,46 +232,50 @@
             this.slavePlace = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slaveRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filmsTicksCB = new System.Windows.Forms.ComboBox();
+            this.fsa = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.rooms.SuspendLayout();
             this.editRoomGroup.SuspendLayout();
             this.addRoomGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.roomsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsGrid)).BeginInit();
             this.cashiers.SuspendLayout();
             this.editCashierGroup.SuspendLayout();
             this.addCashierGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.cashiersGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cashiersGrid)).BeginInit();
             this.films.SuspendLayout();
             this.filmsEditGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsEditAgeRestr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsEditAgeRestr)).BeginInit();
             this.filmsAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsAddAgeRestr)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsAddAgeRestr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsGrid)).BeginInit();
             this.sessions.SuspendLayout();
             this.sessionsEditGroup.SuspendLayout();
             this.sessionsAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.sessionsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionsGrid)).BeginInit();
             this.tickets.SuspendLayout();
             this.ticketsEditGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditSeat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditSeat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditRow)).BeginInit();
             this.ticketsAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddSeat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddRow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddSeat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddRow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).BeginInit();
             this.tabControl.SuspendLayout();
             this.genres.SuspendLayout();
             this.editGenreGroup.SuspendLayout();
             this.genresAddGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.genresGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genresGrid)).BeginInit();
             this.coolTickets.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.coolGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coolGrid)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsSessionsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsSessionsGrid)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsGenresGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsGenresGrid)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsTicksGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsTicksGrid)).BeginInit();
+            this.fsa.SuspendLayout();
             this.SuspendLayout();
             // 
             // rooms
@@ -284,7 +288,7 @@
             this.rooms.Controls.Add(this.roomsGrid);
             this.rooms.Location = new System.Drawing.Point(4, 22);
             this.rooms.Name = "rooms";
-            this.rooms.Size = new System.Drawing.Size(1032, 524);
+            this.rooms.Size = new System.Drawing.Size(1032, 586);
             this.rooms.TabIndex = 4;
             this.rooms.Text = "Кинозалы";
             this.rooms.UseVisualStyleBackColor = true;
@@ -311,7 +315,7 @@
             // 
             this.deleteRoomButton.BackColor = System.Drawing.Color.Tomato;
             this.deleteRoomButton.Enabled = false;
-            this.deleteRoomButton.Location = new System.Drawing.Point(772, 471);
+            this.deleteRoomButton.Location = new System.Drawing.Point(772, 539);
             this.deleteRoomButton.Name = "deleteRoomButton";
             this.deleteRoomButton.Size = new System.Drawing.Size(247, 34);
             this.deleteRoomButton.TabIndex = 16;
@@ -443,11 +447,13 @@
             this.roomsGrid.AllowUserToAddRows = false;
             this.roomsGrid.AllowUserToDeleteRows = false;
             this.roomsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.roomsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.roomID, this.roomName});
+            this.roomsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.roomID,
+            this.roomName});
             this.roomsGrid.Location = new System.Drawing.Point(6, 5);
             this.roomsGrid.Name = "roomsGrid";
             this.roomsGrid.RowHeadersVisible = false;
-            this.roomsGrid.Size = new System.Drawing.Size(748, 515);
+            this.roomsGrid.Size = new System.Drawing.Size(748, 568);
             this.roomsGrid.TabIndex = 4;
             this.roomsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomsGrid_CellClick);
             // 
@@ -473,7 +479,7 @@
             this.cashiers.Controls.Add(this.cashiersGrid);
             this.cashiers.Location = new System.Drawing.Point(4, 22);
             this.cashiers.Name = "cashiers";
-            this.cashiers.Size = new System.Drawing.Size(1032, 524);
+            this.cashiers.Size = new System.Drawing.Size(1032, 586);
             this.cashiers.TabIndex = 3;
             this.cashiers.Text = "Кассиры";
             this.cashiers.UseVisualStyleBackColor = true;
@@ -500,7 +506,7 @@
             // 
             this.removeCashierButton.BackColor = System.Drawing.Color.Tomato;
             this.removeCashierButton.Enabled = false;
-            this.removeCashierButton.Location = new System.Drawing.Point(772, 471);
+            this.removeCashierButton.Location = new System.Drawing.Point(772, 539);
             this.removeCashierButton.Name = "removeCashierButton";
             this.removeCashierButton.Size = new System.Drawing.Size(247, 34);
             this.removeCashierButton.TabIndex = 15;
@@ -632,12 +638,14 @@
             this.cashiersGrid.AllowUserToAddRows = false;
             this.cashiersGrid.AllowUserToDeleteRows = false;
             this.cashiersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cashiersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.ID, this.cashierName});
+            this.cashiersGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.cashierName});
             this.cashiersGrid.Location = new System.Drawing.Point(6, 5);
             this.cashiersGrid.Name = "cashiersGrid";
             this.cashiersGrid.ReadOnly = true;
             this.cashiersGrid.RowHeadersVisible = false;
-            this.cashiersGrid.Size = new System.Drawing.Size(748, 515);
+            this.cashiersGrid.Size = new System.Drawing.Size(748, 568);
             this.cashiersGrid.TabIndex = 3;
             this.cashiersGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cashiersGrid_CellClick);
             // 
@@ -665,7 +673,7 @@
             this.films.Controls.Add(this.filmsGrid);
             this.films.Location = new System.Drawing.Point(4, 22);
             this.films.Name = "films";
-            this.films.Size = new System.Drawing.Size(1032, 524);
+            this.films.Size = new System.Drawing.Size(1032, 586);
             this.films.TabIndex = 2;
             this.films.Text = "Фильмы";
             this.films.UseVisualStyleBackColor = true;
@@ -692,7 +700,7 @@
             // 
             this.filmsDeleteButton.BackColor = System.Drawing.Color.Tomato;
             this.filmsDeleteButton.Enabled = false;
-            this.filmsDeleteButton.Location = new System.Drawing.Point(772, 471);
+            this.filmsDeleteButton.Location = new System.Drawing.Point(772, 539);
             this.filmsDeleteButton.Name = "filmsDeleteButton";
             this.filmsDeleteButton.Size = new System.Drawing.Size(247, 34);
             this.filmsDeleteButton.TabIndex = 14;
@@ -746,7 +754,11 @@
             // filmsEditGenreCB
             // 
             this.filmsEditGenreCB.FormattingEnabled = true;
-            this.filmsEditGenreCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.filmsEditGenreCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.filmsEditGenreCB.Location = new System.Drawing.Point(67, 71);
             this.filmsEditGenreCB.Name = "filmsEditGenreCB";
             this.filmsEditGenreCB.Size = new System.Drawing.Size(186, 21);
@@ -843,7 +855,11 @@
             // filmsAddGenreCB
             // 
             this.filmsAddGenreCB.FormattingEnabled = true;
-            this.filmsAddGenreCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.filmsAddGenreCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.filmsAddGenreCB.Location = new System.Drawing.Point(67, 71);
             this.filmsAddGenreCB.Name = "filmsAddGenreCB";
             this.filmsAddGenreCB.Size = new System.Drawing.Size(186, 21);
@@ -901,12 +917,16 @@
             this.filmsGrid.AllowUserToAddRows = false;
             this.filmsGrid.AllowUserToDeleteRows = false;
             this.filmsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.filmsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.filmID, this.name, this.genre, this.ageRestr});
+            this.filmsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.filmID,
+            this.name,
+            this.genre,
+            this.ageRestr});
             this.filmsGrid.Location = new System.Drawing.Point(6, 5);
             this.filmsGrid.Name = "filmsGrid";
             this.filmsGrid.ReadOnly = true;
             this.filmsGrid.RowHeadersVisible = false;
-            this.filmsGrid.Size = new System.Drawing.Size(748, 515);
+            this.filmsGrid.Size = new System.Drawing.Size(748, 568);
             this.filmsGrid.TabIndex = 2;
             this.filmsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.filmsGrid_CellClick);
             // 
@@ -949,7 +969,7 @@
             this.sessions.Location = new System.Drawing.Point(4, 22);
             this.sessions.Name = "sessions";
             this.sessions.Padding = new System.Windows.Forms.Padding(3);
-            this.sessions.Size = new System.Drawing.Size(1032, 524);
+            this.sessions.Size = new System.Drawing.Size(1032, 586);
             this.sessions.TabIndex = 1;
             this.sessions.Text = "Сеансы";
             this.sessions.UseVisualStyleBackColor = true;
@@ -998,7 +1018,11 @@
             // sessionsEditCB
             // 
             this.sessionsEditCB.FormattingEnabled = true;
-            this.sessionsEditCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsEditCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.sessionsEditCB.Location = new System.Drawing.Point(67, 151);
             this.sessionsEditCB.Name = "sessionsEditCB";
             this.sessionsEditCB.Size = new System.Drawing.Size(186, 21);
@@ -1043,7 +1067,11 @@
             // sessionsEditFilmCB
             // 
             this.sessionsEditFilmCB.FormattingEnabled = true;
-            this.sessionsEditFilmCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsEditFilmCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.sessionsEditFilmCB.Location = new System.Drawing.Point(67, 97);
             this.sessionsEditFilmCB.Name = "sessionsEditFilmCB";
             this.sessionsEditFilmCB.Size = new System.Drawing.Size(186, 21);
@@ -1081,7 +1109,11 @@
             // sessionsEditRoomCB
             // 
             this.sessionsEditRoomCB.FormattingEnabled = true;
-            this.sessionsEditRoomCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsEditRoomCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.sessionsEditRoomCB.Location = new System.Drawing.Point(67, 124);
             this.sessionsEditRoomCB.Name = "sessionsEditRoomCB";
             this.sessionsEditRoomCB.Size = new System.Drawing.Size(186, 21);
@@ -1140,7 +1172,11 @@
             // sessionsAddTypeCB
             // 
             this.sessionsAddTypeCB.FormattingEnabled = true;
-            this.sessionsAddTypeCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsAddTypeCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.sessionsAddTypeCB.Location = new System.Drawing.Point(67, 151);
             this.sessionsAddTypeCB.Name = "sessionsAddTypeCB";
             this.sessionsAddTypeCB.Size = new System.Drawing.Size(186, 21);
@@ -1187,7 +1223,11 @@
             // sessionsAddFilmCB
             // 
             this.sessionsAddFilmCB.FormattingEnabled = true;
-            this.sessionsAddFilmCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsAddFilmCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.sessionsAddFilmCB.Location = new System.Drawing.Point(67, 97);
             this.sessionsAddFilmCB.Name = "sessionsAddFilmCB";
             this.sessionsAddFilmCB.Size = new System.Drawing.Size(186, 21);
@@ -1225,7 +1265,11 @@
             // sessionsAddRoomCB
             // 
             this.sessionsAddRoomCB.FormattingEnabled = true;
-            this.sessionsAddRoomCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.sessionsAddRoomCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.sessionsAddRoomCB.Location = new System.Drawing.Point(67, 124);
             this.sessionsAddRoomCB.Name = "sessionsAddRoomCB";
             this.sessionsAddRoomCB.Size = new System.Drawing.Size(186, 21);
@@ -1263,7 +1307,7 @@
             // 
             this.sessionsDeleteButton.BackColor = System.Drawing.Color.Tomato;
             this.sessionsDeleteButton.Enabled = false;
-            this.sessionsDeleteButton.Location = new System.Drawing.Point(772, 471);
+            this.sessionsDeleteButton.Location = new System.Drawing.Point(772, 539);
             this.sessionsDeleteButton.Name = "sessionsDeleteButton";
             this.sessionsDeleteButton.Size = new System.Drawing.Size(247, 34);
             this.sessionsDeleteButton.TabIndex = 10;
@@ -1276,12 +1320,18 @@
             this.sessionsGrid.AllowUserToAddRows = false;
             this.sessionsGrid.AllowUserToDeleteRows = false;
             this.sessionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.sessionID, this.date, this.time, this.film, this.room, this.type});
+            this.sessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sessionID,
+            this.date,
+            this.time,
+            this.film,
+            this.room,
+            this.type});
             this.sessionsGrid.Location = new System.Drawing.Point(6, 5);
             this.sessionsGrid.Name = "sessionsGrid";
             this.sessionsGrid.ReadOnly = true;
             this.sessionsGrid.RowHeadersVisible = false;
-            this.sessionsGrid.Size = new System.Drawing.Size(748, 515);
+            this.sessionsGrid.Size = new System.Drawing.Size(748, 568);
             this.sessionsGrid.TabIndex = 1;
             this.sessionsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sessionsGrid_CellClick);
             // 
@@ -1329,6 +1379,7 @@
             // 
             // tickets
             // 
+            this.tickets.Controls.Add(this.fsa);
             this.tickets.Controls.Add(this.ticketsAmount);
             this.tickets.Controls.Add(this.ticketsNoEntriesLabel);
             this.tickets.Controls.Add(this.ticketsEditGroup);
@@ -1338,7 +1389,7 @@
             this.tickets.Location = new System.Drawing.Point(4, 22);
             this.tickets.Name = "tickets";
             this.tickets.Padding = new System.Windows.Forms.Padding(3);
-            this.tickets.Size = new System.Drawing.Size(1032, 524);
+            this.tickets.Size = new System.Drawing.Size(1032, 586);
             this.tickets.TabIndex = 0;
             this.tickets.Text = "Билеты";
             this.tickets.UseVisualStyleBackColor = true;
@@ -1385,11 +1436,19 @@
             // ticketsEditSeat
             // 
             this.ticketsEditSeat.Location = new System.Drawing.Point(67, 96);
-            this.ticketsEditSeat.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsEditSeat.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ticketsEditSeat.Name = "ticketsEditSeat";
             this.ticketsEditSeat.Size = new System.Drawing.Size(186, 20);
             this.ticketsEditSeat.TabIndex = 12;
-            this.ticketsEditSeat.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsEditSeat.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label4
             // 
@@ -1403,16 +1462,28 @@
             // ticketsEditRow
             // 
             this.ticketsEditRow.Location = new System.Drawing.Point(67, 121);
-            this.ticketsEditRow.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsEditRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ticketsEditRow.Name = "ticketsEditRow";
             this.ticketsEditRow.Size = new System.Drawing.Size(186, 20);
             this.ticketsEditRow.TabIndex = 10;
-            this.ticketsEditRow.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsEditRow.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // ticketsEditSessionCB
             // 
             this.ticketsEditSessionCB.FormattingEnabled = true;
-            this.ticketsEditSessionCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.ticketsEditSessionCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.ticketsEditSessionCB.Location = new System.Drawing.Point(67, 70);
             this.ticketsEditSessionCB.Name = "ticketsEditSessionCB";
             this.ticketsEditSessionCB.Size = new System.Drawing.Size(186, 21);
@@ -1486,7 +1557,7 @@
             // 
             this.ticketsDeleteButton.BackColor = System.Drawing.Color.Tomato;
             this.ticketsDeleteButton.Enabled = false;
-            this.ticketsDeleteButton.Location = new System.Drawing.Point(772, 471);
+            this.ticketsDeleteButton.Location = new System.Drawing.Point(772, 539);
             this.ticketsDeleteButton.Name = "ticketsDeleteButton";
             this.ticketsDeleteButton.Size = new System.Drawing.Size(247, 34);
             this.ticketsDeleteButton.TabIndex = 9;
@@ -1517,11 +1588,19 @@
             // ticketsAddSeat
             // 
             this.ticketsAddSeat.Location = new System.Drawing.Point(67, 96);
-            this.ticketsAddSeat.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsAddSeat.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ticketsAddSeat.Name = "ticketsAddSeat";
             this.ticketsAddSeat.Size = new System.Drawing.Size(186, 20);
             this.ticketsAddSeat.TabIndex = 12;
-            this.ticketsAddSeat.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsAddSeat.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ticketsAddSeat.ValueChanged += new System.EventHandler(this.TicketsAddValidation);
             // 
             // label39
@@ -1536,17 +1615,29 @@
             // ticketsAddRow
             // 
             this.ticketsAddRow.Location = new System.Drawing.Point(67, 121);
-            this.ticketsAddRow.Minimum = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsAddRow.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ticketsAddRow.Name = "ticketsAddRow";
             this.ticketsAddRow.Size = new System.Drawing.Size(186, 20);
             this.ticketsAddRow.TabIndex = 10;
-            this.ticketsAddRow.Value = new decimal(new int[] {1, 0, 0, 0});
+            this.ticketsAddRow.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ticketsAddRow.ValueChanged += new System.EventHandler(this.TicketsAddValidation);
             // 
             // ticketsAddSessionCB
             // 
             this.ticketsAddSessionCB.FormattingEnabled = true;
-            this.ticketsAddSessionCB.Items.AddRange(new object[] {"2D", "3D", "IMAX 2D", "IMAX 3D"});
+            this.ticketsAddSessionCB.Items.AddRange(new object[] {
+            "2D",
+            "3D",
+            "IMAX 2D",
+            "IMAX 3D"});
             this.ticketsAddSessionCB.Location = new System.Drawing.Point(67, 70);
             this.ticketsAddSessionCB.Name = "ticketsAddSessionCB";
             this.ticketsAddSessionCB.Size = new System.Drawing.Size(186, 21);
@@ -1623,11 +1714,16 @@
             this.ticketsGrid.AllowUserToAddRows = false;
             this.ticketsGrid.AllowUserToDeleteRows = false;
             this.ticketsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ticketsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.ticketID, this.session, this.cashier, this.seat, this.row});
+            this.ticketsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ticketID,
+            this.session,
+            this.cashier,
+            this.seat,
+            this.row});
             this.ticketsGrid.Location = new System.Drawing.Point(6, 5);
             this.ticketsGrid.Name = "ticketsGrid";
             this.ticketsGrid.RowHeadersVisible = false;
-            this.ticketsGrid.Size = new System.Drawing.Size(748, 515);
+            this.ticketsGrid.Size = new System.Drawing.Size(748, 568);
             this.ticketsGrid.TabIndex = 0;
             this.ticketsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketsGrid_CellContentClick);
             // 
@@ -1674,7 +1770,7 @@
             this.tabControl.Location = new System.Drawing.Point(1, 4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1040, 550);
+            this.tabControl.Size = new System.Drawing.Size(1040, 612);
             this.tabControl.TabIndex = 0;
             this.tabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabControl1_Selected);
             // 
@@ -1688,7 +1784,7 @@
             this.genres.Controls.Add(this.genresGrid);
             this.genres.Location = new System.Drawing.Point(4, 22);
             this.genres.Name = "genres";
-            this.genres.Size = new System.Drawing.Size(1032, 524);
+            this.genres.Size = new System.Drawing.Size(1032, 586);
             this.genres.TabIndex = 5;
             this.genres.Text = "Жанры";
             this.genres.UseVisualStyleBackColor = true;
@@ -1715,7 +1811,7 @@
             // 
             this.deleteGenreButton.BackColor = System.Drawing.Color.Tomato;
             this.deleteGenreButton.Enabled = false;
-            this.deleteGenreButton.Location = new System.Drawing.Point(772, 471);
+            this.deleteGenreButton.Location = new System.Drawing.Point(772, 539);
             this.deleteGenreButton.Name = "deleteGenreButton";
             this.deleteGenreButton.Size = new System.Drawing.Size(247, 34);
             this.deleteGenreButton.TabIndex = 17;
@@ -1846,11 +1942,13 @@
             this.genresGrid.AllowUserToAddRows = false;
             this.genresGrid.AllowUserToDeleteRows = false;
             this.genresGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.genresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.genreID, this.genreName});
+            this.genresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.genreID,
+            this.genreName});
             this.genresGrid.Location = new System.Drawing.Point(6, 5);
             this.genresGrid.Name = "genresGrid";
             this.genresGrid.RowHeadersVisible = false;
-            this.genresGrid.Size = new System.Drawing.Size(748, 515);
+            this.genresGrid.Size = new System.Drawing.Size(748, 568);
             this.genresGrid.TabIndex = 5;
             this.genresGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.genresGrid_CellClick);
             // 
@@ -1873,7 +1971,7 @@
             this.coolTickets.Controls.Add(this.coolGrid);
             this.coolTickets.Location = new System.Drawing.Point(4, 22);
             this.coolTickets.Name = "coolTickets";
-            this.coolTickets.Size = new System.Drawing.Size(1032, 524);
+            this.coolTickets.Size = new System.Drawing.Size(1032, 586);
             this.coolTickets.TabIndex = 6;
             this.coolTickets.Text = "Билеты Общ";
             this.coolTickets.UseVisualStyleBackColor = true;
@@ -1899,11 +1997,23 @@
             // coolGrid
             // 
             this.coolGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.coolGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.coolId, this.coolFilm, this.coolSession, this.coolDate, this.coolTime, this.coolType, this.coolCashier, this.coolAgeRestr, this.coolGenre, this.coolRoom, this.coolPlace, this.coolRow});
+            this.coolGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.coolId,
+            this.coolFilm,
+            this.coolSession,
+            this.coolDate,
+            this.coolTime,
+            this.coolType,
+            this.coolCashier,
+            this.coolAgeRestr,
+            this.coolGenre,
+            this.coolRoom,
+            this.coolPlace,
+            this.coolRow});
             this.coolGrid.Location = new System.Drawing.Point(-4, 0);
             this.coolGrid.Name = "coolGrid";
             this.coolGrid.RowHeadersVisible = false;
-            this.coolGrid.Size = new System.Drawing.Size(1039, 523);
+            this.coolGrid.Size = new System.Drawing.Size(1039, 590);
             this.coolGrid.TabIndex = 0;
             // 
             // coolId
@@ -1982,7 +2092,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1032, 524);
+            this.tabPage1.Size = new System.Drawing.Size(1032, 586);
             this.tabPage1.TabIndex = 7;
             this.tabPage1.Text = "Подчиненные";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1995,7 +2105,7 @@
             this.groupBox3.Controls.Add(this.ticketsSessionsCB);
             this.groupBox3.Location = new System.Drawing.Point(689, 10);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(330, 514);
+            this.groupBox3.Size = new System.Drawing.Size(330, 570);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Билеты по сеансам";
@@ -2020,12 +2130,16 @@
             // ticketsSessionsGrid
             // 
             this.ticketsSessionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ticketsSessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.slaveTicketsID, this.slaveTicketsSession, this.slaveTicketPlace, this.slaveTicketRow});
+            this.ticketsSessionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.slaveTicketsID,
+            this.slaveTicketsSession,
+            this.slaveTicketPlace,
+            this.slaveTicketRow});
             this.ticketsSessionsGrid.Location = new System.Drawing.Point(12, 54);
             this.ticketsSessionsGrid.Name = "ticketsSessionsGrid";
             this.ticketsSessionsGrid.ReadOnly = true;
             this.ticketsSessionsGrid.RowHeadersVisible = false;
-            this.ticketsSessionsGrid.Size = new System.Drawing.Size(302, 448);
+            this.ticketsSessionsGrid.Size = new System.Drawing.Size(302, 509);
             this.ticketsSessionsGrid.TabIndex = 3;
             // 
             // slaveTicketsID
@@ -2073,7 +2187,7 @@
             this.groupBox2.Controls.Add(this.filmsGenresCB);
             this.groupBox2.Location = new System.Drawing.Point(349, 10);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(330, 514);
+            this.groupBox2.Size = new System.Drawing.Size(330, 570);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Фильмы по жанрам";
@@ -2098,12 +2212,15 @@
             // filmsGenresGrid
             // 
             this.filmsGenresGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.filmsGenresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.slaveFilmsID, this.slaveFilmsSessions, this.slaveFilmsRestr});
+            this.filmsGenresGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.slaveFilmsID,
+            this.slaveFilmsSessions,
+            this.slaveFilmsRestr});
             this.filmsGenresGrid.Location = new System.Drawing.Point(12, 54);
             this.filmsGenresGrid.Name = "filmsGenresGrid";
             this.filmsGenresGrid.ReadOnly = true;
             this.filmsGenresGrid.RowHeadersVisible = false;
-            this.filmsGenresGrid.Size = new System.Drawing.Size(302, 448);
+            this.filmsGenresGrid.Size = new System.Drawing.Size(302, 509);
             this.filmsGenresGrid.TabIndex = 2;
             // 
             // slaveFilmsID
@@ -2144,7 +2261,7 @@
             this.groupBox1.Controls.Add(this.filmsTicksCB);
             this.groupBox1.Location = new System.Drawing.Point(7, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(330, 514);
+            this.groupBox1.Size = new System.Drawing.Size(330, 570);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Билеты по фильмам";
@@ -2169,12 +2286,16 @@
             // filmsTicksGrid
             // 
             this.filmsTicksGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.filmsTicksGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.slaveID, this.slaveSession, this.slavePlace, this.slaveRow});
+            this.filmsTicksGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.slaveID,
+            this.slaveSession,
+            this.slavePlace,
+            this.slaveRow});
             this.filmsTicksGrid.Location = new System.Drawing.Point(12, 54);
             this.filmsTicksGrid.Name = "filmsTicksGrid";
             this.filmsTicksGrid.ReadOnly = true;
             this.filmsTicksGrid.RowHeadersVisible = false;
-            this.filmsTicksGrid.Size = new System.Drawing.Size(302, 448);
+            this.filmsTicksGrid.Size = new System.Drawing.Size(302, 509);
             this.filmsTicksGrid.TabIndex = 1;
             // 
             // slaveID
@@ -2214,13 +2335,41 @@
             this.filmsTicksCB.TabIndex = 0;
             this.filmsTicksCB.SelectedIndexChanged += new System.EventHandler(this.filmsTicksCB_SelectedIndexChanged);
             // 
+            // fsa
+            // 
+            this.fsa.Controls.Add(this.button1);
+            this.fsa.Controls.Add(this.textBox1);
+            this.fsa.Location = new System.Drawing.Point(762, 451);
+            this.fsa.Name = "fsa";
+            this.fsa.Size = new System.Drawing.Size(262, 82);
+            this.fsa.TabIndex = 16;
+            this.fsa.TabStop = false;
+            this.fsa.Text = "Поиск";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(247, 20);
+            this.textBox1.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 45);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(246, 26);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Поиск";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 551);
+            this.ClientSize = new System.Drawing.Size(1041, 611);
             this.Controls.Add(this.tabControl);
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Cinemaster";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -2230,41 +2379,41 @@
             this.editRoomGroup.PerformLayout();
             this.addRoomGroup.ResumeLayout(false);
             this.addRoomGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.roomsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsGrid)).EndInit();
             this.cashiers.ResumeLayout(false);
             this.cashiers.PerformLayout();
             this.editCashierGroup.ResumeLayout(false);
             this.editCashierGroup.PerformLayout();
             this.addCashierGroup.ResumeLayout(false);
             this.addCashierGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.cashiersGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cashiersGrid)).EndInit();
             this.films.ResumeLayout(false);
             this.films.PerformLayout();
             this.filmsEditGroup.ResumeLayout(false);
             this.filmsEditGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsEditAgeRestr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsEditAgeRestr)).EndInit();
             this.filmsAddGroup.ResumeLayout(false);
             this.filmsAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsAddAgeRestr)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsAddAgeRestr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsGrid)).EndInit();
             this.sessions.ResumeLayout(false);
             this.sessions.PerformLayout();
             this.sessionsEditGroup.ResumeLayout(false);
             this.sessionsEditGroup.PerformLayout();
             this.sessionsAddGroup.ResumeLayout(false);
             this.sessionsAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.sessionsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sessionsGrid)).EndInit();
             this.tickets.ResumeLayout(false);
             this.tickets.PerformLayout();
             this.ticketsEditGroup.ResumeLayout(false);
             this.ticketsEditGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditSeat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsEditRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditSeat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsEditRow)).EndInit();
             this.ticketsAddGroup.ResumeLayout(false);
             this.ticketsAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddSeat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsAddRow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddSeat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsAddRow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsGrid)).EndInit();
             this.tabControl.ResumeLayout(false);
             this.genres.ResumeLayout(false);
             this.genres.PerformLayout();
@@ -2272,21 +2421,24 @@
             this.editGenreGroup.PerformLayout();
             this.genresAddGroup.ResumeLayout(false);
             this.genresAddGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.genresGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genresGrid)).EndInit();
             this.coolTickets.ResumeLayout(false);
             this.coolTickets.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.coolGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coolGrid)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.ticketsSessionsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsSessionsGrid)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsGenresGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsGenresGrid)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.filmsTicksGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filmsTicksGrid)).EndInit();
+            this.fsa.ResumeLayout(false);
+            this.fsa.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Button addCashierButton;
@@ -2494,6 +2646,10 @@
         private System.Windows.Forms.Button updateTicketButton;
 
         #endregion
+
+        private System.Windows.Forms.GroupBox fsa;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
