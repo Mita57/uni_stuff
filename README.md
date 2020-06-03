@@ -1,1 +1,1 @@
-<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fknowyourmeme.com%2Fmemes%2Fdoge&psig=AOvVaw1bQCN4X405xLQBapy2pEY-&ust=1591287451219000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKjQ2O2F5ukCFQAAAAAdAAAAABAD">
+<img src="https://i.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg">
