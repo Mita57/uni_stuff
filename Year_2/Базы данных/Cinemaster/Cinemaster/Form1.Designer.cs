@@ -233,8 +233,23 @@
             this.slaveRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filmsTicksCB = new System.Windows.Forms.ComboBox();
             this.fsa = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.searchTicketsTB = new System.Windows.Forms.TextBox();
+            this.searchTicketsButton = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.searchSessionsBtn = new System.Windows.Forms.Button();
+            this.searchSessionsTB = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.rooms.SuspendLayout();
             this.editRoomGroup.SuspendLayout();
             this.addRoomGroup.SuspendLayout();
@@ -276,10 +291,16 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.filmsTicksGrid)).BeginInit();
             this.fsa.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // rooms
             // 
+            this.rooms.Controls.Add(this.groupBox7);
             this.rooms.Controls.Add(this.roomsAmount);
             this.rooms.Controls.Add(this.roomsNoEntriesLabel);
             this.rooms.Controls.Add(this.deleteRoomButton);
@@ -471,6 +492,7 @@
             // 
             // cashiers
             // 
+            this.cashiers.Controls.Add(this.groupBox6);
             this.cashiers.Controls.Add(this.cashiersAmount);
             this.cashiers.Controls.Add(this.cashiersNoEntriesLabel);
             this.cashiers.Controls.Add(this.removeCashierButton);
@@ -665,6 +687,7 @@
             // 
             // films
             // 
+            this.films.Controls.Add(this.groupBox5);
             this.films.Controls.Add(this.filmsAmount);
             this.films.Controls.Add(this.filmsNoEntriesLabel);
             this.films.Controls.Add(this.filmsDeleteButton);
@@ -960,6 +983,7 @@
             // 
             // sessions
             // 
+            this.sessions.Controls.Add(this.groupBox4);
             this.sessions.Controls.Add(this.sessionsAmount);
             this.sessions.Controls.Add(this.sessionsNoEntriesLabel);
             this.sessions.Controls.Add(this.sessionsEditGroup);
@@ -1776,6 +1800,7 @@
             // 
             // genres
             // 
+            this.genres.Controls.Add(this.groupBox8);
             this.genres.Controls.Add(this.genreAmount);
             this.genres.Controls.Add(this.genresNoEntriesLabel);
             this.genres.Controls.Add(this.deleteGenreButton);
@@ -2337,8 +2362,8 @@
             // 
             // fsa
             // 
-            this.fsa.Controls.Add(this.button1);
-            this.fsa.Controls.Add(this.textBox1);
+            this.fsa.Controls.Add(this.searchTicketsButton);
+            this.fsa.Controls.Add(this.searchTicketsTB);
             this.fsa.Location = new System.Drawing.Point(762, 451);
             this.fsa.Name = "fsa";
             this.fsa.Size = new System.Drawing.Size(262, 82);
@@ -2346,22 +2371,160 @@
             this.fsa.TabStop = false;
             this.fsa.Text = "Поиск";
             // 
-            // textBox1
+            // searchTicketsTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(247, 20);
-            this.textBox1.TabIndex = 13;
+            this.searchTicketsTB.Location = new System.Drawing.Point(6, 19);
+            this.searchTicketsTB.Name = "searchTicketsTB";
+            this.searchTicketsTB.Size = new System.Drawing.Size(247, 20);
+            this.searchTicketsTB.TabIndex = 13;
+            this.searchTicketsTB.TextChanged += new System.EventHandler(this.searchTicketsTB_TextChanged);
             // 
-            // button1
+            // searchTicketsButton
             // 
-            this.button1.Location = new System.Drawing.Point(6, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(246, 26);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Поиск";
-            this.button1.UseVisualStyleBackColor = true;
+            this.searchTicketsButton.Location = new System.Drawing.Point(6, 45);
+            this.searchTicketsButton.Name = "searchTicketsButton";
+            this.searchTicketsButton.Size = new System.Drawing.Size(246, 26);
+            this.searchTicketsButton.TabIndex = 14;
+            this.searchTicketsButton.Text = "Поиск";
+            this.searchTicketsButton.UseVisualStyleBackColor = true;
+            this.searchTicketsButton.Click += new System.EventHandler(this.searchTicketsButton_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.searchSessionsBtn);
+            this.groupBox4.Controls.Add(this.searchSessionsTB);
+            this.groupBox4.Location = new System.Drawing.Point(762, 451);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(262, 82);
+            this.groupBox4.TabIndex = 17;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Поиск";
+            // 
+            // searchSessionsBtn
+            // 
+            this.searchSessionsBtn.Location = new System.Drawing.Point(6, 45);
+            this.searchSessionsBtn.Name = "searchSessionsBtn";
+            this.searchSessionsBtn.Size = new System.Drawing.Size(246, 26);
+            this.searchSessionsBtn.TabIndex = 14;
+            this.searchSessionsBtn.Text = "Поиск";
+            this.searchSessionsBtn.UseVisualStyleBackColor = true;
+            this.searchSessionsBtn.Click += new System.EventHandler(this.searchSessionsBtn_Click);
+            // 
+            // searchSessionsTB
+            // 
+            this.searchSessionsTB.Location = new System.Drawing.Point(6, 19);
+            this.searchSessionsTB.Name = "searchSessionsTB";
+            this.searchSessionsTB.Size = new System.Drawing.Size(247, 20);
+            this.searchSessionsTB.TabIndex = 13;
+            this.searchSessionsTB.TextChanged += new System.EventHandler(this.searchSessionsTB_TextChanged);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.button3);
+            this.groupBox5.Controls.Add(this.textBox3);
+            this.groupBox5.Location = new System.Drawing.Point(762, 451);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(262, 82);
+            this.groupBox5.TabIndex = 18;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Поиск";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(6, 45);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(246, 26);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Поиск";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(6, 19);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(247, 20);
+            this.textBox3.TabIndex = 13;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.button4);
+            this.groupBox6.Controls.Add(this.textBox4);
+            this.groupBox6.Location = new System.Drawing.Point(762, 451);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(262, 82);
+            this.groupBox6.TabIndex = 18;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Поиск";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(6, 45);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(246, 26);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Поиск";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(6, 19);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(247, 20);
+            this.textBox4.TabIndex = 13;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.button5);
+            this.groupBox7.Controls.Add(this.textBox5);
+            this.groupBox7.Location = new System.Drawing.Point(762, 451);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(262, 82);
+            this.groupBox7.TabIndex = 19;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Поиск";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(6, 45);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(246, 26);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Поиск";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(6, 19);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(247, 20);
+            this.textBox5.TabIndex = 13;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.button6);
+            this.groupBox8.Controls.Add(this.textBox6);
+            this.groupBox8.Location = new System.Drawing.Point(762, 451);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(262, 82);
+            this.groupBox8.TabIndex = 20;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Поиск";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(6, 45);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(246, 26);
+            this.button6.TabIndex = 14;
+            this.button6.Text = "Поиск";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(6, 19);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(247, 20);
+            this.textBox6.TabIndex = 13;
             // 
             // Form1
             // 
@@ -2437,6 +2600,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.filmsTicksGrid)).EndInit();
             this.fsa.ResumeLayout(false);
             this.fsa.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2648,8 +2821,23 @@
         #endregion
 
         private System.Windows.Forms.GroupBox fsa;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button searchTicketsButton;
+        private System.Windows.Forms.TextBox searchTicketsTB;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button searchSessionsBtn;
+        private System.Windows.Forms.TextBox searchSessionsTB;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
 
