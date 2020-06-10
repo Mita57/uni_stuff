@@ -83,38 +83,210 @@ namespace laba17
 
         public event onChangingDel onChanging;
         
-        public delegate void onAxisDel(int oldx, int oldy);
+        public delegate void onAxisDel(string oldx, string oldy);
 
         public event onAxisDel onAxis; // AXIS REST IN HELL 
     }
 
     public class Points
     {
-        public int i
+        public int amount
         {
             get;
         }
         
+        List<Point> points = new List<Point>();
         
-        
+        public Point this[int index]
+        {
+            get
+            {
+                return points[amount];
+            }
+        }
+
+        public void setPoint(int i, Point p)
+        {
+            this.points[i] = p;
+        }
+
+        public void add(Point p)
+        {
+            this.points.Add(p);
+        }
+
+        public void Remove(int i)
+        {
+            try
+            {
+                this.points.RemoveAt(i);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public Points()
+        {
+        }
+
+        public Points(int am)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < am; i++)
+            {
+                this.points.Add(new Point(rnd.Next(-11, 11), rnd.Next(-11, 11))); 
+            }
+        }
+        public delegate void alertChange();
+
+        public event alertChange onChange;
     }
 
     internal class Program
     {
+        static private Points pts;
         public static void Main(string[] args)
         {
-            List<Point> points = new List<Point>();
-            for (int i = 0; i < 15; i++)
+            pts = new Points(15);
+
+            for (int i = 0; i < pts.amount; i++)
             {
-                Point o = new Point();
-                o.onChange += onChangeHandler;
-                
+                pts[i].onChange += onChangeHandler;
+                pts[i].onChanging += onChangingHandler;
+                pts[i].onAxis += onAxisHandler;
+            }
+            
+            while (true)
+            {
+                Console.WriteLine("Choissir quel vous voulez fais, s'il vous plait");
+                Console.WriteLine("(1):Ajouter du point (add)");
+                Console.WriteLine("(2):Éditer du point");
+                Console.WriteLine("(3):Retirer du point (remove)");
+                Console.WriteLine("(4):Applicer des restictions");
+                Console.WriteLine("(X):Quitter l'application");
+                string resp = Console.ReadLine();
+                switch (resp)
+                {
+                    case "1":
+                    {
+                        addPoint();
+                        break;
+                    }
+                    case "2":
+                    {
+                        editPoint();
+                        break;
+                    }
+                    case "3":
+                    {
+                        removePoint();
+                        break;
+                    }
+                }
+            }
+        }
+
+        public static void addPoint()
+        {
+            string xCon = "cock";
+            int x = 0;
+            while (!int.TryParse(xCon, out x))
+            {
+                Console.WriteLine("Enter le coordonner x");
+                xCon = Console.ReadLine();
+            }
+
+            string yCon = "cock2";
+            int y = 0;
+            while (!int.TryParse(yCon, out y))
+            {
+                Console.WriteLine("Enter le coordonner y");
+                yCon = Console.ReadLine();
+            }
+            
+            pts.add(new Point(x, y));
+        }
+        
+        public static void editPoint()
+        {
+            string ind = "cock";
+            int i = 0;
+            while (!int.TryParse(ind, out i))
+            {
+                Console.WriteLine("Enter l'idnex");
+                ind = Console.ReadLine();
+            }
+
+            string xCon = "cock";
+            int x = 0;
+            while (!int.TryParse(xCon, out x))
+            {
+                Console.WriteLine("Enter le coordonner x");
+                xCon = Console.ReadLine();
+            }
+            
+            string yCon = "cock2";
+            int y = 0;
+            while (!int.TryParse(yCon, out y))
+            {
+                Console.WriteLine("Enter le coordonner y");
+                yCon = Console.ReadLine();
+            }
+            
+
+            try
+            {
+                pts[i].x = x;
+                pts[i].y = y;
+            }
+            catch
+            {
+                Console.WriteLine("L'index se trouve en dehors du tableau");
+            }
+        }
+
+        public static void removePoint()
+        {
+            string ind = "cock";
+            int i = 0;
+            while (!int.TryParse(ind, out i))
+            {
+                Console.WriteLine("Enter l'idnex");
+                ind = Console.ReadLine();
+            }
+
+            string xCon = "cock";
+            int x = 0;
+            while (!int.TryParse(xCon, out x))
+            {
+                Console.WriteLine("Enter le coordonner x");
+                xCon = Console.ReadLine();
+            }
+
+            string yCon = "cock2";
+            int y = 0;
+            while (!int.TryParse(yCon, out y))
+            {
+                Console.WriteLine("Enter le coordonner y");
+                yCon = Console.ReadLine();
+            }
+            
+            try
+            {
+                pts.Remove(i);
+            }
+            catch
+            {
+                Console.WriteLine("L'index se trouve en dehors du tableau");
             }
         }
         
+        
         public static void onChangeHandler(string x, string y)
         {
-            Console.WriteLine(string.Format("Произошел троллинг: {0} : {1}", this.x, this.y));
+            Console.WriteLine(string.Format("Произошел троллинг: {0} : {1}", x, y));
         }
 
         public static bool onChangingHandler()
@@ -134,11 +306,16 @@ namespace laba17
                 }
                 else
                 {
-                    Console.WriteLine("Ecrire un lettre Y ou un lettre N, s'il vous plait");
+                    Console.WriteLine("Entrer un lettre Y ou un lettre N, s'il vous plait");
                 }
             }
+
+            return false;
         }
-        
-        public static 
+
+        public static void onAxisHandler(string dx, string dy)
+        {
+            Console.WriteLine(String.Format("Au moins une coordonnée est maintenant 0, les coordonnées précédentes: {0}, {1}"), dx, dy);
+        }
     }
 }
