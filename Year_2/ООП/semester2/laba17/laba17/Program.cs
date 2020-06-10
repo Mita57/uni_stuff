@@ -33,6 +33,12 @@ namespace laba17
             this.y = -this.y;
         }
 
+        public void simO()
+        {
+            this.x = -this.x;
+            this.y = -this.y;
+        }
+
         public void MoveRel(int dx, int dy)
         {
             this.x += dx;
@@ -164,7 +170,11 @@ namespace laba17
                 Console.WriteLine("(1):Ajouter du point (add)");
                 Console.WriteLine("(2):Éditer du point");
                 Console.WriteLine("(3):Retirer du point (remove)");
-                Console.WriteLine("(4):Applicer des restictions");
+                Console.WriteLine("(4):SimOX");
+                Console.WriteLine("(5):SimOY");
+                Console.WriteLine("(6):SimO");
+                Console.WriteLine("(7):ReFrom");
+                Console.WriteLine("(8):Applicer des restictions");
                 Console.WriteLine("(X):Quitter l'application");
                 string resp = Console.ReadLine();
                 switch (resp)
@@ -184,7 +194,130 @@ namespace laba17
                         removePoint();
                         break;
                     }
+                    case "4":
+                    {
+                        applySimOx();
+                        break;
+                    }
+                    case "5":
+                    {
+                        applySimOy();
+                        break;
+                    }
+                    case "6":
+                    {
+                        applySimO();
+                        break;
+                    }
+                    case "7":
+                    {
+                        reFrom();
+                        break;
+                    }
+                    case "8":
+                    {
+                        //todo
+                        break;
+                    }
+                    case "X":
+                    {
+                        return;
+                    }
+                    case "x":
+                    {
+                        return;
+                    }
+                        
                 }
+            }
+        }
+
+        public static void reFrom()
+        {
+            string ind1 = "cock";
+            int i1 = 0;
+            while (!int.TryParse(ind1, out i1))
+            {
+                Console.WriteLine("Entrer l'idnex");
+                ind1 = Console.ReadLine();
+            }
+
+            string ind2 = "cock";
+            int i2 = 0;
+            while (!int.TryParse(ind2, out i2))
+            {
+                Console.WriteLine("Entrer l'idnex");
+                ind2 = Console.ReadLine();
+            }
+
+            try
+            {
+                pts[i1].reFrom(i2);
+            }
+            catch
+            {
+                Console.WriteLine("L'index se trouve en dehors du tableau");
+            }
+            
+        }
+
+        public static void applySimO()
+        {
+            string ind = "cock";
+            int i = 0;
+            while (!int.TryParse(ind, out i))
+            {
+                Console.WriteLine("Entrer l'idnex");
+                ind = Console.ReadLine();
+            }
+            
+            try
+            {
+                pts[i].simO();
+            }
+            catch
+            {
+                Console.WriteLine("L'index se trouve en dehors du tableau");
+            }
+        }
+
+        public static void applySimOx()
+        {
+            string ind = "cock";
+            int i = 0;
+            while (!int.TryParse(ind, out i))
+            {
+                Console.WriteLine("Entrer l'idnex");
+                ind = Console.ReadLine();
+            }
+            
+            try
+            {
+                pts[i].simOX();
+            }
+            catch
+            {
+                Console.WriteLine("L'index se trouve en dehors du tableau");
+            }
+        }
+
+        public static void applySimOy()
+        {
+            string ind = "cock";
+            int i = 0;
+            while (!int.TryParse(ind, out i))
+            {
+                Console.WriteLine("Entrer l'idnex");
+                ind = Console.ReadLine();
+            }
+            
+            try
+            {
+                pts[i].simOY();
+            }
+            catch
+            {
+                Console.WriteLine("L'index se trouve en dehors du tableau");
             }
         }
 
@@ -194,7 +327,7 @@ namespace laba17
             int x = 0;
             while (!int.TryParse(xCon, out x))
             {
-                Console.WriteLine("Enter le coordonner x");
+                Console.WriteLine("Entrer le coordonner x");
                 xCon = Console.ReadLine();
             }
 
@@ -202,7 +335,7 @@ namespace laba17
             int y = 0;
             while (!int.TryParse(yCon, out y))
             {
-                Console.WriteLine("Enter le coordonner y");
+                Console.WriteLine("Entrer le coordonner y");
                 yCon = Console.ReadLine();
             }
             
@@ -215,7 +348,7 @@ namespace laba17
             int i = 0;
             while (!int.TryParse(ind, out i))
             {
-                Console.WriteLine("Enter l'idnex");
+                Console.WriteLine("Entrer l'idnex");
                 ind = Console.ReadLine();
             }
 
@@ -223,7 +356,7 @@ namespace laba17
             int x = 0;
             while (!int.TryParse(xCon, out x))
             {
-                Console.WriteLine("Enter le coordonner x");
+                Console.WriteLine("Entrer le coordonner x");
                 xCon = Console.ReadLine();
             }
             
@@ -231,7 +364,7 @@ namespace laba17
             int y = 0;
             while (!int.TryParse(yCon, out y))
             {
-                Console.WriteLine("Enter le coordonner y");
+                Console.WriteLine("Entrer le coordonner y");
                 yCon = Console.ReadLine();
             }
             
@@ -261,7 +394,7 @@ namespace laba17
             int x = 0;
             while (!int.TryParse(xCon, out x))
             {
-                Console.WriteLine("Enter le coordonner x");
+                Console.WriteLine("Entrer le coordonner x");
                 xCon = Console.ReadLine();
             }
 
@@ -269,7 +402,7 @@ namespace laba17
             int y = 0;
             while (!int.TryParse(yCon, out y))
             {
-                Console.WriteLine("Enter le coordonner y");
+                Console.WriteLine("Entrer le coordonner y");
                 yCon = Console.ReadLine();
             }
             
