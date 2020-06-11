@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -10,7 +11,7 @@ namespace laba17
     public class Point
     {
         public string name { get; }
-        
+
         public int x { get; set; }
 
         public int y { get; set; }
@@ -78,17 +79,17 @@ namespace laba17
         {
             return string.Format("Точка-почка, X: {0}, Y: {1}", this.x, this.y);
         }
-        
+
 
         public delegate void onChangeDel(string x, string y);
 
         public event onChangeDel onChange;
-        
+
 
         public delegate bool onChangingDel();
 
         public event onChangingDel onChanging;
-        
+
         public delegate void onAxisDel(string oldx, string oldy);
 
         public event onAxisDel onAxis; // AXIS REST IN HELL 
@@ -98,20 +99,14 @@ namespace laba17
     {
         public int amount
         {
-            get
-            {
-                return this.points.Count;
-            }
+            get { return this.points.Count; }
         }
-        
+
         List<Point> points = new List<Point>();
-        
+
         public Point this[int index]
         {
-            get
-            {
-                return points[amount];
-            }
+            get { return points[amount]; }
         }
 
         public void setPoint(int i, Point p)
@@ -130,7 +125,7 @@ namespace laba17
             {
                 this.points.RemoveAt(i);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -145,10 +140,10 @@ namespace laba17
             Random rnd = new Random();
             for (int i = 0; i < am; i++)
             {
-                this.points.Add(new Point(rnd.Next(-11, 11), rnd.Next(-11, 11))); 
+                this.points.Add(new Point(rnd.Next(-11, 11), rnd.Next(-11, 11)));
             }
-            
         }
+
         public delegate void alertChange();
 
         public event alertChange onChange;
@@ -161,9 +156,10 @@ namespace laba17
         private static bool threeUnits = false;
         private static bool eightStuff = false;
         private static bool sameStuff = false;
-        
-        
+
+
         static private Points pts;
+
         public static void Main(string[] args)
         {
             pts = new Points(15);
@@ -174,7 +170,7 @@ namespace laba17
                 pts[i].onChanging += onChangingHandler;
                 pts[i].onAxis += onAxisHandler;
             }
-            
+
             while (true)
             {
                 Console.WriteLine("Choissir quel vous voulez fais, s'il vous plait");
@@ -239,25 +235,74 @@ namespace laba17
                     {
                         return;
                     }
-                        
                 }
             }
         }
 
         public static void applyRestrictions()
         {
-            int res;
             string input = "cock";
-            while (!int.TryParse(input, out res))
+            while (true)
             {
                 Console.WriteLine("Entrer les numeros des restrictions vous voulez appliquer");
                 Console.WriteLine("(1):Chaque changement des points imprime les résultats");
                 Console.WriteLine("(2):Interdire de placer des points sur l'axes");
-                Console.WriteLine("(3):Si apres le changement des points il y a moins du trois unités entre eux , le point autre se deplace au cinq unites dans un côté aléatoire");
+                Console.WriteLine(
+                    "(3):Si apres le changement des points il y a moins du trois unités entre eux , le point autre se deplace au cinq unites dans un côté aléatoire");
                 Console.WriteLine("(4):Intredire les points depssser le (-8;x,y,+8) intervalle");
                 Console.WriteLine("(5):Intredire les points avoir le mêmes x et y coordonners");
                 Console.WriteLine("(9):Tous lmao");
                 Console.WriteLine("(X):Annuler");
+                input = Console.ReadLine();
+                string[] inputsAr = input.Split(',');
+                for (int i = 0; i < inputsAr.Length; i++)
+                {
+                    inputsAr[i] = inputsAr[i].Replace(" ", "");
+                }
+
+                string sas = "cock";
+                foreach (string str in inputsAr)
+                {
+                    if (int.TryParse(str, out _))
+                    {
+                        switch (sas)
+                        {
+                            case "1":
+                            {
+                                writeAtChange = !writeAtChange;
+                                break;
+                            }
+                            case "2":
+                            {
+                                axisForbidden = !axisForbidden;
+                                break;
+                            }
+                            case "3":
+                            {
+                                threeUnits = !threeUnits;
+                                break;
+                            }
+                            case "4":
+                            {
+                                eightStuff = !eightStuff;
+                                break;
+                            }
+                            case "5":
+                            {
+                                sameStuff = !sameStuff;
+                                break;
+                            }
+                            case "x":
+                            {
+                                return;
+                            }
+                            case "X":
+                            {
+                                return;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -292,7 +337,6 @@ namespace laba17
             {
                 Console.WriteLine("L'index se trouve en dehors du tableau");
             }
-            
         }
 
         public static void applySimO()
@@ -304,7 +348,7 @@ namespace laba17
                 Console.WriteLine("Entrer l'idnex");
                 ind = Console.ReadLine();
             }
-            
+
             try
             {
                 pts[i].simO();
@@ -324,7 +368,7 @@ namespace laba17
                 Console.WriteLine("Entrer l'idnex");
                 ind = Console.ReadLine();
             }
-            
+
             try
             {
                 pts[i].simOX();
@@ -344,7 +388,7 @@ namespace laba17
                 Console.WriteLine("Entrer l'idnex");
                 ind = Console.ReadLine();
             }
-            
+
             try
             {
                 pts[i].simOY();
@@ -363,7 +407,7 @@ namespace laba17
             {
                 Console.WriteLine("Entrer le coordonner x");
                 xCon = Console.ReadLine();
-                if(int.TryParse(xCon, out int sas))
+                if (int.TryParse(xCon, out int sas))
                 {
                     if (axisForbidden)
                     {
@@ -391,7 +435,7 @@ namespace laba17
             {
                 Console.WriteLine("Entrer le coordonner y");
                 yCon = Console.ReadLine();
-                if(int.TryParse(yCon, out int sas))
+                if (int.TryParse(yCon, out int sas))
                 {
                     if (axisForbidden)
                     {
@@ -434,7 +478,7 @@ namespace laba17
                     }
                 }
             }
-            
+
             pts.add(new Point(x, y));
         }
 
@@ -446,7 +490,6 @@ namespace laba17
             {
                 Console.WriteLine("Entrer l'idnex");
                 ind = Console.ReadLine();
-
             }
 
             string xCon = "cock";
@@ -520,7 +563,15 @@ namespace laba17
                             if (pts[ia].reFrom(po) < 3)
                             {
                                 Console.WriteLine("au moins le point est à moins de 3 points de l'autre");
-                                yCon = "cock";
+                                long rand = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+                                if (rand % 2 == 0)
+                                {
+                                    y += 5;
+                                }
+                                else
+                                {
+                                    y -= 5;
+                                }
                             }
                         }
                     }
@@ -549,7 +600,7 @@ namespace laba17
                 Console.WriteLine("Enter l'idnex");
                 ind = Console.ReadLine();
             }
-            
+
             try
             {
                 pts.Remove(i);
@@ -560,8 +611,8 @@ namespace laba17
                 ind = "dsad";
             }
         }
-        
-        
+
+
         public static void onChangeHandler(string x, string y)
         {
             Console.WriteLine(string.Format("Произошел троллинг: {0} : {1}", x, y));
@@ -578,7 +629,8 @@ namespace laba17
                 {
                     return true;
                 }
-                if(res == "N" || res == "n")
+
+                if (res == "N" || res == "n")
                 {
                     return false;
                 }
@@ -593,7 +645,9 @@ namespace laba17
 
         public static void onAxisHandler(string dx, string dy)
         {
-            Console.WriteLine(String.Format("Au moins une coordonnée est maintenant 0, les coordonnées précédentes: {0}, {1}"), dx, dy);
+            Console.WriteLine(
+                String.Format("Au moins une coordonnée est maintenant 0, les coordonnées précédentes: {0}, {1}"), dx,
+                dy);
         }
     }
 }
