@@ -352,6 +352,10 @@ namespace laba17
             try
             {
                 pts[i].simO();
+                if (writeAtChange)
+                {
+                    writeInfo();
+                }
             }
             catch
             {
@@ -372,6 +376,10 @@ namespace laba17
             try
             {
                 pts[i].simOX();
+                if (writeAtChange)
+                {
+                    writeInfo();
+                }
             }
             catch
             {
@@ -392,6 +400,11 @@ namespace laba17
             try
             {
                 pts[i].simOY();
+                if (writeAtChange)
+                {
+                    writeInfo();
+                }
+                
             }
             catch
             {
@@ -480,6 +493,10 @@ namespace laba17
             }
 
             pts.add(new Point(x, y));
+            if (writeAtChange)
+            {
+                writeInfo();
+            }
         }
 
         public static void editPoint()
@@ -582,6 +599,10 @@ namespace laba17
                 {
                     pts[i].x = x;
                     pts[i].y = y;
+                    if (writeAtChange)
+                    {
+                        writeInfo();
+                    }
                 }
                 catch
                 {
@@ -604,6 +625,10 @@ namespace laba17
             try
             {
                 pts.Remove(i);
+                if (writeAtChange)
+                {
+                    writeInfo();
+                }
             }
             catch
             {
@@ -648,6 +673,20 @@ namespace laba17
             Console.WriteLine(
                 String.Format("Au moins une coordonnée est maintenant 0, les coordonnées précédentes: {0}, {1}"), dx,
                 dy);
+        }
+
+        public static void writeInfo()
+        {
+            for(int i = 0; i < pts.amount; i++)
+            {
+                Console.WriteLine("Point " + i + "----------------------------------------------------" );
+                Console.WriteLine(pts[i].ToString());
+                for (int j = 0; j < pts.amount; j++)
+                {
+                    Console.WriteLine("Distance du point " + i + ": " + pts[i].reFrom(pts[j]));
+                }
+                Console.WriteLine("_____________________________________________");
+            }
         }
     }
 }
