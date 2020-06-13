@@ -29,7 +29,11 @@ namespace laba17
                 return;
             }
 
-            onAxis.Invoke(this.x.ToString(), this.y.ToString());
+            if (newx == 0 || newy == 0)
+            {
+                onAxis.Invoke(this.x.ToString(), this.y.ToString());
+            }
+
             this.x = newx;
             this.y = newy;
             onChange.Invoke(this.x.ToString(), this.y.ToString());
@@ -80,42 +84,35 @@ namespace laba17
                 return;
             }
 
+            string prevx = x.ToString();
+            string prevy = y.ToString();
             this.x += dx;
             this.y += dy;
+            if (this.x == 0 || this.y == 0)
+            {
+                onAxis.Invoke(prevx, prevy);
+            }
+
             onChange.Invoke(this.x.ToString(), this.y.ToString());
         }
 
         public double reFrom(Point p)
         {
-            double dx = Math.Abs(this.x) + Math.Abs(p.x);
-            double dy = Math.Abs(this.y) + Math.Abs(p.y);
+            double dx = Math.Abs(this.x) - Math.Abs(p.x);
+            double dy = Math.Abs(this.y) - Math.Abs(p.y);
             return (Math.Sqrt(dx * dx + dy * dy));
         }
 
         public Point()
         {
-            bool exit = onChanging.Invoke();
-            if (exit)
-            {
-                return;
-            }
-
             this.x = 0;
             this.y = 0;
-            onChange.Invoke(this.x.ToString(), this.y.ToString());
         }
 
         public Point(int x, int y)
         {
-            bool exit = onChanging.Invoke();
-            if (exit)
-            {
-                return;
-            }
-
             this.x = x;
             this.y = y;
-            onChange.Invoke(this.x.ToString(), this.y.ToString());
         }
 
         public override bool Equals(object obj)
@@ -159,7 +156,7 @@ namespace laba17
 
         public Point this[int index]
         {
-            get { return points[amount]; }
+            get { return points[index]; }
         }
 
         public void setPoint(int i, Point p)
@@ -226,7 +223,8 @@ namespace laba17
 
             while (true)
             {
-                Console.WriteLine("Choissir quel vous voulez fais, s'il vous plait");
+                Console.WriteLine("______________________________________________________");
+                Console.WriteLine("Choisissez ce que vous voulez faire, s'il vous plait");
                 Console.WriteLine("(0):Obtenir la distance depuis le début des coordenees");
                 Console.WriteLine("(1):Ajouter du point (add)");
                 Console.WriteLine("(2):Éditer du point");
@@ -237,10 +235,21 @@ namespace laba17
                 Console.WriteLine("(7):ReFrom");
                 Console.WriteLine("(8):Basculer des restictions(toggle)");
                 Console.WriteLine("(9):Imprimer des informations sur les points");
+                Console.WriteLine("(M):MoveRel");
                 Console.WriteLine("(X):Quitter l'application");
                 string resp = Console.ReadLine();
                 switch (resp)
                 {
+                    case "M":
+                    {
+                        moveRelInvoke();
+                        break;
+                    }
+                    case "m":
+                    {
+                        moveRelInvoke();
+                        break;
+                    }
                     case "0":
                     {
                         getDistanceFromBeginning();
@@ -294,7 +303,123 @@ namespace laba17
                     {
                         return;
                     }
+                    case "9":
+                    {
+                        writeInfo();
+                        break;
+                    }
                 }
+            }
+        }
+
+        public static void moveRelInvoke()
+        {
+            string ind = "cock";
+            int i = 0;
+            while (!int.TryParse(ind, out i))
+            {
+                Console.WriteLine("Entrer l'idnex");
+                ind = Console.ReadLine();
+            }
+
+            string dxstr = "cock";
+            int dx = 0;
+            while (!int.TryParse(dxstr, out dx))
+            {
+                Console.WriteLine("Entrer le dx");
+                dxstr = Console.ReadLine();
+                if (int.TryParse(dxstr, out _))
+                {
+                    if (axisForbidden)
+                    {
+                        if (pts[i].x + dx == 0)
+                        {
+                            Console.WriteLine("Le coordonner ne peux pas etre sur l'axe");
+                            dxstr = "cock";
+                        }
+                    }
+
+                    if (Math.Abs(pts[i].x + dx) > 8)
+                    {
+                        Console.WriteLine("Le coordonner doit pas etre dans le (-8;x,y,+8) intervalle");
+                        dxstr = "dsdasd";
+                    }
+                }
+            }
+            
+
+            string dystr = "cock";
+            int dy = 0;
+            while (!int.TryParse(dystr, out dy))
+            {
+                Console.WriteLine("Entrer le dy");
+                dystr = Console.ReadLine();
+                if (int.TryParse(dystr, out _))
+                {
+                    if (axisForbidden)
+                    {
+                        if (pts[i].y + dy == 0)
+                        {
+                            Console.WriteLine("Le coordonner ne peux pas etre sur l'axe");
+                            dystr = "cock";
+                        }
+                    }
+
+                    if (eightStuff)
+                    {
+                        if (Math.Abs(pts[i].y + dy) > 8)
+                        {
+                            Console.WriteLine("Le coordonner doit pas etre dans le (-8;x,y,+8) intervalle");
+                            dystr = "cpcs";
+                        }
+                    }
+                }
+            }
+            
+
+            Point pa = new Point(pts[i].x + dx, pts[i].y + dy);
+
+            if (sameStuff)
+            {
+                if (pa.x == pa.y)
+                {
+                    Console.WriteLine("les coordonnées ne peuvent pas être les mêmes");
+                    return;
+                }
+            }
+
+            if (threeUnits)
+            {
+                for (int ia = 0; ia < pts.amount; ia++)
+                {
+                    if (pts[ia].reFrom(pa) < 3)
+                    {
+                        Console.WriteLine("Au moins le point est à moins de 3 points de l'autre");
+                        long rand = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+                        if (rand % 2 == 0)
+                        {
+                            dx += 5;
+                        }
+                        else
+                        {
+                            dx -= 5;
+                        }
+                    }
+                }
+            }
+
+
+            try
+            {
+                pts[i].MoveRel(dx, dy);
+                if (writeAtChange)
+                {
+                    writeInfo();
+                }
+            }
+            catch
+            {
+                Console.WriteLine("L'index se trouve en dehors du tableau");
             }
         }
 
@@ -325,66 +450,59 @@ namespace laba17
         public static void applyRestrictions()
         {
             string input = "cock";
-            while (true)
+            int res;
+            while (!int.TryParse(input, out res))
             {
-                Console.WriteLine("Entrer les numeros des restrictions vous voulez appliquer");
+                Console.WriteLine("Entrer le numero de restriction vous voulez appliquer");
                 Console.WriteLine("(1):Chaque changement des points imprime les résultats");
                 Console.WriteLine("(2):Interdire de placer des points sur l'axes");
                 Console.WriteLine(
                     "(3):Si apres le changement des points il y a moins du trois unités entre eux , le point autre se deplace au cinq unites dans un côté aléatoire");
-                Console.WriteLine("(4):Intredire les points depssser le (-8;x,y,+8) intervalle");
+                Console.WriteLine("(4):Intredire les points dépasser dans le (-8;x,y,+8) intervalle");
                 Console.WriteLine("(5):Intredire les points avoir le mêmes x et y coordonners");
                 Console.WriteLine("(9):Tous lmao");
                 Console.WriteLine("(X):Annuler");
                 input = Console.ReadLine();
-                string[] inputsAr = input.Split(',');
-                for (int i = 0; i < inputsAr.Length; i++)
+                if (input == "x" || input == "X")
                 {
-                    inputsAr[i] = inputsAr[i].Replace(" ", "");
+                    break;
                 }
+            }
 
-                string sas = "cock";
-                foreach (string str in inputsAr)
+            switch (input)
+            {
+                case "1":
                 {
-                    if (int.TryParse(str, out _))
-                    {
-                        switch (sas)
-                        {
-                            case "1":
-                            {
-                                writeAtChange = !writeAtChange;
-                                break;
-                            }
-                            case "2":
-                            {
-                                axisForbidden = !axisForbidden;
-                                break;
-                            }
-                            case "3":
-                            {
-                                threeUnits = !threeUnits;
-                                break;
-                            }
-                            case "4":
-                            {
-                                eightStuff = !eightStuff;
-                                break;
-                            }
-                            case "5":
-                            {
-                                sameStuff = !sameStuff;
-                                break;
-                            }
-                            case "x":
-                            {
-                                return;
-                            }
-                            case "X":
-                            {
-                                return;
-                            }
-                        }
-                    }
+                    writeAtChange = !writeAtChange;
+                    break;
+                }
+                case "2":
+                {
+                    axisForbidden = !axisForbidden;
+                    break;
+                }
+                case "3":
+                {
+                    threeUnits = !threeUnits;
+                    break;
+                }
+                case "4":
+                {
+                    eightStuff = !eightStuff;
+                    break;
+                }
+                case "5":
+                {
+                    sameStuff = !sameStuff;
+                    break;
+                }
+                case "x":
+                {
+                    return;
+                }
+                case "X":
+                {
+                    return;
                 }
             }
         }
@@ -546,7 +664,7 @@ namespace laba17
                         if (Math.Abs(sas) > 8)
                         {
                             Console.WriteLine("Le coordonner doit pas etre dans le (-8;x,y,+8) intervalle");
-                            yCon = "cock";
+                            return;
                         }
                     }
 
@@ -555,19 +673,27 @@ namespace laba17
                         if (xCon == yCon)
                         {
                             Console.WriteLine("les coordonnées ne peuvent pas être les mêmes");
-                            yCon = "cock";
+                            return;
                         }
                     }
 
                     if (threeUnits)
                     {
                         Point po = new Point(x, y);
-                        for (int i = 0; i < pts.amount; i++)
+                        for (int ia = 0; ia < pts.amount; ia++)
                         {
-                            if (pts[i].reFrom(po) < 3)
+                            if (pts[ia].reFrom(po) < 3)
                             {
-                                Console.WriteLine("au moins le point est à moins de 3 points de l'autre");
-                                yCon = "cock";
+                                Console.WriteLine("Au moins le point est à moins de 3 points de l'autre");
+                                long rand = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+                                if (rand % 2 == 0)
+                                {
+                                    x += 5;
+                                }
+                                else
+                                {
+                                    x -= 5;
+                                }
                             }
                         }
                     }
@@ -632,7 +758,7 @@ namespace laba17
                         if (sas == 0)
                         {
                             Console.WriteLine("Le coordonner ne peux pas etre sur l'axe");
-                            yCon = "cock";
+                            return;
                         }
                     }
 
@@ -641,7 +767,7 @@ namespace laba17
                         if (Math.Abs(sas) > 8)
                         {
                             Console.WriteLine("Le coordonner doit pas etre dans le (-8;x,y,+8) intervalle");
-                            yCon = "cock";
+                            return;
                         }
                     }
 
@@ -650,7 +776,7 @@ namespace laba17
                         if (xCon == yCon)
                         {
                             Console.WriteLine("les coordonnées ne peuvent pas être les mêmes");
-                            yCon = "cock";
+                            return;
                         }
                     }
 
@@ -675,22 +801,19 @@ namespace laba17
                         }
                     }
                 }
+            }
 
-
-                try
+            try
+            {
+                pts[i].setPoint(x, y);
+                if (writeAtChange)
                 {
-                    pts[i].x = x;
-                    pts[i].y = y;
-                    if (writeAtChange)
-                    {
-                        writeInfo();
-                    }
+                    writeInfo();
                 }
-                catch
-                {
-                    Console.WriteLine("L'index se trouve en dehors du tableau");
-                    yCon = "dwqd";
-                }
+            }
+            catch
+            {
+                Console.WriteLine("L'index se trouve en dehors du tableau");
             }
         }
 
@@ -715,14 +838,13 @@ namespace laba17
             catch
             {
                 Console.WriteLine("L'index se trouve en dehors du tableau");
-                ind = "dsad";
             }
         }
 
 
         public static void onChangeHandler(string x, string y)
         {
-            Console.WriteLine(string.Format("Произошел троллинг: {0} : {1}", x, y));
+            Console.WriteLine(string.Format("Le trolling est arrivé: {0} : {1}", x, y));
         }
 
         public static bool onChangingHandler()
@@ -765,7 +887,7 @@ namespace laba17
                 Console.WriteLine(pts[i].ToString());
                 for (int j = 0; j < pts.amount; j++)
                 {
-                    Console.WriteLine("Distance du point " + i + ": " + pts[i].reFrom(pts[j]));
+                    Console.WriteLine("Distance du point " + j + ": " + pts[i].reFrom(pts[j]));
                 }
 
                 Console.WriteLine("_____________________________________________");
