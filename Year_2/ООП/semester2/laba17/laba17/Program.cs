@@ -16,34 +16,73 @@ namespace laba17
 
         public int y { get; set; }
 
-        public double rj { get; }
+        public double ro
+        {
+            get { return Math.Sqrt(Math.Abs(x) * Math.Abs(x) + Math.Abs(y) * Math.Abs(y)); }
+        }
 
         public void setPoint(int newx, int newy)
         {
+            bool exit = onChanging.Invoke();
+            if (exit)
+            {
+                return;
+            }
+
+            onAxis.Invoke(this.x.ToString(), this.y.ToString());
             this.x = newx;
             this.y = newy;
+            onChange.Invoke(this.x.ToString(), this.y.ToString());
         }
 
         public void simOX()
         {
+            bool exit = onChanging.Invoke();
+            if (exit)
+            {
+                return;
+            }
+
             this.x = -this.x;
+            onChange.Invoke(this.x.ToString(), this.y.ToString());
         }
 
         public void simOY()
         {
+            bool exit = onChanging.Invoke();
+            if (exit)
+            {
+                return;
+            }
+
             this.y = -this.y;
+            onChange.Invoke(this.x.ToString(), this.y.ToString());
         }
 
         public void simO()
         {
+            bool exit = onChanging.Invoke();
+            if (exit)
+            {
+                return;
+            }
+
             this.x = -this.x;
             this.y = -this.y;
+            onChange.Invoke(this.x.ToString(), this.y.ToString());
         }
 
         public void MoveRel(int dx, int dy)
         {
+            bool exit = onChanging.Invoke();
+            if (exit)
+            {
+                return;
+            }
+
             this.x += dx;
             this.y += dy;
+            onChange.Invoke(this.x.ToString(), this.y.ToString());
         }
 
         public double reFrom(Point p)
@@ -55,14 +94,28 @@ namespace laba17
 
         public Point()
         {
+            bool exit = onChanging.Invoke();
+            if (exit)
+            {
+                return;
+            }
+
             this.x = 0;
             this.y = 0;
+            onChange.Invoke(this.x.ToString(), this.y.ToString());
         }
 
         public Point(int x, int y)
         {
+            bool exit = onChanging.Invoke();
+            if (exit)
+            {
+                return;
+            }
+
             this.x = x;
             this.y = y;
+            onChange.Invoke(this.x.ToString(), this.y.ToString());
         }
 
         public override bool Equals(object obj)
@@ -77,7 +130,7 @@ namespace laba17
 
         public override string ToString()
         {
-            return string.Format("Точка-почка, X: {0}, Y: {1}", this.x, this.y);
+            return string.Format("Un point, X: {0}, Y: {1}", this.x, this.y);
         }
 
 
@@ -174,6 +227,7 @@ namespace laba17
             while (true)
             {
                 Console.WriteLine("Choissir quel vous voulez fais, s'il vous plait");
+                Console.WriteLine("(0):Obtenir la distance depuis le début des coordenees");
                 Console.WriteLine("(1):Ajouter du point (add)");
                 Console.WriteLine("(2):Éditer du point");
                 Console.WriteLine("(3):Retirer du point (remove)");
@@ -187,6 +241,11 @@ namespace laba17
                 string resp = Console.ReadLine();
                 switch (resp)
                 {
+                    case "0":
+                    {
+                        getDistanceFromBeginning();
+                        break;
+                    }
                     case "1":
                     {
                         addPoint();
@@ -236,6 +295,30 @@ namespace laba17
                         return;
                     }
                 }
+            }
+        }
+
+        public static void getDistanceFromBeginning()
+        {
+            string ind = "cock";
+            int i = 0;
+            while (!int.TryParse(ind, out i))
+            {
+                Console.WriteLine("Entrer l'idnex");
+                ind = Console.ReadLine();
+            }
+
+            try
+            {
+                Console.WriteLine(pts[i].ro);
+                if (writeAtChange)
+                {
+                    writeInfo();
+                }
+            }
+            catch
+            {
+                Console.WriteLine("L'index se trouve en dehors du tableau");
             }
         }
 
@@ -404,7 +487,6 @@ namespace laba17
                 {
                     writeInfo();
                 }
-                
             }
             catch
             {
@@ -652,12 +734,12 @@ namespace laba17
                 res = Console.ReadLine();
                 if (res == "y" || res == "Y")
                 {
-                    return true;
+                    return false;
                 }
 
                 if (res == "N" || res == "n")
                 {
-                    return false;
+                    return true;
                 }
                 else
                 {
@@ -677,14 +759,15 @@ namespace laba17
 
         public static void writeInfo()
         {
-            for(int i = 0; i < pts.amount; i++)
+            for (int i = 0; i < pts.amount; i++)
             {
-                Console.WriteLine("Point " + i + "----------------------------------------------------" );
+                Console.WriteLine("Point " + i + "----------------------------------------------------");
                 Console.WriteLine(pts[i].ToString());
                 for (int j = 0; j < pts.amount; j++)
                 {
                     Console.WriteLine("Distance du point " + i + ": " + pts[i].reFrom(pts[j]));
                 }
+
                 Console.WriteLine("_____________________________________________");
             }
         }
