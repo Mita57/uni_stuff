@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
@@ -37,6 +38,7 @@
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize) (this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.trackBar2)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +50,7 @@
             this.checkBox1.Size = new System.Drawing.Size(22, 24);
             this.checkBox1.TabIndex = 0;
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // textBox1
             // 
@@ -64,6 +67,7 @@
             this.trackBar1.Size = new System.Drawing.Size(104, 45);
             this.trackBar1.TabIndex = 2;
             this.trackBar1.Value = 2;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // button1
             // 
@@ -73,6 +77,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Tuer le thread";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -82,6 +87,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Tuer le thread";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // trackBar2
             // 
@@ -91,6 +97,7 @@
             this.trackBar2.Size = new System.Drawing.Size(104, 45);
             this.trackBar2.TabIndex = 6;
             this.trackBar2.Value = 2;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // textBox2
             // 
@@ -106,12 +113,18 @@
             this.checkBox2.Size = new System.Drawing.Size(22, 24);
             this.checkBox2.TabIndex = 4;
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(393, 196);
+            this.ClientSize = new System.Drawing.Size(393, 151);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.trackBar2);
             this.Controls.Add(this.textBox2);
@@ -122,6 +135,8 @@
             this.Controls.Add(this.checkBox1);
             this.Name = "Form1";
             this.Text = "Deux threads";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize) (this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.trackBar2)).EndInit();
             this.ResumeLayout(false);
@@ -134,6 +149,7 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.TrackBar trackBar2;
 
