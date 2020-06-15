@@ -80,12 +80,12 @@ namespace laba18
 
         private void ChangeRedColor()
         {
-            bool marker = false;
+            bool flag = false;
             int red = 0;
             
             while (true)
             {
-                if (!marker)
+                if (!flag)
                 {
                     while (RedThread.ThStop)
                     {
@@ -109,7 +109,7 @@ namespace laba18
                     if (red > 255)
                     {
                         red = 255;
-                        marker = true;
+                        flag = true;
                     }
                 }
                 else
@@ -135,7 +135,7 @@ namespace laba18
                     if (red < 0)
                     {
                         red = 0;
-                        marker = false;
+                        flag = false;
                     }
                 }
             }
