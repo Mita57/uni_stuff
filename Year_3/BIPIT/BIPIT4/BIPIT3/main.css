@@ -1,0 +1,38 @@
+﻿body, html {
+    margin: 0;
+    height: 100%;
+    font-family: 'Comic Sans MS';
+}
+
+#left {
+    float: left;
+    width: 20%;
+    background-color: blue;
+    height: 100%;
+}
+
+#right {
+    float: right;
+    width: 80%;
+    background-color: yellow;
+    height: 100%;
+}
+
+#form1 {
+    height: 100%;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    background-color: white;
+    margin: 20px;
+}
+
+a {
+    margin: 16px;
+    color: magenta;
+}
