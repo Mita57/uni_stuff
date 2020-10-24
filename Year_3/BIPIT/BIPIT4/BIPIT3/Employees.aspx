@@ -2,5 +2,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div id="table" runat="server"></div>
+            <div>
+        <input type="date" id="dateLeft" runat="server">
+        <input type="date" id="dateRight" runat="server">
+        <asp:Button ID="sortBtn" runat="server" Text="Sort" OnClick="sortBtn_Click" />
+            <div id="table" runat="server"></div>
+            <asp:Button ID="DeleteBtn" runat="server" Text="RemoveKebab" OnClick="DeleteBtn_Click" />
+    </div>
+        <div id="add">
+        <form id="form1" runat="server">
+            <input type="text" runat="server" placeholder="Название" id="name">
+            <input type="text" runat="server" placeholder="Дата рождения" id="bd">
+            <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" />
+        </form>
+    </div>
 </asp:Content>

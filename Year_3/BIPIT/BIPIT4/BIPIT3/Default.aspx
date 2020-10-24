@@ -3,6 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
+        <input type="date" id="dateLeft" runat="server">
+        <input type="date" id="dateRight" runat="server">
+        <asp:Button ID="sortBtn" runat="server" Text="Sort" OnClick="sortBtn_Click" />
             <div id="table" runat="server"></div>
             <asp:Button ID="DeleteBtn" runat="server" Text="RemoveKebab" OnClick="DeleteBtn_Click" />
     </div>

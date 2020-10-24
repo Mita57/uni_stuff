@@ -59,5 +59,21 @@ namespace BIPIT3
             }
             Controller.RemoveRec(list, "name", "Equipment");
         }
+
+        protected void sortBtn_Click(object sender, EventArgs e)
+        {
+            List<string> results = Controller.GetData(dateLeft.Value, dateRight.Value, "Equipment");
+            string newTable = "<table>";
+            foreach(string res in results)
+            {
+                string[] parts = res.Split(new string[] { "~/~" }, StringSplitOptions.None);
+                newTable += "<tr>";
+                newTable += "<td>" + parts[0] + "</td>";
+                newTable += "<td>" + parts[1] + "</td>";
+                newTable += "</tr>";
+            }
+
+            table.InnerHtml = newTable;
+        }
     }
 }

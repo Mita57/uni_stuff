@@ -45,10 +45,10 @@ namespace BIPIT3
             List<string> list = new List<string>();
             while (dataReader.Read())
             {
-                string res = dataReader.GetValue(0).ToString() + dataReader.GetValue(1).ToString();
+                string res = dataReader.GetValue(0).ToString() + "~/~" + dataReader.GetValue(1).ToString();
                 if(table == "Issues")
                 {
-                    res += dataReader.GetValue(2).ToString();
+                    res += "~/~" + dataReader.GetValue(2).ToString();
                 }
                 list.Add(res);
             }
@@ -56,12 +56,14 @@ namespace BIPIT3
             return list;
         }
 
-        public static void NewRec(List<string> values, List<string> cols, string table)
+        public static void NewRec(List<string> vals, List<string> cols, string table)
         {
             Connect();
+            cols.Add("Added");
+            vals.Add(DateTime.Now.ToString());
 
             String newValues = "";
-            foreach (String str in values)
+            foreach (String str in vals)
             {
                 newValues += "'" + str + "', ";
             }

@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace BIPIT3
 {
@@ -28,6 +31,73 @@ namespace BIPIT3
             {
                 table.InnerHtml = res;
             }
+
+            query = ("SELECT * FROM Employees");
+            command = new SqlCommand(query, _connection);
+            dataReader = command.ExecuteReader();
+            res = "";
+            while (dataReader.Read())
+            {
+                res += "<option value='" + dataReader.GetValue(0) + "'>" + dataReader.GetValue(0) + "</option>";
+            }
+            if (res != "")
+            {
+                employee.InnerHtml = res;
+            }
+
+            query = ("SELECT * FROM Equipment");
+            command = new SqlCommand(query, _connection);
+            dataReader = command.ExecuteReader();
+            res = "";
+            while (dataReader.Read())
+            {
+                res += "<option value='" + dataReader.GetValue(0) + "'>" + dataReader.GetValue(0) + "</option>";
+            }
+            if (res != "")
+            {
+                equipment.InnerHtml = res;
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            List<string> vals = new List<string>();
+            vals.Add(employee.Value);
+            vals.Add(equipment.Value);
+            List<string> cols = new List<string>() { "Name", "price" };
+            Controller.NewRec(vals, cols, "Equipment");
+        }
+
+        protected void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            List<string> list = new List<string>();
+            foreach (Control ctl in this.Controls)
+            {
+                if (ctl is CheckBox)
+                {
+                    if ((ctl as CheckBox).Checked)
+                    {
+                        list.Add(ctl.ID.Split(new string[] { "CB" }, StringSplitOptions.None)[0]);
+                    }
+                }
+            }
+            Controller.RemoveRec(list, "name", "Equipment");
+        }
+
+        protected void sortBtn_Click(object sender, EventArgs e)
+        {
+            List<string> results = Controller.GetData(dateLeft.Value, dateRight.Value, "Equipment");
+            string newTable = "<table>";
+            foreach (string res in results)
+            {
+                string[] parts = res.Split(new string[] { "~/~" }, StringSplitOptions.None);
+                newTable += "<tr>";
+                newTable += "<td>" + parts[0] + "</td>";
+                newTable += "<td>" + parts[1] + "</td>";
+                newTable += "</tr>";
+            }
+
+            table.InnerHtml = newTable;
         }
     }
 }
