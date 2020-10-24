@@ -7,6 +7,7 @@ html, body, html {
     background-color: deepskyblue;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 form {
@@ -35,4 +36,9 @@ form {
 
 table, th, td {
   border: 1px solid black;
+}
+
+table {
+    background-color: white;
+    margin: auto;
 }
