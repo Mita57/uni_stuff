@@ -32,6 +32,10 @@ def post_process(request):
                                counts[res['analysis'][0]['lex']]))
         except Exception:
             pass
+    if request.form['sort'] == 'len':
+        stuff.sort(key=lambda x: len(x.lemma))
+    else:
+        stuff.sort(key=lambda x: x.lemma)
     return render_template('Result.html', stuff=stuff)
 
 
