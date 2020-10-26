@@ -15,6 +15,15 @@ namespace BIPIT3
     {
 
         /// <summary>
+        /// formo4ka control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm formo4ka;
+
+        /// <summary>
         /// dateLeft control.
         /// </summary>
         /// <remarks>
@@ -42,15 +51,6 @@ namespace BIPIT3
         protected global::System.Web.UI.WebControls.Button sortBtn;
 
         /// <summary>
-        /// table control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl table;
-
-        /// <summary>
         /// DeleteBtn control.
         /// </summary>
         /// <remarks>
@@ -60,13 +60,13 @@ namespace BIPIT3
         protected global::System.Web.UI.WebControls.Button DeleteBtn;
 
         /// <summary>
-        /// form1 control.
+        /// Table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.GridView Table1;
 
         /// <summary>
         /// name control.
@@ -84,7 +84,7 @@ namespace BIPIT3
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText bd;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl bd;
 
         /// <summary>
         /// Button1 control.

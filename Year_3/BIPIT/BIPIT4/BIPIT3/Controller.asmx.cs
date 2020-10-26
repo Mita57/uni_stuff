@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
 using System.Data.SqlClient;
 using System.Web.Services;
 
@@ -21,7 +22,7 @@ namespace BIPIT3
 
         private static void Connect()
         {
-            String connectString = @"Data Source = EquipmentFFS.mssql.somee.com ; Initial Catalog = EquipmentFFS;User ID = dungeonMaster_SQLLogin_1; password = rcct57h98i; MultipleActiveResultSets=true";
+            String connectString = @"Data Source = EquipmentFFSVer4.mssql.somee.com ; Initial Catalog = EquipmentFFSVer4;User ID = fckinslayer_SQLLogin_1; password = dtv5jblqyo; MultipleActiveResultSets=true";
             _connection = new SqlConnection(connectString);
             _connection.Open();
         }
@@ -32,28 +33,22 @@ namespace BIPIT3
         }
 
         [WebMethod]
-        public static List<string> GetData(string left, string right, string table)
+        public static DataSet GetData(string left, string right, string table)
         {
+            DataSet dataSet = new DataSet();
             Connect();
             String query = String.Format("SELECT * FROM {0}", table);
-            if(left != "" && right !="")
+            if (left != "" && right != "")
             {
                 query += String.Format("WHERE Added BETWEEN {0} AND {1}", left, right);
             }
             SqlCommand command = new SqlCommand(query, _connection);
-            SqlDataReader dataReader = command.ExecuteReader();
-            List<string> list = new List<string>();
-            while (dataReader.Read())
-            {
-                string res = dataReader.GetValue(0).ToString() + "~/~" + dataReader.GetValue(1).ToString();
-                if(table == "Issues")
-                {
-                    res += "~/~" + dataReader.GetValue(2).ToString();
-                }
-                list.Add(res);
-            }
+
+            SqlDataAdapter sqa = new SqlDataAdapter(command);
+            sqa.Fill(dataSet, table);
+
             Disconnect();
-            return list;
+            return dataSet;
         }
 
         public static void NewRec(List<string> vals, List<string> cols, string table)

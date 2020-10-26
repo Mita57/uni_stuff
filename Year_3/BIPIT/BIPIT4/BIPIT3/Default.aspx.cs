@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -9,30 +11,14 @@ namespace BIPIT3
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        DataSet dataSet;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Equipment
-            SqlConnection _connection;
-            String connectString = @"Data Source = EquipmentFFS.mssql.somee.com ; Initial Catalog = EquipmentFFS;User ID = dungeonMaster_SQLLogin_1; password = rcct57h98i; MultipleActiveResultSets=true";
-            _connection = new SqlConnection(connectString);
-            _connection.Open();
-            String query = ("SELECT * FROM Equipment");
-            SqlCommand command = new SqlCommand(query, _connection);
-            SqlDataReader dataReader = command.ExecuteReader();
-            string res = "<table>";
-            while (dataReader.Read())
-            {
-                res += "<tr>";
-                res += "<td> <input type='checkbox' id='CB>" + dataReader.GetValue(0) + "'> </td>";
-                res += "<td>" + dataReader.GetValue(0) + "</td>";
-                res += "<td>" + dataReader.GetValue(1) + "</td>";
-                res += "</tr>";
-            }
-            res += "</table>";
-            if (res != "<table></table>")
-            {
-                table.InnerHtml = res;
-            }
+            dataSet = Controller.GetData("", "", "Equipment");
+            DataTable table = dataSet.Tables["Equipment"];
+            Table1.DataSource = table;
+            Table1.DataBind();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -42,38 +28,21 @@ namespace BIPIT3
             vals.Add(price.Value);
             List<string> cols = new List<string>() {"Name", "price"};
             Controller.NewRec(vals, cols, "Equipment");
+            name.Value = "";
+            price.Value = "";
         }
 
         protected void DeleteBtn_Click(object sender, EventArgs e)
         {
-            List<string> list = new List<string>();
-            foreach(Control ctl in this.Controls)
-            {
-                if(ctl is CheckBox)
-                {
-                    if ((ctl as CheckBox).Checked)
-                    {
-                        list.Add(ctl.ID.Split(new string[] { "CB" }, StringSplitOptions.None)[0]);
-                    }
-                }
-            }
-            Controller.RemoveRec(list, "name", "Equipment");
+           
         }
 
         protected void sortBtn_Click(object sender, EventArgs e)
         {
-            List<string> results = Controller.GetData(dateLeft.Value, dateRight.Value, "Equipment");
-            string newTable = "<table>";
-            foreach(string res in results)
-            {
-                string[] parts = res.Split(new string[] { "~/~" }, StringSplitOptions.None);
-                newTable += "<tr>";
-                newTable += "<td>" + parts[0] + "</td>";
-                newTable += "<td>" + parts[1] + "</td>";
-                newTable += "</tr>";
-            }
-
-            table.InnerHtml = newTable;
+            dataSet = Controller.GetData(dateLeft.Value, dateRight.Value, "Equipment");
+            DataTable table = dataSet.Tables["Equipment"];
+            Table1.DataSource = table;
+            Table1.DataBind();
         }
     }
 }
