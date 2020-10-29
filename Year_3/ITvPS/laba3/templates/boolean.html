@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boolean</title>
+        <link href='../static/main.css' rel="stylesheet">
+</head>
+<body>
+    <table>
+
+    <tr>
+        <td>Лемма</td>
+        {% for i in range(length) %}
+            <td>{{ i + 1 }}</td>
+        {% endfor %}
+    </tr>
+    {% for row in matrix %}
+        <tr>
+        <td> {{ lemmas[loop.index] }} </td>
+        {% for element in row  %}
+            <td> {{ element }} </td>
+        {%  endfor %}
+        </tr>
+    {%  endfor %}
+    </table>
+</body>
+</html>

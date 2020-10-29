@@ -19,6 +19,7 @@ namespace BIPIT3
             Table1.DataBind();
         }
 
+        // add
         protected void Button1_Click(object sender, EventArgs e)
         {
             List<string> vals = new List<string>();
@@ -28,23 +29,22 @@ namespace BIPIT3
             List<string> cols = new List<string>() {"issued_at" , "equipment", "employee" };
             Controller.NewRec(vals, cols, "Issues");
             Server.TransferRequest(Request.Url.AbsolutePath, false);
+            Page_Load(sender, e);
         }
 
         protected void DeleteBtn_Click(object sender, EventArgs e)
         {
-            List<string> list = new List<string>();
-            foreach (Control ctl in this.Page.Controls)
+            for(int i = 0; i < Table1.Rows.Count; i++)
             {
-                if (ctl is CheckBox)
+                CheckBox cb = (CheckBox)Table1.Rows[i].FindControl("ch");
+                deb.InnerHtml += Table1.Rows[i].Cells[5].Text;
+                if (cb.Checked)
                 {
-                    if ((ctl as CheckBox).Checked)
-                    {
-                        list.Add(ctl.ID.Split(new string[] { "CB" }, StringSplitOptions.None)[1]);
-                    }
+                    string id = Table1.Rows[i].Cells[5].Text;
+                    Controller.RemoveRec(id, "id", "Issues");
                 }
             }
-            Controller.RemoveRec(list, "id", "Issues");
-            Server.TransferRequest(Request.Url.AbsolutePath, false);
+            Page_Load(sender, e);
         }
 
         protected void sortBtn_Click(object sender, EventArgs e)

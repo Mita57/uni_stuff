@@ -24,12 +24,12 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-        <div id="add">
+        <div id="add" runat="server">
             <select id="employee" runat="server"></select>
             <select id="equipment" runat="server"></select>
             <input type="date" runat="server" placeholder="Выдан" id="issued">
             <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" />
-
         </div>
+        <div id="deb" runat="server"></div>
     </form>
 </asp:Content>

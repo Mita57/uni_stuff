@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Controller.asmx" />
     <Content Include="main.css" />
+    <Content Include="TextFile1.txt" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
     <Content Include="Employees.aspx" />

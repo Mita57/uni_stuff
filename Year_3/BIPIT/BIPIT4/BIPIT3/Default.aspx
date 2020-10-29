@@ -4,11 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="formo4ka" runat="server">
-        <div>
+        <div runat="server">
             <input type="date" id="dateLeft" runat="server">
             <input type="date" id="dateRight" runat="server">
             <asp:Button ID="sortBtn" runat="server" Text="Sort" OnClick="sortBtn_Click" />
-            <asp:Button ID="DeleteBtn" runat="server" Text="RemoveKebab" OnClick="DeleteBtn_Click" OnClientClick="remove()" />
+            <asp:Button ID="DeleteBtn" runat="server" Text="RemoveKebab" onclick="DeleteBtn_Click" />
         </div>
         <asp:GridView ID="Table1" 
                            HorizontalAlign="Center" 
@@ -19,15 +19,16 @@
                 <Columns>
                     <asp:TemplateField HeaderText="Выбрать">
                         <ItemTemplate>
-                            <asp:CheckBox ID="ch" runat="server" />
+                            <asp:CheckBox ID="ch" runat="server" OnCheckedChanged="ch_CheckedChanged" />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-        <div id="add">
+        <div id="add" runat="server">
             <input type="text" runat="server" placeholder="Название" id="name">
             <input type="text" runat="server" placeholder="Цена" id="price">
             <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" />
         </div>
+        <div id="deb" runat="server"></div>
     </form>
 </asp:Content>

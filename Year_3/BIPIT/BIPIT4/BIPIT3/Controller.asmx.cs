@@ -5,6 +5,7 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Services;
+using System.IO;
 
 namespace BIPIT3
 {
@@ -46,12 +47,12 @@ namespace BIPIT3
 
             SqlDataAdapter sqa = new SqlDataAdapter(command);
             sqa.Fill(dataSet, table);
-
             Disconnect();
             return dataSet;
         }
 
-        public static void NewRec(List<string> vals, List<string> cols, string table)
+        [WebMethod]
+        public static string NewRec(List<string> vals, List<string> cols, string table)
         {
             Connect();
             cols.Add("Added");
@@ -83,21 +84,22 @@ namespace BIPIT3
             adapter.InsertCommand.ExecuteNonQuery();
             command.Dispose();
             Disconnect();
+            return query;
         }
 
-        public static void RemoveRec(List<string>vals, string col, string table)
+        [WebMethod]
+        public static string RemoveRec(string val, string col, string table)
         {
             Connect();
-            foreach (string val in vals)
-            {
-                String query = String.Format("DELETE FROM {0} WHERE {1} = {2}", table, col, val);
-                SqlCommand command = new SqlCommand(query, _connection);
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.DeleteCommand = command;
-                adapter.DeleteCommand.ExecuteNonQuery();
-                command.Dispose();
-            }
+
+            String query = String.Format("DELETE FROM {0} WHERE {1} = '{2}'", table, col, val);
+            SqlCommand command = new SqlCommand(query, _connection);
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.DeleteCommand = command;
+            adapter.DeleteCommand.ExecuteNonQuery();
+            command.Dispose();
             Disconnect();
+            return query;
         }
     }
 }

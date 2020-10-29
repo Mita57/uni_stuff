@@ -29,28 +29,27 @@ namespace BIPIT3
             name.Value = "";
             bd.Value = "";
             Server.TransferRequest(Request.Url.AbsolutePath, false);
+            Page_Load(sender, e);
         }
 
         protected void DeleteBtn_Click(object sender, EventArgs e)
         {
-            List<string> list = new List<string>();
-            foreach (Control ctl in this.Page.Controls)
+            for (int i = 0; i < Table1.Rows.Count; i++)
             {
-                if (ctl is CheckBox)
+                CheckBox cb = (CheckBox)Table1.Rows[i].FindControl("ch");
+                deb.InnerHtml += Table1.Rows[i].Cells[1].Text;
+                if (cb.Checked)
                 {
-                    if ((ctl as CheckBox).Checked)
-                    {
-                        list.Add(ctl.ID.Split(new string[] { "CB" }, StringSplitOptions.None)[1]);
-                    }
+                    string id = Table1.Rows[i].Cells[1].Text;
+                    Controller.RemoveRec(id, "Name", "Employees");
                 }
             }
-            Controller.RemoveRec(list, "name", "Employees");
-            Server.TransferRequest(Request.Url.AbsolutePath, false);
+            Page_Load(sender, e);
         }
 
         protected void sortBtn_Click(object sender, EventArgs e)
         {
-            dataSet = Controller.GetData(dateLeft.Value, dateRight.Value, "Employee");
+            dataSet = Controller.GetData(dateLeft.Value, dateRight.Value, "Employees");
             DataTable table = dataSet.Tables["Employee"];
             Table1.DataSource = table;
             Table1.DataBind();

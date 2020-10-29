@@ -69,6 +69,15 @@ namespace BIPIT3
         protected global::System.Web.UI.WebControls.GridView Table1;
 
         /// <summary>
+        /// add control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl add;
+
+        /// <summary>
         /// employee control.
         /// </summary>
         /// <remarks>
@@ -103,5 +112,14 @@ namespace BIPIT3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// deb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl deb;
     }
 }
