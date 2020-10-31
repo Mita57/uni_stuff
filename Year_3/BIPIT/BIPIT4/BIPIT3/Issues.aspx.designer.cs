@@ -51,6 +51,15 @@ namespace BIPIT3
         protected global::System.Web.UI.WebControls.Button sortBtn;
 
         /// <summary>
+        /// resetBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button resetBtn;
+
+        /// <summary>
         /// DeleteBtn control.
         /// </summary>
         /// <remarks>

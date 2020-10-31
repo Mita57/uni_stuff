@@ -60,13 +60,24 @@ namespace BIPIT3
             {
                 deb.InnerHtml = errMsg;
             }
-            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            else
+            {
+                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            }
         }
 
         protected void sortBtn_Click(object sender, EventArgs e)
         {
             dataSet = Controller.GetData(dateLeft.Value, dateRight.Value, "Employees");
             DataTable table = dataSet.Tables["Employee"];
+            Table1.DataSource = table;
+            Table1.DataBind();
+        }
+
+        protected void resetBtn_Click(object sender, EventArgs e)
+        {
+            dataSet = Controller.GetData(dateLeft.Value, dateRight.Value, "Equipment");
+            DataTable table = dataSet.Tables["Equipment"];
             Table1.DataSource = table;
             Table1.DataBind();
         }

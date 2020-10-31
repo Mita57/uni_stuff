@@ -8,6 +8,7 @@
             <input type="date" id="dateLeft" runat="server">
             <input type="date" id="dateRight" runat="server">
             <asp:Button ID="sortBtn" runat="server" Text="Sort" OnClick="sortBtn_Click" />
+            <asp:Button ID="resetBtn" runat="server" Text="Reset" OnClick="resetBtn_Click"/>
             <asp:Button ID="DeleteBtn" runat="server" Text="RemoveKebab" onclick="DeleteBtn_Click" />
         </div>
         <asp:GridView ID="Table1" 

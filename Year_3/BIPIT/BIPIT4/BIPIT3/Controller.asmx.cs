@@ -41,7 +41,7 @@ namespace BIPIT3
             String query = String.Format("SELECT * FROM {0}", table);
             if (left != "" && right != "")
             {
-                query += String.Format("WHERE Added BETWEEN {0} AND {1}", left, right);
+                query += String.Format(" WHERE Added BETWEEN '{0}' AND '{1}'", left, right);
             }
             SqlCommand command = new SqlCommand(query, _connection);
 

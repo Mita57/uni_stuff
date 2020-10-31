@@ -47,23 +47,34 @@ namespace BIPIT3
                     {
                         try
                         {
-                            Controller.RemoveRec(row.Cells[1].Text, "Id", "Issues");
+                            Controller.RemoveRec(row.Cells[5].Text, "Id", "Issues");
                         }
                         catch
                         {
-                            errMsg += row.Cells[1].Text + "<br>";
+                            errMsg += row.Cells[5].Text + "<br>";
                         }
                     }
                 }
             }
-            if(errMsg != "The following items are still in use:")
+            if (errMsg != "The following items are still in use:")
             {
                 deb.InnerHtml = errMsg;
             }
-            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            else
+            {
+                Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            }
         }
 
         protected void sortBtn_Click(object sender, EventArgs e)
+        {
+            dataSet = Controller.GetData(dateLeft.Value, dateRight.Value, "Equipment");
+            DataTable table = dataSet.Tables["Equipment"];
+            Table1.DataSource = table;
+            Table1.DataBind();
+        }
+
+        protected void resetBtn_Click(object sender, EventArgs e)
         {
             dataSet = Controller.GetData(dateLeft.Value, dateRight.Value, "Equipment");
             DataTable table = dataSet.Tables["Equipment"];
