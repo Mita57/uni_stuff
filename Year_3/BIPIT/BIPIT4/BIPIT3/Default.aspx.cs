@@ -16,10 +16,13 @@ namespace BIPIT3
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            dataSet = Controller.GetData("", "", "Equipment");
-            DataTable table = dataSet.Tables["Equipment"];
-            Table1.DataSource = table;
-            Table1.DataBind();
+            if (!IsPostBack)
+            {
+                dataSet = Controller.GetData("", "", "Equipment");
+                DataTable table = dataSet.Tables["Equipment"];
+                Table1.DataSource = table;
+                Table1.DataBind();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -41,13 +44,20 @@ namespace BIPIT3
                 if(row.RowType == DataControlRowType.DataRow)
                 {
                     CheckBox cb = (row.Cells[0].FindControl("ch") as CheckBox);
-                    deb.InnerHtml += cb.Checked;
                     if(cb.Checked)
                     {
-                        Controller.RemoveRec(row.Cells[1].Text, "Name", "Equipment");
+                        try
+                        {
+                            Controller.RemoveRec(row.Cells[1].Text, "Name", "Equipment");
+                        }
+                        catch
+                        {
+                            deb.InnerHtml += "The following stuff is still used: " + row.Cells[1].Text + "<br>";
+                        }
                     }
                 }
             }
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
 
         }
 
@@ -59,11 +69,5 @@ namespace BIPIT3
             Table1.DataBind();
         }
 
-        protected void ch_CheckedChanged(object sender, EventArgs e)
-        {
-            deb.InnerHtml += (sender as CheckBox).Checked;
-            deb.InnerHtml += "(sender as CheckBox).Checked";
-            File.AppendAllText("./TextFile1.txt", (sender as CheckBox).Checked.ToString());
-        }
     }
 }

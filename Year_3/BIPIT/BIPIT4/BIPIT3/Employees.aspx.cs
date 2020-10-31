@@ -13,10 +13,13 @@ namespace BIPIT3
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            dataSet = Controller.GetData("", "", "Employees");
-            DataTable table = dataSet.Tables["Employees"];
-            Table1.DataSource = table;
-            Table1.DataBind();
+            if (!IsPostBack)
+            {
+                dataSet = Controller.GetData("", "", "Employees");
+                DataTable table = dataSet.Tables["Employees"];
+                Table1.DataSource = table;
+                Table1.DataBind();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -34,17 +37,25 @@ namespace BIPIT3
 
         protected void DeleteBtn_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < Table1.Rows.Count; i++)
+            foreach (GridViewRow row in Table1.Rows)
             {
-                CheckBox cb = (CheckBox)Table1.Rows[i].FindControl("ch");
-                deb.InnerHtml += Table1.Rows[i].Cells[1].Text;
-                if (cb.Checked)
+                if (row.RowType == DataControlRowType.DataRow)
                 {
-                    string id = Table1.Rows[i].Cells[1].Text;
-                    Controller.RemoveRec(id, "Name", "Employees");
+                    CheckBox cb = (row.Cells[0].FindControl("ch") as CheckBox);
+                    if (cb.Checked)
+                    {
+                        try
+                        {
+                            Controller.RemoveRec(row.Cells[1].Text, "Name", "Employees");
+                        }
+                        catch
+                        {
+                            deb.InnerHtml += "The following stuff is still used: " + row.Cells[1].Text + "<br>";
+                        }
+                    }
                 }
             }
-            Page_Load(sender, e);
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
 
         protected void sortBtn_Click(object sender, EventArgs e)

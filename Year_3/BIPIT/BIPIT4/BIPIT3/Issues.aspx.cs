@@ -34,17 +34,25 @@ namespace BIPIT3
 
         protected void DeleteBtn_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < Table1.Rows.Count; i++)
+            foreach (GridViewRow row in Table1.Rows)
             {
-                CheckBox cb = (CheckBox)Table1.Rows[i].FindControl("ch");
-                deb.InnerHtml += Table1.Rows[i].Cells[5].Text;
-                if (cb.Checked)
+                if (row.RowType == DataControlRowType.DataRow)
                 {
-                    string id = Table1.Rows[i].Cells[5].Text;
-                    Controller.RemoveRec(id, "id", "Issues");
+                    CheckBox cb = (row.Cells[0].FindControl("ch") as CheckBox);
+                    if (cb.Checked)
+                    {
+                        try
+                        {
+                            Controller.RemoveRec(row.Cells[1].Text, "Id", "Issues");
+                        }
+                        catch
+                        {
+                            deb.InnerHtml += "The following stuff is still used: " + row.Cells[1].Text + "<br>";
+                        }
+                    }
                 }
             }
-            Page_Load(sender, e);
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
 
         protected void sortBtn_Click(object sender, EventArgs e)

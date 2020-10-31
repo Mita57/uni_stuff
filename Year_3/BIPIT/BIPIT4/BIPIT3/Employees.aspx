@@ -19,7 +19,7 @@
                 <Columns>
                     <asp:TemplateField HeaderText="Выбрать">
                         <ItemTemplate>
-                            <asp:CheckBox ID="ch" runat="server" />
+                            <asp:CheckBox ID="ch" runat="server" AutoPostBack="true" Checked="false"  />
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
