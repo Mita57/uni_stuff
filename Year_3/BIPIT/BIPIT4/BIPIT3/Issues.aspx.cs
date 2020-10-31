@@ -13,10 +13,13 @@ namespace BIPIT3
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            dataSet = Controller.GetData("", "", "Issues");
-            DataTable table = dataSet.Tables["Issues"];
-            Table1.DataSource = table;
-            Table1.DataBind();
+            if (!IsPostBack)
+            {
+                dataSet = Controller.GetData("", "", "Issues");
+                DataTable table = dataSet.Tables["Issues"];
+                Table1.DataSource = table;
+                Table1.DataBind();
+            }
         }
 
         // add
@@ -34,6 +37,7 @@ namespace BIPIT3
 
         protected void DeleteBtn_Click(object sender, EventArgs e)
         {
+            string errMsg = "The following items are still in use: ";
             foreach (GridViewRow row in Table1.Rows)
             {
                 if (row.RowType == DataControlRowType.DataRow)
@@ -47,10 +51,14 @@ namespace BIPIT3
                         }
                         catch
                         {
-                            deb.InnerHtml += "The following stuff is still used: " + row.Cells[1].Text + "<br>";
+                            errMsg += row.Cells[1].Text + "<br>";
                         }
                     }
                 }
+            }
+            if(errMsg != "The following items are still in use:")
+            {
+                deb.InnerHtml = errMsg;
             }
             Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }

@@ -39,7 +39,8 @@ namespace BIPIT3
 
         protected void DeleteBtn_Click(object sender, EventArgs e)
         {
-            foreach(GridViewRow row in Table1.Rows)
+            string errMsg = "The following items are still in use: ";
+            foreach (GridViewRow row in Table1.Rows)
             {
                 if(row.RowType == DataControlRowType.DataRow)
                 {
@@ -52,10 +53,14 @@ namespace BIPIT3
                         }
                         catch
                         {
-                            deb.InnerHtml += "The following stuff is still used: " + row.Cells[1].Text + "<br>";
+                            errMsg += row.Cells[1].Text + "<br>";
                         }
                     }
                 }
+            }
+            if (errMsg != "The following items are still in use:")
+            {
+                deb.InnerHtml = errMsg;
             }
             Page.Response.Redirect(Page.Request.Url.ToString(), true);
 
