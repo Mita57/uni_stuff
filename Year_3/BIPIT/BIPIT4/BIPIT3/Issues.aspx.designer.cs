@@ -87,22 +87,22 @@ namespace BIPIT3
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl add;
 
         /// <summary>
-        /// employee control.
+        /// equipments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect employee;
+        protected global::System.Web.UI.WebControls.DropDownList equipments;
 
         /// <summary>
-        /// equipment control.
+        /// employees control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect equipment;
+        protected global::System.Web.UI.WebControls.DropDownList employees;
 
         /// <summary>
         /// issued control.

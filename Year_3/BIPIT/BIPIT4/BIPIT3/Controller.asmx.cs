@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web.Services;
 using System.IO;
+using System.Web.UI.WebControls;
 
 namespace BIPIT3
 {
@@ -100,6 +101,21 @@ namespace BIPIT3
             command.Dispose();
             Disconnect();
             return query;
+        }
+
+        [WebMethod]
+        public static List<string> GetRawData(string table)
+        {
+            Connect();
+            String query = String.Format("SELECT * FROM {0}", table);
+            SqlCommand command = new SqlCommand(query, _connection);
+            SqlDataReader dataReader = command.ExecuteReader();
+            List<string> list = new List<string>();
+            while (dataReader.Read())
+            {
+                 list.Add(dataReader.GetValue(0).ToString());
+            }
+            return list;
         }
     }
 }

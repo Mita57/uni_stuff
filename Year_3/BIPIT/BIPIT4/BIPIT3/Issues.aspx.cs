@@ -19,6 +19,18 @@ namespace BIPIT3
                 DataTable table = dataSet.Tables["Issues"];
                 Table1.DataSource = table;
                 Table1.DataBind();
+
+                employees.Items.Clear();
+                foreach(string item in Controller.GetRawData("Employees"))
+                {
+                    employees.Items.Add(item);
+                }
+
+                equipments.Items.Clear();
+                foreach (string item in Controller.GetRawData("Equipment"))
+                {
+                    equipments.Items.Add(item);
+                }
             }
         }
 
@@ -27,8 +39,8 @@ namespace BIPIT3
         {
             List<string> vals = new List<string>();
             vals.Add(issued.Value);
-            vals.Add(equipment.Value);
-            vals.Add(employee.Value);
+            vals.Add(equipments.SelectedValue);
+            vals.Add(employees.SelectedValue);
             List<string> cols = new List<string>() {"issued_at" , "equipment", "employee" };
             Controller.NewRec(vals, cols, "Issues");
             Server.TransferRequest(Request.Url.AbsolutePath, false);
