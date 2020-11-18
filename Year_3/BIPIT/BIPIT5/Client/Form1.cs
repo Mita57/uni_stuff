@@ -50,6 +50,7 @@ namespace Client
             };
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
             client.NewRec(vals.ToArray(), cols.ToArray(), "Employees");
+            this.tabControl1_SelectedIndexChanged(sender, e);
         }
 
         private void employeesPageLoad()
@@ -65,31 +66,6 @@ namespace Client
                     this.employeesGrid.Rows[i].Cells[j].Value = res[i][j];
                 }
             }
-        }
-
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (tabControl1.SelectedIndex)
-            {
-                case 0:
-                    {
-                        employeesPageLoad();
-                        break;
-                    }
-                case 1:
-                    {
-                        equipmentPageLoad();
-                        break;
-                    }
-                case 2:
-                    {
-                        issuesPageLoad();
-                        break;
-                    }
-            }
-                
-
         }
 
         // equipment
@@ -140,6 +116,7 @@ namespace Client
             };
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
             client.NewRec(vals.ToArray(), cols.ToArray(), "Equipment");
+            this.tabControl1_SelectedIndexChanged(sender, e);
         }
 
         // issues 
@@ -192,6 +169,37 @@ namespace Client
             };
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
             client.NewRec(vals.ToArray(), cols.ToArray(), "Issues");
+            this.tabControl1_SelectedIndexChanged(sender, e);
+        }
+
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControl1.SelectedIndex)
+            {
+                case 0:
+                    {
+                        employeesPageLoad();
+                        break;
+                    }
+                case 1:
+                    {
+                        equipmentPageLoad();
+                        break;
+                    }
+                case 2:
+                    {
+                        issuesPageLoad();
+                        break;
+                    }
+            }
+
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.tabControl1_SelectedIndexChanged(sender, e);
         }
     }
 }

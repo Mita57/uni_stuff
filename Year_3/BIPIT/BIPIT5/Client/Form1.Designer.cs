@@ -50,9 +50,15 @@ namespace Client
             this.issuesData = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.issuesAddBtn = new System.Windows.Forms.Button();
-            this.employeeAdded = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeBd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empCb = new System.Windows.Forms.ComboBox();
+            this.eqCb = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.issuedAt = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.employeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeBd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeAdded = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,12 +66,6 @@ namespace Client
             this.eq = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empCb = new System.Windows.Forms.ComboBox();
-            this.eqCb = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.issuedAt = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.employeesPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -318,76 +318,6 @@ namespace Client
             this.issuesAddBtn.UseVisualStyleBackColor = true;
             this.issuesAddBtn.Click += new System.EventHandler(this.issuesAddBtn_Click);
             // 
-            // employeeAdded
-            // 
-            this.employeeAdded.HeaderText = "Добавлено";
-            this.employeeAdded.MinimumWidth = 6;
-            this.employeeAdded.Name = "employeeAdded";
-            this.employeeAdded.Width = 140;
-            // 
-            // employeeBd
-            // 
-            this.employeeBd.HeaderText = "Дата рождения";
-            this.employeeBd.MinimumWidth = 6;
-            this.employeeBd.Name = "employeeBd";
-            this.employeeBd.Width = 140;
-            // 
-            // employeeName
-            // 
-            this.employeeName.HeaderText = "Имя";
-            this.employeeName.MinimumWidth = 6;
-            this.employeeName.Name = "employeeName";
-            this.employeeName.Width = 558;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Имя";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 558;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Дата рождения";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 140;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Добавлено";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 140;
-            // 
-            // issued
-            // 
-            this.issued.HeaderText = "Выдано";
-            this.issued.MinimumWidth = 6;
-            this.issued.Name = "issued";
-            this.issued.Width = 125;
-            // 
-            // eq
-            // 
-            this.eq.HeaderText = "Оборудование";
-            this.eq.MinimumWidth = 6;
-            this.eq.Name = "eq";
-            this.eq.Width = 294;
-            // 
-            // emp
-            // 
-            this.emp.HeaderText = "Сотрудник";
-            this.emp.MinimumWidth = 6;
-            this.emp.Name = "emp";
-            this.emp.Width = 294;
-            // 
-            // ad
-            // 
-            this.ad.HeaderText = "Добавлено";
-            this.ad.MinimumWidth = 6;
-            this.ad.Name = "ad";
-            this.ad.Width = 125;
-            // 
             // empCb
             // 
             this.empCb.FormattingEnabled = true;
@@ -438,6 +368,76 @@ namespace Client
             this.label7.TabIndex = 10;
             this.label7.Text = "Дата выдачи";
             // 
+            // employeeName
+            // 
+            this.employeeName.HeaderText = "Имя";
+            this.employeeName.MinimumWidth = 6;
+            this.employeeName.Name = "employeeName";
+            this.employeeName.Width = 300;
+            // 
+            // employeeBd
+            // 
+            this.employeeBd.HeaderText = "Дата рождения";
+            this.employeeBd.MinimumWidth = 6;
+            this.employeeBd.Name = "employeeBd";
+            this.employeeBd.Width = 140;
+            // 
+            // employeeAdded
+            // 
+            this.employeeAdded.HeaderText = "Добавлено";
+            this.employeeAdded.MinimumWidth = 6;
+            this.employeeAdded.Name = "employeeAdded";
+            this.employeeAdded.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Дата рождения";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Добавлено";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 140;
+            // 
+            // issued
+            // 
+            this.issued.HeaderText = "Выдано";
+            this.issued.MinimumWidth = 6;
+            this.issued.Name = "issued";
+            this.issued.Width = 125;
+            // 
+            // eq
+            // 
+            this.eq.HeaderText = "Оборудование";
+            this.eq.MinimumWidth = 6;
+            this.eq.Name = "eq";
+            this.eq.Width = 195;
+            // 
+            // emp
+            // 
+            this.emp.HeaderText = "Сотрудник";
+            this.emp.MinimumWidth = 6;
+            this.emp.Name = "emp";
+            this.emp.Width = 195;
+            // 
+            // ad
+            // 
+            this.ad.HeaderText = "Добавлено";
+            this.ad.MinimumWidth = 6;
+            this.ad.Name = "ad";
+            this.ad.Width = 125;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -446,6 +446,7 @@ namespace Client
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.employeesPage.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -485,24 +486,24 @@ namespace Client
         private System.Windows.Forms.DataGridView equipmentGrid;
         private System.Windows.Forms.NumericUpDown equpmentPrice;
         private System.Windows.Forms.DataGridView issuesData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeBd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeAdded;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button issuesAddBtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn issued;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eq;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ad;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox eqCb;
         private System.Windows.Forms.ComboBox empCb;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker issuedAt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeBd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeAdded;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn issued;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eq;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ad;
     }
 }
 
