@@ -38,9 +38,6 @@ namespace Client
             this.employeeNameTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.employeesGrid = new System.Windows.Forms.DataGridView();
-            this.employeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeBd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeAdded = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipmentPage = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.equpmentPrice = new System.Windows.Forms.NumericUpDown();
@@ -49,10 +46,26 @@ namespace Client
             this.equipmentNameTb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.equipmentGrid = new System.Windows.Forms.DataGridView();
+            this.issuesPage = new System.Windows.Forms.TabPage();
+            this.issuesData = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.issuesAddBtn = new System.Windows.Forms.Button();
+            this.employeeAdded = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeBd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.issuesPage = new System.Windows.Forms.TabPage();
+            this.issued = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eq = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empCb = new System.Windows.Forms.ComboBox();
+            this.eqCb = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.issuedAt = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.employeesPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -61,6 +74,9 @@ namespace Client
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.equpmentPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentGrid)).BeginInit();
+            this.issuesPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.issuesData)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -153,31 +169,11 @@ namespace Client
             this.employeeAdded});
             this.employeesGrid.Location = new System.Drawing.Point(9, 9);
             this.employeesGrid.Name = "employeesGrid";
+            this.employeesGrid.RowHeadersVisible = false;
             this.employeesGrid.RowHeadersWidth = 51;
             this.employeesGrid.RowTemplate.Height = 24;
             this.employeesGrid.Size = new System.Drawing.Size(841, 342);
             this.employeesGrid.TabIndex = 0;
-            // 
-            // employeeName
-            // 
-            this.employeeName.HeaderText = "Имя";
-            this.employeeName.MinimumWidth = 6;
-            this.employeeName.Name = "employeeName";
-            this.employeeName.Width = 508;
-            // 
-            // employeeBd
-            // 
-            this.employeeBd.HeaderText = "Дата рождения";
-            this.employeeBd.MinimumWidth = 6;
-            this.employeeBd.Name = "employeeBd";
-            this.employeeBd.Width = 140;
-            // 
-            // employeeAdded
-            // 
-            this.employeeAdded.HeaderText = "Добавлено";
-            this.employeeAdded.MinimumWidth = 6;
-            this.employeeAdded.Name = "employeeAdded";
-            this.employeeAdded.Width = 140;
             // 
             // equipmentPage
             // 
@@ -225,6 +221,7 @@ namespace Client
             this.equipmentAddBtn.TabIndex = 4;
             this.equipmentAddBtn.Text = "Добавить";
             this.equipmentAddBtn.UseVisualStyleBackColor = true;
+            this.equipmentAddBtn.Click += new System.EventHandler(this.equipmentAddBtn_Click);
             // 
             // label3
             // 
@@ -261,17 +258,93 @@ namespace Client
             this.dataGridViewTextBoxColumn3});
             this.equipmentGrid.Location = new System.Drawing.Point(9, 9);
             this.equipmentGrid.Name = "equipmentGrid";
+            this.equipmentGrid.RowHeadersVisible = false;
             this.equipmentGrid.RowHeadersWidth = 51;
             this.equipmentGrid.RowTemplate.Height = 24;
             this.equipmentGrid.Size = new System.Drawing.Size(841, 342);
             this.equipmentGrid.TabIndex = 1;
+            // 
+            // issuesPage
+            // 
+            this.issuesPage.Controls.Add(this.groupBox3);
+            this.issuesPage.Controls.Add(this.issuesData);
+            this.issuesPage.Location = new System.Drawing.Point(4, 25);
+            this.issuesPage.Name = "issuesPage";
+            this.issuesPage.Padding = new System.Windows.Forms.Padding(3);
+            this.issuesPage.Size = new System.Drawing.Size(862, 470);
+            this.issuesPage.TabIndex = 2;
+            this.issuesPage.Text = "Выдача";
+            this.issuesPage.UseVisualStyleBackColor = true;
+            // 
+            // issuesData
+            // 
+            this.issuesData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.issuesData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.issued,
+            this.eq,
+            this.emp,
+            this.ad});
+            this.issuesData.Location = new System.Drawing.Point(9, 9);
+            this.issuesData.Name = "issuesData";
+            this.issuesData.RowHeadersVisible = false;
+            this.issuesData.RowHeadersWidth = 51;
+            this.issuesData.RowTemplate.Height = 24;
+            this.issuesData.Size = new System.Drawing.Size(841, 342);
+            this.issuesData.TabIndex = 2;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.issuedAt);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.eqCb);
+            this.groupBox3.Controls.Add(this.empCb);
+            this.groupBox3.Controls.Add(this.issuesAddBtn);
+            this.groupBox3.Location = new System.Drawing.Point(10, 363);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(840, 96);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Добавление";
+            // 
+            // issuesAddBtn
+            // 
+            this.issuesAddBtn.Location = new System.Drawing.Point(717, 30);
+            this.issuesAddBtn.Name = "issuesAddBtn";
+            this.issuesAddBtn.Size = new System.Drawing.Size(97, 29);
+            this.issuesAddBtn.TabIndex = 4;
+            this.issuesAddBtn.Text = "Добавить";
+            this.issuesAddBtn.UseVisualStyleBackColor = true;
+            this.issuesAddBtn.Click += new System.EventHandler(this.issuesAddBtn_Click);
+            // 
+            // employeeAdded
+            // 
+            this.employeeAdded.HeaderText = "Добавлено";
+            this.employeeAdded.MinimumWidth = 6;
+            this.employeeAdded.Name = "employeeAdded";
+            this.employeeAdded.Width = 140;
+            // 
+            // employeeBd
+            // 
+            this.employeeBd.HeaderText = "Дата рождения";
+            this.employeeBd.MinimumWidth = 6;
+            this.employeeBd.Name = "employeeBd";
+            this.employeeBd.Width = 140;
+            // 
+            // employeeName
+            // 
+            this.employeeName.HeaderText = "Имя";
+            this.employeeName.MinimumWidth = 6;
+            this.employeeName.Name = "employeeName";
+            this.employeeName.Width = 558;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Имя";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 508;
+            this.dataGridViewTextBoxColumn1.Width = 558;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -287,15 +360,83 @@ namespace Client
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 140;
             // 
-            // issuesPage
+            // issued
             // 
-            this.issuesPage.Location = new System.Drawing.Point(4, 25);
-            this.issuesPage.Name = "issuesPage";
-            this.issuesPage.Padding = new System.Windows.Forms.Padding(3);
-            this.issuesPage.Size = new System.Drawing.Size(862, 470);
-            this.issuesPage.TabIndex = 2;
-            this.issuesPage.Text = "Выдача";
-            this.issuesPage.UseVisualStyleBackColor = true;
+            this.issued.HeaderText = "Выдано";
+            this.issued.MinimumWidth = 6;
+            this.issued.Name = "issued";
+            this.issued.Width = 125;
+            // 
+            // eq
+            // 
+            this.eq.HeaderText = "Оборудование";
+            this.eq.MinimumWidth = 6;
+            this.eq.Name = "eq";
+            this.eq.Width = 294;
+            // 
+            // emp
+            // 
+            this.emp.HeaderText = "Сотрудник";
+            this.emp.MinimumWidth = 6;
+            this.emp.Name = "emp";
+            this.emp.Width = 294;
+            // 
+            // ad
+            // 
+            this.ad.HeaderText = "Добавлено";
+            this.ad.MinimumWidth = 6;
+            this.ad.Name = "ad";
+            this.ad.Width = 125;
+            // 
+            // empCb
+            // 
+            this.empCb.FormattingEnabled = true;
+            this.empCb.Location = new System.Drawing.Point(255, 30);
+            this.empCb.Name = "empCb";
+            this.empCb.Size = new System.Drawing.Size(230, 24);
+            this.empCb.TabIndex = 5;
+            // 
+            // eqCb
+            // 
+            this.eqCb.FormattingEnabled = true;
+            this.eqCb.Location = new System.Drawing.Point(6, 30);
+            this.eqCb.Name = "eqCb";
+            this.eqCb.Size = new System.Drawing.Size(230, 24);
+            this.eqCb.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(63, 66);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 17);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Оборудование";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(325, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(78, 17);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Сотрудник";
+            // 
+            // issuedAt
+            // 
+            this.issuedAt.Location = new System.Drawing.Point(500, 32);
+            this.issuedAt.Name = "issuedAt";
+            this.issuedAt.Size = new System.Drawing.Size(200, 22);
+            this.issuedAt.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(553, 66);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(95, 17);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Дата выдачи";
             // 
             // Form1
             // 
@@ -315,6 +456,10 @@ namespace Client
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.equpmentPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentGrid)).EndInit();
+            this.issuesPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.issuesData)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -327,9 +472,6 @@ namespace Client
         private System.Windows.Forms.TabPage issuesPage;
         private System.Windows.Forms.DataGridView employeesGrid;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeBd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeAdded;
         private System.Windows.Forms.DateTimePicker employeeBirth;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox employeeNameTB;
@@ -341,10 +483,26 @@ namespace Client
         private System.Windows.Forms.TextBox equipmentNameTb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView equipmentGrid;
+        private System.Windows.Forms.NumericUpDown equpmentPrice;
+        private System.Windows.Forms.DataGridView issuesData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeBd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeAdded;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.NumericUpDown equpmentPrice;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button issuesAddBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn issued;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eq;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ad;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox eqCb;
+        private System.Windows.Forms.ComboBox empCb;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker issuedAt;
     }
 }
 

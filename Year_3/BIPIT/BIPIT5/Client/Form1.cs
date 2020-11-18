@@ -92,7 +92,7 @@ namespace Client
 
         }
 
-        //equipment
+        // equipment
 
         private void equipmentNameTb_TextChanged(object sender, EventArgs e)
         {
@@ -121,6 +121,77 @@ namespace Client
                     this.equipmentGrid.Rows[i].Cells[j].Value = res[i][j];
                 }
             }
+        }
+
+        private void equipmentAddBtn_Click(object sender, EventArgs e)
+        {
+            List<string> cols = new List<string>()
+            {
+                "Name",
+                "price",
+                "Added"
+            };
+
+            List<string> vals = new List<string>()
+            {
+                this.equipmentNameTb.Text,
+                this.equpmentPrice.Value.ToString(),
+                DateTime.Now.ToString()
+            };
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+            client.NewRec(vals.ToArray(), cols.ToArray(), "Equipment");
+        }
+
+        // issues 
+
+        private void issuesPageLoad()
+        {
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+            string[][] res = client.GetData("Issues");
+            this.issuesData.RowCount = res.Length;
+
+            for (int i = 0; i < res.Length; i++)
+            {
+                for (int j = 0; j < res[i].Length; j++)
+                {
+                    this.issuesData.Rows[i].Cells[j].Value = res[i][j];
+                }
+            }
+
+            eqCb.Items.Clear();
+            res = client.GetData("Equipment");
+            for (int i = 0; i < res.Length; i++)
+            {
+                eqCb.Items.Add(res[i].ToString());
+            }
+
+            empCb.Items.Clear();
+            res = client.GetData("Employees");
+            for(int i = 0; i < res.Length; i++)
+            {
+                empCb.Items.Add(res[i].ToString());
+            }
+        }
+
+        private void issuesAddBtn_Click(object sender, EventArgs e)
+        {
+            List<string> cols = new List<string>()
+            {
+                "issued_at",
+                "equipment",
+                "employee",
+                "Added"
+            };
+
+            List<string> vals = new List<string>()
+            {
+                this.issuedAt.Value.ToString(),
+                this.eqCb.Text,
+                this.eqCb.Text,
+                DateTime.Now.ToString()
+            };
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+            client.NewRec(vals.ToArray(), cols.ToArray(), "Issues");
         }
     }
 }

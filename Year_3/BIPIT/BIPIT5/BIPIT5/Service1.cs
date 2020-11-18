@@ -66,7 +66,6 @@ namespace BIPIT5
                 if(table == "Issues")
                 {
                     listLocal.Add(dataReader.GetValue(3).ToString());
-                    listLocal.Add(dataReader.GetValue(4).ToString());
                 }
                 listGlobal.Add(listLocal);
                 listLocal = new List<string>();
