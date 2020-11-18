@@ -16,10 +16,16 @@ namespace Client.ServiceReference1 {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        string GetData(int value);
+        string[][] GetData(string table);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
+        System.Threading.Tasks.Task<string[][]> GetDataAsync(string table);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/NewRec", ReplyAction="http://tempuri.org/IService1/NewRecResponse")]
+        void NewRec(string[] vals, string[] cols, string table);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/NewRec", ReplyAction="http://tempuri.org/IService1/NewRecResponse")]
+        System.Threading.Tasks.Task NewRecAsync(string[] vals, string[] cols, string table);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,12 +55,20 @@ namespace Client.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
+        public string[][] GetData(string table) {
+            return base.Channel.GetData(table);
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
+        public System.Threading.Tasks.Task<string[][]> GetDataAsync(string table) {
+            return base.Channel.GetDataAsync(table);
+        }
+        
+        public void NewRec(string[] vals, string[] cols, string table) {
+            base.Channel.NewRec(vals, cols, table);
+        }
+        
+        public System.Threading.Tasks.Task NewRecAsync(string[] vals, string[] cols, string table) {
+            return base.Channel.NewRecAsync(vals, cols, table);
         }
     }
 }

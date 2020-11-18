@@ -48,7 +48,7 @@ namespace BIPIT5
             _connection.Close();
         }
 
-        List<List<string>> IService1.GetData(string table)
+        public List<List<string>> GetData(string table)
         {
             String connectString = @"Data Source = EquipmentFFSVer4.mssql.somee.com ; Initial Catalog = EquipmentFFSVer4;User ID = fckinslayer_SQLLogin_1; password = dtv5jblqyo; MultipleActiveResultSets=true";
             _connection = new SqlConnection(connectString);
