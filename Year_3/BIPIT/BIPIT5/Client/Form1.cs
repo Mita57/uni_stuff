@@ -17,9 +17,11 @@ namespace Client
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        // employees
+
+        private void employee_TextChanged(object sender, EventArgs e)
         {
-            if(String.IsNullOrEmpty(this.employeeNameTB.Text))
+            if (String.IsNullOrEmpty(this.employeeNameTB.Text))
             {
                 this.employeeNameTB.BackColor = Color.Tomato;
                 this.employeeAddBtn.Enabled = false;
@@ -48,6 +50,77 @@ namespace Client
             };
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
             client.NewRec(vals.ToArray(), cols.ToArray(), "Employees");
+        }
+
+        private void employeesPageLoad()
+        {
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+            string[][] res = client.GetData("Employees");
+            this.employeesGrid.RowCount = res.Length;
+
+            for (int i = 0; i < res.Length; i++)
+            {
+                for (int j = 0; j < res[i].Length; j++)
+                {
+                    this.employeesGrid.Rows[i].Cells[j].Value = res[i][j];
+                }
+            }
+        }
+
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControl1.SelectedIndex)
+            {
+                case 0:
+                    {
+                        employeesPageLoad();
+                        break;
+                    }
+                case 1:
+                    {
+                        equipmentPageLoad();
+                        break;
+                    }
+                case 2:
+                    {
+                        issuesPageLoad();
+                        break;
+                    }
+            }
+                
+
+        }
+
+        //equipment
+
+        private void equipmentNameTb_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(this.equipmentNameTb.Text))
+            {
+                this.equipmentNameTb.BackColor = Color.Tomato;
+                this.equipmentAddBtn.Enabled = false;
+            }
+            else
+            {
+                this.equipmentNameTb.BackColor = SystemColors.Window;
+                this.equipmentAddBtn.Enabled = true;
+            }
+        }
+
+        private void equipmentPageLoad()
+        {
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+            string[][] res = client.GetData("Equipment");
+            this.equipmentGrid.RowCount = res.Length;
+
+            for (int i = 0; i < res.Length; i++)
+            {
+                for (int j = 0; j < res[i].Length; j++)
+                {
+                    this.equipmentGrid.Rows[i].Cells[j].Value = res[i][j];
+                }
+            }
         }
     }
 }

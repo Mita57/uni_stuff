@@ -69,6 +69,7 @@ namespace BIPIT5
                     listLocal.Add(dataReader.GetValue(4).ToString());
                 }
                 listGlobal.Add(listLocal);
+                listLocal = new List<string>();
             }
             return listGlobal;
         }
