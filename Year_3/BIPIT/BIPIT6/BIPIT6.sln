@@ -10,6 +10,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csp
 		{BFFAC310-6086-402B-8F0E-A2BB9A06ED69} = {BFFAC310-6086-402B-8F0E-A2BB9A06ED69}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cool_front", "cool_front\cool_front.csproj", "{9D609A86-7E7E-46D4-9BCE-E7A0EE027C65}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BFFAC310-6086-402B-8F0E-A2BB9A06ED69} = {BFFAC310-6086-402B-8F0E-A2BB9A06ED69}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +29,10 @@ Global
 		{145DDBBE-CB44-4393-A68D-ABAEDFFA8B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{145DDBBE-CB44-4393-A68D-ABAEDFFA8B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{145DDBBE-CB44-4393-A68D-ABAEDFFA8B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D609A86-7E7E-46D4-9BCE-E7A0EE027C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D609A86-7E7E-46D4-9BCE-E7A0EE027C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D609A86-7E7E-46D4-9BCE-E7A0EE027C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D609A86-7E7E-46D4-9BCE-E7A0EE027C65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
