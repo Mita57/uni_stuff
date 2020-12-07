@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Текст</td>
+            <td>Cosine</td>
+            <td>Jaccard</td>
+            <td>Dice</td>
+        </tr>
+        {% for item in res %}
+        <tr>
+            <td>{{item.doc}}</td>
+            <td>{{item.cosine}}</td>
+            <td>{{item.jaccard}}</td>
+            <td>{{item.dice}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
