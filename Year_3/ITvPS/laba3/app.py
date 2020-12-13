@@ -32,8 +32,10 @@ def boolean(texts):
     lemmas_by_text = {}
     lemmas = []
     for i in range(0, len(texts)):
-        lemmas_by_text[i] = m.lemmatize(texts[i])
-        lemmas.extend(m.lemmatize(texts[i]))
+        thing = m.lemmatize(texts[i])
+        lemmas_by_text[i] = thing
+        lemmas.extend(thing)
+        print(i)
     print('Lemmatizing finished')
 
     lemmas = list(dict.fromkeys(lemmas))
@@ -53,13 +55,16 @@ def term_frequency(texts):
     lemmas_by_text = {}
     lemmas = []
     for i in range(0, len(texts)):
-        lemmas_by_text[i] = m.lemmatize(texts[i])
-        lemmas.extend(m.lemmatize(texts[i]))
+        thing = m.lemmatize(texts[i])
+        lemmas_by_text[i] = thing
+        lemmas.extend(thing)
+        print(i)
     print('Lemmatazing finsished')
 
     lemmas = list(dict.fromkeys(lemmas))
     matrix = [[0 for x in range(len(lemmas_by_text) - 1)] for y in range(len(lemmas))]
     for i in range(0, len(lemmas)):
+        print('Text ' + str(i))
         for j in range(0, len(lemmas_by_text) - 1):
             matrix[i][j] = lemmas_by_text[j].count(lemmas[i])
     return render_template('boolean.html', matrix=matrix, lemmas=lemmas, length=(len(lemmas_by_text) - 1), title='Term frequency')
@@ -70,13 +75,16 @@ def tf_idf(texts):
     lemmas_by_text = {}
     lemmas = []
     for i in range(0, len(texts)):
-        lemmas_by_text[i] = m.lemmatize(texts[i])
-        lemmas.extend(m.lemmatize(texts[i]))
+        thing = m.lemmatize(texts[i])
+        lemmas_by_text[i] = thing
+        lemmas.extend(thing)
+        print(i)
     print('Lemmatazing finsished')
 
     lemmas = list(dict.fromkeys(lemmas))
     matrix = [[0 for x in range(len(lemmas_by_text) - 1)] for y in range(len(lemmas))]
     for i in range(0, len(lemmas)):
+        print('Text ' + str(i))
         for j in range(0, len(lemmas_by_text) - 1):
             try:
                 matrix[i][j] = lemmas_by_text[j].count(lemmas[i]) / len(lemmas_by_text[j])
