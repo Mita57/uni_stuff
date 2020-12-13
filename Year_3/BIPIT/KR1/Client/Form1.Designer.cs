@@ -32,19 +32,27 @@ namespace Client
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.waybillTable = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.wauBillDate = new System.Windows.Forms.DateTimePicker();
+            this.supplierCB = new System.Windows.Forms.ComboBox();
+            this.sumTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
+            this.supplierGrid = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.addSupplier = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.supplierName = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.waybillTable)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierGrid)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -60,7 +68,7 @@ namespace Client
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.waybillTable);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -71,6 +79,8 @@ namespace Client
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.supplierGrid);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -79,15 +89,15 @@ namespace Client
             this.tabPage2.Text = "Поставщики";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // waybillTable
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(916, 408);
-            this.dataGridView1.TabIndex = 0;
+            this.waybillTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.waybillTable.Location = new System.Drawing.Point(0, 0);
+            this.waybillTable.Name = "waybillTable";
+            this.waybillTable.RowHeadersWidth = 51;
+            this.waybillTable.RowTemplate.Height = 24;
+            this.waybillTable.Size = new System.Drawing.Size(916, 408);
+            this.waybillTable.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -95,9 +105,9 @@ namespace Client
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.sumTB);
+            this.groupBox1.Controls.Add(this.supplierCB);
+            this.groupBox1.Controls.Add(this.wauBillDate);
             this.groupBox1.Location = new System.Drawing.Point(8, 414);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(898, 90);
@@ -105,27 +115,29 @@ namespace Client
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавление";
             // 
-            // dateTimePicker1
+            // wauBillDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(16, 30);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 2;
+            this.wauBillDate.Location = new System.Drawing.Point(16, 30);
+            this.wauBillDate.Name = "wauBillDate";
+            this.wauBillDate.Size = new System.Drawing.Size(200, 22);
+            this.wauBillDate.TabIndex = 2;
             // 
-            // comboBox1
+            // supplierCB
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(234, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(344, 24);
-            this.comboBox1.TabIndex = 1;
+            this.supplierCB.FormattingEnabled = true;
+            this.supplierCB.Location = new System.Drawing.Point(234, 28);
+            this.supplierCB.Name = "supplierCB";
+            this.supplierCB.Size = new System.Drawing.Size(344, 24);
+            this.supplierCB.TabIndex = 1;
+            this.supplierCB.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // textBox1
+            // sumTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(593, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 22);
-            this.textBox1.TabIndex = 2;
+            this.sumTB.Location = new System.Drawing.Point(593, 30);
+            this.sumTB.Name = "sumTB";
+            this.sumTB.Size = new System.Drawing.Size(177, 22);
+            this.sumTB.TabIndex = 2;
+            this.sumTB.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -164,6 +176,55 @@ namespace Client
             this.addButton.Text = "Добавить";
             this.addButton.UseVisualStyleBackColor = true;
             // 
+            // supplierGrid
+            // 
+            this.supplierGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.supplierGrid.Location = new System.Drawing.Point(0, 0);
+            this.supplierGrid.Name = "supplierGrid";
+            this.supplierGrid.RowHeadersWidth = 51;
+            this.supplierGrid.RowTemplate.Height = 24;
+            this.supplierGrid.Size = new System.Drawing.Size(916, 408);
+            this.supplierGrid.TabIndex = 1;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.addSupplier);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.supplierName);
+            this.groupBox2.Location = new System.Drawing.Point(8, 414);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(898, 90);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Добавление";
+            // 
+            // addSupplier
+            // 
+            this.addSupplier.Enabled = false;
+            this.addSupplier.Location = new System.Drawing.Point(785, 30);
+            this.addSupplier.Name = "addSupplier";
+            this.addSupplier.Size = new System.Drawing.Size(107, 32);
+            this.addSupplier.TabIndex = 5;
+            this.addSupplier.Text = "Добавить";
+            this.addSupplier.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(393, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 17);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Название";
+            // 
+            // supplierName
+            // 
+            this.supplierName.Location = new System.Drawing.Point(34, 35);
+            this.supplierName.Name = "supplierName";
+            this.supplierName.Size = new System.Drawing.Size(745, 22);
+            this.supplierName.TabIndex = 2;
+            this.supplierName.TextChanged += new System.EventHandler(this.supplierName_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -174,9 +235,13 @@ namespace Client
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.waybillTable)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierGrid)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -185,16 +250,21 @@ namespace Client
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView waybillTable;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox supplierCB;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox sumTB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.DateTimePicker wauBillDate;
+        private System.Windows.Forms.DataGridView supplierGrid;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button addSupplier;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox supplierName;
     }
 }
 
