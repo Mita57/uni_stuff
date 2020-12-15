@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,6 +54,64 @@ namespace Client
             {
                 this.addSupplier.Enabled = true;
             }
+        }
+
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(this.tabControl1.SelectedIndex)
+            {
+                case 0:
+                    {
+                        getWayBills();
+                        break;
+                    }
+                case 1:
+                    {
+                        break;
+                    }
+            }
+        }
+
+        // dem waybills
+
+        private void getWayBills()
+        {
+            ServiceReference1.WebService1SoapClient service = new ServiceReference1.WebService1SoapClient();
+            var res = service.GetData("waybills").ToArray();
+            this.waybillTable.Rows.Clear();
+            this.waybillTable.RowCount = res.Length;
+
+            int row = 0;
+            foreach (var sas in res)
+            {
+                string[] vals = sas.ToArray();
+                this.waybillTable.Rows[row].Cells[0].Value = vals[0];
+                this.waybillTable.Rows[row].Cells[1].Value = vals[1];
+                this.waybillTable.Rows[row].Cells[2].Value = vals[2];
+                this.waybillTable.Rows[row].Cells[3].Value = vals[3];
+
+                row++;
+            }
+        }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            ServiceReference1.WebService1SoapClient service = new ServiceReference1.WebService1SoapClient();
+
+            service.AddData("waybills", );
+        }
+
+
+        private void getSuppliers()
+        {
+            ServiceReference1.WebService1SoapClient service = new ServiceReference1.WebService1SoapClient();
+
+        }
+
+        private void addSupplier_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
