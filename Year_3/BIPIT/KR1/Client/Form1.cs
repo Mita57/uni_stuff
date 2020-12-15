@@ -97,6 +97,19 @@ namespace Client
         private void getWayBills()
         {
             ServiceReference1.WebService1SoapClient service = new ServiceReference1.WebService1SoapClient();
+
+            // suppliers
+
+            var resSups = service.GetData("suppliers").ToArray();
+
+            this.supplierCB.Items.Clear();
+            foreach (var sas in resSups)
+            {
+                string[] vals = sas.ToArray();
+                Supplier sup = new Supplier(vals[1], vals[0]);
+                this.supplierCB.Items.Add(sup);
+            }
+
             var res = service.GetData("waybills").ToArray();
             this.waybillTable.Rows.Clear();
             this.waybillTable.RowCount = res.Length;
@@ -105,25 +118,23 @@ namespace Client
             foreach (var sas in res)
             {
                 string[] vals = sas.ToArray();
-                this.waybillTable.Rows[row].Cells[0].Value = vals[0];
-                this.waybillTable.Rows[row].Cells[1].Value = vals[1];
-                this.waybillTable.Rows[row].Cells[2].Value = vals[2];
-                this.waybillTable.Rows[row].Cells[3].Value = vals[3];
+                this.waybillTable.Rows[row].Cells[0].Value = vals[1];
+                this.waybillTable.Rows[row].Cells[2].Value = vals[3];
+
+                string supId = vals[2];
+
+                foreach (var item in this.supplierCB.Items)
+                {
+                    if((item as Supplier).Id == supId)
+                    {
+                        this.waybillTable.Rows[row].Cells[1].Value = (item as Supplier).Name;
+                        break;
+                    }
+                }
 
                 row++;
             }
 
-            // suppliers
-
-            res = service.GetData("supplier").ToArray();
-
-            this.supplierCB.Items.Clear();
-            foreach (var sas in res)
-            {
-                string[] vals = sas.ToArray();
-                Supplier sup = new Supplier(vals[0], vals[1]);
-                this.supplierCB.Items.Add(sup);
-            }
 
         }
 
@@ -132,7 +143,7 @@ namespace Client
             ServiceReference1.WebService1SoapClient service = new ServiceReference1.WebService1SoapClient();
 
             ArrayOfString cols = new ArrayOfString();
-            cols.AddRange(new List<string>() {"date", "suppler_id","sum"} );
+            cols.AddRange(new List<string>() {"date", "supplier_id","sum"} );
 
             ArrayOfString vals = new ArrayOfString();
             vals.AddRange(new List<string>() { this.wauBillDate.Value.ToString(), (this.supplierCB.SelectedItem as Supplier).Id, this.sumTB.Text });
@@ -146,15 +157,15 @@ namespace Client
         {
             ServiceReference1.WebService1SoapClient service = new ServiceReference1.WebService1SoapClient();
 
-            var res = service.GetData("supplier");
+            var res = service.GetData("suppliers").ToArray();
 
             int row = 0;
             this.supplierGrid.Rows.Clear();
+            this.supplierGrid.RowCount = res.Length;
             foreach (var sas in res)
             {
                 string[] vals = sas.ToArray();
-                this.supplierGrid.Rows[row].Cells[0].Value = vals[0];
-                this.supplierGrid.Rows[row].Cells[1].Value = vals[1];
+                this.supplierGrid.Rows[row].Cells[0].Value = vals[1];
                 row++;
             }
 
@@ -168,10 +179,15 @@ namespace Client
             cols.AddRange(new List<string>() { "name" });
 
             ArrayOfString vals = new ArrayOfString();
-            vals.AddRange(new List<string>() { this.supplierName.Text, "" });
+            vals.AddRange(new List<string>() { this.supplierName.Text });
 
-            service.AddData("waybills", cols, vals);
+            service.AddData("suppliers", cols, vals);
 
+            tabControl1_SelectedIndexChanged(sender, e);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
             tabControl1_SelectedIndexChanged(sender, e);
         }
     }

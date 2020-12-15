@@ -46,6 +46,10 @@ namespace Client
             this.label4 = new System.Windows.Forms.Label();
             this.supplierName = new System.Windows.Forms.TextBox();
             this.supplierGrid = new System.Windows.Forms.DataGridView();
+            this.waybillDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wayBillSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wayBillSum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -158,9 +162,16 @@ namespace Client
             // 
             // waybillTable
             // 
+            this.waybillTable.AllowUserToAddRows = false;
+            this.waybillTable.AllowUserToDeleteRows = false;
             this.waybillTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.waybillTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.waybillDate,
+            this.wayBillSupplier,
+            this.wayBillSum});
             this.waybillTable.Location = new System.Drawing.Point(0, 0);
             this.waybillTable.Name = "waybillTable";
+            this.waybillTable.RowHeadersVisible = false;
             this.waybillTable.RowHeadersWidth = 51;
             this.waybillTable.RowTemplate.Height = 24;
             this.waybillTable.Size = new System.Drawing.Size(916, 408);
@@ -220,13 +231,46 @@ namespace Client
             // 
             // supplierGrid
             // 
+            this.supplierGrid.AllowUserToAddRows = false;
+            this.supplierGrid.AllowUserToDeleteRows = false;
             this.supplierGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.supplierGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.supName});
             this.supplierGrid.Location = new System.Drawing.Point(0, 0);
             this.supplierGrid.Name = "supplierGrid";
+            this.supplierGrid.RowHeadersVisible = false;
             this.supplierGrid.RowHeadersWidth = 51;
             this.supplierGrid.RowTemplate.Height = 24;
             this.supplierGrid.Size = new System.Drawing.Size(916, 408);
             this.supplierGrid.TabIndex = 1;
+            // 
+            // waybillDate
+            // 
+            this.waybillDate.HeaderText = "Дата";
+            this.waybillDate.MinimumWidth = 6;
+            this.waybillDate.Name = "waybillDate";
+            this.waybillDate.Width = 300;
+            // 
+            // wayBillSupplier
+            // 
+            this.wayBillSupplier.HeaderText = "Поставщик";
+            this.wayBillSupplier.MinimumWidth = 6;
+            this.wayBillSupplier.Name = "wayBillSupplier";
+            this.wayBillSupplier.Width = 310;
+            // 
+            // wayBillSum
+            // 
+            this.wayBillSum.HeaderText = "Сумма";
+            this.wayBillSum.MinimumWidth = 6;
+            this.wayBillSum.Name = "wayBillSum";
+            this.wayBillSum.Width = 300;
+            // 
+            // supName
+            // 
+            this.supName.HeaderText = "Название";
+            this.supName.MinimumWidth = 6;
+            this.supName.Name = "supName";
+            this.supName.Width = 913;
             // 
             // Form1
             // 
@@ -236,6 +280,7 @@ namespace Client
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -268,6 +313,10 @@ namespace Client
         private System.Windows.Forms.Button addSupplier;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox supplierName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn waybillDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wayBillSupplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wayBillSum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supName;
     }
 }
 
