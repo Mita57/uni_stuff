@@ -70,7 +70,7 @@ namespace BIPIT3
             {
                 var issues = eq.Issues;
 
-                var cols = new List<string>() { "issued_at", "equipment", "employee", "Added" };
+                var cols = new List<string>() { "issued_at", "equipment", "employee", "Added", "id" };
                 DataTable table = new DataTable("Issues");
 
                 foreach (string col in cols)
@@ -247,10 +247,38 @@ namespace BIPIT3
             }
         }
 
-        //[WebMethod]
-        //public static List<string> GetRawData(string table)
-        //{
+        [WebMethod]
+        public static List<string> GetRawEmployees()
+        {
+            List<string> response = new List<string>();
+            using (EquipmentEntities eq = new EquipmentEntities())
+            {
+                var emps = eq.Employees;
 
-        //}
+                foreach (var e in emps)
+                {
+                    response.Add(e.Name);
+                }
+            }
+
+            return response;
+        }
+
+        [WebMethod]
+        public static List<string> GetRawEquipment()
+        {
+            List<string> response = new List<string>();
+            using (EquipmentEntities eq = new EquipmentEntities())
+            {
+                var eqs = eq.Equipments;
+
+                foreach (var e in eqs)
+                {
+                    response.Add(e.Name);
+                }
+            }
+
+            return response;
+        }
     }
 }

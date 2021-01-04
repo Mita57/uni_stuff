@@ -21,16 +21,16 @@ namespace BIPIT3
                 Table1.DataBind();
 
                 employees.Items.Clear();
-                //foreach(string item in Controller.GetRawData("Employees"))
-                //{
-                //    employees.Items.Add(item);
-                //}
+                foreach (string item in Controller.GetRawEmployees())
+                {
+                    employees.Items.Add(item);
+                }
 
-                //equipments.Items.Clear();
-                //foreach (string item in Controller.GetRawData("Equipment"))
-                //{
-                //    equipments.Items.Add(item);
-                //}
+                equipments.Items.Clear();
+                foreach (string item in Controller.GetRawEquipment())
+                {
+                    equipments.Items.Add(item);
+                }
             }
         }
 
@@ -63,7 +63,7 @@ namespace BIPIT3
                     }
                 }
             }
-            if (errMsg != "The following items are still in use:")
+            if (errMsg != "The following items are still in use: ")
             {
                 deb.InnerHtml = errMsg;
             }

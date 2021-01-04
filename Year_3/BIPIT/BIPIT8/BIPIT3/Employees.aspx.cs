@@ -52,7 +52,7 @@ namespace BIPIT3
                     }
                 }
             }
-            if (errMsg != "The following items are still in use:")
+            if (errMsg != "The following items are still in use: ")
             {
                 deb.InnerHtml = errMsg;
             }
