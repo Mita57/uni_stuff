@@ -9,7 +9,7 @@ namespace cool_front
 {
     public partial class Issues : System.Web.UI.Page
     {
-        ServiceReference1.Service1Client service = new ServiceReference1.Service1Client();
+        ServiceReference1.Service1Client service = new ServiceReference1.Service1Client("NetTcpBinding_IService1");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

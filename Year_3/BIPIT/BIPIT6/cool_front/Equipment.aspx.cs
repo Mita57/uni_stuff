@@ -13,7 +13,7 @@ namespace cool_front
         {
             if (!IsPostBack)
             {
-                var service = new ServiceReference1.Service1Client();
+                var service = new ServiceReference1.Service1Client("NetTcpBinding_IService1");
                 string[][] data = service.GetData("Equipment");
                 string res = "<table>";
 
@@ -38,7 +38,7 @@ namespace cool_front
             vals.Add(name.Value);
             vals.Add(price.Value);
             List<string> cols = new List<string>() { "Name", "price" };
-            var service = new ServiceReference1.Service1Client();
+            var service = new ServiceReference1.Service1Client("NetTcpBinding_IService1");
             service.NewRec(vals.ToArray(), cols.ToArray(), "Equipment");
             name.Value = "";
             price.Value = "";

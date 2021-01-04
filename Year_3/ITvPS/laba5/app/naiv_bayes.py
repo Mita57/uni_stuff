@@ -2,13 +2,13 @@ import vsm
 import math
 
 
-def get_docs(short_path):
+def get_docs(path):
     docs = []
     for i in range(1, 4):
         doc = ""
         for j in range(1, 4):
-            path = short_path+'C' + str(i) + "_" + str(j) + ".txt"
-            doc += vsm.read_file(path)
+            path_final = path+'C' + str(i) + "_" + str(j) + ".txt"
+            doc += vsm.read_file(path_final)
         docs.append(doc)
     return docs
 

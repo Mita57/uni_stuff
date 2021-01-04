@@ -16,7 +16,7 @@ namespace BIPIT5
 
         public void NewRec(List<string> vals, List<string> cols,string table)
         {
-            String connectString = @"Data Source = EquipmentFFSVer4.mssql.somee.com ; Initial Catalog = EquipmentFFSVer4;User ID = fckinslayer_SQLLogin_1; password = dtv5jblqyo; MultipleActiveResultSets=true";
+            String connectString = @"workstation id=EquipmentFFS.mssql.somee.com;packet size=4096;user id=dungeonMaster_SQLLogin_1;pwd=rcct57h98i;data source=EquipmentFFS.mssql.somee.com;persist security info=False;initial catalog=EquipmentFFS";
             _connection = new SqlConnection(connectString);
             _connection.Open();
 
@@ -50,7 +50,7 @@ namespace BIPIT5
 
         public List<List<string>> GetData(string table)
         {
-            String connectString = @"Data Source = EquipmentFFSVer4.mssql.somee.com ; Initial Catalog = EquipmentFFSVer4;User ID = fckinslayer_SQLLogin_1; password = dtv5jblqyo; MultipleActiveResultSets=true";
+            String connectString = @"workstation id=EquipmentFFS.mssql.somee.com;packet size=4096;user id=dungeonMaster_SQLLogin_1;pwd=rcct57h98i;data source=EquipmentFFS.mssql.somee.com;persist security info=False;initial catalog=EquipmentFFS";
             _connection = new SqlConnection(connectString);
             _connection.Open();
             String query = String.Format("SELECT * FROM {0}", table);

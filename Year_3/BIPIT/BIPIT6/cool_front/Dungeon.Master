@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <title>Все корабль все в артстайла</title>
+    <title>CEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEB</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="main.css" rel="stylesheet" />
@@ -13,7 +13,7 @@
         <div id="left">
             <a href="Issues.aspx">Выдачи</a> <br>
             <a href="Employees.aspx">Сотрудники</a> <br>
-            <a href="Default.aspx">Оборудование</a>
+            <a href="Equipment.aspx">Оборудование</a>
         </div>
         <div id="right">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
