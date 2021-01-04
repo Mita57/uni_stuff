@@ -37,7 +37,8 @@ namespace cool_front
             List<string> vals = new List<string>();
             vals.Add(name.Value);
             vals.Add(bd.Value);
-            List<string> cols = new List<string>() { "Name", "Birth_Date" };
+            vals.Add(DateTime.Now.ToString());
+            List<string> cols = new List<string>() { "Name", "Birth_Date", "Added" };
             var service = new ServiceReference1.Service1Client("NetTcpBinding_IService1");
             service.NewRec(vals.ToArray(), cols.ToArray(), "Employees");
             name.Value = "";

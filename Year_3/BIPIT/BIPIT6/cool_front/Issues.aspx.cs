@@ -30,7 +30,7 @@ namespace cool_front
                 res += "</table>";
                 this.table.InnerHtml = res;
 
-                data = service.GetData("Equipments");
+                data = service.GetData("Equipment");
                 for(int i = 0; i < data.Length; i++)
                 {
                     equipments.Items.Add(data[i][0]);
@@ -50,7 +50,8 @@ namespace cool_front
             vals.Add(issued.Value);
             vals.Add(equipments.SelectedValue);
             vals.Add(employees.SelectedValue);
-            List<string> cols = new List<string>() { "issued_at", "equipment", "employee" };
+            vals.Add(DateTime.Now.ToString());
+            List<string> cols = new List<string>() { "issued_at", "equipment", "employee", "Added" };
             service.NewRec(vals.ToArray(), cols.ToArray(), "Issues");
             Server.TransferRequest(Request.Url.AbsolutePath, false);
             Page_Load(sender, e);
