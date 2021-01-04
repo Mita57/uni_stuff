@@ -20,102 +20,188 @@ namespace BIPIT3
     // [System.Web.Script.Services.ScriptService]
     public class Controller : System.Web.Services.WebService
     {
-        static SqlConnection _connection;
-
-        private static void Connect()
-        {
-            String connectString = @"Data Source = EquipmentFFSVer4.mssql.somee.com ; Initial Catalog = EquipmentFFSVer4;User ID = fckinslayer_SQLLogin_1; password = dtv5jblqyo; MultipleActiveResultSets=true";
-            _connection = new SqlConnection(connectString);
-            _connection.Open();
-        }
-
-        private static void Disconnect()
-        {
-            _connection.Close();
-        }
-
         [WebMethod]
-        public static DataSet GetData(string left, string right, string table)
+        public static DataSet GetEquipment(string left, string right)
         {
             DataSet dataSet = new DataSet();
-            Connect();
-            String query = String.Format("SELECT * FROM {0}", table);
-            if (left != "" && right != "")
+            using (EquipmentEntities eq = new EquipmentEntities())
             {
-                query += String.Format(" WHERE Added BETWEEN '{0}' AND '{1}'", left, right);
-            }
-            SqlCommand command = new SqlCommand(query, _connection);
+                var equipment = eq.Equipments;
 
-            SqlDataAdapter sqa = new SqlDataAdapter(command);
-            sqa.Fill(dataSet, table);
-            Disconnect();
+                var cols = new List<string>() { "Name", "price", "Added" };
+                DataTable table = new DataTable("Equipment");
+
+                foreach (string col in cols)
+                {
+                    table.Columns.Add(col);
+                }
+
+                foreach (var e in equipment)
+                {
+                    if (left == "" && right == "")
+                    {
+                        table.Rows.Add(
+                            e.Name,
+                            e.price,
+                            e.Added);
+                    }
+                    else
+                    {
+                        if ((Convert.ToDateTime(left) <= e.Added) && (e.Added <= Convert.ToDateTime(right)))
+                        {
+                            table.Rows.Add(
+                                e.Name,
+                                e.price,
+                                e.Added);
+                        }
+                    }
+
+                }
+                dataSet.Tables.Add(table);
+            }
             return dataSet;
         }
 
         [WebMethod]
-        public static string NewRec(List<string> vals, List<string> cols, string table)
+        public static DataSet GetIssues(string left, string right)
         {
-            Connect();
-            cols.Add("Added");
-            vals.Add(DateTime.Now.ToString());
-
-            String newValues = "";
-            foreach (String str in vals)
+            DataSet dataSet = new DataSet();
+            using (EquipmentEntities eq = new EquipmentEntities())
             {
-                newValues += "'" + str + "', ";
+                var issues = eq.Issues;
+
+                var cols = new List<string>() { "issued_at", "equipment", "employee", "Added" };
+                DataTable table = new DataTable("Issues");
+
+                foreach (string col in cols)
+                {
+                    table.Columns.Add(col);
+                }
+
+                foreach (var e in issues)
+                {
+                    if (left == "" && right == "")
+                    {
+                        table.Rows.Add(
+                            e.issued_at,
+                            e.equipment,
+                            e.employee,
+                            e.Added,
+                            e.id);
+                    }
+                    else
+                    {
+                        if ((Convert.ToDateTime(left) <= e.Added) && (e.Added <= Convert.ToDateTime(right)))
+                        {
+                            table.Rows.Add(
+                                e.issued_at,
+                                e.equipment,
+                                e.employee,
+                                e.Added,
+                                e.id);
+                        }
+                    }
+
+                }
+                dataSet.Tables.Add(table);
             }
-            newValues = newValues.Substring(0, newValues.Length - 2);
-
-
-            string newCols = "";
-
-            foreach (string str in cols)
-            {
-                newCols += "" + str + ", ";
-            }
-
-            newCols = newCols.Substring(0, newCols.Length - 2);
-
-
-            String query = String.Format("INSERT INTO {0}({1}) VALUES ({2})", table, newCols, newValues);
-
-            SqlCommand command = new SqlCommand(query, _connection);
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.InsertCommand = command;
-            adapter.InsertCommand.ExecuteNonQuery();
-            command.Dispose();
-            Disconnect();
-            return query;
+            return dataSet;
         }
 
         [WebMethod]
-        public static string RemoveRec(string val, string col, string table)
+        public static DataSet GetEmployees(string left, string right)
         {
-            Connect();
+            DataSet dataSet = new DataSet();
+            using (EquipmentEntities eq = new EquipmentEntities())
+            {
+                var emps = eq.Employees;
 
-            String query = String.Format("DELETE FROM {0} WHERE {1} = '{2}'", table, col, val);
-            SqlCommand command = new SqlCommand(query, _connection);
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            adapter.DeleteCommand = command;
-            adapter.DeleteCommand.ExecuteNonQuery();
-            command.Dispose();
-            Disconnect();
-            return query;
+                var cols = new List<string>() { "Name", "Birth_date", "Added" };
+                DataTable table = new DataTable("Employees");
+
+                foreach (string col in cols)
+                {
+                    table.Columns.Add(col);
+                }
+
+                foreach (var e in emps)
+                {
+                    if (left == "" && right == "")
+                    {
+                        table.Rows.Add(
+                            e.Name,
+                            e.Birth_date,
+                            e.Added);
+                    }
+                    else
+                    {
+                        if ((Convert.ToDateTime(left) <= e.Added) && (e.Added <= Convert.ToDateTime(right)))
+                        {
+                            table.Rows.Add(
+                                e.Name,
+                                e.Birth_date,
+                                e.Added);
+                        }
+                    }
+
+                }
+                dataSet.Tables.Add(table);
+            }
+            return dataSet;
+        }
+
+        [WebMethod]
+        public static void NewEquipment(List<string> vals, List<string> cols)
+        {
+            using (galleryEntities gallery = new galleryEntities())
+            {
+                var moving = gallery.Moving;
+                Moving movingToAdd = new Moving
+                {
+                    exhibit_fk = Convert.ToInt32(exh_fk),
+                    halls_fk = Convert.ToInt32(halls_fk),
+                    date_start = Convert.ToDateTime(date_start),
+                    date_end = Convert.ToDateTime(date_end)
+                };
+                moving.Add(movingToAdd);
+                gallery.SaveChanges();
+            }
+        }
+
+        [WebMethod]
+        public static void NewIssues(List<string> vals, List<string> cols)
+        {
+
+        }
+
+        [WebMethod]
+        public static void NewEmployee(List<string> vals, List<string> cols)
+        {
+
+        }
+
+        [WebMethod]
+        public static void RemoveEquipment(string val, string col, string table)
+        {
+
+        }
+
+        [WebMethod]
+        public static void RemoveIssue(string val, string col, string table)
+        {
+
+        }
+
+        [WebMethod]
+        public static void RemoveEmployee(string val, string col, string table)
+        {
+
         }
 
         [WebMethod]
         public static List<string> GetRawData(string table)
         {
-            Connect();
-            String query = String.Format("SELECT * FROM {0}", table);
-            SqlCommand command = new SqlCommand(query, _connection);
-            SqlDataReader dataReader = command.ExecuteReader();
-            List<string> list = new List<string>();
-            while (dataReader.Read())
-            {
-                 list.Add(dataReader.GetValue(0).ToString());
-            }
-            return list;
+
         }
     }
 }

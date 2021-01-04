@@ -13,10 +13,10 @@ namespace BIPIT3
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EquipmentFFSEntities : DbContext
+    public partial class EquipmentEntities : DbContext
     {
-        public EquipmentFFSEntities()
-            : base("name=EquipmentFFSEntities")
+        public EquipmentEntities()
+            : base("name=EquipmentEntities")
         {
         }
     
