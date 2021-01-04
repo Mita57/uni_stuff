@@ -15,7 +15,7 @@ namespace BIPIT3
         {
             if (!IsPostBack)
             {
-                dataSet = Controller.GetData("", "", "Employees");
+                dataSet = Controller.GetEmployees("", "");
                 DataTable table = dataSet.Tables["Employees"];
                 Table1.DataSource = table;
                 Table1.DataBind();
@@ -24,11 +24,7 @@ namespace BIPIT3
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            List<string> vals = new List<string>();
-            vals.Add(name.Value);
-            vals.Add(bd.Value);
-            List<string> cols = new List<string>() { "Name", "Birth_Date" };
-            Controller.NewRec(vals, cols, "Employees");
+            Controller.NewEmployee(name.Value, Convert.ToDateTime(bd.Value));
             name.Value = "";
             bd.Value = "";
             Server.TransferRequest(Request.Url.AbsolutePath, false);
@@ -47,7 +43,7 @@ namespace BIPIT3
                     {
                         try
                         {
-                            Controller.RemoveRec(row.Cells[1].Text, "Name", "Employees");
+                            Controller.RemoveEmployee(row.Cells[1].Text);
                         }
                         catch
                         {
@@ -68,7 +64,7 @@ namespace BIPIT3
 
         protected void sortBtn_Click(object sender, EventArgs e)
         {
-            dataSet = Controller.GetData(dateLeft.Value, dateRight.Value, "Employees");
+            dataSet = Controller.GetEmployees(dateLeft.Value, dateRight.Value);
             DataTable table = dataSet.Tables["Employee"];
             Table1.DataSource = table;
             Table1.DataBind();
@@ -76,7 +72,7 @@ namespace BIPIT3
 
         protected void resetBtn_Click(object sender, EventArgs e)
         {
-            dataSet = Controller.GetData(dateLeft.Value, dateRight.Value, "Equipment");
+            dataSet = Controller.GetEmployees(dateLeft.Value, dateRight.Value);
             DataTable table = dataSet.Tables["Equipment"];
             Table1.DataSource = table;
             Table1.DataBind();

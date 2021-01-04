@@ -15,34 +15,29 @@ namespace BIPIT3
         {
             if (!IsPostBack)
             {
-                dataSet = Controller.GetData("", "", "Issues");
+                dataSet = Controller.GetIssues("", "");
                 DataTable table = dataSet.Tables["Issues"];
                 Table1.DataSource = table;
                 Table1.DataBind();
 
                 employees.Items.Clear();
-                foreach(string item in Controller.GetRawData("Employees"))
-                {
-                    employees.Items.Add(item);
-                }
+                //foreach(string item in Controller.GetRawData("Employees"))
+                //{
+                //    employees.Items.Add(item);
+                //}
 
-                equipments.Items.Clear();
-                foreach (string item in Controller.GetRawData("Equipment"))
-                {
-                    equipments.Items.Add(item);
-                }
+                //equipments.Items.Clear();
+                //foreach (string item in Controller.GetRawData("Equipment"))
+                //{
+                //    equipments.Items.Add(item);
+                //}
             }
         }
 
         // add
         protected void Button1_Click(object sender, EventArgs e)
         {
-            List<string> vals = new List<string>();
-            vals.Add(issued.Value);
-            vals.Add(equipments.SelectedValue);
-            vals.Add(employees.SelectedValue);
-            List<string> cols = new List<string>() {"issued_at" , "equipment", "employee" };
-            Controller.NewRec(vals, cols, "Issues");
+            Controller.NewIssues(Convert.ToDateTime(issued.Value), equipments.SelectedValue, employees.SelectedValue);
             Server.TransferRequest(Request.Url.AbsolutePath, false);
             Page_Load(sender, e);
         }
@@ -59,7 +54,7 @@ namespace BIPIT3
                     {
                         try
                         {
-                            Controller.RemoveRec(row.Cells[5].Text, "Id", "Issues");
+                            Controller.RemoveIssue(int.Parse(row.Cells[5].Text));
                         }
                         catch
                         {
@@ -80,7 +75,7 @@ namespace BIPIT3
 
         protected void sortBtn_Click(object sender, EventArgs e)
         {
-            dataSet = Controller.GetData(dateLeft.Value, dateRight.Value, "Equipment");
+            dataSet = Controller.GetIssues(dateLeft.Value, dateRight.Value);
             DataTable table = dataSet.Tables["Equipment"];
             Table1.DataSource = table;
             Table1.DataBind();
@@ -88,7 +83,7 @@ namespace BIPIT3
 
         protected void resetBtn_Click(object sender, EventArgs e)
         {
-            dataSet = Controller.GetData(dateLeft.Value, dateRight.Value, "Equipment");
+            dataSet = Controller.GetIssues(dateLeft.Value, dateRight.Value);
             DataTable table = dataSet.Tables["Equipment"];
             Table1.DataSource = table;
             Table1.DataBind();
