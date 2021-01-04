@@ -18,7 +18,7 @@ namespace BIPIT3
         {
             if (!IsPostBack)
             {
-                dataSet = Controller.GetData("", "", "Equipment");
+                dataSet = Controller.GetEquipment("", "");
                 DataTable table = dataSet.Tables["Equipment"];
                 Table1.DataSource = table;
                 Table1.DataBind();
@@ -27,14 +27,9 @@ namespace BIPIT3
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            List<string> vals = new List<string>();
-            vals.Add(name.Value);
-            vals.Add(price.Value);
-            List<string> cols = new List<string>() {"Name", "price"};
-            deb.InnerHtml += Controller.NewRec(vals, cols, "Equipment");
+            Controller.NewEquipment(name.Value, int.Parse(price.Value));
             name.Value = "";
             price.Value = "";
-           
         }
 
         protected void DeleteBtn_Click(object sender, EventArgs e)
@@ -49,7 +44,7 @@ namespace BIPIT3
                     {
                         try
                         {
-                            Controller.RemoveRec(row.Cells[1].Text, "Name", "Equipment");
+                            Controller.RemoveEquipment(row.Cells[1].Text);
                         }
                         catch
                         {
@@ -71,7 +66,7 @@ namespace BIPIT3
 
         protected void sortBtn_Click(object sender, EventArgs e)
         {
-            dataSet = Controller.GetData(dateLeft.Value, dateRight.Value, "Equipment");
+            dataSet = Controller.GetEquipment(dateLeft.Value, dateRight.Value);
             DataTable table = dataSet.Tables["Equipment"];
             Table1.DataSource = table;
             Table1.DataBind();
@@ -79,7 +74,7 @@ namespace BIPIT3
 
         protected void resetBtn_Click(object sender, EventArgs e)
         {
-            dataSet = Controller.GetData("", "", "Equipment");
+            dataSet = Controller.GetEquipment("", "");
             DataTable table = dataSet.Tables["Equipment"];
             Table1.DataSource = table;
             Table1.DataBind();

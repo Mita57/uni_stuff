@@ -151,57 +151,106 @@ namespace BIPIT3
         }
 
         [WebMethod]
-        public static void NewEquipment(List<string> vals, List<string> cols)
+        public static void NewEquipment(string name, int price)
         {
-            using (galleryEntities gallery = new galleryEntities())
+            using (EquipmentEntities eq = new EquipmentEntities())
             {
-                var moving = gallery.Moving;
-                Moving movingToAdd = new Moving
+                var equipment = eq.Equipments;
+                Equipment newEq = new Equipment
                 {
-                    exhibit_fk = Convert.ToInt32(exh_fk),
-                    halls_fk = Convert.ToInt32(halls_fk),
-                    date_start = Convert.ToDateTime(date_start),
-                    date_end = Convert.ToDateTime(date_end)
+                    Name = name,
+                    price = price,
+                    Added = DateTime.Now
                 };
-                moving.Add(movingToAdd);
-                gallery.SaveChanges();
+                equipment.Add(newEq);
+                eq.SaveChanges();
             }
         }
 
         [WebMethod]
-        public static void NewIssues(List<string> vals, List<string> cols)
+        public static void NewIssues(DateTime issued, string equipment, string emp)
         {
-
+            using (EquipmentEntities eq = new EquipmentEntities())
+            {
+                var issues = eq.Issues;
+                Issue newIs = new Issue
+                {
+                    issued_at = issued,
+                    equipment = equipment,
+                    employee = emp,
+                    Added = DateTime.Now
+                };
+                issues.Add(newIs);
+                eq.SaveChanges();
+            }
         }
 
         [WebMethod]
-        public static void NewEmployee(List<string> vals, List<string> cols)
+        public static void NewEmployee(string name, DateTime bday)
         {
-
+            using (EquipmentEntities eq = new EquipmentEntities())
+            {
+                var emps = eq.Employees;
+                Employee newEmp = new Employee
+                {
+                    Name = name,
+                    Birth_date = bday,
+                    Added = DateTime.Now
+                };
+                emps.Add(newEmp);
+                eq.SaveChanges();
+            }
         }
 
         [WebMethod]
-        public static void RemoveEquipment(string val, string col, string table)
+        public static void RemoveEquipment(string name)
         {
-
+            using (EquipmentEntities eq = new EquipmentEntities())
+            {
+                var equipment = eq.Equipments;
+                Equipment eqToDelete = eq.Equipments.Where(n => n.Name == name).FirstOrDefault();
+                if (eqToDelete != null)
+                {
+                    eq.Equipments.Remove(eqToDelete);
+                    eq.SaveChanges();
+                }
+            }
         }
 
         [WebMethod]
-        public static void RemoveIssue(string val, string col, string table)
+        public static void RemoveIssue(int id)
         {
-
+            using (EquipmentEntities eq = new EquipmentEntities())
+            {
+                var issues = eq.Issues;
+                Issue issueToDelete = eq.Issues.Where(n => n.id == id).FirstOrDefault();
+                if (issueToDelete != null)
+                {
+                    eq.Issues.Remove(issueToDelete);
+                    eq.SaveChanges();
+                }
+            }
         }
 
         [WebMethod]
-        public static void RemoveEmployee(string val, string col, string table)
+        public static void RemoveEmployee(string name)
         {
-
+            using (EquipmentEntities eq = new EquipmentEntities())
+            {
+                var issues = eq.Employees;
+                Employee empToDelete = eq.Employees.Where(n => n.Name == name).FirstOrDefault();
+                if (empToDelete != null)
+                {
+                    eq.Employees.Remove(empToDelete);
+                    eq.SaveChanges();
+                }
+            }
         }
 
-        [WebMethod]
-        public static List<string> GetRawData(string table)
-        {
+        //[WebMethod]
+        //public static List<string> GetRawData(string table)
+        //{
 
-        }
+        //}
     }
 }
