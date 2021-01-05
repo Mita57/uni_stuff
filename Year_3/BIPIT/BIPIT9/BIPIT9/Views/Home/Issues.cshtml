@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1> Выдачи </h1>
+
+<table>
+    <tr>
+        <td>id</td>
+        <td>Оборудование</td>
+        <td>Сотрудник</td>
+        <td>Добавлено</td>
+        <td>Выдано</td>
+    </tr>
+
+    @foreach(var item in ViewBag.Issues as IEnumerable<BIPIT9.Models.Issue>)
+    {
+<tr>
+    <td>@Html.DisplayFor(modelItem => item.id) </td>
+    <td>@Html.DisplayFor(modelItem => item.equipment) </td>
+    <td>@Html.DisplayFor(modelItem => item.employee) </td>
+    <td>@Html.DisplayFor(modelItem => item.Added) </td>
+    <td>@Html.DisplayFor(modelItem => item.issued_at) </td>
+</tr>
+    }
+</table>
