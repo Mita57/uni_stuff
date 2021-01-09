@@ -9,15 +9,27 @@
         <td>Название</td>
         <td>Цена</td>
         <td>Добавлено</td>
-
+        @if (User.Identity.IsAuthenticated)
+        {
+            <th>Изменить</th>
+        }
+        @if (User.Identity.IsAuthenticated)
+        {
+            <th>Удалить</th>
+        }
     </tr>
 
-    @foreach (var item in ViewBag.Equipment as IEnumerable<BIPIT9.Models.Equipment>)
+    @foreach (var item in ViewBag.Equipment as IEnumerable<BIPIT10.Models.Equipment>)
     {
         <tr>
             <td>@Html.DisplayFor(modelItem => item.Name) </td>
             <td>@Html.DisplayFor(modelItem => item.price) </td>
             <td>@Html.DisplayFor(modelItem => item.Added) </td>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <td>@Html.ActionLink("Изменить", "Equipment", "Edit", new { id = item.Name }, null)</td>
+                <td>@Html.ActionLink("Удалить", "Equipment", "Delete", new { id = item.Name }, null)</td>
+            }
         </tr>
-    }
+     }
 </table>

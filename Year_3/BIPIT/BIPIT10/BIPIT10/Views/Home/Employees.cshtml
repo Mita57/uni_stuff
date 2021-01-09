@@ -9,14 +9,28 @@
         <td>Имя</td>
         <td>Дата рождения</td>
         <td>Добавлено</td>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <th>Изменить</th>
+        }
+        @if (User.Identity.IsAuthenticated)
+        {
+            <th>Удалить</th>
+        }
     </tr>
 
-    @foreach (var item in ViewBag.Employees as IEnumerable<BIPIT9.Models.Employee>)
+    @foreach (var item in ViewBag.Employees as IEnumerable<BIPIT10.Models.Employee>)
     {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.Name) </td>
-            <td>@Html.DisplayFor(modelItem => item.Birth_date) </td>
-            <td>@Html.DisplayFor(modelItem => item.Added) </td>
-        </tr>
+<tr>
+    <td>@Html.DisplayFor(modelItem => item.Name) </td>
+    <td>@Html.DisplayFor(modelItem => item.Birth_date) </td>
+    <td>@Html.DisplayFor(modelItem => item.Added) </td>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <td>@Html.ActionLink("Изменить", "Employee", "Edit", new { id = item.Name }, null)</td>
+        <td>@Html.ActionLink("Удалить", "Employee", "Delete", new { id = item.Name }, null)</td>
+    }
+
+</tr>
     }
 </table>

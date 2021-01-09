@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1> Выдачи </h1>
+
+<table>
+    <tr>
+        <td>id</td>
+        <td>Оборудование</td>
+        <td>Сотрудник</td>
+        <td>Добавлено</td>
+        <td>Выдано</td>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <th>Изменить</th>
+        }
+        @if (User.Identity.IsAuthenticated)
+        {
+            <th>Удалить</th>
+        }
+    </tr>
+
+    @foreach (var item in ViewBag.Issues as IEnumerable<BIPIT10.Models.Issue>)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.id) </td>
+                <td>@Html.DisplayFor(modelItem => item.equipment) </td>
+                <td>@Html.DisplayFor(modelItem => item.employee) </td>
+                <td>@Html.DisplayFor(modelItem => item.Added) </td>
+                <td>@Html.DisplayFor(modelItem => item.issued_at) </td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <td>@Html.ActionLink("Изменить", "Issues", "Edit", new { id = item.id }, null)</td>
+                    <td>@Html.ActionLink("Удалить", "Issues", "Delete", new { id = item.id }, null)</td>
+                }
+            </tr>
+        }
+</table>
