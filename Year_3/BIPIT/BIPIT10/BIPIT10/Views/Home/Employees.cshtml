@@ -21,16 +21,40 @@
 
     @foreach (var item in ViewBag.Employees as IEnumerable<BIPIT10.Models.Employee>)
     {
-<tr>
-    <td>@Html.DisplayFor(modelItem => item.Name) </td>
-    <td>@Html.DisplayFor(modelItem => item.Birth_date) </td>
-    <td>@Html.DisplayFor(modelItem => item.Added) </td>
-    @if (User.Identity.IsAuthenticated)
-    {
-        <td>@Html.ActionLink("Изменить", "Employee", "Edit", new { id = item.Name }, null)</td>
-        <td>@Html.ActionLink("Удалить", "Employee", "Delete", new { id = item.Name }, null)</td>
-    }
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Name) </td>
+            <td>@Html.DisplayFor(modelItem => item.Birth_date) </td>
+            <td>@Html.DisplayFor(modelItem => item.Added) </td>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <td>@Html.ActionLink("Изменить", "Employee", "Edit", new { id = item.Name }, null)</td>
+                <td>@Html.ActionLink("Удалить", "Employee", "Delete", new { id = item.Name }, null)</td>
+            }
 
-</tr>
+        </tr>
     }
+   
 </table>
+
+@if (User.Identity.IsAuthenticated)
+{
+    using (Html.BeginForm("Employee", "Edit", FormMethod.Post))
+    {
+    <div id="change">
+        <h2> Изменить сотрудника </h2>
+        <input type="text" name="changeName">
+        <input type="date" name="changeBD">
+        <input type="submit" value="Изменить">
+    </div>
+    }
+    using (Html.BeginForm("Employee", "Add", FormMethod.Post))
+    {
+        <div id="add">
+            <h2> Добавить сотрудника</h2>
+            <input type="text" name="addName">
+            <input type="date" name="addBD">
+            <input type="submit" value="Добавить">
+        </div>
+     }
+
+}

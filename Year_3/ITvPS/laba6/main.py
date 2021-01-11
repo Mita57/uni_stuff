@@ -41,7 +41,7 @@ def prob_doc(test_doc, p_w_c_dict):
             cl2 += math.log2(float(p_w_c_dict[i][1]))
             cl3 += math.log2(float(p_w_c_dict[i][2]))
             cl4 += math.log2(float(p_w_c_dict[i][3]))
-    return {1: cl1,2: cl2,3: cl3,4: cl4}
+    return {1: cl1, 2: cl2, 3: cl3, 4: cl4}
 
 
 def probability(my_docs, V):
@@ -55,7 +55,7 @@ def probability(my_docs, V):
         for i in tf[token]:
             p.append(i)
         for i in range(len(tf[token])):
-            p.append((tf[token][i]+1)/(count[i]+len(V)))
+            p.append((tf[token][i] + 1) / (count[i] + len(V)))
         pwc_dict[token] = p[5:]
         result.append(p)
     return result, pwc_dict
@@ -81,14 +81,15 @@ def read_statistics():
     return text
 
 
-def write_statistics(statistics):
+def write_stats(stats):
     with open("statistics.csv", 'w', encoding='utf-8') as file:
         a_pen = csv.writer(file)
         columns = ['number', 'TP', 'FP', 'FN']
         a_pen.writerow(columns)
-        for token, i in statistics.items():
+        for token, i in stats.items():
             str_r = [token] + i
             a_pen.writerow(str_r)
+
 
 # LET THE FUN BEGIN
 class_number = 2
@@ -100,15 +101,15 @@ res = {}
 for i in sort:
     res[get_key(cl, i)] = i
 cl_number = get_key(cl, sort[0])
-statistics = read_statistics()
+stats = read_statistics()
 
 if int(cl_number) == int(class_number):
-    statistics[str(cl_number)][0] = int(statistics[str(cl_number)][0]) + 1
+    stats[str(cl_number)][0] = int(stats[str(cl_number)][0]) + 1
 else:
-    statistics[str(cl_number)][1] = int(statistics[str(cl_number)][1]) + 1
-    statistics[str(class_number)][2] = int(statistics[str(class_number)][2]) + 1
+    stats[str(cl_number)][1] = int(stats[str(cl_number)][1]) + 1
+    stats[str(class_number)][2] = int(stats[str(class_number)][2]) + 1
 
-write_statistics(statistics)
+write_stats(stats)
 for i, j in res.items():
     if i == 1:
         print('Рубрика "Classification problems": ' + str(j) + '\n')
@@ -118,4 +119,3 @@ for i, j in res.items():
         print('Рубрика "Biometrics investigations": ' + str(j) + '\n')
     elif i == 4:
         print('Рубрика "Image processing": ' + str(j) + '\n')
-
