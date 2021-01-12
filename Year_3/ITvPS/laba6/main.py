@@ -98,6 +98,7 @@ clear_test_doc, test_dict = vsm.clear_one_text(text)
 cl = prob_doc(clear_test_doc, p_w_c_dict)
 sort = sorted(cl.values(), reverse=True)
 res = {}
+
 for i in sort:
     res[get_key(cl, i)] = i
 cl_number = get_key(cl, sort[0])
@@ -119,3 +120,19 @@ for i, j in res.items():
         print('Рубрика "Biometrics investigations": ' + str(j) + '\n')
     elif i == 4:
         print('Рубрика "Image processing": ' + str(j) + '\n')
+
+    t = {}
+    with open("statistics.csv") as f:
+        reader = csv.DictReader(f, delimiter=',')
+        for line in reader:
+            t[line['number']] = [line['TP'], line['FP'], line['FN']]
+    res = []
+    for n, i in t.items():
+        if int(i[0]) != 0:
+            p = int(i[0]) / (int(i[0]) * int(i[1]))
+            r = int(i[0]) / (int(i[0]) * int(i[2]))
+            f1 = 2 * p * r / (p + r)
+            res.append({'№': n, 'P': p, 'R': r, 'F1': f1})
+        else:
+            res.append({'№': n, 'P': 0, 'R': 0, 'F1': 0})
+print(res)

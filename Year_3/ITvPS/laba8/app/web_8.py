@@ -76,25 +76,25 @@ for i in range(1, 6):
     sentences = [preprocessing_data(i) for i in sentences]
     text_dict, n, N = create_dict(text)
     for word, val in text_dict.items():
-        if val >= 9 / (n * N) and val < 1:
+        if 9 / (n * N) <= val < 1:
             text_dict[word] = [val, "ГОС"]
-        elif val >= ((1 + n / 4) ** 2) / (n * N) and val < 9 / (n * N):
+        elif ((1 + n / 4) ** 2) / (n * N) <= val < 9 / (n * N):
             text_dict[word] = [val, "ВОС"]
         else:
             text_dict[word] = [val, "Н"]
 
     print("===============================Текст " + str(i) + "========================================")
-    print("------------------------------")
-    print("1.	Ключевые слова + ГОС/ВОС/Н")
+    print("______________________________")
+    print("1. Ключевые слова + ГОС/ВОС/Н")
     for i, v in text_dict.items():
         print(i, v)
 
-    print("------------------------------")
-    print("2.	Ключевые понятия.")
+    print("______________________________")
+    print("2. Ключевые понятия.")
     key_words(text_dict, text)
 
-    print("------------------------------")
-    print("3.	Реферат в виде трех предложений + индекс релевантности. ")
+    print("______________________________")
+    print("3. Реферат на 3 предложения + индекс релевантности. ")
     key_s = key_sentences(text_dict, sentences)
     list_keys = list(key_s.keys())
     list_keys.sort(reverse=True)

@@ -21,7 +21,7 @@ def read_docs_with_class(classes_name):
     return result
 
 
-def make_test_text(file):
+def perform_text_test(file):
     path = 'C:/Users/57thr/Documents/GitHub/uni_stuff/Year_3/ITvPS/laba7/stuff/test/' + file + '.txt'
     string = ""
     f = open(path)
@@ -137,17 +137,6 @@ def write_tf_idf(tfidf):
             a_pen.writerow(str_r)
 
 
-def write_centroids(centroids):
-    with open("centroids.csv", 'w', encoding='utf-8') as file:
-        a_pen = csv.writer(file)
-        columns = ['word']
-        for i in range(1, 3):
-            columns.append(i)
-        a_pen.writerow(columns)
-        for token, i in centroids.items():
-            str_r = [token] + i
-            a_pen.writerow(str_r)
-
 def euclid_metric(text, centroids):
     idf = read_idf()
     my_doc, my_dict = clear_one_text(text)
@@ -171,7 +160,7 @@ centroids = compute_centroids(token_dict, tf_idf)
 texts = ['sport_1', 'sport_2', 'tech_1', 'tech_2', 'tech_3']
 for text in texts:
     print("Текст: ", text)
-    res = euclid_metric(make_test_text(text), centroids)
+    res = euclid_metric(perform_text_test(text), centroids)
     if res[0] > res[1]:
         print("Технологии: %r\nСпорт: %s" % (res[1], res[0]))
     else:
