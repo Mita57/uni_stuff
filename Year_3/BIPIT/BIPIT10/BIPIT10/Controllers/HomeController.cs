@@ -19,8 +19,8 @@ namespace BIPIT9.Controllers
             using (EquipmentFFSEntities db = new EquipmentFFSEntities())
             {
                 ViewBag.Issues = db.Issues.ToList();
-                ViewBag.Emps = db.Employees.ToList();
-                ViewBag.Eqs = db.Equipments.ToList();
+                ViewBag.emps = db.Employees.ToList();
+                ViewBag.eqs = db.Equipments.ToList();
                 return View();
             }
         }

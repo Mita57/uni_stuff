@@ -11,9 +11,22 @@ namespace BIPIT10.Controllers
     {
         public ActionResult Issue()
         {
+            string emp = Request.Form["chooseEmp"];
+            string eq = Request.Form["chooseEq"];
+            string issued = Request.Form["addIssued"];
+
             using (EquipmentFFSEntities db = new EquipmentFFSEntities())
             {
-
+                var issues = db.Issues;
+                Issue e = new Issue
+                {
+                    issued_at = Convert.ToDateTime(issued),
+                    employee = emp,
+                    equipment = eq,
+                    Added = DateTime.Now
+                };
+                issues.Add(e);
+                db.SaveChanges();
             }
             return Redirect(Url.Action("Issues", "Home"));
         }

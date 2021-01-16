@@ -1,0 +1,30 @@
+﻿<h3>Изменить сотрудника</h3>
+@using (Html.BeginForm("Employee", "Edit", FormMethod.Post, new { @class = "mt-3" }))
+{
+    <div class="form-group row">
+        Имя
+        <div>
+            <input readonly type="text" name="id" id="id" value="@ViewBag.name">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        Новое имя
+        <div>
+            <input type="text" name="newName" id="newName" value="@ViewBag.name">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        Дата рождения
+        <div>
+            <input type="date" name="newBd" id="newBd" value=@ViewBag.birthDay>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <input type="submit" value="Изменить">
+        @Html.ActionLink("Отмена", "Employees", "Home")
+    </div>
+}

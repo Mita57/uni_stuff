@@ -1,0 +1,52 @@
+﻿<h3>Изменить выдачу</h3>
+@using (Html.BeginForm("Issue", "Edit", FormMethod.Post, new { @class = "mt-3" }))
+{
+    <div class="form-group row">
+        Id
+        <div>
+            <input readonly disabled type="text" name="id" id="id" value=@ViewBag.id>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        Выдано
+        <div>
+            <input type="text" readonly name="issuedDate" id="issuedDate" value=@ViewBag.issuedAt>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        Оборудование
+        <div>
+            <select name="newEquipment">
+                @foreach (var item in ViewBag.eqList as IEnumerable<BIPIT10.Models.Equipment>)
+                {
+                    <option value="@Html.DisplayFor(modelItem => item.Name)"
+                            @(ViewBag.equipment == item.Name ? "selected" : "")>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        Сотрудник
+        <div>
+            <select name="newEmployee">
+                @foreach (var item in ViewBag.empList as IEnumerable<BIPIT10.Models.Employee>)
+                {
+                    <option value="@Html.DisplayFor(modelItem => item.Name)"
+                            @(ViewBag.employee == item.Name ? "selected" : "")>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </option>
+                }
+            </select>
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <input type="submit" value="Изменить">
+        @Html.ActionLink("Отмена", "Issues", "Home")
+    </div>
+}

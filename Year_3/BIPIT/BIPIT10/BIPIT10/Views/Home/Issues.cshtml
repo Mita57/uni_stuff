@@ -22,23 +22,44 @@
     </tr>
 
     @foreach (var item in ViewBag.Issues as IEnumerable<BIPIT10.Models.Issue>)
-        {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.id) </td>
-                <td>@Html.DisplayFor(modelItem => item.equipment) </td>
-                <td>@Html.DisplayFor(modelItem => item.employee) </td>
-                <td>@Html.DisplayFor(modelItem => item.Added) </td>
-                <td>@Html.DisplayFor(modelItem => item.issued_at) </td>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <td>@Html.ActionLink("Изменить", "Issue", "Edit", new { id = item.id }, null)</td>
-                    <td>@Html.ActionLink("Удалить", "Issue", "Delete", new { id = item.id }, null)</td>
-                }
-            </tr>
-        }
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.id) </td>
+            <td>@Html.DisplayFor(modelItem => item.equipment) </td>
+            <td>@Html.DisplayFor(modelItem => item.employee) </td>
+            <td>@Html.DisplayFor(modelItem => item.Added) </td>
+            <td>@Html.DisplayFor(modelItem => item.issued_at) </td>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <td>@Html.ActionLink("Изменить", "Issue", "Edit", new { id = item.id }, null)</td>
+                <td>@Html.ActionLink("Удалить", "Issue", "Delete", new { id = item.id }, null)</td>
+            }
+        </tr>
+    }
 </table>
 
-@if(User.Identity.IsAuthenticated)
+@if (User.Identity.IsAuthenticated)
 {
     <h2> Добавить выдачу </h2>
+    using (Html.BeginForm("Issue", "Add", FormMethod.Post))
+    {
+        <div id="add">
+            Сотрудник
+            <select name="chooseEmp">
+                @foreach (var item in ViewBag.emps as IEnumerable<BIPIT10.Models.Employee>)
+                 {
+                    <option value="@Html.DisplayFor(modelItem => item.Name)">@Html.DisplayFor(modelItem => item.Name)</option>
+                 }
+            </select>
+            Оборудование
+            <select name="chooseEq">
+                @foreach (var item in ViewBag.eqs as IEnumerable<BIPIT10.Models.Equipment>)
+                 {
+                    <option value="@Html.DisplayFor(modelItem => item.Name)">@Html.DisplayFor(modelItem => item.Name)</option>
+                 }
+            </select>
+            <input type="date" name="addIssued">
+            <input type="submit" value="Добавить">
+        </div>
+    }
 }

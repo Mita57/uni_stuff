@@ -27,8 +27,8 @@
             <td>@Html.DisplayFor(modelItem => item.Added) </td>
             @if (User.Identity.IsAuthenticated)
             {
-                <td>@Html.ActionLink("Изменить", "Equipment", "Edit", new { id = item.Name }, null)</td>
-                <td>@Html.ActionLink("Удалить", "Equipment", "Delete", new { id = item.Name }, null)</td>
+                <td>@Html.ActionLink("Изменить", "Equipment", "Edit", new { name = item.Name }, null)</td>
+                <td>@Html.ActionLink("Удалить", "Equipment", "Delete", new { name = item.Name }, null)</td>
             }
         </tr>
     }
@@ -41,8 +41,8 @@
     {
         <div id="add">
             <h2> Добавить оборудование</h2>
-            <input type="text" name="addName">
-            <input type="number" name="addPrice">
+            <input type="text" placeholder="Название" name="addName">
+            <input type="number" placeholder="Цена" name="addPrice">
             <input type="submit" value="Добавить">
         </div>
     }
