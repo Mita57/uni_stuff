@@ -70,7 +70,7 @@ def key_sentences(text_dict, sentences):
     return result
 
 
-for i in range(1, 6):
+for i in range(3,):
     text, sentences = read_doc("text_" + str(i))
     text = [preprocessing_data(i) for i in text]
     sentences = [preprocessing_data(i) for i in sentences]

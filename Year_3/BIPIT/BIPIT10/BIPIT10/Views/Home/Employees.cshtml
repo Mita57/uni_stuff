@@ -38,15 +38,7 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    using (Html.BeginForm("Employee", "Edit", FormMethod.Post))
-    {
-    <div id="change">
-        <h2> Изменить сотрудника </h2>
-        <input type="text" name="changeName">
-        <input type="date" name="changeBD">
-        <input type="submit" value="Изменить">
-    </div>
-    }
+    
     using (Html.BeginForm("Employee", "Add", FormMethod.Post))
     {
         <div id="add">

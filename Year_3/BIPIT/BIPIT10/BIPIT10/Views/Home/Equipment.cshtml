@@ -31,5 +31,20 @@
                 <td>@Html.ActionLink("Удалить", "Equipment", "Delete", new { id = item.Name }, null)</td>
             }
         </tr>
-     }
+    }
 </table>
+
+@if (User.Identity.IsAuthenticated)
+{
+
+    using (Html.BeginForm("Equipment", "Add", FormMethod.Post))
+    {
+        <div id="add">
+            <h2> Добавить оборудование</h2>
+            <input type="text" name="addName">
+            <input type="number" name="addPrice">
+            <input type="submit" value="Добавить">
+        </div>
+    }
+
+}
