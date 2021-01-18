@@ -116,7 +116,7 @@ for star in text:
             print('Рубрика "Biometrics investigations": ' + str(j) + '\n')
         elif i == 4:
             print('Рубрика "Image processing": ' + str(j) + '\n')
-        print("================================================================");
+        print("================================================================")
 
 t = {}
 with open("statistics.csv") as f:
