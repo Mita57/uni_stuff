@@ -21,14 +21,6 @@ def get_docs(file_csv):
     return docs
 
 
-def get_test_docs(file_csv):
-    text = []
-    with open(file_csv) as f:
-        reader = csv.DictReader(f, delimiter=';')
-        for line in reader:
-            text.append(''.join([line["\ufefftitle"], line['keywords'], line['annotation']]))
-    return text
-
 
 def prob_doc(test_doc, p_w_c_dict):
     cl1 = math.log2(1 / 4)
@@ -92,47 +84,52 @@ def write_stats(stats):
 
 
 # LET THE FUN BEGIN
-class_number = 2
-text = open("test.csv", "r").read()
-clear_test_doc, test_dict = vsm.clear_one_text(text)
-cl = prob_doc(clear_test_doc, p_w_c_dict)
-sort = sorted(cl.values(), reverse=True)
-res = {}
+i = 1
+text = open("test.csv", "r").readlines()
+for star in text:
+    print("Текст " + str(i) + "===============================================================")
+    class_number = star[-2]
+    star = star[:-1]
+    clear_test_doc, test_dict = vsm.clear_one_text(star)
+    cl = prob_doc(clear_test_doc, p_w_c_dict)
+    sort = sorted(cl.values(), reverse=True)
+    res = {}
 
-for i in sort:
-    res[get_key(cl, i)] = i
-cl_number = get_key(cl, sort[0])
-stats = read_statistics()
+    for i in sort:
+        res[get_key(cl, i)] = i
+    cl_number = get_key(cl, sort[0])
+    stats = read_statistics()
 
-if int(cl_number) == int(class_number):
-    stats[str(cl_number)][0] = int(stats[str(cl_number)][0]) + 1
-else:
-    stats[str(cl_number)][1] = int(stats[str(cl_number)][1]) + 1
-    stats[str(class_number)][2] = int(stats[str(class_number)][2]) + 1
+    if int(cl_number) == int(class_number):
+        stats[str(cl_number)][0] = int(stats[str(cl_number)][0]) + 1
+    else:
+        stats[str(cl_number)][1] = int(stats[str(cl_number)][1]) + 1
+        stats[str(class_number)][2] = int(stats[str(class_number)][2]) + 1
 
-write_stats(stats)
-for i, j in res.items():
-    if i == 1:
-        print('Рубрика "Classification problems": ' + str(j) + '\n')
-    elif i == 2:
-        print('Рубрика "Pattern recognition": ' + str(j) + '\n')
-    elif i == 3:
-        print('Рубрика "Biometrics investigations": ' + str(j) + '\n')
-    elif i == 4:
-        print('Рубрика "Image processing": ' + str(j) + '\n')
+    write_stats(stats)
+    for i, j in res.items():
+        if i == 1:
+            print('Рубрика "Classification problems": ' + str(j) + '\n')
+        elif i == 2:
+            print('Рубрика "Pattern recognition": ' + str(j) + '\n')
+        elif i == 3:
+            print('Рубрика "Biometrics investigations": ' + str(j) + '\n')
+        elif i == 4:
+            print('Рубрика "Image processing": ' + str(j) + '\n')
+        print("================================================================");
 
-    t = {}
-    with open("statistics.csv") as f:
-        reader = csv.DictReader(f, delimiter=',')
-        for line in reader:
-            t[line['number']] = [line['TP'], line['FP'], line['FN']]
-    res = []
-    for n, i in t.items():
-        if int(i[0]) != 0:
-            p = int(i[0]) / (int(i[0]) * int(i[1]))
-            r = int(i[0]) / (int(i[0]) * int(i[2]))
-            f1 = 2 * p * r / (p + r)
-            res.append({'№': n, 'P': p, 'R': r, 'F1': f1})
-        else:
-            res.append({'№': n, 'P': 0, 'R': 0, 'F1': 0})
+t = {}
+with open("statistics.csv") as f:
+    reader = csv.DictReader(f, delimiter=',')
+    for line in reader:
+        t[line['number']] = [line['TP'], line['FP'], line['FN']]
+res = []
+for n, i in t.items():
+    if int(i[0]) != 0:
+        p = int(i[0]) / (int(i[0]) * int(i[1]))
+        r = int(i[0]) / (int(i[0]) * int(i[2]))
+        f1 = 2 * p * r / (p + r)
+        res.append({'№': n, 'P': p, 'R': r, 'F1': f1})
+    else:
+        res.append({'№': n, 'P': 0, 'R': 0, 'F1': 0})
 print(res)
