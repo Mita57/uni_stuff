@@ -8,7 +8,10 @@ def cosine(tf_idf_1, tf_idf_2):
     def cos(v1, v2):
         num = multiple(v1, v2)
         den = math.sqrt(multiple(v1, v1)) * math.sqrt(multiple(v2, v2))
-        return num / den
+        try:
+            return num / den
+        except:
+            pass
 
     vec1 = [i[0] for i in tf_idf_1.values()]
     vec2 = [i for i in tf_idf_2.values()]

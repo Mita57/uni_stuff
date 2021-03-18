@@ -348,30 +348,7 @@ Year_2/kurshachGyyLool/server/.idea
 Year_2/kurshachGyyLool/server/venv
 
 Year_2/kurshachGyyLool/clientold
-Year_3/ITvPS/laba3/venv
-Year_3/ITvPS/laba3/.idea
-Year_3/ITvPS/laba3/__pycache__
 
-Year_3/ITvPS/laba4/venv
-Year_3/ITvPS/laba4/.idea
-Year_3/ITvPS/laba4/__pycache__
-
-Year_3/ITvPS/laba5/app/.idea
-Year_3/ITvPS/laba5/app/__pycache__
-Year_3/ITvPS/laba5/app/venv
-
-Year_3/ITvPS/laba6/.idea
-Year_3/ITvPS/laba6/__pycache__
-Year_3/ITvPS/laba6/venv
-
-Year_3/ITvPS/laba7/app/.idea
-Year_3/ITvPS/laba7/app/__pycache__
-Year_3/ITvPS/laba7/app/venv
-
-Year_3/ITvPS/laba8/app/.idea
-Year_3/ITvPS/laba8/app/__pycache__
-Year_3/ITvPS/laba8/app/venv
-
-Year_3/ITvPS/laba9/app/.idea
-Year_3/ITvPS/laba9/app/__pycache__
-Year_3/ITvPS/laba9/app/venv
+**/.idea
+**/__pycache__
+**/venv

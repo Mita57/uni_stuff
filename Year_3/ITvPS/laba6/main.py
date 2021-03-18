@@ -84,11 +84,13 @@ def write_stats(stats):
 
 
 # LET THE FUN BEGIN
-i = 1
+x = 1
 text = open("test.csv", "r").readlines()
 for star in text:
-    print("Текст " + str(i) + "===============================================================")
+    print("Текст " + str(x) + "===============================================================")
+    x = x + 1
     class_number = star[-2]
+    print(class_number)
     star = star[:-1]
     clear_test_doc, test_dict = vsm.clear_one_text(star)
     cl = prob_doc(clear_test_doc, p_w_c_dict)
