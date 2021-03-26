@@ -25,4 +25,4 @@ query_surface = ['Обычная'] if input('Поверхность обычна
 for pl in plants:
     if pl.leaf_colour in query_color and pl.leaf_shape in query_leaf_shape and pl.surface in query_surface:
         print(pl.name)
-
+        break
