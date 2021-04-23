@@ -21,8 +21,8 @@ with open('result.csv', mode='w') as csv_file:
             for i in range(2, len(lines)):
                 text += lines[i]
 
-            ner = re.match(r'[.,?!] +[A-Z][А=Я]', text) or re.match(r'[.,?!] +[A-Z][А=Я]', title) or\
-                  re.match(r'[.,?!] +[A-Z][А=Я]', lid) or False
+            ner = re.match(r'[.,?!] +[A-Z][А-Я]', text) or re.match(r'[.,?!] +[A-Z][А=Я]', title) or\
+                  re.match(r'[.,?!] +[A-Z][А-Я]', lid) or False
 
             lang = 'ru' if bool(re.search('[а-яА-Я]', text)) else 'en'
             if lang == 'ru':
@@ -34,7 +34,7 @@ with open('result.csv', mode='w') as csv_file:
             except:
                 url = None
             try:
-                year = re.search(r'[1-3][0-9]{3}', text).group()
+                year = re.search(r'[1-3][0-9]{3}', url).group()
             except:
                 year = 'None'
 
