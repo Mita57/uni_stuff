@@ -70,3 +70,5 @@ for fuck in statements_formula_parts:
 print(conclusion_formula)
 
 print(proves(cum, expr(conclusion_formula)))
+
+
