@@ -100,6 +100,7 @@ def create_tree(node_list_arg):
     else:
         return memes
 
+
 m = Mystem()
 
 text = input('Entrez le text s\'il vous plait')
