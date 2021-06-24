@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Вход</title>
+</head>
+<body>
+    <div class="d-flex align-items-center justify-content-center " style="height: 700px">
+        <div class="">
+            <div class="card" style="height: auto; width: 400px; text-align: center">
+                <div class="card-header bg-primary text-white text-center">
+                    Вход
+                </div>
+                <div class="card-body" style="background-color: yellow">
+
+                    <form class="panel-body" method="POST">
+                        {% csrf_token %}
+                        Имя пользователя
+                        <div class="input-group justify-content-between py-1">
+                            <input type="text" name="username" class="form-control">
+                        </div>
+
+                        Пароль
+                        <div class="input-group justify-content-between py-1">
+                            <input type="password" name="password" class="form-control">
+                        </div>
+                        <button type="submit" name="Войти" class="btn btn-primary">Войти</button>
+
+                    </form>
+                    <p><a href="{% url 'register' %}">Зарегаца</a></p>
+                    {% for message in messages %}
+                    <p class="messages"> {{message}}</p>
+                    {% endfor%}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
