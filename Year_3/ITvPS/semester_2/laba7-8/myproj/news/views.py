@@ -26,7 +26,7 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Вы успешно зарегистрировались!")
+            messages.success(request, "Registration successful!")
             return redirect('login')
     context = {'form': form}
     return render(request, 'news/registerPage.html', context)
